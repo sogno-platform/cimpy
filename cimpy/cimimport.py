@@ -35,7 +35,7 @@ def cim_import(xml_files, cim_version, start_dict=None):
     in a second step the attributes contained in the xml files are set.
 
     :param xml_files: CIM RDF/XML file.
-    :param cim_version: cgmes version, e.g. "cimgen_v2_4_15"
+    :param cim_version: cgmes version, e.g. "cgmes_v2_4_15"
     :param start_dict: a list of classes which indicates which classes will be read
         e.g. elements=["BaseVoltage", "ACLineSegment"]
         * If start_dict=None the complete file will be read

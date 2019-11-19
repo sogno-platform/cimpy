@@ -182,7 +182,7 @@ def cim_export(res, namespaces_dict, file_name, version):
     :param res: a dictionary containing the cgmes classes accessible via the mRID
     :param namespaces_dict: a dictionary containing the RDF namespaces used in the imported xml files
     :param file_name: a string with the name of the xml files which will be created
-    :param version: cgmes version, e.g. version = "cimgen_v2_4_15"
+    :param version: cgmes version, e.g. version = "cgmes_v2_4_15"
     """
     package_classes_dict = _create_package_classes_dict(res)
     export_dict = {}

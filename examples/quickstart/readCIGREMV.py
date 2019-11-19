@@ -14,7 +14,7 @@ for file in xml_files:
 
 
 # res = cimpy.cimread(xml_files)
-res, _ = cimpy.cim_import(xml_files_abs, "cimgen_v2_4_15")
+res, _ = cimpy.cim_import(xml_files_abs, "cgmes_v2_4_15")
 print(len(res))
 print("\n\n\n")
 results = ["ACLineSegment", "PowerTransformer", "TopologicalNode", "Switch", "EnergyConsumer"]

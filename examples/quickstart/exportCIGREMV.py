@@ -15,7 +15,7 @@ for file in xml_files:
 
 
 # res = cimpy.cimread(xml_files)
-res, namespaces = cimpy.cim_import(xml_files_abs, "cimgen_v2_4_15")
+res, namespaces = cimpy.cim_import(xml_files_abs, "cgmes_v2_4_15")
 
 # dicts = cimpy.get_class_attributes_dict(res)
-cimpy.cim_export(res, namespaces, 'Slack_Trafo_Load', 'cimgen_v2_4_15')
+cimpy.cim_export(res, namespaces, 'Slack_Trafo_Load', 'cgmes_v2_4_15')

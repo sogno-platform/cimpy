@@ -16,9 +16,9 @@ for file in xml_files:
 
 
 # res = cimpy.cimread(xml_files)
-res, namespaces = cimpy.cim_import(xml_files_abs, "cimgen_v2_4_15")
+res, namespaces = cimpy.cim_import(xml_files_abs, "cgmes_v2_4_15")
 
 bus_branch = cimpy.utils.node_breaker_to_bus_branch(res)
 
 # dicts = cimpy.get_class_attributes_dict(res)
-cimpy.cim_export(bus_branch, namespaces, 'Bus_Branch_Converted', 'cimgen_v2_4_15')
+cimpy.cim_export(bus_branch, namespaces, 'Bus_Branch_Converted', 'cgmes_v2_4_15')
