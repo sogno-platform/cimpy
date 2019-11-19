@@ -1,0 +1,8 @@
+# python folders
+*.egg-info/
+__pycache__
+.idea
+./cimpy/__pycache__
+
+# log files
+*.log

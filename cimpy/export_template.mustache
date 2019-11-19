@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF {{#namespaces}}xmlns:{{key}}="{{url}}" {{/namespaces}}>
+{{#model}}
+<md:FullModel rdf:about="{{mRID}}">
+{{#description}}
+    <md:Model.{{attr_name}}{{#set_attributes_or_reference_model}}{{value}}@{{attr_name}}{{/set_attributes_or_reference_model}}
+{{/description}}
+</md:FullModel>
+{{/model}}
+{{#classes}}
+<cim:{{name}} rdf:ID="{{mRID}}">
+{{#attributes}}
+    <cim:{{attr_name}}{{#set_attributes_or_reference}}{{value}}@{{attr_name}}{{/set_attributes_or_reference}}
+{{/attributes}}
+</cim:{{name}}>
+{{/classes}}
+{{#about}}
+<cim:{{name}} rdf:about="#{{mRID}}">
+{{#attributes}}
+    <cim:{{attr_name}}{{#set_attributes_or_reference}}{{value}}@{{attr_name}}{{/set_attributes_or_reference}}
+{{/attributes}}
+</cim:{{name}}>
+{{/about}}
+</rdf:RDF>

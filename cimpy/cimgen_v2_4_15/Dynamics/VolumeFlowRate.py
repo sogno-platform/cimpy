@@ -1,0 +1,32 @@
+from cimpy.cimgen_v2_4_15.Base import Base
+
+
+class VolumeFlowRate(Base):
+	'''
+	Volume per time.
+
+	:denominatorMultiplier:  Default: None
+	:denominatorUnit:  Default: None
+	:multiplier:  Default: None
+	:unit:  Default: None
+	:value:  Default: 0.0
+		'''
+
+	
+
+	
+
+	def __init__(self, denominatorMultiplier = None, denominatorUnit = None, multiplier = None, unit = None, value = 0.0,  ):
+	
+		self.denominatorMultiplier = denominatorMultiplier
+		self.denominatorUnit = denominatorUnit
+		self.multiplier = multiplier
+		self.unit = unit
+		self.value = value
+		
+	def __str__(self):
+		str = 'class=VolumeFlowRate\n'
+		attributes = self.__dict__
+		for key in attributes.keys():
+			str = str + key + '={}\n'.format(attributes[key])
+		return str
