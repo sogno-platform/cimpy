@@ -3,8 +3,8 @@ Python tool for generation and modification of CIM data
 
 # Installation
 ```
-$ git clone https://git.rwth-aachen.de/acs/core/cim/cimgen.git
-$ cd cimgen
+$ git clone git@git.rwth-aachen.de:acs/public/cim/cimpy.git
+$ cd cimpy
 $ python setup.py develop
 ```
 
