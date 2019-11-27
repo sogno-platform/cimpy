@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ACDCConverter import ACDCConverter
+from cimpy.cgmes_v2_4_15.ACDCConverter import ACDCConverter
 
 
 class CsConverter(ACDCConverter):
@@ -20,6 +20,8 @@ class CsConverter(ACDCConverter):
 	:targetGamma: Target extinction angle. CSC  control variable used in power flow. Default: 0.0
 	:targetIdc: DC current target value. CSC control variable used in power flow. Default: 0.0
 		'''
+
+	cgmesProfile = ACDCConverter.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, ],
 						'maxAlpha': [cgmesProfile.EQ.value, ],

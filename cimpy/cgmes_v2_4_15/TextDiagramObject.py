@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DiagramObject import DiagramObject
+from cimpy.cgmes_v2_4_15.DiagramObject import DiagramObject
 
 
 class TextDiagramObject(DiagramObject):
@@ -7,6 +7,8 @@ class TextDiagramObject(DiagramObject):
 
 	:text: The text that is displayed by this text diagram object. Default: ''
 		'''
+
+	cgmesProfile = DiagramObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
 						'text': [cgmesProfile.DI.value, ],

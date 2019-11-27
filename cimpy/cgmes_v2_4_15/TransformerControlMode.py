@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class TransformerControlMode(Base):
@@ -6,6 +6,8 @@ class TransformerControlMode(Base):
 	Control modes for a transformer.
 
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }

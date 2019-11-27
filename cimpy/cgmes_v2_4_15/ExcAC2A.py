@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcAC2A(ExcitationSystemDynamics):
@@ -34,6 +34,8 @@ class ExcAC2A(ExcitationSystemDynamics):
 	:hvgate: Indicates if HV gate is active (HVgate). true = gate is used false = gate is not used. Typical Value = true. Default: False
 	:lvgate: Indicates if LV gate is active (LVgate). true = gate is used false = gate is not used. Typical Value = true. Default: False
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'tb': [cgmesProfile.DY.value, ],

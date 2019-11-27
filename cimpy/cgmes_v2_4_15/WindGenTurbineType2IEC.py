@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.WindTurbineType1or2IEC import WindTurbineType1or2IEC
+from cimpy.cgmes_v2_4_15.WindTurbineType1or2IEC import WindTurbineType1or2IEC
 
 
 class WindGenTurbineType2IEC(WindTurbineType1or2IEC):
@@ -8,6 +8,8 @@ class WindGenTurbineType2IEC(WindTurbineType1or2IEC):
 	:WindContRotorRIEC: Wind control rotor resistance model associated with wind turbine type 2 model. Default: None
 	:WindPitchContEmulIEC: Pitch control emulator model associated with this wind turbine type 2 model. Default: None
 		'''
+
+	cgmesProfile = WindTurbineType1or2IEC.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'WindContRotorRIEC': [cgmesProfile.DY.value, ],

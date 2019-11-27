@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class Pss1(PowerSystemStabilizerDynamics):
@@ -21,6 +21,8 @@ class Pss1(PowerSystemStabilizerDynamics):
 	:t10: Lead/lag time constant (T).  Typical Value = 0. Default: 0.0
 	:vadat:  Default: False
 		'''
+
+	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'kw': [cgmesProfile.DY.value, ],

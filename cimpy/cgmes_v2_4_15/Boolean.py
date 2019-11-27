@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class Boolean(Base):
@@ -6,6 +6,8 @@ class Boolean(Base):
 	A type with the value space "true" and "false".
 
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DI.value, cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, ],
 						 }

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class ExcST7BOELselectorKind(Base):
@@ -6,6 +6,8 @@ class ExcST7BOELselectorKind(Base):
 	Type of connection for the OEL input used for static excitation systems type 7B.
 
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						 }

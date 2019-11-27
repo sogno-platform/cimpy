@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ConductingEquipment import ConductingEquipment
+from cimpy.cgmes_v2_4_15.ConductingEquipment import ConductingEquipment
 
 
 class Ground(ConductingEquipment):
@@ -6,6 +6,8 @@ class Ground(ConductingEquipment):
 	A point where the system is grounded used for connecting conducting equipment to ground. The power system model can have any number of grounds.
 
 		'''
+
+	cgmesProfile = ConductingEquipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }

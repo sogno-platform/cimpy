@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovSteamSGO(TurbineGovernorDynamics):
@@ -18,6 +18,8 @@ class GovSteamSGO(TurbineGovernorDynamics):
 	:pmax: Upper power limit (Pmax). Default: 0.0
 	:pmin: Lower power limit (Pmin). Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

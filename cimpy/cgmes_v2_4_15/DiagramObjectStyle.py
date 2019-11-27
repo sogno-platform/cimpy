@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class DiagramObjectStyle(IdentifiedObject):
@@ -7,6 +7,8 @@ class DiagramObjectStyle(IdentifiedObject):
 
 	:StyledObjects: A style can be assigned to multiple diagram objects. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
 						'StyledObjects': [cgmesProfile.DI.value, ],

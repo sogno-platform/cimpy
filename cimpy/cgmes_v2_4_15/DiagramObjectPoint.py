@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class DiagramObjectPoint(Base):
@@ -12,6 +12,8 @@ class DiagramObjectPoint(Base):
 	:yPosition: The Y coordinate of this point. Default: 0.0
 	:zPosition: The Z coordinate of this point. Default: 0.0
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
 						'DiagramObject': [cgmesProfile.DI.value, ],

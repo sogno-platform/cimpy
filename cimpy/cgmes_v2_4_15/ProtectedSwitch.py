@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Switch import Switch
+from cimpy.cgmes_v2_4_15.Switch import Switch
 
 
 class ProtectedSwitch(Switch):
@@ -6,6 +6,8 @@ class ProtectedSwitch(Switch):
 	A ProtectedSwitch is a switching device that can be operated by ProtectionEquipment.
 
 		'''
+
+	cgmesProfile = Switch.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						 }

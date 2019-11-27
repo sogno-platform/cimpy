@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class BasicIntervalSchedule(IdentifiedObject):
@@ -9,6 +9,8 @@ class BasicIntervalSchedule(IdentifiedObject):
 	:value1Unit: Value1 units of measure. Default: None
 	:value2Unit: Value2 units of measure. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'startTime': [cgmesProfile.EQ.value, ],

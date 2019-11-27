@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ACDCTerminal import ACDCTerminal
+from cimpy.cgmes_v2_4_15.ACDCTerminal import ACDCTerminal
 
 
 class Terminal(ACDCTerminal):
@@ -17,6 +17,8 @@ class Terminal(ACDCTerminal):
 	:SvPowerFlow: The power flow state variable associated with the terminal. Default: None
 	:TopologicalNode: The terminals associated with the topological node.   This can be used as an alternative to the connectivity node path to terminal, thus making it unneccesary to model connectivity nodes in some cases.   Note that if connectivity nodes are in the model, this association would probably not be used as an input specification. Default: None
 		'''
+
+	cgmesProfile = ACDCTerminal.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, cgmesProfile.TP.value, ],
 						'ConductingEquipment': [cgmesProfile.DY.value, cgmesProfile.EQ.value, ],

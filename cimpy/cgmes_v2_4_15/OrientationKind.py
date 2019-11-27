@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class OrientationKind(Base):
@@ -6,6 +6,8 @@ class OrientationKind(Base):
 	The orientation of the coordinate system with respect to top, left, and the coordinate number system.
 
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
 						 }

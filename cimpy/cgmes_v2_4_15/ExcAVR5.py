@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcAVR5(ExcitationSystemDynamics):
@@ -9,6 +9,8 @@ class ExcAVR5(ExcitationSystemDynamics):
 	:ta: Time constant (Ta). Default: 0.0
 	:rex: Effective Output Resistance (Rex). Rex represents the effective output resistance seen by the excitation system. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'ka': [cgmesProfile.DY.value, ],

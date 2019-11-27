@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TransformerEnd import TransformerEnd
+from cimpy.cgmes_v2_4_15.TransformerEnd import TransformerEnd
 
 
 class PowerTransformerEnd(TransformerEnd):
@@ -19,6 +19,8 @@ class PowerTransformerEnd(TransformerEnd):
 	:r0: Zero sequence series resistance (star-model) of the transformer end. Default: 0.0
 	:x0: Zero sequence series reactance of the transformer end. Default: 0.0
 		'''
+
+	cgmesProfile = TransformerEnd.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'PowerTransformer': [cgmesProfile.EQ.value, ],

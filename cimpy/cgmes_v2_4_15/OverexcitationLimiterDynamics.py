@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class OverexcitationLimiterDynamics(DynamicsFunctionBlock):
@@ -7,6 +7,8 @@ class OverexcitationLimiterDynamics(DynamicsFunctionBlock):
 
 	:ExcitationSystemDynamics: Excitation system model with which this overexcitation limiter model is associated. Default: None
 		'''
+
+	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'ExcitationSystemDynamics': [cgmesProfile.DY.value, ],

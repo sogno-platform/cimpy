@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcIEEEAC2A(ExcitationSystemDynamics):
@@ -27,6 +27,8 @@ class ExcIEEEAC2A(ExcitationSystemDynamics):
 	:ve2: Exciter alternator output voltages back of commutating reactance at which saturation is defined (V).  Typical Value = 3.3. Default: 0.0
 	:seve2: Exciter saturation function value at the corresponding exciter voltage, V, back of commutating reactance (S[V]).  Typical Value = 0.012. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'tb': [cgmesProfile.DY.value, ],

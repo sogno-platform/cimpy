@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class WindAeroConstIEC(IdentifiedObject):
@@ -7,6 +7,8 @@ class WindAeroConstIEC(IdentifiedObject):
 
 	:WindGenTurbineType1IEC: Wind turbine type 1 model with which this wind aerodynamic model is associated. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'WindGenTurbineType1IEC': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class HydroEnergyConversionKind(Base):
@@ -6,6 +6,8 @@ class HydroEnergyConversionKind(Base):
 	Specifies the capability of the hydro generating unit to convert energy as a generator or pump.
 
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }

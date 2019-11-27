@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.BasicIntervalSchedule import BasicIntervalSchedule
+from cimpy.cgmes_v2_4_15.BasicIntervalSchedule import BasicIntervalSchedule
 
 
 class RegularIntervalSchedule(BasicIntervalSchedule):
@@ -8,6 +8,8 @@ class RegularIntervalSchedule(BasicIntervalSchedule):
 	:timeStep: The time between each pair of subsequent regular time points in sequence order. Default: 0.0
 	:endTime: The time for the last time point. Default: ''
 		'''
+
+	cgmesProfile = BasicIntervalSchedule.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'timeStep': [cgmesProfile.EQ.value, ],

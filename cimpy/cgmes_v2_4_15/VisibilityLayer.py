@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class VisibilityLayer(IdentifiedObject):
@@ -8,6 +8,8 @@ class VisibilityLayer(IdentifiedObject):
 	:VisibleObjects: A visibility layer can contain one or more diagram objects. Default: []
 	:drawingOrder: The drawing order for this layer.  The higher the number, the later the layer and the objects within it are rendered. Default: 0
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
 						'VisibleObjects': [cgmesProfile.DI.value, ],

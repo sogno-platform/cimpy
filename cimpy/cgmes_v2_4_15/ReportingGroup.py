@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class ReportingGroup(IdentifiedObject):
@@ -8,6 +8,8 @@ class ReportingGroup(IdentifiedObject):
 	:BusNameMarker: The reporting group to which this bus name marker belongs. Default: []
 	:TopologicalNode: The reporting group to which the topological node belongs. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.TP.value, ],
 						'BusNameMarker': [cgmesProfile.EQ.value, ],

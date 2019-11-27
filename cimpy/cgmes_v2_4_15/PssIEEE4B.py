@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class PssIEEE4B(PowerSystemStabilizerDynamics):
@@ -73,6 +73,8 @@ class PssIEEE4B(PowerSystemStabilizerDynamics):
 	:vstmax: PSS output maximum limit (V).  Typical Value = 0.15. Default: 0.0
 	:vstmin: PSS output minimum limit (V).  Typical Value = -0.15. Default: 0.0
 		'''
+
+	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'bwh1': [cgmesProfile.DY.value, ],

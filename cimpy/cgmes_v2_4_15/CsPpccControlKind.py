@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class CsPpccControlKind(Base):
@@ -6,6 +6,8 @@ class CsPpccControlKind(Base):
 	Active power control modes for HVDC line operating as Current Source Converter.
 
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.SSH.value, ],
 						 }

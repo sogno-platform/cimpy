@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class RatioTapChangerTable(IdentifiedObject):
@@ -8,6 +8,8 @@ class RatioTapChangerTable(IdentifiedObject):
 	:RatioTapChanger: The tap ratio table for this ratio  tap changer. Default: []
 	:RatioTapChangerTablePoint: Table of this point. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'RatioTapChanger': [cgmesProfile.EQ.value, ],

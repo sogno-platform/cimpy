@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Connector import Connector
+from cimpy.cgmes_v2_4_15.Connector import Connector
 
 
 class BusbarSection(Connector):
@@ -7,6 +7,8 @@ class BusbarSection(Connector):
 
 	:ipMax: Maximum allowable peak short-circuit current of busbar (Ipmax in the IEC 60909-0).  Mechanical limit of the busbar in the substation itself. Used for short circuit data exchange according to IEC 60909 Default: 0.0
 		'''
+
+	cgmesProfile = Connector.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'ipMax': [cgmesProfile.EQ.value, ],

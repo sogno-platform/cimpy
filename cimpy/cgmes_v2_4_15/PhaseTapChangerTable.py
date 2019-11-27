@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class PhaseTapChangerTable(IdentifiedObject):
@@ -8,6 +8,8 @@ class PhaseTapChangerTable(IdentifiedObject):
 	:PhaseTapChangerTablePoint: The points of this table. Default: []
 	:PhaseTapChangerTabular: The phase tap changers to which this phase tap table applies. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'PhaseTapChangerTablePoint': [cgmesProfile.EQ.value, ],

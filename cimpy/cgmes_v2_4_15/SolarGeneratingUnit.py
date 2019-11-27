@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.GeneratingUnit import GeneratingUnit
+from cimpy.cgmes_v2_4_15.GeneratingUnit import GeneratingUnit
 
 
 class SolarGeneratingUnit(GeneratingUnit):
@@ -6,6 +6,8 @@ class SolarGeneratingUnit(GeneratingUnit):
 	A solar thermal generating unit.
 
 		'''
+
+	cgmesProfile = GeneratingUnit.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						 }

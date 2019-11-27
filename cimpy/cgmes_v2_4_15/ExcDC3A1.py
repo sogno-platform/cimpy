@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcDC3A1(ExcitationSystemDynamics):
@@ -20,6 +20,8 @@ class ExcDC3A1(ExcitationSystemDynamics):
 	:vb1max: Available exciter voltage limiter (Vb1max).  Typical Value = 11.63. Default: 0.0
 	:vblim: Vb limiter indicator. true = exciter Vbmax limiter is active false = Vb1max is active.  Typical Value = true. Default: False
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'ka': [cgmesProfile.DY.value, ],

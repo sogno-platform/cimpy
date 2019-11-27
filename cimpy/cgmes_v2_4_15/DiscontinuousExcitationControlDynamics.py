@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class DiscontinuousExcitationControlDynamics(DynamicsFunctionBlock):
@@ -8,6 +8,8 @@ class DiscontinuousExcitationControlDynamics(DynamicsFunctionBlock):
 	:RemoteInputSignal: Remote input signal used by this discontinuous excitation control system model. Default: None
 	:ExcitationSystemDynamics: Excitation system model with which this discontinuous excitation control model is associated. Default: None
 		'''
+
+	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'RemoteInputSignal': [cgmesProfile.DY.value, ],

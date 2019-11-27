@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.RotatingMachine import RotatingMachine
+from cimpy.cgmes_v2_4_15.RotatingMachine import RotatingMachine
 
 
 class SynchronousMachine(RotatingMachine):
@@ -29,6 +29,8 @@ class SynchronousMachine(RotatingMachine):
 	:operatingMode: Current mode of operation. Default: None
 	:referencePriority: Priority of unit for use as powerflow voltage phase angle reference bus selection. 0 = don t care (default) 1 = highest priority. 2 is less than 1 and so on. Default: 0
 		'''
+
+	cgmesProfile = RotatingMachine.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'SynchronousMachineDynamics': [cgmesProfile.DY.value, ],

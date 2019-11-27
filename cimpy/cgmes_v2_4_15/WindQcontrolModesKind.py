@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class WindQcontrolModesKind(Base):
@@ -6,6 +6,8 @@ class WindQcontrolModesKind(Base):
 	General wind turbine Q control modes .
 
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						 }

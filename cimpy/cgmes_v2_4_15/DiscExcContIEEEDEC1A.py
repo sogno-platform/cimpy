@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DiscontinuousExcitationControlDynamics import DiscontinuousExcitationControlDynamics
+from cimpy.cgmes_v2_4_15.DiscontinuousExcitationControlDynamics import DiscontinuousExcitationControlDynamics
 
 
 class DiscExcContIEEEDEC1A(DiscontinuousExcitationControlDynamics):
@@ -24,6 +24,8 @@ class DiscExcContIEEEDEC1A(DiscontinuousExcitationControlDynamics):
 	:vtn: Voltage limits ().  Typical Value = 1.12. Default: 0.0
 	:vanmax: Limiter for Van (). Default: 0.0
 		'''
+
+	cgmesProfile = DiscontinuousExcitationControlDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'vtlmt': [cgmesProfile.DY.value, ],

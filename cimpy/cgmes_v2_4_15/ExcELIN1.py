@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcELIN1(ExcitationSystemDynamics):
@@ -21,6 +21,8 @@ class ExcELIN1(ExcitationSystemDynamics):
 	:ts2: Stabilizer Filter Time Constant (Ts2).  Typical Value = 1. Default: 0.0
 	:smax: Stabilizer Limit Output (smax).  Typical Value = 0.1. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'tfi': [cgmesProfile.DY.value, ],

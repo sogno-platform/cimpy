@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ConductingEquipment import ConductingEquipment
+from cimpy.cgmes_v2_4_15.ConductingEquipment import ConductingEquipment
 
 
 class Conductor(ConductingEquipment):
@@ -7,6 +7,8 @@ class Conductor(ConductingEquipment):
 
 	:length: Segment length for calculating line section capabilities Default: 0.0
 		'''
+
+	cgmesProfile = ConductingEquipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'length': [cgmesProfile.EQ.value, ],

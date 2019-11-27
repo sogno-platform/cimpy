@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class WindContPType4bIEC(IdentifiedObject):
@@ -11,6 +11,8 @@ class WindContPType4bIEC(IdentifiedObject):
 	:tufilt: Voltage measurement filter time constant (). It is type dependent parameter. Default: 0.0
 	:WindTurbineType4bIEC: Wind turbine type 4B model with which this wind control P type 4B model is associated. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'dpmax': [cgmesProfile.DY.value, ],

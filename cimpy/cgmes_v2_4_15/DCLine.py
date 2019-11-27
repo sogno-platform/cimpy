@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DCEquipmentContainer import DCEquipmentContainer
+from cimpy.cgmes_v2_4_15.DCEquipmentContainer import DCEquipmentContainer
 
 
 class DCLine(DCEquipmentContainer):
@@ -7,6 +7,8 @@ class DCLine(DCEquipmentContainer):
 
 	:Region:  Default: None
 		'''
+
+	cgmesProfile = DCEquipmentContainer.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'Region': [cgmesProfile.EQ.value, ],

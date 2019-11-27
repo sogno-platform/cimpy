@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.SynchronousMachineDynamics import SynchronousMachineDynamics
+from cimpy.cgmes_v2_4_15.SynchronousMachineDynamics import SynchronousMachineDynamics
 
 
 class SynchronousMachineSimplified(SynchronousMachineDynamics):
@@ -6,6 +6,8 @@ class SynchronousMachineSimplified(SynchronousMachineDynamics):
 	The simplified model represents a synchronous generator as a constant internal voltage behind an impedance ( + ) as shown in the Simplified diagram.  Since internal voltage is held constant, there is no  input and any excitation system model will be ignored.  There is also no  output.  This model should not be used for representing a real generator except, perhaps, small generators whose response is insignificant.    The parameters used for the Simplified model include:
 
 		'''
+
+	cgmesProfile = SynchronousMachineDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						 }

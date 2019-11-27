@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ConductingEquipment import ConductingEquipment
+from cimpy.cgmes_v2_4_15.ConductingEquipment import ConductingEquipment
 
 
 class ACDCConverter(ConductingEquipment):
@@ -25,6 +25,8 @@ class ACDCConverter(ConductingEquipment):
 	:targetPpcc: Real power injection target in AC grid, at point of common coupling. Default: 0.0
 	:targetUdc: Target value for DC voltage magnitude. Default: 0.0
 		'''
+
+	cgmesProfile = ConductingEquipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, ],
 						'baseS': [cgmesProfile.EQ.value, ],

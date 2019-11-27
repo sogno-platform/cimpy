@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Equipment import Equipment
+from cimpy.cgmes_v2_4_15.Equipment import Equipment
 
 
 class DCConductingEquipment(Equipment):
@@ -7,6 +7,8 @@ class DCConductingEquipment(Equipment):
 
 	:DCTerminals:  Default: []
 		'''
+
+	cgmesProfile = Equipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'DCTerminals': [cgmesProfile.EQ.value, ],

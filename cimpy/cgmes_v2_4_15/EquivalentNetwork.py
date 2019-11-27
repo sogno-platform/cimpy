@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ConnectivityNodeContainer import ConnectivityNodeContainer
+from cimpy.cgmes_v2_4_15.ConnectivityNodeContainer import ConnectivityNodeContainer
 
 
 class EquivalentNetwork(ConnectivityNodeContainer):
@@ -7,6 +7,8 @@ class EquivalentNetwork(ConnectivityNodeContainer):
 
 	:EquivalentEquipments: The equivalent where the reduced model belongs. Default: []
 		'''
+
+	cgmesProfile = ConnectivityNodeContainer.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'EquivalentEquipments': [cgmesProfile.EQ.value, ],

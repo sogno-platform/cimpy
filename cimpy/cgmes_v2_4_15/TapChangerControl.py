@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.RegulatingControl import RegulatingControl
+from cimpy.cgmes_v2_4_15.RegulatingControl import RegulatingControl
 
 
 class TapChangerControl(RegulatingControl):
@@ -7,6 +7,8 @@ class TapChangerControl(RegulatingControl):
 
 	:TapChanger: The regulating control scheme in which this tap changer participates. Default: []
 		'''
+
+	cgmesProfile = RegulatingControl.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'TapChanger': [cgmesProfile.EQ.value, ],

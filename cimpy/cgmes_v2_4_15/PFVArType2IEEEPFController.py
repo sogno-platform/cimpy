@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PFVArControllerType2Dynamics import PFVArControllerType2Dynamics
+from cimpy.cgmes_v2_4_15.PFVArControllerType2Dynamics import PFVArControllerType2Dynamics
 
 
 class PFVArType2IEEEPFController(PFVArControllerType2Dynamics):
@@ -13,6 +13,8 @@ class PFVArType2IEEEPFController(PFVArControllerType2Dynamics):
 	:vs: Generator sensing voltage (). Default: 0.0
 	:exlon: Overexcitation or under excitation flag () true = 1 (not in the overexcitation or underexcitation state, integral action is active) false = 0 (in the overexcitation or underexcitation state, so integral action is disabled to allow the limiter to play its role). Default: False
 		'''
+
+	cgmesProfile = PFVArControllerType2Dynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'pfref': [cgmesProfile.DY.value, ],

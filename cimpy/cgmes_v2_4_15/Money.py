@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class Money(Base):
@@ -9,6 +9,8 @@ class Money(Base):
 	:multiplier:  Default: None
 	:value:  Default: 0.0
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'unit': [cgmesProfile.EQ.value, ],

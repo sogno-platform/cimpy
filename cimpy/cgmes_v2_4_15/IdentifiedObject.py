@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class IdentifiedObject(Base):
@@ -12,6 +12,8 @@ class IdentifiedObject(Base):
 	:energyIdentCodeEic: The attribute is used for an exchange of the EIC code (Energy identification Code). The length of the string is 16 characters as defined by the EIC code. References: Default: ''
 	:shortName: The attribute is used for an exchange of a human readable short name with length of the string 12 characters maximum. Default: ''
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DI.value, cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.GL.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, cgmesProfile.TP.value, ],
 						'DiagramObjects': [cgmesProfile.DI.value, ],

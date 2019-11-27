@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.LoadDynamics import LoadDynamics
+from cimpy.cgmes_v2_4_15.LoadDynamics import LoadDynamics
 
 
 class LoadAggregate(LoadDynamics):
@@ -8,6 +8,8 @@ class LoadAggregate(LoadDynamics):
 	:LoadStatic: Aggregate static load associated with this aggregate load. Default: None
 	:LoadMotor: Aggregate motor (dynamic) load associated with this aggregate load. Default: None
 		'''
+
+	cgmesProfile = LoadDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'LoadStatic': [cgmesProfile.DY.value, ],

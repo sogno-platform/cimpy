@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.WindGenTurbineType3IEC import WindGenTurbineType3IEC
+from cimpy.cgmes_v2_4_15.WindGenTurbineType3IEC import WindGenTurbineType3IEC
 
 
 class WindGenTurbineType3aIEC(WindGenTurbineType3IEC):
@@ -9,6 +9,8 @@ class WindGenTurbineType3aIEC(WindGenTurbineType3IEC):
 	:xs: Electromagnetic transient reactance (x). It is type dependent parameter. Default: 0.0
 	:tic: Current PI controller integration time constant (T). It is type dependent parameter. Default: 0.0
 		'''
+
+	cgmesProfile = WindGenTurbineType3IEC.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'kpc': [cgmesProfile.DY.value, ],

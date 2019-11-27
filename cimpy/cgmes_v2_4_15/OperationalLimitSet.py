@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class OperationalLimitSet(IdentifiedObject):
@@ -9,6 +9,8 @@ class OperationalLimitSet(IdentifiedObject):
 	:Equipment: The equipment to which the limit set applies. Default: None
 	:OperationalLimitValue: The limit set to which the limit values belong. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'Terminal': [cgmesProfile.EQ.value, ],

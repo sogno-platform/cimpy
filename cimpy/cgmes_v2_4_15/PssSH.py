@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class PssSH(PowerSystemStabilizerDynamics):
@@ -19,6 +19,8 @@ class PssSH(PowerSystemStabilizerDynamics):
 	:vsmax: Output maximum limit (Vsmax).  Typical Value = 0.1. Default: 0.0
 	:vsmin: Output minimum limit (Vsmin).  Typical Value = -0.1. Default: 0.0
 		'''
+
+	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'k': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcST1A(ExcitationSystemDynamics):
@@ -24,6 +24,8 @@ class ExcST1A(ExcitationSystemDynamics):
 	:klr: Exciter output current limiter gain (Klr).  Typical Value = 0. Default: 0.0
 	:xe: Excitation xfmr effective reactance (Xe).  Typical Value = 0.04. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'vimax': [cgmesProfile.DY.value, ],

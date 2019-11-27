@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovSteamIEEE1(TurbineGovernorDynamics):
@@ -27,6 +27,8 @@ class GovSteamIEEE1(TurbineGovernorDynamics):
 	:k7: Fraction of HP shaft power after fourth boiler pass (K7).  Typical Value = 0. Default: 0.0
 	:k8: Fraction of LP shaft power after fourth boiler pass (K8).  Typical Value = 0. Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

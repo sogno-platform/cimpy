@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class PssWECC(PowerSystemStabilizerDynamics):
@@ -24,6 +24,8 @@ class PssWECC(PowerSystemStabilizerDynamics):
 	:vcu: Maximum value for voltage compensator output (V). Default: 0.0
 	:vcl: Minimum value for voltage compensator output (V). Default: 0.0
 		'''
+
+	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'inputSignal1Type': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ShuntCompensator import ShuntCompensator
+from cimpy.cgmes_v2_4_15.ShuntCompensator import ShuntCompensator
 
 
 class LinearShuntCompensator(ShuntCompensator):
@@ -10,6 +10,8 @@ class LinearShuntCompensator(ShuntCompensator):
 	:b0PerSection: Zero sequence shunt (charging) susceptance per section Default: 0.0
 	:g0PerSection: Zero sequence shunt (charging) conductance per section Default: 0.0
 		'''
+
+	cgmesProfile = ShuntCompensator.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'bPerSection': [cgmesProfile.EQ.value, ],

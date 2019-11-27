@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovSteamFV2(TurbineGovernorDynamics):
@@ -19,6 +19,8 @@ class GovSteamFV2(TurbineGovernorDynamics):
 	:tc: Time after initial time for valve to become fully open (Tc). Default: 0.0
 	:ti: Initial time to begin fast valving (Ti). Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

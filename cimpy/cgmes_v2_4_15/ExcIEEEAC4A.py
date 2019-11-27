@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcIEEEAC4A(ExcitationSystemDynamics):
@@ -15,6 +15,8 @@ class ExcIEEEAC4A(ExcitationSystemDynamics):
 	:vrmin: Minimum voltage regulator output (V).  Typical Value = -4.53. Default: 0.0
 	:kc: Rectifier loading factor proportional to commutating reactance (K).  Typical Value = 0. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'vimax': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class WindAeroLinearIEC(IdentifiedObject):
@@ -12,6 +12,8 @@ class WindAeroLinearIEC(IdentifiedObject):
 	:thetazero: Pitch angle if the wind turbine is not derated (). It is case dependent parameter. Default: 0.0
 	:WindGenTurbineType3IEC: Wind generator type 3 model with which this wind aerodynamic model is associated. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'dpomega': [cgmesProfile.DY.value, ],

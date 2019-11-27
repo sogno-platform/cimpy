@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DCConductingEquipment import DCConductingEquipment
+from cimpy.cgmes_v2_4_15.DCConductingEquipment import DCConductingEquipment
 
 
 class DCLineSegment(DCConductingEquipment):
@@ -11,6 +11,8 @@ class DCLineSegment(DCConductingEquipment):
 	:length: Segment length for calculating line section capabilities. Default: 0.0
 	:PerLengthParameter: Set of per-length parameters for this line segment. Default: None
 		'''
+
+	cgmesProfile = DCConductingEquipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'capacitance': [cgmesProfile.EQ.value, ],

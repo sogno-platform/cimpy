@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class ActivePowerPerFrequency(Base):
@@ -11,6 +11,8 @@ class ActivePowerPerFrequency(Base):
 	:unit:  Default: None
 	:value:  Default: 0.0
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'denominatorMultiplier': [cgmesProfile.EQ.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.MechanicalLoadDynamics import MechanicalLoadDynamics
+from cimpy.cgmes_v2_4_15.MechanicalLoadDynamics import MechanicalLoadDynamics
 
 
 class MechLoad1(MechanicalLoadDynamics):
@@ -10,6 +10,8 @@ class MechLoad1(MechanicalLoadDynamics):
 	:d: Speed to the exponent coefficient (d). Default: 0.0
 	:e: Exponent (e). Default: 0.0
 		'''
+
+	cgmesProfile = MechanicalLoadDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'a': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class PetersenCoilModeKind(Base):
@@ -6,6 +6,8 @@ class PetersenCoilModeKind(Base):
 	The mode of operation for a Petersen coil.
 
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }

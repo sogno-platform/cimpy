@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovSteamFV4(TurbineGovernorDynamics):
@@ -57,6 +57,8 @@ class GovSteamFV4(TurbineGovernorDynamics):
 	:tv: Boiler time constant (Tv).  Typical Value = 60. Default: 0.0
 	:ksh: Pressure loss due to flow friction in the boiler tubes (Ksh).  Typical Value = 0.08. Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'kf1': [cgmesProfile.DY.value, ],

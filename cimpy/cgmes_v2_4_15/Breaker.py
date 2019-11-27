@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ProtectedSwitch import ProtectedSwitch
+from cimpy.cgmes_v2_4_15.ProtectedSwitch import ProtectedSwitch
 
 
 class Breaker(ProtectedSwitch):
@@ -6,6 +6,8 @@ class Breaker(ProtectedSwitch):
 	A mechanical switching device capable of making, carrying, and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking currents under specified abnormal circuit conditions e.g.  those of short circuit.
 
 		'''
+
+	cgmesProfile = ProtectedSwitch.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						 }

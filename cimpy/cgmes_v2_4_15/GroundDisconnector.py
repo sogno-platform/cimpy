@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Switch import Switch
+from cimpy.cgmes_v2_4_15.Switch import Switch
 
 
 class GroundDisconnector(Switch):
@@ -6,6 +6,8 @@ class GroundDisconnector(Switch):
 	A manually operated or motor operated mechanical switching device used for isolating a circuit or equipment from ground.
 
 		'''
+
+	cgmesProfile = Switch.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						 }

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class OperationalLimitType(IdentifiedObject):
@@ -10,6 +10,8 @@ class OperationalLimitType(IdentifiedObject):
 	:limitType: Types of limits defined in the ENTSO-E Operational Handbook Policy 3. Default: None
 	:direction: The direction of the limit. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'OperationalLimit': [cgmesProfile.EQ.value, ],

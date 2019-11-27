@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovCT2(TurbineGovernorDynamics):
@@ -62,6 +62,8 @@ class GovCT2(TurbineGovernorDynamics):
 	:flim10: Frequency threshold 10 (Flim10).  Unit = Hz.  Typical Value = 0. Default: 0.0
 	:plim10: Power limit 10 (Plim10).  Typical Value = 0. Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

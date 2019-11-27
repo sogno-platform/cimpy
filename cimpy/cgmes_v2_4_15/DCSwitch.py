@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DCConductingEquipment import DCConductingEquipment
+from cimpy.cgmes_v2_4_15.DCConductingEquipment import DCConductingEquipment
 
 
 class DCSwitch(DCConductingEquipment):
@@ -6,6 +6,8 @@ class DCSwitch(DCConductingEquipment):
 	A switch within the DC system.
 
 		'''
+
+	cgmesProfile = DCConductingEquipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }

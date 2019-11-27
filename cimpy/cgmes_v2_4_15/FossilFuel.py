@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class FossilFuel(IdentifiedObject):
@@ -8,6 +8,8 @@ class FossilFuel(IdentifiedObject):
 	:fossilFuelType: The type of fossil fuel, such as coal, oil, or gas. Default: None
 	:ThermalGeneratingUnit: A thermal generating unit may have one or more fossil fuels. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'fossilFuelType': [cgmesProfile.EQ.value, ],

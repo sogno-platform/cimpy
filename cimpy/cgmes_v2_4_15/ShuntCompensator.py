@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.RegulatingCondEq import RegulatingCondEq
+from cimpy.cgmes_v2_4_15.RegulatingCondEq import RegulatingCondEq
 
 
 class ShuntCompensator(RegulatingCondEq):
@@ -16,6 +16,8 @@ class ShuntCompensator(RegulatingCondEq):
 	:SvShuntCompensatorSections: The state for the number of shunt compensator sections in service. Default: None
 	:sections: Shunt compensator sections in use. Starting value for steady state solution. Non integer values are allowed to support continuous variables. The reasons for continuous value are to support study cases where no discrete shunt compensators has yet been designed, a solutions where a narrow voltage band force the sections to oscillate or accommodate for a continuous solution as input. Default: 0.0
 		'''
+
+	cgmesProfile = RegulatingCondEq.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, ],
 						'aVRDelay': [cgmesProfile.EQ.value, ],

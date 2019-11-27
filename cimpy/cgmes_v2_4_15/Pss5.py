@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class Pss5(PowerSystemStabilizerDynamics):
@@ -23,6 +23,8 @@ class Pss5(PowerSystemStabilizerDynamics):
 	:deadband: Stabilizer output dead band (DeadBand).  Typical Value = 0. Default: 0.0
 	:vadat:  Default: False
 		'''
+
+	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'kpe': [cgmesProfile.DY.value, ],

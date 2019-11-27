@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemResource import PowerSystemResource
+from cimpy.cgmes_v2_4_15.PowerSystemResource import PowerSystemResource
 
 
 class RegulatingControl(PowerSystemResource):
@@ -14,6 +14,8 @@ class RegulatingControl(PowerSystemResource):
 	:targetValue: The target value specified for case input.   This value can be used for the target value without the use of schedules. The value has the units appropriate to the mode attribute. Default: 0.0
 	:targetValueUnitMultiplier: Specify the multiplier for used for the targetValue. Default: None
 		'''
+
+	cgmesProfile = PowerSystemResource.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'Terminal': [cgmesProfile.EQ.value, ],

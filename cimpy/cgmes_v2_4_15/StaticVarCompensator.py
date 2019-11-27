@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.RegulatingCondEq import RegulatingCondEq
+from cimpy.cgmes_v2_4_15.RegulatingCondEq import RegulatingCondEq
 
 
 class StaticVarCompensator(RegulatingCondEq):
@@ -12,6 +12,8 @@ class StaticVarCompensator(RegulatingCondEq):
 	:voltageSetPoint: The reactive power output of the SVC is proportional to the difference between the voltage at the regulated bus and the voltage setpoint.  When the regulated bus voltage is equal to the voltage setpoint, the reactive power output is zero. Default: 0.0
 	:q: Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for a steady state solution. Default: 0.0
 		'''
+
+	cgmesProfile = RegulatingCondEq.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'capacitiveRating': [cgmesProfile.EQ.value, ],

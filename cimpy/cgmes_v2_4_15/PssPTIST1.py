@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class PssPTIST1(PowerSystemStabilizerDynamics):
@@ -17,6 +17,8 @@ class PssPTIST1(PowerSystemStabilizerDynamics):
 	:dtc: Time step related to activation of controls (Dtc).  Typical Value = 0.025. Default: 0.0
 	:dtp: Time step active power calculation (Dtp).  Typical Value = 0.0125. Default: 0.0
 		'''
+
+	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'm': [cgmesProfile.DY.value, ],

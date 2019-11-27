@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovGAST3(TurbineGovernorDynamics):
@@ -27,6 +27,8 @@ class GovGAST3(TurbineGovernorDynamics):
 	:mxef: Fuel flow maximum positive error value (MX).  Typical Value = 0.05. Default: 0.0
 	:mnef: Fuel flow maximum negative error value (MN).  Typical Value = -0.05. Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'bp': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class AsynchronousMachineKind(Base):
@@ -6,6 +6,8 @@ class AsynchronousMachineKind(Base):
 	Kind of Asynchronous Machine.
 
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.SSH.value, ],
 						 }

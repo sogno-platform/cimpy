@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class BaseVoltage(IdentifiedObject):
@@ -11,6 +11,8 @@ class BaseVoltage(IdentifiedObject):
 	:TransformerEnds: Transformer ends at the base voltage.  This is essential for PU calculation. Default: []
 	:TopologicalNode: The topological nodes at the base voltage. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.TP.value, ],
 						'nominalVoltage': [cgmesProfile.EQ.value, ],

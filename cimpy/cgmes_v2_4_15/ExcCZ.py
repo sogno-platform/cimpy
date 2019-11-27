@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcCZ(ExcitationSystemDynamics):
@@ -16,6 +16,8 @@ class ExcCZ(ExcitationSystemDynamics):
 	:efdmax: Exciter output maximum limit (Efdmax). Default: 0.0
 	:efdmin: Exciter output minimum limit (Efdmin). Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'kp': [cgmesProfile.DY.value, ],

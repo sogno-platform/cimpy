@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ACDCTerminal import ACDCTerminal
+from cimpy.cgmes_v2_4_15.ACDCTerminal import ACDCTerminal
 
 
 class DCBaseTerminal(ACDCTerminal):
@@ -8,6 +8,8 @@ class DCBaseTerminal(ACDCTerminal):
 	:DCNode:  Default: None
 	:DCTopologicalNode: See association end TopologicalNode.Terminal. Default: None
 		'''
+
+	cgmesProfile = ACDCTerminal.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.TP.value, ],
 						'DCNode': [cgmesProfile.EQ.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class MonthDay(Base):
@@ -6,6 +6,8 @@ class MonthDay(Base):
 	MonthDay format as "--mm-dd", which conforms with XSD data type gMonthDay.
 
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }

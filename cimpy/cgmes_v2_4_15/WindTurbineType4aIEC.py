@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.WindGenType4IEC import WindGenType4IEC
+from cimpy.cgmes_v2_4_15.WindGenType4IEC import WindGenType4IEC
 
 
 class WindTurbineType4aIEC(WindGenType4IEC):
@@ -7,6 +7,8 @@ class WindTurbineType4aIEC(WindGenType4IEC):
 
 	:WindContPType4aIEC: Wind control P type 4A model associated with this wind turbine type 4A model. Default: None
 		'''
+
+	cgmesProfile = WindGenType4IEC.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'WindContPType4aIEC': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.WindTurbineType3or4Dynamics import WindTurbineType3or4Dynamics
+from cimpy.cgmes_v2_4_15.WindTurbineType3or4Dynamics import WindTurbineType3or4Dynamics
 
 
 class WindTurbineType3or4IEC(WindTurbineType3or4Dynamics):
@@ -9,6 +9,8 @@ class WindTurbineType3or4IEC(WindTurbineType3or4Dynamics):
 	:WIndContQIEC: Wind control Q model associated with this wind turbine type 3 or 4 model. Default: None
 	:WindProtectionIEC: Wind turbune protection model associated with this wind generator type 3 or 4 model. Default: None
 		'''
+
+	cgmesProfile = WindTurbineType3or4Dynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'WindContCurrLimIEC': [cgmesProfile.DY.value, ],

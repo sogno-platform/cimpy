@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcPIC(ExcitationSystemDynamics):
@@ -29,6 +29,8 @@ class ExcPIC(ExcitationSystemDynamics):
 	:ki: Current source gain (Ki).  Typical Value = 0. Default: 0.0
 	:kc: Exciter regulation factor (Kc).  Typical Value = 0.08. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'ka': [cgmesProfile.DY.value, ],

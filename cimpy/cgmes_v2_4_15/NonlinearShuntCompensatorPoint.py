@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class NonlinearShuntCompensatorPoint(Base):
@@ -12,6 +12,8 @@ class NonlinearShuntCompensatorPoint(Base):
 	:b0: Zero sequence shunt (charging) susceptance per section Default: 0.0
 	:g0: Zero sequence shunt (charging) conductance per section Default: 0.0
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'NonlinearShuntCompensator': [cgmesProfile.EQ.value, ],

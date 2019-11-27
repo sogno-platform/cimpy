@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PhaseTapChanger import PhaseTapChanger
+from cimpy.cgmes_v2_4_15.PhaseTapChanger import PhaseTapChanger
 
 
 class PhaseTapChangerTabular(PhaseTapChanger):
@@ -7,6 +7,8 @@ class PhaseTapChangerTabular(PhaseTapChanger):
 
 	:PhaseTapChangerTable: The phase tap changer table for this phase tap changer. Default: None
 		'''
+
+	cgmesProfile = PhaseTapChanger.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'PhaseTapChangerTable': [cgmesProfile.EQ.value, ],

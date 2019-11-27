@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovHydro4(TurbineGovernorDynamics):
@@ -44,6 +44,8 @@ class GovHydro4(TurbineGovernorDynamics):
 	:bmax: Maximum blade adjustment factor (Bmax). Typical Value = 0.  Typical Value Francis = 0, Kaplan = 1.1276. Default: 0.0
 	:tblade: Blade servo time constant (Tblade).  Typical Value = 100. Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

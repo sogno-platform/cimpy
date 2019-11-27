@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DCEquipmentContainer import DCEquipmentContainer
+from cimpy.cgmes_v2_4_15.DCEquipmentContainer import DCEquipmentContainer
 
 
 class DCConverterUnit(DCEquipmentContainer):
@@ -8,6 +8,8 @@ class DCConverterUnit(DCEquipmentContainer):
 	:operationMode:  Default: None
 	:Substation:  Default: None
 		'''
+
+	cgmesProfile = DCEquipmentContainer.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'operationMode': [cgmesProfile.EQ.value, ],

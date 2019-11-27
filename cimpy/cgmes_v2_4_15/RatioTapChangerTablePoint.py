@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TapChangerTablePoint import TapChangerTablePoint
+from cimpy.cgmes_v2_4_15.TapChangerTablePoint import TapChangerTablePoint
 
 
 class RatioTapChangerTablePoint(TapChangerTablePoint):
@@ -7,6 +7,8 @@ class RatioTapChangerTablePoint(TapChangerTablePoint):
 
 	:RatioTapChangerTable: Points of this table. Default: None
 		'''
+
+	cgmesProfile = TapChangerTablePoint.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'RatioTapChangerTable': [cgmesProfile.EQ.value, ],

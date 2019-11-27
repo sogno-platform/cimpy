@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.EarthFaultCompensator import EarthFaultCompensator
+from cimpy.cgmes_v2_4_15.EarthFaultCompensator import EarthFaultCompensator
 
 
 class GroundingImpedance(EarthFaultCompensator):
@@ -7,6 +7,8 @@ class GroundingImpedance(EarthFaultCompensator):
 
 	:x: Reactance of device. Default: 0.0
 		'''
+
+	cgmesProfile = EarthFaultCompensator.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'x': [cgmesProfile.EQ.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcST6B(ExcitationSystemDynamics):
@@ -29,6 +29,8 @@ class ExcST6B(ExcitationSystemDynamics):
 	:vrmin: Minimum voltage regulator output (Vrmin).  Typical Value = -3.85. Default: 0.0
 	:xc: Excitation source reactance (Xc).  Typical Value = 0.05. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'ilr': [cgmesProfile.DY.value, ],

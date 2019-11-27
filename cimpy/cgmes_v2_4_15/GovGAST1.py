@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovGAST1(TurbineGovernorDynamics):
@@ -40,6 +40,8 @@ class GovGAST1(TurbineGovernorDynamics):
 	:t4: Governor lead time constant (T4).  Typical Value = 0. Default: 0.0
 	:t5: Governor lag time constant (T5).  Typical Value = 0. Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class GeographicalRegion(IdentifiedObject):
@@ -7,6 +7,8 @@ class GeographicalRegion(IdentifiedObject):
 
 	:Regions: All sub-geograhpical regions within this geographical region. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'Regions': [cgmesProfile.EQ.value, ],

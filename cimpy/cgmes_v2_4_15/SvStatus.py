@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class SvStatus(Base):
@@ -8,6 +8,8 @@ class SvStatus(Base):
 	:ConductingEquipment: The conducting equipment associated with the status state variable. Default: None
 	:inService: The in service status as a result of topology processing. Default: False
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.SV.value, ],
 						'ConductingEquipment': [cgmesProfile.SV.value, ],

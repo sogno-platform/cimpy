@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class Curve(IdentifiedObject):
@@ -11,6 +11,8 @@ class Curve(IdentifiedObject):
 	:y2Unit: The Y2-axis units of measure. Default: None
 	:CurveDatas: The curve of  this curve data point. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'curveStyle': [cgmesProfile.EQ.value, ],

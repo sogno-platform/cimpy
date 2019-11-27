@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.AsynchronousMachineDynamics import AsynchronousMachineDynamics
+from cimpy.cgmes_v2_4_15.AsynchronousMachineDynamics import AsynchronousMachineDynamics
 
 
 class AsynchronousMachineEquivalentCircuit(AsynchronousMachineDynamics):
@@ -11,6 +11,8 @@ class AsynchronousMachineEquivalentCircuit(AsynchronousMachineDynamics):
 	:rr2: Damper 2 winding resistance. Default: 0.0
 	:xlr2: Damper 2 winding leakage reactance. Default: 0.0
 		'''
+
+	cgmesProfile = AsynchronousMachineDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'xm': [cgmesProfile.DY.value, ],

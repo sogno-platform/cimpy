@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class ExcIEEEST1AUELselectorKind(Base):
@@ -6,6 +6,8 @@ class ExcIEEEST1AUELselectorKind(Base):
 	Type of connection for the UEL input used in ExcIEEEST1A.
 
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						 }

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemResource import PowerSystemResource
+from cimpy.cgmes_v2_4_15.PowerSystemResource import PowerSystemResource
 
 
 class TapChanger(PowerSystemResource):
@@ -16,6 +16,8 @@ class TapChanger(PowerSystemResource):
 	:controlEnabled: Specifies the regulation status of the equipment.  True is regulating, false is not regulating. Default: False
 	:step: Tap changer position. Starting step for a steady state solution. Non integer values are allowed to support continuous tap variables. The reasons for continuous value are to support study cases where no discrete tap changers has yet been designed, a solutions where a narrow voltage band force the tap step to oscillate or accommodate for a continuous solution as input. The attribute shall be equal or greater than lowStep and equal or less than highStep. Default: 0.0
 		'''
+
+	cgmesProfile = PowerSystemResource.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, ],
 						'highStep': [cgmesProfile.EQ.value, ],

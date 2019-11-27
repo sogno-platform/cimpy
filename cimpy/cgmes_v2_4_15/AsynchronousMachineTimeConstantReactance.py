@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.AsynchronousMachineDynamics import AsynchronousMachineDynamics
+from cimpy.cgmes_v2_4_15.AsynchronousMachineDynamics import AsynchronousMachineDynamics
 
 
 class AsynchronousMachineTimeConstantReactance(AsynchronousMachineDynamics):
@@ -11,6 +11,8 @@ class AsynchronousMachineTimeConstantReactance(AsynchronousMachineDynamics):
 	:tpo: Transient rotor time constant (T'o) (> T''o).  Typical Value = 5. Default: 0.0
 	:tppo: Subtransient rotor time constant (T''o) (> 0).  Typical Value = 0.03. Default: 0.0
 		'''
+
+	cgmesProfile = AsynchronousMachineDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'xs': [cgmesProfile.DY.value, ],

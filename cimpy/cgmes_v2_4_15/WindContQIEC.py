@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class WindContQIEC(IdentifiedObject):
@@ -33,6 +33,8 @@ class WindContQIEC(IdentifiedObject):
 	:xdroop: Inductive component of voltage drop impedance (). It is project dependent parameter. Default: 0.0
 	:WindTurbineType3or4IEC: Wind turbine type 3 or 4 model with which this reactive control mode is associated. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'iqh1': [cgmesProfile.DY.value, ],

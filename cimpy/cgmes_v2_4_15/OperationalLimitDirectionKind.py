@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class OperationalLimitDirectionKind(Base):
@@ -6,6 +6,8 @@ class OperationalLimitDirectionKind(Base):
 	The direction attribute describes the side of  a limit that is a violation.
 
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }

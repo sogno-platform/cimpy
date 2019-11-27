@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemResource import PowerSystemResource
+from cimpy.cgmes_v2_4_15.PowerSystemResource import PowerSystemResource
 
 
 class HydroPowerPlant(PowerSystemResource):
@@ -9,6 +9,8 @@ class HydroPowerPlant(PowerSystemResource):
 	:hydroPlantStorageType: The type of hydro power plant water storage. Default: None
 	:HydroPumps: The hydro pump may be a member of a pumped storage plant or a pump for distributing water. Default: []
 		'''
+
+	cgmesProfile = PowerSystemResource.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'HydroGeneratingUnits': [cgmesProfile.EQ.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.OperationalLimit import OperationalLimit
+from cimpy.cgmes_v2_4_15.OperationalLimit import OperationalLimit
 
 
 class VoltageLimit(OperationalLimit):
@@ -7,6 +7,8 @@ class VoltageLimit(OperationalLimit):
 
 	:value: Limit on voltage. High or low limit nature of the limit depends upon the properties of the operational limit type. Default: 0.0
 		'''
+
+	cgmesProfile = OperationalLimit.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'value': [cgmesProfile.EQ.value, ],

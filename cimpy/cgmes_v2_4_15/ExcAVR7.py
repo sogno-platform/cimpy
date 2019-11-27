@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcAVR7(ExcitationSystemDynamics):
@@ -27,6 +27,8 @@ class ExcAVR7(ExcitationSystemDynamics):
 	:vmax5: Lead-lag max. limit (Vmax5).  Typical Value = 5. Default: 0.0
 	:vmin5: Lead-lag min. limit (Vmin5).  Typical Value = -2. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'k1': [cgmesProfile.DY.value, ],

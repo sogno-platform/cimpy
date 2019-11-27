@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.EquivalentEquipment import EquivalentEquipment
+from cimpy.cgmes_v2_4_15.EquivalentEquipment import EquivalentEquipment
 
 
 class EquivalentInjection(EquivalentEquipment):
@@ -22,6 +22,8 @@ class EquivalentInjection(EquivalentEquipment):
 	:p: Equivalent active power injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for steady state solutions. Default: 0.0
 	:q: Equivalent reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for steady state solutions. Default: 0.0
 		'''
+
+	cgmesProfile = EquivalentEquipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'ReactiveCapabilityCurve': [cgmesProfile.EQ.value, ],

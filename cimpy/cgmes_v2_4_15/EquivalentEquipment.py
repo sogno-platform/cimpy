@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ConductingEquipment import ConductingEquipment
+from cimpy.cgmes_v2_4_15.ConductingEquipment import ConductingEquipment
 
 
 class EquivalentEquipment(ConductingEquipment):
@@ -7,6 +7,8 @@ class EquivalentEquipment(ConductingEquipment):
 
 	:EquivalentNetwork: The associated reduced equivalents. Default: None
 		'''
+
+	cgmesProfile = ConductingEquipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'EquivalentNetwork': [cgmesProfile.EQ.value, ],

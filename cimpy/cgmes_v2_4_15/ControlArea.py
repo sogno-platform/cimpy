@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemResource import PowerSystemResource
+from cimpy.cgmes_v2_4_15.PowerSystemResource import PowerSystemResource
 
 
 class ControlArea(PowerSystemResource):
@@ -11,6 +11,8 @@ class ControlArea(PowerSystemResource):
 	:netInterchange: The specified positive net interchange into the control area, i.e. positive sign means flow in to the area. Default: 0.0
 	:pTolerance: Active power net interchange tolerance Default: 0.0
 		'''
+
+	cgmesProfile = PowerSystemResource.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'type': [cgmesProfile.EQ.value, ],

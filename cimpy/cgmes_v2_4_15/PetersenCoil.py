@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.EarthFaultCompensator import EarthFaultCompensator
+from cimpy.cgmes_v2_4_15.EarthFaultCompensator import EarthFaultCompensator
 
 
 class PetersenCoil(EarthFaultCompensator):
@@ -13,6 +13,8 @@ class PetersenCoil(EarthFaultCompensator):
 	:xGroundMin: The minimum reactance. Default: 0.0
 	:xGroundNominal: The nominal reactance.  This is the operating point (normally over compensation) that is defined based on the resonance point in the healthy network condition.  The impedance is calculated based on nominal voltage divided by position current. Default: 0.0
 		'''
+
+	cgmesProfile = EarthFaultCompensator.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'mode': [cgmesProfile.EQ.value, ],

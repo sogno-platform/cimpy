@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class PositionPoint(Base):
@@ -11,6 +11,8 @@ class PositionPoint(Base):
 	:yPosition: Y axis position. Default: ''
 	:zPosition: (if applicable) Z axis position. Default: ''
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.GL.value, ],
 						'Location': [cgmesProfile.GL.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.EquivalentEquipment import EquivalentEquipment
+from cimpy.cgmes_v2_4_15.EquivalentEquipment import EquivalentEquipment
 
 
 class EquivalentShunt(EquivalentEquipment):
@@ -8,6 +8,8 @@ class EquivalentShunt(EquivalentEquipment):
 	:b: Positive sequence shunt susceptance. Default: 0.0
 	:g: Positive sequence shunt conductance. Default: 0.0
 		'''
+
+	cgmesProfile = EquivalentEquipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'b': [cgmesProfile.EQ.value, ],

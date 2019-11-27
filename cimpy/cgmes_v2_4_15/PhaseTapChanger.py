@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TapChanger import TapChanger
+from cimpy.cgmes_v2_4_15.TapChanger import TapChanger
 
 
 class PhaseTapChanger(TapChanger):
@@ -7,6 +7,8 @@ class PhaseTapChanger(TapChanger):
 
 	:TransformerEnd: Phase tap changer associated with this transformer end. Default: None
 		'''
+
+	cgmesProfile = TapChanger.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'TransformerEnd': [cgmesProfile.EQ.value, ],

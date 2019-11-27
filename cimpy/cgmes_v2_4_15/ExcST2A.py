@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcST2A(ExcitationSystemDynamics):
@@ -21,6 +21,8 @@ class ExcST2A(ExcitationSystemDynamics):
 	:tb: Voltage regulator time constant (Tb).  Typical Value = 0. Default: 0.0
 	:tc: Voltage regulator time constant (Tc).  Typical Value = 0. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'ka': [cgmesProfile.DY.value, ],

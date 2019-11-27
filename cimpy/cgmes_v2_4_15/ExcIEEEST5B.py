@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcIEEEST5B(ExcitationSystemDynamics):
@@ -23,6 +23,8 @@ class ExcIEEEST5B(ExcitationSystemDynamics):
 	:tuc2: UEL lead time constant (T).  Typical Value = 0.1. Default: 0.0
 	:tub2: UEL lag time constant (T).  Typical Value = 0.05. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'kr': [cgmesProfile.DY.value, ],

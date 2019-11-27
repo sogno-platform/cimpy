@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.WindTurbineType3or4IEC import WindTurbineType3or4IEC
+from cimpy.cgmes_v2_4_15.WindTurbineType3or4IEC import WindTurbineType3or4IEC
 
 
 class WindGenType4IEC(WindTurbineType3or4IEC):
@@ -10,6 +10,8 @@ class WindGenType4IEC(WindTurbineType3or4IEC):
 	:diqmax: Maximum reactive current ramp rate (di). It is project dependent parameter. Default: 0.0
 	:tg: Time constant (T). It is type dependent parameter. Default: 0.0
 		'''
+
+	cgmesProfile = WindTurbineType3or4IEC.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'dipmax': [cgmesProfile.DY.value, ],

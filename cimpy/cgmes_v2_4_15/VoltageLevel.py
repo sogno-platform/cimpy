@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.EquipmentContainer import EquipmentContainer
+from cimpy.cgmes_v2_4_15.EquipmentContainer import EquipmentContainer
 
 
 class VoltageLevel(EquipmentContainer):
@@ -10,6 +10,8 @@ class VoltageLevel(EquipmentContainer):
 	:highVoltageLimit: The bus bar's high voltage limit Default: 0.0
 	:lowVoltageLimit: The bus bar's low voltage limit Default: 0.0
 		'''
+
+	cgmesProfile = EquipmentContainer.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'BaseVoltage': [cgmesProfile.EQ.value, ],

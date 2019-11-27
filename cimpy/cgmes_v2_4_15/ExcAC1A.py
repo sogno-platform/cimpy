@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcAC1A(ExcitationSystemDynamics):
@@ -28,6 +28,8 @@ class ExcAC1A(ExcitationSystemDynamics):
 	:vrmin: Minimum voltage regulator outputs (Rrmin).  Typical Value = -5.43. Default: 0.0
 	:hvlvgates: Indicates if both HV gate and LV gate are active (HVLVgates). true = gates are used false = gates are not used. Typical Value = true. Default: False
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'tb': [cgmesProfile.DY.value, ],

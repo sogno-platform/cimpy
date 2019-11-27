@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Equipment import Equipment
+from cimpy.cgmes_v2_4_15.Equipment import Equipment
 
 
 class GeneratingUnit(Equipment):
@@ -24,6 +24,8 @@ class GeneratingUnit(Equipment):
 	:RotatingMachine: A synchronous machine may operate as a generator and as such becomes a member of a generating unit. Default: []
 	:normalPF: Generating unit economic participation factor. Default: 0.0
 		'''
+
+	cgmesProfile = Equipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'genControlSource': [cgmesProfile.EQ.value, ],

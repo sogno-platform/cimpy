@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ConductingEquipment import ConductingEquipment
+from cimpy.cgmes_v2_4_15.ConductingEquipment import ConductingEquipment
 
 
 class RegulatingCondEq(ConductingEquipment):
@@ -8,6 +8,8 @@ class RegulatingCondEq(ConductingEquipment):
 	:RegulatingControl: The regulating control scheme in which this equipment participates. Default: None
 	:controlEnabled: Specifies the regulation status of the equipment.  True is regulating, false is not regulating. Default: False
 		'''
+
+	cgmesProfile = ConductingEquipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'RegulatingControl': [cgmesProfile.EQ.value, ],

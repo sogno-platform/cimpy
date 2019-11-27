@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovHydroWPID(TurbineGovernorDynamics):
@@ -28,6 +28,8 @@ class GovHydroWPID(TurbineGovernorDynamics):
 	:pgv2: Output at Gv2 PU of MWbase (Pgv2). Default: 0.0
 	:pgv3: Output at Gv3 PU of MWbase (Pgv3). Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

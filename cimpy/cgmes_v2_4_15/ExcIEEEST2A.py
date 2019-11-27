@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcIEEEST2A(ExcitationSystemDynamics):
@@ -19,6 +19,8 @@ class ExcIEEEST2A(ExcitationSystemDynamics):
 	:efdmax: Maximum field voltage (E).  Typical Value = 99. Default: 0.0
 	:uelin: UEL input (UELin). true = HV gate false = add to error signal. Typical Value = true. Default: False
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'ka': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.LoadDynamics import LoadDynamics
+from cimpy.cgmes_v2_4_15.LoadDynamics import LoadDynamics
 
 
 class LoadGenericNonLinear(LoadDynamics):
@@ -15,6 +15,8 @@ class LoadGenericNonLinear(LoadDynamics):
 	:bs: Steady state voltage index for reactive power (BS). Default: 0.0
 	:bt: Transient voltage index for reactive power (BT). Default: 0.0
 		'''
+
+	cgmesProfile = LoadDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'genericNonLinearLoadModelType': [cgmesProfile.DY.value, ],

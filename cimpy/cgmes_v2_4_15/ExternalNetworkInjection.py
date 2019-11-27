@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.RegulatingCondEq import RegulatingCondEq
+from cimpy.cgmes_v2_4_15.RegulatingCondEq import RegulatingCondEq
 
 
 class ExternalNetworkInjection(RegulatingCondEq):
@@ -24,6 +24,8 @@ class ExternalNetworkInjection(RegulatingCondEq):
 	:p: Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for steady state solutions. Default: 0.0
 	:q: Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for steady state solutions. Default: 0.0
 		'''
+
+	cgmesProfile = RegulatingCondEq.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'governorSCD': [cgmesProfile.EQ.value, ],

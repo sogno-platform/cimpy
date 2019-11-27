@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.SynchronousMachineDynamics import SynchronousMachineDynamics
+from cimpy.cgmes_v2_4_15.SynchronousMachineDynamics import SynchronousMachineDynamics
 
 
 class SynchronousMachineDetailed(SynchronousMachineDynamics):
@@ -11,6 +11,8 @@ class SynchronousMachineDetailed(SynchronousMachineDynamics):
 	:ifdBaseType: Excitation base system mode.  Typical Value = ifag. Default: None
 	:ifdBaseValue: Ifd base current if .ifdBaseType = other. Not needed if .ifdBaseType not = other.   Unit = A.  Typical Value = 0. Default: 0.0
 		'''
+
+	cgmesProfile = SynchronousMachineDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'saturationFactorQAxis': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovHydroPID2(TurbineGovernorDynamics):
@@ -28,6 +28,8 @@ class GovHydroPID2(TurbineGovernorDynamics):
 	:atw: Factor multiplying Tw (Atw).  Typical Value = 0. Default: 0.0
 	:feedbackSignal: Feedback signal type flag (Flag). true = use gate position feedback signal false = use Pe. Default: False
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class PssSK(PowerSystemStabilizerDynamics):
@@ -17,6 +17,8 @@ class PssSK(PowerSystemStabilizerDynamics):
 	:vsmax: Stabilizer output max limit (Vsmax).  Typical Value = 0.4. Default: 0.0
 	:vsmin: Stabilizer output min limit (Vsmin).  Typical Value = -0.4. Default: 0.0
 		'''
+
+	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'k1': [cgmesProfile.DY.value, ],

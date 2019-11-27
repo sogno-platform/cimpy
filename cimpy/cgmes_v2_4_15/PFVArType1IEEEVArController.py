@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PFVArControllerType1Dynamics import PFVArControllerType1Dynamics
+from cimpy.cgmes_v2_4_15.PFVArControllerType1Dynamics import PFVArControllerType1Dynamics
 
 
 class PFVArType1IEEEVArController(PFVArControllerType1Dynamics):
@@ -12,6 +12,8 @@ class PFVArType1IEEEVArController(PFVArControllerType1Dynamics):
 	:vvtmax: Maximum machine terminal voltage needed for pf/var controller to be enabled (). Default: 0.0
 	:vvtmin: Minimum machine terminal voltage needed to enable pf/var controller (). Default: 0.0
 		'''
+
+	cgmesProfile = PFVArControllerType1Dynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'tvarc': [cgmesProfile.DY.value, ],

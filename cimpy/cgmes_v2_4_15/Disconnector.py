@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Switch import Switch
+from cimpy.cgmes_v2_4_15.Switch import Switch
 
 
 class Disconnector(Switch):
@@ -6,6 +6,8 @@ class Disconnector(Switch):
 	A manually operated or motor operated mechanical switching device used for changing the connections in a circuit, or for isolating a circuit or equipment from a source of power. It is required to open or close circuits when negligible current is broken or made.
 
 		'''
+
+	cgmesProfile = Switch.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						 }

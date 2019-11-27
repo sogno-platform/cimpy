@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Equipment import Equipment
+from cimpy.cgmes_v2_4_15.Equipment import Equipment
 
 
 class HydroPump(Equipment):
@@ -8,6 +8,8 @@ class HydroPump(Equipment):
 	:HydroPowerPlant: The hydro pump may be a member of a pumped storage plant or a pump for distributing water. Default: None
 	:RotatingMachine: The synchronous machine drives the turbine which moves the water from a low elevation to a higher elevation. The direction of machine rotation for pumping may or may not be the same as for generating. Default: None
 		'''
+
+	cgmesProfile = Equipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'HydroPowerPlant': [cgmesProfile.EQ.value, ],

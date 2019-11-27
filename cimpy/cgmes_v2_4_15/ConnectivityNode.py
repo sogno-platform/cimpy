@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class ConnectivityNode(Base):
@@ -7,6 +7,8 @@ class ConnectivityNode(Base):
 
 	:TopologicalNode: The connectivity nodes combine together to form this topological node.  May depend on the current state of switches in the network. Default: None
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.TP.value, ],
 						'TopologicalNode': [cgmesProfile.TP.value, ],

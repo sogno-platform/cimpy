@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class GeographicalLocationVersion(Base):
@@ -16,6 +16,8 @@ class GeographicalLocationVersion(Base):
 	:namespaceUML: CIM UML namespace. Default: ''
 	:shortName: The short name of the profile used in profile documentation. Default: ''
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.GL.value, ],
 						'baseUML': [cgmesProfile.GL.value, ],

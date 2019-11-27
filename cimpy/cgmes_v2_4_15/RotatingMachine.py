@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.RegulatingCondEq import RegulatingCondEq
+from cimpy.cgmes_v2_4_15.RegulatingCondEq import RegulatingCondEq
 
 
 class RotatingMachine(RegulatingCondEq):
@@ -13,6 +13,8 @@ class RotatingMachine(RegulatingCondEq):
 	:p: Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for a steady state solution. Default: 0.0
 	:q: Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for a steady state solution. Default: 0.0
 		'''
+
+	cgmesProfile = RegulatingCondEq.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'GeneratingUnit': [cgmesProfile.EQ.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class PssSB4(PowerSystemStabilizerDynamics):
@@ -17,6 +17,8 @@ class PssSB4(PowerSystemStabilizerDynamics):
 	:vsmax: Limiter (Vsmax). Default: 0.0
 	:vsmin: Limiter (Vsmin). Default: 0.0
 		'''
+
+	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'tt': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovSteamCC(TurbineGovernorDynamics):
@@ -23,6 +23,8 @@ class GovSteamCC(TurbineGovernorDynamics):
 	:flp: Fraction of LP power ahead of reheater (Flp).  Typical Value = 0.7. Default: 0.0
 	:dlp: LP damping factor (Dlp).  Typical Value = 0. Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ShuntCompensator import ShuntCompensator
+from cimpy.cgmes_v2_4_15.ShuntCompensator import ShuntCompensator
 
 
 class NonlinearShuntCompensator(ShuntCompensator):
@@ -7,6 +7,8 @@ class NonlinearShuntCompensator(ShuntCompensator):
 
 	:NonlinearShuntCompensatorPoints: All points of the non-linear shunt compensator. Default: []
 		'''
+
+	cgmesProfile = ShuntCompensator.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'NonlinearShuntCompensatorPoints': [cgmesProfile.EQ.value, ],

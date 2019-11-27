@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ConductingEquipment import ConductingEquipment
+from cimpy.cgmes_v2_4_15.ConductingEquipment import ConductingEquipment
 
 
 class PowerTransformer(ConductingEquipment):
@@ -13,6 +13,8 @@ class PowerTransformer(ConductingEquipment):
 	:isPartOfGeneratorUnit: Indicates whether the machine is part of a power station unit. Used for short circuit data exchange according to IEC 60909 Default: False
 	:operationalValuesConsidered: It is used to define if the data (other attributes related to short circuit data exchange) defines long term operational conditions or not. Used for short circuit data exchange according to IEC 60909. Default: False
 		'''
+
+	cgmesProfile = ConductingEquipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'PowerTransformerEnd': [cgmesProfile.EQ.value, ],

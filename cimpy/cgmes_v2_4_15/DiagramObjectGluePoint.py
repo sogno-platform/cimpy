@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class DiagramObjectGluePoint(Base):
@@ -7,6 +7,8 @@ class DiagramObjectGluePoint(Base):
 
 	:DiagramObjectPoints: The 'glue' point to which this point is associated. Default: []
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
 						'DiagramObjectPoints': [cgmesProfile.DI.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class VoltagePerReactivePower(Base):
@@ -11,6 +11,8 @@ class VoltagePerReactivePower(Base):
 	:multiplier:  Default: None
 	:denominatorUnit:  Default: None
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'value': [cgmesProfile.EQ.value, ],

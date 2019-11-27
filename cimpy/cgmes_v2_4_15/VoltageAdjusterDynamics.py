@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class VoltageAdjusterDynamics(DynamicsFunctionBlock):
@@ -7,6 +7,8 @@ class VoltageAdjusterDynamics(DynamicsFunctionBlock):
 
 	:PFVArControllerType1Dynamics: Power Factor or VAr controller Type I model with which this voltage adjuster is associated. Default: None
 		'''
+
+	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'PFVArControllerType1Dynamics': [cgmesProfile.DY.value, ],

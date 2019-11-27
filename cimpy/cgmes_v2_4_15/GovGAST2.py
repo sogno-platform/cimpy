@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovGAST2(TurbineGovernorDynamics):
@@ -38,6 +38,8 @@ class GovGAST2(TurbineGovernorDynamics):
 	:k6: Minimum fuel flow (K6). Default: 0.0
 	:tc: Temperature control (Tc).  Unit = F or C depending on constants Af1 and Bf1. Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

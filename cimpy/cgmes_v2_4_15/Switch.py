@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ConductingEquipment import ConductingEquipment
+from cimpy.cgmes_v2_4_15.ConductingEquipment import ConductingEquipment
 
 
 class Switch(ConductingEquipment):
@@ -10,6 +10,8 @@ class Switch(ConductingEquipment):
 	:retained: Branch is retained in a bus branch model.  The flow through retained switches will normally be calculated in power flow. Default: False
 	:open: The attribute tells if the switch is considered open when used as input to topology processing. Default: False
 		'''
+
+	cgmesProfile = ConductingEquipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'normalOpen': [cgmesProfile.EQ.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class TurbineLoadControllerDynamics(DynamicsFunctionBlock):
@@ -7,6 +7,8 @@ class TurbineLoadControllerDynamics(DynamicsFunctionBlock):
 
 	:TurbineGovernorDynamics: Turbine-governor controlled by this turbine load controller. Default: None
 		'''
+
+	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'TurbineGovernorDynamics': [cgmesProfile.DY.value, ],

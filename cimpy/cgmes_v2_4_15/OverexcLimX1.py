@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.OverexcitationLimiterDynamics import OverexcitationLimiterDynamics
+from cimpy.cgmes_v2_4_15.OverexcitationLimiterDynamics import OverexcitationLimiterDynamics
 
 
 class OverexcLimX1(OverexcitationLimiterDynamics):
@@ -16,6 +16,8 @@ class OverexcLimX1(OverexcitationLimiterDynamics):
 	:kmx: Gain (K).  Typical Value = 0.01. Default: 0.0
 	:vlow: Low voltage limit (V) (>0). Default: 0.0
 		'''
+
+	cgmesProfile = OverexcitationLimiterDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'efdrated': [cgmesProfile.DY.value, ],

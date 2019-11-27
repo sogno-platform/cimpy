@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemResource import PowerSystemResource
+from cimpy.cgmes_v2_4_15.PowerSystemResource import PowerSystemResource
 
 
 class Equipment(PowerSystemResource):
@@ -9,6 +9,8 @@ class Equipment(PowerSystemResource):
 	:EquipmentContainer: Container of this equipment. Default: None
 	:OperationalLimitSet: The operational limit sets associated with this equipment. Default: []
 		'''
+
+	cgmesProfile = PowerSystemResource.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'aggregate': [cgmesProfile.EQ.value, ],

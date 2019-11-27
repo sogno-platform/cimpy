@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class SvInjection(Base):
@@ -9,6 +9,8 @@ class SvInjection(Base):
 	:qInjection: The reactive power injected into the bus in addition to injections from equipment terminals. Positive sign means injection into the TopologicalNode (bus). Default: 0.0
 	:TopologicalNode: The injection flows state variables associated with the topological node. Default: None
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.SV.value, ],
 						'pInjection': [cgmesProfile.SV.value, ],

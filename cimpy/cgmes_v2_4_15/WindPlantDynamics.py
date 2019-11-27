@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class WindPlantDynamics(DynamicsFunctionBlock):
@@ -8,6 +8,8 @@ class WindPlantDynamics(DynamicsFunctionBlock):
 	:RemoteInputSignal: The wind plant using the remote signal. Default: None
 	:WindTurbineType3or4Dynamics: The wind turbine type 3 or 4 associated with this wind plant. Default: []
 		'''
+
+	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'RemoteInputSignal': [cgmesProfile.DY.value, ],

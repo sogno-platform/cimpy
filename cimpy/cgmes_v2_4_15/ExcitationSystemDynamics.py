@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class ExcitationSystemDynamics(DynamicsFunctionBlock):
@@ -14,6 +14,8 @@ class ExcitationSystemDynamics(DynamicsFunctionBlock):
 	:PFVArControllerType2Dynamics: Power Factor or VAr controller Type II model associated with this excitation system model. Default: None
 	:OverexcitationLimiterDynamics: Overexcitation limiter model associated with this excitation system model. Default: None
 		'''
+
+	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'SynchronousMachineDynamics': [cgmesProfile.DY.value, ],

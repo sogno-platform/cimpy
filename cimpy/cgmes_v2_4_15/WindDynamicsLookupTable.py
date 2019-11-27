@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class WindDynamicsLookupTable(IdentifiedObject):
@@ -14,6 +14,8 @@ class WindDynamicsLookupTable(IdentifiedObject):
 	:sequence: Sequence numbers of the pairs of the input (x) and the output (y) of the lookup table function. Default: 0
 	:WindPlantFreqPcontrolIEC: The wind dynamics lookup table associated with this frequency and active power wind plant model. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'WindContCurrLimIEC': [cgmesProfile.DY.value, ],

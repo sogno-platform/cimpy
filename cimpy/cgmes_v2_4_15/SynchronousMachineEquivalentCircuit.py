@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.SynchronousMachineDetailed import SynchronousMachineDetailed
+from cimpy.cgmes_v2_4_15.SynchronousMachineDetailed import SynchronousMachineDetailed
 
 
 class SynchronousMachineEquivalentCircuit(SynchronousMachineDetailed):
@@ -17,6 +17,8 @@ class SynchronousMachineEquivalentCircuit(SynchronousMachineDetailed):
 	:r2q: Q-axis damper 2 winding resistance. Default: 0.0
 	:x2q: Q-axis damper 2 winding leakage reactance. Default: 0.0
 		'''
+
+	cgmesProfile = SynchronousMachineDetailed.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'xad': [cgmesProfile.DY.value, ],

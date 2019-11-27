@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DCBaseTerminal import DCBaseTerminal
+from cimpy.cgmes_v2_4_15.DCBaseTerminal import DCBaseTerminal
 
 
 class DCTerminal(DCBaseTerminal):
@@ -7,6 +7,8 @@ class DCTerminal(DCBaseTerminal):
 
 	:DCConductingEquipment:  Default: None
 		'''
+
+	cgmesProfile = DCBaseTerminal.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.TP.value, ],
 						'DCConductingEquipment': [cgmesProfile.EQ.value, ],

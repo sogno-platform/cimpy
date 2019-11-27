@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcIEEEST3A(ExcitationSystemDynamics):
@@ -26,6 +26,8 @@ class ExcIEEEST3A(ExcitationSystemDynamics):
 	:vbmax: Maximum excitation voltage (V).  Typical Value = 6.9. Default: 0.0
 	:vgmax: Maximum inner loop feedback voltage (V).  Typical Value = 5.8. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'vimax': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcIEEEDC4B(ExcitationSystemDynamics):
@@ -25,6 +25,8 @@ class ExcIEEEDC4B(ExcitationSystemDynamics):
 	:oelin: OEL input (OELin). true = LV gate false = subtract from error signal. Typical Value = true. Default: False
 	:uelin: UEL input (UELin). true = HV gate false = add to error signal. Typical Value = true. Default: False
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'ka': [cgmesProfile.DY.value, ],

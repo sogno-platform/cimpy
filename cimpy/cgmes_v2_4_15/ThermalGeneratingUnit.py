@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.GeneratingUnit import GeneratingUnit
+from cimpy.cgmes_v2_4_15.GeneratingUnit import GeneratingUnit
 
 
 class ThermalGeneratingUnit(GeneratingUnit):
@@ -7,6 +7,8 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
 	:FossilFuels: A thermal generating unit may have one or more fossil fuels. Default: []
 		'''
+
+	cgmesProfile = GeneratingUnit.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'FossilFuels': [cgmesProfile.EQ.value, ],

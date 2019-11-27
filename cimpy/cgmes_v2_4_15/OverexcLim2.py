@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.OverexcitationLimiterDynamics import OverexcitationLimiterDynamics
+from cimpy.cgmes_v2_4_15.OverexcitationLimiterDynamics import OverexcitationLimiterDynamics
 
 
 class OverexcLim2(OverexcitationLimiterDynamics):
@@ -10,6 +10,8 @@ class OverexcLim2(OverexcitationLimiterDynamics):
 	:voimin: Minimum error signal (V).  Typical Value = -9999. Default: 0.0
 	:ifdlim: Limit value of rated field current (I).  Typical Value = 1.05. Default: 0.0
 		'''
+
+	cgmesProfile = OverexcitationLimiterDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'koi': [cgmesProfile.DY.value, ],

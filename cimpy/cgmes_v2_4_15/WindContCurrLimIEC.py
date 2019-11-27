@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class WindContCurrLimIEC(IdentifiedObject):
@@ -13,6 +13,8 @@ class WindContCurrLimIEC(IdentifiedObject):
 	:WindTurbineType3or4IEC: Wind turbine type 3 or 4 model with which this wind control current limitation model is associated. Default: None
 	:WindDynamicsLookupTable: The current control limitation model with which this wind dynamics lookup table is associated. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'imax': [cgmesProfile.DY.value, ],

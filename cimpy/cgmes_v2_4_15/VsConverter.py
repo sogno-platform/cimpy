@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ACDCConverter import ACDCConverter
+from cimpy.cgmes_v2_4_15.ACDCConverter import ACDCConverter
 
 
 class VsConverter(ACDCConverter):
@@ -18,6 +18,8 @@ class VsConverter(ACDCConverter):
 	:targetQpcc: Reactive power injection target in AC grid, at point of common coupling. Default: 0.0
 	:targetUpcc: Voltage target in AC grid, at point of common coupling. Default: 0.0
 		'''
+
+	cgmesProfile = ACDCConverter.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, ],
 						'CapabilityCurve': [cgmesProfile.EQ.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DCConductingEquipment import DCConductingEquipment
+from cimpy.cgmes_v2_4_15.DCConductingEquipment import DCConductingEquipment
 
 
 class DCShunt(DCConductingEquipment):
@@ -9,6 +9,8 @@ class DCShunt(DCConductingEquipment):
 	:resistance: Resistance of the DC device. Default: 0.0
 	:ratedUdc: Rated DC device voltage. Converter configuration data used in power flow. Default: 0.0
 		'''
+
+	cgmesProfile = DCConductingEquipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'capacitance': [cgmesProfile.EQ.value, ],

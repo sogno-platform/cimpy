@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.UnderexcitationLimiterDynamics import UnderexcitationLimiterDynamics
+from cimpy.cgmes_v2_4_15.UnderexcitationLimiterDynamics import UnderexcitationLimiterDynamics
 
 
 class UnderexcLimIEEE2(UnderexcitationLimiterDynamics):
@@ -46,6 +46,8 @@ class UnderexcLimIEEE2(UnderexcitationLimiterDynamics):
 	:k1: UEL terminal voltage exponent applied to real power input to UEL limit look-up table (k1).  Typical Value = 2. Default: 0.0
 	:k2: UEL terminal voltage exponent applied to reactive power output from UEL limit look-up table (k2).  Typical Value = 2. Default: 0.0
 		'''
+
+	cgmesProfile = UnderexcitationLimiterDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'tuv': [cgmesProfile.DY.value, ],

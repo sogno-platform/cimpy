@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Curve import Curve
+from cimpy.cgmes_v2_4_15.Curve import Curve
 
 
 class ReactiveCapabilityCurve(Curve):
@@ -8,6 +8,8 @@ class ReactiveCapabilityCurve(Curve):
 	:EquivalentInjection: The reactive capability curve used by this equivalent injection. Default: []
 	:InitiallyUsedBySynchronousMachines: The default reactive capability curve for use by a synchronous machine. Default: []
 		'''
+
+	cgmesProfile = Curve.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'EquivalentInjection': [cgmesProfile.EQ.value, ],

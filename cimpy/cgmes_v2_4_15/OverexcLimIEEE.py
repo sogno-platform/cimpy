@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.OverexcitationLimiterDynamics import OverexcitationLimiterDynamics
+from cimpy.cgmes_v2_4_15.OverexcitationLimiterDynamics import OverexcitationLimiterDynamics
 
 
 class OverexcLimIEEE(OverexcitationLimiterDynamics):
@@ -12,6 +12,8 @@ class OverexcLimIEEE(OverexcitationLimiterDynamics):
 	:kcd: OEL cooldown gain (K).  Typical Value = 1. Default: 0.0
 	:kramp: OEL ramped limit rate (K).  Unit = PU/sec.  Typical Value = 10. Default: 0.0
 		'''
+
+	cgmesProfile = OverexcitationLimiterDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'itfpu': [cgmesProfile.DY.value, ],

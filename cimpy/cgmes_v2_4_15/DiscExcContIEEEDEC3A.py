@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DiscontinuousExcitationControlDynamics import DiscontinuousExcitationControlDynamics
+from cimpy.cgmes_v2_4_15.DiscontinuousExcitationControlDynamics import DiscontinuousExcitationControlDynamics
 
 
 class DiscExcContIEEEDEC3A(DiscontinuousExcitationControlDynamics):
@@ -8,6 +8,8 @@ class DiscExcContIEEEDEC3A(DiscontinuousExcitationControlDynamics):
 	:vtmin: Terminal undervoltage comparison level (). Default: 0.0
 	:tdr: Reset time delay (). Default: 0.0
 		'''
+
+	cgmesProfile = DiscontinuousExcitationControlDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'vtmin': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DCConductingEquipment import DCConductingEquipment
+from cimpy.cgmes_v2_4_15.DCConductingEquipment import DCConductingEquipment
 
 
 class DCChopper(DCConductingEquipment):
@@ -6,6 +6,8 @@ class DCChopper(DCConductingEquipment):
 	Low resistance equipment used in the internal DC circuit to balance voltages. It has typically positive and negative pole terminals and a ground.
 
 		'''
+
+	cgmesProfile = DCConductingEquipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }

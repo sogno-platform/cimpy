@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class WindContRotorRIEC(IdentifiedObject):
@@ -16,6 +16,8 @@ class WindContRotorRIEC(IdentifiedObject):
 	:WindDynamicsLookupTable: The wind dynamics lookup table associated with this rotor resistance control model. Default: []
 	:WindGenTurbineType2IEC: Wind turbine type 2 model with whitch this wind control rotor resistance model is associated. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'kirr': [cgmesProfile.DY.value, ],

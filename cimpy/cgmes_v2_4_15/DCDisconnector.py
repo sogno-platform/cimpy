@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DCSwitch import DCSwitch
+from cimpy.cgmes_v2_4_15.DCSwitch import DCSwitch
 
 
 class DCDisconnector(DCSwitch):
@@ -6,6 +6,8 @@ class DCDisconnector(DCSwitch):
 	A disconnector within a DC system.
 
 		'''
+
+	cgmesProfile = DCSwitch.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }

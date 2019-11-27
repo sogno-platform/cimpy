@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.UnderexcitationLimiterDynamics import UnderexcitationLimiterDynamics
+from cimpy.cgmes_v2_4_15.UnderexcitationLimiterDynamics import UnderexcitationLimiterDynamics
 
 
 class UnderexcLimX2(UnderexcitationLimiterDynamics):
@@ -13,6 +13,8 @@ class UnderexcLimX2(UnderexcitationLimiterDynamics):
 	:qo: Excitation center setting (Qo). Default: 0.0
 	:r: Excitation radius (R). Default: 0.0
 		'''
+
+	cgmesProfile = UnderexcitationLimiterDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'kf2': [cgmesProfile.DY.value, ],

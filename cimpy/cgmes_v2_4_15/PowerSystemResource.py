@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class PowerSystemResource(IdentifiedObject):
@@ -7,6 +7,8 @@ class PowerSystemResource(IdentifiedObject):
 
 	:Location: Location of this power system resource. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.GL.value, cgmesProfile.SSH.value, ],
 						'Location': [cgmesProfile.GL.value, ],

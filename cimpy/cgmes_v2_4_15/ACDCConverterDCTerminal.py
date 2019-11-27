@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DCBaseTerminal import DCBaseTerminal
+from cimpy.cgmes_v2_4_15.DCBaseTerminal import DCBaseTerminal
 
 
 class ACDCConverterDCTerminal(DCBaseTerminal):
@@ -8,6 +8,8 @@ class ACDCConverterDCTerminal(DCBaseTerminal):
 	:DCConductingEquipment:  Default: None
 	:polarity: Represents the normal network polarity condition. Default: None
 		'''
+
+	cgmesProfile = DCBaseTerminal.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.TP.value, ],
 						'DCConductingEquipment': [cgmesProfile.EQ.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.EquipmentContainer import EquipmentContainer
+from cimpy.cgmes_v2_4_15.EquipmentContainer import EquipmentContainer
 
 
 class Line(EquipmentContainer):
@@ -7,6 +7,8 @@ class Line(EquipmentContainer):
 
 	:Region: The sub-geographical region of the line. Default: None
 		'''
+
+	cgmesProfile = EquipmentContainer.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'Region': [cgmesProfile.EQ.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class PFVArControllerType1Dynamics(DynamicsFunctionBlock):
@@ -9,6 +9,8 @@ class PFVArControllerType1Dynamics(DynamicsFunctionBlock):
 	:ExcitationSystemDynamics: Excitation system model with which this Power Factor or VAr controller Type I model is associated. Default: None
 	:VoltageAdjusterDynamics: Voltage adjuster model associated with this Power Factor or VA controller Type I model. Default: None
 		'''
+
+	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'RemoteInputSignal': [cgmesProfile.DY.value, ],

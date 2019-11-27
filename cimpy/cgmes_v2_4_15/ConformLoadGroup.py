@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.LoadGroup import LoadGroup
+from cimpy.cgmes_v2_4_15.LoadGroup import LoadGroup
 
 
 class ConformLoadGroup(LoadGroup):
@@ -8,6 +8,8 @@ class ConformLoadGroup(LoadGroup):
 	:EnergyConsumers: Conform loads assigned to this ConformLoadGroup. Default: []
 	:ConformLoadSchedules: The ConformLoadSchedules in the ConformLoadGroup. Default: []
 		'''
+
+	cgmesProfile = LoadGroup.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'EnergyConsumers': [cgmesProfile.EQ.value, ],

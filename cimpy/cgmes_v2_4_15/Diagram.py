@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class Diagram(IdentifiedObject):
@@ -13,6 +13,8 @@ class Diagram(IdentifiedObject):
 	:y2InitialView: Y coordinate of the second corner of the initial view. Default: 0.0
 	:DiagramElements: A diagram is made up of multiple diagram objects. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
 						'DiagramStyle': [cgmesProfile.DI.value, ],

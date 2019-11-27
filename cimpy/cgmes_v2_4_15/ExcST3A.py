@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcST3A(ExcitationSystemDynamics):
@@ -26,6 +26,8 @@ class ExcST3A(ExcitationSystemDynamics):
 	:ks: Coefficient to allow different usage of the model-speed coefficient (Ks).  Typical Value = 0. Default: 0.0
 	:ks1: Coefficient to allow different usage of the model-speed coefficient (Ks1).  Typical Value = 0. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'vimax': [cgmesProfile.DY.value, ],

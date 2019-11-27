@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class MechanicalLoadDynamics(DynamicsFunctionBlock):
@@ -8,6 +8,8 @@ class MechanicalLoadDynamics(DynamicsFunctionBlock):
 	:SynchronousMachineDynamics: Synchronous machine model with which this mechanical load model is associated. Default: None
 	:AsynchronousMachineDynamics: Asynchronous machine model with which this mechanical load model is associated. Default: None
 		'''
+
+	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'SynchronousMachineDynamics': [cgmesProfile.DY.value, ],

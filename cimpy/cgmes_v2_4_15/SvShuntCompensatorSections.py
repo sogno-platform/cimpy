@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class SvShuntCompensatorSections(Base):
@@ -8,6 +8,8 @@ class SvShuntCompensatorSections(Base):
 	:sections: The number of sections in service as a continous variable. To get integer value scale with ShuntCompensator.bPerSection. Default: 0.0
 	:ShuntCompensator: The shunt compensator for which the state applies. Default: None
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.SV.value, ],
 						'sections': [cgmesProfile.SV.value, ],

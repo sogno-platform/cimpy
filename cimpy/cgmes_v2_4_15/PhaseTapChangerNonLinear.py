@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PhaseTapChanger import PhaseTapChanger
+from cimpy.cgmes_v2_4_15.PhaseTapChanger import PhaseTapChanger
 
 
 class PhaseTapChangerNonLinear(PhaseTapChanger):
@@ -9,6 +9,8 @@ class PhaseTapChangerNonLinear(PhaseTapChanger):
 	:xMax: The reactance depend on the tap position according to a "u" shaped curve. The maximum reactance (xMax) appear at the low and high tap positions. Default: 0.0
 	:xMin: The reactance depend on the tap position according to a "u" shaped curve. The minimum reactance (xMin) appear at the mid tap position. Default: 0.0
 		'''
+
+	cgmesProfile = PhaseTapChanger.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'voltageStepIncrement': [cgmesProfile.EQ.value, ],

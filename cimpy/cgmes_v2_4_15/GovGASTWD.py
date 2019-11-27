@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovGASTWD(TurbineGovernorDynamics):
@@ -39,6 +39,8 @@ class GovGASTWD(TurbineGovernorDynamics):
 	:tc: Temperature control (Tc). Default: 0.0
 	:td: Power transducer time constant (Td). Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

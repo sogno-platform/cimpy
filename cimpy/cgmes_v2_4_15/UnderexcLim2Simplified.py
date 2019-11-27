@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.UnderexcitationLimiterDynamics import UnderexcitationLimiterDynamics
+from cimpy.cgmes_v2_4_15.UnderexcitationLimiterDynamics import UnderexcitationLimiterDynamics
 
 
 class UnderexcLim2Simplified(UnderexcitationLimiterDynamics):
@@ -13,6 +13,8 @@ class UnderexcLim2Simplified(UnderexcitationLimiterDynamics):
 	:vuimin: Minimum error signal (V).  Typical Value = 0. Default: 0.0
 	:vuimax: Maximum error signal (V).  Typical Value = 1. Default: 0.0
 		'''
+
+	cgmesProfile = UnderexcitationLimiterDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'q0': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class PssPTIST3(PowerSystemStabilizerDynamics):
@@ -40,6 +40,8 @@ class PssPTIST3(PowerSystemStabilizerDynamics):
 	:ncl: Number of counts at limit to active limit function (Ncl) (>0). Default: 0.0
 	:ncr: Number of counts until reset after limit function is triggered (Ncr). Default: 0.0
 		'''
+
+	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'm': [cgmesProfile.DY.value, ],

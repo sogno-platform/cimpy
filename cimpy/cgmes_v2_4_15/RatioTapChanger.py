@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TapChanger import TapChanger
+from cimpy.cgmes_v2_4_15.TapChanger import TapChanger
 
 
 class RatioTapChanger(TapChanger):
@@ -10,6 +10,8 @@ class RatioTapChanger(TapChanger):
 	:RatioTapChangerTable: The ratio tap changer of this tap ratio table. Default: None
 	:TransformerEnd: Ratio tap changer associated with this transformer end. Default: None
 		'''
+
+	cgmesProfile = TapChanger.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'tculControlMode': [cgmesProfile.EQ.value, ],

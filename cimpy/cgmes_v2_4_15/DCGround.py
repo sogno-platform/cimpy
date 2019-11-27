@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DCConductingEquipment import DCConductingEquipment
+from cimpy.cgmes_v2_4_15.DCConductingEquipment import DCConductingEquipment
 
 
 class DCGround(DCConductingEquipment):
@@ -8,6 +8,8 @@ class DCGround(DCConductingEquipment):
 	:inductance: Inductance to ground. Default: 0.0
 	:r: Resistance to ground. Default: 0.0
 		'''
+
+	cgmesProfile = DCConductingEquipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'inductance': [cgmesProfile.EQ.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.WindTurbineType1or2Dynamics import WindTurbineType1or2Dynamics
+from cimpy.cgmes_v2_4_15.WindTurbineType1or2Dynamics import WindTurbineType1or2Dynamics
 
 
 class WindTurbineType1or2IEC(WindTurbineType1or2Dynamics):
@@ -8,6 +8,8 @@ class WindTurbineType1or2IEC(WindTurbineType1or2Dynamics):
 	:WindMechIEC: Wind mechanical model associated with this wind generator type 1 or 2 model. Default: None
 	:WindProtectionIEC: Wind turbune protection model associated with this wind generator type 1 or 2 model. Default: None
 		'''
+
+	cgmesProfile = WindTurbineType1or2Dynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'WindMechIEC': [cgmesProfile.DY.value, ],

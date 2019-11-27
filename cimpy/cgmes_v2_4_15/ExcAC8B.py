@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcAC8B(ExcitationSystemDynamics):
@@ -33,6 +33,8 @@ class ExcAC8B(ExcitationSystemDynamics):
 	:vrmin: Minimum voltage regulator output (Vrmin).  Typical Value = 0. Default: 0.0
 	:vtmult: Multiply by generator's terminal voltage indicator. true =the limits Vrmax and Vrmin are multiplied by the generator's terminal voltage to represent a thyristor power stage fed from the generator terminals false = limits are not multiplied by generator's terminal voltage.  Typical Value = false. Default: False
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'inlim': [cgmesProfile.DY.value, ],

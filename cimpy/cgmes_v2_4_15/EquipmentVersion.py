@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class EquipmentVersion(Base):
@@ -20,6 +20,8 @@ class EquipmentVersion(Base):
 	:namespaceUML: CIM UML namespace. Default: ''
 	:shortName: The short name of the profile used in profile documentation. Default: ''
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'baseUML': [cgmesProfile.EQ.value, ],

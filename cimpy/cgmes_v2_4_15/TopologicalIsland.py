@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class TopologicalIsland(IdentifiedObject):
@@ -8,6 +8,8 @@ class TopologicalIsland(IdentifiedObject):
 	:AngleRefTopologicalNode: The angle reference for the island.   Normally there is one TopologicalNode that is selected as the angle reference for each island.   Other reference schemes exist, so the association is typically optional. Default: None
 	:TopologicalNodes: A topological node belongs to a topological island. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.SV.value, ],
 						'AngleRefTopologicalNode': [cgmesProfile.SV.value, ],

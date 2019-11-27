@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class WindContPitchAngleIEC(IdentifiedObject):
@@ -17,6 +17,8 @@ class WindContPitchAngleIEC(IdentifiedObject):
 	:ttheta: Pitch time constant (t). It is type dependent parameter. Default: 0.0
 	:WindGenTurbineType3IEC: Wind turbine type 3 model with which this pitch control model is associated. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'dthetamax': [cgmesProfile.DY.value, ],

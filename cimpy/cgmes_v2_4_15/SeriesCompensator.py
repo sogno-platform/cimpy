@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ConductingEquipment import ConductingEquipment
+from cimpy.cgmes_v2_4_15.ConductingEquipment import ConductingEquipment
 
 
 class SeriesCompensator(ConductingEquipment):
@@ -13,6 +13,8 @@ class SeriesCompensator(ConductingEquipment):
 	:r0: Zero sequence resistance. Default: 0.0
 	:x0: Zero sequence reactance. Default: 0.0
 		'''
+
+	cgmesProfile = ConductingEquipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'r': [cgmesProfile.EQ.value, ],

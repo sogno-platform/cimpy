@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovSteamFV3(TurbineGovernorDynamics):
@@ -25,6 +25,8 @@ class GovSteamFV3(TurbineGovernorDynamics):
 	:tc: Time until IV is fully open (Tc).  Typical Value = 0.99. Default: 0.0
 	:prmax: Max. pressure in reheater (Prmax).  Typical Value = 1. Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

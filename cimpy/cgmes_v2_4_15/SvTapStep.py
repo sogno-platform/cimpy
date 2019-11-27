@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class SvTapStep(Base):
@@ -8,6 +8,8 @@ class SvTapStep(Base):
 	:position: The floating point tap position.   This is not the tap ratio, but rather the tap step position as defined by the related tap changer model and normally is constrained to be within the range of minimum and maximum tap positions. Default: 0.0
 	:TapChanger: The tap changer associated with the tap step state. Default: None
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.SV.value, ],
 						'position': [cgmesProfile.SV.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcANS(ExcitationSystemDynamics):
@@ -20,6 +20,8 @@ class ExcANS(ExcitationSystemDynamics):
 	:krvecc: Feedback enabling (K).  0 = Open loop control 1 = Closed loop control. Typical Value = 1. Default: 0
 	:tb: Exciter time constant (T).  Typical Value = 0.04. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'k3': [cgmesProfile.DY.value, ],

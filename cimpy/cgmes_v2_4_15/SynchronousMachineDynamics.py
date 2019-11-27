@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.RotatingMachineDynamics import RotatingMachineDynamics
+from cimpy.cgmes_v2_4_15.RotatingMachineDynamics import RotatingMachineDynamics
 
 
 class SynchronousMachineDynamics(RotatingMachineDynamics):
@@ -11,6 +11,8 @@ class SynchronousMachineDynamics(RotatingMachineDynamics):
 	:MechanicalLoadDynamics: Mechanical load model associated with this synchronous machine model. Default: None
 	:GenICompensationForGenJ: Compensation of voltage compensator's generator for current flow out of this  generator. Default: []
 		'''
+
+	cgmesProfile = RotatingMachineDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'SynchronousMachine': [cgmesProfile.DY.value, ],

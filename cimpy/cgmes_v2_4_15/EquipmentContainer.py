@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ConnectivityNodeContainer import ConnectivityNodeContainer
+from cimpy.cgmes_v2_4_15.ConnectivityNodeContainer import ConnectivityNodeContainer
 
 
 class EquipmentContainer(ConnectivityNodeContainer):
@@ -7,6 +7,8 @@ class EquipmentContainer(ConnectivityNodeContainer):
 
 	:Equipments: Contained equipment. Default: []
 		'''
+
+	cgmesProfile = ConnectivityNodeContainer.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'Equipments': [cgmesProfile.EQ.value, ],

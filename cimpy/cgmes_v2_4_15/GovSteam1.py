@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovSteam1(TurbineGovernorDynamics):
@@ -45,6 +45,8 @@ class GovSteam1(TurbineGovernorDynamics):
 	:gv6: Nonlinear gain valve position point 6 (GV6).  Typical Value = 0. Default: 0.0
 	:pgv6: Nonlinear gain power value point 6 (Pgv6).  Typical Value = 0. Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

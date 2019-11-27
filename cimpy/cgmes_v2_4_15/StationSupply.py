@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.EnergyConsumer import EnergyConsumer
+from cimpy.cgmes_v2_4_15.EnergyConsumer import EnergyConsumer
 
 
 class StationSupply(EnergyConsumer):
@@ -6,6 +6,8 @@ class StationSupply(EnergyConsumer):
 	Station supply with load derived from the station output.
 
 		'''
+
+	cgmesProfile = EnergyConsumer.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.SSH.value, ],
 						 }

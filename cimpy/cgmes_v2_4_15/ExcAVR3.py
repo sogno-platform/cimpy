@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcAVR3(ExcitationSystemDynamics):
@@ -18,6 +18,8 @@ class ExcAVR3(ExcitationSystemDynamics):
 	:e2: Field voltage value 2 (E2).  Typical Value = 3.14. Default: 0.0
 	:se2: Saturation factor at E2 (S(E2)).  Typical Value = 0.03. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'ka': [cgmesProfile.DY.value, ],

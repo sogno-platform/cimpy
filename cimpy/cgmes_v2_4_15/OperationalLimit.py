@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class OperationalLimit(IdentifiedObject):
@@ -8,6 +8,8 @@ class OperationalLimit(IdentifiedObject):
 	:OperationalLimitSet: Values of equipment limits. Default: None
 	:OperationalLimitType: The limit type associated with this limit. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'OperationalLimitSet': [cgmesProfile.EQ.value, ],

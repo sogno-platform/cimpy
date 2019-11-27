@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class MutualCoupling(IdentifiedObject):
@@ -16,6 +16,8 @@ class MutualCoupling(IdentifiedObject):
 	:r0: Zero sequence branch-to-branch mutual impedance coupling, resistance. Default: 0.0
 	:x0: Zero sequence branch-to-branch mutual impedance coupling, reactance. Default: 0.0
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'First_Terminal': [cgmesProfile.EQ.value, ],

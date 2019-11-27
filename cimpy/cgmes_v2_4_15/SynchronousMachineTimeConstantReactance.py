@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.SynchronousMachineDetailed import SynchronousMachineDetailed
+from cimpy.cgmes_v2_4_15.SynchronousMachineDetailed import SynchronousMachineDetailed
 
 
 class SynchronousMachineTimeConstantReactance(SynchronousMachineDetailed):
@@ -20,6 +20,8 @@ class SynchronousMachineTimeConstantReactance(SynchronousMachineDetailed):
 	:tppqo: Quadrature-axis subtransient rotor time constant (T''qo) (> 0). Typical Value = 0.03. Default: 0.0
 	:tc: Damping time constant for "Canay" reactance.  Typical Value = 0. Default: 0.0
 		'''
+
+	cgmesProfile = SynchronousMachineDetailed.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'rotorType': [cgmesProfile.DY.value, ],

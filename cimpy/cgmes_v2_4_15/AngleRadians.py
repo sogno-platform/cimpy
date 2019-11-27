@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class AngleRadians(Base):
@@ -9,6 +9,8 @@ class AngleRadians(Base):
 	:unit:  Default: None
 	:multiplier:  Default: None
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'value': [cgmesProfile.EQ.value, ],

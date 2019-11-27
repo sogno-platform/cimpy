@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class RotatingMachineDynamics(DynamicsFunctionBlock):
@@ -12,6 +12,8 @@ class RotatingMachineDynamics(DynamicsFunctionBlock):
 	:statorLeakageReactance: Stator leakage reactance (Xl) (> or =0). Typical Value = 0.15. Default: 0.0
 	:statorResistance: Stator (armature) resistance (Rs) (> or =0). Typical Value = 0.005. Default: 0.0
 		'''
+
+	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'damping': [cgmesProfile.DY.value, ],

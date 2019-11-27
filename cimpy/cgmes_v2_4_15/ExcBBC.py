@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcBBC(ExcitationSystemDynamics):
@@ -17,6 +17,8 @@ class ExcBBC(ExcitationSystemDynamics):
 	:xe: Effective excitation transformer reactance (Xe).  Typical Value = 0.05. Default: 0.0
 	:switch: Supplementary signal routing selector (switch). true = Vs connected to 3rd summing point false =  Vs connected to 1st summing point (see diagram). Typical Value = true. Default: False
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						't1': [cgmesProfile.DY.value, ],

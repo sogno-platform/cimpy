@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.WindPlantDynamics import WindPlantDynamics
+from cimpy.cgmes_v2_4_15.WindPlantDynamics import WindPlantDynamics
 
 
 class WindPlantIEC(WindPlantDynamics):
@@ -8,6 +8,8 @@ class WindPlantIEC(WindPlantDynamics):
 	:WindPlantFreqPcontrolIEC: Wind plant frequency and active power control model associated with this wind plant. Default: None
 	:WindPlantReactiveControlIEC: Wind plant reactive control model associated with this wind plant. Default: None
 		'''
+
+	cgmesProfile = WindPlantDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'WindPlantFreqPcontrolIEC': [cgmesProfile.DY.value, ],

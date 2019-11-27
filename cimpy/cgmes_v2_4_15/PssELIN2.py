@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class PssELIN2(PowerSystemStabilizerDynamics):
@@ -17,6 +17,8 @@ class PssELIN2(PowerSystemStabilizerDynamics):
 	:apss: Coefficient (a_PSS).  Typical Value = 0.1. Default: 0.0
 	:psslim: PSS limiter (psslim).  Typical Value = 0.1. Default: 0.0
 		'''
+
+	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'ts1': [cgmesProfile.DY.value, ],

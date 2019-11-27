@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.VoltageCompensatorDynamics import VoltageCompensatorDynamics
+from cimpy.cgmes_v2_4_15.VoltageCompensatorDynamics import VoltageCompensatorDynamics
 
 
 class VCompIEEEType1(VoltageCompensatorDynamics):
@@ -9,6 +9,8 @@ class VCompIEEEType1(VoltageCompensatorDynamics):
 	:xc:  Default: 0.0
 	:tr:  Default: 0.0
 		'''
+
+	cgmesProfile = VoltageCompensatorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'rc': [cgmesProfile.DY.value, ],

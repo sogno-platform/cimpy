@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.UnderexcitationLimiterDynamics import UnderexcitationLimiterDynamics
+from cimpy.cgmes_v2_4_15.UnderexcitationLimiterDynamics import UnderexcitationLimiterDynamics
 
 
 class UnderexcLimIEEE1(UnderexcitationLimiterDynamics):
@@ -21,6 +21,8 @@ class UnderexcLimIEEE1(UnderexcitationLimiterDynamics):
 	:vulmax: UEL output maximum limit (V).  Typical Value = 18. Default: 0.0
 	:vulmin: UEL output minimum limit (V).  Typical Value = -18. Default: 0.0
 		'''
+
+	cgmesProfile = UnderexcitationLimiterDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'kur': [cgmesProfile.DY.value, ],

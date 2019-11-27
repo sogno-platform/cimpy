@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.LoadDynamics import LoadDynamics
+from cimpy.cgmes_v2_4_15.LoadDynamics import LoadDynamics
 
 
 class LoadComposite(LoadDynamics):
@@ -17,6 +17,8 @@ class LoadComposite(LoadDynamics):
 	:h: Inertia constant (H).  Typical Value = 2.5. Default: 0.0
 	:pfrac: Fraction of constant-power load to be represented by this motor model (Pfrac) (>=0.0 and <=1.0).  Typical Value = 0.5. Default: 0.0
 		'''
+
+	cgmesProfile = LoadDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'epvs': [cgmesProfile.DY.value, ],

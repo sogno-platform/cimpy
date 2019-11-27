@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcDC3A(ExcitationSystemDynamics):
@@ -22,6 +22,8 @@ class ExcDC3A(ExcitationSystemDynamics):
 	:efdmin: Minimum voltage exciter output limiter (Efdmin).  Typical Value = -99. Default: 0.0
 	:efdlim: (Efdlim). true = exciter output limiter is active false = exciter output limiter not active. Typical Value = true. Default: False
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'trh': [cgmesProfile.DY.value, ],

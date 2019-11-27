@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Conductor import Conductor
+from cimpy.cgmes_v2_4_15.Conductor import Conductor
 
 
 class ACLineSegment(Conductor):
@@ -15,6 +15,8 @@ class ACLineSegment(Conductor):
 	:shortCircuitEndTemperature: Maximum permitted temperature at the end of SC for the calculation of minimum short-circuit currents. Used for short circuit data exchange according to IEC 60909 Default: 0.0
 	:x0: Zero sequence series reactance of the entire line section. Default: 0.0
 		'''
+
+	cgmesProfile = Conductor.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'bch': [cgmesProfile.EQ.value, ],

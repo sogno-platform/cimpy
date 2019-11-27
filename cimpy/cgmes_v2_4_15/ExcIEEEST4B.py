@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcIEEEST4B(ExcitationSystemDynamics):
@@ -22,6 +22,8 @@ class ExcIEEEST4B(ExcitationSystemDynamics):
 	:xl: Reactance associated with potential source (X).  Typical Value = 0.124. Default: 0.0
 	:vbmax: Maximum excitation voltage (V).  Typical Value = 11.63. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'kpr': [cgmesProfile.DY.value, ],

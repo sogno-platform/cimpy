@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineLoadControllerDynamics import TurbineLoadControllerDynamics
+from cimpy.cgmes_v2_4_15.TurbineLoadControllerDynamics import TurbineLoadControllerDynamics
 
 
 class TurbLCFB1(TurbineLoadControllerDynamics):
@@ -18,6 +18,8 @@ class TurbLCFB1(TurbineLoadControllerDynamics):
 	:irmax: Maximum turbine speed/load reference bias (Irmax) (note 3).  Typical Value = 0. Default: 0.0
 	:pmwset: Power controller setpoint (Pmwset) (note 1).  Unit = MW. Typical Value = 0. Default: 0.0
 		'''
+
+	cgmesProfile = TurbineLoadControllerDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

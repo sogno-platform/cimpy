@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.EquipmentContainer import EquipmentContainer
+from cimpy.cgmes_v2_4_15.EquipmentContainer import EquipmentContainer
 
 
 class Substation(EquipmentContainer):
@@ -9,6 +9,8 @@ class Substation(EquipmentContainer):
 	:Region: The SubGeographicalRegion containing the substation. Default: None
 	:VoltageLevels: The voltage levels within this substation. Default: []
 		'''
+
+	cgmesProfile = EquipmentContainer.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'DCConverterUnit': [cgmesProfile.EQ.value, ],

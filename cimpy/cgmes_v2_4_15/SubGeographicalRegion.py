@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class SubGeographicalRegion(IdentifiedObject):
@@ -10,6 +10,8 @@ class SubGeographicalRegion(IdentifiedObject):
 	:Lines: The lines within the sub-geographical region. Default: []
 	:Substations: The substations in this sub-geographical region. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'DCLines': [cgmesProfile.EQ.value, ],

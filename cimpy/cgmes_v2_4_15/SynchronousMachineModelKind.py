@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class SynchronousMachineModelKind(Base):
@@ -6,6 +6,8 @@ class SynchronousMachineModelKind(Base):
 	Type of synchronous machine model used in Dynamic simulation applications.
 
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						 }

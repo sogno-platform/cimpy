@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class BusNameMarker(IdentifiedObject):
@@ -9,6 +9,8 @@ class BusNameMarker(IdentifiedObject):
 	:ReportingGroup: The bus name markers that belong to this reporting group. Default: None
 	:Terminal: The terminals associated with this bus name marker. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'priority': [cgmesProfile.EQ.value, ],

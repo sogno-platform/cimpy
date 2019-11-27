@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class ControlAreaGeneratingUnit(IdentifiedObject):
@@ -8,6 +8,8 @@ class ControlAreaGeneratingUnit(IdentifiedObject):
 	:GeneratingUnit: The generating unit specified for this control area.  Note that a control area should include a GeneratingUnit only once. Default: None
 	:ControlArea: The parent control area for the generating unit specifications. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'GeneratingUnit': [cgmesProfile.EQ.value, ],

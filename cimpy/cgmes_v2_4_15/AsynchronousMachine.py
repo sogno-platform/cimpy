@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.RotatingMachine import RotatingMachine
+from cimpy.cgmes_v2_4_15.RotatingMachine import RotatingMachine
 
 
 class AsynchronousMachine(RotatingMachine):
@@ -17,6 +17,8 @@ class AsynchronousMachine(RotatingMachine):
 	:rxLockedRotorRatio: Locked rotor ratio (R/X). Used for short circuit data exchange according to IEC 60909 Default: 0.0
 	:asynchronousMachineType: Indicates the type of Asynchronous Machine (motor or generator). Default: None
 		'''
+
+	cgmesProfile = RotatingMachine.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'AsynchronousMachineDynamics': [cgmesProfile.DY.value, ],

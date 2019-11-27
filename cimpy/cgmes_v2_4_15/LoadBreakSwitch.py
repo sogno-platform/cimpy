@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ProtectedSwitch import ProtectedSwitch
+from cimpy.cgmes_v2_4_15.ProtectedSwitch import ProtectedSwitch
 
 
 class LoadBreakSwitch(ProtectedSwitch):
@@ -6,6 +6,8 @@ class LoadBreakSwitch(ProtectedSwitch):
 	A mechanical switching device capable of making, carrying, and breaking currents under normal operating conditions.
 
 		'''
+
+	cgmesProfile = ProtectedSwitch.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						 }

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class EnergySchedulingType(IdentifiedObject):
@@ -7,6 +7,8 @@ class EnergySchedulingType(IdentifiedObject):
 
 	:EnergySource: Energy Scheduling Type of an Energy Source Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'EnergySource': [cgmesProfile.EQ.value, ],

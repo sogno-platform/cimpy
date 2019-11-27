@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class ResistancePerLength(Base):
@@ -11,6 +11,8 @@ class ResistancePerLength(Base):
 	:denominatorUnit:  Default: None
 	:denominatorMultiplier:  Default: None
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'value': [cgmesProfile.EQ.value, ],

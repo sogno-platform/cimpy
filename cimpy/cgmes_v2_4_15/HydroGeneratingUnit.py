@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.GeneratingUnit import GeneratingUnit
+from cimpy.cgmes_v2_4_15.GeneratingUnit import GeneratingUnit
 
 
 class HydroGeneratingUnit(GeneratingUnit):
@@ -8,6 +8,8 @@ class HydroGeneratingUnit(GeneratingUnit):
 	:energyConversionCapability: Energy conversion capability for generating. Default: None
 	:HydroPowerPlant: The hydro generating unit belongs to a hydro power plant. Default: None
 		'''
+
+	cgmesProfile = GeneratingUnit.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'energyConversionCapability': [cgmesProfile.EQ.value, ],

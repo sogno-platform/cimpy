@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcSEXS(ExcitationSystemDynamics):
@@ -16,6 +16,8 @@ class ExcSEXS(ExcitationSystemDynamics):
 	:efdmin: Field voltage clipping minimum limit (Efdmin).  Typical Value = -5. Default: 0.0
 	:efdmax: Field voltage clipping maximum limit (Efdmax).  Typical Value = 5. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'tatb': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class WindPitchContEmulIEC(IdentifiedObject):
@@ -17,6 +17,8 @@ class WindPitchContEmulIEC(IdentifiedObject):
 	:t2: Second time constant in pitch control lag (). It is type dependent parameter. Default: 0.0
 	:tpe: Time constant in generator air gap power lag (). It is type dependent parameter. Default: 0.0
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'WindGenTurbineType2IEC': [cgmesProfile.DY.value, ],

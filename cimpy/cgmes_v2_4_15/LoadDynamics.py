@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class LoadDynamics(IdentifiedObject):
@@ -7,6 +7,8 @@ class LoadDynamics(IdentifiedObject):
 
 	:EnergyConsumer: Energy consumer to which this dynamics load model applies. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'EnergyConsumer': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcHU(ExcitationSystemDynamics):
@@ -18,6 +18,8 @@ class ExcHU(ExcitationSystemDynamics):
 	:atr: AVR constant (Atr).  Typical Value = 2.19. Default: 0.0
 	:ke: Voltage base conversion constant (Ke).  Typical Value = 4.666. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'tr': [cgmesProfile.DY.value, ],

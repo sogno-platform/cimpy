@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class VsPpccControlKind(Base):
@@ -6,6 +6,8 @@ class VsPpccControlKind(Base):
 	Types applicable to the control of real power and/or DC voltage by voltage source converter.
 
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.SSH.value, ],
 						 }

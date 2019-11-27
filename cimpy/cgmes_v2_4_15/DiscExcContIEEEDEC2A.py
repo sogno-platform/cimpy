@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DiscontinuousExcitationControlDynamics import DiscontinuousExcitationControlDynamics
+from cimpy.cgmes_v2_4_15.DiscontinuousExcitationControlDynamics import DiscontinuousExcitationControlDynamics
 
 
 class DiscExcContIEEEDEC2A(DiscontinuousExcitationControlDynamics):
@@ -11,6 +11,8 @@ class DiscExcContIEEEDEC2A(DiscontinuousExcitationControlDynamics):
 	:vdmin: Limiter (). Default: 0.0
 	:vdmax: Limiter (). Default: 0.0
 		'''
+
+	cgmesProfile = DiscontinuousExcitationControlDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'vk': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class WindProtectionIEC(IdentifiedObject):
@@ -16,6 +16,8 @@ class WindProtectionIEC(IdentifiedObject):
 	:WindTurbineType3or4IEC: Wind generator type 3 or 4 model with which this wind turbine protection model is associated. Default: None
 	:WindTurbineType1or2IEC: Wind generator type 1 or 2 model with which this wind turbine protection model is associated. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'fover': [cgmesProfile.DY.value, ],

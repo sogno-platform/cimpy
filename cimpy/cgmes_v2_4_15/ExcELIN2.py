@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcELIN2(ExcitationSystemDynamics):
@@ -33,6 +33,8 @@ class ExcELIN2(ExcitationSystemDynamics):
 	:iefmin: Limiter (Iefmin).  Typical Value = 1. Default: 0.0
 	:efdbas: Gain (Efdbas).  Typical Value = 0.1. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'k1': [cgmesProfile.DY.value, ],

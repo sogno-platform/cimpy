@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovHydro1(TurbineGovernorDynamics):
@@ -20,6 +20,8 @@ class GovHydro1(TurbineGovernorDynamics):
 	:qnl: No-load flow at nominal head (qnl) (>=0).  Typical Value = 0.08. Default: 0.0
 	:hdam: Turbine nominal head (hdam).  Typical Value = 1. Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class Pss2B(PowerSystemStabilizerDynamics):
@@ -37,6 +37,8 @@ class Pss2B(PowerSystemStabilizerDynamics):
 	:ta: Lead constant (Ta).  Typical Value = 0. Default: 0.0
 	:tb: Lag time constant (Tb).  Typical Value = 0. Default: 0.0
 		'''
+
+	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'inputSignal1Type': [cgmesProfile.DY.value, ],

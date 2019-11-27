@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PhaseTapChangerNonLinear import PhaseTapChangerNonLinear
+from cimpy.cgmes_v2_4_15.PhaseTapChangerNonLinear import PhaseTapChangerNonLinear
 
 
 class PhaseTapChangerAsymmetrical(PhaseTapChangerNonLinear):
@@ -7,6 +7,8 @@ class PhaseTapChangerAsymmetrical(PhaseTapChangerNonLinear):
 
 	:windingConnectionAngle: The phase angle between the in-phase winding and the out-of -phase winding used for creating phase shift. The out-of-phase winding produces what is known as the difference voltage.  Setting this angle to 90 degrees is not the same as a symmemtrical transformer. Default: 0.0
 		'''
+
+	cgmesProfile = PhaseTapChangerNonLinear.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'windingConnectionAngle': [cgmesProfile.EQ.value, ],

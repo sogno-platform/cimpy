@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.EnergyConsumer import EnergyConsumer
+from cimpy.cgmes_v2_4_15.EnergyConsumer import EnergyConsumer
 
 
 class NonConformLoad(EnergyConsumer):
@@ -7,6 +7,8 @@ class NonConformLoad(EnergyConsumer):
 
 	:LoadGroup: Conform loads assigned to this ConformLoadGroup. Default: None
 		'''
+
+	cgmesProfile = EnergyConsumer.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'LoadGroup': [cgmesProfile.EQ.value, ],

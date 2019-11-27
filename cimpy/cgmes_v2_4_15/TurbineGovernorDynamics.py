@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class TurbineGovernorDynamics(DynamicsFunctionBlock):
@@ -9,6 +9,8 @@ class TurbineGovernorDynamics(DynamicsFunctionBlock):
 	:AsynchronousMachineDynamics: Asynchronous machine model with which this turbine-governor model is associated. Default: None
 	:TurbineLoadControllerDynamics: Turbine load controller providing input to this turbine-governor. Default: None
 		'''
+
+	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'SynchronousMachineDynamics': [cgmesProfile.DY.value, ],

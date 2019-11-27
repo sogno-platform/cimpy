@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TapChangerTablePoint import TapChangerTablePoint
+from cimpy.cgmes_v2_4_15.TapChangerTablePoint import TapChangerTablePoint
 
 
 class PhaseTapChangerTablePoint(TapChangerTablePoint):
@@ -8,6 +8,8 @@ class PhaseTapChangerTablePoint(TapChangerTablePoint):
 	:PhaseTapChangerTable: The table of this point. Default: None
 	:angle: The angle difference in degrees. Default: 0.0
 		'''
+
+	cgmesProfile = TapChangerTablePoint.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'PhaseTapChangerTable': [cgmesProfile.EQ.value, ],

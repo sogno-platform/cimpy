@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class WindPlantReactiveControlIEC(IdentifiedObject):
@@ -20,6 +20,8 @@ class WindPlantReactiveControlIEC(IdentifiedObject):
 	:xrefmax: Maximum  ( or delta ) request from the plant controller (). It is project dependent parameter. Default: 0.0
 	:xrefmin: Minimum  ( or delta) request from the plant controller (). It is project dependent parameter. Default: 0.0
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'WindPlantIEC': [cgmesProfile.DY.value, ],

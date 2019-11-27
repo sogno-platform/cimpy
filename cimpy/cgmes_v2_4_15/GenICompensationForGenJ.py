@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class GenICompensationForGenJ(IdentifiedObject):
@@ -10,6 +10,8 @@ class GenICompensationForGenJ(IdentifiedObject):
 	:rcij:  Default: 0.0
 	:xcij:  Default: 0.0
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'SynchronousMachineDynamics': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.UnderexcitationLimiterDynamics import UnderexcitationLimiterDynamics
+from cimpy.cgmes_v2_4_15.UnderexcitationLimiterDynamics import UnderexcitationLimiterDynamics
 
 
 class UnderexcLimX1(UnderexcitationLimiterDynamics):
@@ -12,6 +12,8 @@ class UnderexcLimX1(UnderexcitationLimiterDynamics):
 	:melmax: Minimum excitation limit value (MELMAX). Default: 0.0
 	:k: Minimum excitation limit slope (K) (>0). Default: 0.0
 		'''
+
+	cgmesProfile = UnderexcitationLimiterDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'kf2': [cgmesProfile.DY.value, ],

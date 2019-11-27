@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcIEEEST6B(ExcitationSystemDynamics):
@@ -20,6 +20,8 @@ class ExcIEEEST6B(ExcitationSystemDynamics):
 	:vrmax: Maximum voltage regulator output (V).  Typical Value = 4.81. Default: 0.0
 	:vrmin: Minimum voltage regulator output (V).  Typical Value = -3.85. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'ilr': [cgmesProfile.DY.value, ],

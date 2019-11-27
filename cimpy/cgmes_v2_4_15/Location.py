@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class Location(IdentifiedObject):
@@ -9,6 +9,8 @@ class Location(IdentifiedObject):
 	:PowerSystemResources: All power system resources at this location. Default: None
 	:PositionPoints: Sequence of position points describing this location, expressed in coordinate system 'Location.CoordinateSystem'. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.GL.value, ],
 						'CoordinateSystem': [cgmesProfile.GL.value, ],

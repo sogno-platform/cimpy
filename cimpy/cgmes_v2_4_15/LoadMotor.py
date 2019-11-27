@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class LoadMotor(IdentifiedObject):
@@ -20,6 +20,8 @@ class LoadMotor(IdentifiedObject):
 	:tv: Voltage trip pickup time (Tv).  Typical Value = 0.1. Default: 0.0
 	:tbkr: Circuit breaker operating time (Tbkr).  Typical Value = 0.08. Default: 0.0
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'LoadAggregate': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcOEX3T(ExcitationSystemDynamics):
@@ -25,6 +25,8 @@ class ExcOEX3T(ExcitationSystemDynamics):
 	:e2: Saturation parameter (E). Default: 0.0
 	:see2: Saturation parameter (S(E)). Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						't1': [cgmesProfile.DY.value, ],

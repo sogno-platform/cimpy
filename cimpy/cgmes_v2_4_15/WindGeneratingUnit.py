@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.GeneratingUnit import GeneratingUnit
+from cimpy.cgmes_v2_4_15.GeneratingUnit import GeneratingUnit
 
 
 class WindGeneratingUnit(GeneratingUnit):
@@ -7,6 +7,8 @@ class WindGeneratingUnit(GeneratingUnit):
 
 	:windGenUnitType: The kind of wind generating unit Default: None
 		'''
+
+	cgmesProfile = GeneratingUnit.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						'windGenUnitType': [cgmesProfile.EQ.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class RegulatingControlModeKind(Base):
@@ -6,6 +6,8 @@ class RegulatingControlModeKind(Base):
 	The kind of regulation model.   For example regulating voltage, reactive power, active power, etc.
 
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }

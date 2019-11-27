@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Curve import Curve
+from cimpy.cgmes_v2_4_15.Curve import Curve
 
 
 class VsCapabilityCurve(Curve):
@@ -7,6 +7,8 @@ class VsCapabilityCurve(Curve):
 
 	:VsConverterDCSides: Capability curve of this converter. Default: []
 		'''
+
+	cgmesProfile = Curve.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'VsConverterDCSides': [cgmesProfile.EQ.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Connector import Connector
+from cimpy.cgmes_v2_4_15.Connector import Connector
 
 
 class Junction(Connector):
@@ -6,6 +6,8 @@ class Junction(Connector):
 	A point where one or more conducting equipments are connected with zero resistance.
 
 		'''
+
+	cgmesProfile = Connector.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }

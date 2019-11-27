@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class WindContPType3IEC(IdentifiedObject):
@@ -29,6 +29,8 @@ class WindContPType3IEC(IdentifiedObject):
 	:WindGenTurbineType3IEC: Wind turbine type 3 model with which this Wind control P type 3 model is associated. Default: None
 	:WindDynamicsLookupTable: The P control type 3 model with which this wind dynamics lookup table is associated. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'dpmax': [cgmesProfile.DY.value, ],

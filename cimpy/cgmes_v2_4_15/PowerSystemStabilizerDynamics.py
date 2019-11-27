@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class PowerSystemStabilizerDynamics(DynamicsFunctionBlock):
@@ -8,6 +8,8 @@ class PowerSystemStabilizerDynamics(DynamicsFunctionBlock):
 	:RemoteInputSignal: Remote input signal used by this power system stabilizer model. Default: []
 	:ExcitationSystemDynamics: Excitation system model with which this power system stabilizer model is associated. Default: None
 		'''
+
+	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'RemoteInputSignal': [cgmesProfile.DY.value, ],

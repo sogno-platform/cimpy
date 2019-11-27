@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Equipment import Equipment
+from cimpy.cgmes_v2_4_15.Equipment import Equipment
 
 
 class ConductingEquipment(Equipment):
@@ -9,6 +9,8 @@ class ConductingEquipment(Equipment):
 	:BaseVoltage: All conducting equipment with this base voltage.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers. Default: None
 	:SvStatus: The status state variable associated with this conducting equipment. Default: None
 		'''
+
+	cgmesProfile = Equipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, ],
 						'Terminals': [cgmesProfile.DY.value, cgmesProfile.EQ.value, ],

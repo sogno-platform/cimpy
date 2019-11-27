@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcAVR1(ExcitationSystemDynamics):
@@ -18,6 +18,8 @@ class ExcAVR1(ExcitationSystemDynamics):
 	:kf: Rate feedback gain (K).  Typical Value = 0.02. Default: 0.0
 	:tf: Rate feedback time constant (T).  Typical Value = 1. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'ka': [cgmesProfile.DY.value, ],

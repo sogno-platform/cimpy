@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovCT1(TurbineGovernorDynamics):
@@ -41,6 +41,8 @@ class GovCT1(TurbineGovernorDynamics):
 	:rup: Maximum rate of load limit increase (Rup).  Typical Value = 99. Default: 0.0
 	:rdown: Maximum rate of load limit decrease (Rdown).  Typical Value = -99. Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class WindPlantFreqPcontrolIEC(IdentifiedObject):
@@ -18,6 +18,8 @@ class WindPlantFreqPcontrolIEC(IdentifiedObject):
 	:twppfilt: Filter time constant for active power measurement (). It is type dependent parameter. Default: 0.0
 	:WindPlantIEC: Wind plant model with which this wind plant frequency and active power control is associated. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'WindDynamicsLookupTable': [cgmesProfile.DY.value, ],

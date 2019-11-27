@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class PFVArControllerType2Dynamics(DynamicsFunctionBlock):
@@ -7,6 +7,8 @@ class PFVArControllerType2Dynamics(DynamicsFunctionBlock):
 
 	:ExcitationSystemDynamics: Excitation system model with which this Power Factor or VAr controller Type II is associated. Default: None
 		'''
+
+	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'ExcitationSystemDynamics': [cgmesProfile.DY.value, ],

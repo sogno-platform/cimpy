@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.VoltageAdjusterDynamics import VoltageAdjusterDynamics
+from cimpy.cgmes_v2_4_15.VoltageAdjusterDynamics import VoltageAdjusterDynamics
 
 
 class VAdjIEEE(VoltageAdjusterDynamics):
@@ -12,6 +12,8 @@ class VAdjIEEE(VoltageAdjusterDynamics):
 	:taon: Time that adjuster pulses are on ().  Typical Value = 0.1. Default: 0.0
 	:taoff: Time that adjuster pulses are off ().  Typical Value = 0.5. Default: 0.0
 		'''
+
+	cgmesProfile = VoltageAdjusterDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'vadjf': [cgmesProfile.DY.value, ],

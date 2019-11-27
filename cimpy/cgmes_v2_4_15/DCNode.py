@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class DCNode(IdentifiedObject):
@@ -9,6 +9,8 @@ class DCNode(IdentifiedObject):
 	:DCEquipmentContainer:  Default: None
 	:DCTopologicalNode: See association end TopologicalNode.ConnectivityNodes. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.TP.value, ],
 						'DCTerminals': [cgmesProfile.EQ.value, ],

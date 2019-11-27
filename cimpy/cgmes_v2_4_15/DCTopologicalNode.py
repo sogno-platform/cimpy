@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class DCTopologicalNode(IdentifiedObject):
@@ -10,6 +10,8 @@ class DCTopologicalNode(IdentifiedObject):
 	:DCEquipmentContainer:  Default: None
 	:DCNodes: See association end ConnectivityNode.TopologicalNode. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.SV.value, cgmesProfile.TP.value, ],
 						'DCTopologicalIsland': [cgmesProfile.SV.value, ],

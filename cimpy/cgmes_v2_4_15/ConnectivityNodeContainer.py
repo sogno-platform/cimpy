@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemResource import PowerSystemResource
+from cimpy.cgmes_v2_4_15.PowerSystemResource import PowerSystemResource
 
 
 class ConnectivityNodeContainer(PowerSystemResource):
@@ -7,6 +7,8 @@ class ConnectivityNodeContainer(PowerSystemResource):
 
 	:TopologicalNode: The topological nodes which belong to this connectivity node container. Default: []
 		'''
+
+	cgmesProfile = PowerSystemResource.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.TP.value, ],
 						'TopologicalNode': [cgmesProfile.TP.value, ],

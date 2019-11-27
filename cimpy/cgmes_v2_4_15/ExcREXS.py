@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcREXS(ExcitationSystemDynamics):
@@ -42,6 +42,8 @@ class ExcREXS(ExcitationSystemDynamics):
 	:vrmin: Minimum controller output (Vrmin).  Typical Value = -20. Default: 0.0
 	:xc: Exciter compounding reactance (Xc).  Typical Value = 0. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'e1': [cgmesProfile.DY.value, ],

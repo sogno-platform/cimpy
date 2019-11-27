@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class LoadGroup(IdentifiedObject):
@@ -6,6 +6,8 @@ class LoadGroup(IdentifiedObject):
 	The class is the third level in a hierarchical structure for grouping of loads for the purpose of load flow load scaling.
 
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }

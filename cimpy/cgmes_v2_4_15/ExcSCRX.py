@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcSCRX(ExcitationSystemDynamics):
@@ -14,6 +14,8 @@ class ExcSCRX(ExcitationSystemDynamics):
 	:cswitch: Power source switch (Cswitch). true = fixed voltage of 1.0 PU false = generator terminal voltage. Default: False
 	:rcrfd: Rc/Rfd - ratio of field discharge resistance to field winding resistance (RcRfd).  Typical Value = 0. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'tatb': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class DiagramObject(IdentifiedObject):
@@ -16,6 +16,8 @@ class DiagramObject(IdentifiedObject):
 	:VisibilityLayers: A diagram object can be part of multiple visibility layers. Default: []
 	:DiagramObjectStyle: A diagram object has a style associated that provides a reference for the style used in the originating system. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
 						'Diagram': [cgmesProfile.DI.value, ],

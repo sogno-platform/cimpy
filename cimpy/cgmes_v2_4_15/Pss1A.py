@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class Pss1A(PowerSystemStabilizerDynamics):
@@ -28,6 +28,8 @@ class Pss1A(PowerSystemStabilizerDynamics):
 	:kd: Selector (Kd).  true = e used false = e not used. Default: False
 	:tdelay: Time constant (Tdelay). Default: 0.0
 		'''
+
+	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'inputSignalType': [cgmesProfile.DY.value, ],

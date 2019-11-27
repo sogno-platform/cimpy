@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class WindTurbineType1or2Dynamics(DynamicsFunctionBlock):
@@ -8,6 +8,8 @@ class WindTurbineType1or2Dynamics(DynamicsFunctionBlock):
 	:RemoteInputSignal: Remote input signal used by this wind generator Type 1 or Type 2 model. Default: None
 	:AsynchronousMachineDynamics: Asynchronous machine model with which this wind generator type 1 or 2 model is associated. Default: None
 		'''
+
+	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'RemoteInputSignal': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.RotatingMachineDynamics import RotatingMachineDynamics
+from cimpy.cgmes_v2_4_15.RotatingMachineDynamics import RotatingMachineDynamics
 
 
 class AsynchronousMachineDynamics(RotatingMachineDynamics):
@@ -10,6 +10,8 @@ class AsynchronousMachineDynamics(RotatingMachineDynamics):
 	:WindTurbineType1or2Dynamics: Wind generator type 1 or 2 model associated with this asynchronous machine model. Default: None
 	:TurbineGovernorDynamics: Turbine-governor model associated with this asynchronous machine model. Default: None
 		'''
+
+	cgmesProfile = RotatingMachineDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'AsynchronousMachine': [cgmesProfile.DY.value, ],

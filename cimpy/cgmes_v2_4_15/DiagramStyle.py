@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class DiagramStyle(IdentifiedObject):
@@ -7,6 +7,8 @@ class DiagramStyle(IdentifiedObject):
 
 	:Diagram: A DiagramStyle can be used by many Diagrams. Default: []
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
 						'Diagram': [cgmesProfile.DI.value, ],

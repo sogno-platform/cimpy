@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class LoadResponseCharacteristic(IdentifiedObject):
@@ -18,6 +18,8 @@ class LoadResponseCharacteristic(IdentifiedObject):
 	:qFrequencyExponent: Exponent of per unit frequency effecting reactive power. Default: 0.0
 	:qVoltageExponent: Exponent of per unit voltage effecting reactive power. Default: 0.0
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'EnergyConsumer': [cgmesProfile.EQ.value, ],

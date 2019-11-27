@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class PerLengthDCLineParameter(Base):
@@ -10,6 +10,8 @@ class PerLengthDCLineParameter(Base):
 	:inductance: Inductance per unit of length of the DC line segment. Default: 0.0
 	:resistance: Resistance per length of the DC line segment. Default: 0.0
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'DCLineSegments': [cgmesProfile.EQ.value, ],

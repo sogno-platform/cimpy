@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class RemoteInputSignal(IdentifiedObject):
@@ -16,6 +16,8 @@ class RemoteInputSignal(IdentifiedObject):
 	:WindTurbineType3or4Dynamics: Remote input signal used by these wind turbine Type 3 or 4 models. Default: None
 	:WindPlantDynamics: The remote signal with which this power plant is associated. Default: None
 		'''
+
+	cgmesProfile = IdentifiedObject.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'Terminal': [cgmesProfile.DY.value, ],

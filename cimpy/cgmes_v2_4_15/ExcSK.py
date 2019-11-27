@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcSK(ExcitationSystemDynamics):
@@ -38,6 +38,8 @@ class ExcSK(ExcitationSystemDynamics):
 	:vtmin: Minimum terminal voltage input (Vtmin).  Determines the range of voltage dead band.  Typical Value = 0.95. Default: 0.0
 	:yp: Maximum output (Yp).  Minimum output = 0.  Typical Value = 1. Default: 0.0
 		'''
+
+	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'efdmax': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.Base import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class CurveData(Base):
@@ -10,6 +10,8 @@ class CurveData(Base):
 	:y1value: The data value of the  first Y-axis variable, depending on the Y-axis units. Default: 0.0
 	:y2value: The data value of the second Y-axis variable (if present), depending on the Y-axis units. Default: 0.0
 		'''
+
+	cgmesProfile = Base.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'Curve': [cgmesProfile.EQ.value, ],

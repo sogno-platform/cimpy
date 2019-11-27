@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovGAST(TurbineGovernorDynamics):
@@ -16,6 +16,8 @@ class GovGAST(TurbineGovernorDynamics):
 	:vmin: Minimum turbine power, PU of MWbase (Vmin).  Typical Value = 0. Default: 0.0
 	:dturb: Turbine damping factor (Dturb).  Typical Value = 0.18. Default: 0.0
 		'''
+
+	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						'mwbase': [cgmesProfile.DY.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15_flat.EquivalentEquipment import EquivalentEquipment
+from cimpy.cgmes_v2_4_15.EquivalentEquipment import EquivalentEquipment
 
 
 class EquivalentBranch(EquivalentEquipment):
@@ -22,6 +22,8 @@ class EquivalentBranch(EquivalentEquipment):
 	:zeroX12: Zero sequence series reactance from terminal sequence  1 to terminal sequence 2. Used for short circuit data exchange according to IEC 60909 Usage : EquivalentBranch is a result of network reduction prior to the data exchange Default: 0.0
 	:zeroX21: Zero sequence series reactance from terminal sequence 2 to terminal sequence 1. Used for short circuit data exchange according to IEC 60909 Usage : EquivalentBranch is a result of network reduction prior to the data exchange Default: 0.0
 		'''
+
+	cgmesProfile = EquivalentEquipment.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						'r': [cgmesProfile.EQ.value, ],
