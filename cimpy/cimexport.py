@@ -2,8 +2,14 @@ import os
 import importlib
 import chevron
 from datetime import datetime
+from enum import Enum
 import copy
 
+
+# ToDo: support readInProfile and possibleProfileList for export
+# ToDo: revise structure
+# ToDo: comment code
+# ToDo: use logger errors for errors
 
 # Input Object dictionary
 def _create_package_classes_dict(res):
@@ -21,91 +27,56 @@ def _create_package_classes_dict(res):
     return package_classes_dict
 
 
-# Input class dictionary
-def _get_class_attributes(object_list, version):
-    i = 0
-    print_list = []
-    about_dict = {}
-    for elem in object_list:
-        for key in elem.keys():
-            if key == "mRID":
-                continue
-            hit_dict = {}
-            no_hit_dict = {}
-            class_attributes = _get_attributes(elem[key])
-            class_attributes_with_references, mRID = _get_reference_uuid(class_attributes, version)
+# ToDo: comment
+def _get_class_attributes_with_references(res, version):
+    class_attributes_dict = {}
+    class_attributes_list = []
 
-            if mRID == '':
-                mRID = elem['mRID']
+    for key in res.keys():
+        class_dict = dict(name=res[key].__class__.__name__)
+        class_dict['mRID'] = key
+        # array containing all attributes, attribute references to objects
+        attributes_dict = _get_attributes(res[key])
+        print(key)
+        # change attribute references to mRID of the object, res needed because classes like SvPowerFlow does not have
+        # mRID as an attribute. Therefore the corresponding class has to be searched in the res dictionary
+        class_dict['attributes'] = _get_reference_uuid(attributes_dict, version, res)
+        class_attributes_list.append(class_dict)
+        del class_dict
 
-            hit_dict['mRID'] = mRID
-            hit_dict['name'] = key
-            no_hit_dict['mRID'] = mRID
-            no_hit_dict['name'] = key
-
-            no_hit_list = class_attributes_with_references
-            # cyclic references like TransformerEnd <-> PowerTransformer both in output file
-            search_class = elem[key]
-            while search_class.__class__.__name__ != 'Base':
-                no_hit_copy = no_hit_list
-                if hasattr(search_class, 'reference_dict'):
-                    no_hit_list = []
-                    for attr_elem in no_hit_copy:
-                        hit = False
-                        for package, value in search_class.reference_dict.items():
-                            package_name = package.split('Version')[0]
-                            if attr_elem['attr_name'].split('.')[1] in value:
-                                hit = True
-                                # hit_list.append(attr_elem)
-                                hit_dict['attributes'] = attr_elem
-                                if package_name in about_dict.keys():
-                                    hit_copy = copy.deepcopy(hit_dict)
-                                    about_dict[package_name].append(hit_copy)
-                                else:
-                                    hit_copy = copy.deepcopy(hit_dict)
-                                    about_dict[package_name] = [hit_copy]
-                                break
-                        if not hit:
-                            no_hit_list.append(attr_elem)
-                if len(no_hit_list) == 0:
-                    break
-                search_class = search_class.__class__.__bases__[0]()
-
-                # process about attributes
-                # if len(hit_list) > 0:
-                #     hit_dict['attributes'] = hit_list
-                #     if package_name in about_dict.keys():
-                #         about_dict[package_name].append(hit_dict)
-                #     else:
-                #         about_dict[package_name] = [hit_dict]
-
-            if len(no_hit_list) > 0:
-                # process other attributes
-                no_hit_dict['attributes'] = no_hit_list
-                print_list.append(no_hit_dict)
-
-    return print_list, about_dict
+    return class_attributes_list
 
 
 # Input Attributes Dictionary
-def _get_reference_uuid(attr_dict, version):
+# ToDo: comment code
+def _get_reference_uuid(attr_dict, version, res):
     reference_list = []
     base_class_name = 'cimpy.' + version + '.Base'
     base_module = importlib.import_module(base_class_name)
     base_class = getattr(base_module, 'Base')
-    mRID = ''
-    UUID = ''
     for key in attr_dict:
+        if key in ['readInProfile', 'possibleProfileList']:
+            reference_list.append({key: attr_dict[key]})
+            continue
+
         attributes = {}
         if isinstance(attr_dict[key], list):
             array = []
             for elem in attr_dict[key]:
                 if issubclass(type(elem), base_class):
-                    UUID = '%' + elem.mRID
+                    if not hasattr(elem, 'mRID'):
+                        UUID = '%' + _search_mRID(elem, res)
+                        if UUID == '%':
+                            # ToDo: logger error
+                            continue
+                    else:
+                        UUID = '%' + elem.mRID
+
                     array.append(UUID)
                     # resource = key + ' rdf:resource='
                     # reference_dict[resource] = array
                 else:
+                    # ToDo: log error
                     print('Error!')
             if len(array) == 1:
                 attributes['value'] = array[0]
@@ -113,11 +84,16 @@ def _get_reference_uuid(attr_dict, version):
                 attributes['value'] = array
         elif issubclass(type(attr_dict[key]), base_class):
             # resource = key + ' rdf:resource='
-            UUID = '%' + attr_dict[key].mRID
+            if not hasattr(attr_dict[key], 'mRID'):
+                UUID = '%' + _search_mRID(attr_dict[key], res)
+                if UUID == '%':
+                    # ToDo: logger error
+                    continue
+            else:
+                UUID = '%' + attr_dict[key].mRID
             attributes['value'] = UUID
-        elif key == 'IdentifiedObject.mRID':
-            mRID = attr_dict[key]
         elif attr_dict[key] == "" or attr_dict[key] is None:
+            # ToDo: check if needed
             pass
         else:
             # reference_dict[key] = attr_dict[key]
@@ -126,15 +102,25 @@ def _get_reference_uuid(attr_dict, version):
         attributes['attr_name'] = key
         if 'value' in attributes.keys():
             if isinstance(attributes['value'], list):
+                # ToDo: check if needed, why should the list contain non UUID entries
                 for reference_item in attributes['value']:
                     if reference_item not in ['', None, 0.0]:
                         reference_list.append({'value': reference_item, 'attr_name': key})
-            elif attributes['value'] not in ['', None, 0.0]:
+            elif attributes['value'] not in ['', None, 0.0, 0]:
                 reference_list.append(attributes)
 
-    return reference_list, mRID
+    return reference_list
 
 
+# ToDO: comment
+def _search_mRID(class_object, res):
+    for mRID, class_obj in res.items():
+        if class_object == class_obj:
+            return mRID
+    return ""
+
+
+# ToDo: comment
 def _set_attribute_or_reference(text, render):
     result = render(text)
     result = result.split('@')
@@ -147,6 +133,7 @@ def _set_attribute_or_reference(text, render):
         return '>' + value + '</cim:' + attr_name + '>'
 
 
+# ToDo: comment
 def _set_attribute_or_reference_model(text, render):
     result = render(text)
     result = result.split('@')
@@ -159,6 +146,7 @@ def _set_attribute_or_reference_model(text, render):
         return '>' + value + '</md:Model.' + attr_name + '>'
 
 
+# ToDo: comment
 def _create_namespaces_list(namespaces_dict):
     namespaces_list = []
 
@@ -169,6 +157,88 @@ def _create_namespaces_list(namespaces_dict):
         namespaces_list.append(namespace)
 
     return namespaces_list
+
+
+# ToDo: comment!!
+def _sort_classes_to_package(class_attributes_list):
+    export_dict = {}
+    export_about_dict = {}
+
+    # iterate over classes
+    for klass in class_attributes_list:
+        same_package_list = []
+        about_dict = {}
+
+        readInProfile = klass['attributes'][0]['readInProfile']
+        possibleProfileList = klass['attributes'][1]['possibleProfileList']
+
+        class_origin = ''
+        if klass['name'] in readInProfile.keys():
+            if 'class' in readInProfile[klass['name']].keys():
+                class_origin = readInProfile[klass['name']]['class']
+
+        if class_origin == '':
+            if klass['name'] in possibleProfileList.keys():
+                if 'class' in possibleProfileList[klass['name']].keys():
+                    class_origin_default = min(possibleProfileList[klass['name']]['class'])
+                    class_origin = cgmesProfile(class_origin_default).name
+                else:
+                    # ToDo: logger error
+                    pass
+            else:
+                # ToDo: logger error
+                pass
+
+        # iterate over attributes
+        for attribute in klass['attributes']:
+            if 'attr_name' in attribute.keys():
+                attribute_class = attribute['attr_name'].split('.')[0]
+                attribute_name = attribute['attr_name'].split('.')[1]
+                attribute_origin = ''
+
+                # was the attribute read in or set?
+                if attribute_class in readInProfile.keys():
+                    if attribute_name in readInProfile[attribute_class].keys():
+                        attribute_origin = readInProfile[attribute_class][attribute_name]
+
+                if attribute_origin == '':
+                    # attribute was not read in, therefore it is an added attribute, get origin from possibleProfileList
+                    if attribute_class in possibleProfileList.keys():
+                        if attribute_name in possibleProfileList[attribute_class].keys():
+                            attribute_origin_default = min(possibleProfileList[attribute_class][attribute_name])
+                            attribute_origin = cgmesProfile(attribute_origin_default).name
+                        else:
+                            # ToDo: logger error
+                            pass
+                    else:
+                        # ToDo: logger error:
+                        pass
+
+                if attribute_origin == class_origin:
+                    same_package_list.append(attribute)
+                else:
+                    if attribute_origin in about_dict.keys():
+                        about_dict[attribute_origin].append(attribute)
+                    else:
+                        about_dict[attribute_origin] = [attribute]
+
+        if class_origin in export_dict.keys():
+            export_class = dict(name=klass['name'], mRID=klass['mRID'], attributes=same_package_list)
+            export_dict[class_origin]['classes'].append(export_class)
+            del export_class
+        else:
+            export_class = dict(name=klass['name'], mRID=klass['mRID'], attributes=same_package_list)
+            export_dict[class_origin] = {'classes': [export_class]}
+
+        for about_key in about_dict.keys():
+            if about_key in export_about_dict.keys():
+                export_about_class = dict(name=klass['name'], mRID=klass['mRID'], attributes=about_dict[about_key])
+                export_about_dict[about_key]['classes'].append(export_about_class)
+            else:
+                export_about_class = dict(name=klass['name'], mRID=klass['mRID'], attributes=about_dict[about_key])
+                export_about_dict[about_key] = {'classes': [export_about_class]}
+
+    return export_dict, export_about_dict
 
 
 def cim_export(res, namespaces_dict, file_name, version):
@@ -184,15 +254,23 @@ def cim_export(res, namespaces_dict, file_name, version):
     :param file_name: a string with the name of the xml files which will be created
     :param version: cgmes version, e.g. version = "cgmes_v2_4_15"
     """
-    package_classes_dict = _create_package_classes_dict(res)
+    # package_classes_dict = _create_package_classes_dict(res)
     export_dict = {}
     cwd = os.getcwd()
     os.chdir(os.path.dirname(__file__))
 
+    class_attributes_list = _get_class_attributes_with_references(res, version)
+
+    export_dict, about_dict = _sort_classes_to_package(class_attributes_list)
+
+    # ToDo: export_dict and about_dict should be complete. check if correct
+    # ToDo: process dicts to write python files
+
     about_list = []
-    for key in package_classes_dict.keys():
-        export_dict[key], about_dict = _get_class_attributes(package_classes_dict[key], version)
-        about_list.append(about_dict)
+    # Iterate over objects in res
+    # for key in res.keys():
+    #     export_dict[key], about_dict = _get_class_attributes(res[key], version)
+    #     about_list.append(about_dict)
 
     new_export_dict = {}
     for key in export_dict.keys():
@@ -264,10 +342,11 @@ def _get_attributes(class_object):
         class_type = type(parent)
 
     # dictionary containing all attributes with key: 'Class_Name.Attribute_Name'
-    attributes_dict = {}
+    attributes_dict = dict(readInProfile={}, possibleProfileList={})
     # __dict__ of a subclass returns also the attributes of the parent classes
     # to avoid multiple attributes create list with all attributes already processed
     attributes_list = []
+
     for parent_class in inheritance_list:
         # get all attributes of the current parent class
         parent_attributes_dict = parent_class.__dict__
@@ -280,4 +359,22 @@ def _get_attributes(class_object):
             else:
                 continue
 
+        if class_name is not 'Base':
+            attributes_dict['readInProfile'][class_name] = parent_class.readInProfile
+            attributes_dict['possibleProfileList'][class_name] = parent_class.possibleProfileList
+
     return attributes_dict
+
+
+# ToDo: comment
+short_package_name = {
+    "DiagramLayout": 'DI',
+    "Dynamics": "DY",
+    "Equipment": "EQ",
+    "GeographicalLocation": "GL",
+    "StateVariables": "SV",
+    "SteadyStateHypothesis": "SSH",
+    "Topology": "TP"
+}
+
+cgmesProfile = Enum("cgmesProfile", {"EQ": 0, "SSH": 1, "TP": 2, "SV": 3, "DY": 4, "GL": 5, "DI": 6})
