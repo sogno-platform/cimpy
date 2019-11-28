@@ -6,7 +6,7 @@ class SynchronousMachineUserDefined(SynchronousMachineDynamics):
 	Synchronous machine whose dynamic behaviour is described by a user-defined model.
 
 	:proprietary: Behaviour is based on proprietary model as opposed to detailed model. true = user-defined model is proprietary with behaviour mutually understood by sending and receiving applications and parameters passed as general attributes false = user-defined model is explicitly defined in terms of control blocks and their input and output signals. Default: False
-	:ProprietaryParameterDynamics: Parameter of this proprietary user-defined model. Default: []
+	:ProprietaryParameterDynamics: Parameter of this proprietary user-defined model. Default: "many"
 		'''
 
 	cgmesProfile = SynchronousMachineDynamics.cgmesProfile
@@ -20,7 +20,7 @@ class SynchronousMachineUserDefined(SynchronousMachineDynamics):
 
 	__doc__ += '\n Documentation of parent class SynchronousMachineDynamics: \n' + SynchronousMachineDynamics.__doc__ 
 
-	def __init__(self, proprietary = False, ProprietaryParameterDynamics = [],  *args, **kw_args):
+	def __init__(self, proprietary = False, ProprietaryParameterDynamics = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.proprietary = proprietary

@@ -10,10 +10,10 @@ class TopologicalNode(IdentifiedObject):
 	:AngleRefTopologicalIsland: The island for which the node is an angle reference.   Normally there is one angle reference node for each island. Default: None
 	:TopologicalIsland: A topological node belongs to a topological island. Default: None
 	:BaseVoltage: The base voltage of the topologocial node. Default: None
-	:ConnectivityNodes: The topological node to which this connectivity node is assigned.  May depend on the current state of switches in the network. Default: []
+	:ConnectivityNodes: The topological node to which this connectivity node is assigned.  May depend on the current state of switches in the network. Default: "many"
 	:ConnectivityNodeContainer: The connectivity node container to which the toplogical node belongs. Default: None
 	:ReportingGroup: The topological nodes that belong to the reporting group. Default: None
-	:Terminal: The topological node associated with the terminal.   This can be used as an alternative to the connectivity node path to topological node, thus making it unneccesary to model connectivity nodes in some cases.   Note that the if connectivity nodes are in the model, this association would probably not be used as an input specification. Default: []
+	:Terminal: The topological node associated with the terminal.   This can be used as an alternative to the connectivity node path to topological node, thus making it unneccesary to model connectivity nodes in some cases.   Note that the if connectivity nodes are in the model, this association would probably not be used as an input specification. Default: "many"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -34,7 +34,7 @@ class TopologicalNode(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, SvInjection = None, SvVoltage = None, AngleRefTopologicalIsland = None, TopologicalIsland = None, BaseVoltage = None, ConnectivityNodes = [], ConnectivityNodeContainer = None, ReportingGroup = None, Terminal = [],  *args, **kw_args):
+	def __init__(self, SvInjection = None, SvVoltage = None, AngleRefTopologicalIsland = None, TopologicalIsland = None, BaseVoltage = None, ConnectivityNodes = "many", ConnectivityNodeContainer = None, ReportingGroup = None, Terminal = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.SvInjection = SvInjection

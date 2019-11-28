@@ -20,8 +20,8 @@ class GeneratingUnit(Equipment):
 	:startupCost: The initial startup cost incurred for each start of the GeneratingUnit. Default: 0.0
 	:variableCost: The variable cost component of production per unit of ActivePower. Default: 0.0
 	:totalEfficiency: The efficiency of the unit in converting the fuel into electrical energy. Default: 0.0
-	:ControlAreaGeneratingUnit: ControlArea specifications for this generating unit. Default: []
-	:RotatingMachine: A synchronous machine may operate as a generator and as such becomes a member of a generating unit. Default: []
+	:ControlAreaGeneratingUnit: ControlArea specifications for this generating unit. Default: "many"
+	:RotatingMachine: A synchronous machine may operate as a generator and as such becomes a member of a generating unit. Default: "many"
 	:normalPF: Generating unit economic participation factor. Default: 0.0
 		'''
 
@@ -52,7 +52,7 @@ class GeneratingUnit(Equipment):
 
 	__doc__ += '\n Documentation of parent class Equipment: \n' + Equipment.__doc__ 
 
-	def __init__(self, genControlSource = None, governorSCD = 0.0, initialP = 0.0, longPF = 0.0, maximumAllowableSpinningReserve = 0.0, maxOperatingP = 0.0, minOperatingP = 0.0, nominalP = 0.0, ratedGrossMaxP = 0.0, ratedGrossMinP = 0.0, ratedNetMaxP = 0.0, shortPF = 0.0, startupCost = 0.0, variableCost = 0.0, totalEfficiency = 0.0, ControlAreaGeneratingUnit = [], RotatingMachine = [], normalPF = 0.0,  *args, **kw_args):
+	def __init__(self, genControlSource = None, governorSCD = 0.0, initialP = 0.0, longPF = 0.0, maximumAllowableSpinningReserve = 0.0, maxOperatingP = 0.0, minOperatingP = 0.0, nominalP = 0.0, ratedGrossMaxP = 0.0, ratedGrossMinP = 0.0, ratedNetMaxP = 0.0, shortPF = 0.0, startupCost = 0.0, variableCost = 0.0, totalEfficiency = 0.0, ControlAreaGeneratingUnit = "many", RotatingMachine = "many", normalPF = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.genControlSource = genControlSource

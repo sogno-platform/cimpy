@@ -5,7 +5,7 @@ class DiagramObjectStyle(IdentifiedObject):
 	'''
 	A reference to a style used by the originating system for a diagram object.  A diagram object style describes information such as line thickness, shape such as circle or rectangle etc, and color.
 
-	:StyledObjects: A style can be assigned to multiple diagram objects. Default: []
+	:StyledObjects: A style can be assigned to multiple diagram objects. Default: "many"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -18,7 +18,7 @@ class DiagramObjectStyle(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, StyledObjects = [],  *args, **kw_args):
+	def __init__(self, StyledObjects = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.StyledObjects = StyledObjects

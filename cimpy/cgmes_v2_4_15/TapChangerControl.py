@@ -5,7 +5,7 @@ class TapChangerControl(RegulatingControl):
 	'''
 	Describes behavior specific to tap changers, e.g. how the voltage at the end of a line varies with the load level and compensation of the voltage drop by tap adjustment.
 
-	:TapChanger: The regulating control scheme in which this tap changer participates. Default: []
+	:TapChanger: The regulating control scheme in which this tap changer participates. Default: "many"
 		'''
 
 	cgmesProfile = RegulatingControl.cgmesProfile
@@ -18,7 +18,7 @@ class TapChangerControl(RegulatingControl):
 
 	__doc__ += '\n Documentation of parent class RegulatingControl: \n' + RegulatingControl.__doc__ 
 
-	def __init__(self, TapChanger = [],  *args, **kw_args):
+	def __init__(self, TapChanger = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.TapChanger = TapChanger

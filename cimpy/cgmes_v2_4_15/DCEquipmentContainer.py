@@ -5,8 +5,8 @@ class DCEquipmentContainer(EquipmentContainer):
 	'''
 	A modeling construct to provide a root class for containment of DC as well as AC equipment. The class differ from the EquipmentContaner for AC in that it may also contain DCNodes. Hence it can contain both AC and DC equipment.
 
-	:DCNodes:  Default: []
-	:DCTopologicalNode:  Default: []
+	:DCNodes:  Default: "many"
+	:DCTopologicalNode:  Default: "many"
 		'''
 
 	cgmesProfile = EquipmentContainer.cgmesProfile
@@ -20,7 +20,7 @@ class DCEquipmentContainer(EquipmentContainer):
 
 	__doc__ += '\n Documentation of parent class EquipmentContainer: \n' + EquipmentContainer.__doc__ 
 
-	def __init__(self, DCNodes = [], DCTopologicalNode = [],  *args, **kw_args):
+	def __init__(self, DCNodes = "many", DCTopologicalNode = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.DCNodes = DCNodes

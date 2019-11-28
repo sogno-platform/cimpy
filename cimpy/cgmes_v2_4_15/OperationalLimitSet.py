@@ -7,7 +7,7 @@ class OperationalLimitSet(IdentifiedObject):
 
 	:Terminal:  Default: None
 	:Equipment: The equipment to which the limit set applies. Default: None
-	:OperationalLimitValue: The limit set to which the limit values belong. Default: []
+	:OperationalLimitValue: The limit set to which the limit values belong. Default: "many"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -22,7 +22,7 @@ class OperationalLimitSet(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, Terminal = None, Equipment = None, OperationalLimitValue = [],  *args, **kw_args):
+	def __init__(self, Terminal = None, Equipment = None, OperationalLimitValue = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Terminal = Terminal

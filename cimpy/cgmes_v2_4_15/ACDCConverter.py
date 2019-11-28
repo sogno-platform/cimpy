@@ -14,7 +14,7 @@ class ACDCConverter(ConductingEquipment):
 	:resistiveLoss: Converter configuration data used in power flow. Refer to poleLossP. Default: 0.0
 	:switchingLoss: Switching losses, relative to the base apparent power 'baseS'. Refer to poleLossP. Default: 0.0
 	:valveU0: Valve threshold voltage. Forward voltage drop when the valve is conducting. Used in loss calculations, i.e. the switchLoss depend on numberOfValves * valveU0. Default: 0.0
-	:DCTerminals:  Default: []
+	:DCTerminals:  Default: "many"
 	:PccTerminal: All converters' DC sides linked to this point of common coupling terminal. Default: None
 	:idc: Converter DC current, also called Id. Converter state variable, result from power flow. Default: 0.0
 	:poleLossP: The active power loss at a DC Pole  = idleLoss + switchingLoss*|Idc| + resitiveLoss*Idc^2 For lossless operation Pdc=Pac For rectifier operation with losses Pdc=Pac-lossP For inverter operation with losses Pdc=Pac+lossP Converter state variable used in power flow. Default: 0.0
@@ -54,7 +54,7 @@ class ACDCConverter(ConductingEquipment):
 
 	__doc__ += '\n Documentation of parent class ConductingEquipment: \n' + ConductingEquipment.__doc__ 
 
-	def __init__(self, baseS = 0.0, idleLoss = 0.0, maxUdc = 0.0, minUdc = 0.0, numberOfValves = 0, ratedUdc = 0.0, resistiveLoss = 0.0, switchingLoss = 0.0, valveU0 = 0.0, DCTerminals = [], PccTerminal = None, idc = 0.0, poleLossP = 0.0, uc = 0.0, udc = 0.0, p = 0.0, q = 0.0, targetPpcc = 0.0, targetUdc = 0.0,  *args, **kw_args):
+	def __init__(self, baseS = 0.0, idleLoss = 0.0, maxUdc = 0.0, minUdc = 0.0, numberOfValves = 0, ratedUdc = 0.0, resistiveLoss = 0.0, switchingLoss = 0.0, valveU0 = 0.0, DCTerminals = "many", PccTerminal = None, idc = 0.0, poleLossP = 0.0, uc = 0.0, udc = 0.0, p = 0.0, q = 0.0, targetPpcc = 0.0, targetUdc = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.baseS = baseS

@@ -11,7 +11,7 @@ class Diagram(IdentifiedObject):
 	:x2InitialView: X coordinate of the second corner of the initial view. Default: 0.0
 	:y1InitialView: Y coordinate of the first corner of the initial view. Default: 0.0
 	:y2InitialView: Y coordinate of the second corner of the initial view. Default: 0.0
-	:DiagramElements: A diagram is made up of multiple diagram objects. Default: []
+	:DiagramElements: A diagram is made up of multiple diagram objects. Default: "many"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -30,7 +30,7 @@ class Diagram(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, DiagramStyle = None, orientation = None, x1InitialView = 0.0, x2InitialView = 0.0, y1InitialView = 0.0, y2InitialView = 0.0, DiagramElements = [],  *args, **kw_args):
+	def __init__(self, DiagramStyle = None, orientation = None, x1InitialView = 0.0, x2InitialView = 0.0, y1InitialView = 0.0, y2InitialView = 0.0, DiagramElements = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.DiagramStyle = DiagramStyle

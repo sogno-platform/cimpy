@@ -6,10 +6,10 @@ class SynchronousMachineDynamics(RotatingMachineDynamics):
 	Synchronous machine whose behaviour is described by reference to a standard model expressed in one of the following forms:
 
 	:SynchronousMachine: Synchronous machine to which synchronous machine dynamics model applies. Default: None
-	:TurbineGovernorDynamics: Synchronous machine model with which this turbine-governor model is associated. Default: []
+	:TurbineGovernorDynamics: Synchronous machine model with which this turbine-governor model is associated. Default: "many"
 	:ExcitationSystemDynamics: Excitation system model associated with this synchronous machine model. Default: None
 	:MechanicalLoadDynamics: Mechanical load model associated with this synchronous machine model. Default: None
-	:GenICompensationForGenJ: Compensation of voltage compensator's generator for current flow out of this  generator. Default: []
+	:GenICompensationForGenJ: Compensation of voltage compensator's generator for current flow out of this  generator. Default: "many"
 		'''
 
 	cgmesProfile = RotatingMachineDynamics.cgmesProfile
@@ -26,7 +26,7 @@ class SynchronousMachineDynamics(RotatingMachineDynamics):
 
 	__doc__ += '\n Documentation of parent class RotatingMachineDynamics: \n' + RotatingMachineDynamics.__doc__ 
 
-	def __init__(self, SynchronousMachine = None, TurbineGovernorDynamics = [], ExcitationSystemDynamics = None, MechanicalLoadDynamics = None, GenICompensationForGenJ = [],  *args, **kw_args):
+	def __init__(self, SynchronousMachine = None, TurbineGovernorDynamics = "many", ExcitationSystemDynamics = None, MechanicalLoadDynamics = None, GenICompensationForGenJ = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.SynchronousMachine = SynchronousMachine

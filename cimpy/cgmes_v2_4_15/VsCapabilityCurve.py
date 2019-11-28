@@ -5,7 +5,7 @@ class VsCapabilityCurve(Curve):
 	'''
 	The P-Q capability curve for a voltage source converter, with P on x-axis and Qmin and Qmax on y1-axis and y2-axis.
 
-	:VsConverterDCSides: Capability curve of this converter. Default: []
+	:VsConverterDCSides: Capability curve of this converter. Default: "many"
 		'''
 
 	cgmesProfile = Curve.cgmesProfile
@@ -18,7 +18,7 @@ class VsCapabilityCurve(Curve):
 
 	__doc__ += '\n Documentation of parent class Curve: \n' + Curve.__doc__ 
 
-	def __init__(self, VsConverterDCSides = [],  *args, **kw_args):
+	def __init__(self, VsConverterDCSides = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.VsConverterDCSides = VsConverterDCSides

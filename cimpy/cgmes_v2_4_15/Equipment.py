@@ -7,7 +7,7 @@ class Equipment(PowerSystemResource):
 
 	:aggregate: The single instance of equipment represents multiple pieces of equipment that have been modeled together as an aggregate.  Examples would be power transformers or synchronous machines operating in parallel modeled as a single aggregate power transformer or aggregate synchronous machine.  This is not to be used to indicate equipment that is part of a group of interdependent equipment produced by a network production program. Default: False
 	:EquipmentContainer: Container of this equipment. Default: None
-	:OperationalLimitSet: The operational limit sets associated with this equipment. Default: []
+	:OperationalLimitSet: The operational limit sets associated with this equipment. Default: "many"
 		'''
 
 	cgmesProfile = PowerSystemResource.cgmesProfile
@@ -22,7 +22,7 @@ class Equipment(PowerSystemResource):
 
 	__doc__ += '\n Documentation of parent class PowerSystemResource: \n' + PowerSystemResource.__doc__ 
 
-	def __init__(self, aggregate = False, EquipmentContainer = None, OperationalLimitSet = [],  *args, **kw_args):
+	def __init__(self, aggregate = False, EquipmentContainer = None, OperationalLimitSet = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.aggregate = aggregate

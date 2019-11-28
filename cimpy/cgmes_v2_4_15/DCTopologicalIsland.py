@@ -5,7 +5,7 @@ class DCTopologicalIsland(IdentifiedObject):
 	'''
 	An electrically connected subset of the network. DC topological islands can change as the current network state changes: e.g. due to  - disconnect switches or breakers change state in a SCADA/EMS - manual creation, change or deletion of topological nodes in a planning tool.
 
-	:DCTopologicalNodes:  Default: []
+	:DCTopologicalNodes:  Default: "many"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -18,7 +18,7 @@ class DCTopologicalIsland(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, DCTopologicalNodes = [],  *args, **kw_args):
+	def __init__(self, DCTopologicalNodes = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.DCTopologicalNodes = DCTopologicalNodes

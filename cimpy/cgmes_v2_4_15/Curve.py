@@ -9,7 +9,7 @@ class Curve(IdentifiedObject):
 	:xUnit: The X-axis units of measure. Default: None
 	:y1Unit: The Y1-axis units of measure. Default: None
 	:y2Unit: The Y2-axis units of measure. Default: None
-	:CurveDatas: The curve of  this curve data point. Default: []
+	:CurveDatas: The curve of  this curve data point. Default: "many"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -26,7 +26,7 @@ class Curve(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, curveStyle = None, xUnit = None, y1Unit = None, y2Unit = None, CurveDatas = [],  *args, **kw_args):
+	def __init__(self, curveStyle = None, xUnit = None, y1Unit = None, y2Unit = None, CurveDatas = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.curveStyle = curveStyle

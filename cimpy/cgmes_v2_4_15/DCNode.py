@@ -5,7 +5,7 @@ class DCNode(IdentifiedObject):
 	'''
 	DC nodes are points where terminals of DC conducting equipment are connected together with zero impedance.
 
-	:DCTerminals:  Default: []
+	:DCTerminals:  Default: "many"
 	:DCEquipmentContainer:  Default: None
 	:DCTopologicalNode: See association end TopologicalNode.ConnectivityNodes. Default: None
 		'''
@@ -22,7 +22,7 @@ class DCNode(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, DCTerminals = [], DCEquipmentContainer = None, DCTopologicalNode = None,  *args, **kw_args):
+	def __init__(self, DCTerminals = "many", DCEquipmentContainer = None, DCTopologicalNode = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.DCTerminals = DCTerminals

@@ -5,9 +5,9 @@ class Substation(EquipmentContainer):
 	'''
 	A collection of equipment for purposes other than generation or utilization, through which electric energy in bulk is passed for the purposes of switching or modifying its characteristics.
 
-	:DCConverterUnit:  Default: []
+	:DCConverterUnit:  Default: "many"
 	:Region: The SubGeographicalRegion containing the substation. Default: None
-	:VoltageLevels: The voltage levels within this substation. Default: []
+	:VoltageLevels: The voltage levels within this substation. Default: "many"
 		'''
 
 	cgmesProfile = EquipmentContainer.cgmesProfile
@@ -22,7 +22,7 @@ class Substation(EquipmentContainer):
 
 	__doc__ += '\n Documentation of parent class EquipmentContainer: \n' + EquipmentContainer.__doc__ 
 
-	def __init__(self, DCConverterUnit = [], Region = None, VoltageLevels = [],  *args, **kw_args):
+	def __init__(self, DCConverterUnit = "many", Region = None, VoltageLevels = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.DCConverterUnit = DCConverterUnit

@@ -13,7 +13,7 @@ class WindContRotorRIEC(IdentifiedObject):
 	:rmin: Minimum rotor resistance (). It is type dependent parameter. Default: 0.0
 	:tomegafilt: Filter time constant for generator speed measurement (). It is type dependent parameter. Default: 0.0
 	:tpfilt: Filter time constant for power measurement (). It is type dependent parameter. Default: 0.0
-	:WindDynamicsLookupTable: The wind dynamics lookup table associated with this rotor resistance control model. Default: []
+	:WindDynamicsLookupTable: The wind dynamics lookup table associated with this rotor resistance control model. Default: "many"
 	:WindGenTurbineType2IEC: Wind turbine type 2 model with whitch this wind control rotor resistance model is associated. Default: None
 		'''
 
@@ -36,7 +36,7 @@ class WindContRotorRIEC(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, kirr = 0.0, komegafilt = 0.0, kpfilt = 0.0, kprr = 0.0, rmax = 0.0, rmin = 0.0, tomegafilt = 0.0, tpfilt = 0.0, WindDynamicsLookupTable = [], WindGenTurbineType2IEC = None,  *args, **kw_args):
+	def __init__(self, kirr = 0.0, komegafilt = 0.0, kpfilt = 0.0, kprr = 0.0, rmax = 0.0, rmin = 0.0, tomegafilt = 0.0, tpfilt = 0.0, WindDynamicsLookupTable = "many", WindGenTurbineType2IEC = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.kirr = kirr

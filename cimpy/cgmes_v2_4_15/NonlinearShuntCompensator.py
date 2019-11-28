@@ -5,7 +5,7 @@ class NonlinearShuntCompensator(ShuntCompensator):
 	'''
 	A non linear shunt compensator has bank or section admittance values that differs.
 
-	:NonlinearShuntCompensatorPoints: All points of the non-linear shunt compensator. Default: []
+	:NonlinearShuntCompensatorPoints: All points of the non-linear shunt compensator. Default: "many"
 		'''
 
 	cgmesProfile = ShuntCompensator.cgmesProfile
@@ -18,7 +18,7 @@ class NonlinearShuntCompensator(ShuntCompensator):
 
 	__doc__ += '\n Documentation of parent class ShuntCompensator: \n' + ShuntCompensator.__doc__ 
 
-	def __init__(self, NonlinearShuntCompensatorPoints = [],  *args, **kw_args):
+	def __init__(self, NonlinearShuntCompensatorPoints = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.NonlinearShuntCompensatorPoints = NonlinearShuntCompensatorPoints

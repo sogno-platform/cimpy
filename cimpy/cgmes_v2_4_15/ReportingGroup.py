@@ -5,8 +5,8 @@ class ReportingGroup(IdentifiedObject):
 	'''
 	A reporting group is used for various ad-hoc groupings used for reporting.
 
-	:BusNameMarker: The reporting group to which this bus name marker belongs. Default: []
-	:TopologicalNode: The reporting group to which the topological node belongs. Default: []
+	:BusNameMarker: The reporting group to which this bus name marker belongs. Default: "many"
+	:TopologicalNode: The reporting group to which the topological node belongs. Default: "many"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -20,7 +20,7 @@ class ReportingGroup(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, BusNameMarker = [], TopologicalNode = [],  *args, **kw_args):
+	def __init__(self, BusNameMarker = "many", TopologicalNode = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.BusNameMarker = BusNameMarker

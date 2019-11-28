@@ -6,7 +6,7 @@ class WindPlantDynamics(DynamicsFunctionBlock):
 	Parent class supporting relationships to wind turbines Type 3 and 4 and wind plant IEC and user defined wind plants including their control models.
 
 	:RemoteInputSignal: The wind plant using the remote signal. Default: None
-	:WindTurbineType3or4Dynamics: The wind turbine type 3 or 4 associated with this wind plant. Default: []
+	:WindTurbineType3or4Dynamics: The wind turbine type 3 or 4 associated with this wind plant. Default: "many"
 		'''
 
 	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
@@ -20,7 +20,7 @@ class WindPlantDynamics(DynamicsFunctionBlock):
 
 	__doc__ += '\n Documentation of parent class DynamicsFunctionBlock: \n' + DynamicsFunctionBlock.__doc__ 
 
-	def __init__(self, RemoteInputSignal = None, WindTurbineType3or4Dynamics = [],  *args, **kw_args):
+	def __init__(self, RemoteInputSignal = None, WindTurbineType3or4Dynamics = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.RemoteInputSignal = RemoteInputSignal

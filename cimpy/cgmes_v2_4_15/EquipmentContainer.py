@@ -5,7 +5,7 @@ class EquipmentContainer(ConnectivityNodeContainer):
 	'''
 	A modeling construct to provide a root class for containing equipment.
 
-	:Equipments: Contained equipment. Default: []
+	:Equipments: Contained equipment. Default: "many"
 		'''
 
 	cgmesProfile = ConnectivityNodeContainer.cgmesProfile
@@ -18,7 +18,7 @@ class EquipmentContainer(ConnectivityNodeContainer):
 
 	__doc__ += '\n Documentation of parent class ConnectivityNodeContainer: \n' + ConnectivityNodeContainer.__doc__ 
 
-	def __init__(self, Equipments = [],  *args, **kw_args):
+	def __init__(self, Equipments = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Equipments = Equipments

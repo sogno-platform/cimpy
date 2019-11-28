@@ -7,18 +7,14 @@ import cimpy
 
 logger = logging.getLogger(__name__)
 
-# ToDo: check import procedure
-# ToDo: store read in variables/classes
-
 
 def cim_import(xml_files, cgmes_version, start_dict=None):
     """Function to read cimgen files and instantiate the classes
 
-    # ToDo: check comment
-
     This function parses xml files containing a cgmes topology and instantiates these classes with their attributes.
     The instantiation is done in two steps. In the first step all classes are instantiated with default values and
-    in a second step the attributes contained in the xml files are set.
+    in a second step the attributes contained in the xml files are set. The origin of all classes and attributes are
+    stored in the class attribute readInProfile.
 
     :param xml_files: CIM RDF/XML file.
     :param cgmes_version: cgmes version, e.g. "cgmes_v2_4_15"
@@ -201,9 +197,6 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                 uuid2 = elem.get("{%s}resource" % namespace_rdf)
 
                                 if uuid2 is None:  # attribute
-                                    # ToDo: check if needed
-                                    reference = False
-
                                     # Convert value type using the default value.
                                     try:
                                         typ = type(getattr(obj, attr))
@@ -222,8 +215,6 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                         pass
 
                                 else:  # reference or enum (uuid2 is not None)
-                                    # ToDo: only needed if cyclic attribute origin is set to read in origin
-                                    reference = True
                                     # Use the '#' prefix to distinguish between references and enumerations.
                                     if uuid2[0] == "#":  # reference
                                         try:
@@ -241,11 +232,14 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                         default = getattr(obj, attr)
                                         if default is None:  # 1..1 or 0..1
                                             # Rely on properties to set any bi-directional references.
+                                            setattr(obj, attr, val)
+                                        elif default == 'many':  # many
                                             setattr(obj, attr, [val])
                                         elif isinstance(default, list):  # many
                                             attribute = getattr(obj, attr)
-                                            attribute.append(val)
-                                            setattr(obj, attr, attribute)
+                                            if val not in attribute:
+                                                attribute.append(val)
+                                                setattr(obj, attr, attribute)
                                         else:
                                             error_msg = 'Multiplicity Error. Class {} [{}], attribute {}'.format(
                                                 obj.__class__.__name__, uuid, attr)
@@ -257,12 +251,14 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                         if hasattr(val, obj.__class__.__name__):
                                             default1 = getattr(val, obj.__class__.__name__)
                                             if default1 is None:
+                                                setattr(val, obj.__class__.__name__, obj)
+                                            elif default1 == 'many':  # many
                                                 setattr(val, obj.__class__.__name__, [obj])
                                             elif isinstance(default1, list):  # many
-                                                # Use 'add*' method to set reference.
-                                                attribute = getattr(obj, attr)
-                                                attribute.append(val)
-                                                setattr(obj, attr, attribute)
+                                                attribute2 = getattr(val, obj.__class__.__name__)
+                                                if obj not in attribute2:
+                                                    attribute2.append(obj)
+                                                    setattr(val, obj.__class__.__name__, attribute2)
                                             else:
                                                 error_msg = 'Multiplicity Error.  Class {} [{}], attribute {}'.format(
                                                     val.__class__.__name__, uuid2[1:], obj.__class__.__name__)
@@ -285,11 +281,6 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                         logger_errors_grouped[error_msg] += 1
                                     except KeyError:
                                         logger_errors_grouped[error_msg] = 1
-
-                                if reference:
-                                    # ToDo: write back to package where read from or write to default package?
-                                    pass
-
                             else:  # if elem.get("{%s}ID" % nd_rdf is not None:
                                 # Finished setting object attributes.
                                 break

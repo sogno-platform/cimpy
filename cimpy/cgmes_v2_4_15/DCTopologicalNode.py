@@ -6,9 +6,9 @@ class DCTopologicalNode(IdentifiedObject):
 	DC bus.
 
 	:DCTopologicalIsland:  Default: None
-	:DCTerminals: See association end Terminal.TopologicalNode. Default: []
+	:DCTerminals: See association end Terminal.TopologicalNode. Default: "many"
 	:DCEquipmentContainer:  Default: None
-	:DCNodes: See association end ConnectivityNode.TopologicalNode. Default: []
+	:DCNodes: See association end ConnectivityNode.TopologicalNode. Default: "many"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -24,7 +24,7 @@ class DCTopologicalNode(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, DCTopologicalIsland = None, DCTerminals = [], DCEquipmentContainer = None, DCNodes = [],  *args, **kw_args):
+	def __init__(self, DCTopologicalIsland = None, DCTerminals = "many", DCEquipmentContainer = None, DCNodes = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.DCTopologicalIsland = DCTopologicalIsland

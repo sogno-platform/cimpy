@@ -5,8 +5,8 @@ class NonConformLoadGroup(LoadGroup):
 	'''
 	Loads that do not follow a daily and seasonal load variation pattern.
 
-	:EnergyConsumers: Group of this ConformLoad. Default: []
-	:NonConformLoadSchedules: The NonConformLoadSchedules in the NonConformLoadGroup. Default: []
+	:EnergyConsumers: Group of this ConformLoad. Default: "many"
+	:NonConformLoadSchedules: The NonConformLoadSchedules in the NonConformLoadGroup. Default: "many"
 		'''
 
 	cgmesProfile = LoadGroup.cgmesProfile
@@ -20,7 +20,7 @@ class NonConformLoadGroup(LoadGroup):
 
 	__doc__ += '\n Documentation of parent class LoadGroup: \n' + LoadGroup.__doc__ 
 
-	def __init__(self, EnergyConsumers = [], NonConformLoadSchedules = [],  *args, **kw_args):
+	def __init__(self, EnergyConsumers = "many", NonConformLoadSchedules = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.EnergyConsumers = EnergyConsumers

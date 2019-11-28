@@ -5,7 +5,7 @@ class WindPlantFreqPcontrolIEC(IdentifiedObject):
 	'''
 	Frequency and active power controller model.  Reference: IEC Standard 61400-27-1 Annex E.
 
-	:WindDynamicsLookupTable: The frequency and active power wind plant control model with which this wind dynamics lookup table is associated. Default: []
+	:WindDynamicsLookupTable: The frequency and active power wind plant control model with which this wind dynamics lookup table is associated. Default: "many"
 	:dprefmax: Maximum ramp rate of  request from the plant controller to the wind turbines (). It is project dependent parameter. Default: 0.0
 	:dprefmin: Minimum (negative) ramp rate of  request from the plant controller to the wind turbines (). It is project dependent parameter. Default: 0.0
 	:kiwpp: Plant P controller integral gain (). It is type dependent parameter. Default: 0.0
@@ -40,7 +40,7 @@ class WindPlantFreqPcontrolIEC(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, WindDynamicsLookupTable = [], dprefmax = 0.0, dprefmin = 0.0, kiwpp = 0.0, kpwpp = 0.0, prefmax = 0.0, prefmin = 0.0, tpft = 0.0, tpfv = 0.0, twpffilt = 0.0, twppfilt = 0.0, WindPlantIEC = None,  *args, **kw_args):
+	def __init__(self, WindDynamicsLookupTable = "many", dprefmax = 0.0, dprefmin = 0.0, kiwpp = 0.0, kpwpp = 0.0, prefmax = 0.0, prefmin = 0.0, tpft = 0.0, tpfv = 0.0, twpffilt = 0.0, twppfilt = 0.0, WindPlantIEC = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.WindDynamicsLookupTable = WindDynamicsLookupTable

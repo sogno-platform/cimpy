@@ -12,8 +12,8 @@ class DiagramObject(IdentifiedObject):
 	:offsetY: The offset in the Y direction. This is used for defining the offset from centre for rendering an icon (the default is that a single point specifies the centre of the icon).  The offset is in per-unit with 0 indicating there is no offset from the vertical centre of the icon.  The offset direction is dependent on the orientation of the diagram, with -0.5 and 0.5 indicating an offset of +/- 50% on the vertical axis. Default: 0.0
 	:rotation: Sets the angle of rotation of the diagram object.  Zero degrees is pointing to the top of the diagram.  Rotation is clockwise. Default: 0.0
 	:IdentifiedObject: The diagram objects that are associated with the domain object. Default: None
-	:DiagramObjectPoints: A diagram object can have 0 or more points to reflect its layout position, routing (for polylines) or boundary (for polygons). Default: []
-	:VisibilityLayers: A diagram object can be part of multiple visibility layers. Default: []
+	:DiagramObjectPoints: A diagram object can have 0 or more points to reflect its layout position, routing (for polylines) or boundary (for polygons). Default: "many"
+	:VisibilityLayers: A diagram object can be part of multiple visibility layers. Default: "many"
 	:DiagramObjectStyle: A diagram object has a style associated that provides a reference for the style used in the originating system. Default: None
 		'''
 
@@ -36,7 +36,7 @@ class DiagramObject(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, Diagram = None, drawingOrder = 0, isPolygon = False, offsetX = 0.0, offsetY = 0.0, rotation = 0.0, IdentifiedObject = None, DiagramObjectPoints = [], VisibilityLayers = [], DiagramObjectStyle = None,  *args, **kw_args):
+	def __init__(self, Diagram = None, drawingOrder = 0, isPolygon = False, offsetX = 0.0, offsetY = 0.0, rotation = 0.0, IdentifiedObject = None, DiagramObjectPoints = "many", VisibilityLayers = "many", DiagramObjectStyle = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Diagram = Diagram

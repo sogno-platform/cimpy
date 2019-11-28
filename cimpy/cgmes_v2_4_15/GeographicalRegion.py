@@ -5,7 +5,7 @@ class GeographicalRegion(IdentifiedObject):
 	'''
 	A geographical region of a power system network model.
 
-	:Regions: All sub-geograhpical regions within this geographical region. Default: []
+	:Regions: All sub-geograhpical regions within this geographical region. Default: "many"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -18,7 +18,7 @@ class GeographicalRegion(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, Regions = [],  *args, **kw_args):
+	def __init__(self, Regions = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Regions = Regions

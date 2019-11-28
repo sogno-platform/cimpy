@@ -27,7 +27,7 @@ class WindContPType3IEC(IdentifiedObject):
 	:wdtd: Active drive train damping frequency (omega). It can be calculated from two mass model parameters. It is type dependent parameter. Default: 0.0
 	:zeta: Coefficient for active drive train damping (zeta). It is type dependent parameter. Default: 0.0
 	:WindGenTurbineType3IEC: Wind turbine type 3 model with which this Wind control P type 3 model is associated. Default: None
-	:WindDynamicsLookupTable: The P control type 3 model with which this wind dynamics lookup table is associated. Default: []
+	:WindDynamicsLookupTable: The P control type 3 model with which this wind dynamics lookup table is associated. Default: "many"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -62,7 +62,7 @@ class WindContPType3IEC(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, dpmax = 0.0, dtrisemaxlvrt = 0.0, kdtd = 0.0, kip = 0.0, kpp = 0.0, mplvrt = False, omegaoffset = 0.0, pdtdmax = 0.0, rramp = 0.0, tdvs = 0.0, temin = 0.0, tomegafilt = 0.0, tpfilt = 0.0, tpord = 0.0, tufilt = 0.0, tuscale = 0.0, twref = 0.0, udvs = 0.0, updip = 0.0, wdtd = 0.0, zeta = 0.0, WindGenTurbineType3IEC = None, WindDynamicsLookupTable = [],  *args, **kw_args):
+	def __init__(self, dpmax = 0.0, dtrisemaxlvrt = 0.0, kdtd = 0.0, kip = 0.0, kpp = 0.0, mplvrt = False, omegaoffset = 0.0, pdtdmax = 0.0, rramp = 0.0, tdvs = 0.0, temin = 0.0, tomegafilt = 0.0, tpfilt = 0.0, tpord = 0.0, tufilt = 0.0, tuscale = 0.0, twref = 0.0, udvs = 0.0, updip = 0.0, wdtd = 0.0, zeta = 0.0, WindGenTurbineType3IEC = None, WindDynamicsLookupTable = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.dpmax = dpmax

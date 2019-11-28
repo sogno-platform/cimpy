@@ -7,7 +7,7 @@ class BusNameMarker(IdentifiedObject):
 
 	:priority: Priority of bus name marker for use as topology bus name.  Use 0 for don t care.  Use 1 for highest priority.  Use 2 as priority is less than 1 and so on. Default: 0
 	:ReportingGroup: The bus name markers that belong to this reporting group. Default: None
-	:Terminal: The terminals associated with this bus name marker. Default: []
+	:Terminal: The terminals associated with this bus name marker. Default: "many"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -22,7 +22,7 @@ class BusNameMarker(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, priority = 0, ReportingGroup = None, Terminal = [],  *args, **kw_args):
+	def __init__(self, priority = 0, ReportingGroup = None, Terminal = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.priority = priority

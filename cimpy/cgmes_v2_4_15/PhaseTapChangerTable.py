@@ -5,8 +5,8 @@ class PhaseTapChangerTable(IdentifiedObject):
 	'''
 	Describes a tabular curve for how the phase angle difference and impedance varies with the tap step.
 
-	:PhaseTapChangerTablePoint: The points of this table. Default: []
-	:PhaseTapChangerTabular: The phase tap changers to which this phase tap table applies. Default: []
+	:PhaseTapChangerTablePoint: The points of this table. Default: "many"
+	:PhaseTapChangerTabular: The phase tap changers to which this phase tap table applies. Default: "many"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -20,7 +20,7 @@ class PhaseTapChangerTable(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, PhaseTapChangerTablePoint = [], PhaseTapChangerTabular = [],  *args, **kw_args):
+	def __init__(self, PhaseTapChangerTablePoint = "many", PhaseTapChangerTabular = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.PhaseTapChangerTablePoint = PhaseTapChangerTablePoint

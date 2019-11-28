@@ -11,7 +11,7 @@ class WindContCurrLimIEC(IdentifiedObject):
 	:mqpri: Prioritisation of q control during LVRT (): - true = 1: reactive power priority, - false = 0: active power priority.  It is project dependent parameter. Default: False
 	:tufilt: Voltage measurement filter time constant (). It is type dependent parameter. Default: 0.0
 	:WindTurbineType3or4IEC: Wind turbine type 3 or 4 model with which this wind control current limitation model is associated. Default: None
-	:WindDynamicsLookupTable: The current control limitation model with which this wind dynamics lookup table is associated. Default: []
+	:WindDynamicsLookupTable: The current control limitation model with which this wind dynamics lookup table is associated. Default: "many"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -30,7 +30,7 @@ class WindContCurrLimIEC(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, imax = 0.0, imaxdip = 0.0, mdfslim = False, mqpri = False, tufilt = 0.0, WindTurbineType3or4IEC = None, WindDynamicsLookupTable = [],  *args, **kw_args):
+	def __init__(self, imax = 0.0, imaxdip = 0.0, mdfslim = False, mqpri = False, tufilt = 0.0, WindTurbineType3or4IEC = None, WindDynamicsLookupTable = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.imax = imax

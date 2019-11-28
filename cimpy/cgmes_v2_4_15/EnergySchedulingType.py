@@ -5,7 +5,7 @@ class EnergySchedulingType(IdentifiedObject):
 	'''
 	Used to define the type of generation for scheduling purposes.
 
-	:EnergySource: Energy Scheduling Type of an Energy Source Default: []
+	:EnergySource: Energy Scheduling Type of an Energy Source Default: "many"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -18,7 +18,7 @@ class EnergySchedulingType(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, EnergySource = [],  *args, **kw_args):
+	def __init__(self, EnergySource = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.EnergySource = EnergySource

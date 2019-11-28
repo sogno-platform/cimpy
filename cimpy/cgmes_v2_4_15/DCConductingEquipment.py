@@ -5,7 +5,7 @@ class DCConductingEquipment(Equipment):
 	'''
 	The parts of the DC power system that are designed to carry current or that are conductively connected through DC terminals.
 
-	:DCTerminals:  Default: []
+	:DCTerminals:  Default: "many"
 		'''
 
 	cgmesProfile = Equipment.cgmesProfile
@@ -18,7 +18,7 @@ class DCConductingEquipment(Equipment):
 
 	__doc__ += '\n Documentation of parent class Equipment: \n' + Equipment.__doc__ 
 
-	def __init__(self, DCTerminals = [],  *args, **kw_args):
+	def __init__(self, DCTerminals = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.DCTerminals = DCTerminals

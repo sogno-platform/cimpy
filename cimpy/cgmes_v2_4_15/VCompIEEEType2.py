@@ -6,7 +6,7 @@ class VCompIEEEType2(VoltageCompensatorDynamics):
 	
 
 	:tr:  Default: 0.0
-	:GenICompensationForGenJ: Compensation of this voltage compensator's generator for current flow out of another generator. Default: []
+	:GenICompensationForGenJ: Compensation of this voltage compensator's generator for current flow out of another generator. Default: "many"
 		'''
 
 	cgmesProfile = VoltageCompensatorDynamics.cgmesProfile
@@ -20,7 +20,7 @@ class VCompIEEEType2(VoltageCompensatorDynamics):
 
 	__doc__ += '\n Documentation of parent class VoltageCompensatorDynamics: \n' + VoltageCompensatorDynamics.__doc__ 
 
-	def __init__(self, tr = 0.0, GenICompensationForGenJ = [],  *args, **kw_args):
+	def __init__(self, tr = 0.0, GenICompensationForGenJ = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.tr = tr

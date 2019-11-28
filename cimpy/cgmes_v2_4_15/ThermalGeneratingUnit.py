@@ -5,7 +5,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
 	'''
 	A generating unit whose prime mover could be a steam turbine, combustion turbine, or diesel engine.
 
-	:FossilFuels: A thermal generating unit may have one or more fossil fuels. Default: []
+	:FossilFuels: A thermal generating unit may have one or more fossil fuels. Default: "many"
 		'''
 
 	cgmesProfile = GeneratingUnit.cgmesProfile
@@ -18,7 +18,7 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
 	__doc__ += '\n Documentation of parent class GeneratingUnit: \n' + GeneratingUnit.__doc__ 
 
-	def __init__(self, FossilFuels = [],  *args, **kw_args):
+	def __init__(self, FossilFuels = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.FossilFuels = FossilFuels

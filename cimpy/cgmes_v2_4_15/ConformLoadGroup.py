@@ -5,8 +5,8 @@ class ConformLoadGroup(LoadGroup):
 	'''
 	A group of loads conforming to an allocation pattern.
 
-	:EnergyConsumers: Conform loads assigned to this ConformLoadGroup. Default: []
-	:ConformLoadSchedules: The ConformLoadSchedules in the ConformLoadGroup. Default: []
+	:EnergyConsumers: Conform loads assigned to this ConformLoadGroup. Default: "many"
+	:ConformLoadSchedules: The ConformLoadSchedules in the ConformLoadGroup. Default: "many"
 		'''
 
 	cgmesProfile = LoadGroup.cgmesProfile
@@ -20,7 +20,7 @@ class ConformLoadGroup(LoadGroup):
 
 	__doc__ += '\n Documentation of parent class LoadGroup: \n' + LoadGroup.__doc__ 
 
-	def __init__(self, EnergyConsumers = [], ConformLoadSchedules = [],  *args, **kw_args):
+	def __init__(self, EnergyConsumers = "many", ConformLoadSchedules = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.EnergyConsumers = EnergyConsumers

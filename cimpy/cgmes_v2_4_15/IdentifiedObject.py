@@ -5,7 +5,7 @@ class IdentifiedObject(Base):
 	'''
 	This is a root class to provide common identification for all classes needing identification and naming attributes.
 
-	:DiagramObjects: The domain object to which this diagram object is associated. Default: []
+	:DiagramObjects: The domain object to which this diagram object is associated. Default: "many"
 	:mRID: Master resource identifier issued by a model authority. The mRID is globally unique within an exchange context. Global uniqueness is easily achieved by using a UUID,  as specified in RFC 4122, for the mRID.  The use of UUID is strongly recommended. For CIMXML data files in RDF syntax conforming to IEC 61970-552 Edition 1, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements. Default: ''
 	:name: The name is any free human readable and possibly non unique text naming the object. Default: ''
 	:description: The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy. Default: ''
@@ -28,7 +28,7 @@ class IdentifiedObject(Base):
 
 	
 
-	def __init__(self, DiagramObjects = [], mRID = '', name = '', description = '', energyIdentCodeEic = '', shortName = '',  ):
+	def __init__(self, DiagramObjects = "many", mRID = '', name = '', description = '', energyIdentCodeEic = '', shortName = '',  ):
 	
 		self.DiagramObjects = DiagramObjects
 		self.mRID = mRID

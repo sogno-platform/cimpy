@@ -6,7 +6,7 @@ class RegulatingControl(PowerSystemResource):
 	Specifies a set of equipment that works together to control a power system quantity such as voltage or flow.  Remote bus voltage control is possible by specifying the controlled terminal located at some place remote from the controlling equipment. In case multiple equipment, possibly of different types, control same terminal there must be only one RegulatingControl at that terminal. The most specific subtype of RegulatingControl shall be used in case such equipment participate in the control, e.g. TapChangerControl for tap changers. For flow control  load sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment.
 
 	:Terminal: The controls regulating this terminal. Default: None
-	:RegulatingCondEq: The equipment that participates in this regulating control scheme. Default: []
+	:RegulatingCondEq: The equipment that participates in this regulating control scheme. Default: "many"
 	:mode: The regulating control mode presently available.  This specification allows for determining the kind of regulation without need for obtaining the units from a schedule. Default: None
 	:discrete: The regulation is performed in a discrete mode. This applies to equipment with discrete controls, e.g. tap changers and shunt compensators. Default: False
 	:enabled: The flag tells if regulation is enabled. Default: False
@@ -32,7 +32,7 @@ class RegulatingControl(PowerSystemResource):
 
 	__doc__ += '\n Documentation of parent class PowerSystemResource: \n' + PowerSystemResource.__doc__ 
 
-	def __init__(self, Terminal = None, RegulatingCondEq = [], mode = None, discrete = False, enabled = False, targetDeadband = 0.0, targetValue = 0.0, targetValueUnitMultiplier = None,  *args, **kw_args):
+	def __init__(self, Terminal = None, RegulatingCondEq = "many", mode = None, discrete = False, enabled = False, targetDeadband = 0.0, targetValue = 0.0, targetValueUnitMultiplier = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Terminal = Terminal

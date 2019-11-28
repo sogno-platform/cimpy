@@ -5,7 +5,7 @@ class DiagramStyle(IdentifiedObject):
 	'''
 	The diagram style refer to a style used by the originating system for a diagram.  A diagram style describes information such as schematic, geographic, bus-branch etc.
 
-	:Diagram: A DiagramStyle can be used by many Diagrams. Default: []
+	:Diagram: A DiagramStyle can be used by many Diagrams. Default: "many"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -18,7 +18,7 @@ class DiagramStyle(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, Diagram = [],  *args, **kw_args):
+	def __init__(self, Diagram = "many",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Diagram = Diagram
