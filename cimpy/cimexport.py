@@ -145,7 +145,7 @@ def _create_namespaces_list(namespaces_dict):
 # possibleProfileList dictionary the possible origins of the class/attributes is stored. All profiles have a different
 # priority which is stored in the enum cgmesProfile. As default the smallest entry in the dictionary is used to
 # determine the profile for the class/attributes.
-def _sort_classes_to_profile(class_attributes_list):
+def _sort_classes_to_profile(class_attributes_list, activeProfileList):
     export_dict = {}
     export_about_dict = {}
 
@@ -155,24 +155,42 @@ def _sort_classes_to_profile(class_attributes_list):
         about_dict = {}
 
         # store readInProfile and possibleProfileList
+        # readInProfile class attribute, same for multiple instances of same class, only last origin of variable stored
+        # ToDo: check if multiple attribute origins are possible for read in attributes
         readInProfile = klass['attributes'][0]['readInProfile']
         possibleProfileList = klass['attributes'][1]['possibleProfileList']
 
-        class_origin = ''
+        class_serializationProfile = ''
+
         if 'class' in readInProfile.keys():
             # class was imported
-            class_origin = readInProfile['class']
+            if readInProfile['class'] in activeProfileList:
+                # else: class origin profile not active for export, get active profile from possibleProfileList
+                if readInProfile['class'] in possibleProfileList[klass['name']]['class']:
+                    # profile active and in possibleProfileList
+                    # else: class should not have been imported from this profile, get allowed profile
+                    # from possibleProfileList
+                    class_serializationProfile = readInProfile['class']
 
-        if class_origin == '':
+        if class_serializationProfile == '':
             # class was created
             if klass['name'] in possibleProfileList.keys():
                 if 'class' in possibleProfileList[klass['name']].keys():
-                    class_origin_default = min(possibleProfileList[klass['name']]['class'])
-                    class_origin = cgmesProfile(class_origin_default).name
+                    possibleProfileList[klass['name']]['class'].sort()
+                    for serializationProfile in possibleProfileList[klass['name']]['class']:
+                        if cgmesProfile(serializationProfile).name in activeProfileList:
+                            # active profile for class export found
+                            class_serializationProfile = cgmesProfile(serializationProfile).name
+                            break
+                    if class_serializationProfile == '':
+                        # no profile in possibleProfileList active
+                        logger.warning('All possible export profiles for class {} not active. Skip class for export.'
+                                       .format(klass['name']))
+                        continue
                 else:
-                    logger.info('Class {} has no profile to export to.'.format(klass['name']))
+                    logger.warning('Class {} has no profile to export to.'.format(klass['name']))
             else:
-                logger.info('Class {} has no profile to export to.'.format(klass['name']))
+                logger.warning('Class {} has no profile to export to.'.format(klass['name']))
 
         # iterate over attributes
         for attribute in klass['attributes']:
@@ -184,43 +202,55 @@ def _sort_classes_to_profile(class_attributes_list):
                 if attribute_name == 'mRID':
                     continue
 
-                attribute_origin = ''
+                attribute_serializationProfile = ''
 
                 if attribute_name in readInProfile.keys():
                     # attribute was imported
-                    attribute_origin = readInProfile[attribute_name]
+                    if readInProfile[attribute_name] in activeProfileList:
+                        attribute_serializationProfile = readInProfile[attribute_name]
 
-                if attribute_origin == '':
+                if attribute_serializationProfile == '':
                     # attribute was added
                     if attribute_class in possibleProfileList.keys():
                         if attribute_name in possibleProfileList[attribute_class].keys():
-                            attribute_origin_default = min(possibleProfileList[attribute_class][attribute_name])
-                            attribute_origin = cgmesProfile(attribute_origin_default).name
+                            possibleProfileList[attribute_class][attribute_name].sort()
+                            for serializationProfile in possibleProfileList[attribute_class][attribute_name]:
+                                if cgmesProfile(serializationProfile).name in activeProfileList:
+                                    # active profile for class export found
+                                    attribute_serializationProfile = cgmesProfile(serializationProfile).name
+                                    break
+                            if attribute_serializationProfile == '':
+                                # no profile in possibleProfileList active, skip attribute
+                                logger.warning('All possible export profiles for attribute {}.{} of class {} '
+                                               'not active. Skip attribute for export.'
+                                               .format(attribute_class, attribute_name, klass['name']))
+                                continue
                         else:
-                            logger.info('Attribute {} has no profile to export to.'.format(attribute_name))
+                            logger.warning('Attribute {}.{} of class {} has no profile to export to.'.
+                                           format(attribute_class, attribute_name, klass['name']))
                     else:
-                        logger.info('The class {} for attribtue {} is not in the possibleProfileList'.format(
+                        logger.warning('The class {} for attribute {} is not in the possibleProfileList'.format(
                             attribute_class, attribute_name))
 
-                if attribute_origin == class_origin:
+                if attribute_serializationProfile == class_serializationProfile:
                     # class and current attribute belong to same profile
                     same_package_list.append(attribute)
                 else:
                     # class and current attribute does not belong to same profile -> rdf:about in
                     # attribute origin profile
-                    if attribute_origin in about_dict.keys():
-                        about_dict[attribute_origin].append(attribute)
+                    if attribute_serializationProfile in about_dict.keys():
+                        about_dict[attribute_serializationProfile].append(attribute)
                     else:
-                        about_dict[attribute_origin] = [attribute]
+                        about_dict[attribute_serializationProfile] = [attribute]
 
         # add class with all attributes in the same profile to the export dict sorted by the profile
-        if class_origin in export_dict.keys():
+        if class_serializationProfile in export_dict.keys():
             export_class = dict(name=klass['name'], mRID=klass['mRID'], attributes=same_package_list)
-            export_dict[class_origin]['classes'].append(export_class)
+            export_dict[class_serializationProfile]['classes'].append(export_class)
             del export_class
         else:
             export_class = dict(name=klass['name'], mRID=klass['mRID'], attributes=same_package_list)
-            export_dict[class_origin] = {'classes': [export_class]}
+            export_dict[class_serializationProfile] = {'classes': [export_class]}
 
         # add class with all attributes defined in another profile to the about_key sorted by the profile
         for about_key in about_dict.keys():
@@ -234,7 +264,7 @@ def _sort_classes_to_profile(class_attributes_list):
     return export_dict, export_about_dict
 
 
-def cim_export(res, namespaces_dict, file_name, version):
+def cim_export(res, namespaces_dict, file_name, version, activeProfileList):
     """Function for serialization of cgmes classes
 
     This function serializes cgmes classes with the template engine chevron. The classes are separated by their profile
@@ -246,6 +276,7 @@ def cim_export(res, namespaces_dict, file_name, version):
     :param namespaces_dict: a dictionary containing the RDF namespaces used in the imported xml files
     :param file_name: a string with the name of the xml files which will be created
     :param version: cgmes version, e.g. version = "cgmes_v2_4_15"
+    :param activeProfileList: a list containing the strings of all short names of the profiles used for serialization
     """
 
     cwd = os.getcwd()
@@ -259,7 +290,7 @@ def cim_export(res, namespaces_dict, file_name, version):
     # determine class and attribute export profiles. The export dict contains all classes and their attributes where
     # the class definition and the attribute definitions are in the same profile. Every entry in about_dict generates
     # a rdf:about in another profile
-    export_dict, about_dict = _sort_classes_to_profile(class_attributes_list)
+    export_dict, about_dict = _sort_classes_to_profile(class_attributes_list, activeProfileList)
 
     namespaces_list = _create_namespaces_list(namespaces_dict)
 
@@ -309,6 +340,9 @@ def cim_export(res, namespaces_dict, file_name, version):
                                                 "namespaces": namespaces_list,
                                                 "model": model_description['model']})
                 file.write(output)
+        else:
+            logger.warning('File {} already exists in path {}. Delete file or change file name to serialize CGMES '
+                           'classes.'.format(full_file_name, cwd))
         del model_description, model_name
     os.chdir(cwd)
     logger.info('End export procedure. Elapsed time: {}'.format(time() - t0))
