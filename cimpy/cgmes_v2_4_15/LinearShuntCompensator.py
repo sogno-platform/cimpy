@@ -20,7 +20,7 @@ class LinearShuntCompensator(ShuntCompensator):
 						'g0PerSection': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class ShuntCompensator: \n' + ShuntCompensator.__doc__ 
 

@@ -14,7 +14,7 @@ class ConformLoad(EnergyConsumer):
 						'LoadGroup': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class EnergyConsumer: \n' + EnergyConsumer.__doc__ 
 

@@ -32,7 +32,7 @@ class StateVariablesVersion(Base):
 						'shortName': [cgmesProfile.SV.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

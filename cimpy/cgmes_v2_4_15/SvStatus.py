@@ -16,7 +16,7 @@ class SvStatus(Base):
 						'inService': [cgmesProfile.SV.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

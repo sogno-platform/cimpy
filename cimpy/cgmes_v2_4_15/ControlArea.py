@@ -22,7 +22,7 @@ class ControlArea(PowerSystemResource):
 						'pTolerance': [cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PowerSystemResource: \n' + PowerSystemResource.__doc__ 
 

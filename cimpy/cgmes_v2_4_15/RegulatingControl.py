@@ -28,7 +28,7 @@ class RegulatingControl(PowerSystemResource):
 						'targetValueUnitMultiplier': [cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PowerSystemResource: \n' + PowerSystemResource.__doc__ 
 

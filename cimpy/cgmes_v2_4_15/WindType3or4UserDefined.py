@@ -16,7 +16,7 @@ class WindType3or4UserDefined(WindTurbineType3or4Dynamics):
 						'ProprietaryParameterDynamics': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class WindTurbineType3or4Dynamics: \n' + WindTurbineType3or4Dynamics.__doc__ 
 

@@ -16,7 +16,7 @@ class PFVArControllerType1UserDefined(PFVArControllerType1Dynamics):
 						'ProprietaryParameterDynamics': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PFVArControllerType1Dynamics: \n' + PFVArControllerType1Dynamics.__doc__ 
 

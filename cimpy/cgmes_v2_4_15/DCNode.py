@@ -18,7 +18,7 @@ class DCNode(IdentifiedObject):
 						'DCTopologicalNode': [cgmesProfile.TP.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 

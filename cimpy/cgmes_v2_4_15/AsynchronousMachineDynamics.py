@@ -20,7 +20,7 @@ class AsynchronousMachineDynamics(RotatingMachineDynamics):
 						'TurbineGovernorDynamics': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class RotatingMachineDynamics: \n' + RotatingMachineDynamics.__doc__ 
 

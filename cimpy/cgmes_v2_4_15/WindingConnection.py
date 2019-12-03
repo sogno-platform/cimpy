@@ -12,7 +12,7 @@ class WindingConnection(Base):
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

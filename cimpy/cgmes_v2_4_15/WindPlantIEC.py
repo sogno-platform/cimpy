@@ -16,7 +16,7 @@ class WindPlantIEC(WindPlantDynamics):
 						'WindPlantReactiveControlIEC': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class WindPlantDynamics: \n' + WindPlantDynamics.__doc__ 
 

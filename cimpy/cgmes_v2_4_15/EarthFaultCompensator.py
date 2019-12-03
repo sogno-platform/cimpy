@@ -14,7 +14,7 @@ class EarthFaultCompensator(ConductingEquipment):
 						'r': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class ConductingEquipment: \n' + ConductingEquipment.__doc__ 
 

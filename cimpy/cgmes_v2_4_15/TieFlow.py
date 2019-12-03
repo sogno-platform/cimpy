@@ -18,7 +18,7 @@ class TieFlow(Base):
 						'positiveFlowIn': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

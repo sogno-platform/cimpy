@@ -22,7 +22,7 @@ class ResistancePerLength(Base):
 						'denominatorMultiplier': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

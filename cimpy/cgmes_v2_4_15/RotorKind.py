@@ -12,7 +12,7 @@ class RotorKind(Base):
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

@@ -12,7 +12,7 @@ class DCPolarityKind(Base):
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

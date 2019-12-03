@@ -12,7 +12,7 @@ class FrancisGovernorControlKind(Base):
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

@@ -20,7 +20,7 @@ class VoltageLevel(EquipmentContainer):
 						'lowVoltageLimit': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class EquipmentContainer: \n' + EquipmentContainer.__doc__ 
 

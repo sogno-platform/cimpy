@@ -18,7 +18,7 @@ class Frequency(Base):
 						'multiplier': [cgmesProfile.DY.value, cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

@@ -16,7 +16,7 @@ class PowerSystemStabilizerUserDefined(PowerSystemStabilizerDynamics):
 						'ProprietaryParameterDynamics': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 

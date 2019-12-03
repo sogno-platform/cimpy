@@ -34,7 +34,7 @@ def _get_reference_uuid(attr_dict, version, res, mRID):
     base_module = importlib.import_module(base_class_name)
     base_class = getattr(base_module, 'Base')
     for key in attr_dict:
-        if key in ['readInProfile', 'possibleProfileList']:
+        if key in ['serializationProfile', 'possibleProfileList']:
             reference_list.append({key: attr_dict[key]})
             continue
 
@@ -140,8 +140,8 @@ def _create_namespaces_list(namespaces_dict):
 
 
 # This function sorts the classes and their attributes to the corresponding profiles. Either the classes/attributes are
-# imported or they are set afterwards. In the first case the readInProfile is used to determine from which profile this
-# class/attribute was read. If an entry exists the class/attribute is added to this profile. In the
+# imported or they are set afterwards. In the first case the serializationProfile is used to determine from which
+# profile this class/attribute was read. If an entry exists the class/attribute is added to this profile. In the
 # possibleProfileList dictionary the possible origins of the class/attributes is stored. All profiles have a different
 # priority which is stored in the enum cgmesProfile. As default the smallest entry in the dictionary is used to
 # determine the profile for the class/attributes.
@@ -154,39 +154,38 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
         same_package_list = []
         about_dict = {}
 
-        # store readInProfile and possibleProfileList
-        # readInProfile class attribute, same for multiple instances of same class, only last origin of variable stored
-        # ToDo: check if multiple attribute origins are possible for read in attributes
-        readInProfile = klass['attributes'][0]['readInProfile']
+        # store serializationProfile and possibleProfileList
+        # serializationProfile class attribute, same for multiple instances of same class, only last origin of variable stored
+        serializationProfile = klass['attributes'][0]['serializationProfile']
         possibleProfileList = klass['attributes'][1]['possibleProfileList']
 
         class_serializationProfile = ''
 
-        if 'class' in readInProfile.keys():
+        if 'class' in serializationProfile.keys():
             # class was imported
-            if readInProfile['class'] in activeProfileList:
+            if serializationProfile['class'] in activeProfileList:
                 # else: class origin profile not active for export, get active profile from possibleProfileList
-                if readInProfile['class'] in possibleProfileList[klass['name']]['class']:
+                if cgmesProfile[serializationProfile['class']].value in possibleProfileList[klass['name']]['class']:
                     # profile active and in possibleProfileList
                     # else: class should not have been imported from this profile, get allowed profile
                     # from possibleProfileList
-                    class_serializationProfile = readInProfile['class']
+                    class_serializationProfile = serializationProfile['class']
                 else:
                     logger.warning('Class {} was read from profile {} but this profile is not possible for this class'
-                                   .format(klass['name'], readInProfile['class']))
+                                   .format(klass['name'], serializationProfile['class']))
             else:
                 logger.info('Class {} was read from profile {} but this profile is not active for the export. Use'
-                            'default profile from possibleProfileList.'.format(klass['name'], readInProfile['class']))
+                            'default profile from possibleProfileList.'.format(klass['name'], serializationProfile['class']))
 
         if class_serializationProfile == '':
             # class was created
             if klass['name'] in possibleProfileList.keys():
                 if 'class' in possibleProfileList[klass['name']].keys():
                     possibleProfileList[klass['name']]['class'].sort()
-                    for serializationProfile in possibleProfileList[klass['name']]['class']:
-                        if cgmesProfile(serializationProfile).name in activeProfileList:
+                    for klass_profile in possibleProfileList[klass['name']]['class']:
+                        if cgmesProfile(klass_profile).name in activeProfileList:
                             # active profile for class export found
-                            class_serializationProfile = cgmesProfile(serializationProfile).name
+                            class_serializationProfile = cgmesProfile(klass_profile).name
                             break
                     if class_serializationProfile == '':
                         # no profile in possibleProfileList active
@@ -210,24 +209,22 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
 
                 attribute_serializationProfile = ''
 
-                if attribute_name in readInProfile.keys():
+                if attribute_name in serializationProfile.keys():
                     # attribute was imported
-                    if readInProfile[attribute_name] in activeProfileList:
-                        attribute_serializationProfile = readInProfile[attribute_name]
-                    else:
-                        logger.info('Attribute {} from class {} was read from profile {} but this profile is inactive'
-                                    'for the export. Use default profile from possibleProfileList.'
-                                    .format(attribute_name, klass['name'], readInProfile[attribute_name]))
+                    if serializationProfile[attribute_name] in activeProfileList:
+                        attr_value = cgmesProfile[serializationProfile[attribute_name]].value
+                        if attr_value in possibleProfileList[attribute_class][attribute_name]:
+                            attribute_serializationProfile = serializationProfile[attribute_name]
 
                 if attribute_serializationProfile == '':
                     # attribute was added
                     if attribute_class in possibleProfileList.keys():
                         if attribute_name in possibleProfileList[attribute_class].keys():
                             possibleProfileList[attribute_class][attribute_name].sort()
-                            for serializationProfile in possibleProfileList[attribute_class][attribute_name]:
-                                if cgmesProfile(serializationProfile).name in activeProfileList:
+                            for attr_profile in possibleProfileList[attribute_class][attribute_name]:
+                                if cgmesProfile(attr_profile).name in activeProfileList:
                                     # active profile for class export found
-                                    attribute_serializationProfile = cgmesProfile(serializationProfile).name
+                                    attribute_serializationProfile = cgmesProfile(attr_profile).name
                                     break
                             if attribute_serializationProfile == '':
                                 # no profile in possibleProfileList active, skip attribute
@@ -372,7 +369,7 @@ def _get_attributes(class_object):
         class_type = type(parent)
 
     # dictionary containing all attributes with key: 'Class_Name.Attribute_Name'
-    attributes_dict = dict(readInProfile=class_object.readInProfile, possibleProfileList={})
+    attributes_dict = dict(serializationProfile=class_object.serializationProfile, possibleProfileList={})
 
     # __dict__ of a subclass returns also the attributes of the parent classes
     # to avoid multiple attributes create list with all attributes already processed
@@ -394,8 +391,8 @@ def _get_attributes(class_object):
                 continue
 
         # get all possibleProfileLists from all parent classes except the Base class (no attributes)
-        # the readInProfile from parent classes is not needed because entries in the readInProfile are only generated
-        # for the inherited class
+        # the serializationProfile from parent classes is not needed because entries in the serializationProfile
+        # are only generated for the inherited class
         if class_name is not 'Base':
             attributes_dict['possibleProfileList'][class_name] = parent_class.possibleProfileList
 

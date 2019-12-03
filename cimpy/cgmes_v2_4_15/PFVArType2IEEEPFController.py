@@ -26,7 +26,7 @@ class PFVArType2IEEEPFController(PFVArControllerType2Dynamics):
 						'exlon': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PFVArControllerType2Dynamics: \n' + PFVArControllerType2Dynamics.__doc__ 
 

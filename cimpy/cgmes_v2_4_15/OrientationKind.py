@@ -12,7 +12,7 @@ class OrientationKind(Base):
 	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

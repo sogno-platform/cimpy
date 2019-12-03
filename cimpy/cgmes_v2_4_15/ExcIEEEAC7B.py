@@ -64,7 +64,7 @@ class ExcIEEEAC7B(ExcitationSystemDynamics):
 						'seve2': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 

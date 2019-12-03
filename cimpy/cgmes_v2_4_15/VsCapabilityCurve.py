@@ -14,7 +14,7 @@ class VsCapabilityCurve(Curve):
 						'VsConverterDCSides': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class Curve: \n' + Curve.__doc__ 
 

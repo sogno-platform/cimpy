@@ -24,7 +24,7 @@ class DiagramObjectPoint(Base):
 						'zPosition': [cgmesProfile.DI.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

@@ -16,7 +16,7 @@ class RegularIntervalSchedule(BasicIntervalSchedule):
 						'endTime': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class BasicIntervalSchedule: \n' + BasicIntervalSchedule.__doc__ 
 

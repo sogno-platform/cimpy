@@ -14,7 +14,7 @@ class VoltageLimit(OperationalLimit):
 						'value': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class OperationalLimit: \n' + OperationalLimit.__doc__ 
 

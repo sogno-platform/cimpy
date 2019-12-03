@@ -16,7 +16,7 @@ class HydroGeneratingUnit(GeneratingUnit):
 						'HydroPowerPlant': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class GeneratingUnit: \n' + GeneratingUnit.__doc__ 
 

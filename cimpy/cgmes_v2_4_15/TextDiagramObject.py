@@ -14,7 +14,7 @@ class TextDiagramObject(DiagramObject):
 						'text': [cgmesProfile.DI.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class DiagramObject: \n' + DiagramObject.__doc__ 
 

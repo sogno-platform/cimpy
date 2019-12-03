@@ -18,7 +18,7 @@ class Voltage(Base):
 						'multiplier': [cgmesProfile.EQ.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

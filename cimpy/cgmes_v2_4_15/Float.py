@@ -12,7 +12,7 @@ class Float(Base):
 	possibleProfileList = {'class': [cgmesProfile.DI.value, cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

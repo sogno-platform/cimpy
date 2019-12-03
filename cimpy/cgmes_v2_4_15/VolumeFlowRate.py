@@ -22,7 +22,7 @@ class VolumeFlowRate(Base):
 						'value': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

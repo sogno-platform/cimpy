@@ -12,7 +12,7 @@ class ExcREXSFeedbackSignalKind(Base):
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

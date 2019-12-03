@@ -12,7 +12,7 @@ class PhaseTapChangerSymmetrical(PhaseTapChangerNonLinear):
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PhaseTapChangerNonLinear: \n' + PhaseTapChangerNonLinear.__doc__ 
 

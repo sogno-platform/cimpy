@@ -14,7 +14,7 @@ class DiagramObjectGluePoint(Base):
 						'DiagramObjectPoints': [cgmesProfile.DI.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

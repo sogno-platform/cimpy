@@ -18,7 +18,7 @@ class Susceptance(Base):
 						'multiplier': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

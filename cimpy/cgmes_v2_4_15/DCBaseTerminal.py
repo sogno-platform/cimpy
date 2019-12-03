@@ -16,7 +16,7 @@ class DCBaseTerminal(ACDCTerminal):
 						'DCTopologicalNode': [cgmesProfile.TP.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class ACDCTerminal: \n' + ACDCTerminal.__doc__ 
 

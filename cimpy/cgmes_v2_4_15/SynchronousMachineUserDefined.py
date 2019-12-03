@@ -16,7 +16,7 @@ class SynchronousMachineUserDefined(SynchronousMachineDynamics):
 						'ProprietaryParameterDynamics': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class SynchronousMachineDynamics: \n' + SynchronousMachineDynamics.__doc__ 
 

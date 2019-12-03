@@ -12,7 +12,7 @@ class Source(Base):
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

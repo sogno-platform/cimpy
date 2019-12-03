@@ -24,7 +24,7 @@ class OverexcLimIEEE(OverexcitationLimiterDynamics):
 						'kramp': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class OverexcitationLimiterDynamics: \n' + OverexcitationLimiterDynamics.__doc__ 
 

@@ -26,7 +26,7 @@ class PetersenCoil(EarthFaultCompensator):
 						'xGroundNominal': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class EarthFaultCompensator: \n' + EarthFaultCompensator.__doc__ 
 

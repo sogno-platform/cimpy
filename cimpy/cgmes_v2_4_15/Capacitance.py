@@ -18,7 +18,7 @@ class Capacitance(Base):
 						'multiplier': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

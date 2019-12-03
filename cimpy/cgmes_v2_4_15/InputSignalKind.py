@@ -12,7 +12,7 @@ class InputSignalKind(Base):
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

@@ -18,7 +18,7 @@ class PU(Base):
 						'multiplier': [cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

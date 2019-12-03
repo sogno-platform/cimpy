@@ -12,7 +12,7 @@ class Date(Base):
 	possibleProfileList = {'class': [cgmesProfile.DI.value, cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.GL.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, cgmesProfile.TP.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

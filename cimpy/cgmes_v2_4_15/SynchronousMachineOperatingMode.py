@@ -12,7 +12,7 @@ class SynchronousMachineOperatingMode(Base):
 	possibleProfileList = {'class': [cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

@@ -12,7 +12,7 @@ class AsynchronousMachineKind(Base):
 	possibleProfileList = {'class': [cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

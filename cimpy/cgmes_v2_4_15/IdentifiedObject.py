@@ -24,7 +24,7 @@ class IdentifiedObject(Base):
 						'shortName': [cgmesProfile.EQ.value, cgmesProfile.TP.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

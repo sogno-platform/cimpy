@@ -12,7 +12,7 @@ class GenericNonLinearLoadModelKind(Base):
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

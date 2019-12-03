@@ -18,7 +18,7 @@ class PerCent(Base):
 						'multiplier': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

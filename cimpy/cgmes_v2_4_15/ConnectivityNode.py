@@ -14,7 +14,7 @@ class ConnectivityNode(Base):
 						'TopologicalNode': [cgmesProfile.TP.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

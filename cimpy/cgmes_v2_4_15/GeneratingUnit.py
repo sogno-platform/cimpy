@@ -48,7 +48,7 @@ class GeneratingUnit(Equipment):
 						'normalPF': [cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class Equipment: \n' + Equipment.__doc__ 
 

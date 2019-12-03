@@ -32,7 +32,7 @@ class MutualCoupling(IdentifiedObject):
 						'x0': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 

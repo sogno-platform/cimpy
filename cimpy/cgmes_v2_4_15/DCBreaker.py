@@ -12,7 +12,7 @@ class DCBreaker(DCSwitch):
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class DCSwitch: \n' + DCSwitch.__doc__ 
 

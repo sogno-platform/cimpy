@@ -12,7 +12,7 @@ class ExcIEEEST1AUELselectorKind(Base):
 	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

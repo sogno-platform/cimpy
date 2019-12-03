@@ -16,7 +16,7 @@ class SvShuntCompensatorSections(Base):
 						'ShuntCompensator': [cgmesProfile.SV.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

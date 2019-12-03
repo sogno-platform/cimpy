@@ -14,7 +14,7 @@ class RatioTapChangerTablePoint(TapChangerTablePoint):
 						'RatioTapChangerTable': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class TapChangerTablePoint: \n' + TapChangerTablePoint.__doc__ 
 

@@ -12,7 +12,7 @@ class WindGenUnitKind(Base):
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

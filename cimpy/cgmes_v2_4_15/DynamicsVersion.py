@@ -32,7 +32,7 @@ class DynamicsVersion(Base):
 						'shortName': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

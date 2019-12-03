@@ -40,7 +40,7 @@ class CsConverter(ACDCConverter):
 						'targetIdc': [cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class ACDCConverter: \n' + ACDCConverter.__doc__ 
 

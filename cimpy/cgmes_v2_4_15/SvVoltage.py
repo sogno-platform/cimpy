@@ -18,7 +18,7 @@ class SvVoltage(Base):
 						'TopologicalNode': [cgmesProfile.SV.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

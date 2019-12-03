@@ -14,7 +14,7 @@ class TapChangerControl(RegulatingControl):
 						'TapChanger': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class RegulatingControl: \n' + RegulatingControl.__doc__ 
 

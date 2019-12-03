@@ -32,7 +32,7 @@ class GeographicalLocationVersion(Base):
 						'shortName': [cgmesProfile.GL.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

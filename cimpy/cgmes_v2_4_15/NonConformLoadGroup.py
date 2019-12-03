@@ -16,7 +16,7 @@ class NonConformLoadGroup(LoadGroup):
 						'NonConformLoadSchedules': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class LoadGroup: \n' + LoadGroup.__doc__ 
 

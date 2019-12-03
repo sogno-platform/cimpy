@@ -34,7 +34,7 @@ class SynchronousMachineEquivalentCircuit(SynchronousMachineDetailed):
 						'x2q': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class SynchronousMachineDetailed: \n' + SynchronousMachineDetailed.__doc__ 
 

@@ -20,7 +20,7 @@ class CurveData(Base):
 						'y2value': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

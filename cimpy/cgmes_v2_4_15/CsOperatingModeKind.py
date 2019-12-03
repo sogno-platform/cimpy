@@ -12,7 +12,7 @@ class CsOperatingModeKind(Base):
 	possibleProfileList = {'class': [cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

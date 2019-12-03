@@ -12,7 +12,7 @@ class StationSupply(EnergyConsumer):
 	possibleProfileList = {'class': [cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class EnergyConsumer: \n' + EnergyConsumer.__doc__ 
 

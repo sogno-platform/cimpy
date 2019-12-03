@@ -56,7 +56,7 @@ class GovHydroWPID(TurbineGovernorDynamics):
 						'pgv3': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 

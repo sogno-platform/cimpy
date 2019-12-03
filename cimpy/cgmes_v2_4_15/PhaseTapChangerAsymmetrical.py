@@ -14,7 +14,7 @@ class PhaseTapChangerAsymmetrical(PhaseTapChangerNonLinear):
 						'windingConnectionAngle': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PhaseTapChangerNonLinear: \n' + PhaseTapChangerNonLinear.__doc__ 
 

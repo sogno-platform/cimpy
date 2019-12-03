@@ -16,7 +16,7 @@ class DCEquipmentContainer(EquipmentContainer):
 						'DCTopologicalNode': [cgmesProfile.TP.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class EquipmentContainer: \n' + EquipmentContainer.__doc__ 
 

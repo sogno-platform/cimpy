@@ -12,7 +12,7 @@ class VsPpccControlKind(Base):
 	possibleProfileList = {'class': [cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

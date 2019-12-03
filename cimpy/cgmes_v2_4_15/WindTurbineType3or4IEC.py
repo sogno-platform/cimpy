@@ -18,7 +18,7 @@ class WindTurbineType3or4IEC(WindTurbineType3or4Dynamics):
 						'WindProtectionIEC': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class WindTurbineType3or4Dynamics: \n' + WindTurbineType3or4Dynamics.__doc__ 
 

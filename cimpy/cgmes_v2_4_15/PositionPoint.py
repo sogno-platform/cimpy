@@ -22,7 +22,7 @@ class PositionPoint(Base):
 						'zPosition': [cgmesProfile.GL.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

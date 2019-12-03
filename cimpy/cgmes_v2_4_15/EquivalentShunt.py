@@ -16,7 +16,7 @@ class EquivalentShunt(EquivalentEquipment):
 						'g': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class EquivalentEquipment: \n' + EquivalentEquipment.__doc__ 
 

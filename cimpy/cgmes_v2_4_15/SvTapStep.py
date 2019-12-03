@@ -16,7 +16,7 @@ class SvTapStep(Base):
 						'TapChanger': [cgmesProfile.SV.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

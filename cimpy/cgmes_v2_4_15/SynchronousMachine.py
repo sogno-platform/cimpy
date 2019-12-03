@@ -58,7 +58,7 @@ class SynchronousMachine(RotatingMachine):
 						'referencePriority': [cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class RotatingMachine: \n' + RotatingMachine.__doc__ 
 

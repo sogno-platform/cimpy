@@ -20,7 +20,7 @@ class RatioTapChanger(TapChanger):
 						'TransformerEnd': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class TapChanger: \n' + TapChanger.__doc__ 
 

@@ -40,7 +40,7 @@ class EquipmentVersion(Base):
 						'shortName': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

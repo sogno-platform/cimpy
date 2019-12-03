@@ -18,7 +18,7 @@ class Area(Base):
 						'multiplier': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

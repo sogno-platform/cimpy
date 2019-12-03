@@ -18,7 +18,7 @@ class Conductance(Base):
 						'multiplier': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

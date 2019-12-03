@@ -50,7 +50,7 @@ class ACDCConverter(ConductingEquipment):
 						'targetUdc': [cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class ConductingEquipment: \n' + ConductingEquipment.__doc__ 
 

@@ -18,7 +18,7 @@ class PhaseTapChangerLinear(PhaseTapChanger):
 						'xMin': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PhaseTapChanger: \n' + PhaseTapChanger.__doc__ 
 

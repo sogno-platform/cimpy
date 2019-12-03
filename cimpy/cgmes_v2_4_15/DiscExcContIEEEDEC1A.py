@@ -48,7 +48,7 @@ class DiscExcContIEEEDEC1A(DiscontinuousExcitationControlDynamics):
 						'vanmax': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class DiscontinuousExcitationControlDynamics: \n' + DiscontinuousExcitationControlDynamics.__doc__ 
 

@@ -22,7 +22,7 @@ class VoltagePerReactivePower(Base):
 						'denominatorUnit': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

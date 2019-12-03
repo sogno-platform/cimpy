@@ -18,7 +18,7 @@ class Money(Base):
 						'value': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

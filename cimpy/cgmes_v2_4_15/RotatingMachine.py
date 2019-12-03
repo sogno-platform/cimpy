@@ -26,7 +26,7 @@ class RotatingMachine(RegulatingCondEq):
 						'q': [cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class RegulatingCondEq: \n' + RegulatingCondEq.__doc__ 
 

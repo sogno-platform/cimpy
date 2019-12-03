@@ -18,7 +18,7 @@ class Temperature(Base):
 						'value': [cgmesProfile.DY.value, cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

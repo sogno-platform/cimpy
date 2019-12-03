@@ -22,7 +22,7 @@ class ActivePowerPerFrequency(Base):
 						'value': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

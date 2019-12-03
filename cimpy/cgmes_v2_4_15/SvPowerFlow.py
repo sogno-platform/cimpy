@@ -18,7 +18,7 @@ class SvPowerFlow(Base):
 						'q': [cgmesProfile.SV.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

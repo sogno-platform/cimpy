@@ -14,7 +14,7 @@ class DCTopologicalIsland(IdentifiedObject):
 						'DCTopologicalNodes': [cgmesProfile.SV.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 

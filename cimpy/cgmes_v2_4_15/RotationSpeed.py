@@ -22,7 +22,7 @@ class RotationSpeed(Base):
 						'denominatorMultiplier': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

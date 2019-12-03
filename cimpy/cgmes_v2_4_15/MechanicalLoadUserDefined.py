@@ -16,7 +16,7 @@ class MechanicalLoadUserDefined(MechanicalLoadDynamics):
 						'ProprietaryParameterDynamics': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class MechanicalLoadDynamics: \n' + MechanicalLoadDynamics.__doc__ 
 

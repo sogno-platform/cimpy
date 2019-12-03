@@ -14,7 +14,7 @@ class TurbineLoadControllerDynamics(DynamicsFunctionBlock):
 						'TurbineGovernorDynamics': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class DynamicsFunctionBlock: \n' + DynamicsFunctionBlock.__doc__ 
 

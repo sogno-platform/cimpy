@@ -16,7 +16,7 @@ class ReactiveCapabilityCurve(Curve):
 						'InitiallyUsedBySynchronousMachines': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class Curve: \n' + Curve.__doc__ 
 

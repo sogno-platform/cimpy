@@ -14,7 +14,7 @@ class EquivalentNetwork(ConnectivityNodeContainer):
 						'EquivalentEquipments': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class ConnectivityNodeContainer: \n' + ConnectivityNodeContainer.__doc__ 
 

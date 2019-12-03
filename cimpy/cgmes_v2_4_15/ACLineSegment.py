@@ -30,7 +30,7 @@ class ACLineSegment(Conductor):
 						'x0': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class Conductor: \n' + Conductor.__doc__ 
 

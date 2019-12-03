@@ -14,7 +14,7 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
     This function parses xml files containing a cgmes topology and instantiates these classes with their attributes.
     The instantiation is done in two steps. In the first step all classes are instantiated with default values and
     in a second step the attributes contained in the xml files are set. The origin of all classes and attributes are
-    stored in the class attribute readInProfile.
+    stored in the class attribute serializationProfile.
 
     :param xml_files: CIM RDF/XML file.
     :param cgmes_version: cgmes version, e.g. "cgmes_v2_4_15"
@@ -62,7 +62,7 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
 # The only exception is the mRID which is set for all classes that have this attribute. The attributes of a class
 # are set in the _set_attributes function because some attributes might be stored in one package and the class in
 # another. Since after this function all classes are instantiated, there should be no problem in setting the attributes.
-# Also the information from which package file a class was read is stored in the readInProfile dictionary.
+# Also the information from which package file a class was read is stored in the serializationProfile dictionary.
 def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base, logger_errors_grouped):
     # length of element tag base
     m = len(base)
@@ -117,7 +117,7 @@ def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base
                         res[uuid].mRID = uuid
 
                     if package is not '':
-                        res[uuid].readInProfile['class'] = short_package_name[package]
+                        res[uuid].serializationProfile['class'] = short_package_name[package]
                     else:
                         error_msg = 'Package information not found for class {}'.format(
                             klass.__class__.__name__
@@ -142,7 +142,7 @@ def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base
 
 # This function sets all attributes after the classes are instantiated by _instanciate_classes. Cyclic attributes like
 # PowerTransformerEnd <-> PowerTransformer are set. This function also stores the information from which package file
-# the attributes are read in the readInProfile dictionary.
+# the attributes are read in the serializationProfile dictionary.
 def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
     m = len(base)
     # Second step pass sets attributes and references.
@@ -272,7 +272,7 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                         setattr(obj, attr, val)
 
                                 if package is not '':
-                                    obj.readInProfile[attr] = short_package_name[package]
+                                    obj.serializationProfile[attr] = short_package_name[package]
                                 else:
                                     error_msg = 'Package information not found for class {}, attribute {}'.format(
                                         obj.__class__.__name__, attr

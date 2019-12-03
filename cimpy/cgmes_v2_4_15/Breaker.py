@@ -12,7 +12,7 @@ class Breaker(ProtectedSwitch):
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class ProtectedSwitch: \n' + ProtectedSwitch.__doc__ 
 

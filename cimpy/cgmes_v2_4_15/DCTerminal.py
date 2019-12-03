@@ -14,7 +14,7 @@ class DCTerminal(DCBaseTerminal):
 						'DCConductingEquipment': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class DCBaseTerminal: \n' + DCBaseTerminal.__doc__ 
 

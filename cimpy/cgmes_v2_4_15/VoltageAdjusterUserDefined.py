@@ -16,7 +16,7 @@ class VoltageAdjusterUserDefined(VoltageAdjusterDynamics):
 						'ProprietaryParameterDynamics': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class VoltageAdjusterDynamics: \n' + VoltageAdjusterDynamics.__doc__ 
 

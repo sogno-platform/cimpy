@@ -18,7 +18,7 @@ class SvInjection(Base):
 						'TopologicalNode': [cgmesProfile.SV.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

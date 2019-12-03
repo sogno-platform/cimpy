@@ -22,7 +22,7 @@ class PFVArType2Common1(PFVArControllerType2Dynamics):
 						'ref': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PFVArControllerType2Dynamics: \n' + PFVArControllerType2Dynamics.__doc__ 
 

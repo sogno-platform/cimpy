@@ -32,7 +32,7 @@ class TopologyVersion(Base):
 						'shortName': [cgmesProfile.TP.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

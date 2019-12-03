@@ -32,7 +32,7 @@ class DiagramLayoutVersion(Base):
 						'shortName': [cgmesProfile.DI.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

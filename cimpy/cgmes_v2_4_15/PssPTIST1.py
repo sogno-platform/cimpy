@@ -34,7 +34,7 @@ class PssPTIST1(PowerSystemStabilizerDynamics):
 						'dtp': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 

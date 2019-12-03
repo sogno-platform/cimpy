@@ -56,7 +56,7 @@ class ProprietaryParameterDynamics(Base):
 						'floatParameterValue': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

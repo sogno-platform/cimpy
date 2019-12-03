@@ -32,7 +32,7 @@ class SteadyStateHypothesisVersion(Base):
 						'shortName': [cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

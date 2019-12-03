@@ -24,7 +24,7 @@ class TapChangerTablePoint(Base):
 						'x': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

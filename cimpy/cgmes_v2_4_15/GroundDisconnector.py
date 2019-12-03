@@ -12,7 +12,7 @@ class GroundDisconnector(Switch):
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class Switch: \n' + Switch.__doc__ 
 

@@ -24,7 +24,7 @@ class PFVArType1IEEEVArController(PFVArControllerType1Dynamics):
 						'vvtmin': [cgmesProfile.DY.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PFVArControllerType1Dynamics: \n' + PFVArControllerType1Dynamics.__doc__ 
 

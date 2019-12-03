@@ -20,7 +20,7 @@ class PerLengthDCLineParameter(Base):
 						'resistance': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 

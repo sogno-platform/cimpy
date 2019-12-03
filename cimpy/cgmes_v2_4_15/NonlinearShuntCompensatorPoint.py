@@ -24,7 +24,7 @@ class NonlinearShuntCompensatorPoint(Base):
 						'g0': [cgmesProfile.EQ.value, ],
 						 }
 
-	readInProfile = {}
+	serializationProfile = {}
 
 	
 
