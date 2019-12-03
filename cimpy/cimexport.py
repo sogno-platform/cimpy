@@ -50,14 +50,14 @@ def _get_reference_uuid(attr_dict, version, res, mRID):
                         # search for the object in the res dictionary and return the mRID
                         UUID = '%' + _search_mRID(elem, res)
                         if UUID == '%':
-                            logger.info('Object of type {} not found as reference for object with UUID {}.'.format(
+                            logger.warning('Object of type {} not found as reference for object with UUID {}.'.format(
                                 elem.__class__.__name__, mRID))
                     else:
                         UUID = '%' + elem.mRID
 
                     array.append(UUID)
                 else:
-                    logger.info('Reference object not subclass of Base class for object with UUID {}.'.format(mRID))
+                    logger.warning('Reference object not subclass of Base class for object with UUID {}.'.format(mRID))
             if len(array) == 1:
                 attributes['value'] = array[0]
             else:
@@ -69,7 +69,7 @@ def _get_reference_uuid(attr_dict, version, res, mRID):
                 # The % added before the mRID is used in the lambda _set_attribute_or_reference
                 UUID = '%' + _search_mRID(attr_dict[key], res)
                 if UUID == '%':
-                    logger.info('Object of type {} not found as reference for object with UUID {}.'.format(
+                    logger.warning('Object of type {} not found as reference for object with UUID {}.'.format(
                         elem.__class__.__name__, mRID))
             else:
                 UUID = '%' + attr_dict[key].mRID
@@ -171,6 +171,12 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                     # else: class should not have been imported from this profile, get allowed profile
                     # from possibleProfileList
                     class_serializationProfile = readInProfile['class']
+                else:
+                    logger.warning('Class {} was read from profile {} but this profile is not possible for this class'
+                                   .format(klass['name'], readInProfile['class']))
+            else:
+                logger.info('Class {} was read from profile {} but this profile is not active for the export. Use'
+                            'default profile from possibleProfileList.'.format(klass['name'], readInProfile['class']))
 
         if class_serializationProfile == '':
             # class was created
@@ -208,6 +214,10 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                     # attribute was imported
                     if readInProfile[attribute_name] in activeProfileList:
                         attribute_serializationProfile = readInProfile[attribute_name]
+                    else:
+                        logger.info('Attribute {} from class {} was read from profile {} but this profile is inactive'
+                                    'for the export. Use default profile from possibleProfileList.'
+                                    .format(attribute_name, klass['name'], readInProfile[attribute_name]))
 
                 if attribute_serializationProfile == '':
                     # attribute was added
