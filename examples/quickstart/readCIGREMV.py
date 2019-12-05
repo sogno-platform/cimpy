@@ -1,6 +1,8 @@
 import logging
 import os
 import cimpy
+
+
 logging.basicConfig(filename='readCIGREMV.log', level=logging.INFO, filemode='w')
 
 print(os.getcwd())
