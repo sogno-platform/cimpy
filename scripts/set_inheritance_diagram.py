@@ -3,16 +3,16 @@ import os
 from tempfile import mkstemp
 from shutil import move, copy
 
-directory = os.getcwd()
+directory = os.path.abspath(os.path.join('..', 'documentation'))
 
 if 'conf.py' in os.listdir(directory):
-    conf_file = os.path.abspath('conf.py')
+    conf_file = os.path.abspath(os.path.join(directory, 'conf.py'))
     real_conf_file = os.path.abspath('real_conf.py')
     remove(conf_file)
     copy(real_conf_file, conf_file)
 
 if 'index.rst' in os.listdir(directory):
-    index_file = os.path.abspath('index.rst')
+    index_file = os.path.abspath(os.path.join(directory, 'index.rst'))
     real_index_file = os.path.abspath('real_index.rst')
     remove(index_file)
     copy(real_index_file, index_file)
@@ -23,7 +23,7 @@ for file in os.listdir(directory):
         file_path = os.path.abspath(file)
         fh, abs_path = mkstemp()
         with open(fh, 'w') as new_file:
-            with open(file) as old_file:
+            with open(os.path.join(directory, file)) as old_file:
                 for line in old_file:
                     if 'undoc-members' in line:
                         continue
@@ -39,6 +39,6 @@ for file in os.listdir(directory):
                             new_file.write('')
                             new_file.write('')
 
-        remove(file_path)
-        move(abs_path, file_path)
+        remove(os.path.join(directory, file))
+        move(abs_path, os.path.join(directory, file))
 

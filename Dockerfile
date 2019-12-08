@@ -14,7 +14,6 @@ RUN dnf -y update
 
 RUN dnf -y install \
 	make \
-    python3-sphinx \
 	python3-pip \
 	graphviz-devel
 
@@ -22,6 +21,8 @@ RUN dnf --refresh -y install \
 	python3-devel
 
 RUN pip3 install sphinx_rtd_theme
+
+RUN pip3 install sphinx==2.2.0
 
 # ADD . /cimpy
 
