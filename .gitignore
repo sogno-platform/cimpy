@@ -3,6 +3,10 @@
 __pycache__
 .idea
 ./cimpy/__pycache__
+*.egg
 
 # log files
 *.log
+
+# documentation
+documentation/
