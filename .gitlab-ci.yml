@@ -1,6 +1,6 @@
 variables:
     DOCKER_TAG_DEV: ${CI_COMMIT_REF_NAME}
-    DOCKER_IMAGE_DEV: modci-om
+    DOCKER_IMAGE_DEV: cimpy
   
 stages:
 - prepare
@@ -18,10 +18,10 @@ docker:
 documentation:
     stage: generate
     script:
-        - cd cimpy/scripts && ./docu.sh
+        - cd scripts && ./docu.sh
     image: ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV}
     artifacts:
         paths:
-            - cimpy/documentation
+            - documentation
     tags:
         - docker
