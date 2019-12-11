@@ -233,7 +233,7 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                         if default is None:  # 1..1 or 0..1
                                             # Rely on properties to set any bi-directional references.
                                             setattr(obj, attr, val)
-                                        elif default == 'many':  # many
+                                        elif default == 'list':  # many
                                             setattr(obj, attr, [val])
                                         elif isinstance(default, list):  # many
                                             attribute = getattr(obj, attr)
@@ -252,7 +252,7 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                             default1 = getattr(val, obj.__class__.__name__)
                                             if default1 is None:
                                                 setattr(val, obj.__class__.__name__, obj)
-                                            elif default1 == 'many':  # many
+                                            elif default1 == 'list':  # many
                                                 setattr(val, obj.__class__.__name__, [obj])
                                             elif isinstance(default1, list):  # many
                                                 attribute2 = getattr(val, obj.__class__.__name__)
