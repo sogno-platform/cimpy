@@ -6,14 +6,14 @@ class Terminal(ACDCTerminal):
 	An AC electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes.
 
 	:ConductingEquipment: The conducting equipment of the terminal.  Conducting equipment have  terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes. Default: None
-	:RemoteInputSignal: Input signal coming from this terminal. Default: "many"
-	:ConverterDCSides: Point of common coupling terminal for this converter DC side. It is typically the terminal on the power transformer (or switch) closest to the AC network. The power flow measurement must be the sum of all flows into the transformer. Default: "many"
+	:RemoteInputSignal: Input signal coming from this terminal. Default: "list"
+	:ConverterDCSides: Point of common coupling terminal for this converter DC side. It is typically the terminal on the power transformer (or switch) closest to the AC network. The power flow measurement must be the sum of all flows into the transformer. Default: "list"
 	:phases: Represents the normal network phasing condition. If the attribute is missing three phases (ABC or ABCN) shall be assumed. Default: None
 	:RegulatingControl: The terminal associated with this regulating control.  The terminal is associated instead of a node, since the terminal could connect into either a topological node (bus in bus-branch model) or a connectivity node (detailed switch model).  Sometimes it is useful to model regulation at a terminal of a bus bar object since the bus bar can be present in both a bus-branch model or a model with switch detail. Default: None
-	:TieFlow: The control area tie flows to which this terminal associates. Default: "many"
-	:TransformerEnd: All transformer ends connected at this terminal. Default: "many"
-	:HasFirstMutualCoupling: Mutual couplings associated with the branch as the first branch. Default: "many"
-	:HasSecondMutualCoupling: Mutual couplings with the branch associated as the first branch. Default: "many"
+	:TieFlow: The control area tie flows to which this terminal associates. Default: "list"
+	:TransformerEnd: All transformer ends connected at this terminal. Default: "list"
+	:HasFirstMutualCoupling: Mutual couplings associated with the branch as the first branch. Default: "list"
+	:HasSecondMutualCoupling: Mutual couplings with the branch associated as the first branch. Default: "list"
 	:SvPowerFlow: The power flow state variable associated with the terminal. Default: None
 	:TopologicalNode: The terminals associated with the topological node.   This can be used as an alternative to the connectivity node path to terminal, thus making it unneccesary to model connectivity nodes in some cases.   Note that if connectivity nodes are in the model, this association would probably not be used as an input specification. Default: None
 		'''
@@ -38,7 +38,7 @@ class Terminal(ACDCTerminal):
 
 	__doc__ += '\n Documentation of parent class ACDCTerminal: \n' + ACDCTerminal.__doc__ 
 
-	def __init__(self, ConductingEquipment = None, RemoteInputSignal = "many", ConverterDCSides = "many", phases = None, RegulatingControl = None, TieFlow = "many", TransformerEnd = "many", HasFirstMutualCoupling = "many", HasSecondMutualCoupling = "many", SvPowerFlow = None, TopologicalNode = None,  *args, **kw_args):
+	def __init__(self, ConductingEquipment = None, RemoteInputSignal = "list", ConverterDCSides = "list", phases = None, RegulatingControl = None, TieFlow = "list", TransformerEnd = "list", HasFirstMutualCoupling = "list", HasSecondMutualCoupling = "list", SvPowerFlow = None, TopologicalNode = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ConductingEquipment = ConductingEquipment
