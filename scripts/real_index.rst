@@ -45,7 +45,7 @@ Optional Arguments:
 Output:
     :res:            A map containing the CIMpy objects with the UUID as map key
 
-`Example for CIM Import <https://git.rwth-aachen.de/acs/public/cim/cimpy/blob/master/examples/quickstart/readCIGREMV.py>`_
+`Example for CIM Import <https://git.rwth-aachen.de/acs/public/cim/cimpy/blob/master/examples/quickstart/importCIGREMV.py>`_
 
 CIM Export
 """"""""""

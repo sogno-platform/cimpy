@@ -25,7 +25,7 @@ Output:
     res:                A map containing the CIMpy objects with the UUID as map key
 ```
 
-[Example for CIM Import](https://git.rwth-aachen.de/acs/core/cim/cimgen/blob/master/examples/quickstart/readCIGREMV.py)
+[Example for CIM Import](https://git.rwth-aachen.de/acs/public/cim/cimpy/blob/master/examples/quickstart/importCIGREMV.py)
 
 ## CIM Export
 Function for serialization of CIMpy objects to XML files.
@@ -42,4 +42,4 @@ Output:
     One XML file for each package in the CGMES version. The package name is added to the file name like [file_name]_[package].xml
 ```
 
-[Example for CIM Export](https://git.rwth-aachen.de/acs/core/cim/cimgen/blob/master/examples/quickstart/exportCIGREMV.py)
+[Example for CIM Export](https://git.rwth-aachen.de/acs/public/cim/cimpy/blob/master/examples/quickstart/exportCIGREMV.py)

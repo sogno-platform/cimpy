@@ -34,6 +34,9 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
     # map used to group errors
     logger_errors_grouped = {}
 
+    # map used to group infos
+    logger_info_grouped = {}
+
     # A map of uuids to CIM objects to be returned.
     res = start_dict if start_dict is not None else {}
 
@@ -44,16 +47,29 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
     # CIM element tag base (e.g. {http://iec.ch/TC57/2012/CIM-schema-cim16#} )
     base = "{" + namespaces["cim"] + "}"
 
-    res, logger_errors_grouped = _instantiate_classes(res, xml_files, cgmes_version_path,
-                                                      namespace_rdf, base, logger_errors_grouped)
-    res, logger_errors_grouped = _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped)
+    res, logger_errors_grouped, logger_info_grouped = _instantiate_classes(res, xml_files, cgmes_version_path,
+                                                                           namespace_rdf, base, logger_errors_grouped,
+                                                                           logger_info_grouped)
+    res, logger_errors_grouped = _set_attributes(res, xml_files, namespace_rdf, base,
+                                                 logger_errors_grouped)
 
     if logger_errors_grouped:
         for error, count in logger_errors_grouped.items():
             logging_message = '{} : {} times'.format(error, count)
             logger.warning(logging_message)
 
-    logger.info('Created totally {} CIM objects in {}s\n\n'.format(len(res), time() - t0))
+    if logger_info_grouped:
+        for info, count in logger_info_grouped.items():
+            logging_message = '{} : {} times'.format(info, count)
+            logger.info(logging_message)
+
+            # print info which classes and how many were instantiated
+            print(logging_message)
+
+    elapsed_time = time() - t0
+    logger.info('Created totally {} CIM objects in {}s\n\n'.format(len(res), elapsed_time))
+    # print info of how many classes in total were instantiated to terminal
+    print('Created totally {} CIM objects in {}s'.format(len(res), elapsed_time))
 
     return res, namespaces
 
@@ -63,7 +79,8 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
 # are set in the _set_attributes function because some attributes might be stored in one package and the class in
 # another. Since after this function all classes are instantiated, there should be no problem in setting the attributes.
 # Also the information from which package file a class was read is stored in the serializationProfile dictionary.
-def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base, logger_errors_grouped):
+def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base,
+                         logger_errors_grouped, logger_info_grouped):
     # length of element tag base
     m = len(base)
     # first step: create the dict res{uuid}=instance_of_the_cim_class
@@ -111,6 +128,12 @@ def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base
                     # Instantiate the class and map it to the uuid.
                     # res[uuid] = klass(UUID=uuid)
                     res[uuid] = klass()
+                    info_msg = 'CIM object {} created'.format(module_name.split('.')[-1])
+                    try:
+                        logger_info_grouped[info_msg] += 1
+                    except KeyError:
+                        logger_info_grouped[info_msg] = 1
+
                     # check if the class has the attribute mRID and set the mRID to the read in UUID. If the class
                     # does not has this attribute, the UUID is only stored in the res dictionary.
                     if hasattr(res[uuid], 'mRID'):
@@ -137,7 +160,7 @@ def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base
             # Clear children of the root element to minimise memory usage.
             root.clear()
 
-    return res, logger_errors_grouped
+    return res, logger_errors_grouped, logger_info_grouped
 
 
 # This function sets all attributes after the classes are instantiated by _instanciate_classes. Cyclic attributes like
