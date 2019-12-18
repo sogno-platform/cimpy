@@ -129,8 +129,9 @@ def add_external_network_injection(res, version, mRID, voltage_set_point):
         reg_name = 'Regulating Control ' + str(i)
         terminal_name = 'Terminal Injection ' + str(i)
 
-        module_name = "cimpy." + version + ".Equipment."
-
+        #module_name = "cimpy." + version + ".Equipment."
+        module_name = "cimpy." + version + "."
+        
         terminal_module = importlib.import_module((module_name + 'Terminal'))
         terminal_class = getattr(terminal_module, 'Terminal')
         res[terminal_name] = terminal_class(mRID=terminal_name,
@@ -141,7 +142,6 @@ def add_external_network_injection(res, version, mRID, voltage_set_point):
         regulating_control_class = getattr(regulating_control_module, 'RegulatingControl')
         res[reg_name] = regulating_control_class(mRID=reg_name,
                                                  name=reg_name,
-                                                 RegulatingCondEq=res[inj_name],
                                                  targetValue=voltage_set_point,
                                                  Terminal=res[terminal_name])
 
