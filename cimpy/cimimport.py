@@ -88,8 +88,6 @@ def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base
 
         logger.info('START of parsing file \"%s\"', xml_file)
 
-        package = ''
-
         # get an iterable
         context = etree.iterparse(xml_file, ("start", "end"))
 
@@ -100,6 +98,9 @@ def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base
         _, root = next(context)
 
         for event, elem in context:
+
+            package = ''
+
             # Process 'end' elements in the CGMES namespace.
             if event == "end" and elem.tag[:m] == base:
 
@@ -178,6 +179,9 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
         _, root = next(context)
 
         for event, elem in context:
+
+            package = ''
+
             # Process 'start' elements in the CGMES namespace.
             if event == "start" and elem.tag[:m] == base:
                 uuid = elem.get("{%s}ID" % namespace_rdf)
