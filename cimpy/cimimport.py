@@ -294,16 +294,6 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                         val = uuid2.rsplit(".", 1)[1]
                                         setattr(obj, attr, val)
 
-                                if package is not '':
-                                    obj.serializationProfile[attr] = short_package_name[package]
-                                else:
-                                    error_msg = 'Package information not found for class {}, attribute {}'.format(
-                                        obj.__class__.__name__, attr
-                                    )
-                                    try:
-                                        logger_errors_grouped[error_msg] += 1
-                                    except KeyError:
-                                        logger_errors_grouped[error_msg] = 1
                             else:  # if elem.get("{%s}ID" % nd_rdf is not None:
                                 # Finished setting object attributes.
                                 break
