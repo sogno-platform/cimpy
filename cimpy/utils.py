@@ -117,7 +117,7 @@ def add_external_network_injection(res, version, mRID, voltage_set_point):
     TopologicalNode = ''
     if mRID in res:
         if 'TopologicalNode' in str(type(res[mRID])):
-            TopologicalNode = mRID
+            TopologicalNode = res[mRID]
         elif 'ConnectivityNode' in str(type(res[mRID])):
             TopologicalNode = res[mRID].TopologicalNode.mRID
 
