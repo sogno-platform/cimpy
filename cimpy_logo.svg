@@ -74,16 +74,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="171.47884"
-     inkscape:cy="-52.04378"
+     inkscape:zoom="4.0000001"
+     inkscape:cx="121.83044"
+     inkscape:cy="78.594602"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     inkscape:window-x="1912"
-     inkscape:window-y="-8"
+     inkscape:window-x="-8"
+     inkscape:window-y="9"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
@@ -93,7 +93,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -158,28 +158,28 @@
          y="26.049957"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#71bff7;fill-opacity:1;stroke-width:0.26458332">y</tspan></text>
     <ellipse
-       style="opacity:0.756;fill:url(#linearGradient887);fill-opacity:1;fill-rule:evenodd;stroke:#94cef9;stroke-width:0.28874061;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       style="opacity:0.857;fill:url(#linearGradient887);fill-opacity:1;fill-rule:evenodd;stroke:#94cef9;stroke-width:0.28874061;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        id="path848"
        cx="30.450203"
        cy="17.569117"
        rx="1.7022923"
        ry="1.6061113" />
     <ellipse
-       style="opacity:0.756;fill:url(#linearGradient889);fill-opacity:1;fill-rule:evenodd;stroke:#94cef9;stroke-width:0.28874061;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       style="opacity:0.857;fill:url(#linearGradient889);fill-opacity:1;fill-rule:evenodd;stroke:#94cef9;stroke-width:0.28874061;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        id="path848-6"
        cx="41.199406"
        cy="17.722841"
        rx="1.7022923"
        ry="1.6061113" />
     <ellipse
-       style="opacity:0.756;fill:url(#linearGradient891);fill-opacity:1;fill-rule:evenodd;stroke:#94cef9;stroke-width:0.28874061;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       style="opacity:0.857;fill:url(#linearGradient891);fill-opacity:1;fill-rule:evenodd;stroke:#94cef9;stroke-width:0.28874061;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        id="path848-6-5"
        cx="54.796352"
        cy="17.529444"
        rx="1.7022923"
        ry="1.6061113" />
     <path
-       style="opacity:0.756;fill:#94cef8;fill-opacity:0.75686275;fill-rule:evenodd;stroke:none;stroke-width:0.11692515;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       style="opacity:0.857;fill:#94cef8;fill-opacity:0.75686275;fill-rule:evenodd;stroke:none;stroke-width:0.11692515;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        d="m 32.000462,18.528239 c 0.342136,-0.539338 0.403046,-1.196215 0.09728,-1.736707 v 0 c 6.980905,0.0061 14.036714,-0.03271 21.017239,0.01236 -0.309833,0.686607 -0.123641,1.308342 0.203932,1.802221 -7.317441,-0.01983 -12.198455,-0.02275 -21.318454,-0.07788 z"
        id="path4968"
        inkscape:connector-curvature="0"
