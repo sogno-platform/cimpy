@@ -97,9 +97,9 @@ def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base
         # Get the root element ({http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF).
         _, root = next(context)
 
-        for event, elem in context:
+        package = ''
 
-            package = ''
+        for event, elem in context:
 
             # Process 'end' elements in the CGMES namespace.
             if event == "end" and elem.tag[:m] == base:
@@ -153,7 +153,7 @@ def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base
 
             # Check which package is read
             elif event == "end" and 'Model.profile' in elem.tag:
-                for package_key in short_package_name:
+                for package_key in short_package_name.keys():
                     if package_key in elem.text:
                         package = package_key
                         break
@@ -177,10 +177,10 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
 
         # Get the root element ({http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF).
         _, root = next(context)
+        
+        package = ''
 
         for event, elem in context:
-
-            package = ''
 
             # Process 'start' elements in the CGMES namespace.
             if event == "start" and elem.tag[:m] == base:
@@ -314,7 +314,7 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
 
             # Check which package is read
             elif event == "end" and 'Model.profile' in elem.tag:
-                for package_key in short_package_name:
+                for package_key in short_package_name.keys():
                     if package_key in elem.text:
                         package = package_key
                         break

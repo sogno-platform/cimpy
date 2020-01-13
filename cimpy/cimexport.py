@@ -87,7 +87,7 @@ def _get_reference_uuid(attr_dict, version, res, mRID):
                     if reference_item not in ['', None, 0.0, 0]:
                         reference_list.append({'value': reference_item, 'attr_name': key})
             # ignore default values
-            elif attributes['value'] not in ['', None, 0.0, 0, 'many']:
+            elif attributes['value'] not in ['', None, 0.0, 0, 'list']:
                 reference_list.append(attributes)
 
     return reference_list
@@ -307,7 +307,8 @@ def cim_export(res, namespaces_dict, file_name, version, activeProfileList):
 
     # iterate over all profiles
     for profile_name, short_name in short_profile_name.items():
-        model_name = {'mRID': file_name, 'description': []}
+        model_name \
+            = {'mRID': file_name, 'description': []}
         model_description = {'model': [model_name]}
         model_description['model'][0]['description'].append(created)
         model_description['model'][0]['description'].append(authority)
