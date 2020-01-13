@@ -239,7 +239,10 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                         else:
                                             setattr(obj, attr, typ(elem.text))
                                     except TypeError:
-                                        pass
+                                        try:
+                                            setattr(obj, attr, elem.text)
+                                        except TypeError:
+                                            pass
 
                                 else:  # reference or enum (uuid2 is not None)
                                     # Use the '#' prefix to distinguish between references and enumerations.
