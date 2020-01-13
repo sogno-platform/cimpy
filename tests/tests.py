@@ -46,9 +46,6 @@ def test_export():
 
 
 def test_import():
-    # ToDo: store imported files: pickle, .mat, json?
-    # ToDo: compare dictionaries: resolve references?
-
     test_files = [r".\Test_DiagramLayout.xml",
                   r".\Test_Equipment.xml",
                   r".\Test_StateVariables.xml",
