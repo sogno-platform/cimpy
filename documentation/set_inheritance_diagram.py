@@ -3,7 +3,7 @@ import os
 from tempfile import mkstemp
 from shutil import move, copy
 
-directory = os.path.abspath(os.path.join('..', 'documentation'))
+directory = os.path.abspath(os.path.join('..', 'documentation-build'))
 
 if 'conf.py' in os.listdir(directory):
     conf_file = os.path.abspath(os.path.join(directory, 'conf.py'))
