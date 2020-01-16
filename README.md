@@ -1,15 +1,16 @@
-# CIMgen
-Python tool for generation and modification of CIM data
+# README
 
-# Installation
+Python package for import, modification and export of grid data in the format of XML/RDF documents based on the Common Information Model (CIM).
+
+## Installation
 ```
 $ git clone git@git.rwth-aachen.de:acs/public/cim/cimpy.git
 $ cd cimpy
 $ python setup.py develop
 ```
 
-# Usage
-## CIM Import
+## Usage
+### CIM Import
 Function for creating CIMpy objects out of a CIM topology.
 ```
 cimpy.cim_import(xml_files, cim_version, start_dict=None)
@@ -27,7 +28,7 @@ Output:
 
 [Example for CIM Import](https://git.rwth-aachen.de/acs/public/cim/cimpy/blob/master/examples/quickstart/importCIGREMV.py)
 
-## CIM Export
+### CIM Export
 Function for serialization of CIMpy objects to XML files.
 ```
 cimpy.cim_export(res, namespaces_dict, file_name, version):
@@ -43,3 +44,21 @@ Output:
 ```
 
 [Example for CIM Export](https://git.rwth-aachen.de/acs/public/cim/cimpy/blob/master/examples/quickstart/exportCIGREMV.py)
+
+## Copyright
+
+2019, Institute for Automation of Complex Power Systems, EONERC, RWTH Aachen University
+
+## License
+
+This project is released under the terms of the [Mozilla Public License Version 2.0](./LICENSE).
+
+## Contact
+
+[![EONERC ACS Logo](https://www.fein-aachen.org/img/logos/eonerc.png)](http://www.acs.eonerc.rwth-aachen.de)
+
+- Jan Dinkelbach <jdinkelbach@eonerc.rwth-aachen.de>
+
+[Institute for Automation of Complex Power Systems (ACS)](http://www.acs.eonerc.rwth-aachen.de)  
+[EON Energy Research Center (EONERC)](http://www.eonerc.rwth-aachen.de)  
+[RWTH University Aachen, Germany](http://www.rwth-aachen.de)  
