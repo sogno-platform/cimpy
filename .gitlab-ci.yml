@@ -18,10 +18,10 @@ docker:
 documentation:
     stage: generate
     script:
-        - cd scripts && ./docu.sh
+        - cd documentation && ./docu.sh
     image: ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV}
     artifacts:
         paths:
-            - documentation
+            - documentation-build
     tags:
         - docker

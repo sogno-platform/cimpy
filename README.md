@@ -1,4 +1,4 @@
-# cimpy
+# <img src="documentation/images/cimpy_logo.png" width=40 /> CIMpy
 
 Python package for import, modification and export of grid data in the format of XML/RDF documents based on the Common Information Model (CIM).
 
