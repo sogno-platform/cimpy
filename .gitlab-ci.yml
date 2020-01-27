@@ -25,3 +25,13 @@ documentation:
             - documentation
     tags:
         - docker
+
+test:pytest:
+    stage: test
+    variables:
+        PYTHONPATH: "build/Source/Python:Source/Python"
+    script:
+        - pytest -v tests
+    image: ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV}
+    tags:
+        - docker

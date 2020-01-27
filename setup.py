@@ -14,5 +14,7 @@ if __name__ == '__main__':
             'chevron',
             'sphinx',
             'sphinx_rtd_theme',
+            'pytest',
+            'pytest-check'
         ]
      )
