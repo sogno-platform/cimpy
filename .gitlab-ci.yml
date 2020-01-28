@@ -32,6 +32,7 @@ test:pytest:
     variables:
         PYTHONPATH: "build/Source/Python:Source/Python"
     script:
+        - python3 ../setup.py develop
         - pytest -v tests.py
     image: ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV}
     tags:
