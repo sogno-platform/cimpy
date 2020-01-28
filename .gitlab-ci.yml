@@ -5,6 +5,7 @@ variables:
 stages:
 - prepare
 - generate
+- test
 
 docker:
     stage: prepare
@@ -31,7 +32,7 @@ test:pytest:
     variables:
         PYTHONPATH: "build/Source/Python:Source/Python"
     script:
-        - pytest -v tests
+        - pytest -v tests.py
     image: ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV}
     tags:
         - docker
