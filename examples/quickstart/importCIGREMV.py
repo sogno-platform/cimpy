@@ -15,7 +15,7 @@ for file in xml_files:
     xml_files_abs.append(os.path.abspath(file))
 
 # res = cimpy.cimread(xml_files)
-res, _ = cimpy.cim_import(xml_files_abs, "cgmes_v2_4_15")
+res, _, _ = cimpy.cim_import(xml_files_abs, "cgmes_v2_4_15")
 print("\n\n")
 results = ["ACLineSegment", "PowerTransformer", "EnergyConsumer"]
 for key, value in res.items():

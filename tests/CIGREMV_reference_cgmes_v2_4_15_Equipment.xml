@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cim="http://iec.ch/TC57/2012/CIM-schema-cim16#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:entsoe="http://entsoe.eu/Secretariat/ProfileExtension/2#" xmlns:neplan="http://www.neplan.ch#" >
-<md:FullModel rdf:about="Test">
-    <md:Model.created>27/01/2020 18:45:27</md:Model.created>
+<md:FullModel rdf:about="CIGREMV_reference_cgmes_v2_4_15">
+    <md:Model.created>29/01/2020 15:09:48</md:Model.created>
     <md:Model.modelingAuthoritySet>www.acs.eonerc.rwth-aachen.de</md:Model.modelingAuthoritySet>
     <md:Model.profile>Equipment</md:Model.profile>
 </md:FullModel>
@@ -171,12 +171,12 @@
 <cim:OperationalLimitType rdf:ID="_d50aa23d-94a0-4462-a895-6bec6f7b89af">
     <cim:IdentifiedObject.name>PATL</cim:IdentifiedObject.name>
     <cim:OperationalLimitType.acceptableDuration>45000</cim:OperationalLimitType.acceptableDuration>
-    <cim:OperationalLimitType.direction>absoluteValue</cim:OperationalLimitType.direction>
+    <cim:OperationalLimitType.direction rdf:resource="http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue"/>
 </cim:OperationalLimitType>
 <cim:OperationalLimitType rdf:ID="_182e44b2-641d-4502-b36d-1949f49a90ea">
     <cim:IdentifiedObject.name>TATL</cim:IdentifiedObject.name>
     <cim:OperationalLimitType.acceptableDuration>60</cim:OperationalLimitType.acceptableDuration>
-    <cim:OperationalLimitType.direction>absoluteValue</cim:OperationalLimitType.direction>
+    <cim:OperationalLimitType.direction rdf:resource="http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue"/>
 </cim:OperationalLimitType>
 <cim:EnergyConsumer rdf:ID="Load7-I">
     <cim:IdentifiedObject.name>Load7-I</cim:IdentifiedObject.name>
@@ -913,7 +913,7 @@
     <cim:TransformerEnd.grounded>True</cim:TransformerEnd.grounded>
     <cim:PowerTransformerEnd.PowerTransformer rdf:resource="#TR1"/>
     <cim:PowerTransformerEnd.b>-1.9835e-06</cim:PowerTransformerEnd.b>
-    <cim:PowerTransformerEnd.connectionKind>Y</cim:PowerTransformerEnd.connectionKind>
+    <cim:PowerTransformerEnd.connectionKind rdf:resource="http://iec.ch/TC57/2012/CIM-schema-cim16#WindingConnection.Y"/>
     <cim:PowerTransformerEnd.ratedS>40.0</cim:PowerTransformerEnd.ratedS>
     <cim:PowerTransformerEnd.ratedU>110.0</cim:PowerTransformerEnd.ratedU>
     <cim:PowerTransformerEnd.r>1.90575</cim:PowerTransformerEnd.r>
@@ -953,7 +953,7 @@
     <cim:TransformerEnd.endNumber>2</cim:TransformerEnd.endNumber>
     <cim:TransformerEnd.grounded>True</cim:TransformerEnd.grounded>
     <cim:PowerTransformerEnd.PowerTransformer rdf:resource="#TR1"/>
-    <cim:PowerTransformerEnd.connectionKind>D</cim:PowerTransformerEnd.connectionKind>
+    <cim:PowerTransformerEnd.connectionKind rdf:resource="http://iec.ch/TC57/2012/CIM-schema-cim16#WindingConnection.D"/>
     <cim:PowerTransformerEnd.ratedS>40.0</cim:PowerTransformerEnd.ratedS>
     <cim:PowerTransformerEnd.ratedU>20.0</cim:PowerTransformerEnd.ratedU>
     <cim:PowerTransformerEnd.phaseAngleClock>5</cim:PowerTransformerEnd.phaseAngleClock>
@@ -999,7 +999,7 @@
     <cim:TransformerEnd.grounded>True</cim:TransformerEnd.grounded>
     <cim:PowerTransformerEnd.PowerTransformer rdf:resource="#TR2"/>
     <cim:PowerTransformerEnd.b>-1.9835e-06</cim:PowerTransformerEnd.b>
-    <cim:PowerTransformerEnd.connectionKind>Y</cim:PowerTransformerEnd.connectionKind>
+    <cim:PowerTransformerEnd.connectionKind rdf:resource="http://iec.ch/TC57/2012/CIM-schema-cim16#WindingConnection.Y"/>
     <cim:PowerTransformerEnd.ratedS>40.0</cim:PowerTransformerEnd.ratedS>
     <cim:PowerTransformerEnd.ratedU>110.0</cim:PowerTransformerEnd.ratedU>
     <cim:PowerTransformerEnd.r>1.90575</cim:PowerTransformerEnd.r>
@@ -1039,7 +1039,7 @@
     <cim:TransformerEnd.endNumber>2</cim:TransformerEnd.endNumber>
     <cim:TransformerEnd.grounded>True</cim:TransformerEnd.grounded>
     <cim:PowerTransformerEnd.PowerTransformer rdf:resource="#TR2"/>
-    <cim:PowerTransformerEnd.connectionKind>D</cim:PowerTransformerEnd.connectionKind>
+    <cim:PowerTransformerEnd.connectionKind rdf:resource="http://iec.ch/TC57/2012/CIM-schema-cim16#WindingConnection.D"/>
     <cim:PowerTransformerEnd.ratedS>40.0</cim:PowerTransformerEnd.ratedS>
     <cim:PowerTransformerEnd.ratedU>20.0</cim:PowerTransformerEnd.ratedU>
     <cim:PowerTransformerEnd.phaseAngleClock>5</cim:PowerTransformerEnd.phaseAngleClock>

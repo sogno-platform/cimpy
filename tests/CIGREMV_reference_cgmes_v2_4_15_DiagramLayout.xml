@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cim="http://iec.ch/TC57/2012/CIM-schema-cim16#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:entsoe="http://entsoe.eu/Secretariat/ProfileExtension/2#" xmlns:neplan="http://www.neplan.ch#" >
-<md:FullModel rdf:about="Test">
-    <md:Model.created>27/01/2020 18:45:27</md:Model.created>
+<md:FullModel rdf:about="CIGREMV_reference_cgmes_v2_4_15">
+    <md:Model.created>29/01/2020 15:09:48</md:Model.created>
     <md:Model.modelingAuthoritySet>www.acs.eonerc.rwth-aachen.de</md:Model.modelingAuthoritySet>
     <md:Model.profile>DiagramLayout</md:Model.profile>
 </md:FullModel>
 <cim:Diagram rdf:ID="_3b336fc7-5b11-41a1-83e8-5509bbd4eda8">
     <cim:IdentifiedObject.name>Load6</cim:IdentifiedObject.name>
-    <cim:Diagram.orientation>negative</cim:Diagram.orientation>
+    <cim:Diagram.orientation rdf:resource="http://iec.ch/TC57/2010/CIM-schema-cim16#OrientationKind.negative"/>
 </cim:Diagram>
 <cim:DiagramObject rdf:ID="_f71dc9cf-458e-4b79-9c3b-6e3a9b5cd398">
     <cim:DiagramObject.Diagram rdf:resource="#_3b336fc7-5b11-41a1-83e8-5509bbd4eda8"/>
