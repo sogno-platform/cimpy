@@ -23,6 +23,9 @@ example_path = os.path.join('..',
                                                                    'CIGRE_MV_Rudion_With_LoadFlow_Results'))))
 
 
+# This test function tests the export functionality by comparing files before the import and export procedure with the
+# exported files. Since cyclic attributes are not resolved in this package, the imported files only need to be a subset
+# of the exported files.
 def test_export_with_imported_files():
     import_files = [os.path.join(example_path, 'Rootnet_FULL_NE_24J13h_DI.xml'),
                     os.path.join(example_path, 'Rootnet_FULL_NE_24J13h_EQ.xml'),
@@ -31,8 +34,9 @@ def test_export_with_imported_files():
 
     activeProfileList = ['DI', 'EQ', 'SV', 'TP']
 
-    imported_files, namespaces = cimpy.cim_import(import_files, 'cgmes_v2_4_15')
-    cimpy.cim_export(imported_files, namespaces, 'EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
+    imported_files, namespaces, url_reference_dict = cimpy.cim_import(import_files, 'cgmes_v2_4_15')
+    cimpy.cim_export(imported_files, namespaces, 'EXPORTED_Test', 'cgmes_v2_4_15',
+                     activeProfileList, url_reference_dict)
 
     test_list = []
     for file in import_files:
@@ -131,8 +135,7 @@ def test_export_with_imported_files():
                             export_attr = export_class_dict[mRID].items()
                             for item in test_attr:
                                 if item[0] in ['cim:NameType', 'cim:ExternalNetworkInjection.referencePriority',
-                                               'cim:Terminal.connected', 'cim:PowerTransformerEnd.connectionKind',
-                                               'cim:OperationalLimitType.direction', 'cim:Diagram.orientation']:
+                                               'cim:Terminal.connected']:
                                     continue
                                 elif item[0] == 'cim:Terminal.sequenceNumber':
                                     test_item = 'cim:ACDCTerminal.sequenceNumber'

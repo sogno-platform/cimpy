@@ -23,8 +23,8 @@ example_path = os.path.join('..',
                                                                    'CIGRE_MV_Rudion_With_LoadFlow_Results'))))
 
 
-# test export with imported files
-# test cimpy export with exported files
+# This test tests the export functionality of this package by first importing the CIGRE_MV_Rudion_With_LoadFlow_Results
+# example and exporting them. The exported files are compared with previously exported files which were checked manually
 def test_export_with_exported_files():
     import_files = [os.path.join(example_path, 'Rootnet_FULL_NE_24J13h_DI.xml'),
                     os.path.join(example_path, 'Rootnet_FULL_NE_24J13h_EQ.xml'),
@@ -33,8 +33,9 @@ def test_export_with_exported_files():
 
     activeProfileList = ['DI', 'EQ', 'SV', 'TP']
 
-    imported_files, namespaces = cimpy.cim_import(import_files, 'cgmes_v2_4_15')
-    cimpy.cim_export(imported_files, namespaces, 'EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
+    imported_files, namespaces, url_reference_dict = cimpy.cim_import(import_files, 'cgmes_v2_4_15')
+    cimpy.cim_export(imported_files, namespaces, 'EXPORTED_Test', 'cgmes_v2_4_15',
+                     activeProfileList, url_reference_dict)
 
     test_list = []
     for file in os.listdir(os.getcwd()):

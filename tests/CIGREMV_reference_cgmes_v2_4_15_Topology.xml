@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cim="http://iec.ch/TC57/2012/CIM-schema-cim16#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:entsoe="http://entsoe.eu/Secretariat/ProfileExtension/2#" xmlns:neplan="http://www.neplan.ch#" >
-<md:FullModel rdf:about="Test">
-    <md:Model.created>27/01/2020 18:45:27</md:Model.created>
+<md:FullModel rdf:about="CIGREMV_reference_cgmes_v2_4_15">
+    <md:Model.created>29/01/2020 15:09:48</md:Model.created>
     <md:Model.modelingAuthoritySet>www.acs.eonerc.rwth-aachen.de</md:Model.modelingAuthoritySet>
     <md:Model.profile>Topology</md:Model.profile>
 </md:FullModel>
