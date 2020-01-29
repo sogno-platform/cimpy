@@ -24,7 +24,7 @@ class OperationalLimitType(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, OperationalLimit = "list", acceptableDuration = 0.0, limitType = None, direction = None,  *args, **kw_args):
+	def __init__(self, OperationalLimit = "list", acceptableDuration = 0, limitType = None, direction = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.OperationalLimit = OperationalLimit

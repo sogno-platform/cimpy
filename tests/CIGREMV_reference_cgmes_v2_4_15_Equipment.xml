@@ -170,12 +170,12 @@
 </cim:SubGeographicalRegion>
 <cim:OperationalLimitType rdf:ID="_d50aa23d-94a0-4462-a895-6bec6f7b89af">
     <cim:IdentifiedObject.name>PATL</cim:IdentifiedObject.name>
-    <cim:OperationalLimitType.acceptableDuration>45000.0</cim:OperationalLimitType.acceptableDuration>
+    <cim:OperationalLimitType.acceptableDuration>45000</cim:OperationalLimitType.acceptableDuration>
     <cim:OperationalLimitType.direction>absoluteValue</cim:OperationalLimitType.direction>
 </cim:OperationalLimitType>
 <cim:OperationalLimitType rdf:ID="_182e44b2-641d-4502-b36d-1949f49a90ea">
     <cim:IdentifiedObject.name>TATL</cim:IdentifiedObject.name>
-    <cim:OperationalLimitType.acceptableDuration>60.0</cim:OperationalLimitType.acceptableDuration>
+    <cim:OperationalLimitType.acceptableDuration>60</cim:OperationalLimitType.acceptableDuration>
     <cim:OperationalLimitType.direction>absoluteValue</cim:OperationalLimitType.direction>
 </cim:OperationalLimitType>
 <cim:EnergyConsumer rdf:ID="Load7-I">
