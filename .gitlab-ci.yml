@@ -35,7 +35,7 @@ test:import:
     variables:
         PYTHONPATH: "build/Source/Python:Source/Python"
     script:
-        - pytest -v test_import.py
+        - cd tests && pytest -v test_import.py
     image: ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV}
     tags:
         - docker
@@ -45,7 +45,7 @@ test:export-with-imported-files:
     variables:
         PYTHONPATH: "build/Source/Python:Source/Python"
     script:
-        - pytest -v test_export_with_imported_files.py
+        - cd tests && pytest -v test_export_with_imported_files.py
     image: ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV}
     tags:
         - docker
@@ -55,7 +55,7 @@ test:export-export:
     variables:
         PYTHONPATH: "build/Source/Python:Source/Python"
     script:
-        - pytest -v test_export_with_exported_files.py
+        - cd tests && pytest -v test_export_with_exported_files.py
     image: ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV}
     tags:
         - docker
