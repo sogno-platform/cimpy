@@ -5,10 +5,10 @@ class SubGeographicalRegion(IdentifiedObject):
 	'''
 	A subset of a geographical region of a power system network model.
 
-	:DCLines:  Default: "many"
+	:DCLines:  Default: "list"
 	:Region: The geographical region to which this sub-geographical region is within. Default: None
-	:Lines: The lines within the sub-geographical region. Default: "many"
-	:Substations: The substations in this sub-geographical region. Default: "many"
+	:Lines: The lines within the sub-geographical region. Default: "list"
+	:Substations: The substations in this sub-geographical region. Default: "list"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -24,7 +24,7 @@ class SubGeographicalRegion(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, DCLines = "many", Region = None, Lines = "many", Substations = "many",  *args, **kw_args):
+	def __init__(self, DCLines = "list", Region = None, Lines = "list", Substations = "list",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.DCLines = DCLines
