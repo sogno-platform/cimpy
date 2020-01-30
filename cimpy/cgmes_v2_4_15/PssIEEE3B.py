@@ -7,11 +7,11 @@ class PssIEEE3B(PowerSystemStabilizerDynamics):
 
 	:inputSignal1Type: Type of input signal #1.  Typical Value = generatorElectricalPower. Default: None
 	:inputSignal2Type: Type of input signal #2.  Typical Value = rotorSpeed. Default: None
-	:t1: Transducer time constant (T1).  Typical Value = 0.012. Default: 0.0
-	:t2: Transducer time constant (T2).  Typical Value = 0.012. Default: 0.0
-	:tw1: Washout time constant (Tw1).  Typical Value = 0.3. Default: 0.0
-	:tw2: Washout time constant (Tw2).  Typical Value = 0.3. Default: 0.0
-	:tw3: Washout time constant (Tw3).  Typical Value = 0.6. Default: 0.0
+	:t1: Transducer time constant (T1).  Typical Value = 0.012. Default: 0
+	:t2: Transducer time constant (T2).  Typical Value = 0.012. Default: 0
+	:tw1: Washout time constant (Tw1).  Typical Value = 0.3. Default: 0
+	:tw2: Washout time constant (Tw2).  Typical Value = 0.3. Default: 0
+	:tw3: Washout time constant (Tw3).  Typical Value = 0.6. Default: 0
 	:ks1: Gain on signal # 1 (Ks1).  Typical Value = -0.602. Default: 0.0
 	:ks2: Gain on signal # 2 (Ks2).  Typical Value = 30.12. Default: 0.0
 	:a1: Notch filter parameter (A1).  Typical Value = 0.359. Default: 0.0
@@ -54,7 +54,7 @@ class PssIEEE3B(PowerSystemStabilizerDynamics):
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, inputSignal1Type = None, inputSignal2Type = None, t1 = 0.0, t2 = 0.0, tw1 = 0.0, tw2 = 0.0, tw3 = 0.0, ks1 = 0.0, ks2 = 0.0, a1 = 0.0, a2 = 0.0, a3 = 0.0, a4 = 0.0, a5 = 0.0, a6 = 0.0, a7 = 0.0, a8 = 0.0, vstmax = 0.0, vstmin = 0.0,  *args, **kw_args):
+	def __init__(self, inputSignal1Type = None, inputSignal2Type = None, t1 = 0, t2 = 0, tw1 = 0, tw2 = 0, tw3 = 0, ks1 = 0.0, ks2 = 0.0, a1 = 0.0, a2 = 0.0, a3 = 0.0, a4 = 0.0, a5 = 0.0, a6 = 0.0, a7 = 0.0, a8 = 0.0, vstmax = 0.0, vstmin = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.inputSignal1Type = inputSignal1Type

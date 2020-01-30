@@ -7,7 +7,7 @@ class ExcIEEEST4B(ExcitationSystemDynamics):
 
 	:kpr: Voltage regulator proportional gain (K).  Typical Value = 10.75. Default: 0.0
 	:kir: Voltage regulator integral gain (K).  Typical Value = 10.75. Default: 0.0
-	:ta: Voltage regulator time constant (T).  Typical Value = 0.02. Default: 0.0
+	:ta: Voltage regulator time constant (T).  Typical Value = 0.02. Default: 0
 	:vrmax: Maximum voltage regulator output (V).  Typical Value = 1. Default: 0.0
 	:vrmin: Minimum voltage regulator output (V).  Typical Value = -0.87. Default: 0.0
 	:kpm: Voltage regulator proportional gain output (K).  Typical Value = 1. Default: 0.0
@@ -48,7 +48,7 @@ class ExcIEEEST4B(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, kpr = 0.0, kir = 0.0, ta = 0.0, vrmax = 0.0, vrmin = 0.0, kpm = 0.0, kim = 0.0, vmmax = 0.0, vmmin = 0.0, kg = 0.0, kp = 0.0, thetap = 0.0, ki = 0.0, kc = 0.0, xl = 0.0, vbmax = 0.0,  *args, **kw_args):
+	def __init__(self, kpr = 0.0, kir = 0.0, ta = 0, vrmax = 0.0, vrmin = 0.0, kpm = 0.0, kim = 0.0, vmmax = 0.0, vmmin = 0.0, kg = 0.0, kp = 0.0, thetap = 0.0, ki = 0.0, kc = 0.0, xl = 0.0, vbmax = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.kpr = kpr

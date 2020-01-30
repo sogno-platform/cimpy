@@ -7,7 +7,7 @@ class VCompIEEEType1(VoltageCompensatorDynamics):
 
 	:rc:  Default: 0.0
 	:xc:  Default: 0.0
-	:tr:  Default: 0.0
+	:tr:  Default: 0
 		'''
 
 	cgmesProfile = VoltageCompensatorDynamics.cgmesProfile
@@ -22,7 +22,7 @@ class VCompIEEEType1(VoltageCompensatorDynamics):
 
 	__doc__ += '\n Documentation of parent class VoltageCompensatorDynamics: \n' + VoltageCompensatorDynamics.__doc__ 
 
-	def __init__(self, rc = 0.0, xc = 0.0, tr = 0.0,  *args, **kw_args):
+	def __init__(self, rc = 0.0, xc = 0.0, tr = 0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.rc = rc

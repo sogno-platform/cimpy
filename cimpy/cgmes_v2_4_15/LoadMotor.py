@@ -12,13 +12,13 @@ class LoadMotor(IdentifiedObject):
 	:lp: Transient reactance (Lp).  Typical Value = 0.15. Default: 0.0
 	:lpp: Subtransient reactance (Lpp).  Typical Value = 0.15. Default: 0.0
 	:ra: Stator resistance (Ra).  Typical Value = 0. Default: 0.0
-	:tpo: Transient rotor time constant (Tpo) (not=0).  Typical Value = 1. Default: 0.0
-	:tppo: Subtransient rotor time constant (Tppo).  Typical Value = 0.02. Default: 0.0
-	:h: Inertia constant (H) (not=0).  Typical Value = 0.4. Default: 0.0
+	:tpo: Transient rotor time constant (Tpo) (not=0).  Typical Value = 1. Default: 0
+	:tppo: Subtransient rotor time constant (Tppo).  Typical Value = 0.02. Default: 0
+	:h: Inertia constant (H) (not=0).  Typical Value = 0.4. Default: 0
 	:d: Damping factor (D).  Unit = delta P/delta speed.  Typical Value = 2. Default: 0.0
 	:vt: Voltage threshold for tripping (Vt).  Typical Value = 0.7. Default: 0.0
-	:tv: Voltage trip pickup time (Tv).  Typical Value = 0.1. Default: 0.0
-	:tbkr: Circuit breaker operating time (Tbkr).  Typical Value = 0.08. Default: 0.0
+	:tv: Voltage trip pickup time (Tv).  Typical Value = 0.1. Default: 0
+	:tbkr: Circuit breaker operating time (Tbkr).  Typical Value = 0.08. Default: 0
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -44,7 +44,7 @@ class LoadMotor(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, LoadAggregate = None, pfrac = 0.0, lfac = 0.0, ls = 0.0, lp = 0.0, lpp = 0.0, ra = 0.0, tpo = 0.0, tppo = 0.0, h = 0.0, d = 0.0, vt = 0.0, tv = 0.0, tbkr = 0.0,  *args, **kw_args):
+	def __init__(self, LoadAggregate = None, pfrac = 0.0, lfac = 0.0, ls = 0.0, lp = 0.0, lpp = 0.0, ra = 0.0, tpo = 0, tppo = 0, h = 0, d = 0.0, vt = 0.0, tv = 0, tbkr = 0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.LoadAggregate = LoadAggregate

@@ -8,12 +8,12 @@ class PssIEEE1A(PowerSystemStabilizerDynamics):
 	:inputSignalType: Type of input signal.  Typical Value = rotorAngularFrequencyDeviation. Default: None
 	:a1: PSS signal conditioning frequency filter constant (A1).  Typical Value = 0.061. Default: 0.0
 	:a2: PSS signal conditioning frequency filter constant (A2).  Typical Value = 0.0017. Default: 0.0
-	:t1: Lead/lag time constant (T1).  Typical Value = 0.3. Default: 0.0
-	:t2: Lead/lag time constant (T2).  Typical Value = 0.03. Default: 0.0
-	:t3: Lead/lag time constant (T3).  Typical Value = 0.3. Default: 0.0
-	:t4: Lead/lag time constant (T4).  Typical Value = 0.03. Default: 0.0
-	:t5: Washout time constant (T5).  Typical Value = 10. Default: 0.0
-	:t6: Transducer time constant (T6).  Typical Value = 0.01. Default: 0.0
+	:t1: Lead/lag time constant (T1).  Typical Value = 0.3. Default: 0
+	:t2: Lead/lag time constant (T2).  Typical Value = 0.03. Default: 0
+	:t3: Lead/lag time constant (T3).  Typical Value = 0.3. Default: 0
+	:t4: Lead/lag time constant (T4).  Typical Value = 0.03. Default: 0
+	:t5: Washout time constant (T5).  Typical Value = 10. Default: 0
+	:t6: Transducer time constant (T6).  Typical Value = 0.01. Default: 0
 	:ks: Stabilizer gain (Ks).  Typical Value = 5. Default: 0.0
 	:vrmax: Maximum stabilizer output (Vrmax).  Typical Value = 0.05. Default: 0.0
 	:vrmin: Minimum stabilizer output (Vrmin).  Typical Value = -0.05. Default: 0.0
@@ -40,7 +40,7 @@ class PssIEEE1A(PowerSystemStabilizerDynamics):
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, inputSignalType = None, a1 = 0.0, a2 = 0.0, t1 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, t5 = 0.0, t6 = 0.0, ks = 0.0, vrmax = 0.0, vrmin = 0.0,  *args, **kw_args):
+	def __init__(self, inputSignalType = None, a1 = 0.0, a2 = 0.0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, t5 = 0, t6 = 0, ks = 0.0, vrmax = 0.0, vrmin = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.inputSignalType = inputSignalType

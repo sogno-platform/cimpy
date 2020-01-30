@@ -13,9 +13,9 @@ class WindPitchContEmulIEC(IdentifiedObject):
 	:omegaref: Rotor speed in initial steady state (omega). It is case dependent parameter. Default: 0.0
 	:pimax: Maximum steady state power (). It is case dependent parameter. Default: 0.0
 	:pimin: Minimum steady state power (). It is case dependent parameter. Default: 0.0
-	:t1: First time constant in pitch control lag (). It is type dependent parameter. Default: 0.0
-	:t2: Second time constant in pitch control lag (). It is type dependent parameter. Default: 0.0
-	:tpe: Time constant in generator air gap power lag (). It is type dependent parameter. Default: 0.0
+	:t1: First time constant in pitch control lag (). It is type dependent parameter. Default: 0
+	:t2: Second time constant in pitch control lag (). It is type dependent parameter. Default: 0
+	:tpe: Time constant in generator air gap power lag (). It is type dependent parameter. Default: 0
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -38,7 +38,7 @@ class WindPitchContEmulIEC(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, WindGenTurbineType2IEC = None, kdroop = 0.0, kipce = 0.0, komegaaero = 0.0, kppce = 0.0, omegaref = 0.0, pimax = 0.0, pimin = 0.0, t1 = 0.0, t2 = 0.0, tpe = 0.0,  *args, **kw_args):
+	def __init__(self, WindGenTurbineType2IEC = None, kdroop = 0.0, kipce = 0.0, komegaaero = 0.0, kppce = 0.0, omegaref = 0.0, pimax = 0.0, pimin = 0.0, t1 = 0, t2 = 0, tpe = 0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.WindGenTurbineType2IEC = WindGenTurbineType2IEC

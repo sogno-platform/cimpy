@@ -8,7 +8,7 @@ class ExcIEEEAC7B(ExcitationSystemDynamics):
 	:kpr: Voltage regulator proportional gain (K).  Typical Value = 4.24. Default: 0.0
 	:kir: Voltage regulator integral gain (K).  Typical Value = 4.24. Default: 0.0
 	:kdr: Voltage regulator derivative gain (K).  Typical Value = 0. Default: 0.0
-	:tdr: Lag time constant (T).  Typical Value = 0. Default: 0.0
+	:tdr: Lag time constant (T).  Typical Value = 0. Default: 0
 	:vrmax: Maximum voltage regulator output (V).  Typical Value = 5.79. Default: 0.0
 	:vrmin: Minimum voltage regulator output (V).  Typical Value = -5.79. Default: 0.0
 	:kpa: Voltage regulator proportional gain (K).  Typical Value = 65.36. Default: 0.0
@@ -17,7 +17,7 @@ class ExcIEEEAC7B(ExcitationSystemDynamics):
 	:vamin: Minimum voltage regulator output (V).  Typical Value = -0.95. Default: 0.0
 	:kp: Potential circuit gain coefficient (K).  Typical Value = 4.96. Default: 0.0
 	:kl: Exciter field voltage lower limit parameter (K).  Typical Value = 10. Default: 0.0
-	:te: Exciter time constant, integration rate associated with exciter control (T).  Typical Value = 1.1. Default: 0.0
+	:te: Exciter time constant, integration rate associated with exciter control (T).  Typical Value = 1.1. Default: 0
 	:vfemax: Exciter field current limit reference (V).  Typical Value = 6.9. Default: 0.0
 	:vemin: Minimum exciter voltage output (V).  Typical Value = 0. Default: 0.0
 	:ke: Exciter constant related to self-excited field (K).  Typical Value = 1. Default: 0.0
@@ -26,7 +26,7 @@ class ExcIEEEAC7B(ExcitationSystemDynamics):
 	:kf1: Excitation control system stabilizer gain (K).  Typical Value = 0.212. Default: 0.0
 	:kf2: Excitation control system stabilizer gain (K).  Typical Value = 0. Default: 0.0
 	:kf3: Excitation control system stabilizer gain (K).  Typical Value = 0. Default: 0.0
-	:tf: Excitation control system stabilizer time constant (T).  Typical Value = 1. Default: 0.0
+	:tf: Excitation control system stabilizer time constant (T).  Typical Value = 1. Default: 0
 	:ve1: Exciter alternator output voltages back of commutating reactance at which saturation is defined (V) equals V (V).  Typical Value = 6.3. Default: 0.0
 	:seve1: Exciter saturation function value at the corresponding exciter voltage, V, back of commutating reactance (S[V]).  Typical Value = 0.44. Default: 0.0
 	:ve2: Exciter alternator output voltages back of commutating reactance at which saturation is defined (V).  Typical Value = 3.02. Default: 0.0
@@ -68,7 +68,7 @@ class ExcIEEEAC7B(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, kpr = 0.0, kir = 0.0, kdr = 0.0, tdr = 0.0, vrmax = 0.0, vrmin = 0.0, kpa = 0.0, kia = 0.0, vamax = 0.0, vamin = 0.0, kp = 0.0, kl = 0.0, te = 0.0, vfemax = 0.0, vemin = 0.0, ke = 0.0, kc = 0.0, kd = 0.0, kf1 = 0.0, kf2 = 0.0, kf3 = 0.0, tf = 0.0, ve1 = 0.0, seve1 = 0.0, ve2 = 0.0, seve2 = 0.0,  *args, **kw_args):
+	def __init__(self, kpr = 0.0, kir = 0.0, kdr = 0.0, tdr = 0, vrmax = 0.0, vrmin = 0.0, kpa = 0.0, kia = 0.0, vamax = 0.0, vamin = 0.0, kp = 0.0, kl = 0.0, te = 0, vfemax = 0.0, vemin = 0.0, ke = 0.0, kc = 0.0, kd = 0.0, kf1 = 0.0, kf2 = 0.0, kf3 = 0.0, tf = 0, ve1 = 0.0, seve1 = 0.0, ve2 = 0.0, seve2 = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.kpr = kpr

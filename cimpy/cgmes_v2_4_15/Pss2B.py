@@ -9,22 +9,22 @@ class Pss2B(PowerSystemStabilizerDynamics):
 	:inputSignal2Type: Type of input signal #2.  Typical Value = generatorElectricalPower. Default: None
 	:vsi1max: Input signal #1 max limit (Vsi1max).  Typical Value = 2. Default: 0.0
 	:vsi1min: Input signal #1 min limit (Vsi1min).  Typical Value = -2. Default: 0.0
-	:tw1: First washout on signal #1 (Tw1).  Typical Value = 2. Default: 0.0
-	:tw2: Second washout on signal #1 (Tw2).  Typical Value = 2. Default: 0.0
+	:tw1: First washout on signal #1 (Tw1).  Typical Value = 2. Default: 0
+	:tw2: Second washout on signal #1 (Tw2).  Typical Value = 2. Default: 0
 	:vsi2max: Input signal #2 max limit (Vsi2max).  Typical Value = 2. Default: 0.0
 	:vsi2min: Input signal #2 min limit (Vsi2min).  Typical Value = -2. Default: 0.0
-	:tw3: First washout on signal #2 (Tw3).  Typical Value = 2. Default: 0.0
-	:tw4: Second washout on signal #2 (Tw4).  Typical Value = 0. Default: 0.0
-	:t1: Lead/lag time constant (T1).  Typical Value = 0.12. Default: 0.0
-	:t2: Lead/lag time constant (T2).  Typical Value = 0.02. Default: 0.0
-	:t3: Lead/lag time constant (T3).  Typical Value = 0.3. Default: 0.0
-	:t4: Lead/lag time constant (T4).  Typical Value = 0.02. Default: 0.0
-	:t6: Time constant on signal #1 (T6).  Typical Value = 0. Default: 0.0
-	:t7: Time constant on signal #2 (T7).  Typical Value = 2. Default: 0.0
-	:t8: Lead of ramp tracking filter (T8).  Typical Value = 0.2. Default: 0.0
-	:t9: Lag of ramp tracking filter (T9).  Typical Value = 0.1. Default: 0.0
-	:t10: Lead/lag time constant (T10).  Typical Value = 0. Default: 0.0
-	:t11: Lead/lag time constant (T11).  Typical Value = 0. Default: 0.0
+	:tw3: First washout on signal #2 (Tw3).  Typical Value = 2. Default: 0
+	:tw4: Second washout on signal #2 (Tw4).  Typical Value = 0. Default: 0
+	:t1: Lead/lag time constant (T1).  Typical Value = 0.12. Default: 0
+	:t2: Lead/lag time constant (T2).  Typical Value = 0.02. Default: 0
+	:t3: Lead/lag time constant (T3).  Typical Value = 0.3. Default: 0
+	:t4: Lead/lag time constant (T4).  Typical Value = 0.02. Default: 0
+	:t6: Time constant on signal #1 (T6).  Typical Value = 0. Default: 0
+	:t7: Time constant on signal #2 (T7).  Typical Value = 2. Default: 0
+	:t8: Lead of ramp tracking filter (T8).  Typical Value = 0.2. Default: 0
+	:t9: Lag of ramp tracking filter (T9).  Typical Value = 0.1. Default: 0
+	:t10: Lead/lag time constant (T10).  Typical Value = 0. Default: 0
+	:t11: Lead/lag time constant (T11).  Typical Value = 0. Default: 0
 	:ks1: Stabilizer gain (Ks1).  Typical Value = 12. Default: 0.0
 	:ks2: Gain on signal #2 (Ks2).  Typical Value = 0.2. Default: 0.0
 	:ks3: Gain on signal #2 input before ramp-tracking filter (Ks3).  Typical Value = 1. Default: 0.0
@@ -34,8 +34,8 @@ class Pss2B(PowerSystemStabilizerDynamics):
 	:vstmax: Stabilizer output max limit (Vstmax).  Typical Value = 0.1. Default: 0.0
 	:vstmin: Stabilizer output min limit (Vstmin).  Typical Value = -0.1. Default: 0.0
 	:a: Numerator constant (a).  Typical Value = 1. Default: 0.0
-	:ta: Lead constant (Ta).  Typical Value = 0. Default: 0.0
-	:tb: Lag time constant (Tb).  Typical Value = 0. Default: 0.0
+	:ta: Lead constant (Ta).  Typical Value = 0. Default: 0
+	:tb: Lag time constant (Tb).  Typical Value = 0. Default: 0
 		'''
 
 	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
@@ -78,7 +78,7 @@ class Pss2B(PowerSystemStabilizerDynamics):
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, inputSignal1Type = None, inputSignal2Type = None, vsi1max = 0.0, vsi1min = 0.0, tw1 = 0.0, tw2 = 0.0, vsi2max = 0.0, vsi2min = 0.0, tw3 = 0.0, tw4 = 0.0, t1 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, t6 = 0.0, t7 = 0.0, t8 = 0.0, t9 = 0.0, t10 = 0.0, t11 = 0.0, ks1 = 0.0, ks2 = 0.0, ks3 = 0.0, ks4 = 0.0, n = 0, m = 0, vstmax = 0.0, vstmin = 0.0, a = 0.0, ta = 0.0, tb = 0.0,  *args, **kw_args):
+	def __init__(self, inputSignal1Type = None, inputSignal2Type = None, vsi1max = 0.0, vsi1min = 0.0, tw1 = 0, tw2 = 0, vsi2max = 0.0, vsi2min = 0.0, tw3 = 0, tw4 = 0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, t6 = 0, t7 = 0, t8 = 0, t9 = 0, t10 = 0, t11 = 0, ks1 = 0.0, ks2 = 0.0, ks3 = 0.0, ks4 = 0.0, n = 0, m = 0, vstmax = 0.0, vstmin = 0.0, a = 0.0, ta = 0, tb = 0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.inputSignal1Type = inputSignal1Type

@@ -5,17 +5,17 @@ class ExcAC2A(ExcitationSystemDynamics):
 	'''
 	Modified IEEE AC2A alternator-supplied rectifier excitation system with different field current limit.
 
-	:tb: Voltage regulator time constant (Tb).  Typical Value = 0. Default: 0.0
-	:tc: Voltage regulator time constant (T).  Typical Value = 0. Default: 0.0
+	:tb: Voltage regulator time constant (Tb).  Typical Value = 0. Default: 0
+	:tc: Voltage regulator time constant (T).  Typical Value = 0. Default: 0
 	:ka: Voltage regulator gain (Ka).  Typical Value = 400. Default: 0.0
-	:ta: Voltage regulator time constant (Ta).  Typical Value = 0.02. Default: 0.0
+	:ta: Voltage regulator time constant (Ta).  Typical Value = 0.02. Default: 0
 	:vamax: Maximum voltage regulator output (V).  Typical Value = 8. Default: 0.0
 	:vamin: Minimum voltage regulator output (V).  Typical Value = -8. Default: 0.0
 	:kb: Second stage regulator gain (Kb) (>0).  Exciter field current controller gain.  Typical Value = 25. Default: 0.0
 	:kb1: Second stage regulator gain (Kb1). It is exciter field current controller gain used as alternative to Kb to represent a variant of the ExcAC2A model.  Typical Value = 25. Default: 0.0
 	:vrmax: Maximum voltage regulator outputs (Vrmax).  Typical Value = 105. Default: 0.0
 	:vrmin: Minimum voltage regulator outputs (Vrmin).  Typical Value = -95. Default: 0.0
-	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 0.6. Default: 0.0
+	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 0.6. Default: 0
 	:vfemax: Exciter field current limit reference (Vfemax).  Typical Value = 4.4. Default: 0.0
 	:kh: Exciter field current feedback gain (Kh).  Typical Value = 1. Default: 0.0
 	:kf: Excitation control system stabilizer gains (Kf).  Typical Value = 0.03. Default: 0.0
@@ -23,7 +23,7 @@ class ExcAC2A(ExcitationSystemDynamics):
 	:vlr: Maximum exciter field current (Vlr).  Typical Value = 4.4. Default: 0.0
 	:kl1: Coefficient to allow different usage of the model (Kl1).  Typical Value = 1. Default: 0.0
 	:ks: Coefficient to allow different usage of the model-speed coefficient (Ks).  Typical Value = 0. Default: 0.0
-	:tf: Excitation control system stabilizer time constant (Tf).  Typical Value = 1. Default: 0.0
+	:tf: Excitation control system stabilizer time constant (Tf).  Typical Value = 1. Default: 0
 	:kc: Rectifier loading factor proportional to commutating reactance (Kc).  Typical Value = 0.28. Default: 0.0
 	:kd: Demagnetizing factor, a function of exciter alternator reactances (Kd).  Typical Value = 0.35. Default: 0.0
 	:ke: Exciter constant related to self-excited field (Ke).  Typical Value = 1. Default: 0.0
@@ -72,7 +72,7 @@ class ExcAC2A(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, tb = 0.0, tc = 0.0, ka = 0.0, ta = 0.0, vamax = 0.0, vamin = 0.0, kb = 0.0, kb1 = 0.0, vrmax = 0.0, vrmin = 0.0, te = 0.0, vfemax = 0.0, kh = 0.0, kf = 0.0, kl = 0.0, vlr = 0.0, kl1 = 0.0, ks = 0.0, tf = 0.0, kc = 0.0, kd = 0.0, ke = 0.0, ve1 = 0.0, seve1 = 0.0, ve2 = 0.0, seve2 = 0.0, hvgate = False, lvgate = False,  *args, **kw_args):
+	def __init__(self, tb = 0, tc = 0, ka = 0.0, ta = 0, vamax = 0.0, vamin = 0.0, kb = 0.0, kb1 = 0.0, vrmax = 0.0, vrmin = 0.0, te = 0, vfemax = 0.0, kh = 0.0, kf = 0.0, kl = 0.0, vlr = 0.0, kl1 = 0.0, ks = 0.0, tf = 0, kc = 0.0, kd = 0.0, ke = 0.0, ve1 = 0.0, seve1 = 0.0, ve2 = 0.0, seve2 = 0.0, hvgate = False, lvgate = False,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.tb = tb

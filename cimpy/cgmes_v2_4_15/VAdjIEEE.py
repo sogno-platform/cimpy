@@ -9,8 +9,8 @@ class VAdjIEEE(VoltageAdjusterDynamics):
 	:adjslew: Rate at which output of adjuster changes ().  Unit = sec./PU.  Typical Value = 300. Default: 0.0
 	:vadjmax: Maximum output of the adjuster ().  Typical Value = 1.1. Default: 0.0
 	:vadjmin: Minimum output of the adjuster ().  Typical Value = 0.9. Default: 0.0
-	:taon: Time that adjuster pulses are on ().  Typical Value = 0.1. Default: 0.0
-	:taoff: Time that adjuster pulses are off ().  Typical Value = 0.5. Default: 0.0
+	:taon: Time that adjuster pulses are on ().  Typical Value = 0.1. Default: 0
+	:taoff: Time that adjuster pulses are off ().  Typical Value = 0.5. Default: 0
 		'''
 
 	cgmesProfile = VoltageAdjusterDynamics.cgmesProfile
@@ -28,7 +28,7 @@ class VAdjIEEE(VoltageAdjusterDynamics):
 
 	__doc__ += '\n Documentation of parent class VoltageAdjusterDynamics: \n' + VoltageAdjusterDynamics.__doc__ 
 
-	def __init__(self, vadjf = 0.0, adjslew = 0.0, vadjmax = 0.0, vadjmin = 0.0, taon = 0.0, taoff = 0.0,  *args, **kw_args):
+	def __init__(self, vadjf = 0.0, adjslew = 0.0, vadjmax = 0.0, vadjmin = 0.0, taon = 0, taoff = 0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.vadjf = vadjf

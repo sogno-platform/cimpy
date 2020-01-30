@@ -7,10 +7,10 @@ class WindProtectionIEC(IdentifiedObject):
 
 	:fover: Set of wind turbine over frequency protection levels (). It is project dependent parameter. Default: 0.0
 	:funder: Set of wind turbine under frequency protection levels (). It is project dependent parameter. Default: 0.0
-	:tfover: Set of corresponding wind turbine over frequency protection disconnection times (). It is project dependent parameter. Default: 0.0
-	:tfunder: Set of corresponding wind turbine under frequency protection disconnection times (). It is project dependent parameter. Default: 0.0
-	:tuover: Set of corresponding wind turbine over voltage protection disconnection times (). It is project dependent parameter. Default: 0.0
-	:tuunder: Set of corresponding wind turbine under voltage protection disconnection times (). It is project dependent parameter. Default: 0.0
+	:tfover: Set of corresponding wind turbine over frequency protection disconnection times (). It is project dependent parameter. Default: 0
+	:tfunder: Set of corresponding wind turbine under frequency protection disconnection times (). It is project dependent parameter. Default: 0
+	:tuover: Set of corresponding wind turbine over voltage protection disconnection times (). It is project dependent parameter. Default: 0
+	:tuunder: Set of corresponding wind turbine under voltage protection disconnection times (). It is project dependent parameter. Default: 0
 	:uover: Set of wind turbine over voltage protection levels (). It is project dependent parameter. Default: 0.0
 	:uunder: Set of wind turbine under voltage protection levels (). It is project dependent parameter. Default: 0.0
 	:WindTurbineType3or4IEC: Wind generator type 3 or 4 model with which this wind turbine protection model is associated. Default: None
@@ -36,7 +36,7 @@ class WindProtectionIEC(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, fover = 0.0, funder = 0.0, tfover = 0.0, tfunder = 0.0, tuover = 0.0, tuunder = 0.0, uover = 0.0, uunder = 0.0, WindTurbineType3or4IEC = None, WindTurbineType1or2IEC = None,  *args, **kw_args):
+	def __init__(self, fover = 0.0, funder = 0.0, tfover = 0, tfunder = 0, tuover = 0, tuunder = 0, uover = 0.0, uunder = 0.0, WindTurbineType3or4IEC = None, WindTurbineType1or2IEC = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.fover = fover

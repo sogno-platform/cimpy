@@ -17,9 +17,9 @@ class ExcAC8B(ExcitationSystemDynamics):
 	:pidlim: PID limiter indicator. true = input limiter Vpidmax and Vpidmin is considered false = input limiter Vpidmax and Vpidmin is not considered. Typical Value = true. Default: False
 	:seve1: Exciter saturation function value at the corresponding exciter voltage, Ve, back of commutating reactance (Se[Ve1]).  Typical Value = 0.3. Default: 0.0
 	:seve2: Exciter saturation function value at the corresponding exciter voltage, Ve, back of commutating reactance (Se[Ve2]).  Typical Value = 3. Default: 0.0
-	:ta: Voltage regulator time constant (Ta).  Typical Value = 0. Default: 0.0
-	:tdr: Lag time constant (Tdr).  Typical Value = 0.1. Default: 0.0
-	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 1.2. Default: 0.0
+	:ta: Voltage regulator time constant (Ta).  Typical Value = 0. Default: 0
+	:tdr: Lag time constant (Tdr).  Typical Value = 0.1. Default: 0
+	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 1.2. Default: 0
 	:telim: Selector for the limiter on the block [1/sTe].  See diagram for meaning of true and false. Typical Value = false. Default: False
 	:ve1: Exciter alternator output voltages back of commutating reactance at which saturation is defined (Ve) equals V (Ve1).  Typical Value = 6.5. Default: 0.0
 	:ve2: Exciter alternator output voltages back of commutating reactance at which saturation is defined (Ve).  Typical Value = 9. Default: 0.0
@@ -70,7 +70,7 @@ class ExcAC8B(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, inlim = False, ka = 0.0, kc = 0.0, kd = 0.0, kdr = 0.0, ke = 0.0, kir = 0.0, kpr = 0.0, ks = 0.0, pidlim = False, seve1 = 0.0, seve2 = 0.0, ta = 0.0, tdr = 0.0, te = 0.0, telim = False, ve1 = 0.0, ve2 = 0.0, vemin = 0.0, vfemax = 0.0, vimax = 0.0, vimin = 0.0, vpidmax = 0.0, vpidmin = 0.0, vrmax = 0.0, vrmin = 0.0, vtmult = False,  *args, **kw_args):
+	def __init__(self, inlim = False, ka = 0.0, kc = 0.0, kd = 0.0, kdr = 0.0, ke = 0.0, kir = 0.0, kpr = 0.0, ks = 0.0, pidlim = False, seve1 = 0.0, seve2 = 0.0, ta = 0, tdr = 0, te = 0, telim = False, ve1 = 0.0, ve2 = 0.0, vemin = 0.0, vfemax = 0.0, vimax = 0.0, vimin = 0.0, vpidmax = 0.0, vpidmin = 0.0, vrmax = 0.0, vrmin = 0.0, vtmult = False,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.inlim = inlim

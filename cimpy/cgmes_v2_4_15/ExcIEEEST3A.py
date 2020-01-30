@@ -8,13 +8,13 @@ class ExcIEEEST3A(ExcitationSystemDynamics):
 	:vimax: Maximum voltage regulator input limit (V).  Typical Value = 0.2. Default: 0.0
 	:vimin: Minimum voltage regulator input limit (V).  Typical Value = -0.2. Default: 0.0
 	:ka: Voltage regulator gain (K). This is parameter K in the IEEE Std. Typical Value = 200. Default: 0.0
-	:ta: Voltage regulator time constant (T).  Typical Value = 0. Default: 0.0
-	:tb: Voltage regulator time constant (T).  Typical Value = 10. Default: 0.0
-	:tc: Voltage regulator time constant (T).  Typical Value = 1. Default: 0.0
+	:ta: Voltage regulator time constant (T).  Typical Value = 0. Default: 0
+	:tb: Voltage regulator time constant (T).  Typical Value = 10. Default: 0
+	:tc: Voltage regulator time constant (T).  Typical Value = 1. Default: 0
 	:vrmax: Maximum voltage regulator output (V).  Typical Value = 10. Default: 0.0
 	:vrmin: Minimum voltage regulator output (V).  Typical Value = -10. Default: 0.0
 	:km: Forward gain constant of the inner loop field regulator (K).  Typical Value = 7.93. Default: 0.0
-	:tm: Forward time constant of inner loop field regulator (T).  Typical Value = 0.4. Default: 0.0
+	:tm: Forward time constant of inner loop field regulator (T).  Typical Value = 0.4. Default: 0
 	:vmmax: Maximum inner loop output (V).  Typical Value = 1. Default: 0.0
 	:vmmin: Minimum inner loop output (V).  Typical Value = 0. Default: 0.0
 	:kg: Feedback gain constant of the inner loop field regulator (K).  Typical Value = 1. Default: 0.0
@@ -56,7 +56,7 @@ class ExcIEEEST3A(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, vimax = 0.0, vimin = 0.0, ka = 0.0, ta = 0.0, tb = 0.0, tc = 0.0, vrmax = 0.0, vrmin = 0.0, km = 0.0, tm = 0.0, vmmax = 0.0, vmmin = 0.0, kg = 0.0, kp = 0.0, thetap = 0.0, ki = 0.0, kc = 0.0, xl = 0.0, vbmax = 0.0, vgmax = 0.0,  *args, **kw_args):
+	def __init__(self, vimax = 0.0, vimin = 0.0, ka = 0.0, ta = 0, tb = 0, tc = 0, vrmax = 0.0, vrmin = 0.0, km = 0.0, tm = 0, vmmax = 0.0, vmmin = 0.0, kg = 0.0, kp = 0.0, thetap = 0.0, ki = 0.0, kc = 0.0, xl = 0.0, vbmax = 0.0, vgmax = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.vimax = vimax

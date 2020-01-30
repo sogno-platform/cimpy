@@ -7,9 +7,9 @@ class GovGAST(TurbineGovernorDynamics):
 
 	:mwbase: Base for power values (MWbase) (> 0). Default: 0.0
 	:r: Permanent droop (R).  Typical Value = 0.04. Default: 0.0
-	:t1: Governor mechanism time constant (T1).  T1 represents the natural valve positioning time constant of the governor for small disturbances, as seen when rate limiting is not in effect.  Typical Value = 0.5. Default: 0.0
-	:t2: Turbine power time constant (T2).  T2 represents delay due to internal energy storage of the gas turbine engine. T2 can be used to give a rough approximation to the delay associated with acceleration of the compressor spool of a multi-shaft engine, or with the compressibility of gas in the plenum of a the free power turbine of an aero-derivative unit, for example.  Typical Value = 0.5. Default: 0.0
-	:t3: Turbine exhaust temperature time constant (T3).  Typical Value = 3. Default: 0.0
+	:t1: Governor mechanism time constant (T1).  T1 represents the natural valve positioning time constant of the governor for small disturbances, as seen when rate limiting is not in effect.  Typical Value = 0.5. Default: 0
+	:t2: Turbine power time constant (T2).  T2 represents delay due to internal energy storage of the gas turbine engine. T2 can be used to give a rough approximation to the delay associated with acceleration of the compressor spool of a multi-shaft engine, or with the compressibility of gas in the plenum of a the free power turbine of an aero-derivative unit, for example.  Typical Value = 0.5. Default: 0
+	:t3: Turbine exhaust temperature time constant (T3).  Typical Value = 3. Default: 0
 	:at: Ambient temperature load limit (Load Limit).  Typical Value = 1. Default: 0.0
 	:kt: Temperature limiter gain (Kt).  Typical Value = 3. Default: 0.0
 	:vmax: Maximum turbine power, PU of MWbase (Vmax).  Typical Value = 1. Default: 0.0
@@ -36,7 +36,7 @@ class GovGAST(TurbineGovernorDynamics):
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 
-	def __init__(self, mwbase = 0.0, r = 0.0, t1 = 0.0, t2 = 0.0, t3 = 0.0, at = 0.0, kt = 0.0, vmax = 0.0, vmin = 0.0, dturb = 0.0,  *args, **kw_args):
+	def __init__(self, mwbase = 0.0, r = 0.0, t1 = 0, t2 = 0, t3 = 0, at = 0.0, kt = 0.0, vmax = 0.0, vmin = 0.0, dturb = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.mwbase = mwbase

@@ -6,12 +6,12 @@ class ExcDC3A1(ExcitationSystemDynamics):
 	This is modified old IEEE type 3 excitation system.
 
 	:ka: Voltage regulator gain (Ka).  Typical Value = 300. Default: 0.0
-	:ta: Voltage regulator time constant (Ta).  Typical Value = 0.01. Default: 0.0
+	:ta: Voltage regulator time constant (Ta).  Typical Value = 0.01. Default: 0
 	:vrmax: Maximum voltage regulator output (Vrmax).  Typical Value = 5. Default: 0.0
 	:vrmin: Minimum voltage regulator output (Vrmin).  Typical Value = 0. Default: 0.0
-	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 1.83. Default: 0.0
+	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 1.83. Default: 0
 	:kf: Excitation control system stabilizer gain (Kf).  Typical Value = 0.1. Default: 0.0
-	:tf: Excitation control system stabilizer time constant (Tf).  Typical Value = 0.675. Default: 0.0
+	:tf: Excitation control system stabilizer time constant (Tf).  Typical Value = 0.675. Default: 0
 	:kp: Potential circuit gain coefficient (Kp).  Typical Value = 4.37. Default: 0.0
 	:ki: Potential circuit gain coefficient (Ki).  Typical Value = 4.83. Default: 0.0
 	:vbmax: Available exciter voltage limiter (Vbmax).  Typical Value = 11.63. Default: 0.0
@@ -44,7 +44,7 @@ class ExcDC3A1(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, ka = 0.0, ta = 0.0, vrmax = 0.0, vrmin = 0.0, te = 0.0, kf = 0.0, tf = 0.0, kp = 0.0, ki = 0.0, vbmax = 0.0, exclim = False, ke = 0.0, vb1max = 0.0, vblim = False,  *args, **kw_args):
+	def __init__(self, ka = 0.0, ta = 0, vrmax = 0.0, vrmin = 0.0, te = 0, kf = 0.0, tf = 0, kp = 0.0, ki = 0.0, vbmax = 0.0, exclim = False, ke = 0.0, vb1max = 0.0, vblim = False,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ka = ka
