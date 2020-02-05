@@ -278,8 +278,12 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                             if val not in attribute:
                                                 attribute.append(val)
                                                 setattr(obj, attr, attribute)
+                                        elif default == val:
+                                            # attribute reference already resolved
+                                            pass
                                         else:
-                                            error_msg = 'Multiplicity Error. Class {} [{}], attribute {}'.format(
+                                            # note here
+                                            error_msg = 'Multiplicity Error for class {} [{}], attribute {}. Multiplicity should be 1..1 or 0..1'.format(
                                                 obj.__class__.__name__, uuid, attr)
                                             try:
                                                 logger_errors_grouped[error_msg] += 1
@@ -297,8 +301,10 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                                 if obj not in attribute2:
                                                     attribute2.append(obj)
                                                     setattr(val, obj.__class__.__name__, attribute2)
+                                            elif default1 == obj:
+                                                pass
                                             else:
-                                                error_msg = 'Multiplicity Error.  Class {} [{}], attribute {}'.format(
+                                                error_msg = 'Multiplicity Error for class {} [{}], attribute {}. Multiplicity should be 1..1 or 0..1'.format(
                                                     val.__class__.__name__, uuid2[1:], obj.__class__.__name__)
                                                 try:
                                                     logger_errors_grouped[error_msg] += 1
