@@ -5,13 +5,13 @@ class ExcDC3A(ExcitationSystemDynamics):
 	'''
 	This is modified IEEE DC3A direct current commutator exciters with speed input, and death band.  DC old type 4.
 
-	:trh: Rheostat travel time (Trh).  Typical Value = 20. Default: 0.0
+	:trh: Rheostat travel time (Trh).  Typical Value = 20. Default: 0
 	:ks: Coefficient to allow different usage of the model-speed coefficient (Ks).  Typical Value = 0. Default: 0.0
 	:kr: Death band (Kr).  If Kr is not zero, the voltage regulator input changes at a constant rate if Verr > Kr or Verr < -Kr as per the IEEE (1968) Type 4 model. If Kr is zero, the error signal drives the voltage regulator continuously as per the IEEE (1980) DC3 and IEEE (1992, 2005) DC3A models.  Typical Value = 0. Default: 0.0
 	:kv: Fast raise/lower contact setting (Kv).  Typical Value = 0.05. Default: 0.0
 	:vrmax: Maximum voltage regulator output (Vrmax).  Typical Value = 5. Default: 0.0
 	:vrmin: Minimum voltage regulator output (Vrmin).  Typical Value = 0. Default: 0.0
-	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 1.83. Default: 0.0
+	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 1.83. Default: 0
 	:ke: Exciter constant related to self-excited field (Ke).  Typical Value = 1. Default: 0.0
 	:efd1: Exciter voltage at which exciter saturation is defined (Efd1).  Typical Value = 2.6. Default: 0.0
 	:seefd1: Exciter saturation function value at the corresponding exciter voltage, Efd1 (Se[Eefd1]).  Typical Value = 0.1. Default: 0.0
@@ -48,7 +48,7 @@ class ExcDC3A(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, trh = 0.0, ks = 0.0, kr = 0.0, kv = 0.0, vrmax = 0.0, vrmin = 0.0, te = 0.0, ke = 0.0, efd1 = 0.0, seefd1 = 0.0, efd2 = 0.0, seefd2 = 0.0, exclim = False, edfmax = 0.0, efdmin = 0.0, efdlim = False,  *args, **kw_args):
+	def __init__(self, trh = 0, ks = 0.0, kr = 0.0, kv = 0.0, vrmax = 0.0, vrmin = 0.0, te = 0, ke = 0.0, efd1 = 0.0, seefd1 = 0.0, efd2 = 0.0, seefd2 = 0.0, exclim = False, edfmax = 0.0, efdmin = 0.0, efdlim = False,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.trh = trh

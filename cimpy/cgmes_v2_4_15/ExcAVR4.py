@@ -8,16 +8,16 @@ class ExcAVR4(ExcitationSystemDynamics):
 	:ka: AVR gain (K).  Typical Value = 300. Default: 0.0
 	:vrmn: Maximum AVR output (V).  Typical Value = 0. Default: 0.0
 	:vrmx: Minimum AVR output (V).  Typical Value = 5. Default: 0.0
-	:t1: AVR time constant (T).  Typical Value = 4.8. Default: 0.0
-	:t2: AVR time constant (T).  Typical Value = 1.5. Default: 0.0
-	:t3: AVR time constant (T).  Typical Value = 0. Default: 0.0
-	:t4: AVR time constant (T).  Typical Value = 0. Default: 0.0
+	:t1: AVR time constant (T).  Typical Value = 4.8. Default: 0
+	:t2: AVR time constant (T).  Typical Value = 1.5. Default: 0
+	:t3: AVR time constant (T).  Typical Value = 0. Default: 0
+	:t4: AVR time constant (T).  Typical Value = 0. Default: 0
 	:ke: Exciter gain (K).  Typical Value = 1. Default: 0.0
 	:vfmx: Maximum exciter output (V).  Typical Value = 5. Default: 0.0
 	:vfmn: Minimum exciter output (V).  Typical Value = 0. Default: 0.0
 	:kif: Exciter internal reactance (K).  Typical Value = 0. Default: 0.0
-	:tif: Exciter current feedback time constant (T).  Typical Value = 0. Default: 0.0
-	:t1if: Exciter current feedback time constant (T).  Typical Value = 60. Default: 0.0
+	:tif: Exciter current feedback time constant (T).  Typical Value = 0. Default: 0
+	:t1if: Exciter current feedback time constant (T).  Typical Value = 60. Default: 0
 	:imul: AVR output voltage dependency selector (Imul). true = selector is connected false = selector is not connected. Typical Value = true. Default: False
 		'''
 
@@ -44,7 +44,7 @@ class ExcAVR4(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, ka = 0.0, vrmn = 0.0, vrmx = 0.0, t1 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, ke = 0.0, vfmx = 0.0, vfmn = 0.0, kif = 0.0, tif = 0.0, t1if = 0.0, imul = False,  *args, **kw_args):
+	def __init__(self, ka = 0.0, vrmn = 0.0, vrmx = 0.0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, ke = 0.0, vfmx = 0.0, vfmn = 0.0, kif = 0.0, tif = 0, t1if = 0, imul = False,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ka = ka

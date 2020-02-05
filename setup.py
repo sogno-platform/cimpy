@@ -4,7 +4,7 @@ from setuptools import setup
 
 if __name__ == '__main__':
     setup(name='cimpy',
-          version='0.9',
+        version='0.9',
         description='Python package for import, modification and export of CIM grid data',
         author='Institute for Automation of Complex Power Systems',
         author_email='acs-software@eonerc.rwth-aachen.de',
@@ -12,7 +12,5 @@ if __name__ == '__main__':
             'lxml',
             'xmltodict',
             'chevron',
-            'sphinx',
-            'sphinx_rtd_theme',
         ]
      )

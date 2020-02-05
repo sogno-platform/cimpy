@@ -6,15 +6,15 @@ class ExcIEEEDC1A(ExcitationSystemDynamics):
 	The class represents IEEE Std 421.5-2005 type DC1A model. This model represents field-controlled dc commutator exciters with continuously acting voltage regulators (especially the direct-acting rheostatic, rotating amplifier, and magnetic amplifier types).  Because this model has been widely implemented by the industry, it is sometimes used to represent other types of systems when detailed data for them are not available or when a simplified model is required.   Reference: IEEE Standard 421.5-2005 Section 5.1.
 
 	:ka: Voltage regulator gain (K).  Typical Value = 46. Default: 0.0
-	:ta: Voltage regulator time constant (T).  Typical Value = 0.06. Default: 0.0
-	:tb: Voltage regulator time constant (T).  Typical Value = 0. Default: 0.0
-	:tc: Voltage regulator time constant (T).  Typical Value = 0. Default: 0.0
+	:ta: Voltage regulator time constant (T).  Typical Value = 0.06. Default: 0
+	:tb: Voltage regulator time constant (T).  Typical Value = 0. Default: 0
+	:tc: Voltage regulator time constant (T).  Typical Value = 0. Default: 0
 	:vrmax: Maximum voltage regulator output (V).  Typical Value = 1. Default: 0.0
 	:vrmin: Minimum voltage regulator output (V).  Typical Value = -0.9. Default: 0.0
 	:ke: Exciter constant related to self-excited field (K).  Typical Value = 0. Default: 0.0
-	:te: Exciter time constant, integration rate associated with exciter control (T).  Typical Value = 0.46. Default: 0.0
+	:te: Exciter time constant, integration rate associated with exciter control (T).  Typical Value = 0.46. Default: 0
 	:kf: Excitation control system stabilizer gain (K).  Typical Value = 0.1. Default: 0.0
-	:tf: Excitation control system stabilizer time constant (T).  Typical Value = 1. Default: 0.0
+	:tf: Excitation control system stabilizer time constant (T).  Typical Value = 1. Default: 0
 	:efd1: Exciter voltage at which exciter saturation is defined (E).  Typical Value = 3.1. Default: 0.0
 	:seefd1: Exciter saturation function value at the corresponding exciter voltage, E (S[E]).  Typical Value = 0.33. Default: 0.0
 	:efd2: Exciter voltage at which exciter saturation is defined (E).  Typical Value = 2.3. Default: 0.0
@@ -48,7 +48,7 @@ class ExcIEEEDC1A(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, ka = 0.0, ta = 0.0, tb = 0.0, tc = 0.0, vrmax = 0.0, vrmin = 0.0, ke = 0.0, te = 0.0, kf = 0.0, tf = 0.0, efd1 = 0.0, seefd1 = 0.0, efd2 = 0.0, seefd2 = 0.0, uelin = False, exclim = False,  *args, **kw_args):
+	def __init__(self, ka = 0.0, ta = 0, tb = 0, tc = 0, vrmax = 0.0, vrmin = 0.0, ke = 0.0, te = 0, kf = 0.0, tf = 0, efd1 = 0.0, seefd1 = 0.0, efd2 = 0.0, seefd2 = 0.0, uelin = False, exclim = False,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ka = ka

@@ -13,11 +13,11 @@ class ExcIEEEDC2A(ExcitationSystemDynamics):
 	:kf: Excitation control system stabilizer gain (K).  Typical Value = 0.1. Default: 0.0
 	:seefd1: Exciter saturation function value at the corresponding exciter voltage, E (S[E]).  Typical Value = 0.279. Default: 0.0
 	:seefd2: Exciter saturation function value at the corresponding exciter voltage, E (S[E]).  Typical Value = 0.117. Default: 0.0
-	:ta: Voltage regulator time constant (T).  Typical Value = 0.01. Default: 0.0
-	:tb: Voltage regulator time constant (T).  Typical Value = 0. Default: 0.0
-	:tc: Voltage regulator time constant (T).  Typical Value = 0. Default: 0.0
-	:te: Exciter time constant, integration rate associated with exciter control (T).  Typical Value = 1.33. Default: 0.0
-	:tf: Excitation control system stabilizer time constant (T).  Typical Value = 0.675. Default: 0.0
+	:ta: Voltage regulator time constant (T).  Typical Value = 0.01. Default: 0
+	:tb: Voltage regulator time constant (T).  Typical Value = 0. Default: 0
+	:tc: Voltage regulator time constant (T).  Typical Value = 0. Default: 0
+	:te: Exciter time constant, integration rate associated with exciter control (T).  Typical Value = 1.33. Default: 0
+	:tf: Excitation control system stabilizer time constant (T).  Typical Value = 0.675. Default: 0
 	:uelin: UEL input (uelin). true = input is connected to the HV gate false = input connects to the error signal. Typical Value = true. Default: False
 	:vrmax: Maximum voltage regulator output (V).  Typical Value = 4.95. Default: 0.0
 	:vrmin: Minimum voltage regulator output (V).  Typical Value = -4.9. Default: 0.0
@@ -48,7 +48,7 @@ class ExcIEEEDC2A(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, efd1 = 0.0, efd2 = 0.0, exclim = 0.0, ka = 0.0, ke = 0.0, kf = 0.0, seefd1 = 0.0, seefd2 = 0.0, ta = 0.0, tb = 0.0, tc = 0.0, te = 0.0, tf = 0.0, uelin = False, vrmax = 0.0, vrmin = 0.0,  *args, **kw_args):
+	def __init__(self, efd1 = 0.0, efd2 = 0.0, exclim = 0.0, ka = 0.0, ke = 0.0, kf = 0.0, seefd1 = 0.0, seefd2 = 0.0, ta = 0, tb = 0, tc = 0, te = 0, tf = 0, uelin = False, vrmax = 0.0, vrmin = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.efd1 = efd1

@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 
 # This function gets all attributes of an object and resolves references to other objects
-def _get_class_attributes_with_references(res, version):
+def _get_class_attributes_with_references(res, version, url_reference_dict):
     class_attributes_list = []
 
     for key in res.keys():
@@ -20,7 +20,7 @@ def _get_class_attributes_with_references(res, version):
         attributes_dict = _get_attributes(res[key])
         # change attribute references to mRID of the object, res needed because classes like SvPowerFlow does not have
         # mRID as an attribute. Therefore the corresponding class has to be searched in the res dictionary
-        class_dict['attributes'] = _get_reference_uuid(attributes_dict, version, res, key)
+        class_dict['attributes'] = _get_reference_uuid(attributes_dict, version, res, key, url_reference_dict)
         class_attributes_list.append(class_dict)
         del class_dict
 
@@ -28,7 +28,7 @@ def _get_class_attributes_with_references(res, version):
 
 
 # This function resolves references to objects
-def _get_reference_uuid(attr_dict, version, res, mRID):
+def _get_reference_uuid(attr_dict, version, res, mRID, url_reference_dict):
     reference_list = []
     base_class_name = 'cimpy.' + version + '.Base'
     base_module = importlib.import_module(base_class_name)
@@ -77,7 +77,13 @@ def _get_reference_uuid(attr_dict, version, res, mRID):
         elif attr_dict[key] == "" or attr_dict[key] is None:
             pass
         else:
-            attributes['value'] = attr_dict[key]
+            if mRID in url_reference_dict.keys():
+                if key.split('.')[1] in url_reference_dict[mRID]:
+                    attributes['value'] = '%URL%' + url_reference_dict[mRID][key.split('.')[1]][attr_dict[key]]
+                else:
+                    attributes['value'] = attr_dict[key]
+            else:
+                attributes['value'] = attr_dict[key]
 
         attributes['attr_name'] = key
         if 'value' in attributes.keys():
@@ -87,7 +93,7 @@ def _get_reference_uuid(attr_dict, version, res, mRID):
                     if reference_item not in ['', None, 0.0, 0]:
                         reference_list.append({'value': reference_item, 'attr_name': key})
             # ignore default values
-            elif attributes['value'] not in ['', None, 0.0, 0, 'many']:
+            elif attributes['value'] not in ['', None, 0.0, 0, 'list']:
                 reference_list.append(attributes)
 
     return reference_list
@@ -108,7 +114,10 @@ def _set_attribute_or_reference(text, render):
     result = result.split('@')
     value = result[0]
     attr_name = result[1]
-    if '%' in value:
+    if '%URL%' in value:
+        reference = value.split('%')[2]
+        return ' rdf:resource="' + reference + '"/>'
+    elif '%' in value:
         reference = value.split('%')[1]
         return ' rdf:resource="#' + reference + '"/>'
     else:
@@ -271,7 +280,7 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
     return export_dict, export_about_dict
 
 
-def cim_export(res, namespaces_dict, file_name, version, activeProfileList):
+def cim_export(res, namespaces_dict, file_name, version, activeProfileList, url_reference_dict={}):
     """Function for serialization of cgmes classes
 
     This function serializes cgmes classes with the template engine chevron. The classes are separated by their profile
@@ -284,6 +293,10 @@ def cim_export(res, namespaces_dict, file_name, version, activeProfileList):
     :param file_name: a string with the name of the xml files which will be created
     :param version: cgmes version, e.g. version = "cgmes_v2_4_15"
     :param activeProfileList: a list containing the strings of all short names of the profiles used for serialization
+    :param: url_reference_dict: a map containing a mapping between references to URLs and the extracted value of the
+        URL, e.g. 'absoluteValue': 'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue'
+        These mappings are accessible via the mRID of the class and the name of the attribute, e.g.
+        url_reference_dict[mRID][attribute_name] = {mapping like example above}
     """
 
     cwd = os.getcwd()
@@ -292,7 +305,7 @@ def cim_export(res, namespaces_dict, file_name, version, activeProfileList):
     logger.info('Start export procedure.')
 
     # returns all classes with their attributes and resolved references
-    class_attributes_list = _get_class_attributes_with_references(res, version)
+    class_attributes_list = _get_class_attributes_with_references(res, version, url_reference_dict)
 
     # determine class and attribute export profiles. The export dict contains all classes and their attributes where
     # the class definition and the attribute definitions are in the same profile. Every entry in about_dict generates
@@ -307,7 +320,8 @@ def cim_export(res, namespaces_dict, file_name, version, activeProfileList):
 
     # iterate over all profiles
     for profile_name, short_name in short_profile_name.items():
-        model_name = {'mRID': file_name, 'description': []}
+        model_name \
+            = {'mRID': file_name, 'description': []}
         model_description = {'model': [model_name]}
         model_description['model'][0]['description'].append(created)
         model_description['model'][0]['description'].append(authority)

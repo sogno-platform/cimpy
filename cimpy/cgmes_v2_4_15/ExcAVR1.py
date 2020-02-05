@@ -8,15 +8,15 @@ class ExcAVR1(ExcitationSystemDynamics):
 	:ka: AVR gain (K).  Typical Value = 500. Default: 0.0
 	:vrmn: Maximum AVR output (V).  Typical Value = -6. Default: 0.0
 	:vrmx: Minimum AVR output (V).  Typical Value = 7. Default: 0.0
-	:ta: AVR time constant (T).  Typical Value = 0.2. Default: 0.0
-	:tb: AVR time constant (T).  Typical Value = 0. Default: 0.0
-	:te: Exciter time constant (T).  Typical Value = 1. Default: 0.0
+	:ta: AVR time constant (T).  Typical Value = 0.2. Default: 0
+	:tb: AVR time constant (T).  Typical Value = 0. Default: 0
+	:te: Exciter time constant (T).  Typical Value = 1. Default: 0
 	:e1: Field voltage value 1  (E1).  Typical Value = 4.18. Default: 0.0
 	:se1: Saturation factor at E1 (S(E1)).  Typical Value = 0.1. Default: 0.0
 	:e2: Field voltage value 2 (E2).  Typical Value = 3.14. Default: 0.0
 	:se2: Saturation factor at E2 (S(E2)).  Typical Value = 0.03. Default: 0.0
 	:kf: Rate feedback gain (K).  Typical Value = 0.02. Default: 0.0
-	:tf: Rate feedback time constant (T).  Typical Value = 1. Default: 0.0
+	:tf: Rate feedback time constant (T).  Typical Value = 1. Default: 0
 		'''
 
 	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
@@ -40,7 +40,7 @@ class ExcAVR1(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, ka = 0.0, vrmn = 0.0, vrmx = 0.0, ta = 0.0, tb = 0.0, te = 0.0, e1 = 0.0, se1 = 0.0, e2 = 0.0, se2 = 0.0, kf = 0.0, tf = 0.0,  *args, **kw_args):
+	def __init__(self, ka = 0.0, vrmn = 0.0, vrmx = 0.0, ta = 0, tb = 0, te = 0, e1 = 0.0, se1 = 0.0, e2 = 0.0, se2 = 0.0, kf = 0.0, tf = 0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ka = ka

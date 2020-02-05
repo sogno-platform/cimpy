@@ -5,20 +5,20 @@ class UnderexcLimIEEE2(UnderexcitationLimiterDynamics):
 	'''
 	The class represents the Type UEL2 which has either a straight-line or multi-segment characteristic when plotted in terms of machine reactive power output vs. real power output.  Reference: IEEE UEL2 421.5-2005 Section 10.2.  (Limit characteristic lookup table shown in Figure 10.4 (p 32) of the standard).
 
-	:tuv: Voltage filter time constant (T).  Typical Value = 5. Default: 0.0
-	:tup: Real power filter time constant (T).  Typical Value = 5. Default: 0.0
-	:tuq: Reactive power filter time constant (T).  Typical Value = 0. Default: 0.0
+	:tuv: Voltage filter time constant (T).  Typical Value = 5. Default: 0
+	:tup: Real power filter time constant (T).  Typical Value = 5. Default: 0
+	:tuq: Reactive power filter time constant (T).  Typical Value = 0. Default: 0
 	:kui: UEL integral gain (K).  Typical Value = 0.5. Default: 0.0
 	:kul: UEL proportional gain (K).  Typical Value = 0.8. Default: 0.0
 	:vuimax: UEL integrator output maximum limit (V).  Typical Value = 0.25. Default: 0.0
 	:vuimin: UEL integrator output minimum limit (V).  Typical Value = 0. Default: 0.0
 	:kuf: UEL excitation system stabilizer gain (K).  Typical Value = 0. Default: 0.0
 	:kfb: Gain associated with optional integrator feedback input signal to UEL (K).  Typical Value = 0. Default: 0.0
-	:tul: Time constant associated with optional integrator feedback input signal to UEL (T).  Typical Value = 0. Default: 0.0
-	:tu1: UEL lead time constant (T).  Typical Value = 0. Default: 0.0
-	:tu2: UEL lag time constant (T).  Typical Value = 0. Default: 0.0
-	:tu3: UEL lead time constant (T).  Typical Value = 0. Default: 0.0
-	:tu4: UEL lag time constant (T).  Typical Value = 0. Default: 0.0
+	:tul: Time constant associated with optional integrator feedback input signal to UEL (T).  Typical Value = 0. Default: 0
+	:tu1: UEL lead time constant (T).  Typical Value = 0. Default: 0
+	:tu2: UEL lag time constant (T).  Typical Value = 0. Default: 0
+	:tu3: UEL lead time constant (T).  Typical Value = 0. Default: 0
+	:tu4: UEL lag time constant (T).  Typical Value = 0. Default: 0
 	:vulmax: UEL output maximum limit (V).  Typical Value = 0.25. Default: 0.0
 	:vulmin: UEL output minimum limit (V).  Typical Value = 0. Default: 0.0
 	:p0: Real power values for endpoints (P).  Typical Value = 0. Default: 0.0
@@ -96,7 +96,7 @@ class UnderexcLimIEEE2(UnderexcitationLimiterDynamics):
 
 	__doc__ += '\n Documentation of parent class UnderexcitationLimiterDynamics: \n' + UnderexcitationLimiterDynamics.__doc__ 
 
-	def __init__(self, tuv = 0.0, tup = 0.0, tuq = 0.0, kui = 0.0, kul = 0.0, vuimax = 0.0, vuimin = 0.0, kuf = 0.0, kfb = 0.0, tul = 0.0, tu1 = 0.0, tu2 = 0.0, tu3 = 0.0, tu4 = 0.0, vulmax = 0.0, vulmin = 0.0, p0 = 0.0, q0 = 0.0, p1 = 0.0, q1 = 0.0, p2 = 0.0, q2 = 0.0, p3 = 0.0, q3 = 0.0, p4 = 0.0, q4 = 0.0, p5 = 0.0, q5 = 0.0, p6 = 0.0, q6 = 0.0, p7 = 0.0, q7 = 0.0, p8 = 0.0, q8 = 0.0, p9 = 0.0, q9 = 0.0, p10 = 0.0, q10 = 0.0, k1 = 0.0, k2 = 0.0,  *args, **kw_args):
+	def __init__(self, tuv = 0, tup = 0, tuq = 0, kui = 0.0, kul = 0.0, vuimax = 0.0, vuimin = 0.0, kuf = 0.0, kfb = 0.0, tul = 0, tu1 = 0, tu2 = 0, tu3 = 0, tu4 = 0, vulmax = 0.0, vulmin = 0.0, p0 = 0.0, q0 = 0.0, p1 = 0.0, q1 = 0.0, p2 = 0.0, q2 = 0.0, p3 = 0.0, q3 = 0.0, p4 = 0.0, q4 = 0.0, p5 = 0.0, q5 = 0.0, p6 = 0.0, q6 = 0.0, p7 = 0.0, q7 = 0.0, p8 = 0.0, q8 = 0.0, p9 = 0.0, q9 = 0.0, p10 = 0.0, q10 = 0.0, k1 = 0.0, k2 = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.tuv = tuv

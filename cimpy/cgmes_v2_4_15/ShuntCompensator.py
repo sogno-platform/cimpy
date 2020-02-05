@@ -5,7 +5,7 @@ class ShuntCompensator(RegulatingCondEq):
 	'''
 	A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor.  A negative value for reactivePerSection indicates that the compensator is a reactor. ShuntCompensator is a single terminal device.  Ground is implied.
 
-	:aVRDelay: Time delay required for the device to be connected or disconnected by automatic voltage regulation (AVR). Default: 0.0
+	:aVRDelay: Time delay required for the device to be connected or disconnected by automatic voltage regulation (AVR). Default: 0
 	:grounded: Used for Yn and Zn connections. True if the neutral is solidly grounded. Default: False
 	:maximumSections: The maximum number of sections that may be switched in. Default: 0
 	:nomU: The voltage at which the nominal reactive power may be calculated. This should normally be within 10% of the voltage at which the capacitor is connected to the network. Default: 0.0
@@ -36,7 +36,7 @@ class ShuntCompensator(RegulatingCondEq):
 
 	__doc__ += '\n Documentation of parent class RegulatingCondEq: \n' + RegulatingCondEq.__doc__ 
 
-	def __init__(self, aVRDelay = 0.0, grounded = False, maximumSections = 0, nomU = 0.0, normalSections = 0, switchOnCount = 0, switchOnDate = '', voltageSensitivity = 0.0, SvShuntCompensatorSections = None, sections = 0.0,  *args, **kw_args):
+	def __init__(self, aVRDelay = 0, grounded = False, maximumSections = 0, nomU = 0.0, normalSections = 0, switchOnCount = 0, switchOnDate = '', voltageSensitivity = 0.0, SvShuntCompensatorSections = None, sections = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.aVRDelay = aVRDelay

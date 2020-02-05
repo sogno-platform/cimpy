@@ -13,13 +13,13 @@ class DiscExcContIEEEDEC1A(DiscontinuousExcitationControlDynamics):
 	:val: Regulator voltage reference ().  Typical Value = 5.5. Default: 0.0
 	:esc: Speed change reference ().  Typical Value = 0.0015. Default: 0.0
 	:kan: Discontinuous controller gain ().  Typical Value = 400. Default: 0.0
-	:tan: Discontinuous controller time constant ().  Typical Value = 0.08. Default: 0.0
-	:tw5: DEC washout time constant ().  Typical Value = 5. Default: 0.0
+	:tan: Discontinuous controller time constant ().  Typical Value = 0.08. Default: 0
+	:tw5: DEC washout time constant ().  Typical Value = 5. Default: 0
 	:vsmax: Limiter ().  Typical Value = 0.2. Default: 0.0
 	:vsmin: Limiter ().  Typical Value = -0.066. Default: 0.0
-	:td: Time constant ().  Typical Value = 0.03. Default: 0.0
-	:tl1: Time constant ().  Typical Value = 0.025. Default: 0.0
-	:tl2: Time constant ().  Typical Value = 1.25. Default: 0.0
+	:td: Time constant ().  Typical Value = 0.03. Default: 0
+	:tl1: Time constant ().  Typical Value = 0.025. Default: 0
+	:tl2: Time constant ().  Typical Value = 1.25. Default: 0
 	:vtm: Voltage limits ().  Typical Value = 1.13. Default: 0.0
 	:vtn: Voltage limits ().  Typical Value = 1.12. Default: 0.0
 	:vanmax: Limiter for Van (). Default: 0.0
@@ -52,7 +52,7 @@ class DiscExcContIEEEDEC1A(DiscontinuousExcitationControlDynamics):
 
 	__doc__ += '\n Documentation of parent class DiscontinuousExcitationControlDynamics: \n' + DiscontinuousExcitationControlDynamics.__doc__ 
 
-	def __init__(self, vtlmt = 0.0, vomax = 0.0, vomin = 0.0, ketl = 0.0, vtc = 0.0, val = 0.0, esc = 0.0, kan = 0.0, tan = 0.0, tw5 = 0.0, vsmax = 0.0, vsmin = 0.0, td = 0.0, tl1 = 0.0, tl2 = 0.0, vtm = 0.0, vtn = 0.0, vanmax = 0.0,  *args, **kw_args):
+	def __init__(self, vtlmt = 0.0, vomax = 0.0, vomin = 0.0, ketl = 0.0, vtc = 0.0, val = 0.0, esc = 0.0, kan = 0.0, tan = 0, tw5 = 0, vsmax = 0.0, vsmin = 0.0, td = 0, tl1 = 0, tl2 = 0, vtm = 0.0, vtn = 0.0, vanmax = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.vtlmt = vtlmt

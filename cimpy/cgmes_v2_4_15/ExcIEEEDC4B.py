@@ -6,17 +6,17 @@ class ExcIEEEDC4B(ExcitationSystemDynamics):
 	The class represents IEEE Std 421.5-2005 type DC4B model. These excitation systems utilize a field-controlled dc commutator exciter with a continuously acting voltage regulator having supplies obtained from the generator or auxiliary bus.  Reference: IEEE Standard 421.5-2005 Section 5.4.
 
 	:ka: Voltage regulator gain (K).  Typical Value = 1. Default: 0.0
-	:ta: Voltage regulator time constant (T).  Typical Value = 0.2. Default: 0.0
+	:ta: Voltage regulator time constant (T).  Typical Value = 0.2. Default: 0
 	:kp: Regulator proportional gain (K).  Typical Value = 20. Default: 0.0
 	:ki: Regulator integral gain (K).  Typical Value = 20. Default: 0.0
 	:kd: Regulator derivative gain (K).  Typical Value = 20. Default: 0.0
-	:td: Regulator derivative filter time constant(T).  Typical Value = 0.01. Default: 0.0
+	:td: Regulator derivative filter time constant(T).  Typical Value = 0.01. Default: 0
 	:vrmax: Maximum voltage regulator output (V).  Typical Value = 2.7. Default: 0.0
 	:vrmin: Minimum voltage regulator output (V).  Typical Value = -0.9. Default: 0.0
 	:ke: Exciter constant related to self-excited field (K).  Typical Value = 1. Default: 0.0
-	:te: Exciter time constant, integration rate associated with exciter control (T).  Typical Value = 0.8. Default: 0.0
+	:te: Exciter time constant, integration rate associated with exciter control (T).  Typical Value = 0.8. Default: 0
 	:kf: Excitation control system stabilizer gain (K).  Typical Value = 0. Default: 0.0
-	:tf: Excitation control system stabilizer time constant (T).  Typical Value = 1. Default: 0.0
+	:tf: Excitation control system stabilizer time constant (T).  Typical Value = 1. Default: 0
 	:efd1: Exciter voltage at which exciter saturation is defined (E).  Typical Value = 1.75. Default: 0.0
 	:seefd1: Exciter saturation function value at the corresponding exciter voltage, E (S[E]).  Typical Value = 0.08. Default: 0.0
 	:efd2: Exciter voltage at which exciter saturation is defined (E).  Typical Value = 2.33. Default: 0.0
@@ -54,7 +54,7 @@ class ExcIEEEDC4B(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, ka = 0.0, ta = 0.0, kp = 0.0, ki = 0.0, kd = 0.0, td = 0.0, vrmax = 0.0, vrmin = 0.0, ke = 0.0, te = 0.0, kf = 0.0, tf = 0.0, efd1 = 0.0, seefd1 = 0.0, efd2 = 0.0, seefd2 = 0.0, vemin = 0.0, oelin = False, uelin = False,  *args, **kw_args):
+	def __init__(self, ka = 0.0, ta = 0, kp = 0.0, ki = 0.0, kd = 0.0, td = 0, vrmax = 0.0, vrmin = 0.0, ke = 0.0, te = 0, kf = 0.0, tf = 0, efd1 = 0.0, seefd1 = 0.0, efd2 = 0.0, seefd2 = 0.0, vemin = 0.0, oelin = False, uelin = False,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ka = ka

@@ -6,7 +6,7 @@ class DiscExcContIEEEDEC3A(DiscontinuousExcitationControlDynamics):
 	The class represents IEEE Type DEC3A model. In some systems, the stabilizer output is disconnected from the regulator immediately following a severe fault to prevent the stabilizer from competing with action of voltage regulator during the first swing.  Reference: IEEE Standard 421.5-2005 Section 12.4.
 
 	:vtmin: Terminal undervoltage comparison level (). Default: 0.0
-	:tdr: Reset time delay (). Default: 0.0
+	:tdr: Reset time delay (). Default: 0
 		'''
 
 	cgmesProfile = DiscontinuousExcitationControlDynamics.cgmesProfile
@@ -20,7 +20,7 @@ class DiscExcContIEEEDEC3A(DiscontinuousExcitationControlDynamics):
 
 	__doc__ += '\n Documentation of parent class DiscontinuousExcitationControlDynamics: \n' + DiscontinuousExcitationControlDynamics.__doc__ 
 
-	def __init__(self, vtmin = 0.0, tdr = 0.0,  *args, **kw_args):
+	def __init__(self, vtmin = 0.0, tdr = 0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.vtmin = vtmin

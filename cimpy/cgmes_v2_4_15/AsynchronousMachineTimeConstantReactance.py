@@ -8,8 +8,8 @@ class AsynchronousMachineTimeConstantReactance(AsynchronousMachineDynamics):
 	:xs: Synchronous reactance (Xs) (>= X').  Typical Value = 1.8. Default: 0.0
 	:xp: Transient reactance (unsaturated) (X') (>=X'').  Typical Value = 0.5. Default: 0.0
 	:xpp: Subtransient reactance (unsaturated) (X'') (> Xl).  Typical Value = 0.2. Default: 0.0
-	:tpo: Transient rotor time constant (T'o) (> T''o).  Typical Value = 5. Default: 0.0
-	:tppo: Subtransient rotor time constant (T''o) (> 0).  Typical Value = 0.03. Default: 0.0
+	:tpo: Transient rotor time constant (T'o) (> T''o).  Typical Value = 5. Default: 0
+	:tppo: Subtransient rotor time constant (T''o) (> 0).  Typical Value = 0.03. Default: 0
 		'''
 
 	cgmesProfile = AsynchronousMachineDynamics.cgmesProfile
@@ -26,7 +26,7 @@ class AsynchronousMachineTimeConstantReactance(AsynchronousMachineDynamics):
 
 	__doc__ += '\n Documentation of parent class AsynchronousMachineDynamics: \n' + AsynchronousMachineDynamics.__doc__ 
 
-	def __init__(self, xs = 0.0, xp = 0.0, xpp = 0.0, tpo = 0.0, tppo = 0.0,  *args, **kw_args):
+	def __init__(self, xs = 0.0, xp = 0.0, xpp = 0.0, tpo = 0, tppo = 0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.xs = xs

@@ -8,11 +8,11 @@ class ExcST3A(ExcitationSystemDynamics):
 	:vimax: Maximum voltage regulator input limit (Vimax).  Typical Value = 0.2. Default: 0.0
 	:vimin: Minimum voltage regulator input limit (Vimin).  Typical Value = -0.2. Default: 0.0
 	:kj: AVR gain (Kj).  Typical Value = 200. Default: 0.0
-	:tb: Voltage regulator time constant (Tb).  Typical Value = 6.67. Default: 0.0
-	:tc: Voltage regulator time constant (Tc).  Typical Value = 1. Default: 0.0
+	:tb: Voltage regulator time constant (Tb).  Typical Value = 6.67. Default: 0
+	:tc: Voltage regulator time constant (Tc).  Typical Value = 1. Default: 0
 	:efdmax: Maximum AVR output (Efdmax).  Typical Value = 6.9. Default: 0.0
 	:km: Forward gain constant of the inner loop field regulator (Km).  Typical Value = 7.04. Default: 0.0
-	:tm: Forward time constant of inner loop field regulator (Tm).  Typical Value = 1. Default: 0.0
+	:tm: Forward time constant of inner loop field regulator (Tm).  Typical Value = 1. Default: 0
 	:vrmax: Maximum voltage regulator output (Vrmax).  Typical Value = 1. Default: 0.0
 	:vrmin: Minimum voltage regulator output (Vrmin).  Typical Value = 0. Default: 0.0
 	:kg: Feedback gain constant of the inner loop field regulator (Kg).  Typical Value = 1. Default: 0.0
@@ -56,7 +56,7 @@ class ExcST3A(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, vimax = 0.0, vimin = 0.0, kj = 0.0, tb = 0.0, tc = 0.0, efdmax = 0.0, km = 0.0, tm = 0.0, vrmax = 0.0, vrmin = 0.0, kg = 0.0, kp = 0.0, thetap = 0.0, ki = 0.0, kc = 0.0, xl = 0.0, vbmax = 0.0, vgmax = 0.0, ks = 0.0, ks1 = 0.0,  *args, **kw_args):
+	def __init__(self, vimax = 0.0, vimin = 0.0, kj = 0.0, tb = 0, tc = 0, efdmax = 0.0, km = 0.0, tm = 0, vrmax = 0.0, vrmin = 0.0, kg = 0.0, kp = 0.0, thetap = 0.0, ki = 0.0, kc = 0.0, xl = 0.0, vbmax = 0.0, vgmax = 0.0, ks = 0.0, ks1 = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.vimax = vimax

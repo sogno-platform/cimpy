@@ -3,7 +3,7 @@ FROM fedora:29
 LABEL \
 	org.label-schema.schema-version = "1.0" \
 	org.label-schema.name = "cimpy" \
-	org.label-schema.license = "Apache" \
+	org.label-schema.license = "Mozilla Public License Version 2.0" \
 	org.label-schema.vendor = "Institute for Automation of Complex Power Systems, RWTH Aachen University" \
 	org.label-schema.author.name = "Jan Dinkelbach" \
 	org.label-schema.author.email = "acs-software@eonerc.rwth-aachen.de" \
@@ -23,6 +23,10 @@ RUN dnf --refresh -y install \
 RUN pip3 install sphinx_rtd_theme
 
 RUN pip3 install sphinx==2.2.0
+
+RUN pip3 install pytest
+
+RUN pip3 install pytest-check
 
 # ADD . /cimpy
 

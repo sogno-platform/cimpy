@@ -28,42 +28,42 @@ class PssIEEE4B(PowerSystemStabilizerDynamics):
 	:omeganh2: Notch filter 2 (high-frequency band): filter frequency (omega). Default: 0.0
 	:omeganl1: Notch filter 1 (low-frequency band): filter frequency (omega). Default: 0.0
 	:omeganl2: Notch filter 2 (low-frequency band): filter frequency (omega). Default: 0.0
-	:th1: High band time constant (T).  Typical Value = 0.01513. Default: 0.0
-	:th10: High band time constant (T).  Typical Value = 0. Default: 0.0
-	:th11: High band time constant (T).  Typical Value = 0. Default: 0.0
-	:th12: High band time constant (T).  Typical Value = 0. Default: 0.0
-	:th2: High band time constant (T).  Typical Value = 0.01816. Default: 0.0
-	:th3: High band time constant (T).  Typical Value = 0. Default: 0.0
-	:th4: High band time constant (T).  Typical Value = 0. Default: 0.0
-	:th5: High band time constant (T).  Typical Value = 0. Default: 0.0
-	:th6: High band time constant (T).  Typical Value = 0. Default: 0.0
-	:th7: High band time constant (T).  Typical Value = 0.01816. Default: 0.0
-	:th8: High band time constant (T).  Typical Value = 0.02179. Default: 0.0
-	:th9: High band time constant (T).  Typical Value = 0. Default: 0.0
-	:ti1: Intermediate band time constant (T).  Typical Value = 0.173. Default: 0.0
-	:ti10: Intermediate band time constant (T).  Typical Value = 0. Default: 0.0
-	:ti11: Intermediate band time constant (T).  Typical Value = 0. Default: 0.0
-	:ti12: Intermediate band time constant (T).  Typical Value = 0. Default: 0.0
-	:ti2: Intermediate band time constant (T).  Typical Value = 0.2075. Default: 0.0
-	:ti3: Intermediate band time constant (T).  Typical Value = 0. Default: 0.0
-	:ti4: Intermediate band time constant (T).  Typical Value = 0. Default: 0.0
-	:ti5: Intermediate band time constant (T).  Typical Value = 0. Default: 0.0
-	:ti6: Intermediate band time constant (T).  Typical Value = 0. Default: 0.0
-	:ti7: Intermediate band time constant (T).  Typical Value = 0.2075. Default: 0.0
-	:ti8: Intermediate band time constant (T).  Typical Value = 0.2491. Default: 0.0
-	:ti9: Intermediate band time constant (T).  Typical Value = 0. Default: 0.0
-	:tl1: Low band time constant (T).  Typical Value = 1.73. Default: 0.0
-	:tl10: Low band time constant (T).  Typical Value = 0. Default: 0.0
-	:tl11: Low band time constant (T).  Typical Value = 0. Default: 0.0
-	:tl12: Low band time constant (T).  Typical Value = 0. Default: 0.0
-	:tl2: Low band time constant (T).  Typical Value = 2.075. Default: 0.0
-	:tl3: Low band time constant (T).  Typical Value = 0. Default: 0.0
-	:tl4: Low band time constant (T).  Typical Value = 0. Default: 0.0
-	:tl5: Low band time constant (T).  Typical Value = 0. Default: 0.0
-	:tl6: Low band time constant (T).  Typical Value = 0. Default: 0.0
-	:tl7: Low band time constant (T).  Typical Value = 2.075. Default: 0.0
-	:tl8: Low band time constant (T).  Typical Value = 2.491. Default: 0.0
-	:tl9: Low band time constant (T).  Typical Value = 0. Default: 0.0
+	:th1: High band time constant (T).  Typical Value = 0.01513. Default: 0
+	:th10: High band time constant (T).  Typical Value = 0. Default: 0
+	:th11: High band time constant (T).  Typical Value = 0. Default: 0
+	:th12: High band time constant (T).  Typical Value = 0. Default: 0
+	:th2: High band time constant (T).  Typical Value = 0.01816. Default: 0
+	:th3: High band time constant (T).  Typical Value = 0. Default: 0
+	:th4: High band time constant (T).  Typical Value = 0. Default: 0
+	:th5: High band time constant (T).  Typical Value = 0. Default: 0
+	:th6: High band time constant (T).  Typical Value = 0. Default: 0
+	:th7: High band time constant (T).  Typical Value = 0.01816. Default: 0
+	:th8: High band time constant (T).  Typical Value = 0.02179. Default: 0
+	:th9: High band time constant (T).  Typical Value = 0. Default: 0
+	:ti1: Intermediate band time constant (T).  Typical Value = 0.173. Default: 0
+	:ti10: Intermediate band time constant (T).  Typical Value = 0. Default: 0
+	:ti11: Intermediate band time constant (T).  Typical Value = 0. Default: 0
+	:ti12: Intermediate band time constant (T).  Typical Value = 0. Default: 0
+	:ti2: Intermediate band time constant (T).  Typical Value = 0.2075. Default: 0
+	:ti3: Intermediate band time constant (T).  Typical Value = 0. Default: 0
+	:ti4: Intermediate band time constant (T).  Typical Value = 0. Default: 0
+	:ti5: Intermediate band time constant (T).  Typical Value = 0. Default: 0
+	:ti6: Intermediate band time constant (T).  Typical Value = 0. Default: 0
+	:ti7: Intermediate band time constant (T).  Typical Value = 0.2075. Default: 0
+	:ti8: Intermediate band time constant (T).  Typical Value = 0.2491. Default: 0
+	:ti9: Intermediate band time constant (T).  Typical Value = 0. Default: 0
+	:tl1: Low band time constant (T).  Typical Value = 1.73. Default: 0
+	:tl10: Low band time constant (T).  Typical Value = 0. Default: 0
+	:tl11: Low band time constant (T).  Typical Value = 0. Default: 0
+	:tl12: Low band time constant (T).  Typical Value = 0. Default: 0
+	:tl2: Low band time constant (T).  Typical Value = 2.075. Default: 0
+	:tl3: Low band time constant (T).  Typical Value = 0. Default: 0
+	:tl4: Low band time constant (T).  Typical Value = 0. Default: 0
+	:tl5: Low band time constant (T).  Typical Value = 0. Default: 0
+	:tl6: Low band time constant (T).  Typical Value = 0. Default: 0
+	:tl7: Low band time constant (T).  Typical Value = 2.075. Default: 0
+	:tl8: Low band time constant (T).  Typical Value = 2.491. Default: 0
+	:tl9: Low band time constant (T).  Typical Value = 0. Default: 0
 	:vhmax: High band output maximum limit (V).  Typical Value = 0.6. Default: 0.0
 	:vhmin: High band output minimum limit (V).  Typical Value = -0.6. Default: 0.0
 	:vimax: Intermediate band output maximum limit (V).  Typical Value = 0.6. Default: 0.0
@@ -150,7 +150,7 @@ class PssIEEE4B(PowerSystemStabilizerDynamics):
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, bwh1 = 0.0, bwh2 = 0.0, bwl1 = 0.0, bwl2 = 0.0, kh = 0.0, kh1 = 0.0, kh11 = 0.0, kh17 = 0.0, kh2 = 0.0, ki = 0.0, ki1 = 0.0, ki11 = 0.0, ki17 = 0.0, ki2 = 0.0, kl = 0.0, kl1 = 0.0, kl11 = 0.0, kl17 = 0.0, kl2 = 0.0, omeganh1 = 0.0, omeganh2 = 0.0, omeganl1 = 0.0, omeganl2 = 0.0, th1 = 0.0, th10 = 0.0, th11 = 0.0, th12 = 0.0, th2 = 0.0, th3 = 0.0, th4 = 0.0, th5 = 0.0, th6 = 0.0, th7 = 0.0, th8 = 0.0, th9 = 0.0, ti1 = 0.0, ti10 = 0.0, ti11 = 0.0, ti12 = 0.0, ti2 = 0.0, ti3 = 0.0, ti4 = 0.0, ti5 = 0.0, ti6 = 0.0, ti7 = 0.0, ti8 = 0.0, ti9 = 0.0, tl1 = 0.0, tl10 = 0.0, tl11 = 0.0, tl12 = 0.0, tl2 = 0.0, tl3 = 0.0, tl4 = 0.0, tl5 = 0.0, tl6 = 0.0, tl7 = 0.0, tl8 = 0.0, tl9 = 0.0, vhmax = 0.0, vhmin = 0.0, vimax = 0.0, vimin = 0.0, vlmax = 0.0, vlmin = 0.0, vstmax = 0.0, vstmin = 0.0,  *args, **kw_args):
+	def __init__(self, bwh1 = 0.0, bwh2 = 0.0, bwl1 = 0.0, bwl2 = 0.0, kh = 0.0, kh1 = 0.0, kh11 = 0.0, kh17 = 0.0, kh2 = 0.0, ki = 0.0, ki1 = 0.0, ki11 = 0.0, ki17 = 0.0, ki2 = 0.0, kl = 0.0, kl1 = 0.0, kl11 = 0.0, kl17 = 0.0, kl2 = 0.0, omeganh1 = 0.0, omeganh2 = 0.0, omeganl1 = 0.0, omeganl2 = 0.0, th1 = 0, th10 = 0, th11 = 0, th12 = 0, th2 = 0, th3 = 0, th4 = 0, th5 = 0, th6 = 0, th7 = 0, th8 = 0, th9 = 0, ti1 = 0, ti10 = 0, ti11 = 0, ti12 = 0, ti2 = 0, ti3 = 0, ti4 = 0, ti5 = 0, ti6 = 0, ti7 = 0, ti8 = 0, ti9 = 0, tl1 = 0, tl10 = 0, tl11 = 0, tl12 = 0, tl2 = 0, tl3 = 0, tl4 = 0, tl5 = 0, tl6 = 0, tl7 = 0, tl8 = 0, tl9 = 0, vhmax = 0.0, vhmin = 0.0, vimax = 0.0, vimin = 0.0, vlmax = 0.0, vlmin = 0.0, vstmax = 0.0, vstmin = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.bwh1 = bwh1

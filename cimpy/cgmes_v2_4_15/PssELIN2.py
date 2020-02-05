@@ -5,12 +5,12 @@ class PssELIN2(PowerSystemStabilizerDynamics):
 	'''
 	Power system stabilizer typically associated with ExcELIN2 (though PssIEEE2B or Pss2B can also be used).
 
-	:ts1: Time constant (Ts1).  Typical Value = 0. Default: 0.0
-	:ts2: Time constant (Ts2).  Typical Value = 1. Default: 0.0
-	:ts3: Time constant (Ts3).  Typical Value = 1. Default: 0.0
-	:ts4: Time constant (Ts4).  Typical Value = 0.1. Default: 0.0
-	:ts5: Time constant (Ts5).  Typical Value = 0. Default: 0.0
-	:ts6: Time constant (Ts6).  Typical Value = 1. Default: 0.0
+	:ts1: Time constant (Ts1).  Typical Value = 0. Default: 0
+	:ts2: Time constant (Ts2).  Typical Value = 1. Default: 0
+	:ts3: Time constant (Ts3).  Typical Value = 1. Default: 0
+	:ts4: Time constant (Ts4).  Typical Value = 0.1. Default: 0
+	:ts5: Time constant (Ts5).  Typical Value = 0. Default: 0
+	:ts6: Time constant (Ts6).  Typical Value = 1. Default: 0
 	:ks1: Gain (Ks1).  Typical Value = 1. Default: 0.0
 	:ks2: Gain (Ks2).  Typical Value = 0.1. Default: 0.0
 	:ppss: Coefficient (p_PSS) (>=0 and <=4).  Typical Value = 0.1. Default: 0.0
@@ -38,7 +38,7 @@ class PssELIN2(PowerSystemStabilizerDynamics):
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, ts1 = 0.0, ts2 = 0.0, ts3 = 0.0, ts4 = 0.0, ts5 = 0.0, ts6 = 0.0, ks1 = 0.0, ks2 = 0.0, ppss = 0.0, apss = 0.0, psslim = 0.0,  *args, **kw_args):
+	def __init__(self, ts1 = 0, ts2 = 0, ts3 = 0, ts4 = 0, ts5 = 0, ts6 = 0, ks1 = 0.0, ks2 = 0.0, ppss = 0.0, apss = 0.0, psslim = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ts1 = ts1

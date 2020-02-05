@@ -13,7 +13,7 @@ class ExcREXS(ExcitationSystemDynamics):
 	:kd: Exciter regulation factor (Kd).  Typical Value = 2. Default: 0.0
 	:ke: Exciter field proportional constant (Ke).  Typical Value = 1. Default: 0.0
 	:kefd: Field voltage feedback gain (Kefd).  Typical Value = 0. Default: 0.0
-	:kf: Rate feedback gain (Kf).  Typical Value = 0.05. Default: 0.0
+	:kf: Rate feedback gain (Kf).  Typical Value = 0.05. Default: 0
 	:kh: Field voltage controller feedback gain (Kh).  Typical Value = 0. Default: 0.0
 	:kii: Field Current Regulator Integral Gain (Kii).  Typical Value = 0. Default: 0.0
 	:kip: Field Current Regulator Proportional Gain (Kip).  Typical Value = 1. Default: 0.0
@@ -24,16 +24,16 @@ class ExcREXS(ExcitationSystemDynamics):
 	:nvphz: Pickup speed of V/Hz limiter (Nvphz).  Typical Value = 0. Default: 0.0
 	:se1: Saturation factor at E1 (Se1).  Typical Value = 0.0001. Default: 0.0
 	:se2: Saturation factor at E2 (Se2).  Typical Value = 0.001. Default: 0.0
-	:ta: Voltage Regulator time constant (Ta).  Typical Value = 0.01. Default: 0.0
-	:tb1: Lag time constant (Tb1).  Typical Value = 0. Default: 0.0
-	:tb2: Lag time constant (Tb2).  Typical Value = 0. Default: 0.0
-	:tc1: Lead time constant (Tc1).  Typical Value = 0. Default: 0.0
-	:tc2: Lead time constant (Tc2).  Typical Value = 0. Default: 0.0
-	:te: Exciter field time constant (Te).  Typical Value = 1.2. Default: 0.0
-	:tf: Rate feedback time constant (Tf).  Typical Value = 1. Default: 0.0
-	:tf1: Feedback lead time constant (Tf1).  Typical Value = 0. Default: 0.0
-	:tf2: Feedback lag time constant (Tf2).  Typical Value = 0. Default: 0.0
-	:tp: Field current Bridge time constant (Tp).  Typical Value = 0. Default: 0.0
+	:ta: Voltage Regulator time constant (Ta).  Typical Value = 0.01. Default: 0
+	:tb1: Lag time constant (Tb1).  Typical Value = 0. Default: 0
+	:tb2: Lag time constant (Tb2).  Typical Value = 0. Default: 0
+	:tc1: Lead time constant (Tc1).  Typical Value = 0. Default: 0
+	:tc2: Lead time constant (Tc2).  Typical Value = 0. Default: 0
+	:te: Exciter field time constant (Te).  Typical Value = 1.2. Default: 0
+	:tf: Rate feedback time constant (Tf).  Typical Value = 1. Default: 0
+	:tf1: Feedback lead time constant (Tf1).  Typical Value = 0. Default: 0
+	:tf2: Feedback lag time constant (Tf2).  Typical Value = 0. Default: 0
+	:tp: Field current Bridge time constant (Tp).  Typical Value = 0. Default: 0
 	:vcmax: Maximum compounding voltage (Vcmax).  Typical Value = 0. Default: 0.0
 	:vfmax: Maximum Exciter Field Current (Vfmax).  Typical Value = 47. Default: 0.0
 	:vfmin: Minimum Exciter Field Current (Vfmin).  Typical Value = -20. Default: 0.0
@@ -88,7 +88,7 @@ class ExcREXS(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, e1 = 0.0, e2 = 0.0, fbf = None, flimf = 0.0, kc = 0.0, kd = 0.0, ke = 0.0, kefd = 0.0, kf = 0.0, kh = 0.0, kii = 0.0, kip = 0.0, ks = 0.0, kvi = 0.0, kvp = 0.0, kvphz = 0.0, nvphz = 0.0, se1 = 0.0, se2 = 0.0, ta = 0.0, tb1 = 0.0, tb2 = 0.0, tc1 = 0.0, tc2 = 0.0, te = 0.0, tf = 0.0, tf1 = 0.0, tf2 = 0.0, tp = 0.0, vcmax = 0.0, vfmax = 0.0, vfmin = 0.0, vimax = 0.0, vrmax = 0.0, vrmin = 0.0, xc = 0.0,  *args, **kw_args):
+	def __init__(self, e1 = 0.0, e2 = 0.0, fbf = None, flimf = 0.0, kc = 0.0, kd = 0.0, ke = 0.0, kefd = 0.0, kf = 0, kh = 0.0, kii = 0.0, kip = 0.0, ks = 0.0, kvi = 0.0, kvp = 0.0, kvphz = 0.0, nvphz = 0.0, se1 = 0.0, se2 = 0.0, ta = 0, tb1 = 0, tb2 = 0, tc1 = 0, tc2 = 0, te = 0, tf = 0, tf1 = 0, tf2 = 0, tp = 0, vcmax = 0.0, vfmax = 0.0, vfmin = 0.0, vimax = 0.0, vrmax = 0.0, vrmin = 0.0, xc = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.e1 = e1

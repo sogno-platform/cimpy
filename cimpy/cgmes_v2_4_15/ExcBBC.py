@@ -5,10 +5,10 @@ class ExcBBC(ExcitationSystemDynamics):
 	'''
 	Transformer fed static excitation system (static with ABB regulator). This model represents a static excitation system in which a gated thyristor bridge fed by a transformer at the main generator terminals feeds the main generator directly.
 
-	:t1: Controller time constant (T1).  Typical Value = 6. Default: 0.0
-	:t2: Controller time constant (T2).  Typical Value = 1. Default: 0.0
-	:t3: Lead/lag time constant (T3).  Typical Value = 0.05. Default: 0.0
-	:t4: Lead/lag time constant (T4).  Typical Value = 0.01. Default: 0.0
+	:t1: Controller time constant (T1).  Typical Value = 6. Default: 0
+	:t2: Controller time constant (T2).  Typical Value = 1. Default: 0
+	:t3: Lead/lag time constant (T3).  Typical Value = 0.05. Default: 0
+	:t4: Lead/lag time constant (T4).  Typical Value = 0.01. Default: 0
 	:k: Steady state gain (K).  Typical Value = 300. Default: 0.0
 	:vrmin: Minimum control element output (Vrmin).  Typical Value = -5. Default: 0.0
 	:vrmax: Maximum control element output (Vrmax).  Typical Value = 5. Default: 0.0
@@ -38,7 +38,7 @@ class ExcBBC(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, t1 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, k = 0.0, vrmin = 0.0, vrmax = 0.0, efdmin = 0.0, efdmax = 0.0, xe = 0.0, switch = False,  *args, **kw_args):
+	def __init__(self, t1 = 0, t2 = 0, t3 = 0, t4 = 0, k = 0.0, vrmin = 0.0, vrmax = 0.0, efdmin = 0.0, efdmax = 0.0, xe = 0.0, switch = False,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.t1 = t1

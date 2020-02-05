@@ -23,6 +23,10 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
         * If start_dict=None the complete file will be read
     :return: res: map containing all classes contained in the xml file(s), assessable via the mRID
     :return: namespaces: a map containing all RDF namespaces
+    :return: url_reference_dict: a map containing a mapping between references to URLs and the extracted value of the
+        URL, e.g. 'absoluteValue': 'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue'
+        These mappings are accessible via the mRID of the class and the name of the attribute, e.g.
+        url_reference_dict[mRID][attribute_name] = {mapping like example above}
     """
 
     # Import cim version class
@@ -50,7 +54,7 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
     res, logger_errors_grouped, logger_info_grouped = _instantiate_classes(res, xml_files, cgmes_version_path,
                                                                            namespace_rdf, base, logger_errors_grouped,
                                                                            logger_info_grouped)
-    res, logger_errors_grouped = _set_attributes(res, xml_files, namespace_rdf, base,
+    res, url_reference_dict, logger_errors_grouped = _set_attributes(res, xml_files, namespace_rdf, base,
                                                  logger_errors_grouped)
 
     if logger_errors_grouped:
@@ -71,7 +75,7 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
     # print info of how many classes in total were instantiated to terminal
     print('Created totally {} CIM objects in {}s'.format(len(res), elapsed_time))
 
-    return res, namespaces
+    return res, namespaces, url_reference_dict
 
 
 # This function instantiates the classes defined in all RDF files. All attributes are set to default values.
@@ -97,9 +101,9 @@ def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base
         # Get the root element ({http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF).
         _, root = next(context)
 
-        for event, elem in context:
+        package = ''
 
-            package = ''
+        for event, elem in context:
 
             # Process 'end' elements in the CGMES namespace.
             if event == "end" and elem.tag[:m] == base:
@@ -153,7 +157,7 @@ def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base
 
             # Check which package is read
             elif event == "end" and 'Model.profile' in elem.tag:
-                for package_key in short_package_name:
+                for package_key in short_package_name.keys():
                     if package_key in elem.text:
                         package = package_key
                         break
@@ -169,6 +173,10 @@ def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base
 # the attributes are read in the serializationProfile dictionary.
 def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
     m = len(base)
+
+    # stores a mapping between references to URLs and the extracted attribute
+    url_reference_dict = {}
+
     # Second step pass sets attributes and references.
     for xml_file in xml_files:
 
@@ -177,10 +185,10 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
 
         # Get the root element ({http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF).
         _, root = next(context)
+        
+        package = ''
 
         for event, elem in context:
-
-            package = ''
 
             # Process 'start' elements in the CGMES namespace.
             if event == "start" and elem.tag[:m] == base:
@@ -239,7 +247,10 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                         else:
                                             setattr(obj, attr, typ(elem.text))
                                     except TypeError:
-                                        pass
+                                        try:
+                                            setattr(obj, attr, elem.text)
+                                        except TypeError:
+                                            pass
 
                                 else:  # reference or enum (uuid2 is not None)
                                     # Use the '#' prefix to distinguish between references and enumerations.
@@ -295,6 +306,10 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                                     logger_errors_grouped[error_msg] = 1
 
                                     else:  # enum
+                                        # if http in uuid2 reference to URL, create mapping
+                                        if 'http' in uuid2:
+                                            url_reference_dict[uuid] = {attr: {uuid2.rsplit(".", 1)[1]: uuid2}}
+                                            # url_reference_dict[uuid2.rsplit(".", 1)[1]] = uuid2
                                         val = uuid2.rsplit(".", 1)[1]
                                         setattr(obj, attr, val)
 
@@ -314,7 +329,7 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
 
             # Check which package is read
             elif event == "end" and 'Model.profile' in elem.tag:
-                for package_key in short_package_name:
+                for package_key in short_package_name.keys():
                     if package_key in elem.text:
                         package = package_key
                         break
@@ -324,7 +339,7 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
 
         logger.info('END of parsing file "{}"'.format(xml_file))
 
-    return res, logger_errors_grouped
+    return res, url_reference_dict, logger_errors_grouped
 
 
 # Returns a map of prefix to namespace for the given XML file.

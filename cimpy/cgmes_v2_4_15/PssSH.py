@@ -11,11 +11,11 @@ class PssSH(PowerSystemStabilizerDynamics):
 	:k2: Gain 2 (K2).  Typical Value = 0.064. Default: 0.0
 	:k3: Gain 3 (K3).  Typical Value = 0.224. Default: 0.0
 	:k4: Gain 4 (K4).  Typical Value = 0.1. Default: 0.0
-	:td: Input time constant (Td).  Typical Value = 10. Default: 0.0
-	:t1: Time constant 1 (T1).  Typical Value = 0.076. Default: 0.0
-	:t2: Time constant 2 (T2).  Typical Value = 0.086. Default: 0.0
-	:t3: Time constant 3 (T3).   Typical Value = 1.068. Default: 0.0
-	:t4: Time constant 4 (T4).  Typical Value = 1.913. Default: 0.0
+	:td: Input time constant (Td).  Typical Value = 10. Default: 0
+	:t1: Time constant 1 (T1).  Typical Value = 0.076. Default: 0
+	:t2: Time constant 2 (T2).  Typical Value = 0.086. Default: 0
+	:t3: Time constant 3 (T3).   Typical Value = 1.068. Default: 0
+	:t4: Time constant 4 (T4).  Typical Value = 1.913. Default: 0
 	:vsmax: Output maximum limit (Vsmax).  Typical Value = 0.1. Default: 0.0
 	:vsmin: Output minimum limit (Vsmin).  Typical Value = -0.1. Default: 0.0
 		'''
@@ -42,7 +42,7 @@ class PssSH(PowerSystemStabilizerDynamics):
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, k = 0.0, k0 = 0.0, k1 = 0.0, k2 = 0.0, k3 = 0.0, k4 = 0.0, td = 0.0, t1 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, vsmax = 0.0, vsmin = 0.0,  *args, **kw_args):
+	def __init__(self, k = 0.0, k0 = 0.0, k1 = 0.0, k2 = 0.0, k3 = 0.0, k4 = 0.0, td = 0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, vsmax = 0.0, vsmin = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.k = k

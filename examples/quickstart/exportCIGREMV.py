@@ -15,9 +15,9 @@ for file in xml_files:
 
 
 # res = cimpy.cimread(xml_files)
-res, namespaces = cimpy.cim_import(xml_files_abs, "cgmes_v2_4_15")
+res, namespaces, url_reference_dict = cimpy.cim_import(xml_files_abs, "cgmes_v2_4_15")
 
 activeProfileList = ['DI', 'EQ', 'SV', 'TP']
 
 # dicts = cimpy.get_class_attributes_dict(res)
-cimpy.cim_export(res, namespaces, 'Slack_Trafo_Load', 'cgmes_v2_4_15', activeProfileList)
+cimpy.cim_export(res, namespaces, 'CIGREMV_reference_cgmes_v2_4_15', 'cgmes_v2_4_15', activeProfileList, url_reference_dict)

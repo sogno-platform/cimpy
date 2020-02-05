@@ -25,11 +25,11 @@ class ExcSK(ExcitationSystemDynamics):
 	:qz: Desired value (setpoint) of reactive power, manual setting (Qz). Default: 0.0
 	:remote: Selector to apply automatic calculation in secondary controller model. true = automatic calculation is activated false = manual set is active; the use of desired value of reactive power (Qz) is required. Typical Value = true. Default: False
 	:sbase: Apparent power of the unit (Sbase).  Unit = MVA.  Typical Value = 259. Default: 0.0
-	:tc: PI controller phase lead time constant (Tc).  Typical Value = 8. Default: 0.0
-	:te: Time constant of gain block (Te).  Typical Value = 0.1. Default: 0.0
-	:ti: PI controller phase lead time constant (Ti).  Typical Value = 2. Default: 0.0
-	:tp: Time constant (Tp).  Typical Value = 0.1. Default: 0.0
-	:tr: Voltage transducer time constant (Tr).  Typical Value = 0.01. Default: 0.0
+	:tc: PI controller phase lead time constant (Tc).  Typical Value = 8. Default: 0
+	:te: Time constant of gain block (Te).  Typical Value = 0.1. Default: 0
+	:ti: PI controller phase lead time constant (Ti).  Typical Value = 2. Default: 0
+	:tp: Time constant (Tp).  Typical Value = 0.1. Default: 0
+	:tr: Voltage transducer time constant (Tr).  Typical Value = 0.01. Default: 0
 	:uimax: Maximum error (Uimax).  Typical Value = 10. Default: 0.0
 	:uimin: Minimum error (UImin).  Typical Value = -10. Default: 0.0
 	:urmax: Maximum controller output (URmax).  Typical Value = 10. Default: 0.0
@@ -80,7 +80,7 @@ class ExcSK(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, efdmax = 0.0, efdmin = 0.0, emax = 0.0, emin = 0.0, k = 0.0, k1 = 0.0, k2 = 0.0, kc = 0.0, kce = 0.0, kd = 0.0, kgob = 0.0, kp = 0.0, kqi = 0.0, kqob = 0.0, kqp = 0.0, nq = 0.0, qconoff = False, qz = 0.0, remote = False, sbase = 0.0, tc = 0.0, te = 0.0, ti = 0.0, tp = 0.0, tr = 0.0, uimax = 0.0, uimin = 0.0, urmax = 0.0, urmin = 0.0, vtmax = 0.0, vtmin = 0.0, yp = 0.0,  *args, **kw_args):
+	def __init__(self, efdmax = 0.0, efdmin = 0.0, emax = 0.0, emin = 0.0, k = 0.0, k1 = 0.0, k2 = 0.0, kc = 0.0, kce = 0.0, kd = 0.0, kgob = 0.0, kp = 0.0, kqi = 0.0, kqob = 0.0, kqp = 0.0, nq = 0.0, qconoff = False, qz = 0.0, remote = False, sbase = 0.0, tc = 0, te = 0, ti = 0, tp = 0, tr = 0, uimax = 0.0, uimin = 0.0, urmax = 0.0, urmin = 0.0, vtmax = 0.0, vtmin = 0.0, yp = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.efdmax = efdmax
