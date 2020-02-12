@@ -5,9 +5,7 @@ variables:
 stages:
 - prepare
 - generate
-- test-import
-- test-export-with-imported-files
-- test-export-with-exported-files
+- test
 
 
 docker:
@@ -31,7 +29,7 @@ documentation:
         - docker
 
 test:import:
-    stage: test-import
+    stage: test
     variables:
         PYTHONPATH: "build/Source/Python:Source/Python"
     script:
@@ -42,7 +40,7 @@ test:import:
         - docker
 
 test:export-with-imported-files:
-    stage: test-export-with-imported-files
+    stage: test
     variables:
         PYTHONPATH: "build/Source/Python:Source/Python"
     script:
@@ -53,7 +51,7 @@ test:export-with-imported-files:
         - docker
 
 test:export-export:
-    stage: test-export-with-exported-files
+    stage: test
     variables:
         PYTHONPATH: "build/Source/Python:Source/Python"
     script:
