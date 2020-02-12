@@ -33,9 +33,8 @@ def test_export_with_exported_files():
 
     activeProfileList = ['DI', 'EQ', 'SV', 'TP']
 
-    imported_files, namespaces, url_reference_dict = cimpy.cim_import(import_files, 'cgmes_v2_4_15')
-    cimpy.cim_export(imported_files, namespaces, 'EXPORTED_Test', 'cgmes_v2_4_15',
-                     activeProfileList, url_reference_dict)
+    imported_result = cimpy.cim_import(import_files, 'cgmes_v2_4_15')
+    cimpy.cim_export(imported_result, 'EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
 
     test_list = []
     for file in os.listdir(os.getcwd()):

@@ -15,9 +15,9 @@ for file in xml_files:
     xml_files_abs.append(os.path.abspath(file))
 
 # res = cimpy.cimread(xml_files)
-res, _, _ = cimpy.cim_import(xml_files_abs, "cgmes_v2_4_15")
+import_result = cimpy.cim_import(xml_files_abs, "cgmes_v2_4_15")
 print("\n\n")
 results = ["ACLineSegment", "PowerTransformer", "EnergyConsumer"]
-for key, value in res.items():
+for key, value in import_result['topology'].items():
     if value.__class__.__name__ in results:
         print(value.__str__())
