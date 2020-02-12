@@ -43,7 +43,14 @@ Optional Arguments:
     :start_dict:     List of CIM classes which should be read, default: read all classes
 
 Output:
-    :res:            A map containing the CIMpy objects with the UUID as map key
+    :import_result:  A dictionary containing the topology and meta information. The topology can be extracted via
+    import_result['topology']. The topology dictionary contains all CIMpy objects accessible via their mRID. The meta
+    information can be extracted via import_result['meta_info']. The meta_info dictionary contains a new dictionary with
+    the keys: 'author', 'namespaces' and 'urls'. The last two are also dictionaries. 'urls' contains a mapping
+    between references to URLs and the extracted value of the URL, e.g. 'absoluteValue':
+    'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue' These mappings are accessible
+    via the name of the attribute, e.g. import_result['meta_info']['urls'}[attr_name] = {mapping like example above}.
+    'namespaces' is a dictionary containing all RDF namespaces used in the imported xml files.
 
 `Example for CIM Import <https://git.rwth-aachen.de/acs/public/cim/cimpy/blob/master/examples/quickstart/importCIGREMV.py>`_
 
@@ -54,11 +61,17 @@ Function for serialization of CIMpy objects to XML files.
 
 .. code-block::
 
-   cimpy.cim_export(res, namespaces_dict, file_name, version, acitiveProfileList):
+   cimpy.cim_export(import_result, file_name, version, acitiveProfileList):
 
 Arguments:
-   :res:                A dictionary containing all CIMpy objects accessible via the UUID
-   :namespaces_dict:    A dictionary containing the namespaces of the original XML files
+   :import_result:      A dictionary containing the topology and meta information. The topology can be extracted via
+    import_result['topology']. The topology dictionary contains all CIMpy objects accessible via their mRID. The meta
+    information can be extracted via import_result['meta_info']. The meta_info dictionary contains a new dictionary with
+    the keys: 'author', 'namespaces' and 'urls'. The last two are also dictionaries. 'urls' contains a mapping
+    between references to URLs and the extracted value of the URL, e.g. 'absoluteValue':
+    'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue' These mappings are accessible
+    via the name of the attribute, e.g. import_result['meta_info']['urls'}[attr_name] = {mapping like example above}.
+    'namespaces' is a dictionary containing all RDF namespaces used in the imported xml files.
    :file_name:          String containing the name for the XML files.
    :version:            String containing the CGMES version
    :activeProfileList:  A list containing all profiles which are active for the export

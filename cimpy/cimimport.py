@@ -21,12 +21,14 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
     :param start_dict: a list of classes which indicates which classes will be read
         e.g. elements=["BaseVoltage", "ACLineSegment"]
         * If start_dict=None the complete file will be read
-    :return: res: map containing all classes contained in the xml file(s), assessable via the mRID
-    :return: namespaces: a map containing all RDF namespaces
-    :return: url_reference_dict: a map containing a mapping between references to URLs and the extracted value of the
-        URL, e.g. 'absoluteValue': 'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue'
-        These mappings are accessible via the mRID of the class and the name of the attribute, e.g.
-        url_reference_dict[mRID][attribute_name] = {mapping like example above}
+    :return: import_result: a dictionary containing the topology and meta information. The topology can be extracted via
+    import_result['topology']. The topology dictionary contains all objects accessible via their mRID. The meta
+    information can be extracted via import_result['meta_info']. The meta_info dictionary contains a new dictionary with
+    the keys: 'author', 'namespaces' and 'urls'. The last two are also dictionaries. 'urls' contains a mapping
+    between references to URLs and the extracted value of the URL, e.g. 'absoluteValue':
+    'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue' These mappings are accessible
+    via the name of the attribute, e.g. import_result['meta_info']['urls'}[attr_name] = {mapping like example above}.
+    'namespaces' is a dictionary containing all RDF namespaces used in the imported xml files.
     """
 
     # Import cim version class
@@ -35,35 +37,31 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
     # Start the clock.
     t0 = time()
 
-    # map used to group errors
-    logger_errors_grouped = {}
+    # map used to group errors and infos
+    logger_grouped = dict(errors={}, info={})
 
-    # map used to group infos
-    logger_info_grouped = {}
+    # create a dict which will contain meta information and the topology
+    import_result = start_dict if start_dict is not None else dict(meta_info={}, topology={})
 
-    # A map of uuids to CIM objects to be returned.
-    res = start_dict if start_dict is not None else {}
-
-    # Obtain the namespaces from one of the input files
-    namespaces = _get_namespaces(xml_files[0])
-    namespace_rdf = _get_rdf_namespace(namespaces)
+    # create sub-dictionaries
+    import_result['meta_info'] = dict(namespaces=_get_namespaces(xml_files[0]), urls={})
+    namespace_rdf = _get_rdf_namespace(import_result['meta_info']['namespaces'])
 
     # CIM element tag base (e.g. {http://iec.ch/TC57/2012/CIM-schema-cim16#} )
-    base = "{" + namespaces["cim"] + "}"
+    base = "{" + import_result['meta_info']['namespaces']["cim"] + "}"
 
-    res, logger_errors_grouped, logger_info_grouped = _instantiate_classes(res, xml_files, cgmes_version_path,
-                                                                           namespace_rdf, base, logger_errors_grouped,
-                                                                           logger_info_grouped)
-    res, url_reference_dict, logger_errors_grouped = _set_attributes(res, xml_files, namespace_rdf, base,
-                                                 logger_errors_grouped)
+    import_result, logger_grouped, = _instantiate_classes(import_result, xml_files, cgmes_version_path, namespace_rdf,
+                                                          base, logger_grouped)
 
-    if logger_errors_grouped:
-        for error, count in logger_errors_grouped.items():
+    import_result, logger_grouped = _set_attributes(import_result, xml_files, namespace_rdf, base, logger_grouped)
+
+    if logger_grouped['errors']:
+        for error, count in logger_grouped['errors'].items():
             logging_message = '{} : {} times'.format(error, count)
             logger.warning(logging_message)
 
-    if logger_info_grouped:
-        for info, count in logger_info_grouped.items():
+    if logger_grouped['info']:
+        for info, count in logger_grouped['info'].items():
             logging_message = '{} : {} times'.format(info, count)
             logger.info(logging_message)
 
@@ -71,11 +69,11 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
             print(logging_message)
 
     elapsed_time = time() - t0
-    logger.info('Created totally {} CIM objects in {}s\n\n'.format(len(res), elapsed_time))
+    logger.info('Created totally {} CIM objects in {}s\n\n'.format(len(import_result['topology']), elapsed_time))
     # print info of how many classes in total were instantiated to terminal
-    print('Created totally {} CIM objects in {}s'.format(len(res), elapsed_time))
+    print('Created totally {} CIM objects in {}s'.format(len(import_result['topology']), elapsed_time))
 
-    return res, namespaces, url_reference_dict
+    return import_result
 
 
 # This function instantiates the classes defined in all RDF files. All attributes are set to default values.
@@ -83,8 +81,12 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
 # are set in the _set_attributes function because some attributes might be stored in one package and the class in
 # another. Since after this function all classes are instantiated, there should be no problem in setting the attributes.
 # Also the information from which package file a class was read is stored in the serializationProfile dictionary.
-def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base,
-                         logger_errors_grouped, logger_info_grouped):
+def _instantiate_classes(import_result, xml_files, cgmes_version_path, namespace_rdf, base,
+                         logger_grouped):
+
+    # extract topology from import_result
+    topology = import_result['topology']
+
     # length of element tag base
     m = len(base)
     # first step: create the dict res{uuid}=instance_of_the_cim_class
@@ -121,9 +123,9 @@ def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base
                     except ModuleNotFoundError:
                         error_msg = 'Module {} not implemented'.format(tag)
                         try:
-                            logger_errors_grouped[error_msg] += 1
+                            logger_grouped['errors'][error_msg] += 1
                         except KeyError:
-                            logger_errors_grouped[error_msg] = 1
+                            logger_grouped['errors'][error_msg] = 1
 
                         root.clear()
                         continue
@@ -132,50 +134,60 @@ def _instantiate_classes(res, xml_files, cgmes_version_path, namespace_rdf, base
                     klass = getattr(module, tag)
                     # Instantiate the class and map it to the uuid.
                     # res[uuid] = klass(UUID=uuid)
-                    res[uuid] = klass()
+                    topology[uuid] = klass()
                     info_msg = 'CIM object {} created'.format(module_name.split('.')[-1])
                     try:
-                        logger_info_grouped[info_msg] += 1
+                        logger_grouped['info'][info_msg] += 1
                     except KeyError:
-                        logger_info_grouped[info_msg] = 1
+                        logger_grouped['info'][info_msg] = 1
 
                     # check if the class has the attribute mRID and set the mRID to the read in UUID. If the class
                     # does not has this attribute, the UUID is only stored in the res dictionary.
-                    if hasattr(res[uuid], 'mRID'):
-                        res[uuid].mRID = uuid
+                    if hasattr(topology[uuid], 'mRID'):
+                        topology[uuid].mRID = uuid
 
                     if package is not '':
-                        res[uuid].serializationProfile['class'] = short_package_name[package]
+                        topology[uuid].serializationProfile['class'] = short_package_name[package]
                     else:
                         error_msg = 'Package information not found for class {}'.format(
                             klass.__class__.__name__
                         )
                         try:
-                            logger_errors_grouped[error_msg] += 1
+                            logger_grouped['errors'][error_msg] += 1
                         except KeyError:
-                            logger_errors_grouped[error_msg] = 1
+                            logger_grouped['errors'][error_msg] = 1
 
             # Check which package is read
-            elif event == "end" and 'Model.profile' in elem.tag:
-                for package_key in short_package_name.keys():
-                    if package_key in elem.text:
-                        package = package_key
-                        break
+            elif event == "end":
+                if 'Model.profile' in elem.tag:
+                    for package_key in short_package_name.keys():
+                        if package_key in elem.text:
+                            package = package_key
+                            break
+                # the author of all imported files should be the same, avoid multiple entries
+                elif 'author' in import_result['meta_info'].keys():
+                    pass
+                # extract author
+                elif 'Model.createdBy' in elem.tag:
+                    import_result['meta_info']['author'] = elem.text
+                elif 'Model.modelingAuthoritySet' in elem.tag:
+                    import_result['meta_info']['author'] = elem.text
 
             # Clear children of the root element to minimise memory usage.
             root.clear()
 
-    return res, logger_errors_grouped, logger_info_grouped
+    return import_result, logger_grouped
 
 
 # This function sets all attributes after the classes are instantiated by _instanciate_classes. Cyclic attributes like
 # PowerTransformerEnd <-> PowerTransformer are set. This function also stores the information from which package file
 # the attributes are read in the serializationProfile dictionary.
-def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
-    m = len(base)
+def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_grouped):
 
-    # stores a mapping between references to URLs and the extracted attribute
-    url_reference_dict = {}
+    topology = import_result['topology']
+    urls = import_result['meta_info']['urls']
+
+    m = len(base)
 
     # Second step pass sets attributes and references.
     for xml_file in xml_files:
@@ -200,13 +212,13 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                 if uuid is not None:
                     # Locate the CGMES object using the uuid.
                     try:
-                        obj = res[uuid]
+                        obj = topology[uuid]
                     except KeyError:
                         error_msg = 'Missing {} object with uuid: {}'.format(elem.tag[m:], uuid)
                         try:
-                            logger_errors_grouped[error_msg] += 1
+                            logger_grouped['errors'][error_msg] += 1
                         except KeyError:
-                            logger_errors_grouped[error_msg] = 1
+                            logger_grouped['errors'][error_msg] = 1
                         root.clear()
                         continue
 
@@ -223,9 +235,9 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                 if not hasattr(obj, attr):
                                     error_msg = "'%s' has not attribute '%s'" % (obj.__class__.__name__, attr)
                                     try:
-                                        logger_errors_grouped[error_msg] += 1
+                                        logger_grouped['errors'][error_msg] += 1
                                     except KeyError:
-                                        logger_errors_grouped[error_msg] = 1
+                                        logger_grouped['errors'][error_msg] = 1
                                     continue
 
                                 # Use the rdf:resource attribute to distinguish between attributes and references/enums.
@@ -256,14 +268,14 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                     # Use the '#' prefix to distinguish between references and enumerations.
                                     if uuid2[0] == "#":  # reference
                                         try:
-                                            val = res[uuid2[1:]]  # remove '#' prefix
+                                            val = topology[uuid2[1:]]  # remove '#' prefix
                                         except KeyError:
                                             error_msg = 'Referenced {} [{}] object missing.'.format(
                                                 obj.__class__.__name__, uuid2[1:])
                                             try:
-                                                logger_errors_grouped[error_msg] += 1
+                                                logger_grouped['errors'][error_msg] += 1
                                             except KeyError:
-                                                logger_errors_grouped[error_msg] = 1
+                                                logger_grouped['errors'][error_msg] = 1
 
                                             continue
 
@@ -286,9 +298,9 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                             error_msg = 'Multiplicity Error for class {} [{}], attribute {}. Multiplicity should be 1..1 or 0..1'.format(
                                                 obj.__class__.__name__, uuid, attr)
                                             try:
-                                                logger_errors_grouped[error_msg] += 1
+                                                logger_grouped['errors'][error_msg] += 1
                                             except KeyError:
-                                                logger_errors_grouped[error_msg] = 1
+                                                logger_grouped['errors'][error_msg] = 1
 
                                         if hasattr(val, obj.__class__.__name__):
                                             default1 = getattr(val, obj.__class__.__name__)
@@ -307,14 +319,19 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                                 error_msg = 'Multiplicity Error for class {} [{}], attribute {}. Multiplicity should be 1..1 or 0..1'.format(
                                                     val.__class__.__name__, uuid2[1:], obj.__class__.__name__)
                                                 try:
-                                                    logger_errors_grouped[error_msg] += 1
+                                                    logger_grouped['errors'][error_msg] += 1
                                                 except KeyError:
-                                                    logger_errors_grouped[error_msg] = 1
+                                                    logger_grouped['errors'][error_msg] = 1
 
                                     else:  # enum
                                         # if http in uuid2 reference to URL, create mapping
                                         if 'http' in uuid2:
-                                            url_reference_dict[uuid] = {attr: {uuid2.rsplit(".", 1)[1]: uuid2}}
+                                            if attr in urls.keys():
+                                                if uuid2.rsplit(".", 1)[1] not in urls[attr].keys():
+                                                    urls[attr][uuid2.rsplit(".", 1)[1]] = uuid2
+                                            else:
+                                                urls[attr] = {uuid2.rsplit(".", 1)[1]: uuid2}
+
                                             # url_reference_dict[uuid2.rsplit(".", 1)[1]] = uuid2
                                         val = uuid2.rsplit(".", 1)[1]
                                         setattr(obj, attr, val)
@@ -326,9 +343,9 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
                                         obj.__class__.__name__, attr
                                     )
                                     try:
-                                        logger_errors_grouped[error_msg] += 1
+                                        logger_grouped['errors'][error_msg] += 1
                                     except KeyError:
-                                        logger_errors_grouped[error_msg] = 1
+                                        logger_grouped['errors'][error_msg] = 1
                             else:  # if elem.get("{%s}ID" % nd_rdf is not None:
                                 # Finished setting object attributes.
                                 break
@@ -344,8 +361,7 @@ def _set_attributes(res, xml_files, namespace_rdf, base, logger_errors_grouped):
             root.clear()
 
         logger.info('END of parsing file "{}"'.format(xml_file))
-
-    return res, url_reference_dict, logger_errors_grouped
+    return import_result, logger_grouped
 
 
 # Returns a map of prefix to namespace for the given XML file.
