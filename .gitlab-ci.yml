@@ -39,7 +39,7 @@ test:import:
     tags:
         - docker
 
-test:export-with-imported-files:
+test:export-against-imported-files:
     stage: test
     variables:
         PYTHONPATH: "build/Source/Python:Source/Python"
@@ -50,7 +50,7 @@ test:export-with-imported-files:
     tags:
         - docker
 
-test:export-export:
+test:export-against-exported-files:
     stage: test
     variables:
         PYTHONPATH: "build/Source/Python:Source/Python"
