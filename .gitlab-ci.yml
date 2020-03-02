@@ -4,7 +4,7 @@ variables:
 
 stages:
 - prepare
-- generate
+- documentation
 - test
 - deploy
 
@@ -18,8 +18,8 @@ docker:
         - linux
 
 
-documentation:
-    stage: generate
+generate:
+    stage: documentation
     script:
         - cd scripts && ./docu.sh
     image: ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV}
@@ -30,11 +30,11 @@ documentation:
         - docker
 
 
-pages:
-  stage: deploy
+deploy:
+  stage: documentation
   script:
   - mkdir .public
-  - cp -r documentation .public
+  - cp -r documentation/_build/html .public
   - mv .public public
   artifacts:
     paths:
