@@ -4,7 +4,7 @@ variables:
 
 stages:
 - prepare
-- documentation
+- test
 - generate
 - deploy
 
@@ -31,14 +31,14 @@ documentation:
 
 
 pages:
-  stage: deploy
-  script:
-  - mkdir .public
-  - cp -r documentation/_build/html .public
-  - mv .public public
-  artifacts:
-    paths:
-    - public
+    stage: deploy
+    script:
+        - mkdir .public
+        - cp -r documentation/_build/html .public
+        - mv .public public
+    artifacts:
+        paths:
+            - public
 
 
 test:import:
