@@ -6,6 +6,7 @@ stages:
 - prepare
 - generate
 - test
+- deploy
 
 
 docker:
@@ -27,6 +28,18 @@ documentation:
             - documentation
     tags:
         - docker
+
+
+pages:
+  stage: deploy
+  script:
+  - mkdir .public
+  - cp -r documentation .public
+  - mv .public public
+  artifacts:
+    paths:
+    - public
+
 
 test:import:
     stage: test
