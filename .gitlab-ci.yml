@@ -34,7 +34,7 @@ pages:
     stage: deploy
     script:
         - mkdir .public
-        - cp -r documentation/_build/html .public
+        - cp -r documentation/_build/html/ .public
         - mv .public public
     artifacts:
         paths:
