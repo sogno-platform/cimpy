@@ -7,7 +7,7 @@ For this export example we use the result from the import example. The whole exp
 
 .. code-block:: python
 
-    import_result = cimpy.cim_import(xml_files_abs, "cgmes_v2_4_15")
+    import_result = cimpy.cim_import(xml_files, "cgmes_v2_4_15")
 
 For the function cim_export a list containing all profiles which should be used for the export is needed. For more information about the arguments of the cim_export function see `Functions <https://acs.pages.rwth-aachen.de/public/cim/cimpy/Functions.html>`_.
 

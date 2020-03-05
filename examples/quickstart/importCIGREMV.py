@@ -1,22 +1,19 @@
 import logging
-import os
 import cimpy
-
+from pathlib import Path
 
 logging.basicConfig(filename='importCIGREMV.log', level=logging.INFO, filemode='w')
 
-print(os.getcwd())
-xml_files = [r"..\sampledata\CIGRE_MV\Rootnet_FULL_NE_24J13h_DI.xml",
-             r"..\sampledata\CIGRE_MV\Rootnet_FULL_NE_24J13h_EQ.xml",
-             r"..\sampledata\CIGRE_MV\Rootnet_FULL_NE_24J13h_SV.xml",
-             r"..\sampledata\CIGRE_MV\Rootnet_FULL_NE_24J13h_TP.xml", ]
+example = Path('.').resolve()
+sample_folder = example / 'examples' / 'sampledata' / 'CIGRE_MV'
 
-xml_files_abs = []
-for file in xml_files:
-    xml_files_abs.append(os.path.abspath(file))
+sample_files = sample_folder.glob('*.xml')
 
-# res = cimpy.cimread(xml_files)
-import_result = cimpy.cim_import(xml_files_abs, "cgmes_v2_4_15")
+xml_files = []
+for file in sample_folder.glob('*.xml'):
+    xml_files.append(str(file.absolute()))
+
+import_result = cimpy.cim_import(xml_files, "cgmes_v2_4_15")
 print("\n\n")
 results = ["ACLineSegment", "PowerTransformer", "EnergyConsumer"]
 for key, value in import_result['topology'].items():

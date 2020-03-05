@@ -8,9 +8,9 @@ First import the CIMpy module and set up the logger. If there is not a file set 
 
 .. code-block:: python
 
-    import cimpy
     import logging
-    import os
+    import cimpy
+    from pathlib import Path
 
     logging.basicConfig(filename='importCIGREMV.log', level=logging.INFO, filemode='w')
 
@@ -18,19 +18,20 @@ Next we need the absolute path of the XML/RDF files.
 
 .. code-block:: python
 
-    xml_files = [r"..\sampledata\CIGRE_MV\CIGRE_MV_Rudion_With_LoadFLow_Results\Rootnet_FULL_NE_24J13h_EQ.xml",
-                 r"..\sampledata\CIGRE_MV\CIGRE_MV_Rudion_With_LoadFLow_Results\Rootnet_FULL_NE_24J13h_SV.xml",
-                 r"..\sampledata\CIGRE_MV\CIGRE_MV_Rudion_With_LoadFLow_Results\Rootnet_FULL_NE_24J13h_TP.xml", ]
+    example = Path('.').resolve()
+    sample_folder = example / 'examples' / 'sampledata' / 'CIGRE_MV'
 
-    xml_files_abs = []
-    for file in xml_files:
-        xml_files_abs.append(os.path.abspath(file))
+    sample_files = sample_folder.glob('*.xml')
+
+    xml_files = []
+    for file in sample_folder.glob('*.xml'):
+        xml_files.append(str(file.absolute()))
 
 In the next step the files given in xml_files_abs are imported:
 
 .. code-block:: python
 
-    import_result = cimpy.cim_import(xml_files_abs, "cgmes_v2_4_15")
+    import_result = cimpy.cim_import(xml_files, "cgmes_v2_4_15")
 
 For more information about the function cim_import see `Functions <https://acs.pages.rwth-aachen.de/public/cim/cimpy/Functions.html>`_.
 

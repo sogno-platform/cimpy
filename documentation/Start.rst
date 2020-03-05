@@ -10,6 +10,8 @@ For a quick example for the import just run
 
 .. code-block:: python
 
+    import cimpy
+
     cimpy.import_example()
 
 This example imports grid data stored in XML/RDF files and prints a subset of the created objects. For deeper insights into the example check the import example documentation:
@@ -25,6 +27,8 @@ Export Example
 For a quick example for the export just run
 
 .. code-block:: python
+
+    import cimpy
 
     cimpy.export_example()
 
