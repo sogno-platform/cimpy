@@ -27,5 +27,5 @@ Contact
    :hidden:
 
    Install
-   Started
+   Start
    Versions
