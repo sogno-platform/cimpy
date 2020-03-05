@@ -1,5 +1,5 @@
-Import Example
-""""""""""""""
+Import Example Documentation
+""""""""""""""""""""""""""""
 
 This guide demonstrates the basic usage of the function cim_import. The script can be found `here <https://git.rwth-aachen.de/acs/public/cim/cimpy/blob/master/examples/quickstart/importCIGREMV.py>`_.
 

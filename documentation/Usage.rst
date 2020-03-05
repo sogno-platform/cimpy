@@ -1,14 +1,7 @@
-Usage
-=====
+Functions
+=========
 The CIMpy package contains two major functions, one function to import network data from XML/RDF files called cim_import and one function to export the network data back to XML/RDF files called cim_export. A description of both functions with their attributes can be found below.
 
-You can also take a look at the examples:
-
-.. toctree::
-   :glob:
-
-   Import
-   Export
 
 CIM Import
 """"""""""

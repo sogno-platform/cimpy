@@ -1,20 +1,20 @@
 CIMpy
-==================================
+=====
 
-The CIMpy package allows the import, modification, and export of network data described by XML/RDF documents according to the Common Information Model (CIM) specified by the IEC61970 standard.
+CIM++ is a software project around a deserialiser library (libcimpp) for C++ objects from XML/RDF documents based on the Common Information Model (CIM) standards (i.e. IEC61970/61968/62325) for the energy sector.
 
-The processing of network data is based on Python classes compatible with CIM. The code basis for the CIM-compatible Python classes was generated automatically. A separately developed tool allows the easy adaptation of CIMpy and its underlying code basis.
+The increasing complexity of ICT systems in smart grids requires a standardized data model to improve interoperability. To this aim, IEC 61970/61968/62235 specify the CIM, which defines data structures for many power system components and the relations between them. This means that CIM based software such as the CIM-to-X translators must be kept up-to date as well. First, the CIM-to-X translator has to deserialize the CIM data in the form of RDF/XML documents and present it in the form of objects, C++ objects in our specific case. To enable this with our toolchain, a CIM based data model, specified by a visual Unified Modeling Language (UML) editor, can be mapped to a compilable CIM C++ codebase. This codebase is used for the automated generation of a C++ objects deserializer library for RDF/XML documents following the UML specification. The toolchain and deserializer are implemented in the open-source project called CIM++. The deserialized C++ objects can be processed directly by another C++ program or they can be used as input to a serializer, which converts them into another data format.
 
-So far the focus of CIMpy was the support of the Common Grid Model Exchange Standard (CGMES) specified by the Association of European Transmission System Operators (ENTSO-E). However, the CIMpy package can easily support additional and newly released CIM versions if required.
+It includes a toolchain for an automated generation of the CIM++ Deserializer from ontologies specified by CIM UML. Currently the CIM++ Deserializer is distributed via GitHub and the generation toolchain will follow.
 
 Installation
 -------------
 For the installation of CIMpy take a look at the `installation instructions <https://acs.pages.rwth-aachen.de/public/cim/cimpy/Install.html>`__.
 
 
-Usage
--------------
-A guide how to use CIMpy with example scripts can be found `here <https://acs.pages.rwth-aachen.de/public/cim/cimpy/Usage.html>`__.
+Getting Started
+---------------
+A quickstart guide with examples and explanations of the functions inside this package can be found `here <https://acs.pages.rwth-aachen.de/public/cim/cimpy/Usage.html>`__.
 
 
 Contact
@@ -26,6 +26,6 @@ Contact
    :maxdepth: 2
    :hidden:
 
-   Usage
    Install
+   Started
    Versions
