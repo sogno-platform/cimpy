@@ -14,7 +14,7 @@ For the installation of CIMpy take a look at the `installation instructions <htt
 
 Getting Started
 ---------------
-A quickstart guide with examples and explanations of the functions inside this package can be found `here <https://acs.pages.rwth-aachen.de/public/cim/cimpy/Usage.html>`__.
+A quickstart guide with examples and explanations of the functions inside this package can be found `here <https://acs.pages.rwth-aachen.de/public/cim/cimpy/Start.html>`__.
 
 
 Contact

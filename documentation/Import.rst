@@ -32,7 +32,7 @@ In the next step the files given in xml_files_abs are imported:
 
     import_result = cimpy.cim_import(xml_files_abs, "cgmes_v2_4_15")
 
-For more information about the function cim_import see `Usage <https://acs.pages.rwth-aachen.de/public/cim/cimpy/Usage.html>`_.
+For more information about the function cim_import see `Functions <https://acs.pages.rwth-aachen.de/public/cim/cimpy/Functions.html>`_.
 
 Finally we can print the created objects. In this example only objects of the classes ACLineSegment, PowerTransformer and EnergyConsumer are printed.
 
