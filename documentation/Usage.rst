@@ -1,30 +1,14 @@
-Welcome to cimpy's documentation!
-==================================
-
-Cimpy is a tool for generation of CIM data.
-
-Package Content
-===============
-
-An overview with all classes sorted by class name can be found in the :ref:`genindex` and one sorted by version can be found in the :ref:`modindex`. You can also use the search bar on the left.
-
-.. toctree::
-   :maxdepth: 1
-
-   cimpy
-
-
-Installation
-============
-
-.. code-block:: bash
-
-   $ git clone https://git.rwth-aachen.de/acs/public/cim/cimpy
-   $ cd cimpy
-   $ python setup.py develop
-
 Usage
 =====
+The CIMpy package contains two major functions, one function to import network data from XML/RDF files called cim_import and one function to export the network data back to XML/RDF files called cim_export. A description of both functions with their attributes can be found below.
+
+You can also take a look at the examples:
+
+.. toctree::
+   :glob:
+
+   Import
+   Export
 
 CIM Import
 """"""""""
@@ -52,7 +36,6 @@ Output:
     via the name of the attribute, e.g. import_result['meta_info']['urls'}[attr_name] = {mapping like example above}.
     'namespaces' is a dictionary containing all RDF namespaces used in the imported xml files.
 
-`Example for CIM Import <https://git.rwth-aachen.de/acs/public/cim/cimpy/blob/master/examples/quickstart/importCIGREMV.py>`_
 
 CIM Export
 """"""""""
@@ -78,6 +61,3 @@ Arguments:
 
 Output:
     One XML file for each package in the CGMES version. The package name is added to the file name like [file_name]_[package].xml
-
-
-`Example for CIM Generate <https://git.rwth-aachen.de/acs/public/cim/cimpy/blob/master/examples/quickstart/exportCIGREMV.py>`_

@@ -5,17 +5,17 @@ from shutil import move, copy
 
 directory = os.path.abspath(os.path.join('..', 'documentation'))
 
-if 'conf.py' in os.listdir(directory):
-    conf_file = os.path.abspath(os.path.join(directory, 'conf.py'))
-    real_conf_file = os.path.abspath('real_conf.py')
-    remove(conf_file)
-    copy(real_conf_file, conf_file)
-
-if 'index.rst' in os.listdir(directory):
-    index_file = os.path.abspath(os.path.join(directory, 'index.rst'))
-    real_index_file = os.path.abspath('real_index.rst')
-    remove(index_file)
-    copy(real_index_file, index_file)
+# if 'conf.py' in os.listdir(directory):
+#     conf_file = os.path.abspath(os.path.join(directory, 'conf.py'))
+#     real_conf_file = os.path.abspath('real_conf.py')
+#     remove(conf_file)
+#     copy(real_conf_file, conf_file)
+#
+# if 'index.rst' in os.listdir(directory):
+#     index_file = os.path.abspath(os.path.join(directory, 'index.rst'))
+#     real_index_file = os.path.abspath('real_index.rst')
+#     remove(index_file)
+#     copy(real_index_file, index_file)
 
 
 for file in os.listdir(directory):
