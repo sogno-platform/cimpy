@@ -18,9 +18,7 @@ short_profile_name = {
 
 example_path = os.path.join('..',
                             os.path.join('examples',
-                                         os.path.join('sampledata',
-                                                      os.path.join('CIGRE_MV',
-                                                                   'CIGRE_MV_Rudion_With_LoadFlow_Results'))))
+                                         os.path.join('sampledata', 'CIGRE_MV')))
 
 
 # This function tests the import functionality by importing files and comparing them to previously imported and pickled

@@ -18,9 +18,7 @@ short_profile_name = {
 
 example_path = os.path.join('..',
                             os.path.join('examples',
-                                         os.path.join('sampledata',
-                                                      os.path.join('CIGRE_MV',
-                                                                   'CIGRE_MV_Rudion_With_LoadFlow_Results'))))
+                                         os.path.join('sampledata', 'CIGRE_MV')))
 
 
 # This test function tests the export functionality by comparing files before the import and export procedure with the
