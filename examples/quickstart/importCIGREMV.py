@@ -6,9 +6,10 @@ import cimpy
 logging.basicConfig(filename='importCIGREMV.log', level=logging.INFO, filemode='w')
 
 print(os.getcwd())
-xml_files = [r"..\sampledata\CIGRE_MV\CIGRE_MV_Rudion_With_LoadFLow_Results\Rootnet_FULL_NE_24J13h_EQ.xml",
-             r"..\sampledata\CIGRE_MV\CIGRE_MV_Rudion_With_LoadFLow_Results\Rootnet_FULL_NE_24J13h_SV.xml",
-             r"..\sampledata\CIGRE_MV\CIGRE_MV_Rudion_With_LoadFLow_Results\Rootnet_FULL_NE_24J13h_TP.xml", ]
+xml_files = [r"..\sampledata\CIGRE_MV\Rootnet_FULL_NE_24J13h_DI.xml",
+             r"..\sampledata\CIGRE_MV\Rootnet_FULL_NE_24J13h_EQ.xml",
+             r"..\sampledata\CIGRE_MV\Rootnet_FULL_NE_24J13h_SV.xml",
+             r"..\sampledata\CIGRE_MV\Rootnet_FULL_NE_24J13h_TP.xml", ]
 
 xml_files_abs = []
 for file in xml_files:
