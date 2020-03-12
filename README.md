@@ -3,10 +3,20 @@
 Python package for import, modification and export of grid data in the format of XML/RDF documents based on the Common Information Model (CIM).
 
 ## Installation
+
+To install the package in development mode, run:
 ```
 $ git clone git@git.rwth-aachen.de:acs/public/cim/cimpy.git
 $ cd cimpy
 $ python setup.py develop
+```
+To uninstall the package:
+```
+$ python setup.py develop --uninstall
+```
+The package can be installed on user level only:
+```
+$ python setup.py develop --user
 ```
 
 ## Usage
