@@ -39,6 +39,9 @@ pages:
     artifacts:
         paths:
             - public
+    dependencies:
+        - documentation
+
 
 
 test:import:
