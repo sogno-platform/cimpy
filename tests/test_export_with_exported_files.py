@@ -3,6 +3,7 @@ import cimpy
 import xmltodict
 import os
 import pytest_check as check
+from pathlib import Path
 
 logging.basicConfig(filename='Test_export_with_exported_files.log', level=logging.INFO, filemode='w')
 
@@ -16,18 +17,16 @@ short_profile_name = {
     "Topology": "TP"
 }
 
-example_path = os.path.join('..',
-                            os.path.join('examples',
-                                         os.path.join('sampledata', 'CIGRE_MV')))
+tests = Path('.').resolve().parent
+example_path = tests / 'examples' / 'sampledata' / 'CIGRE_MV'
 
 
 # This test tests the export functionality of this package by first importing the CIGRE_MV_Rudion_With_LoadFlow_Results
 # example and exporting them. The exported files are compared with previously exported files which were checked manually
 def test_export_with_exported_files():
-    import_files = [os.path.join(example_path, 'Rootnet_FULL_NE_24J13h_DI.xml'),
-                    os.path.join(example_path, 'Rootnet_FULL_NE_24J13h_EQ.xml'),
-                    os.path.join(example_path, 'Rootnet_FULL_NE_24J13h_SV.xml'),
-                    os.path.join(example_path, 'Rootnet_FULL_NE_24J13h_TP.xml'), ]
+    import_files = []
+    for file in example_path.glob('*.xml'):
+        import_files.append(str(file.absolute()))
 
     activeProfileList = ['DI', 'EQ', 'SV', 'TP']
 

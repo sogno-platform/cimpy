@@ -1,24 +1,28 @@
 import logging
-import os
 import cimpy
+from pathlib import Path
+
 logging.basicConfig(filename='Convert_to_Bus_Branch.log', level=logging.INFO, filemode='w')
 
-xml_files = [r"..\sampledata\Sample_Grid_Switches\Node-Breaker\20191030T0924Z_XX_YYY_DL_.xml",
-             r"..\sampledata\Sample_Grid_Switches\Node-Breaker\20191030T0924Z_XX_YYY_GL_.xml",
-             r"..\sampledata\Sample_Grid_Switches\Node-Breaker\20191030T0924Z_XX_YYY_SSH_.xml",
-             r"..\sampledata\Sample_Grid_Switches\Node-Breaker\20191030T0924Z_XX_YYY_SV_.xml",
-             r"..\sampledata\Sample_Grid_Switches\Node-Breaker\20191030T0924Z_XX_YYY_TP_.xml",
-             r"..\sampledata\Sample_Grid_Switches\Node-Breaker\20191030T0924Z_YYY_EQ_.xml",]
+example = Path(__file__).resolve().parent.parent
 
-xml_files_abs = []
-for file in xml_files:
-    xml_files_abs.append(os.path.abspath(file))
+# called as cimpy.examples.convertBusBranch() or file run from quickstart directory?
+if 'examples.py' in str(__file__):
+    sample_folder = example / 'examples' / 'sampledata' / 'Sample_Grid_Switches' / 'Node-Breaker'
+else:
+    sample_folder = example / 'sampledata' / 'Sample_Grid_Switches' / 'Node-Breaker'
+
+sample_files = sample_folder.glob('*.xml')
+
+xml_files = []
+for file in sample_folder.glob('*.xml'):
+    xml_files.append(str(file.absolute()))
 
 
-# res = cimpy.cimread(xml_files)
-res, namespaces = cimpy.cim_import(xml_files_abs, "cgmes_v2_4_15")
+import_result = cimpy.cim_import(xml_files, "cgmes_v2_4_15")
 
-bus_branch = cimpy.utils.node_breaker_to_bus_branch(res)
+import_result = cimpy.utils.node_breaker_to_bus_branch(import_result)
 
-# dicts = cimpy.get_class_attributes_dict(res)
-cimpy.cim_export(bus_branch, namespaces, 'Bus_Branch_Converted', 'cgmes_v2_4_15')
+activeProfileList = ['DI', 'EQ', 'SV', 'TP']
+
+cimpy.cim_export(import_result, 'Bus_Branch_Converted', 'cgmes_v2_4_15', activeProfileList)

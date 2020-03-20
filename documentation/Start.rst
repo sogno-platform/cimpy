@@ -38,3 +38,35 @@ This example uses the import result of the import example and exports them back 
     :glob:
 
     Export
+
+Utils
+-----
+Currently there are two functions in utils.
+
+.. toctree::
+    :glob:
+
+    utils
+
+
+Add External Network injection
+______________________________
+
+The function add_external_network_injection adds an external network injection to an existing node. An example for this function can be run with:
+
+.. code-block:: python
+
+    import cimpy
+
+    cimpy.addExternalNetworkInjection_example()
+
+Convert Node-Breaker to Bus-Branch
+__________________________________
+
+This function converts grid data in Node-Breaker topology into Bus-Branch topology.
+
+.. code-block:: python
+
+    import cimpy
+
+    cimpy.convertToBusBranch_example()

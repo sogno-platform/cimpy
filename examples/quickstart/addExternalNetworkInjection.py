@@ -6,7 +6,7 @@ logging.basicConfig(filename='importCIGREMV.log', level=logging.INFO, filemode='
 
 example = Path(__file__).resolve().parent.parent
 
-# called as cimpy.examples.import_example() or file run from quickstart directory?
+# called as cimpy.examples.addExternalNetworkInjection() or file run from quickstart directory?
 if 'examples.py' in str(__file__):
     sample_folder = example / 'examples' / 'sampledata' / 'CIGRE_MV'
 else:
@@ -19,8 +19,9 @@ for file in sample_folder.glob('*.xml'):
     xml_files.append(str(file.absolute()))
 
 import_result = cimpy.cim_import(xml_files, "cgmes_v2_4_15")
-print("\n\n")
-results = ["ACLineSegment", "PowerTransformer", "EnergyConsumer"]
-for key, value in import_result['topology'].items():
-    if value.__class__.__name__ in results:
-        print(value.__str__())
+
+import_result = cimpy.utils.add_external_network_injection(import_result, "cgmes_v2_4_15", "N1", 20.0)
+
+activeProfileList = ['DI', 'EQ', 'SV', 'TP']
+
+cimpy.cim_export(import_result, 'ExternalInjection', 'cgmes_v2_4_15', activeProfileList)

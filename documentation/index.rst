@@ -7,6 +7,8 @@ The processing of grid data is based on CIM compatible Python classes. The codeb
 
 The focus of CIMpy is on the support of the Common Grid Model Exchange Standard (CGMES) specified by the European Network of Transmission System Operators for Electricity (ENTSO-E). However, the CIMpy package can readily support further as well as new CIM versions if required.
 
+.. image:: CIMpy.svg
+
 Installation
 -------------
 For the installation of CIMpy take a look at the `installation instructions <https://acs.pages.rwth-aachen.de/public/cim/cimpy/Install.html>`__.

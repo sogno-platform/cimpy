@@ -72,7 +72,7 @@ def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
                 UUID = '%' + _search_mRID(attr_dict[key], topology)
                 if UUID == '%':
                     logger.warning('Object of type {} not found as reference for object with UUID {}.'.format(
-                        elem.__class__.__name__, mRID))
+                        attr_dict[key].__class__.__name__, mRID))
             else:
                 UUID = '%' + attr_dict[key].mRID
             attributes['value'] = UUID

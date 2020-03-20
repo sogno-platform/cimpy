@@ -3,8 +3,13 @@ from pathlib import Path
 import cimpy
 logging.basicConfig(filename='exportCIGREMV.log', level=logging.INFO, filemode='w')
 
-example = Path('.').resolve()
-sample_folder = example / 'examples' / 'sampledata' / 'CIGRE_MV'
+example = Path(__file__).resolve().parent.parent
+
+# called as cimpy.examples.import_example() or file run from quickstart directory?
+if 'examples.py' in str(__file__):
+    sample_folder = example / 'examples' / 'sampledata' / 'CIGRE_MV'
+else:
+    sample_folder = example / 'sampledata' / 'CIGRE_MV'
 
 sample_files = sample_folder.glob('*.xml')
 

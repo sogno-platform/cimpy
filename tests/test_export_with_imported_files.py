@@ -2,6 +2,7 @@ import logging
 import cimpy
 import xmltodict
 import os
+from pathlib import Path
 import pytest_check as check
 
 logging.basicConfig(filename='Test_export_with_imported_files.log', level=logging.INFO, filemode='w')
@@ -16,19 +17,17 @@ short_profile_name = {
     "Topology": "TP"
 }
 
-example_path = os.path.join('..',
-                            os.path.join('examples',
-                                         os.path.join('sampledata', 'CIGRE_MV')))
+tests = Path('.').resolve().parent
+example_path = tests / 'examples' / 'sampledata' / 'CIGRE_MV'
 
 
 # This test function tests the export functionality by comparing files before the import and export procedure with the
 # exported files. Since cyclic attributes are not resolved in this package, the imported files only need to be a subset
 # of the exported files.
 def test_export_with_imported_files():
-    import_files = [os.path.join(example_path, 'Rootnet_FULL_NE_24J13h_DI.xml'),
-                    os.path.join(example_path, 'Rootnet_FULL_NE_24J13h_EQ.xml'),
-                    os.path.join(example_path, 'Rootnet_FULL_NE_24J13h_SV.xml'),
-                    os.path.join(example_path, 'Rootnet_FULL_NE_24J13h_TP.xml'), ]
+    import_files = []
+    for file in example_path.glob('*.xml'):
+        import_files.append(str(file.absolute()))
 
     activeProfileList = ['DI', 'EQ', 'SV', 'TP']
 
