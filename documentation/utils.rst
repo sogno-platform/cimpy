@@ -7,6 +7,7 @@ Convert Node-Breaker to Bus-Branch
 This function converts as the name suggests a Node-Breaker topology into a Bus-Branch topology.
 
 First we have to import the grid data. For more information see the documentation of the import function.
+
 .. code-block:: python
 
     import logging
