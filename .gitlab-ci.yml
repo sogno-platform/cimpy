@@ -39,6 +39,7 @@ pages:
     artifacts:
         paths:
             - public
+            - .public
     dependencies:
         - documentation
 
