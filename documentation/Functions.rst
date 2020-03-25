@@ -21,13 +21,13 @@ Optional Arguments:
 
 Output:
     :import_result:  A dictionary containing the topology and meta information. The topology can be extracted via
-    import_result['topology']. The topology dictionary contains all CIMpy objects accessible via their mRID. The meta
-    information can be extracted via import_result['meta_info']. The meta_info dictionary contains a new dictionary with
-    the keys: 'author', 'namespaces' and 'urls'. The last two are also dictionaries. 'urls' contains a mapping
-    between references to URLs and the extracted value of the URL, e.g. 'absoluteValue':
-    'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue' These mappings are accessible
-    via the name of the attribute, e.g. import_result['meta_info']['urls'}[attr_name] = {mapping like example above}.
-    'namespaces' is a dictionary containing all RDF namespaces used in the imported xml files.
+                    import_result['topology']. The topology dictionary contains all CIMpy objects accessible via their mRID. The meta
+                    information can be extracted via import_result['meta_info']. The meta_info dictionary contains a new dictionary with
+                    the keys: 'author', 'namespaces' and 'urls'. The last two are also dictionaries. 'urls' contains a mapping
+                    between references to URLs and the extracted value of the URL, e.g. 'absoluteValue':
+                    'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue' These mappings are accessible
+                    via the name of the attribute, e.g. import_result['meta_info']['urls'}[attr_name] = {mapping like example above}.
+                    'namespaces' is a dictionary containing all RDF namespaces used in the imported xml files.
 
 
 CIM Export
