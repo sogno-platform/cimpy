@@ -10,17 +10,19 @@ logger = logging.getLogger(__name__)
 
 
 # This function gets all attributes of an object and resolves references to other objects
-def _get_class_attributes_with_references(res, version, url_reference_dict):
+def _get_class_attributes_with_references(import_result, version):
     class_attributes_list = []
-
-    for key in res.keys():
-        class_dict = dict(name=res[key].__class__.__name__)
+    # extract topology and urls
+    topology = import_result['topology']
+    urls = import_result['meta_info']['urls']
+    for key in topology.keys():
+        class_dict = dict(name=topology[key].__class__.__name__)
         class_dict['mRID'] = key
         # array containing all attributes, attribute references to objects
-        attributes_dict = _get_attributes(res[key])
+        attributes_dict = _get_attributes(topology[key])
         # change attribute references to mRID of the object, res needed because classes like SvPowerFlow does not have
         # mRID as an attribute. Therefore the corresponding class has to be searched in the res dictionary
-        class_dict['attributes'] = _get_reference_uuid(attributes_dict, version, res, key, url_reference_dict)
+        class_dict['attributes'] = _get_reference_uuid(attributes_dict, version, topology, key, urls)
         class_attributes_list.append(class_dict)
         del class_dict
 
@@ -28,7 +30,7 @@ def _get_class_attributes_with_references(res, version, url_reference_dict):
 
 
 # This function resolves references to objects
-def _get_reference_uuid(attr_dict, version, res, mRID, url_reference_dict):
+def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
     reference_list = []
     base_class_name = 'cimpy.' + version + '.Base'
     base_module = importlib.import_module(base_class_name)
@@ -48,7 +50,7 @@ def _get_reference_uuid(attr_dict, version, res, mRID, url_reference_dict):
                     # The % added before the mRID is used in the lambda _set_attribute_or_reference
                     if not hasattr(elem, 'mRID'):
                         # search for the object in the res dictionary and return the mRID
-                        UUID = '%' + _search_mRID(elem, res)
+                        UUID = '%' + _search_mRID(elem, topology)
                         if UUID == '%':
                             logger.warning('Object of type {} not found as reference for object with UUID {}.'.format(
                                 elem.__class__.__name__, mRID))
@@ -67,21 +69,24 @@ def _get_reference_uuid(attr_dict, version, res, mRID, url_reference_dict):
             if not hasattr(attr_dict[key], 'mRID'):
                 # search for object in res dict and return mRID
                 # The % added before the mRID is used in the lambda _set_attribute_or_reference
-                UUID = '%' + _search_mRID(attr_dict[key], res)
+                UUID = '%' + _search_mRID(attr_dict[key], topology)
                 if UUID == '%':
                     logger.warning('Object of type {} not found as reference for object with UUID {}.'.format(
-                        elem.__class__.__name__, mRID))
+                        attr_dict[key].__class__.__name__, mRID))
             else:
                 UUID = '%' + attr_dict[key].mRID
             attributes['value'] = UUID
         elif attr_dict[key] == "" or attr_dict[key] is None:
             pass
         else:
-            if mRID in url_reference_dict.keys():
-                if key.split('.')[1] in url_reference_dict[mRID]:
-                    attributes['value'] = '%URL%' + url_reference_dict[mRID][key.split('.')[1]][attr_dict[key]]
+            # attribute in urls dict?
+            if key.split('.')[1] in urls.keys():
+                # value in urls dict? should always be true
+                if attr_dict[key] in urls[key.split('.')[1]].keys():
+                    attributes['value'] = '%URL%' + urls[key.split('.')[1]][attr_dict[key]]
                 else:
-                    attributes['value'] = attr_dict[key]
+                    logger.warning('URL reference for attribute {} and value {} not found!'.format(
+                        key.split('.')[1], attr_dict[key]))
             else:
                 attributes['value'] = attr_dict[key]
 
@@ -101,8 +106,8 @@ def _get_reference_uuid(attr_dict, version, res, mRID, url_reference_dict):
 
 # This function searches a class_object in the res dictionary and returns the corresponding key (the mRID). Necessary
 # for classes without mRID as attribute like SvVoltage
-def _search_mRID(class_object, res):
-    for mRID, class_obj in res.items():
+def _search_mRID(class_object, topology):
+    for mRID, class_obj in topology.items():
         if class_object == class_obj:
             return mRID
     return ""
@@ -280,7 +285,7 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
     return export_dict, export_about_dict
 
 
-def cim_export(res, namespaces_dict, file_name, version, activeProfileList, url_reference_dict={}):
+def cim_export(import_result, file_name, version, activeProfileList):
     """Function for serialization of cgmes classes
 
     This function serializes cgmes classes with the template engine chevron. The classes are separated by their profile
@@ -288,15 +293,17 @@ def cim_export(res, namespaces_dict, file_name, version, activeProfileList, url_
     set_attributes_or_reference function is a lamda function for chevron to decide whether the value of an attribute is
     a reference to another class object or not.
 
-    :param res: a dictionary containing the cgmes classes accessible via the mRID
-    :param namespaces_dict: a dictionary containing the RDF namespaces used in the imported xml files
+    :param import_result: a dictionary containing the topology and meta information. The topology can be extracted via
+    import_result['topology']. The topology dictionary contains all objects accessible via their mRID. The meta
+    information can be extracted via import_result['meta_info']. The meta_info dictionary contains a new dictionary with
+    the keys: 'author', 'namespaces' and 'urls'. The last two are also dictionaries. 'urls' contains a mapping
+    between references to URLs and the extracted value of the URL, e.g. 'absoluteValue':
+    'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue' These mappings are accessible
+    via the name of the attribute, e.g. import_result['meta_info']['urls'}[attr_name] = {mapping like example above}.
+    'namespaces' is a dictionary containing all RDF namespaces used in the imported xml files.
     :param file_name: a string with the name of the xml files which will be created
     :param version: cgmes version, e.g. version = "cgmes_v2_4_15"
     :param activeProfileList: a list containing the strings of all short names of the profiles used for serialization
-    :param: url_reference_dict: a map containing a mapping between references to URLs and the extracted value of the
-        URL, e.g. 'absoluteValue': 'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue'
-        These mappings are accessible via the mRID of the class and the name of the attribute, e.g.
-        url_reference_dict[mRID][attribute_name] = {mapping like example above}
     """
 
     cwd = os.getcwd()
@@ -305,14 +312,14 @@ def cim_export(res, namespaces_dict, file_name, version, activeProfileList, url_
     logger.info('Start export procedure.')
 
     # returns all classes with their attributes and resolved references
-    class_attributes_list = _get_class_attributes_with_references(res, version, url_reference_dict)
+    class_attributes_list = _get_class_attributes_with_references(import_result, version)
 
     # determine class and attribute export profiles. The export dict contains all classes and their attributes where
     # the class definition and the attribute definitions are in the same profile. Every entry in about_dict generates
     # a rdf:about in another profile
     export_dict, about_dict = _sort_classes_to_profile(class_attributes_list, activeProfileList)
 
-    namespaces_list = _create_namespaces_list(namespaces_dict)
+    namespaces_list = _create_namespaces_list(import_result['meta_info']['namespaces'])
 
     # get information for Model header
     created = {'attr_name': 'created', 'value': datetime.now().strftime("%d/%m/%Y %H:%M:%S")}
