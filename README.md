@@ -8,7 +8,7 @@ The focus of CIMpy is on the support of the Common Grid Model Exchange Standard 
 
 ## Documentation
 
-CIMpy's documentation is hosted [here](https://acs.pages.rwth-aachen.de/public/cim/cimpy/index.html).
+CIMpy's documentation you can find [here](https://acs.pages.rwth-aachen.de/public/cim/cimpy/index.html).
 The documentation provides instructions on CIMpy's installation, getting started examples and the possibility to browse through the supported CIM class codebases.
 
 ## License
