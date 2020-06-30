@@ -4,6 +4,8 @@ __pycache__
 .idea
 ./cimpy/__pycache__
 *.egg
+build/
+dist/
 
 # log files
 *.log
