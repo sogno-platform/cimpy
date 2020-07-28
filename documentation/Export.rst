@@ -1,9 +1,9 @@
 Export Example Documentation
 """"""""""""""""""""""""""""
 
-This guide demonstrates the basic usage of the function cim_export. The whole script can be found `here <https://git.rwth-aachen.de/acs/public/cim/cimpy/blob/master/examples/quickstart/exportCIGREMV.py>`_.
+This guide demonstrates the basic usage of the function cim_export. The whole script can be found `in gitlab <https://git.rwth-aachen.de/acs/public/cim/cimpy/blob/master/examples/quickstart/exportCIGREMV.py>`_.
 
-For this export example we use the result from the import example. The whole explanation of the import procedure can be found `here <https://acs.pages.rwth-aachen.de/public/cim/cimpy/Import.html>`_.
+For this export example we use the result from the import example. The whole explanation of the import procedure can be found `in the import documentation <https://acs.pages.rwth-aachen.de/public/cim/cimpy/Import.html>`_.
 
 .. code-block:: python
 
