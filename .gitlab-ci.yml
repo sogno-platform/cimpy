@@ -42,6 +42,8 @@ pages:
             - .public
     dependencies:
         - documentation
+    only:
+        - master
 
 
 
