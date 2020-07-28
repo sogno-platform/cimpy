@@ -1,5 +1,5 @@
 python3 ../setup.py develop
-sphinx-apidoc -F -f -H "cimpy" -o "../documentation-build" "../"
+sphinx-apidoc -F -H "cimpy" -o "../documentation" "../"
 python3 set_inheritance_diagram.py
-cd ../documentation-build
+cd ../documentation
 make html
