@@ -5,6 +5,6 @@ Currently only the CGMES version v2_4_15 is supported. An overview can be found 
 
 .. toctree::
    :glob:
-   :titlesonly:
+   :maxdepth: 3
 
-   cimpy.cgmes_v2_4_15
+   cimpy
