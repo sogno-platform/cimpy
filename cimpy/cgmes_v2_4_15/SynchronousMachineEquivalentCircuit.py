@@ -20,18 +20,18 @@ class SynchronousMachineEquivalentCircuit(SynchronousMachineDetailed):
 
 	cgmesProfile = SynchronousMachineDetailed.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'xad': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'rfd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'xfd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'r1d': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'x1d': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'xf1d': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'xaq': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'r1q': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'x1q': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'r2q': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'x2q': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'xad': [cgmesProfile.DY.value, ],
+						'rfd': [cgmesProfile.DY.value, ],
+						'xfd': [cgmesProfile.DY.value, ],
+						'r1d': [cgmesProfile.DY.value, ],
+						'x1d': [cgmesProfile.DY.value, ],
+						'xf1d': [cgmesProfile.DY.value, ],
+						'xaq': [cgmesProfile.DY.value, ],
+						'r1q': [cgmesProfile.DY.value, ],
+						'x1q': [cgmesProfile.DY.value, ],
+						'r2q': [cgmesProfile.DY.value, ],
+						'x2q': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

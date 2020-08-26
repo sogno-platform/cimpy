@@ -10,8 +10,8 @@ class Bay(EquipmentContainer):
 
 	cgmesProfile = EquipmentContainer.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'VoltageLevel': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'VoltageLevel': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

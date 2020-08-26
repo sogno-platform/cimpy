@@ -11,9 +11,9 @@ class ReportingGroup(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
-						'BusNameMarker': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'TopologicalNode': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.TP.value, ],
+						'BusNameMarker': [cgmesProfile.EQ.value, ],
+						'TopologicalNode': [cgmesProfile.TP.value, ],
 						 }
 
 	serializationProfile = {}

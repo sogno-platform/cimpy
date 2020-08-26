@@ -19,17 +19,17 @@ class TopologyVersion(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
-						'baseUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
-						'baseURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
-						'date': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
-						'differenceModelURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
-						'entsoeUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
-						'entsoeURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
-						'modelDescriptionURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
-						'namespaceRDF': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
-						'namespaceUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
-						'shortName': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.TP.value, ],
+						'baseUML': [cgmesProfile.TP.value, ],
+						'baseURI': [cgmesProfile.TP.value, ],
+						'date': [cgmesProfile.TP.value, ],
+						'differenceModelURI': [cgmesProfile.TP.value, ],
+						'entsoeUML': [cgmesProfile.TP.value, ],
+						'entsoeURI': [cgmesProfile.TP.value, ],
+						'modelDescriptionURI': [cgmesProfile.TP.value, ],
+						'namespaceRDF': [cgmesProfile.TP.value, ],
+						'namespaceUML': [cgmesProfile.TP.value, ],
+						'shortName': [cgmesProfile.TP.value, ],
 						 }
 
 	serializationProfile = {}

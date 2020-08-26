@@ -13,11 +13,11 @@ class MeasurementValue(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'timeStamp': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'sensorAccuracy': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'MeasurementValueQuality': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'MeasurementValueSource': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'timeStamp': [cgmesProfile.EQ.value, ],
+						'sensorAccuracy': [cgmesProfile.EQ.value, ],
+						'MeasurementValueQuality': [cgmesProfile.EQ.value, ],
+						'MeasurementValueSource': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

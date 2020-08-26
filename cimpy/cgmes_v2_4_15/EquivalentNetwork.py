@@ -10,8 +10,8 @@ class EquivalentNetwork(ConnectivityNodeContainer):
 
 	cgmesProfile = ConnectivityNodeContainer.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'EquivalentEquipments': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'EquivalentEquipments': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

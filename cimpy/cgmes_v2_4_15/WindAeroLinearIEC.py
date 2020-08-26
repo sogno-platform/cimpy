@@ -15,13 +15,13 @@ class WindAeroLinearIEC(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'dpomega': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'dptheta': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'omegazero': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'pavail': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'thetazero': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindGenTurbineType3IEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'dpomega': [cgmesProfile.DY.value, ],
+						'dptheta': [cgmesProfile.DY.value, ],
+						'omegazero': [cgmesProfile.DY.value, ],
+						'pavail': [cgmesProfile.DY.value, ],
+						'thetazero': [cgmesProfile.DY.value, ],
+						'WindGenTurbineType3IEC': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

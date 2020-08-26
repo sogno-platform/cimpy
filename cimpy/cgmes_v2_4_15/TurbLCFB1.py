@@ -21,19 +21,19 @@ class TurbLCFB1(TurbineLoadControllerDynamics):
 
 	cgmesProfile = TurbineLoadControllerDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'mwbase': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'speedReferenceGovernor': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'db': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'emax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'fb': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'kp': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ki': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'fbf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'pbf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tpelec': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'irmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'pmwset': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'mwbase': [cgmesProfile.DY.value, ],
+						'speedReferenceGovernor': [cgmesProfile.DY.value, ],
+						'db': [cgmesProfile.DY.value, ],
+						'emax': [cgmesProfile.DY.value, ],
+						'fb': [cgmesProfile.DY.value, ],
+						'kp': [cgmesProfile.DY.value, ],
+						'ki': [cgmesProfile.DY.value, ],
+						'fbf': [cgmesProfile.DY.value, ],
+						'pbf': [cgmesProfile.DY.value, ],
+						'tpelec': [cgmesProfile.DY.value, ],
+						'irmax': [cgmesProfile.DY.value, ],
+						'pmwset': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

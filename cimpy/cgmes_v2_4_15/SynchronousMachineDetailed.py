@@ -14,12 +14,12 @@ class SynchronousMachineDetailed(SynchronousMachineDynamics):
 
 	cgmesProfile = SynchronousMachineDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'saturationFactorQAxis': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'saturationFactor120QAxis': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'efdBaseRatio': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ifdBaseType': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ifdBaseValue': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'saturationFactorQAxis': [cgmesProfile.DY.value, ],
+						'saturationFactor120QAxis': [cgmesProfile.DY.value, ],
+						'efdBaseRatio': [cgmesProfile.DY.value, ],
+						'ifdBaseType': [cgmesProfile.DY.value, ],
+						'ifdBaseValue': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

@@ -10,8 +10,8 @@ class Conductor(ConductingEquipment):
 
 	cgmesProfile = ConductingEquipment.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'length': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'length': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

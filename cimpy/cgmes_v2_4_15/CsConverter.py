@@ -23,21 +23,21 @@ class CsConverter(ACDCConverter):
 
 	cgmesProfile = ACDCConverter.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
-						'maxAlpha': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'maxGamma': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'maxIdc': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'minAlpha': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'minGamma': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'minIdc': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'ratedIdc': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'operatingMode': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'pPccControl': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'targetAlpha': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'targetGamma': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'targetIdc': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'alpha': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
-						'gamma': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.SV.value, ],
+						'maxAlpha': [cgmesProfile.EQ.value, ],
+						'maxGamma': [cgmesProfile.EQ.value, ],
+						'maxIdc': [cgmesProfile.EQ.value, ],
+						'minAlpha': [cgmesProfile.EQ.value, ],
+						'minGamma': [cgmesProfile.EQ.value, ],
+						'minIdc': [cgmesProfile.EQ.value, ],
+						'ratedIdc': [cgmesProfile.EQ.value, ],
+						'operatingMode': [cgmesProfile.SSH.value, ],
+						'pPccControl': [cgmesProfile.SSH.value, ],
+						'targetAlpha': [cgmesProfile.SSH.value, ],
+						'targetGamma': [cgmesProfile.SSH.value, ],
+						'targetIdc': [cgmesProfile.SSH.value, ],
+						'alpha': [cgmesProfile.SV.value, ],
+						'gamma': [cgmesProfile.SV.value, ],
 						 }
 
 	serializationProfile = {}

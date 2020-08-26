@@ -23,21 +23,21 @@ class LoadMotor(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'LoadAggregate': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'pfrac': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'lfac': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ls': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'lp': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'lpp': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ra': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tpo': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tppo': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'h': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vt': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tv': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tbkr': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'LoadAggregate': [cgmesProfile.DY.value, ],
+						'pfrac': [cgmesProfile.DY.value, ],
+						'lfac': [cgmesProfile.DY.value, ],
+						'ls': [cgmesProfile.DY.value, ],
+						'lp': [cgmesProfile.DY.value, ],
+						'lpp': [cgmesProfile.DY.value, ],
+						'ra': [cgmesProfile.DY.value, ],
+						'tpo': [cgmesProfile.DY.value, ],
+						'tppo': [cgmesProfile.DY.value, ],
+						'h': [cgmesProfile.DY.value, ],
+						'd': [cgmesProfile.DY.value, ],
+						'vt': [cgmesProfile.DY.value, ],
+						'tv': [cgmesProfile.DY.value, ],
+						'tbkr': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

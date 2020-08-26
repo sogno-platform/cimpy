@@ -11,9 +11,9 @@ class SvShuntCompensatorSections(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
-						'sections': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
-						'ShuntCompensator': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.SV.value, ],
+						'sections': [cgmesProfile.SV.value, ],
+						'ShuntCompensator': [cgmesProfile.SV.value, ],
 						 }
 
 	serializationProfile = {}

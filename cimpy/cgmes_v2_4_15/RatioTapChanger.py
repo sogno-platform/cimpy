@@ -13,11 +13,11 @@ class RatioTapChanger(TapChanger):
 
 	cgmesProfile = TapChanger.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'tculControlMode': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'stepVoltageIncrement': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'RatioTapChangerTable': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'TransformerEnd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
+						'tculControlMode': [cgmesProfile.EQ.value, ],
+						'stepVoltageIncrement': [cgmesProfile.EQ.value, ],
+						'RatioTapChangerTable': [cgmesProfile.EQ.value, ],
+						'TransformerEnd': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

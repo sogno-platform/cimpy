@@ -10,8 +10,8 @@ class BusbarSection(Connector):
 
 	cgmesProfile = Connector.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'ipMax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'ipMax': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

@@ -11,9 +11,9 @@ class PFVArControllerType1UserDefined(PFVArControllerType1Dynamics):
 
 	cgmesProfile = PFVArControllerType1Dynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'proprietary': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ProprietaryParameterDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'proprietary': [cgmesProfile.DY.value, ],
+						'ProprietaryParameterDynamics': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

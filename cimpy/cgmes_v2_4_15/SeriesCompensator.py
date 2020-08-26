@@ -16,14 +16,14 @@ class SeriesCompensator(ConductingEquipment):
 
 	cgmesProfile = ConductingEquipment.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'r': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'x': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'varistorPresent': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'varistorRatedCurrent': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'varistorVoltageThreshold': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'r0': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'x0': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'r': [cgmesProfile.EQ.value, ],
+						'x': [cgmesProfile.EQ.value, ],
+						'varistorPresent': [cgmesProfile.EQ.value, ],
+						'varistorRatedCurrent': [cgmesProfile.EQ.value, ],
+						'varistorVoltageThreshold': [cgmesProfile.EQ.value, ],
+						'r0': [cgmesProfile.EQ.value, ],
+						'x0': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

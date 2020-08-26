@@ -11,9 +11,9 @@ class DCConverterUnit(DCEquipmentContainer):
 
 	cgmesProfile = DCEquipmentContainer.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'operationMode': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'Substation': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'operationMode': [cgmesProfile.EQ.value, ],
+						'Substation': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

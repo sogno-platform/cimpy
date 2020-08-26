@@ -14,12 +14,12 @@ class PositionPoint(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'Location': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'sequenceNumber': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'xPosition': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'yPosition': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'zPosition': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.GL.value, ],
+						'Location': [cgmesProfile.GL.value, ],
+						'sequenceNumber': [cgmesProfile.GL.value, ],
+						'xPosition': [cgmesProfile.GL.value, ],
+						'yPosition': [cgmesProfile.GL.value, ],
+						'zPosition': [cgmesProfile.GL.value, ],
 						 }
 
 	serializationProfile = {}

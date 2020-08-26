@@ -12,10 +12,10 @@ class AnalogValue(MeasurementValue):
 
 	cgmesProfile = MeasurementValue.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'Analog': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'AnalogControl': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'value': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'Analog': [cgmesProfile.EQ.value, ],
+						'AnalogControl': [cgmesProfile.EQ.value, ],
+						'value': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

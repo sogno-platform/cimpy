@@ -19,17 +19,17 @@ class DiagramObject(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'Diagram': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'drawingOrder': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'isPolygon': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'offsetX': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'offsetY': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'rotation': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'IdentifiedObject': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'DiagramObjectPoints': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'VisibilityLayers': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'DiagramObjectStyle': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DL.value, ],
+						'Diagram': [cgmesProfile.DL.value, ],
+						'drawingOrder': [cgmesProfile.DL.value, ],
+						'isPolygon': [cgmesProfile.DL.value, ],
+						'offsetX': [cgmesProfile.DL.value, ],
+						'offsetY': [cgmesProfile.DL.value, ],
+						'rotation': [cgmesProfile.DL.value, ],
+						'IdentifiedObject': [cgmesProfile.DL.value, ],
+						'DiagramObjectPoints': [cgmesProfile.DL.value, ],
+						'VisibilityLayers': [cgmesProfile.DL.value, ],
+						'DiagramObjectStyle': [cgmesProfile.DL.value, ],
 						 }
 
 	serializationProfile = {}

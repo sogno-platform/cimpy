@@ -19,17 +19,17 @@ class SteadyStateHypothesisVersion(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'baseUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'baseURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'date': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'differenceModelURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'entsoeUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'entsoeURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'modelDescriptionURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'namespaceRDF': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'namespaceUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'shortName': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.SSH.value, ],
+						'baseUML': [cgmesProfile.SSH.value, ],
+						'baseURI': [cgmesProfile.SSH.value, ],
+						'date': [cgmesProfile.SSH.value, ],
+						'differenceModelURI': [cgmesProfile.SSH.value, ],
+						'entsoeUML': [cgmesProfile.SSH.value, ],
+						'entsoeURI': [cgmesProfile.SSH.value, ],
+						'modelDescriptionURI': [cgmesProfile.SSH.value, ],
+						'namespaceRDF': [cgmesProfile.SSH.value, ],
+						'namespaceUML': [cgmesProfile.SSH.value, ],
+						'shortName': [cgmesProfile.SSH.value, ],
 						 }
 
 	serializationProfile = {}

@@ -10,8 +10,8 @@ class TextDiagramObject(DiagramObject):
 
 	cgmesProfile = DiagramObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'text': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DL.value, ],
+						'text': [cgmesProfile.DL.value, ],
 						 }
 
 	serializationProfile = {}

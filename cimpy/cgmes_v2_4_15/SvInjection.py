@@ -12,10 +12,10 @@ class SvInjection(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
-						'pInjection': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
-						'qInjection': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
-						'TopologicalNode': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.SV.value, ],
+						'pInjection': [cgmesProfile.SV.value, ],
+						'qInjection': [cgmesProfile.SV.value, ],
+						'TopologicalNode': [cgmesProfile.SV.value, ],
 						 }
 
 	serializationProfile = {}

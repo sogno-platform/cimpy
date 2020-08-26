@@ -9,7 +9,7 @@ class SynchronousMachineOperatingMode(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.SSH.value, ],
 						 }
 
 	serializationProfile = {}

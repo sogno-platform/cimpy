@@ -10,8 +10,8 @@ class DiagramObjectGluePoint(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'DiagramObjectPoints': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DL.value, ],
+						'DiagramObjectPoints': [cgmesProfile.DL.value, ],
 						 }
 
 	serializationProfile = {}

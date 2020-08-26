@@ -16,14 +16,14 @@ class PetersenCoil(EarthFaultCompensator):
 
 	cgmesProfile = EarthFaultCompensator.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'mode': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'nominalU': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'offsetCurrent': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'positionCurrent': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'xGroundMax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'xGroundMin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'xGroundNominal': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'mode': [cgmesProfile.EQ.value, ],
+						'nominalU': [cgmesProfile.EQ.value, ],
+						'offsetCurrent': [cgmesProfile.EQ.value, ],
+						'positionCurrent': [cgmesProfile.EQ.value, ],
+						'xGroundMax': [cgmesProfile.EQ.value, ],
+						'xGroundMin': [cgmesProfile.EQ.value, ],
+						'xGroundNominal': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

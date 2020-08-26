@@ -12,10 +12,10 @@ class AnalogControl(Control):
 
 	cgmesProfile = Control.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'maxValue': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'minValue': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'AnalogValue': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'maxValue': [cgmesProfile.EQ.value, ],
+						'minValue': [cgmesProfile.EQ.value, ],
+						'AnalogValue': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

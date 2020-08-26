@@ -10,8 +10,8 @@ class WindGeneratingUnit(GeneratingUnit):
 
 	cgmesProfile = GeneratingUnit.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'windGenUnitType': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
+						'windGenUnitType': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

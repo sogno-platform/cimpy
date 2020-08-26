@@ -19,17 +19,17 @@ class TopologyBoundaryVersion(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP_BD'}.value, ],
-						'baseUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP_BD'}.value, ],
-						'baseURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP_BD'}.value, ],
-						'date': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP_BD'}.value, ],
-						'differenceModelURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP_BD'}.value, ],
-						'entsoeUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP_BD'}.value, ],
-						'entsoeURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP_BD'}.value, ],
-						'modelDescriptionURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP_BD'}.value, ],
-						'namespaceRDF': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP_BD'}.value, ],
-						'namespaceUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP_BD'}.value, ],
-						'shortName': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP_BD'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.TP_BD.value, ],
+						'baseUML': [cgmesProfile.TP_BD.value, ],
+						'baseURI': [cgmesProfile.TP_BD.value, ],
+						'date': [cgmesProfile.TP_BD.value, ],
+						'differenceModelURI': [cgmesProfile.TP_BD.value, ],
+						'entsoeUML': [cgmesProfile.TP_BD.value, ],
+						'entsoeURI': [cgmesProfile.TP_BD.value, ],
+						'modelDescriptionURI': [cgmesProfile.TP_BD.value, ],
+						'namespaceRDF': [cgmesProfile.TP_BD.value, ],
+						'namespaceUML': [cgmesProfile.TP_BD.value, ],
+						'shortName': [cgmesProfile.TP_BD.value, ],
 						 }
 
 	serializationProfile = {}

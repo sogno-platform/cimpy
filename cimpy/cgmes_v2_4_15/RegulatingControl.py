@@ -18,16 +18,16 @@ class RegulatingControl(PowerSystemResource):
 
 	cgmesProfile = PowerSystemResource.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'Terminal': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'RegulatingCondEq': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'mode': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'RegulationSchedule': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'discrete': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'enabled': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'targetDeadband': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'targetValue': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'targetValueUnitMultiplier': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
+						'Terminal': [cgmesProfile.EQ.value, ],
+						'RegulatingCondEq': [cgmesProfile.EQ.value, ],
+						'mode': [cgmesProfile.EQ.value, ],
+						'RegulationSchedule': [cgmesProfile.EQ.value, ],
+						'discrete': [cgmesProfile.SSH.value, ],
+						'enabled': [cgmesProfile.SSH.value, ],
+						'targetDeadband': [cgmesProfile.SSH.value, ],
+						'targetValue': [cgmesProfile.SSH.value, ],
+						'targetValueUnitMultiplier': [cgmesProfile.SSH.value, ],
 						 }
 
 	serializationProfile = {}

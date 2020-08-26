@@ -11,9 +11,9 @@ class LoadAggregate(LoadDynamics):
 
 	cgmesProfile = LoadDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'LoadStatic': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'LoadMotor': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'LoadStatic': [cgmesProfile.DY.value, ],
+						'LoadMotor': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

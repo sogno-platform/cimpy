@@ -11,9 +11,9 @@ class WindTurbineType1or2Dynamics(DynamicsFunctionBlock):
 
 	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'RemoteInputSignal': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'AsynchronousMachineDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'RemoteInputSignal': [cgmesProfile.DY.value, ],
+						'AsynchronousMachineDynamics': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

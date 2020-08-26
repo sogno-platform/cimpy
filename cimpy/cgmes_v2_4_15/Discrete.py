@@ -11,9 +11,9 @@ class Discrete(Measurement):
 
 	cgmesProfile = Measurement.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'DiscreteValues': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'ValueAliasSet': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'DiscreteValues': [cgmesProfile.EQ.value, ],
+						'ValueAliasSet': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

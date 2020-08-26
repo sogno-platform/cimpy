@@ -11,9 +11,9 @@ class HydroGeneratingUnit(GeneratingUnit):
 
 	cgmesProfile = GeneratingUnit.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'energyConversionCapability': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'HydroPowerPlant': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
+						'energyConversionCapability': [cgmesProfile.EQ.value, ],
+						'HydroPowerPlant': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

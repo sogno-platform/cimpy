@@ -10,8 +10,8 @@ class StringMeasurement(Measurement):
 
 	cgmesProfile = Measurement.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'StringMeasurementValues': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'StringMeasurementValues': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

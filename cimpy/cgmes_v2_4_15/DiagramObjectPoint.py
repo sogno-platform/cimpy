@@ -15,13 +15,13 @@ class DiagramObjectPoint(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'DiagramObject': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'DiagramObjectGluePoint': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'sequenceNumber': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'xPosition': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'yPosition': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'zPosition': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DL.value, ],
+						'DiagramObject': [cgmesProfile.DL.value, ],
+						'DiagramObjectGluePoint': [cgmesProfile.DL.value, ],
+						'sequenceNumber': [cgmesProfile.DL.value, ],
+						'xPosition': [cgmesProfile.DL.value, ],
+						'yPosition': [cgmesProfile.DL.value, ],
+						'zPosition': [cgmesProfile.DL.value, ],
 						 }
 
 	serializationProfile = {}

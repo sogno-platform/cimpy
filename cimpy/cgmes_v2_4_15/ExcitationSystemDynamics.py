@@ -17,15 +17,15 @@ class ExcitationSystemDynamics(DynamicsFunctionBlock):
 
 	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'SynchronousMachineDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'PowerSystemStabilizerDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'PFVArControllerType1Dynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'VoltageCompensatorDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'DiscontinuousExcitationControlDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'UnderexcitationLimiterDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'PFVArControllerType2Dynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'OverexcitationLimiterDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'SynchronousMachineDynamics': [cgmesProfile.DY.value, ],
+						'PowerSystemStabilizerDynamics': [cgmesProfile.DY.value, ],
+						'PFVArControllerType1Dynamics': [cgmesProfile.DY.value, ],
+						'VoltageCompensatorDynamics': [cgmesProfile.DY.value, ],
+						'DiscontinuousExcitationControlDynamics': [cgmesProfile.DY.value, ],
+						'UnderexcitationLimiterDynamics': [cgmesProfile.DY.value, ],
+						'PFVArControllerType2Dynamics': [cgmesProfile.DY.value, ],
+						'OverexcitationLimiterDynamics': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

@@ -16,14 +16,14 @@ class Diagram(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'DiagramStyle': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'orientation': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'x1InitialView': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'x2InitialView': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'y1InitialView': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'y2InitialView': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
-						'DiagramElements': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DL.value, ],
+						'DiagramStyle': [cgmesProfile.DL.value, ],
+						'orientation': [cgmesProfile.DL.value, ],
+						'x1InitialView': [cgmesProfile.DL.value, ],
+						'x2InitialView': [cgmesProfile.DL.value, ],
+						'y1InitialView': [cgmesProfile.DL.value, ],
+						'y2InitialView': [cgmesProfile.DL.value, ],
+						'DiagramElements': [cgmesProfile.DL.value, ],
 						 }
 
 	serializationProfile = {}

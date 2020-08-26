@@ -10,8 +10,8 @@ class DCConductingEquipment(Equipment):
 
 	cgmesProfile = Equipment.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'DCTerminals': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'DCTerminals': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

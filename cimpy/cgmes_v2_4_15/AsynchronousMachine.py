@@ -20,18 +20,18 @@ class AsynchronousMachine(RotatingMachine):
 
 	cgmesProfile = RotatingMachine.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'nominalFrequency': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'nominalSpeed': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'converterFedDrive': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'efficiency': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'iaIrRatio': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'polePairNumber': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'ratedMechanicalPower': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'reversible': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'rxLockedRotorRatio': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'asynchronousMachineType': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'AsynchronousMachineDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.DY.value, ],
+						'nominalFrequency': [cgmesProfile.EQ.value, ],
+						'nominalSpeed': [cgmesProfile.EQ.value, ],
+						'converterFedDrive': [cgmesProfile.EQ.value, ],
+						'efficiency': [cgmesProfile.EQ.value, ],
+						'iaIrRatio': [cgmesProfile.EQ.value, ],
+						'polePairNumber': [cgmesProfile.EQ.value, ],
+						'ratedMechanicalPower': [cgmesProfile.EQ.value, ],
+						'reversible': [cgmesProfile.EQ.value, ],
+						'rxLockedRotorRatio': [cgmesProfile.EQ.value, ],
+						'asynchronousMachineType': [cgmesProfile.SSH.value, ],
+						'AsynchronousMachineDynamics': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

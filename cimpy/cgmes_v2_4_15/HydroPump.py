@@ -11,9 +11,9 @@ class HydroPump(Equipment):
 
 	cgmesProfile = Equipment.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'HydroPowerPlant': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'RotatingMachine': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'HydroPowerPlant': [cgmesProfile.EQ.value, ],
+						'RotatingMachine': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

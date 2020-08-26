@@ -11,9 +11,9 @@ class SubLoadArea(EnergyArea):
 
 	cgmesProfile = EnergyArea.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'LoadArea': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'LoadGroups': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'LoadArea': [cgmesProfile.EQ.value, ],
+						'LoadGroups': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

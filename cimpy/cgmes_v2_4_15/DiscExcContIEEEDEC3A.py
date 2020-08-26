@@ -11,9 +11,9 @@ class DiscExcContIEEEDEC3A(DiscontinuousExcitationControlDynamics):
 
 	cgmesProfile = DiscontinuousExcitationControlDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vtmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tdr': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'vtmin': [cgmesProfile.DY.value, ],
+						'tdr': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

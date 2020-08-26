@@ -24,22 +24,22 @@ class UnderexcLimIEEE1(UnderexcitationLimiterDynamics):
 
 	cgmesProfile = UnderexcitationLimiterDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'kur': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'kuc': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'kuf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vurmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vucmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'kui': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'kul': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vuimax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vuimin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tu1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tu2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tu3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tu4': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vulmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vulmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'kur': [cgmesProfile.DY.value, ],
+						'kuc': [cgmesProfile.DY.value, ],
+						'kuf': [cgmesProfile.DY.value, ],
+						'vurmax': [cgmesProfile.DY.value, ],
+						'vucmax': [cgmesProfile.DY.value, ],
+						'kui': [cgmesProfile.DY.value, ],
+						'kul': [cgmesProfile.DY.value, ],
+						'vuimax': [cgmesProfile.DY.value, ],
+						'vuimin': [cgmesProfile.DY.value, ],
+						'tu1': [cgmesProfile.DY.value, ],
+						'tu2': [cgmesProfile.DY.value, ],
+						'tu3': [cgmesProfile.DY.value, ],
+						'tu4': [cgmesProfile.DY.value, ],
+						'vulmax': [cgmesProfile.DY.value, ],
+						'vulmin': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

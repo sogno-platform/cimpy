@@ -15,13 +15,13 @@ class WindGenTurbineType3IEC(WindTurbineType3or4IEC):
 
 	cgmesProfile = WindTurbineType3or4IEC.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindAeroLinearIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindContPitchAngleIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindContPType3IEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'dipmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'diqmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindMechIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'WindAeroLinearIEC': [cgmesProfile.DY.value, ],
+						'WindContPitchAngleIEC': [cgmesProfile.DY.value, ],
+						'WindContPType3IEC': [cgmesProfile.DY.value, ],
+						'dipmax': [cgmesProfile.DY.value, ],
+						'diqmax': [cgmesProfile.DY.value, ],
+						'WindMechIEC': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

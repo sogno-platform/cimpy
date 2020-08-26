@@ -23,21 +23,21 @@ class SynchronousMachineTimeConstantReactance(SynchronousMachineDetailed):
 
 	cgmesProfile = SynchronousMachineDetailed.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'rotorType': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'modelType': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ks': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'xDirectSync': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'xDirectTrans': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'xDirectSubtrans': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'xQuadSync': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'xQuadTrans': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'xQuadSubtrans': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tpdo': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tppdo': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tpqo': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tppqo': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tc': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'rotorType': [cgmesProfile.DY.value, ],
+						'modelType': [cgmesProfile.DY.value, ],
+						'ks': [cgmesProfile.DY.value, ],
+						'xDirectSync': [cgmesProfile.DY.value, ],
+						'xDirectTrans': [cgmesProfile.DY.value, ],
+						'xDirectSubtrans': [cgmesProfile.DY.value, ],
+						'xQuadSync': [cgmesProfile.DY.value, ],
+						'xQuadTrans': [cgmesProfile.DY.value, ],
+						'xQuadSubtrans': [cgmesProfile.DY.value, ],
+						'tpdo': [cgmesProfile.DY.value, ],
+						'tppdo': [cgmesProfile.DY.value, ],
+						'tpqo': [cgmesProfile.DY.value, ],
+						'tppqo': [cgmesProfile.DY.value, ],
+						'tc': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

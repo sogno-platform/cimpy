@@ -15,13 +15,13 @@ class PFVArType1IEEEVArController(PFVArControllerType1Dynamics):
 
 	cgmesProfile = PFVArControllerType1Dynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tvarc': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vvar': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vvarcbw': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vvarref': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vvtmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vvtmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'tvarc': [cgmesProfile.DY.value, ],
+						'vvar': [cgmesProfile.DY.value, ],
+						'vvarcbw': [cgmesProfile.DY.value, ],
+						'vvarref': [cgmesProfile.DY.value, ],
+						'vvtmax': [cgmesProfile.DY.value, ],
+						'vvtmin': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

@@ -10,8 +10,8 @@ class NonlinearShuntCompensator(ShuntCompensator):
 
 	cgmesProfile = ShuntCompensator.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'NonlinearShuntCompensatorPoints': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
+						'NonlinearShuntCompensatorPoints': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

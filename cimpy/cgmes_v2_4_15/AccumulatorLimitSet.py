@@ -11,9 +11,9 @@ class AccumulatorLimitSet(LimitSet):
 
 	cgmesProfile = LimitSet.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'Measurements': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'Limits': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'Measurements': [cgmesProfile.EQ.value, ],
+						'Limits': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

@@ -15,13 +15,13 @@ class StaticVarCompensator(RegulatingCondEq):
 
 	cgmesProfile = RegulatingCondEq.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'capacitiveRating': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'inductiveRating': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'slope': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'sVCControlMode': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'voltageSetPoint': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'q': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
+						'capacitiveRating': [cgmesProfile.EQ.value, ],
+						'inductiveRating': [cgmesProfile.EQ.value, ],
+						'slope': [cgmesProfile.EQ.value, ],
+						'sVCControlMode': [cgmesProfile.EQ.value, ],
+						'voltageSetPoint': [cgmesProfile.EQ.value, ],
+						'q': [cgmesProfile.SSH.value, ],
 						 }
 
 	serializationProfile = {}

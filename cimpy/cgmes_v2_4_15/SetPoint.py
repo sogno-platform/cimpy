@@ -11,9 +11,9 @@ class SetPoint(AnalogControl):
 
 	cgmesProfile = AnalogControl.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'normalValue': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'value': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'normalValue': [cgmesProfile.EQ.value, ],
+						'value': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

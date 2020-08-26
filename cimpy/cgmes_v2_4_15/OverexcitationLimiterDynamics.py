@@ -10,8 +10,8 @@ class OverexcitationLimiterDynamics(DynamicsFunctionBlock):
 
 	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ExcitationSystemDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'ExcitationSystemDynamics': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

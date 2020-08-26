@@ -13,11 +13,11 @@ class Command(Control):
 
 	cgmesProfile = Control.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'normalValue': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'value': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'DiscreteValue': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'ValueAliasSet': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'normalValue': [cgmesProfile.EQ.value, ],
+						'value': [cgmesProfile.EQ.value, ],
+						'DiscreteValue': [cgmesProfile.EQ.value, ],
+						'ValueAliasSet': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

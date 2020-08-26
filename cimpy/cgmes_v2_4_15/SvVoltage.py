@@ -12,10 +12,10 @@ class SvVoltage(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
-						'angle': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
-						'v': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
-						'TopologicalNode': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.SV.value, ],
+						'angle': [cgmesProfile.SV.value, ],
+						'v': [cgmesProfile.SV.value, ],
+						'TopologicalNode': [cgmesProfile.SV.value, ],
 						 }
 
 	serializationProfile = {}

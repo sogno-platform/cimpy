@@ -11,9 +11,9 @@ class ConformLoadGroup(LoadGroup):
 
 	cgmesProfile = LoadGroup.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'EnergyConsumers': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'ConformLoadSchedules': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'EnergyConsumers': [cgmesProfile.EQ.value, ],
+						'ConformLoadSchedules': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

@@ -14,12 +14,12 @@ class VoltageLevel(EquipmentContainer):
 
 	cgmesProfile = EquipmentContainer.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'BaseVoltage': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'Substation': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'highVoltageLimit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'lowVoltageLimit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'Bays': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'BaseVoltage': [cgmesProfile.EQ.value, ],
+						'Substation': [cgmesProfile.EQ.value, ],
+						'highVoltageLimit': [cgmesProfile.EQ.value, ],
+						'lowVoltageLimit': [cgmesProfile.EQ.value, ],
+						'Bays': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

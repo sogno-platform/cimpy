@@ -14,12 +14,12 @@ class DiscExcContIEEEDEC2A(DiscontinuousExcitationControlDynamics):
 
 	cgmesProfile = DiscontinuousExcitationControlDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vk': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'td1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'td2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vdmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vdmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'vk': [cgmesProfile.DY.value, ],
+						'td1': [cgmesProfile.DY.value, ],
+						'td2': [cgmesProfile.DY.value, ],
+						'vdmin': [cgmesProfile.DY.value, ],
+						'vdmax': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

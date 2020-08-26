@@ -11,9 +11,9 @@ class PhaseTapChangerTablePoint(TapChangerTablePoint):
 
 	cgmesProfile = TapChangerTablePoint.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'PhaseTapChangerTable': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'angle': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'PhaseTapChangerTable': [cgmesProfile.EQ.value, ],
+						'angle': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

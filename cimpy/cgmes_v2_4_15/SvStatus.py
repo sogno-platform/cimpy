@@ -11,9 +11,9 @@ class SvStatus(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
-						'ConductingEquipment': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
-						'inService': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.SV.value, ],
+						'ConductingEquipment': [cgmesProfile.SV.value, ],
+						'inService': [cgmesProfile.SV.value, ],
 						 }
 
 	serializationProfile = {}

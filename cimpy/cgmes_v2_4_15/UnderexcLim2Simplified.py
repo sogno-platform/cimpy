@@ -16,14 +16,14 @@ class UnderexcLim2Simplified(UnderexcitationLimiterDynamics):
 
 	cgmesProfile = UnderexcitationLimiterDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'q0': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'q1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'p0': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'p1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'kui': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vuimin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vuimax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'q0': [cgmesProfile.DY.value, ],
+						'q1': [cgmesProfile.DY.value, ],
+						'p0': [cgmesProfile.DY.value, ],
+						'p1': [cgmesProfile.DY.value, ],
+						'kui': [cgmesProfile.DY.value, ],
+						'vuimin': [cgmesProfile.DY.value, ],
+						'vuimax': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

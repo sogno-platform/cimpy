@@ -11,9 +11,9 @@ class VCompIEEEType2(VoltageCompensatorDynamics):
 
 	cgmesProfile = VoltageCompensatorDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tr': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'GenICompensationForGenJ': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'tr': [cgmesProfile.DY.value, ],
+						'GenICompensationForGenJ': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

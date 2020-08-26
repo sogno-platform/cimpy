@@ -14,12 +14,12 @@ class AsynchronousMachineEquivalentCircuit(AsynchronousMachineDynamics):
 
 	cgmesProfile = AsynchronousMachineDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'xm': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'rr1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'xlr1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'rr2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'xlr2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'xm': [cgmesProfile.DY.value, ],
+						'rr1': [cgmesProfile.DY.value, ],
+						'xlr1': [cgmesProfile.DY.value, ],
+						'rr2': [cgmesProfile.DY.value, ],
+						'xlr2': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

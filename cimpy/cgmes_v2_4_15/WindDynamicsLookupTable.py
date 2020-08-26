@@ -17,15 +17,15 @@ class WindDynamicsLookupTable(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindContCurrLimIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindContPType3IEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindContRotorRIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'input': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'lookupTableFunctionType': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'output': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'sequence': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindPlantFreqPcontrolIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'WindContCurrLimIEC': [cgmesProfile.DY.value, ],
+						'WindContPType3IEC': [cgmesProfile.DY.value, ],
+						'WindContRotorRIEC': [cgmesProfile.DY.value, ],
+						'input': [cgmesProfile.DY.value, ],
+						'lookupTableFunctionType': [cgmesProfile.DY.value, ],
+						'output': [cgmesProfile.DY.value, ],
+						'sequence': [cgmesProfile.DY.value, ],
+						'WindPlantFreqPcontrolIEC': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

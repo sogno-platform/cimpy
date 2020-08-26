@@ -16,14 +16,14 @@ class PowerTransformer(ConductingEquipment):
 
 	cgmesProfile = ConductingEquipment.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'PowerTransformerEnd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'beforeShCircuitHighestOperatingCurrent': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'beforeShCircuitHighestOperatingVoltage': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'beforeShortCircuitAnglePf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'highSideMinOperatingU': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'isPartOfGeneratorUnit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'operationalValuesConsidered': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'PowerTransformerEnd': [cgmesProfile.EQ.value, ],
+						'beforeShCircuitHighestOperatingCurrent': [cgmesProfile.EQ.value, ],
+						'beforeShCircuitHighestOperatingVoltage': [cgmesProfile.EQ.value, ],
+						'beforeShortCircuitAnglePf': [cgmesProfile.EQ.value, ],
+						'highSideMinOperatingU': [cgmesProfile.EQ.value, ],
+						'isPartOfGeneratorUnit': [cgmesProfile.EQ.value, ],
+						'operationalValuesConsidered': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

@@ -15,13 +15,13 @@ class Control(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'controlType': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'operationInProgress': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'timeStamp': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'unitMultiplier': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'unitSymbol': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'PowerSystemResource': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'controlType': [cgmesProfile.EQ.value, ],
+						'operationInProgress': [cgmesProfile.EQ.value, ],
+						'timeStamp': [cgmesProfile.EQ.value, ],
+						'unitMultiplier': [cgmesProfile.EQ.value, ],
+						'unitSymbol': [cgmesProfile.EQ.value, ],
+						'PowerSystemResource': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

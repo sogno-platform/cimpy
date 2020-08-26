@@ -23,21 +23,21 @@ class EquipmentVersion(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'baseUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'baseURIcore': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'baseURIoperation': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'baseURIshortCircuit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'date': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'differenceModelURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'entsoeUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'entsoeURIcore': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'entsoeURIoperation': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'entsoeURIshortCircuit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'modelDescriptionURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'namespaceRDF': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'namespaceUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'shortName': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'baseUML': [cgmesProfile.EQ.value, ],
+						'baseURIcore': [cgmesProfile.EQ.value, ],
+						'baseURIoperation': [cgmesProfile.EQ.value, ],
+						'baseURIshortCircuit': [cgmesProfile.EQ.value, ],
+						'date': [cgmesProfile.EQ.value, ],
+						'differenceModelURI': [cgmesProfile.EQ.value, ],
+						'entsoeUML': [cgmesProfile.EQ.value, ],
+						'entsoeURIcore': [cgmesProfile.EQ.value, ],
+						'entsoeURIoperation': [cgmesProfile.EQ.value, ],
+						'entsoeURIshortCircuit': [cgmesProfile.EQ.value, ],
+						'modelDescriptionURI': [cgmesProfile.EQ.value, ],
+						'namespaceRDF': [cgmesProfile.EQ.value, ],
+						'namespaceUML': [cgmesProfile.EQ.value, ],
+						'shortName': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

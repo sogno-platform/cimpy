@@ -13,11 +13,11 @@ class AsynchronousMachineDynamics(RotatingMachineDynamics):
 
 	cgmesProfile = RotatingMachineDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'AsynchronousMachine': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'MechanicalLoadDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindTurbineType1or2Dynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'TurbineGovernorDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'AsynchronousMachine': [cgmesProfile.DY.value, ],
+						'MechanicalLoadDynamics': [cgmesProfile.DY.value, ],
+						'WindTurbineType1or2Dynamics': [cgmesProfile.DY.value, ],
+						'TurbineGovernorDynamics': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

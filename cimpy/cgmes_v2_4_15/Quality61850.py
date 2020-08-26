@@ -21,19 +21,19 @@ class Quality61850(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'badReference': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'estimatorReplaced': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'failure': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'oldData': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'operatorBlocked': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'oscillatory': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'outOfRange': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'overFlow': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'source': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'suspect': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'test': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'validity': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'badReference': [cgmesProfile.EQ.value, ],
+						'estimatorReplaced': [cgmesProfile.EQ.value, ],
+						'failure': [cgmesProfile.EQ.value, ],
+						'oldData': [cgmesProfile.EQ.value, ],
+						'operatorBlocked': [cgmesProfile.EQ.value, ],
+						'oscillatory': [cgmesProfile.EQ.value, ],
+						'outOfRange': [cgmesProfile.EQ.value, ],
+						'overFlow': [cgmesProfile.EQ.value, ],
+						'source': [cgmesProfile.EQ.value, ],
+						'suspect': [cgmesProfile.EQ.value, ],
+						'test': [cgmesProfile.EQ.value, ],
+						'validity': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

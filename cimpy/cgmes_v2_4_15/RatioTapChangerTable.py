@@ -11,9 +11,9 @@ class RatioTapChangerTable(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'RatioTapChanger': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'RatioTapChangerTablePoint': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'RatioTapChanger': [cgmesProfile.EQ.value, ],
+						'RatioTapChangerTablePoint': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

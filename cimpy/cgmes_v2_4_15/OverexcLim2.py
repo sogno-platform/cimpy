@@ -13,11 +13,11 @@ class OverexcLim2(OverexcitationLimiterDynamics):
 
 	cgmesProfile = OverexcitationLimiterDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'koi': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'voimax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'voimin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ifdlim': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'koi': [cgmesProfile.DY.value, ],
+						'voimax': [cgmesProfile.DY.value, ],
+						'voimin': [cgmesProfile.DY.value, ],
+						'ifdlim': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

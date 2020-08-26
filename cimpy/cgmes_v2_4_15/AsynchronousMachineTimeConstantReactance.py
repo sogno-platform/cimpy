@@ -14,12 +14,12 @@ class AsynchronousMachineTimeConstantReactance(AsynchronousMachineDynamics):
 
 	cgmesProfile = AsynchronousMachineDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'xs': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'xp': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'xpp': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tpo': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tppo': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'xs': [cgmesProfile.DY.value, ],
+						'xp': [cgmesProfile.DY.value, ],
+						'xpp': [cgmesProfile.DY.value, ],
+						'tpo': [cgmesProfile.DY.value, ],
+						'tppo': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

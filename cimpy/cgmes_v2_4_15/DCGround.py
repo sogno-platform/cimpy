@@ -11,9 +11,9 @@ class DCGround(DCConductingEquipment):
 
 	cgmesProfile = DCConductingEquipment.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'inductance': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'r': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'inductance': [cgmesProfile.EQ.value, ],
+						'r': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

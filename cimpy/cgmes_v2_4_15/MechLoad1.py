@@ -13,11 +13,11 @@ class MechLoad1(MechanicalLoadDynamics):
 
 	cgmesProfile = MechanicalLoadDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'a': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'b': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'e': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'a': [cgmesProfile.DY.value, ],
+						'b': [cgmesProfile.DY.value, ],
+						'd': [cgmesProfile.DY.value, ],
+						'e': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

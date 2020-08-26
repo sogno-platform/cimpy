@@ -19,17 +19,17 @@ class ShuntCompensator(RegulatingCondEq):
 
 	cgmesProfile = RegulatingCondEq.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
-						'aVRDelay': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'grounded': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'maximumSections': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'nomU': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'normalSections': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'switchOnCount': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'switchOnDate': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'voltageSensitivity': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'sections': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'SvShuntCompensatorSections': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.SV.value, ],
+						'aVRDelay': [cgmesProfile.EQ.value, ],
+						'grounded': [cgmesProfile.EQ.value, ],
+						'maximumSections': [cgmesProfile.EQ.value, ],
+						'nomU': [cgmesProfile.EQ.value, ],
+						'normalSections': [cgmesProfile.EQ.value, ],
+						'switchOnCount': [cgmesProfile.EQ.value, ],
+						'switchOnDate': [cgmesProfile.EQ.value, ],
+						'voltageSensitivity': [cgmesProfile.EQ.value, ],
+						'sections': [cgmesProfile.SSH.value, ],
+						'SvShuntCompensatorSections': [cgmesProfile.SV.value, ],
 						 }
 
 	serializationProfile = {}

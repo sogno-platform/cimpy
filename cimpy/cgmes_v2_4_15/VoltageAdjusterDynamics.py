@@ -10,8 +10,8 @@ class VoltageAdjusterDynamics(DynamicsFunctionBlock):
 
 	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'PFVArControllerType1Dynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'PFVArControllerType1Dynamics': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

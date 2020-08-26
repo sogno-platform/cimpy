@@ -17,15 +17,15 @@ class PFVArType1IEEEPFController(PFVArControllerType1Dynamics):
 
 	cgmesProfile = PFVArControllerType1Dynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ovex': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tpfc': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vitmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vpf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vpfcbw': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vpfref': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vvtmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vvtmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'ovex': [cgmesProfile.DY.value, ],
+						'tpfc': [cgmesProfile.DY.value, ],
+						'vitmin': [cgmesProfile.DY.value, ],
+						'vpf': [cgmesProfile.DY.value, ],
+						'vpfcbw': [cgmesProfile.DY.value, ],
+						'vpfref': [cgmesProfile.DY.value, ],
+						'vvtmax': [cgmesProfile.DY.value, ],
+						'vvtmin': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

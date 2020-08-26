@@ -22,20 +22,20 @@ class PowerTransformerEnd(TransformerEnd):
 
 	cgmesProfile = TransformerEnd.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'PowerTransformer': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'b': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'connectionKind': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'ratedS': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'g': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'ratedU': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'r': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'x': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'b0': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'phaseAngleClock': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'g0': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'r0': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'x0': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'PowerTransformer': [cgmesProfile.EQ.value, ],
+						'b': [cgmesProfile.EQ.value, ],
+						'connectionKind': [cgmesProfile.EQ.value, ],
+						'ratedS': [cgmesProfile.EQ.value, ],
+						'g': [cgmesProfile.EQ.value, ],
+						'ratedU': [cgmesProfile.EQ.value, ],
+						'r': [cgmesProfile.EQ.value, ],
+						'x': [cgmesProfile.EQ.value, ],
+						'b0': [cgmesProfile.EQ.value, ],
+						'phaseAngleClock': [cgmesProfile.EQ.value, ],
+						'g0': [cgmesProfile.EQ.value, ],
+						'r0': [cgmesProfile.EQ.value, ],
+						'x0': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

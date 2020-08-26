@@ -14,12 +14,12 @@ class SynchronousMachineDynamics(RotatingMachineDynamics):
 
 	cgmesProfile = RotatingMachineDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'SynchronousMachine': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'TurbineGovernorDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ExcitationSystemDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'MechanicalLoadDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'GenICompensationForGenJ': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'SynchronousMachine': [cgmesProfile.DY.value, ],
+						'TurbineGovernorDynamics': [cgmesProfile.DY.value, ],
+						'ExcitationSystemDynamics': [cgmesProfile.DY.value, ],
+						'MechanicalLoadDynamics': [cgmesProfile.DY.value, ],
+						'GenICompensationForGenJ': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

@@ -20,18 +20,18 @@ class LoadComposite(LoadDynamics):
 
 	cgmesProfile = LoadDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'epvs': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'epfs': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'eqvs': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'eqfs': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'epvd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'epfd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'eqvd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'eqfd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'lfrac': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'h': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'pfrac': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'epvs': [cgmesProfile.DY.value, ],
+						'epfs': [cgmesProfile.DY.value, ],
+						'eqvs': [cgmesProfile.DY.value, ],
+						'eqfs': [cgmesProfile.DY.value, ],
+						'epvd': [cgmesProfile.DY.value, ],
+						'epfd': [cgmesProfile.DY.value, ],
+						'eqvd': [cgmesProfile.DY.value, ],
+						'eqfd': [cgmesProfile.DY.value, ],
+						'lfrac': [cgmesProfile.DY.value, ],
+						'h': [cgmesProfile.DY.value, ],
+						'pfrac': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

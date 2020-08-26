@@ -15,13 +15,13 @@ class OverexcLimIEEE(OverexcitationLimiterDynamics):
 
 	cgmesProfile = OverexcitationLimiterDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'itfpu': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ifdmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ifdlim': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'hyst': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'kcd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'kramp': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'itfpu': [cgmesProfile.DY.value, ],
+						'ifdmax': [cgmesProfile.DY.value, ],
+						'ifdlim': [cgmesProfile.DY.value, ],
+						'hyst': [cgmesProfile.DY.value, ],
+						'kcd': [cgmesProfile.DY.value, ],
+						'kramp': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

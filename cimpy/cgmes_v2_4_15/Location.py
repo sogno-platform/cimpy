@@ -12,10 +12,10 @@ class Location(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'CoordinateSystem': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'PowerSystemResources': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'PositionPoints': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.GL.value, ],
+						'CoordinateSystem': [cgmesProfile.GL.value, ],
+						'PowerSystemResources': [cgmesProfile.GL.value, ],
+						'PositionPoints': [cgmesProfile.GL.value, ],
 						 }
 
 	serializationProfile = {}

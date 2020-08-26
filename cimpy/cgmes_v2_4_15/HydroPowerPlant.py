@@ -12,10 +12,10 @@ class HydroPowerPlant(PowerSystemResource):
 
 	cgmesProfile = PowerSystemResource.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'HydroGeneratingUnits': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'hydroPlantStorageType': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'HydroPumps': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'HydroGeneratingUnits': [cgmesProfile.EQ.value, ],
+						'hydroPlantStorageType': [cgmesProfile.EQ.value, ],
+						'HydroPumps': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

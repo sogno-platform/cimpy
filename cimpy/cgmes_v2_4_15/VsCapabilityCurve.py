@@ -10,8 +10,8 @@ class VsCapabilityCurve(Curve):
 
 	cgmesProfile = Curve.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'VsConverterDCSides': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'VsConverterDCSides': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

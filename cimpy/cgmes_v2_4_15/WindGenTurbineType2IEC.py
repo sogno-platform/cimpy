@@ -11,9 +11,9 @@ class WindGenTurbineType2IEC(WindTurbineType1or2IEC):
 
 	cgmesProfile = WindTurbineType1or2IEC.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindContRotorRIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindPitchContEmulIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'WindContRotorRIEC': [cgmesProfile.DY.value, ],
+						'WindPitchContEmulIEC': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

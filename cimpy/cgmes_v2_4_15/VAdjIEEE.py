@@ -15,13 +15,13 @@ class VAdjIEEE(VoltageAdjusterDynamics):
 
 	cgmesProfile = VoltageAdjusterDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vadjf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'adjslew': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vadjmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vadjmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'taon': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'taoff': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'vadjf': [cgmesProfile.DY.value, ],
+						'adjslew': [cgmesProfile.DY.value, ],
+						'vadjmax': [cgmesProfile.DY.value, ],
+						'vadjmin': [cgmesProfile.DY.value, ],
+						'taon': [cgmesProfile.DY.value, ],
+						'taoff': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

@@ -10,8 +10,8 @@ class MeasurementValueQuality(Quality61850):
 
 	cgmesProfile = Quality61850.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'MeasurementValue': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'MeasurementValue': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

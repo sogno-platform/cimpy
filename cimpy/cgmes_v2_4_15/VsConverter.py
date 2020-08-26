@@ -21,19 +21,19 @@ class VsConverter(ACDCConverter):
 
 	cgmesProfile = ACDCConverter.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
-						'CapabilityCurve': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'maxModulationIndex': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'maxValveCurrent': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'droop': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'droopCompensation': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'pPccControl': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'qPccControl': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'qShare': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'targetQpcc': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'targetUpcc': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'delta': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
-						'uf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.SV.value, ],
+						'CapabilityCurve': [cgmesProfile.EQ.value, ],
+						'maxModulationIndex': [cgmesProfile.EQ.value, ],
+						'maxValveCurrent': [cgmesProfile.EQ.value, ],
+						'droop': [cgmesProfile.SSH.value, ],
+						'droopCompensation': [cgmesProfile.SSH.value, ],
+						'pPccControl': [cgmesProfile.SSH.value, ],
+						'qPccControl': [cgmesProfile.SSH.value, ],
+						'qShare': [cgmesProfile.SSH.value, ],
+						'targetQpcc': [cgmesProfile.SSH.value, ],
+						'targetUpcc': [cgmesProfile.SSH.value, ],
+						'delta': [cgmesProfile.SV.value, ],
+						'uf': [cgmesProfile.SV.value, ],
 						 }
 
 	serializationProfile = {}

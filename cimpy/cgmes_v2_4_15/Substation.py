@@ -12,10 +12,10 @@ class Substation(EquipmentContainer):
 
 	cgmesProfile = EquipmentContainer.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'DCConverterUnit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'Region': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'VoltageLevels': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'DCConverterUnit': [cgmesProfile.EQ.value, ],
+						'Region': [cgmesProfile.EQ.value, ],
+						'VoltageLevels': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

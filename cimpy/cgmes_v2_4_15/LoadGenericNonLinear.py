@@ -18,16 +18,16 @@ class LoadGenericNonLinear(LoadDynamics):
 
 	cgmesProfile = LoadDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'genericNonLinearLoadModelType': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'pt': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'qt': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tp': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'tq': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ls': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'lt': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'bs': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'bt': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'genericNonLinearLoadModelType': [cgmesProfile.DY.value, ],
+						'pt': [cgmesProfile.DY.value, ],
+						'qt': [cgmesProfile.DY.value, ],
+						'tp': [cgmesProfile.DY.value, ],
+						'tq': [cgmesProfile.DY.value, ],
+						'ls': [cgmesProfile.DY.value, ],
+						'lt': [cgmesProfile.DY.value, ],
+						'bs': [cgmesProfile.DY.value, ],
+						'bt': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

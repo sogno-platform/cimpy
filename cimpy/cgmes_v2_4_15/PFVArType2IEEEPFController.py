@@ -16,14 +16,14 @@ class PFVArType2IEEEPFController(PFVArControllerType2Dynamics):
 
 	cgmesProfile = PFVArControllerType2Dynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'pfref': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vref': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vclmt': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'kp': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ki': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'vs': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'exlon': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'pfref': [cgmesProfile.DY.value, ],
+						'vref': [cgmesProfile.DY.value, ],
+						'vclmt': [cgmesProfile.DY.value, ],
+						'kp': [cgmesProfile.DY.value, ],
+						'ki': [cgmesProfile.DY.value, ],
+						'vs': [cgmesProfile.DY.value, ],
+						'exlon': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

@@ -13,11 +13,11 @@ class DCTopologicalNode(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
-						'DCTopologicalIsland': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
-						'DCTerminals': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
-						'DCEquipmentContainer': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
-						'DCNodes': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.SV.value, cgmesProfile.TP.value, ],
+						'DCTopologicalIsland': [cgmesProfile.SV.value, ],
+						'DCTerminals': [cgmesProfile.TP.value, ],
+						'DCEquipmentContainer': [cgmesProfile.TP.value, ],
+						'DCNodes': [cgmesProfile.TP.value, ],
 						 }
 
 	serializationProfile = {}

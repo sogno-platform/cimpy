@@ -11,9 +11,9 @@ class WindPlantIEC(WindPlantDynamics):
 
 	cgmesProfile = WindPlantDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindPlantFreqPcontrolIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindPlantReactiveControlIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'WindPlantFreqPcontrolIEC': [cgmesProfile.DY.value, ],
+						'WindPlantReactiveControlIEC': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

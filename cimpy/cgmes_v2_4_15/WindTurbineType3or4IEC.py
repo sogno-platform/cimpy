@@ -12,10 +12,10 @@ class WindTurbineType3or4IEC(WindTurbineType3or4Dynamics):
 
 	cgmesProfile = WindTurbineType3or4Dynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindContCurrLimIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WIndContQIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindProtectionIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'WindContCurrLimIEC': [cgmesProfile.DY.value, ],
+						'WIndContQIEC': [cgmesProfile.DY.value, ],
+						'WindProtectionIEC': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

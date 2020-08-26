@@ -19,17 +19,17 @@ class RemoteInputSignal(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'Terminal': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'remoteSignalType': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'PFVArControllerType1Dynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'UnderexcitationLimiterDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindTurbineType1or2Dynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'VoltageCompensatorDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'PowerSystemStabilizerDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'DiscontinuousExcitationControlDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindTurbineType3or4Dynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'WindPlantDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'Terminal': [cgmesProfile.DY.value, ],
+						'remoteSignalType': [cgmesProfile.DY.value, ],
+						'PFVArControllerType1Dynamics': [cgmesProfile.DY.value, ],
+						'UnderexcitationLimiterDynamics': [cgmesProfile.DY.value, ],
+						'WindTurbineType1or2Dynamics': [cgmesProfile.DY.value, ],
+						'VoltageCompensatorDynamics': [cgmesProfile.DY.value, ],
+						'PowerSystemStabilizerDynamics': [cgmesProfile.DY.value, ],
+						'DiscontinuousExcitationControlDynamics': [cgmesProfile.DY.value, ],
+						'WindTurbineType3or4Dynamics': [cgmesProfile.DY.value, ],
+						'WindPlantDynamics': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

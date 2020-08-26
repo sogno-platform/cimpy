@@ -18,16 +18,16 @@ class ACLineSegment(Conductor):
 
 	cgmesProfile = Conductor.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'bch': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'gch': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'r': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'x': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'b0ch': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'g0ch': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'r0': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'shortCircuitEndTemperature': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'x0': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'bch': [cgmesProfile.EQ.value, ],
+						'gch': [cgmesProfile.EQ.value, ],
+						'r': [cgmesProfile.EQ.value, ],
+						'x': [cgmesProfile.EQ.value, ],
+						'b0ch': [cgmesProfile.EQ.value, ],
+						'g0ch': [cgmesProfile.EQ.value, ],
+						'r0': [cgmesProfile.EQ.value, ],
+						'shortCircuitEndTemperature': [cgmesProfile.EQ.value, ],
+						'x0': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

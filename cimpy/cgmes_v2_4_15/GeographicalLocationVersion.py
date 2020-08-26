@@ -19,17 +19,17 @@ class GeographicalLocationVersion(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'baseUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'baseURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'date': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'differenceModelURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'entsoeUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'entsoeURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'modelDescriptionURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'namespaceRDF': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'namespaceUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'shortName': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.GL.value, ],
+						'baseUML': [cgmesProfile.GL.value, ],
+						'baseURI': [cgmesProfile.GL.value, ],
+						'date': [cgmesProfile.GL.value, ],
+						'differenceModelURI': [cgmesProfile.GL.value, ],
+						'entsoeUML': [cgmesProfile.GL.value, ],
+						'entsoeURI': [cgmesProfile.GL.value, ],
+						'modelDescriptionURI': [cgmesProfile.GL.value, ],
+						'namespaceRDF': [cgmesProfile.GL.value, ],
+						'namespaceUML': [cgmesProfile.GL.value, ],
+						'shortName': [cgmesProfile.GL.value, ],
 						 }
 
 	serializationProfile = {}

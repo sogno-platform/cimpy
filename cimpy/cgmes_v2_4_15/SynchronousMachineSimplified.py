@@ -9,7 +9,7 @@ class SynchronousMachineSimplified(SynchronousMachineDynamics):
 
 	cgmesProfile = SynchronousMachineDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

@@ -10,8 +10,8 @@ class RegulationSchedule(SeasonDayTypeSchedule):
 
 	cgmesProfile = SeasonDayTypeSchedule.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'RegulatingControl': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'RegulatingControl': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

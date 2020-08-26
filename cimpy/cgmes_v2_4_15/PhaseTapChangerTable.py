@@ -11,9 +11,9 @@ class PhaseTapChangerTable(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'PhaseTapChangerTablePoint': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'PhaseTapChangerTabular': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'PhaseTapChangerTablePoint': [cgmesProfile.EQ.value, ],
+						'PhaseTapChangerTabular': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

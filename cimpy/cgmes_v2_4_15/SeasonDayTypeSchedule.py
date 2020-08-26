@@ -11,9 +11,9 @@ class SeasonDayTypeSchedule(RegularIntervalSchedule):
 
 	cgmesProfile = RegularIntervalSchedule.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'DayType': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'Season': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'DayType': [cgmesProfile.EQ.value, ],
+						'Season': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

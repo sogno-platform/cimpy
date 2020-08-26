@@ -13,11 +13,11 @@ class LinearShuntCompensator(ShuntCompensator):
 
 	cgmesProfile = ShuntCompensator.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'bPerSection': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'gPerSection': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'b0PerSection': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'g0PerSection': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
+						'bPerSection': [cgmesProfile.EQ.value, ],
+						'gPerSection': [cgmesProfile.EQ.value, ],
+						'b0PerSection': [cgmesProfile.EQ.value, ],
+						'g0PerSection': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

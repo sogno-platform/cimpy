@@ -10,8 +10,8 @@ class DCLine(DCEquipmentContainer):
 
 	cgmesProfile = DCEquipmentContainer.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'Region': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'Region': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

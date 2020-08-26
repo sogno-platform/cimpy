@@ -12,10 +12,10 @@ class PhaseTapChangerLinear(PhaseTapChanger):
 
 	cgmesProfile = PhaseTapChanger.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
-						'stepPhaseShiftIncrement': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'xMax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'xMin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
+						'stepPhaseShiftIncrement': [cgmesProfile.EQ.value, ],
+						'xMax': [cgmesProfile.EQ.value, ],
+						'xMin': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

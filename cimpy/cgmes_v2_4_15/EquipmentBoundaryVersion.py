@@ -20,18 +20,18 @@ class EquipmentBoundaryVersion(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
-						'baseUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
-						'baseURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
-						'date': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
-						'differenceModelURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
-						'entsoeUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
-						'entsoeURIcore': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
-						'entsoeURIoperation': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
-						'modelDescriptionURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
-						'namespaceRDF': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
-						'namespaceUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
-						'shortName': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ_BD.value, ],
+						'baseUML': [cgmesProfile.EQ_BD.value, ],
+						'baseURI': [cgmesProfile.EQ_BD.value, ],
+						'date': [cgmesProfile.EQ_BD.value, ],
+						'differenceModelURI': [cgmesProfile.EQ_BD.value, ],
+						'entsoeUML': [cgmesProfile.EQ_BD.value, ],
+						'entsoeURIcore': [cgmesProfile.EQ_BD.value, ],
+						'entsoeURIoperation': [cgmesProfile.EQ_BD.value, ],
+						'modelDescriptionURI': [cgmesProfile.EQ_BD.value, ],
+						'namespaceRDF': [cgmesProfile.EQ_BD.value, ],
+						'namespaceUML': [cgmesProfile.EQ_BD.value, ],
+						'shortName': [cgmesProfile.EQ_BD.value, ],
 						 }
 
 	serializationProfile = {}

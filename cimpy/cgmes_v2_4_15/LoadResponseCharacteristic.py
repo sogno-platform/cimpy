@@ -21,19 +21,19 @@ class LoadResponseCharacteristic(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'EnergyConsumer': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'exponentModel': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'pConstantCurrent': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'pConstantImpedance': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'pConstantPower': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'pFrequencyExponent': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'pVoltageExponent': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'qConstantCurrent': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'qConstantImpedance': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'qConstantPower': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'qFrequencyExponent': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'qVoltageExponent': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'EnergyConsumer': [cgmesProfile.EQ.value, ],
+						'exponentModel': [cgmesProfile.EQ.value, ],
+						'pConstantCurrent': [cgmesProfile.EQ.value, ],
+						'pConstantImpedance': [cgmesProfile.EQ.value, ],
+						'pConstantPower': [cgmesProfile.EQ.value, ],
+						'pFrequencyExponent': [cgmesProfile.EQ.value, ],
+						'pVoltageExponent': [cgmesProfile.EQ.value, ],
+						'qConstantCurrent': [cgmesProfile.EQ.value, ],
+						'qConstantImpedance': [cgmesProfile.EQ.value, ],
+						'qConstantPower': [cgmesProfile.EQ.value, ],
+						'qFrequencyExponent': [cgmesProfile.EQ.value, ],
+						'qVoltageExponent': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

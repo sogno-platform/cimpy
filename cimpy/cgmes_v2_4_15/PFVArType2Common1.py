@@ -14,12 +14,12 @@ class PFVArType2Common1(PFVArControllerType2Dynamics):
 
 	cgmesProfile = PFVArControllerType2Dynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'j': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'kp': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ki': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'max': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
-						'ref': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+						'j': [cgmesProfile.DY.value, ],
+						'kp': [cgmesProfile.DY.value, ],
+						'ki': [cgmesProfile.DY.value, ],
+						'max': [cgmesProfile.DY.value, ],
+						'ref': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

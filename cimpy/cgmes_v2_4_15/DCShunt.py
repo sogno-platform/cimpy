@@ -12,10 +12,10 @@ class DCShunt(DCConductingEquipment):
 
 	cgmesProfile = DCConductingEquipment.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'capacitance': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'resistance': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
-						'ratedUdc': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+						'capacitance': [cgmesProfile.EQ.value, ],
+						'resistance': [cgmesProfile.EQ.value, ],
+						'ratedUdc': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

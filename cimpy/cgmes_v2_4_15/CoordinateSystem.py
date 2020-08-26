@@ -11,9 +11,9 @@ class CoordinateSystem(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'crsUrn': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
-						'Location': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'GL'}.value, ],
+	possibleProfileList = {'class': [cgmesProfile.GL.value, ],
+						'crsUrn': [cgmesProfile.GL.value, ],
+						'Location': [cgmesProfile.GL.value, ],
 						 }
 
 	serializationProfile = {}
