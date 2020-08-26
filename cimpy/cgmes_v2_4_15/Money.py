@@ -1,28 +1,28 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from  import Base
 
 
 class Money(Base):
 	'''
 	Amount of money.
 
-	:unit:  Default: None
-	:multiplier:  Default: None
-	:value:  Default: 0.0
+	:unit:  Default: 
+	:multiplier:  Default: 
+	:value:  Default: 
 		'''
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'unit': [cgmesProfile.EQ.value, ],
-						'multiplier': [cgmesProfile.EQ.value, ],
-						'value': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'unit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'multiplier': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'value': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	
 
-	def __init__(self, unit = None, multiplier = None, value = 0.0,  ):
+	def __init__(self, unit = , multiplier = , value = ,  ):
 	
 		self.unit = unit
 		self.multiplier = multiplier

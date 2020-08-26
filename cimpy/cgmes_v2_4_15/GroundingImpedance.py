@@ -1,24 +1,24 @@
-from cimpy.cgmes_v2_4_15.EarthFaultCompensator import EarthFaultCompensator
+from cimpy.output.EarthFaultCompensator import EarthFaultCompensator
 
 
 class GroundingImpedance(EarthFaultCompensator):
 	'''
 	A fixed impedance device used for grounding.
 
-	:x: Reactance of device. Default: 0.0
+	:x: Reactance of device. Default: 
 		'''
 
 	cgmesProfile = EarthFaultCompensator.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'x': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'x': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class EarthFaultCompensator: \n' + EarthFaultCompensator.__doc__ 
 
-	def __init__(self, x = 0.0,  *args, **kw_args):
+	def __init__(self, x = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.x = x

@@ -1,34 +1,34 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from  import Base
 
 
 class NonlinearShuntCompensatorPoint(Base):
 	'''
 	A non linear shunt compensator bank or section admittance value.
 
-	:NonlinearShuntCompensator: Non-linear shunt compensator owning this point. Default: None
-	:b: Positive sequence shunt (charging) susceptance per section Default: 0.0
-	:g: Positive sequence shunt (charging) conductance per section Default: 0.0
-	:sectionNumber: The number of the section. Default: 0
-	:b0: Zero sequence shunt (charging) susceptance per section Default: 0.0
-	:g0: Zero sequence shunt (charging) conductance per section Default: 0.0
+	:NonlinearShuntCompensator: Non-linear shunt compensator owning this point. Default: 
+	:b: Positive sequence shunt (charging) susceptance per section Default: 
+	:g: Positive sequence shunt (charging) conductance per section Default: 
+	:sectionNumber: The number of the section. Default: 
+	:b0: Zero sequence shunt (charging) susceptance per section Default: 
+	:g0: Zero sequence shunt (charging) conductance per section Default: 
 		'''
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'NonlinearShuntCompensator': [cgmesProfile.EQ.value, ],
-						'b': [cgmesProfile.EQ.value, ],
-						'g': [cgmesProfile.EQ.value, ],
-						'sectionNumber': [cgmesProfile.EQ.value, ],
-						'b0': [cgmesProfile.EQ.value, ],
-						'g0': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'NonlinearShuntCompensator': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'b': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'g': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'sectionNumber': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'b0': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'g0': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	
 
-	def __init__(self, NonlinearShuntCompensator = None, b = 0.0, g = 0.0, sectionNumber = 0, b0 = 0.0, g0 = 0.0,  ):
+	def __init__(self, NonlinearShuntCompensator = , b = , g = , sectionNumber = , b0 = , g0 = ,  ):
 	
 		self.NonlinearShuntCompensator = NonlinearShuntCompensator
 		self.b = b

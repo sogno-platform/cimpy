@@ -1,50 +1,50 @@
-from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.output.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovHydro1(TurbineGovernorDynamics):
 	'''
 	Basic Hydro turbine governor model.
 
-	:mwbase: Base for power values (MWbase) (> 0).  Unit = MW. Default: 0.0
-	:rperm: Permanent droop (R) (>0).  Typical Value = 0.04. Default: 0.0
-	:rtemp: Temporary droop (r) (>R).  Typical Value = 0.3. Default: 0.0
-	:tr: Washout time constant (Tr) (>0).  Typical Value = 5. Default: 0
-	:tf: Filter time constant () (>0).  Typical Value = 0.05. Default: 0
-	:tg: Gate servo time constant (Tg) (>0).  Typical Value = 0.5. Default: 0
-	:velm: Maximum gate velocity (Vlem) (>0).  Typical Value = 0.2. Default: 0.0
-	:gmax: Maximum gate opening (Gmax) (>0).  Typical Value = 1. Default: 0.0
-	:gmin: Minimum gate opening (Gmin) (>=0).  Typical Value = 0. Default: 0.0
-	:tw: Water inertia time constant (Tw) (>0).  Typical Value = 1. Default: 0
-	:at: Turbine gain (At) (>0).  Typical Value = 1.2. Default: 0.0
-	:dturb: Turbine damping factor (Dturb) (>=0).  Typical Value = 0.5. Default: 0.0
-	:qnl: No-load flow at nominal head (qnl) (>=0).  Typical Value = 0.08. Default: 0.0
-	:hdam: Turbine nominal head (hdam).  Typical Value = 1. Default: 0.0
+	:mwbase: Base for power values (MWbase) (> 0).  Unit = MW. Default: 
+	:rperm: Permanent droop (R) (>0).  Typical Value = 0.04. Default: 
+	:rtemp: Temporary droop (r) (>R).  Typical Value = 0.3. Default: 
+	:tr: Washout time constant (Tr) (>0).  Typical Value = 5. Default: 
+	:tf: Filter time constant () (>0).  Typical Value = 0.05. Default: 
+	:tg: Gate servo time constant (Tg) (>0).  Typical Value = 0.5. Default: 
+	:velm: Maximum gate velocity (Vlem) (>0).  Typical Value = 0.2. Default: 
+	:gmax: Maximum gate opening (Gmax) (>0).  Typical Value = 1. Default: 
+	:gmin: Minimum gate opening (Gmin) (>=0).  Typical Value = 0. Default: 
+	:tw: Water inertia time constant (Tw) (>0).  Typical Value = 1. Default: 
+	:at: Turbine gain (At) (>0).  Typical Value = 1.2. Default: 
+	:dturb: Turbine damping factor (Dturb) (>=0).  Typical Value = 0.5. Default: 
+	:qnl: No-load flow at nominal head (qnl) (>=0).  Typical Value = 0.08. Default: 
+	:hdam: Turbine nominal head (hdam).  Typical Value = 1. Default: 
 		'''
 
 	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'mwbase': [cgmesProfile.DY.value, ],
-						'rperm': [cgmesProfile.DY.value, ],
-						'rtemp': [cgmesProfile.DY.value, ],
-						'tr': [cgmesProfile.DY.value, ],
-						'tf': [cgmesProfile.DY.value, ],
-						'tg': [cgmesProfile.DY.value, ],
-						'velm': [cgmesProfile.DY.value, ],
-						'gmax': [cgmesProfile.DY.value, ],
-						'gmin': [cgmesProfile.DY.value, ],
-						'tw': [cgmesProfile.DY.value, ],
-						'at': [cgmesProfile.DY.value, ],
-						'dturb': [cgmesProfile.DY.value, ],
-						'qnl': [cgmesProfile.DY.value, ],
-						'hdam': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'mwbase': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'rperm': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'rtemp': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tr': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tg': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'velm': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'gmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'gmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tw': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'at': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'dturb': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'qnl': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'hdam': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 
-	def __init__(self, mwbase = 0.0, rperm = 0.0, rtemp = 0.0, tr = 0, tf = 0, tg = 0, velm = 0.0, gmax = 0.0, gmin = 0.0, tw = 0, at = 0.0, dturb = 0.0, qnl = 0.0, hdam = 0.0,  *args, **kw_args):
+	def __init__(self, mwbase = , rperm = , rtemp = , tr = , tf = , tg = , velm = , gmax = , gmin = , tw = , at = , dturb = , qnl = , hdam = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.mwbase = mwbase

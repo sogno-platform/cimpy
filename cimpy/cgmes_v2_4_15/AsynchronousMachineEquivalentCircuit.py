@@ -1,32 +1,32 @@
-from cimpy.cgmes_v2_4_15.AsynchronousMachineDynamics import AsynchronousMachineDynamics
+from cimpy.output.AsynchronousMachineDynamics import AsynchronousMachineDynamics
 
 
 class AsynchronousMachineEquivalentCircuit(AsynchronousMachineDynamics):
 	'''
 	The electrical equations of all variations of the asynchronous model are based on the AsynchronousEquivalentCircuit diagram for the direct and quadrature axes, with two equivalent rotor windings in each axis.      =  +   =  +  *  / ( + )  =  +  * *  / ( *  +  *  +  * )  = ( + ) / ( * )  = ( *  +  *  +  * ) / ( *  * (+ ) Same equations using CIM attributes from AsynchronousMachineTimeConstantReactance class on left of = sign and AsynchronousMachineEquivalentCircuit class on right (except as noted): xs = xm + RotatingMachineDynamics.statorLeakageReactance xp = RotatingMachineDynamics.statorLeakageReactance + xm * xlr1 / (xm + xlr1) xpp = RotatingMachineDynamics.statorLeakageReactance + xm * xlr1* xlr2 / (xm * xlr1 + xm * xlr2 + xlr1 * xlr2) tpo = (xm + xlr1) / (2*pi*nominal frequency * rr1) tppo = (xm * xlr1 + xm * xlr2 + xlr1 * xlr2) / (2*pi*nominal frequency * rr2 * (xm + xlr1).
 
-	:xm: Magnetizing reactance. Default: 0.0
-	:rr1: Damper 1 winding resistance. Default: 0.0
-	:xlr1: Damper 1 winding leakage reactance. Default: 0.0
-	:rr2: Damper 2 winding resistance. Default: 0.0
-	:xlr2: Damper 2 winding leakage reactance. Default: 0.0
+	:xm: Magnetizing reactance. Default: 
+	:rr1: Damper 1 winding resistance. Default: 
+	:xlr1: Damper 1 winding leakage reactance. Default: 
+	:rr2: Damper 2 winding resistance. Default: 
+	:xlr2: Damper 2 winding leakage reactance. Default: 
 		'''
 
 	cgmesProfile = AsynchronousMachineDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'xm': [cgmesProfile.DY.value, ],
-						'rr1': [cgmesProfile.DY.value, ],
-						'xlr1': [cgmesProfile.DY.value, ],
-						'rr2': [cgmesProfile.DY.value, ],
-						'xlr2': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'xm': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'rr1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'xlr1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'rr2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'xlr2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class AsynchronousMachineDynamics: \n' + AsynchronousMachineDynamics.__doc__ 
 
-	def __init__(self, xm = 0.0, rr1 = 0.0, xlr1 = 0.0, rr2 = 0.0, xlr2 = 0.0,  *args, **kw_args):
+	def __init__(self, xm = , rr1 = , xlr1 = , rr2 = , xlr2 = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.xm = xm

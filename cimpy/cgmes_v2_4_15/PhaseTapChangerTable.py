@@ -1,26 +1,26 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from cimpy.output.IdentifiedObject import IdentifiedObject
 
 
 class PhaseTapChangerTable(IdentifiedObject):
 	'''
 	Describes a tabular curve for how the phase angle difference and impedance varies with the tap step.
 
-	:PhaseTapChangerTablePoint: The points of this table. Default: "list"
-	:PhaseTapChangerTabular: The phase tap changers to which this phase tap table applies. Default: "list"
+	:PhaseTapChangerTablePoint: The points of this table. Default: 
+	:PhaseTapChangerTabular: The phase tap changers to which this phase tap table applies. Default: 
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'PhaseTapChangerTablePoint': [cgmesProfile.EQ.value, ],
-						'PhaseTapChangerTabular': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'PhaseTapChangerTablePoint': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'PhaseTapChangerTabular': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, PhaseTapChangerTablePoint = "list", PhaseTapChangerTabular = "list",  *args, **kw_args):
+	def __init__(self, PhaseTapChangerTablePoint = , PhaseTapChangerTabular = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.PhaseTapChangerTablePoint = PhaseTapChangerTablePoint

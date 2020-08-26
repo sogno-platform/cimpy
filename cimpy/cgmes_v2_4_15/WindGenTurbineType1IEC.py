@@ -1,24 +1,24 @@
-from cimpy.cgmes_v2_4_15.WindTurbineType1or2IEC import WindTurbineType1or2IEC
+from cimpy.output.WindTurbineType1or2IEC import WindTurbineType1or2IEC
 
 
 class WindGenTurbineType1IEC(WindTurbineType1or2IEC):
 	'''
 	Wind turbine IEC Type 1.  Reference: IEC Standard 61400-27-1, section 6.5.2.
 
-	:WindAeroConstIEC: Wind aerodynamic model associated with this wind turbine type 1 model. Default: None
+	:WindAeroConstIEC: Wind aerodynamic model associated with this wind turbine type 1 model. Default: 
 		'''
 
 	cgmesProfile = WindTurbineType1or2IEC.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'WindAeroConstIEC': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'WindAeroConstIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class WindTurbineType1or2IEC: \n' + WindTurbineType1or2IEC.__doc__ 
 
-	def __init__(self, WindAeroConstIEC = None,  *args, **kw_args):
+	def __init__(self, WindAeroConstIEC = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.WindAeroConstIEC = WindAeroConstIEC

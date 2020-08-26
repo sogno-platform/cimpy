@@ -1,0 +1,31 @@
+from cimpy.output.Measurement import Measurement
+
+
+class StringMeasurement(Measurement):
+	'''
+	StringMeasurement represents a measurement with values of type string.
+
+	:StringMeasurementValues: The values connected to this measurement. Default: 
+		'''
+
+	cgmesProfile = Measurement.cgmesProfile
+
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'StringMeasurementValues': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						 }
+
+	serializationProfile = {}
+
+	__doc__ += '\n Documentation of parent class Measurement: \n' + Measurement.__doc__ 
+
+	def __init__(self, StringMeasurementValues = ,  *args, **kw_args):
+		super().__init__(*args, **kw_args)
+	
+		self.StringMeasurementValues = StringMeasurementValues
+		
+	def __str__(self):
+		str = 'class=StringMeasurement\n'
+		attributes = self.__dict__
+		for key in attributes.keys():
+			str = str + key + '={}\n'.format(attributes[key])
+		return str

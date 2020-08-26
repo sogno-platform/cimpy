@@ -1,26 +1,26 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from  import Base
 
 
 class SvShuntCompensatorSections(Base):
 	'''
 	State variable for the number of sections in service for a shunt compensator.
 
-	:sections: The number of sections in service as a continous variable. To get integer value scale with ShuntCompensator.bPerSection. Default: 0.0
-	:ShuntCompensator: The shunt compensator for which the state applies. Default: None
+	:sections: The number of sections in service as a continous variable. To get integer value scale with ShuntCompensator.bPerSection. Default: 
+	:ShuntCompensator: The shunt compensator for which the state applies. Default: 
 		'''
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.SV.value, ],
-						'sections': [cgmesProfile.SV.value, ],
-						'ShuntCompensator': [cgmesProfile.SV.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
+						'sections': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
+						'ShuntCompensator': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	
 
-	def __init__(self, sections = 0.0, ShuntCompensator = None,  ):
+	def __init__(self, sections = , ShuntCompensator = ,  ):
 	
 		self.sections = sections
 		self.ShuntCompensator = ShuntCompensator

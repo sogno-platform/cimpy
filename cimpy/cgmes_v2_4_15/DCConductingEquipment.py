@@ -1,24 +1,24 @@
-from cimpy.cgmes_v2_4_15.Equipment import Equipment
+from cimpy.output.Equipment import Equipment
 
 
 class DCConductingEquipment(Equipment):
 	'''
 	The parts of the DC power system that are designed to carry current or that are conductively connected through DC terminals.
 
-	:DCTerminals:  Default: "list"
+	:DCTerminals:  Default: 
 		'''
 
 	cgmesProfile = Equipment.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'DCTerminals': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'DCTerminals': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class Equipment: \n' + Equipment.__doc__ 
 
-	def __init__(self, DCTerminals = "list",  *args, **kw_args):
+	def __init__(self, DCTerminals = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.DCTerminals = DCTerminals

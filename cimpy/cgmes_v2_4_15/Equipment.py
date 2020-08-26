@@ -1,28 +1,28 @@
-from cimpy.cgmes_v2_4_15.PowerSystemResource import PowerSystemResource
+from cimpy.output.PowerSystemResource import PowerSystemResource
 
 
 class Equipment(PowerSystemResource):
 	'''
 	The parts of a power system that are physical devices, electronic or mechanical.
 
-	:aggregate: The single instance of equipment represents multiple pieces of equipment that have been modeled together as an aggregate.  Examples would be power transformers or synchronous machines operating in parallel modeled as a single aggregate power transformer or aggregate synchronous machine.  This is not to be used to indicate equipment that is part of a group of interdependent equipment produced by a network production program. Default: False
-	:EquipmentContainer: Container of this equipment. Default: None
-	:OperationalLimitSet: The operational limit sets associated with this equipment. Default: "list"
+	:aggregate: The single instance of equipment represents multiple pieces of equipment that have been modeled together as an aggregate.  Examples would be power transformers or synchronous machines operating in parallel modeled as a single aggregate power transformer or aggregate synchronous machine.  This is not to be used to indicate equipment that is part of a group of interdependent equipment produced by a network production program. Default: 
+	:EquipmentContainer: Container of this equipment. Default: 
+	:OperationalLimitSet: The operational limit sets associated with this equipment. Default: 
 		'''
 
 	cgmesProfile = PowerSystemResource.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
-						'aggregate': [cgmesProfile.EQ.value, ],
-						'EquipmentContainer': [cgmesProfile.EQ.value, ],
-						'OperationalLimitSet': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
+						'aggregate': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'EquipmentContainer': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
+						'OperationalLimitSet': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PowerSystemResource: \n' + PowerSystemResource.__doc__ 
 
-	def __init__(self, aggregate = False, EquipmentContainer = None, OperationalLimitSet = "list",  *args, **kw_args):
+	def __init__(self, aggregate = , EquipmentContainer = , OperationalLimitSet = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.aggregate = aggregate

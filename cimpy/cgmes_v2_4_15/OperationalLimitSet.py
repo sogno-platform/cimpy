@@ -1,28 +1,28 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from cimpy.output.IdentifiedObject import IdentifiedObject
 
 
 class OperationalLimitSet(IdentifiedObject):
 	'''
 	A set of limits associated with equipment.  Sets of limits might apply to a specific temperature, or season for example. A set of limits may contain different severities of limit levels that would apply to the same equipment. The set may contain limits of different types such as apparent power and current limits or high and low voltage limits  that are logically applied together as a set.
 
-	:Terminal:  Default: None
-	:Equipment: The equipment to which the limit set applies. Default: None
-	:OperationalLimitValue: The limit set to which the limit values belong. Default: "list"
+	:Terminal:  Default: 
+	:Equipment: The equipment to which the limit set applies. Default: 
+	:OperationalLimitValue: The limit set to which the limit values belong. Default: 
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'Terminal': [cgmesProfile.EQ.value, ],
-						'Equipment': [cgmesProfile.EQ.value, ],
-						'OperationalLimitValue': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'Terminal': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'Equipment': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'OperationalLimitValue': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, Terminal = None, Equipment = None, OperationalLimitValue = "list",  *args, **kw_args):
+	def __init__(self, Terminal = , Equipment = , OperationalLimitValue = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Terminal = Terminal

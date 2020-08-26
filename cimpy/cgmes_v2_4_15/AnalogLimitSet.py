@@ -1,0 +1,34 @@
+from cimpy.output.LimitSet import LimitSet
+
+
+class AnalogLimitSet(LimitSet):
+	'''
+	An AnalogLimitSet specifies a set of Limits that are associated with an Analog measurement.
+
+	:Measurements: A measurement may have zero or more limit ranges defined for it. Default: 
+	:Limits: The set of limits. Default: 
+		'''
+
+	cgmesProfile = LimitSet.cgmesProfile
+
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'Measurements': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'Limits': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						 }
+
+	serializationProfile = {}
+
+	__doc__ += '\n Documentation of parent class LimitSet: \n' + LimitSet.__doc__ 
+
+	def __init__(self, Measurements = , Limits = ,  *args, **kw_args):
+		super().__init__(*args, **kw_args)
+	
+		self.Measurements = Measurements
+		self.Limits = Limits
+		
+	def __str__(self):
+		str = 'class=AnalogLimitSet\n'
+		attributes = self.__dict__
+		for key in attributes.keys():
+			str = str + key + '={}\n'.format(attributes[key])
+		return str

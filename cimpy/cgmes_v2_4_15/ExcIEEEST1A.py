@@ -1,60 +1,60 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.output.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcIEEEST1A(ExcitationSystemDynamics):
 	'''
 	The class represents IEEE Std 421.5-2005 type ST1A model. This model represents systems in which excitation power is supplied through a transformer from the generator terminals (or the unit's auxiliary bus) and is regulated by a controlled rectifier.  The maximum exciter voltage available from such systems is directly related to the generator terminal voltage.  Reference: IEEE Standard 421.5-2005 Section 7.1.
 
-	:ilr: Exciter output current limit reference (I).  Typical Value = 0. Default: 0.0
-	:ka: Voltage regulator gain (K).  Typical Value = 190. Default: 0.0
-	:kc: Rectifier loading factor proportional to commutating reactance (K). Typical Value = 0.08. Default: 0.0
-	:kf: Excitation control system stabilizer gains (K).  Typical Value = 0. Default: 0.0
-	:klr: Exciter output current limiter gain (K).  Typical Value = 0. Default: 0.0
-	:pssin: Selector of the Power System Stabilizer (PSS) input (PSSin). true = PSS input (Vs) added to error signal false = PSS input (Vs) added to voltage regulator output. Typical Value = true. Default: False
-	:ta: Voltage regulator time constant (T).  Typical Value = 0. Default: 0
-	:tb: Voltage regulator time constant (T).  Typical Value = 10. Default: 0
-	:tb1: Voltage regulator time constant (T).  Typical Value = 0. Default: 0
-	:tc: Voltage regulator time constant (T).  Typical Value = 1. Default: 0
-	:tc1: Voltage regulator time constant (T).  Typical Value = 0. Default: 0
-	:tf: Excitation control system stabilizer time constant (T).  Typical Value = 1. Default: 0
-	:uelin: Selector of the connection of the UEL input (UELin). Typical Value = ignoreUELsignal. Default: None
-	:vamax: Maximum voltage regulator output (V).  Typical Value = 14.5. Default: 0.0
-	:vamin: Minimum voltage regulator output (V).  Typical Value = -14.5. Default: 0.0
-	:vimax: Maximum voltage regulator input limit (V).  Typical Value = 999. Default: 0.0
-	:vimin: Minimum voltage regulator input limit (V).  Typical Value = -999. Default: 0.0
-	:vrmax: Maximum voltage regulator outputs (V).  Typical Value = 7.8. Default: 0.0
-	:vrmin: Minimum voltage regulator outputs (V).  Typical Value = -6.7. Default: 0.0
+	:ilr: Exciter output current limit reference (I).  Typical Value = 0. Default: 
+	:ka: Voltage regulator gain (K).  Typical Value = 190. Default: 
+	:kc: Rectifier loading factor proportional to commutating reactance (K). Typical Value = 0.08. Default: 
+	:kf: Excitation control system stabilizer gains (K).  Typical Value = 0. Default: 
+	:klr: Exciter output current limiter gain (K).  Typical Value = 0. Default: 
+	:pssin: Selector of the Power System Stabilizer (PSS) input (PSSin). true = PSS input (Vs) added to error signal false = PSS input (Vs) added to voltage regulator output. Typical Value = true. Default: 
+	:ta: Voltage regulator time constant (T).  Typical Value = 0. Default: 
+	:tb: Voltage regulator time constant (T).  Typical Value = 10. Default: 
+	:tb1: Voltage regulator time constant (T).  Typical Value = 0. Default: 
+	:tc: Voltage regulator time constant (T).  Typical Value = 1. Default: 
+	:tc1: Voltage regulator time constant (T).  Typical Value = 0. Default: 
+	:tf: Excitation control system stabilizer time constant (T).  Typical Value = 1. Default: 
+	:uelin: Selector of the connection of the UEL input (UELin). Typical Value = ignoreUELsignal. Default: 
+	:vamax: Maximum voltage regulator output (V).  Typical Value = 14.5. Default: 
+	:vamin: Minimum voltage regulator output (V).  Typical Value = -14.5. Default: 
+	:vimax: Maximum voltage regulator input limit (V).  Typical Value = 999. Default: 
+	:vimin: Minimum voltage regulator input limit (V).  Typical Value = -999. Default: 
+	:vrmax: Maximum voltage regulator outputs (V).  Typical Value = 7.8. Default: 
+	:vrmin: Minimum voltage regulator outputs (V).  Typical Value = -6.7. Default: 
 		'''
 
 	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'ilr': [cgmesProfile.DY.value, ],
-						'ka': [cgmesProfile.DY.value, ],
-						'kc': [cgmesProfile.DY.value, ],
-						'kf': [cgmesProfile.DY.value, ],
-						'klr': [cgmesProfile.DY.value, ],
-						'pssin': [cgmesProfile.DY.value, ],
-						'ta': [cgmesProfile.DY.value, ],
-						'tb': [cgmesProfile.DY.value, ],
-						'tb1': [cgmesProfile.DY.value, ],
-						'tc': [cgmesProfile.DY.value, ],
-						'tc1': [cgmesProfile.DY.value, ],
-						'tf': [cgmesProfile.DY.value, ],
-						'uelin': [cgmesProfile.DY.value, ],
-						'vamax': [cgmesProfile.DY.value, ],
-						'vamin': [cgmesProfile.DY.value, ],
-						'vimax': [cgmesProfile.DY.value, ],
-						'vimin': [cgmesProfile.DY.value, ],
-						'vrmax': [cgmesProfile.DY.value, ],
-						'vrmin': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ilr': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ka': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kc': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'klr': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'pssin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ta': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tb': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tb1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tc': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tc1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'uelin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vamax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vamin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vimax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vimin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vrmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vrmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, ilr = 0.0, ka = 0.0, kc = 0.0, kf = 0.0, klr = 0.0, pssin = False, ta = 0, tb = 0, tb1 = 0, tc = 0, tc1 = 0, tf = 0, uelin = None, vamax = 0.0, vamin = 0.0, vimax = 0.0, vimin = 0.0, vrmax = 0.0, vrmin = 0.0,  *args, **kw_args):
+	def __init__(self, ilr = , ka = , kc = , kf = , klr = , pssin = , ta = , tb = , tb1 = , tc = , tc1 = , tf = , uelin = , vamax = , vamin = , vimax = , vimin = , vrmax = , vrmin = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ilr = ilr

@@ -1,24 +1,24 @@
-from cimpy.cgmes_v2_4_15.EquipmentContainer import EquipmentContainer
+from cimpy.output.EquipmentContainer import EquipmentContainer
 
 
 class Line(EquipmentContainer):
 	'''
 	Contains equipment beyond a substation belonging to a power transmission line.
 
-	:Region: The sub-geographical region of the line. Default: None
+	:Region: The sub-geographical region of the line. Default: 
 		'''
 
 	cgmesProfile = EquipmentContainer.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'Region': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
+						'Region': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class EquipmentContainer: \n' + EquipmentContainer.__doc__ 
 
-	def __init__(self, Region = None,  *args, **kw_args):
+	def __init__(self, Region = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Region = Region

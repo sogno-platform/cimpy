@@ -1,36 +1,36 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from cimpy.output.IdentifiedObject import IdentifiedObject
 
 
 class WindMechIEC(IdentifiedObject):
 	'''
 	Two mass model.  Reference: IEC Standard 61400-27-1 Section 6.6.2.1.
 
-	:WindGenTurbineType3IEC: Wind turbine Type 3 model with which this wind mechanical model is associated. Default: None
-	:cdrt: Drive train damping (. It is type dependent parameter. Default: 0.0
-	:hgen: Inertia constant of generator (). It is type dependent parameter. Default: 0
-	:hwtr: Inertia constant of wind turbine rotor (). It is type dependent parameter. Default: 0
-	:kdrt: Drive train stiffness (). It is type dependent parameter. Default: 0.0
-	:WindTurbineType4bIEC: Wind turbine type 4B model with which this wind mechanical model is associated. Default: None
-	:WindTurbineType1or2IEC: Wind generator type 1 or 2 model with which this wind mechanical model is associated. Default: None
+	:WindGenTurbineType3IEC: Wind turbine Type 3 model with which this wind mechanical model is associated. Default: 
+	:cdrt: Drive train damping (. It is type dependent parameter. Default: 
+	:hgen: Inertia constant of generator (). It is type dependent parameter. Default: 
+	:hwtr: Inertia constant of wind turbine rotor (). It is type dependent parameter. Default: 
+	:kdrt: Drive train stiffness (). It is type dependent parameter. Default: 
+	:WindTurbineType4bIEC: Wind turbine type 4B model with which this wind mechanical model is associated. Default: 
+	:WindTurbineType1or2IEC: Wind generator type 1 or 2 model with which this wind mechanical model is associated. Default: 
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'WindGenTurbineType3IEC': [cgmesProfile.DY.value, ],
-						'cdrt': [cgmesProfile.DY.value, ],
-						'hgen': [cgmesProfile.DY.value, ],
-						'hwtr': [cgmesProfile.DY.value, ],
-						'kdrt': [cgmesProfile.DY.value, ],
-						'WindTurbineType4bIEC': [cgmesProfile.DY.value, ],
-						'WindTurbineType1or2IEC': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'WindGenTurbineType3IEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'cdrt': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'hgen': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'hwtr': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kdrt': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'WindTurbineType4bIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'WindTurbineType1or2IEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, WindGenTurbineType3IEC = None, cdrt = 0.0, hgen = 0, hwtr = 0, kdrt = 0.0, WindTurbineType4bIEC = None, WindTurbineType1or2IEC = None,  *args, **kw_args):
+	def __init__(self, WindGenTurbineType3IEC = , cdrt = , hgen = , hwtr = , kdrt = , WindTurbineType4bIEC = , WindTurbineType1or2IEC = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.WindGenTurbineType3IEC = WindGenTurbineType3IEC

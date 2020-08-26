@@ -1,24 +1,24 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from cimpy.output.IdentifiedObject import IdentifiedObject
 
 
 class DiagramObjectStyle(IdentifiedObject):
 	'''
 	A reference to a style used by the originating system for a diagram object.  A diagram object style describes information such as line thickness, shape such as circle or rectangle etc, and color.
 
-	:StyledObjects: A style can be assigned to multiple diagram objects. Default: "list"
+	:StyledObjects: A style can be assigned to multiple diagram objects. Default: 
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
-						'StyledObjects': [cgmesProfile.DI.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
+						'StyledObjects': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, StyledObjects = "list",  *args, **kw_args):
+	def __init__(self, StyledObjects = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.StyledObjects = StyledObjects

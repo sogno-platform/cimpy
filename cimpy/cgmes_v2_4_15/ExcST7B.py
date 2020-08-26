@@ -1,54 +1,54 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.output.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcST7B(ExcitationSystemDynamics):
 	'''
 	Modified IEEE ST7B static excitation system without stator current limiter (SCL) and current compensator (DROOP) inputs.
 
-	:kh: High-value gate feedback gain (Kh).  Typical Value = 1. Default: 0.0
-	:kia: Voltage regulator integral gain (Kia).  Typical Value = 1. Default: 0.0
-	:kl: Low-value gate feedback gain (Kl).  Typical Value = 1. Default: 0.0
-	:kpa: Voltage regulator proportional gain (Kpa).  Typical Value = 40. Default: 0.0
-	:oelin: OEL input selector (OELin). Typical Value = noOELinput. Default: None
-	:tb: Regulator lag time constant (Tb).  Typical Value = 1. Default: 0
-	:tc: Regulator lead time constant (Tc).  Typical Value = 1. Default: 0
-	:tf: Excitation control system stabilizer time constant (Tf).  Typical Value = 1. Default: 0
-	:tg: Feedback time constant of inner loop field voltage regulator (Tg).  Typical Value = 1. Default: 0
-	:tia: Feedback time constant (Tia).  Typical Value = 3. Default: 0
-	:ts: Rectifier firing time constant (Ts).  Typical Value = 0. Default: 0
-	:uelin: UEL input selector (UELin). Typical Value = noUELinput. Default: None
-	:vmax: Maximum voltage reference signal (Vmax).  Typical Value = 1.1. Default: 0.0
-	:vmin: Minimum voltage reference signal (Vmin).  Typical Value = 0.9. Default: 0.0
-	:vrmax: Maximum voltage regulator output (Vrmax).  Typical Value = 5. Default: 0.0
-	:vrmin: Minimum voltage regulator output (Vrmin).  Typical Value = -4.5. Default: 0.0
+	:kh: High-value gate feedback gain (Kh).  Typical Value = 1. Default: 
+	:kia: Voltage regulator integral gain (Kia).  Typical Value = 1. Default: 
+	:kl: Low-value gate feedback gain (Kl).  Typical Value = 1. Default: 
+	:kpa: Voltage regulator proportional gain (Kpa).  Typical Value = 40. Default: 
+	:oelin: OEL input selector (OELin). Typical Value = noOELinput. Default: 
+	:tb: Regulator lag time constant (Tb).  Typical Value = 1. Default: 
+	:tc: Regulator lead time constant (Tc).  Typical Value = 1. Default: 
+	:tf: Excitation control system stabilizer time constant (Tf).  Typical Value = 1. Default: 
+	:tg: Feedback time constant of inner loop field voltage regulator (Tg).  Typical Value = 1. Default: 
+	:tia: Feedback time constant (Tia).  Typical Value = 3. Default: 
+	:ts: Rectifier firing time constant (Ts).  Typical Value = 0. Default: 
+	:uelin: UEL input selector (UELin). Typical Value = noUELinput. Default: 
+	:vmax: Maximum voltage reference signal (Vmax).  Typical Value = 1.1. Default: 
+	:vmin: Minimum voltage reference signal (Vmin).  Typical Value = 0.9. Default: 
+	:vrmax: Maximum voltage regulator output (Vrmax).  Typical Value = 5. Default: 
+	:vrmin: Minimum voltage regulator output (Vrmin).  Typical Value = -4.5. Default: 
 		'''
 
 	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'kh': [cgmesProfile.DY.value, ],
-						'kia': [cgmesProfile.DY.value, ],
-						'kl': [cgmesProfile.DY.value, ],
-						'kpa': [cgmesProfile.DY.value, ],
-						'oelin': [cgmesProfile.DY.value, ],
-						'tb': [cgmesProfile.DY.value, ],
-						'tc': [cgmesProfile.DY.value, ],
-						'tf': [cgmesProfile.DY.value, ],
-						'tg': [cgmesProfile.DY.value, ],
-						'tia': [cgmesProfile.DY.value, ],
-						'ts': [cgmesProfile.DY.value, ],
-						'uelin': [cgmesProfile.DY.value, ],
-						'vmax': [cgmesProfile.DY.value, ],
-						'vmin': [cgmesProfile.DY.value, ],
-						'vrmax': [cgmesProfile.DY.value, ],
-						'vrmin': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kh': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kia': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kl': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kpa': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'oelin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tb': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tc': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tg': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tia': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ts': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'uelin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vrmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vrmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, kh = 0.0, kia = 0.0, kl = 0.0, kpa = 0.0, oelin = None, tb = 0, tc = 0, tf = 0, tg = 0, tia = 0, ts = 0, uelin = None, vmax = 0.0, vmin = 0.0, vrmax = 0.0, vrmin = 0.0,  *args, **kw_args):
+	def __init__(self, kh = , kia = , kl = , kpa = , oelin = , tb = , tc = , tf = , tg = , tia = , ts = , uelin = , vmax = , vmin = , vrmax = , vrmin = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.kh = kh

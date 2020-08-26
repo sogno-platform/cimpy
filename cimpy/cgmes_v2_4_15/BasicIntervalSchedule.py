@@ -1,28 +1,28 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from cimpy.output.IdentifiedObject import IdentifiedObject
 
 
 class BasicIntervalSchedule(IdentifiedObject):
 	'''
 	Schedule of values at points in time.
 
-	:startTime: The time for the first time point. Default: ''
-	:value1Unit: Value1 units of measure. Default: None
-	:value2Unit: Value2 units of measure. Default: None
+	:startTime: The time for the first time point. Default: 
+	:value1Unit: Value1 units of measure. Default: 
+	:value2Unit: Value2 units of measure. Default: 
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'startTime': [cgmesProfile.EQ.value, ],
-						'value1Unit': [cgmesProfile.EQ.value, ],
-						'value2Unit': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'startTime': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'value1Unit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'value2Unit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, startTime = '', value1Unit = None, value2Unit = None,  *args, **kw_args):
+	def __init__(self, startTime = , value1Unit = , value2Unit = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.startTime = startTime

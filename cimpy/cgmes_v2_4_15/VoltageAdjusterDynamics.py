@@ -1,24 +1,24 @@
-from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.output.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class VoltageAdjusterDynamics(DynamicsFunctionBlock):
 	'''
 	Voltage adjuster function block whose behaviour is described by reference to a standard model
 
-	:PFVArControllerType1Dynamics: Power Factor or VAr controller Type I model with which this voltage adjuster is associated. Default: None
+	:PFVArControllerType1Dynamics: Power Factor or VAr controller Type I model with which this voltage adjuster is associated. Default: 
 		'''
 
 	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'PFVArControllerType1Dynamics': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'PFVArControllerType1Dynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class DynamicsFunctionBlock: \n' + DynamicsFunctionBlock.__doc__ 
 
-	def __init__(self, PFVArControllerType1Dynamics = None,  *args, **kw_args):
+	def __init__(self, PFVArControllerType1Dynamics = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.PFVArControllerType1Dynamics = PFVArControllerType1Dynamics

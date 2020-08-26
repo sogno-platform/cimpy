@@ -1,26 +1,26 @@
-from cimpy.cgmes_v2_4_15.TapChangerTablePoint import TapChangerTablePoint
+from cimpy.output.TapChangerTablePoint import TapChangerTablePoint
 
 
 class PhaseTapChangerTablePoint(TapChangerTablePoint):
 	'''
 	Describes each tap step in the phase tap changer tabular curve.
 
-	:PhaseTapChangerTable: The table of this point. Default: None
-	:angle: The angle difference in degrees. Default: 0.0
+	:PhaseTapChangerTable: The table of this point. Default: 
+	:angle: The angle difference in degrees. Default: 
 		'''
 
 	cgmesProfile = TapChangerTablePoint.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'PhaseTapChangerTable': [cgmesProfile.EQ.value, ],
-						'angle': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'PhaseTapChangerTable': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'angle': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class TapChangerTablePoint: \n' + TapChangerTablePoint.__doc__ 
 
-	def __init__(self, PhaseTapChangerTable = None, angle = 0.0,  *args, **kw_args):
+	def __init__(self, PhaseTapChangerTable = , angle = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.PhaseTapChangerTable = PhaseTapChangerTable

@@ -1,30 +1,30 @@
-from cimpy.cgmes_v2_4_15.MechanicalLoadDynamics import MechanicalLoadDynamics
+from cimpy.output.MechanicalLoadDynamics import MechanicalLoadDynamics
 
 
 class MechLoad1(MechanicalLoadDynamics):
 	'''
 	Mechanical load model type 1.
 
-	:a: Speed squared coefficient (a). Default: 0.0
-	:b: Speed coefficient (b). Default: 0.0
-	:d: Speed to the exponent coefficient (d). Default: 0.0
-	:e: Exponent (e). Default: 0.0
+	:a: Speed squared coefficient (a). Default: 
+	:b: Speed coefficient (b). Default: 
+	:d: Speed to the exponent coefficient (d). Default: 
+	:e: Exponent (e). Default: 
 		'''
 
 	cgmesProfile = MechanicalLoadDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'a': [cgmesProfile.DY.value, ],
-						'b': [cgmesProfile.DY.value, ],
-						'd': [cgmesProfile.DY.value, ],
-						'e': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'b': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'e': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class MechanicalLoadDynamics: \n' + MechanicalLoadDynamics.__doc__ 
 
-	def __init__(self, a = 0.0, b = 0.0, d = 0.0, e = 0.0,  *args, **kw_args):
+	def __init__(self, a = , b = , d = , e = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.a = a

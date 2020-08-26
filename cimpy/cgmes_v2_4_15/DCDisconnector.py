@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.DCSwitch import DCSwitch
+from cimpy.output.DCSwitch import DCSwitch
 
 
 class DCDisconnector(DCSwitch):
@@ -9,7 +9,7 @@ class DCDisconnector(DCSwitch):
 
 	cgmesProfile = DCSwitch.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}

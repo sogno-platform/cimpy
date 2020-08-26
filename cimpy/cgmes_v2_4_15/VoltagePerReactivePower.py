@@ -1,32 +1,32 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from  import Base
 
 
 class VoltagePerReactivePower(Base):
 	'''
 	Voltage variation with reactive power.
 
-	:value:  Default: 0.0
-	:unit:  Default: None
-	:denominatorMultiplier:  Default: None
-	:multiplier:  Default: None
-	:denominatorUnit:  Default: None
+	:value:  Default: 
+	:unit:  Default: 
+	:denominatorMultiplier:  Default: 
+	:multiplier:  Default: 
+	:denominatorUnit:  Default: 
 		'''
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'value': [cgmesProfile.EQ.value, ],
-						'unit': [cgmesProfile.EQ.value, ],
-						'denominatorMultiplier': [cgmesProfile.EQ.value, ],
-						'multiplier': [cgmesProfile.EQ.value, ],
-						'denominatorUnit': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'value': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'unit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'denominatorMultiplier': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'multiplier': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'denominatorUnit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	
 
-	def __init__(self, value = 0.0, unit = None, denominatorMultiplier = None, multiplier = None, denominatorUnit = None,  ):
+	def __init__(self, value = , unit = , denominatorMultiplier = , multiplier = , denominatorUnit = ,  ):
 	
 		self.value = value
 		self.unit = unit

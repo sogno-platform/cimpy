@@ -1,28 +1,28 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from  import Base
 
 
 class SvVoltage(Base):
 	'''
 	State variable for voltage.
 
-	:angle: The voltage angle of the topological node complex voltage with respect to system reference. Default: 0.0
-	:v: The voltage magnitude of the topological node. Default: 0.0
-	:TopologicalNode: The state voltage associated with the topological node. Default: None
+	:angle: The voltage angle of the topological node complex voltage with respect to system reference. Default: 
+	:v: The voltage magnitude of the topological node. Default: 
+	:TopologicalNode: The state voltage associated with the topological node. Default: 
 		'''
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.SV.value, ],
-						'angle': [cgmesProfile.SV.value, ],
-						'v': [cgmesProfile.SV.value, ],
-						'TopologicalNode': [cgmesProfile.SV.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
+						'angle': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
+						'v': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
+						'TopologicalNode': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	
 
-	def __init__(self, angle = 0.0, v = 0.0, TopologicalNode = None,  ):
+	def __init__(self, angle = , v = , TopologicalNode = ,  ):
 	
 		self.angle = angle
 		self.v = v

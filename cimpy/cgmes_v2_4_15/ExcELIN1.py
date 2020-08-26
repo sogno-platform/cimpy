@@ -1,52 +1,52 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.output.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcELIN1(ExcitationSystemDynamics):
 	'''
 	Static PI transformer fed excitation system: ELIN (VATECH) - simplified model.  This model represents an all-static excitation system. A PI voltage controller establishes a desired field current set point for a proportional current controller. The integrator of the PI controller has a follow-up input to match its signal to the present field current.  A power system stabilizer with power input is included in the model.
 
-	:tfi: Current transducer time constant (Tfi).  Typical Value = 0. Default: 0
-	:tnu: Controller reset time constant (Tnu).  Typical Value = 2. Default: 0
-	:vpu: Voltage controller proportional gain (Vpu).  Typical Value = 34.5. Default: 0.0
-	:vpi: Current controller gain (Vpi).  Typical Value = 12.45. Default: 0.0
-	:vpnf: Controller follow up gain (Vpnf).  Typical Value = 2. Default: 0.0
-	:dpnf: Controller follow up dead band (Dpnf).  Typical Value = 0. Default: 0.0
-	:tsw: Stabilizer parameters (Tsw).  Typical Value = 3. Default: 0
-	:efmin: Minimum open circuit excitation voltage (Efmin).  Typical Value = -5. Default: 0.0
-	:efmax: Maximum open circuit excitation voltage (Efmax).  Typical Value = 5. Default: 0.0
-	:xe: Excitation transformer effective reactance (Xe) (>=0).  Xe represents the regulation of the transformer/rectifier unit.  Typical Value = 0.06. Default: 0.0
-	:ks1: Stabilizer Gain 1 (Ks1).  Typical Value = 0. Default: 0.0
-	:ks2: Stabilizer Gain 2 (Ks2).  Typical Value = 0. Default: 0.0
-	:ts1: Stabilizer Phase Lag Time Constant (Ts1).  Typical Value = 1. Default: 0
-	:ts2: Stabilizer Filter Time Constant (Ts2).  Typical Value = 1. Default: 0
-	:smax: Stabilizer Limit Output (smax).  Typical Value = 0.1. Default: 0.0
+	:tfi: Current transducer time constant (Tfi).  Typical Value = 0. Default: 
+	:tnu: Controller reset time constant (Tnu).  Typical Value = 2. Default: 
+	:vpu: Voltage controller proportional gain (Vpu).  Typical Value = 34.5. Default: 
+	:vpi: Current controller gain (Vpi).  Typical Value = 12.45. Default: 
+	:vpnf: Controller follow up gain (Vpnf).  Typical Value = 2. Default: 
+	:dpnf: Controller follow up dead band (Dpnf).  Typical Value = 0. Default: 
+	:tsw: Stabilizer parameters (Tsw).  Typical Value = 3. Default: 
+	:efmin: Minimum open circuit excitation voltage (Efmin).  Typical Value = -5. Default: 
+	:efmax: Maximum open circuit excitation voltage (Efmax).  Typical Value = 5. Default: 
+	:xe: Excitation transformer effective reactance (Xe) (>=0).  Xe represents the regulation of the transformer/rectifier unit.  Typical Value = 0.06. Default: 
+	:ks1: Stabilizer Gain 1 (Ks1).  Typical Value = 0. Default: 
+	:ks2: Stabilizer Gain 2 (Ks2).  Typical Value = 0. Default: 
+	:ts1: Stabilizer Phase Lag Time Constant (Ts1).  Typical Value = 1. Default: 
+	:ts2: Stabilizer Filter Time Constant (Ts2).  Typical Value = 1. Default: 
+	:smax: Stabilizer Limit Output (smax).  Typical Value = 0.1. Default: 
 		'''
 
 	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'tfi': [cgmesProfile.DY.value, ],
-						'tnu': [cgmesProfile.DY.value, ],
-						'vpu': [cgmesProfile.DY.value, ],
-						'vpi': [cgmesProfile.DY.value, ],
-						'vpnf': [cgmesProfile.DY.value, ],
-						'dpnf': [cgmesProfile.DY.value, ],
-						'tsw': [cgmesProfile.DY.value, ],
-						'efmin': [cgmesProfile.DY.value, ],
-						'efmax': [cgmesProfile.DY.value, ],
-						'xe': [cgmesProfile.DY.value, ],
-						'ks1': [cgmesProfile.DY.value, ],
-						'ks2': [cgmesProfile.DY.value, ],
-						'ts1': [cgmesProfile.DY.value, ],
-						'ts2': [cgmesProfile.DY.value, ],
-						'smax': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tfi': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tnu': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vpu': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vpi': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vpnf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'dpnf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tsw': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'efmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'efmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'xe': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ks1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ks2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ts1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ts2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'smax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, tfi = 0, tnu = 0, vpu = 0.0, vpi = 0.0, vpnf = 0.0, dpnf = 0.0, tsw = 0, efmin = 0.0, efmax = 0.0, xe = 0.0, ks1 = 0.0, ks2 = 0.0, ts1 = 0, ts2 = 0, smax = 0.0,  *args, **kw_args):
+	def __init__(self, tfi = , tnu = , vpu = , vpi = , vpnf = , dpnf = , tsw = , efmin = , efmax = , xe = , ks1 = , ks2 = , ts1 = , ts2 = , smax = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.tfi = tfi

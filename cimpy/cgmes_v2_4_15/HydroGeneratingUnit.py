@@ -1,26 +1,26 @@
-from cimpy.cgmes_v2_4_15.GeneratingUnit import GeneratingUnit
+from cimpy.output.GeneratingUnit import GeneratingUnit
 
 
 class HydroGeneratingUnit(GeneratingUnit):
 	'''
 	A generating unit whose prime mover is a hydraulic turbine (e.g., Francis, Pelton, Kaplan).
 
-	:energyConversionCapability: Energy conversion capability for generating. Default: None
-	:HydroPowerPlant: The hydro generating unit belongs to a hydro power plant. Default: None
+	:energyConversionCapability: Energy conversion capability for generating. Default: 
+	:HydroPowerPlant: The hydro generating unit belongs to a hydro power plant. Default: 
 		'''
 
 	cgmesProfile = GeneratingUnit.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
-						'energyConversionCapability': [cgmesProfile.EQ.value, ],
-						'HydroPowerPlant': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+						'energyConversionCapability': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'HydroPowerPlant': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class GeneratingUnit: \n' + GeneratingUnit.__doc__ 
 
-	def __init__(self, energyConversionCapability = None, HydroPowerPlant = None,  *args, **kw_args):
+	def __init__(self, energyConversionCapability = , HydroPowerPlant = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.energyConversionCapability = energyConversionCapability

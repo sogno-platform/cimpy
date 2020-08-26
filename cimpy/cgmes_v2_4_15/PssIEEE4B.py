@@ -1,156 +1,156 @@
-from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.output.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class PssIEEE4B(PowerSystemStabilizerDynamics):
 	'''
 	The class represents IEEE Std 421.5-2005 type PSS2B power system stabilizer model. The PSS4B model represents a structure based on multiple working frequency bands. Three separate bands, respectively dedicated to the low-, intermediate- and high-frequency modes of oscillations, are used in this delta-omega (speed input) PSS.  Reference: IEEE 4B 421.5-2005 Section 8.4.
 
-	:bwh1: Notch filter 1 (high-frequency band): Three dB bandwidth (B). Default: 0.0
-	:bwh2: Notch filter 2 (high-frequency band): Three dB bandwidth (B). Default: 0.0
-	:bwl1: Notch filter 1 (low-frequency band): Three dB bandwidth (B). Default: 0.0
-	:bwl2: Notch filter 2 (low-frequency band): Three dB bandwidth (B). Default: 0.0
-	:kh: High band gain (K).  Typical Value = 120. Default: 0.0
-	:kh1: High band differential filter gain (K).  Typical Value = 66. Default: 0.0
-	:kh11: High band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 0.0
-	:kh17: High band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 0.0
-	:kh2: High band differential filter gain (K).  Typical Value = 66. Default: 0.0
-	:ki: Intermediate band gain (K).  Typical Value = 30. Default: 0.0
-	:ki1: Intermediate band differential filter gain (K).  Typical Value = 66. Default: 0.0
-	:ki11: Intermediate band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 0.0
-	:ki17: Intermediate band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 0.0
-	:ki2: Intermediate band differential filter gain (K).  Typical Value = 66. Default: 0.0
-	:kl: Low band gain (K).  Typical Value = 7.5. Default: 0.0
-	:kl1: Low band differential filter gain (K).  Typical Value = 66. Default: 0.0
-	:kl11: Low band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 0.0
-	:kl17: Low band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 0.0
-	:kl2: Low band differential filter gain (K).  Typical Value = 66. Default: 0.0
-	:omeganh1: Notch filter 1 (high-frequency band): filter frequency (omega). Default: 0.0
-	:omeganh2: Notch filter 2 (high-frequency band): filter frequency (omega). Default: 0.0
-	:omeganl1: Notch filter 1 (low-frequency band): filter frequency (omega). Default: 0.0
-	:omeganl2: Notch filter 2 (low-frequency band): filter frequency (omega). Default: 0.0
-	:th1: High band time constant (T).  Typical Value = 0.01513. Default: 0
-	:th10: High band time constant (T).  Typical Value = 0. Default: 0
-	:th11: High band time constant (T).  Typical Value = 0. Default: 0
-	:th12: High band time constant (T).  Typical Value = 0. Default: 0
-	:th2: High band time constant (T).  Typical Value = 0.01816. Default: 0
-	:th3: High band time constant (T).  Typical Value = 0. Default: 0
-	:th4: High band time constant (T).  Typical Value = 0. Default: 0
-	:th5: High band time constant (T).  Typical Value = 0. Default: 0
-	:th6: High band time constant (T).  Typical Value = 0. Default: 0
-	:th7: High band time constant (T).  Typical Value = 0.01816. Default: 0
-	:th8: High band time constant (T).  Typical Value = 0.02179. Default: 0
-	:th9: High band time constant (T).  Typical Value = 0. Default: 0
-	:ti1: Intermediate band time constant (T).  Typical Value = 0.173. Default: 0
-	:ti10: Intermediate band time constant (T).  Typical Value = 0. Default: 0
-	:ti11: Intermediate band time constant (T).  Typical Value = 0. Default: 0
-	:ti12: Intermediate band time constant (T).  Typical Value = 0. Default: 0
-	:ti2: Intermediate band time constant (T).  Typical Value = 0.2075. Default: 0
-	:ti3: Intermediate band time constant (T).  Typical Value = 0. Default: 0
-	:ti4: Intermediate band time constant (T).  Typical Value = 0. Default: 0
-	:ti5: Intermediate band time constant (T).  Typical Value = 0. Default: 0
-	:ti6: Intermediate band time constant (T).  Typical Value = 0. Default: 0
-	:ti7: Intermediate band time constant (T).  Typical Value = 0.2075. Default: 0
-	:ti8: Intermediate band time constant (T).  Typical Value = 0.2491. Default: 0
-	:ti9: Intermediate band time constant (T).  Typical Value = 0. Default: 0
-	:tl1: Low band time constant (T).  Typical Value = 1.73. Default: 0
-	:tl10: Low band time constant (T).  Typical Value = 0. Default: 0
-	:tl11: Low band time constant (T).  Typical Value = 0. Default: 0
-	:tl12: Low band time constant (T).  Typical Value = 0. Default: 0
-	:tl2: Low band time constant (T).  Typical Value = 2.075. Default: 0
-	:tl3: Low band time constant (T).  Typical Value = 0. Default: 0
-	:tl4: Low band time constant (T).  Typical Value = 0. Default: 0
-	:tl5: Low band time constant (T).  Typical Value = 0. Default: 0
-	:tl6: Low band time constant (T).  Typical Value = 0. Default: 0
-	:tl7: Low band time constant (T).  Typical Value = 2.075. Default: 0
-	:tl8: Low band time constant (T).  Typical Value = 2.491. Default: 0
-	:tl9: Low band time constant (T).  Typical Value = 0. Default: 0
-	:vhmax: High band output maximum limit (V).  Typical Value = 0.6. Default: 0.0
-	:vhmin: High band output minimum limit (V).  Typical Value = -0.6. Default: 0.0
-	:vimax: Intermediate band output maximum limit (V).  Typical Value = 0.6. Default: 0.0
-	:vimin: Intermediate band output minimum limit (V).  Typical Value = -0.6. Default: 0.0
-	:vlmax: Low band output maximum limit (V).  Typical Value = 0.075. Default: 0.0
-	:vlmin: Low band output minimum limit (V).  Typical Value = -0.075. Default: 0.0
-	:vstmax: PSS output maximum limit (V).  Typical Value = 0.15. Default: 0.0
-	:vstmin: PSS output minimum limit (V).  Typical Value = -0.15. Default: 0.0
+	:bwh1: Notch filter 1 (high-frequency band): Three dB bandwidth (B). Default: 
+	:bwh2: Notch filter 2 (high-frequency band): Three dB bandwidth (B). Default: 
+	:bwl1: Notch filter 1 (low-frequency band): Three dB bandwidth (B). Default: 
+	:bwl2: Notch filter 2 (low-frequency band): Three dB bandwidth (B). Default: 
+	:kh: High band gain (K).  Typical Value = 120. Default: 
+	:kh1: High band differential filter gain (K).  Typical Value = 66. Default: 
+	:kh11: High band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 
+	:kh17: High band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 
+	:kh2: High band differential filter gain (K).  Typical Value = 66. Default: 
+	:ki: Intermediate band gain (K).  Typical Value = 30. Default: 
+	:ki1: Intermediate band differential filter gain (K).  Typical Value = 66. Default: 
+	:ki11: Intermediate band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 
+	:ki17: Intermediate band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 
+	:ki2: Intermediate band differential filter gain (K).  Typical Value = 66. Default: 
+	:kl: Low band gain (K).  Typical Value = 7.5. Default: 
+	:kl1: Low band differential filter gain (K).  Typical Value = 66. Default: 
+	:kl11: Low band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 
+	:kl17: Low band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 
+	:kl2: Low band differential filter gain (K).  Typical Value = 66. Default: 
+	:omeganh1: Notch filter 1 (high-frequency band): filter frequency (omega). Default: 
+	:omeganh2: Notch filter 2 (high-frequency band): filter frequency (omega). Default: 
+	:omeganl1: Notch filter 1 (low-frequency band): filter frequency (omega). Default: 
+	:omeganl2: Notch filter 2 (low-frequency band): filter frequency (omega). Default: 
+	:th1: High band time constant (T).  Typical Value = 0.01513. Default: 
+	:th10: High band time constant (T).  Typical Value = 0. Default: 
+	:th11: High band time constant (T).  Typical Value = 0. Default: 
+	:th12: High band time constant (T).  Typical Value = 0. Default: 
+	:th2: High band time constant (T).  Typical Value = 0.01816. Default: 
+	:th3: High band time constant (T).  Typical Value = 0. Default: 
+	:th4: High band time constant (T).  Typical Value = 0. Default: 
+	:th5: High band time constant (T).  Typical Value = 0. Default: 
+	:th6: High band time constant (T).  Typical Value = 0. Default: 
+	:th7: High band time constant (T).  Typical Value = 0.01816. Default: 
+	:th8: High band time constant (T).  Typical Value = 0.02179. Default: 
+	:th9: High band time constant (T).  Typical Value = 0. Default: 
+	:ti1: Intermediate band time constant (T).  Typical Value = 0.173. Default: 
+	:ti10: Intermediate band time constant (T).  Typical Value = 0. Default: 
+	:ti11: Intermediate band time constant (T).  Typical Value = 0. Default: 
+	:ti12: Intermediate band time constant (T).  Typical Value = 0. Default: 
+	:ti2: Intermediate band time constant (T).  Typical Value = 0.2075. Default: 
+	:ti3: Intermediate band time constant (T).  Typical Value = 0. Default: 
+	:ti4: Intermediate band time constant (T).  Typical Value = 0. Default: 
+	:ti5: Intermediate band time constant (T).  Typical Value = 0. Default: 
+	:ti6: Intermediate band time constant (T).  Typical Value = 0. Default: 
+	:ti7: Intermediate band time constant (T).  Typical Value = 0.2075. Default: 
+	:ti8: Intermediate band time constant (T).  Typical Value = 0.2491. Default: 
+	:ti9: Intermediate band time constant (T).  Typical Value = 0. Default: 
+	:tl1: Low band time constant (T).  Typical Value = 1.73. Default: 
+	:tl10: Low band time constant (T).  Typical Value = 0. Default: 
+	:tl11: Low band time constant (T).  Typical Value = 0. Default: 
+	:tl12: Low band time constant (T).  Typical Value = 0. Default: 
+	:tl2: Low band time constant (T).  Typical Value = 2.075. Default: 
+	:tl3: Low band time constant (T).  Typical Value = 0. Default: 
+	:tl4: Low band time constant (T).  Typical Value = 0. Default: 
+	:tl5: Low band time constant (T).  Typical Value = 0. Default: 
+	:tl6: Low band time constant (T).  Typical Value = 0. Default: 
+	:tl7: Low band time constant (T).  Typical Value = 2.075. Default: 
+	:tl8: Low band time constant (T).  Typical Value = 2.491. Default: 
+	:tl9: Low band time constant (T).  Typical Value = 0. Default: 
+	:vhmax: High band output maximum limit (V).  Typical Value = 0.6. Default: 
+	:vhmin: High band output minimum limit (V).  Typical Value = -0.6. Default: 
+	:vimax: Intermediate band output maximum limit (V).  Typical Value = 0.6. Default: 
+	:vimin: Intermediate band output minimum limit (V).  Typical Value = -0.6. Default: 
+	:vlmax: Low band output maximum limit (V).  Typical Value = 0.075. Default: 
+	:vlmin: Low band output minimum limit (V).  Typical Value = -0.075. Default: 
+	:vstmax: PSS output maximum limit (V).  Typical Value = 0.15. Default: 
+	:vstmin: PSS output minimum limit (V).  Typical Value = -0.15. Default: 
 		'''
 
 	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'bwh1': [cgmesProfile.DY.value, ],
-						'bwh2': [cgmesProfile.DY.value, ],
-						'bwl1': [cgmesProfile.DY.value, ],
-						'bwl2': [cgmesProfile.DY.value, ],
-						'kh': [cgmesProfile.DY.value, ],
-						'kh1': [cgmesProfile.DY.value, ],
-						'kh11': [cgmesProfile.DY.value, ],
-						'kh17': [cgmesProfile.DY.value, ],
-						'kh2': [cgmesProfile.DY.value, ],
-						'ki': [cgmesProfile.DY.value, ],
-						'ki1': [cgmesProfile.DY.value, ],
-						'ki11': [cgmesProfile.DY.value, ],
-						'ki17': [cgmesProfile.DY.value, ],
-						'ki2': [cgmesProfile.DY.value, ],
-						'kl': [cgmesProfile.DY.value, ],
-						'kl1': [cgmesProfile.DY.value, ],
-						'kl11': [cgmesProfile.DY.value, ],
-						'kl17': [cgmesProfile.DY.value, ],
-						'kl2': [cgmesProfile.DY.value, ],
-						'omeganh1': [cgmesProfile.DY.value, ],
-						'omeganh2': [cgmesProfile.DY.value, ],
-						'omeganl1': [cgmesProfile.DY.value, ],
-						'omeganl2': [cgmesProfile.DY.value, ],
-						'th1': [cgmesProfile.DY.value, ],
-						'th10': [cgmesProfile.DY.value, ],
-						'th11': [cgmesProfile.DY.value, ],
-						'th12': [cgmesProfile.DY.value, ],
-						'th2': [cgmesProfile.DY.value, ],
-						'th3': [cgmesProfile.DY.value, ],
-						'th4': [cgmesProfile.DY.value, ],
-						'th5': [cgmesProfile.DY.value, ],
-						'th6': [cgmesProfile.DY.value, ],
-						'th7': [cgmesProfile.DY.value, ],
-						'th8': [cgmesProfile.DY.value, ],
-						'th9': [cgmesProfile.DY.value, ],
-						'ti1': [cgmesProfile.DY.value, ],
-						'ti10': [cgmesProfile.DY.value, ],
-						'ti11': [cgmesProfile.DY.value, ],
-						'ti12': [cgmesProfile.DY.value, ],
-						'ti2': [cgmesProfile.DY.value, ],
-						'ti3': [cgmesProfile.DY.value, ],
-						'ti4': [cgmesProfile.DY.value, ],
-						'ti5': [cgmesProfile.DY.value, ],
-						'ti6': [cgmesProfile.DY.value, ],
-						'ti7': [cgmesProfile.DY.value, ],
-						'ti8': [cgmesProfile.DY.value, ],
-						'ti9': [cgmesProfile.DY.value, ],
-						'tl1': [cgmesProfile.DY.value, ],
-						'tl10': [cgmesProfile.DY.value, ],
-						'tl11': [cgmesProfile.DY.value, ],
-						'tl12': [cgmesProfile.DY.value, ],
-						'tl2': [cgmesProfile.DY.value, ],
-						'tl3': [cgmesProfile.DY.value, ],
-						'tl4': [cgmesProfile.DY.value, ],
-						'tl5': [cgmesProfile.DY.value, ],
-						'tl6': [cgmesProfile.DY.value, ],
-						'tl7': [cgmesProfile.DY.value, ],
-						'tl8': [cgmesProfile.DY.value, ],
-						'tl9': [cgmesProfile.DY.value, ],
-						'vhmax': [cgmesProfile.DY.value, ],
-						'vhmin': [cgmesProfile.DY.value, ],
-						'vimax': [cgmesProfile.DY.value, ],
-						'vimin': [cgmesProfile.DY.value, ],
-						'vlmax': [cgmesProfile.DY.value, ],
-						'vlmin': [cgmesProfile.DY.value, ],
-						'vstmax': [cgmesProfile.DY.value, ],
-						'vstmin': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'bwh1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'bwh2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'bwl1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'bwl2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kh': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kh1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kh11': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kh17': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kh2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ki': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ki1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ki11': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ki17': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ki2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kl': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kl1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kl11': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kl17': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kl2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'omeganh1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'omeganh2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'omeganl1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'omeganl2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'th1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'th10': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'th11': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'th12': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'th2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'th3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'th4': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'th5': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'th6': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'th7': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'th8': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'th9': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ti1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ti10': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ti11': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ti12': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ti2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ti3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ti4': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ti5': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ti6': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ti7': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ti8': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ti9': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tl1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tl10': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tl11': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tl12': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tl2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tl3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tl4': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tl5': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tl6': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tl7': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tl8': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tl9': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vhmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vhmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vimax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vimin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vlmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vlmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vstmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vstmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, bwh1 = 0.0, bwh2 = 0.0, bwl1 = 0.0, bwl2 = 0.0, kh = 0.0, kh1 = 0.0, kh11 = 0.0, kh17 = 0.0, kh2 = 0.0, ki = 0.0, ki1 = 0.0, ki11 = 0.0, ki17 = 0.0, ki2 = 0.0, kl = 0.0, kl1 = 0.0, kl11 = 0.0, kl17 = 0.0, kl2 = 0.0, omeganh1 = 0.0, omeganh2 = 0.0, omeganl1 = 0.0, omeganl2 = 0.0, th1 = 0, th10 = 0, th11 = 0, th12 = 0, th2 = 0, th3 = 0, th4 = 0, th5 = 0, th6 = 0, th7 = 0, th8 = 0, th9 = 0, ti1 = 0, ti10 = 0, ti11 = 0, ti12 = 0, ti2 = 0, ti3 = 0, ti4 = 0, ti5 = 0, ti6 = 0, ti7 = 0, ti8 = 0, ti9 = 0, tl1 = 0, tl10 = 0, tl11 = 0, tl12 = 0, tl2 = 0, tl3 = 0, tl4 = 0, tl5 = 0, tl6 = 0, tl7 = 0, tl8 = 0, tl9 = 0, vhmax = 0.0, vhmin = 0.0, vimax = 0.0, vimin = 0.0, vlmax = 0.0, vlmin = 0.0, vstmax = 0.0, vstmin = 0.0,  *args, **kw_args):
+	def __init__(self, bwh1 = , bwh2 = , bwl1 = , bwl2 = , kh = , kh1 = , kh11 = , kh17 = , kh2 = , ki = , ki1 = , ki11 = , ki17 = , ki2 = , kl = , kl1 = , kl11 = , kl17 = , kl2 = , omeganh1 = , omeganh2 = , omeganl1 = , omeganl2 = , th1 = , th10 = , th11 = , th12 = , th2 = , th3 = , th4 = , th5 = , th6 = , th7 = , th8 = , th9 = , ti1 = , ti10 = , ti11 = , ti12 = , ti2 = , ti3 = , ti4 = , ti5 = , ti6 = , ti7 = , ti8 = , ti9 = , tl1 = , tl10 = , tl11 = , tl12 = , tl2 = , tl3 = , tl4 = , tl5 = , tl6 = , tl7 = , tl8 = , tl9 = , vhmax = , vhmin = , vimax = , vimin = , vlmax = , vlmin = , vstmax = , vstmin = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.bwh1 = bwh1

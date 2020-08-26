@@ -1,24 +1,24 @@
-from cimpy.cgmes_v2_4_15.WindGenType4IEC import WindGenType4IEC
+from cimpy.output.WindGenType4IEC import WindGenType4IEC
 
 
 class WindTurbineType4aIEC(WindGenType4IEC):
 	'''
 	Wind turbine IEC Type 4A.  Reference: IEC Standard 61400-27-1, section 6.5.5.2.
 
-	:WindContPType4aIEC: Wind control P type 4A model associated with this wind turbine type 4A model. Default: None
+	:WindContPType4aIEC: Wind control P type 4A model associated with this wind turbine type 4A model. Default: 
 		'''
 
 	cgmesProfile = WindGenType4IEC.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'WindContPType4aIEC': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'WindContPType4aIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class WindGenType4IEC: \n' + WindGenType4IEC.__doc__ 
 
-	def __init__(self, WindContPType4aIEC = None,  *args, **kw_args):
+	def __init__(self, WindContPType4aIEC = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.WindContPType4aIEC = WindContPType4aIEC

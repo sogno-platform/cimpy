@@ -1,34 +1,34 @@
-from cimpy.cgmes_v2_4_15.UnderexcitationLimiterDynamics import UnderexcitationLimiterDynamics
+from cimpy.output.UnderexcitationLimiterDynamics import UnderexcitationLimiterDynamics
 
 
 class UnderexcLimX1(UnderexcitationLimiterDynamics):
 	'''
 	
 
-	:kf2: Differential gain (Kf2). Default: 0.0
-	:tf2: Differential time constant (Tf2) (>0). Default: 0
-	:km: Minimum excitation limit gain (Km). Default: 0.0
-	:tm: Minimum excitation limit time constant (Tm). Default: 0
-	:melmax: Minimum excitation limit value (MELMAX). Default: 0.0
-	:k: Minimum excitation limit slope (K) (>0). Default: 0.0
+	:kf2: Differential gain (Kf2). Default: 
+	:tf2: Differential time constant (Tf2) (>0). Default: 
+	:km: Minimum excitation limit gain (Km). Default: 
+	:tm: Minimum excitation limit time constant (Tm). Default: 
+	:melmax: Minimum excitation limit value (MELMAX). Default: 
+	:k: Minimum excitation limit slope (K) (>0). Default: 
 		'''
 
 	cgmesProfile = UnderexcitationLimiterDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'kf2': [cgmesProfile.DY.value, ],
-						'tf2': [cgmesProfile.DY.value, ],
-						'km': [cgmesProfile.DY.value, ],
-						'tm': [cgmesProfile.DY.value, ],
-						'melmax': [cgmesProfile.DY.value, ],
-						'k': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kf2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tf2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'km': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tm': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'melmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'k': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class UnderexcitationLimiterDynamics: \n' + UnderexcitationLimiterDynamics.__doc__ 
 
-	def __init__(self, kf2 = 0.0, tf2 = 0, km = 0.0, tm = 0, melmax = 0.0, k = 0.0,  *args, **kw_args):
+	def __init__(self, kf2 = , tf2 = , km = , tm = , melmax = , k = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.kf2 = kf2

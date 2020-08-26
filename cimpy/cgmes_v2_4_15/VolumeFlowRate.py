@@ -1,32 +1,32 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from  import Base
 
 
 class VolumeFlowRate(Base):
 	'''
 	Volume per time.
 
-	:denominatorMultiplier:  Default: None
-	:denominatorUnit:  Default: None
-	:multiplier:  Default: None
-	:unit:  Default: None
-	:value:  Default: 0.0
+	:denominatorMultiplier:  Default: 
+	:denominatorUnit:  Default: 
+	:multiplier:  Default: 
+	:unit:  Default: 
+	:value:  Default: 
 		'''
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'denominatorMultiplier': [cgmesProfile.DY.value, ],
-						'denominatorUnit': [cgmesProfile.DY.value, ],
-						'multiplier': [cgmesProfile.DY.value, ],
-						'unit': [cgmesProfile.DY.value, ],
-						'value': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'denominatorMultiplier': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'denominatorUnit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'multiplier': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'unit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'value': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	
 
-	def __init__(self, denominatorMultiplier = None, denominatorUnit = None, multiplier = None, unit = None, value = 0.0,  ):
+	def __init__(self, denominatorMultiplier = , denominatorUnit = , multiplier = , unit = , value = ,  ):
 	
 		self.denominatorMultiplier = denominatorMultiplier
 		self.denominatorUnit = denominatorUnit

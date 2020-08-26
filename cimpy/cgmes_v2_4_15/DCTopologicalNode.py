@@ -1,30 +1,30 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from cimpy.output.IdentifiedObject import IdentifiedObject
 
 
 class DCTopologicalNode(IdentifiedObject):
 	'''
 	DC bus.
 
-	:DCTopologicalIsland:  Default: None
-	:DCTerminals: See association end Terminal.TopologicalNode. Default: "list"
-	:DCEquipmentContainer:  Default: None
-	:DCNodes: See association end ConnectivityNode.TopologicalNode. Default: "list"
+	:DCTopologicalIsland:  Default: 
+	:DCTerminals: See association end Terminal.TopologicalNode. Default: 
+	:DCEquipmentContainer:  Default: 
+	:DCNodes: See association end ConnectivityNode.TopologicalNode. Default: 
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.SV.value, cgmesProfile.TP.value, ],
-						'DCTopologicalIsland': [cgmesProfile.SV.value, ],
-						'DCTerminals': [cgmesProfile.TP.value, ],
-						'DCEquipmentContainer': [cgmesProfile.TP.value, ],
-						'DCNodes': [cgmesProfile.TP.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
+						'DCTopologicalIsland': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
+						'DCTerminals': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
+						'DCEquipmentContainer': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
+						'DCNodes': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, DCTopologicalIsland = None, DCTerminals = "list", DCEquipmentContainer = None, DCNodes = "list",  *args, **kw_args):
+	def __init__(self, DCTopologicalIsland = , DCTerminals = , DCEquipmentContainer = , DCNodes = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.DCTopologicalIsland = DCTopologicalIsland

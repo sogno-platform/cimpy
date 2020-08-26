@@ -1,66 +1,66 @@
-from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.output.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class Pss1A(PowerSystemStabilizerDynamics):
 	'''
 	Single input power system stabilizer. It is a modified version in order to allow representation of various vendors' implementations on PSS type 1A.
 
-	:inputSignalType: Type of input signal. Default: None
-	:a1: Notch filter parameter (A1). Default: 0.0
-	:a2: Notch filter parameter (A2). Default: 0.0
-	:t1: Lead/lag time constant (T1). Default: 0
-	:t2: Lead/lag time constant (T2). Default: 0
-	:t3: Lead/lag time constant (T3). Default: 0
-	:t4: Lead/lag time constant (T4). Default: 0
-	:t5: Washout time constant (T5). Default: 0
-	:t6: Transducer time constant (T6). Default: 0
-	:ks: Stabilizer gain (Ks). Default: 0.0
-	:vrmax: Maximum stabilizer output (Vrmax). Default: 0.0
-	:vrmin: Minimum stabilizer output (Vrmin). Default: 0.0
-	:vcu: Stabilizer input cutoff threshold (Vcu). Default: 0.0
-	:vcl: Stabilizer input cutoff threshold (Vcl). Default: 0.0
-	:a3: Notch filter parameter (A3). Default: 0.0
-	:a4: Notch filter parameter (A4). Default: 0.0
-	:a5: Notch filter parameter (A5). Default: 0.0
-	:a6: Notch filter parameter (A6). Default: 0.0
-	:a7: Notch filter parameter (A7). Default: 0.0
-	:a8: Notch filter parameter (A8). Default: 0.0
-	:kd: Selector (Kd).  true = e used false = e not used. Default: False
-	:tdelay: Time constant (Tdelay). Default: 0
+	:inputSignalType: Type of input signal. Default: 
+	:a1: Notch filter parameter (A1). Default: 
+	:a2: Notch filter parameter (A2). Default: 
+	:t1: Lead/lag time constant (T1). Default: 
+	:t2: Lead/lag time constant (T2). Default: 
+	:t3: Lead/lag time constant (T3). Default: 
+	:t4: Lead/lag time constant (T4). Default: 
+	:t5: Washout time constant (T5). Default: 
+	:t6: Transducer time constant (T6). Default: 
+	:ks: Stabilizer gain (Ks). Default: 
+	:vrmax: Maximum stabilizer output (Vrmax). Default: 
+	:vrmin: Minimum stabilizer output (Vrmin). Default: 
+	:vcu: Stabilizer input cutoff threshold (Vcu). Default: 
+	:vcl: Stabilizer input cutoff threshold (Vcl). Default: 
+	:a3: Notch filter parameter (A3). Default: 
+	:a4: Notch filter parameter (A4). Default: 
+	:a5: Notch filter parameter (A5). Default: 
+	:a6: Notch filter parameter (A6). Default: 
+	:a7: Notch filter parameter (A7). Default: 
+	:a8: Notch filter parameter (A8). Default: 
+	:kd: Selector (Kd).  true = e used false = e not used. Default: 
+	:tdelay: Time constant (Tdelay). Default: 
 		'''
 
 	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'inputSignalType': [cgmesProfile.DY.value, ],
-						'a1': [cgmesProfile.DY.value, ],
-						'a2': [cgmesProfile.DY.value, ],
-						't1': [cgmesProfile.DY.value, ],
-						't2': [cgmesProfile.DY.value, ],
-						't3': [cgmesProfile.DY.value, ],
-						't4': [cgmesProfile.DY.value, ],
-						't5': [cgmesProfile.DY.value, ],
-						't6': [cgmesProfile.DY.value, ],
-						'ks': [cgmesProfile.DY.value, ],
-						'vrmax': [cgmesProfile.DY.value, ],
-						'vrmin': [cgmesProfile.DY.value, ],
-						'vcu': [cgmesProfile.DY.value, ],
-						'vcl': [cgmesProfile.DY.value, ],
-						'a3': [cgmesProfile.DY.value, ],
-						'a4': [cgmesProfile.DY.value, ],
-						'a5': [cgmesProfile.DY.value, ],
-						'a6': [cgmesProfile.DY.value, ],
-						'a7': [cgmesProfile.DY.value, ],
-						'a8': [cgmesProfile.DY.value, ],
-						'kd': [cgmesProfile.DY.value, ],
-						'tdelay': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'inputSignalType': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't4': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't5': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't6': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ks': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vrmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vrmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vcu': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vcl': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a4': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a5': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a6': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a7': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a8': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tdelay': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, inputSignalType = None, a1 = 0.0, a2 = 0.0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, t5 = 0, t6 = 0, ks = 0.0, vrmax = 0.0, vrmin = 0.0, vcu = 0.0, vcl = 0.0, a3 = 0.0, a4 = 0.0, a5 = 0.0, a6 = 0.0, a7 = 0.0, a8 = 0.0, kd = False, tdelay = 0,  *args, **kw_args):
+	def __init__(self, inputSignalType = , a1 = , a2 = , t1 = , t2 = , t3 = , t4 = , t5 = , t6 = , ks = , vrmax = , vrmin = , vcu = , vcl = , a3 = , a4 = , a5 = , a6 = , a7 = , a8 = , kd = , tdelay = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.inputSignalType = inputSignalType

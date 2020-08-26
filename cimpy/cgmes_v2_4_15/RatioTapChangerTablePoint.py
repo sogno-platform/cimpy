@@ -1,24 +1,24 @@
-from cimpy.cgmes_v2_4_15.TapChangerTablePoint import TapChangerTablePoint
+from cimpy.output.TapChangerTablePoint import TapChangerTablePoint
 
 
 class RatioTapChangerTablePoint(TapChangerTablePoint):
 	'''
 	Describes each tap step in the ratio tap changer tabular curve.
 
-	:RatioTapChangerTable: Points of this table. Default: None
+	:RatioTapChangerTable: Points of this table. Default: 
 		'''
 
 	cgmesProfile = TapChangerTablePoint.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'RatioTapChangerTable': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'RatioTapChangerTable': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class TapChangerTablePoint: \n' + TapChangerTablePoint.__doc__ 
 
-	def __init__(self, RatioTapChangerTable = None,  *args, **kw_args):
+	def __init__(self, RatioTapChangerTable = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.RatioTapChangerTable = RatioTapChangerTable

@@ -1,60 +1,60 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.output.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcIEEEDC4B(ExcitationSystemDynamics):
 	'''
 	The class represents IEEE Std 421.5-2005 type DC4B model. These excitation systems utilize a field-controlled dc commutator exciter with a continuously acting voltage regulator having supplies obtained from the generator or auxiliary bus.  Reference: IEEE Standard 421.5-2005 Section 5.4.
 
-	:ka: Voltage regulator gain (K).  Typical Value = 1. Default: 0.0
-	:ta: Voltage regulator time constant (T).  Typical Value = 0.2. Default: 0
-	:kp: Regulator proportional gain (K).  Typical Value = 20. Default: 0.0
-	:ki: Regulator integral gain (K).  Typical Value = 20. Default: 0.0
-	:kd: Regulator derivative gain (K).  Typical Value = 20. Default: 0.0
-	:td: Regulator derivative filter time constant(T).  Typical Value = 0.01. Default: 0
-	:vrmax: Maximum voltage regulator output (V).  Typical Value = 2.7. Default: 0.0
-	:vrmin: Minimum voltage regulator output (V).  Typical Value = -0.9. Default: 0.0
-	:ke: Exciter constant related to self-excited field (K).  Typical Value = 1. Default: 0.0
-	:te: Exciter time constant, integration rate associated with exciter control (T).  Typical Value = 0.8. Default: 0
-	:kf: Excitation control system stabilizer gain (K).  Typical Value = 0. Default: 0.0
-	:tf: Excitation control system stabilizer time constant (T).  Typical Value = 1. Default: 0
-	:efd1: Exciter voltage at which exciter saturation is defined (E).  Typical Value = 1.75. Default: 0.0
-	:seefd1: Exciter saturation function value at the corresponding exciter voltage, E (S[E]).  Typical Value = 0.08. Default: 0.0
-	:efd2: Exciter voltage at which exciter saturation is defined (E).  Typical Value = 2.33. Default: 0.0
-	:seefd2: Exciter saturation function value at the corresponding exciter voltage, E (S[E]).  Typical Value = 0.27. Default: 0.0
-	:vemin: Minimum exciter voltage output(V).  Typical Value = 0. Default: 0.0
-	:oelin: OEL input (OELin). true = LV gate false = subtract from error signal. Typical Value = true. Default: False
-	:uelin: UEL input (UELin). true = HV gate false = add to error signal. Typical Value = true. Default: False
+	:ka: Voltage regulator gain (K).  Typical Value = 1. Default: 
+	:ta: Voltage regulator time constant (T).  Typical Value = 0.2. Default: 
+	:kp: Regulator proportional gain (K).  Typical Value = 20. Default: 
+	:ki: Regulator integral gain (K).  Typical Value = 20. Default: 
+	:kd: Regulator derivative gain (K).  Typical Value = 20. Default: 
+	:td: Regulator derivative filter time constant(T).  Typical Value = 0.01. Default: 
+	:vrmax: Maximum voltage regulator output (V).  Typical Value = 2.7. Default: 
+	:vrmin: Minimum voltage regulator output (V).  Typical Value = -0.9. Default: 
+	:ke: Exciter constant related to self-excited field (K).  Typical Value = 1. Default: 
+	:te: Exciter time constant, integration rate associated with exciter control (T).  Typical Value = 0.8. Default: 
+	:kf: Excitation control system stabilizer gain (K).  Typical Value = 0. Default: 
+	:tf: Excitation control system stabilizer time constant (T).  Typical Value = 1. Default: 
+	:efd1: Exciter voltage at which exciter saturation is defined (E).  Typical Value = 1.75. Default: 
+	:seefd1: Exciter saturation function value at the corresponding exciter voltage, E (S[E]).  Typical Value = 0.08. Default: 
+	:efd2: Exciter voltage at which exciter saturation is defined (E).  Typical Value = 2.33. Default: 
+	:seefd2: Exciter saturation function value at the corresponding exciter voltage, E (S[E]).  Typical Value = 0.27. Default: 
+	:vemin: Minimum exciter voltage output(V).  Typical Value = 0. Default: 
+	:oelin: OEL input (OELin). true = LV gate false = subtract from error signal. Typical Value = true. Default: 
+	:uelin: UEL input (UELin). true = HV gate false = add to error signal. Typical Value = true. Default: 
 		'''
 
 	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'ka': [cgmesProfile.DY.value, ],
-						'ta': [cgmesProfile.DY.value, ],
-						'kp': [cgmesProfile.DY.value, ],
-						'ki': [cgmesProfile.DY.value, ],
-						'kd': [cgmesProfile.DY.value, ],
-						'td': [cgmesProfile.DY.value, ],
-						'vrmax': [cgmesProfile.DY.value, ],
-						'vrmin': [cgmesProfile.DY.value, ],
-						'ke': [cgmesProfile.DY.value, ],
-						'te': [cgmesProfile.DY.value, ],
-						'kf': [cgmesProfile.DY.value, ],
-						'tf': [cgmesProfile.DY.value, ],
-						'efd1': [cgmesProfile.DY.value, ],
-						'seefd1': [cgmesProfile.DY.value, ],
-						'efd2': [cgmesProfile.DY.value, ],
-						'seefd2': [cgmesProfile.DY.value, ],
-						'vemin': [cgmesProfile.DY.value, ],
-						'oelin': [cgmesProfile.DY.value, ],
-						'uelin': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ka': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ta': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kp': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ki': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'td': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vrmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vrmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ke': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'te': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'efd1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'seefd1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'efd2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'seefd2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vemin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'oelin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'uelin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, ka = 0.0, ta = 0, kp = 0.0, ki = 0.0, kd = 0.0, td = 0, vrmax = 0.0, vrmin = 0.0, ke = 0.0, te = 0, kf = 0.0, tf = 0, efd1 = 0.0, seefd1 = 0.0, efd2 = 0.0, seefd2 = 0.0, vemin = 0.0, oelin = False, uelin = False,  *args, **kw_args):
+	def __init__(self, ka = , ta = , kp = , ki = , kd = , td = , vrmax = , vrmin = , ke = , te = , kf = , tf = , efd1 = , seefd1 = , efd2 = , seefd2 = , vemin = , oelin = , uelin = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ka = ka

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.GeneratingUnit import GeneratingUnit
+from cimpy.output.GeneratingUnit import GeneratingUnit
 
 
 class NuclearGeneratingUnit(GeneratingUnit):
@@ -9,7 +9,7 @@ class NuclearGeneratingUnit(GeneratingUnit):
 
 	cgmesProfile = GeneratingUnit.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
 						 }
 
 	serializationProfile = {}

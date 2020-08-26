@@ -1,30 +1,30 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from cimpy.output.IdentifiedObject import IdentifiedObject
 
 
 class OperationalLimitType(IdentifiedObject):
 	'''
 	The operational meaning of a category of limits.
 
-	:OperationalLimit: The operational limits associated with this type of limit. Default: "list"
-	:acceptableDuration: The nominal acceptable duration of the limit.  Limits are commonly expressed in terms of the a time limit for which the limit is normally acceptable.   The actual acceptable duration of a specific limit may depend on other local factors such as temperature or wind speed. Default: 0
-	:limitType: Types of limits defined in the ENTSO-E Operational Handbook Policy 3. Default: None
-	:direction: The direction of the limit. Default: None
+	:OperationalLimit: The operational limits associated with this type of limit. Default: 
+	:acceptableDuration: The nominal acceptable duration of the limit.  Limits are commonly expressed in terms of the a time limit for which the limit is normally acceptable.   The actual acceptable duration of a specific limit may depend on other local factors such as temperature or wind speed. Default: 
+	:limitType: Types of limits defined in the ENTSO-E Operational Handbook Policy 3. Default: 
+	:direction: The direction of the limit. Default: 
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'OperationalLimit': [cgmesProfile.EQ.value, ],
-						'acceptableDuration': [cgmesProfile.EQ.value, ],
-						'limitType': [cgmesProfile.EQ.value, ],
-						'direction': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'OperationalLimit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'acceptableDuration': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'limitType': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'direction': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, OperationalLimit = "list", acceptableDuration = 0, limitType = None, direction = None,  *args, **kw_args):
+	def __init__(self, OperationalLimit = , acceptableDuration = , limitType = , direction = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.OperationalLimit = OperationalLimit

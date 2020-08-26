@@ -1,24 +1,24 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from cimpy.output.IdentifiedObject import IdentifiedObject
 
 
 class DCTopologicalIsland(IdentifiedObject):
 	'''
 	An electrically connected subset of the network. DC topological islands can change as the current network state changes: e.g. due to  - disconnect switches or breakers change state in a SCADA/EMS - manual creation, change or deletion of topological nodes in a planning tool.
 
-	:DCTopologicalNodes:  Default: "list"
+	:DCTopologicalNodes:  Default: 
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.SV.value, ],
-						'DCTopologicalNodes': [cgmesProfile.SV.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
+						'DCTopologicalNodes': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, DCTopologicalNodes = "list",  *args, **kw_args):
+	def __init__(self, DCTopologicalNodes = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.DCTopologicalNodes = DCTopologicalNodes

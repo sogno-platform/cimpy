@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.ConductingEquipment import ConductingEquipment
+from cimpy.output.ConductingEquipment import ConductingEquipment
 
 
 class Connector(ConductingEquipment):
@@ -9,7 +9,7 @@ class Connector(ConductingEquipment):
 
 	cgmesProfile = ConductingEquipment.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
 						 }
 
 	serializationProfile = {}

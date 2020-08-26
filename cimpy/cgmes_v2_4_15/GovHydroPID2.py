@@ -1,66 +1,66 @@
-from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.output.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovHydroPID2(TurbineGovernorDynamics):
 	'''
 	Hydro turbine and governor. Represents plants with straight forward penstock configurations and "three term" electro-hydraulic governors (i.e. Woodard electronic).
 
-	:mwbase: Base for power values (MWbase) (>0).  Unit = MW. Default: 0.0
-	:treg: Speed detector time constant (Treg).  Typical Value = 0. Default: 0
-	:rperm: Permanent drop (Rperm).  Typical Value = 0. Default: 0.0
-	:kp: Proportional gain (Kp).  Typical Value = 0. Default: 0.0
-	:ki: Reset gain (Ki).  Unit = PU/ sec.  Typical Value = 0. Default: 0.0
-	:kd: Derivative gain (Kd).  Typical Value = 0. Default: 0.0
-	:ta: Controller time constant (Ta) (>0).  Typical Value = 0. Default: 0
-	:tb: Gate servo time constant (Tb) (>0).  Typical Value = 0. Default: 0
-	:velmax: Maximum gate opening velocity (Velmax).  Unit = PU/sec.  Typical Value = 0. Default: 0.0
-	:velmin: Maximum gate closing velocity (Velmin).  Unit = PU/sec.  Typical Value = 0. Default: 0.0
-	:gmax: Maximum gate opening (Gmax).  Typical Value = 0. Default: 0.0
-	:gmin: Minimum gate opening (Gmin).  Typical Value = 0. Default: 0.0
-	:tw: Water inertia time constant (Tw) (>0).  Typical Value = 0. Default: 0
-	:d: Turbine damping factor (D).  Unit = delta P / delta speed.  Typical Value = 0. Default: 0.0
-	:g0: Gate opening at speed no load (G0).  Typical Value = 0. Default: 0.0
-	:g1: Intermediate gate opening (G1).  Typical Value = 0. Default: 0.0
-	:p1: Power at gate opening G1 (P1).  Typical Value = 0. Default: 0.0
-	:g2: Intermediate gate opening (G2).  Typical Value = 0. Default: 0.0
-	:p2: Power at gate opening G2 (P2).  Typical Value = 0. Default: 0.0
-	:p3: Power at full opened gate (P3).  Typical Value = 0. Default: 0.0
-	:atw: Factor multiplying Tw (Atw).  Typical Value = 0. Default: 0.0
-	:feedbackSignal: Feedback signal type flag (Flag). true = use gate position feedback signal false = use Pe. Default: False
+	:mwbase: Base for power values (MWbase) (>0).  Unit = MW. Default: 
+	:treg: Speed detector time constant (Treg).  Typical Value = 0. Default: 
+	:rperm: Permanent drop (Rperm).  Typical Value = 0. Default: 
+	:kp: Proportional gain (Kp).  Typical Value = 0. Default: 
+	:ki: Reset gain (Ki).  Unit = PU/ sec.  Typical Value = 0. Default: 
+	:kd: Derivative gain (Kd).  Typical Value = 0. Default: 
+	:ta: Controller time constant (Ta) (>0).  Typical Value = 0. Default: 
+	:tb: Gate servo time constant (Tb) (>0).  Typical Value = 0. Default: 
+	:velmax: Maximum gate opening velocity (Velmax).  Unit = PU/sec.  Typical Value = 0. Default: 
+	:velmin: Maximum gate closing velocity (Velmin).  Unit = PU/sec.  Typical Value = 0. Default: 
+	:gmax: Maximum gate opening (Gmax).  Typical Value = 0. Default: 
+	:gmin: Minimum gate opening (Gmin).  Typical Value = 0. Default: 
+	:tw: Water inertia time constant (Tw) (>0).  Typical Value = 0. Default: 
+	:d: Turbine damping factor (D).  Unit = delta P / delta speed.  Typical Value = 0. Default: 
+	:g0: Gate opening at speed no load (G0).  Typical Value = 0. Default: 
+	:g1: Intermediate gate opening (G1).  Typical Value = 0. Default: 
+	:p1: Power at gate opening G1 (P1).  Typical Value = 0. Default: 
+	:g2: Intermediate gate opening (G2).  Typical Value = 0. Default: 
+	:p2: Power at gate opening G2 (P2).  Typical Value = 0. Default: 
+	:p3: Power at full opened gate (P3).  Typical Value = 0. Default: 
+	:atw: Factor multiplying Tw (Atw).  Typical Value = 0. Default: 
+	:feedbackSignal: Feedback signal type flag (Flag). true = use gate position feedback signal false = use Pe. Default: 
 		'''
 
 	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'mwbase': [cgmesProfile.DY.value, ],
-						'treg': [cgmesProfile.DY.value, ],
-						'rperm': [cgmesProfile.DY.value, ],
-						'kp': [cgmesProfile.DY.value, ],
-						'ki': [cgmesProfile.DY.value, ],
-						'kd': [cgmesProfile.DY.value, ],
-						'ta': [cgmesProfile.DY.value, ],
-						'tb': [cgmesProfile.DY.value, ],
-						'velmax': [cgmesProfile.DY.value, ],
-						'velmin': [cgmesProfile.DY.value, ],
-						'gmax': [cgmesProfile.DY.value, ],
-						'gmin': [cgmesProfile.DY.value, ],
-						'tw': [cgmesProfile.DY.value, ],
-						'd': [cgmesProfile.DY.value, ],
-						'g0': [cgmesProfile.DY.value, ],
-						'g1': [cgmesProfile.DY.value, ],
-						'p1': [cgmesProfile.DY.value, ],
-						'g2': [cgmesProfile.DY.value, ],
-						'p2': [cgmesProfile.DY.value, ],
-						'p3': [cgmesProfile.DY.value, ],
-						'atw': [cgmesProfile.DY.value, ],
-						'feedbackSignal': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'mwbase': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'treg': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'rperm': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kp': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ki': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ta': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tb': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'velmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'velmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'gmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'gmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tw': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'g0': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'g1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'p1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'g2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'p2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'p3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'atw': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'feedbackSignal': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 
-	def __init__(self, mwbase = 0.0, treg = 0, rperm = 0.0, kp = 0.0, ki = 0.0, kd = 0.0, ta = 0, tb = 0, velmax = 0.0, velmin = 0.0, gmax = 0.0, gmin = 0.0, tw = 0, d = 0.0, g0 = 0.0, g1 = 0.0, p1 = 0.0, g2 = 0.0, p2 = 0.0, p3 = 0.0, atw = 0.0, feedbackSignal = False,  *args, **kw_args):
+	def __init__(self, mwbase = , treg = , rperm = , kp = , ki = , kd = , ta = , tb = , velmax = , velmin = , gmax = , gmin = , tw = , d = , g0 = , g1 = , p1 = , g2 = , p2 = , p3 = , atw = , feedbackSignal = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.mwbase = mwbase

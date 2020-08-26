@@ -1,26 +1,26 @@
-from cimpy.cgmes_v2_4_15.LoadGroup import LoadGroup
+from cimpy.output.LoadGroup import LoadGroup
 
 
 class ConformLoadGroup(LoadGroup):
 	'''
 	A group of loads conforming to an allocation pattern.
 
-	:EnergyConsumers: Conform loads assigned to this ConformLoadGroup. Default: "list"
-	:ConformLoadSchedules: The ConformLoadSchedules in the ConformLoadGroup. Default: "list"
+	:EnergyConsumers: Conform loads assigned to this ConformLoadGroup. Default: 
+	:ConformLoadSchedules: The ConformLoadSchedules in the ConformLoadGroup. Default: 
 		'''
 
 	cgmesProfile = LoadGroup.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'EnergyConsumers': [cgmesProfile.EQ.value, ],
-						'ConformLoadSchedules': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'EnergyConsumers': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'ConformLoadSchedules': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class LoadGroup: \n' + LoadGroup.__doc__ 
 
-	def __init__(self, EnergyConsumers = "list", ConformLoadSchedules = "list",  *args, **kw_args):
+	def __init__(self, EnergyConsumers = , ConformLoadSchedules = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.EnergyConsumers = EnergyConsumers

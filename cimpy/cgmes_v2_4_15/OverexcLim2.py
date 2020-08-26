@@ -1,30 +1,30 @@
-from cimpy.cgmes_v2_4_15.OverexcitationLimiterDynamics import OverexcitationLimiterDynamics
+from cimpy.output.OverexcitationLimiterDynamics import OverexcitationLimiterDynamics
 
 
 class OverexcLim2(OverexcitationLimiterDynamics):
 	'''
 	Different from LimIEEEOEL, LimOEL2 has a fixed pickup threshold and reduces the excitation set-point by mean of non-windup integral regulator. Irated is the rated machine excitation current (calculated from nameplate conditions: V, P, CosPhi).
 
-	:koi: Gain Over excitation limiter (K).  Typical Value = 0.1. Default: 0.0
-	:voimax: Maximum error signal (V).  Typical Value = 0. Default: 0.0
-	:voimin: Minimum error signal (V).  Typical Value = -9999. Default: 0.0
-	:ifdlim: Limit value of rated field current (I).  Typical Value = 1.05. Default: 0.0
+	:koi: Gain Over excitation limiter (K).  Typical Value = 0.1. Default: 
+	:voimax: Maximum error signal (V).  Typical Value = 0. Default: 
+	:voimin: Minimum error signal (V).  Typical Value = -9999. Default: 
+	:ifdlim: Limit value of rated field current (I).  Typical Value = 1.05. Default: 
 		'''
 
 	cgmesProfile = OverexcitationLimiterDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'koi': [cgmesProfile.DY.value, ],
-						'voimax': [cgmesProfile.DY.value, ],
-						'voimin': [cgmesProfile.DY.value, ],
-						'ifdlim': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'koi': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'voimax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'voimin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ifdlim': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class OverexcitationLimiterDynamics: \n' + OverexcitationLimiterDynamics.__doc__ 
 
-	def __init__(self, koi = 0.0, voimax = 0.0, voimin = 0.0, ifdlim = 0.0,  *args, **kw_args):
+	def __init__(self, koi = , voimax = , voimin = , ifdlim = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.koi = koi

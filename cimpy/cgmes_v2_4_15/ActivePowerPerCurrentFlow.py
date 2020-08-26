@@ -1,32 +1,32 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from  import Base
 
 
 class ActivePowerPerCurrentFlow(Base):
 	'''
 	
 
-	:denominatorMultiplier:  Default: None
-	:denominatorUnit:  Default: None
-	:multiplier:  Default: None
-	:unit:  Default: None
-	:value:  Default: 0.0
+	:denominatorMultiplier:  Default: 
+	:denominatorUnit:  Default: 
+	:multiplier:  Default: 
+	:unit:  Default: 
+	:value:  Default: 
 		'''
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'denominatorMultiplier': [cgmesProfile.EQ.value, ],
-						'denominatorUnit': [cgmesProfile.EQ.value, ],
-						'multiplier': [cgmesProfile.EQ.value, ],
-						'unit': [cgmesProfile.EQ.value, ],
-						'value': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'denominatorMultiplier': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'denominatorUnit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'multiplier': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'unit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'value': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	
 
-	def __init__(self, denominatorMultiplier = None, denominatorUnit = None, multiplier = None, unit = None, value = 0.0,  ):
+	def __init__(self, denominatorMultiplier = , denominatorUnit = , multiplier = , unit = , value = ,  ):
 	
 		self.denominatorMultiplier = denominatorMultiplier
 		self.denominatorUnit = denominatorUnit

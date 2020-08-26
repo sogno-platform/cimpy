@@ -1,24 +1,24 @@
-from cimpy.cgmes_v2_4_15.GeneratingUnit import GeneratingUnit
+from cimpy.output.GeneratingUnit import GeneratingUnit
 
 
 class ThermalGeneratingUnit(GeneratingUnit):
 	'''
 	A generating unit whose prime mover could be a steam turbine, combustion turbine, or diesel engine.
 
-	:FossilFuels: A thermal generating unit may have one or more fossil fuels. Default: "list"
+	:FossilFuels: A thermal generating unit may have one or more fossil fuels. Default: 
 		'''
 
 	cgmesProfile = GeneratingUnit.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
-						'FossilFuels': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+						'FossilFuels': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class GeneratingUnit: \n' + GeneratingUnit.__doc__ 
 
-	def __init__(self, FossilFuels = "list",  *args, **kw_args):
+	def __init__(self, FossilFuels = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.FossilFuels = FossilFuels

@@ -1,32 +1,32 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from cimpy.output.IdentifiedObject import IdentifiedObject
 
 
 class WindContPType4bIEC(IdentifiedObject):
 	'''
 	P control model Type 4B.  Reference: IEC Standard 61400-27-1 Section 6.6.5.5.
 
-	:dpmax: Maximum wind turbine power ramp rate (). It is project dependent parameter. Default: 0.0
-	:tpaero: Time constant in aerodynamic power response (). It is type dependent parameter. Default: 0
-	:tpord: Time constant in power order lag (). It is type dependent parameter. Default: 0
-	:tufilt: Voltage measurement filter time constant (). It is type dependent parameter. Default: 0
-	:WindTurbineType4bIEC: Wind turbine type 4B model with which this wind control P type 4B model is associated. Default: None
+	:dpmax: Maximum wind turbine power ramp rate (). It is project dependent parameter. Default: 
+	:tpaero: Time constant in aerodynamic power response (). It is type dependent parameter. Default: 
+	:tpord: Time constant in power order lag (). It is type dependent parameter. Default: 
+	:tufilt: Voltage measurement filter time constant (). It is type dependent parameter. Default: 
+	:WindTurbineType4bIEC: Wind turbine type 4B model with which this wind control P type 4B model is associated. Default: 
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'dpmax': [cgmesProfile.DY.value, ],
-						'tpaero': [cgmesProfile.DY.value, ],
-						'tpord': [cgmesProfile.DY.value, ],
-						'tufilt': [cgmesProfile.DY.value, ],
-						'WindTurbineType4bIEC': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'dpmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tpaero': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tpord': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tufilt': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'WindTurbineType4bIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, dpmax = 0.0, tpaero = 0, tpord = 0, tufilt = 0, WindTurbineType4bIEC = None,  *args, **kw_args):
+	def __init__(self, dpmax = , tpaero = , tpord = , tufilt = , WindTurbineType4bIEC = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.dpmax = dpmax

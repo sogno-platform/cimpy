@@ -1,32 +1,32 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from cimpy.output.IdentifiedObject import IdentifiedObject
 
 
 class Curve(IdentifiedObject):
 	'''
 	A multi-purpose curve or functional relationship between an independent variable (X-axis) and dependent (Y-axis) variables.
 
-	:curveStyle: The style or shape of the curve. Default: None
-	:xUnit: The X-axis units of measure. Default: None
-	:y1Unit: The Y1-axis units of measure. Default: None
-	:y2Unit: The Y2-axis units of measure. Default: None
-	:CurveDatas: The curve of  this curve data point. Default: "list"
+	:curveStyle: The style or shape of the curve. Default: 
+	:xUnit: The X-axis units of measure. Default: 
+	:y1Unit: The Y1-axis units of measure. Default: 
+	:y2Unit: The Y2-axis units of measure. Default: 
+	:CurveDatas: The curve of  this curve data point. Default: 
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'curveStyle': [cgmesProfile.EQ.value, ],
-						'xUnit': [cgmesProfile.EQ.value, ],
-						'y1Unit': [cgmesProfile.EQ.value, ],
-						'y2Unit': [cgmesProfile.EQ.value, ],
-						'CurveDatas': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'curveStyle': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'xUnit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'y1Unit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'y2Unit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'CurveDatas': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, curveStyle = None, xUnit = None, y1Unit = None, y2Unit = None, CurveDatas = "list",  *args, **kw_args):
+	def __init__(self, curveStyle = , xUnit = , y1Unit = , y2Unit = , CurveDatas = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.curveStyle = curveStyle

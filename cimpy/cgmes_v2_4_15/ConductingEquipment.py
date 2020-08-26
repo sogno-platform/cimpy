@@ -1,32 +1,32 @@
-from cimpy.cgmes_v2_4_15.Equipment import Equipment
+from cimpy.output.Equipment import Equipment
 
 
 class ConductingEquipment(Equipment):
 	'''
 	The parts of the AC power system that are designed to carry current or that are conductively connected through terminals.
 
-	:Terminals: Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes. Default: "list"
-	:BaseVoltage: All conducting equipment with this base voltage.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers. Default: None
-	:SvStatus: The status state variable associated with this conducting equipment. Default: None
+	:BaseVoltage: All conducting equipment with this base voltage.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers. Default: 
+	:Terminals: Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes. Default: 
+	:SvStatus: The status state variable associated with this conducting equipment. Default: 
 		'''
 
 	cgmesProfile = Equipment.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, ],
-						'Terminals': [cgmesProfile.DY.value, cgmesProfile.EQ.value, ],
-						'BaseVoltage': [cgmesProfile.EQ.value, ],
-						'SvStatus': [cgmesProfile.SV.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
+						'BaseVoltage': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'Terminals': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
+						'SvStatus': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class Equipment: \n' + Equipment.__doc__ 
 
-	def __init__(self, Terminals = "list", BaseVoltage = None, SvStatus = None,  *args, **kw_args):
+	def __init__(self, BaseVoltage = , Terminals = , SvStatus = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
-		self.Terminals = Terminals
 		self.BaseVoltage = BaseVoltage
+		self.Terminals = Terminals
 		self.SvStatus = SvStatus
 		
 	def __str__(self):

@@ -1,44 +1,44 @@
-from cimpy.cgmes_v2_4_15.LoadDynamics import LoadDynamics
+from cimpy.output.LoadDynamics import LoadDynamics
 
 
 class LoadComposite(LoadDynamics):
 	'''
 	This models combines static load and induction motor load effects. The dynamics of the motor are simplified by linearizing the induction machine equations.
 
-	:epvs: Active load-voltage dependence index (static) (Epvs).  Typical Value = 0.7. Default: 0.0
-	:epfs: Active load-frequency dependence index (static) (Epfs).  Typical Value = 1.5. Default: 0.0
-	:eqvs: Reactive load-voltage dependence index (static) (Eqvs).  Typical Value = 2. Default: 0.0
-	:eqfs: Reactive load-frequency dependence index (static) (Eqfs).  Typical Value = 0. Default: 0.0
-	:epvd: Active load-voltage dependence index (dynamic) (Epvd).  Typical Value = 0.7. Default: 0.0
-	:epfd: Active load-frequency dependence index (dynamic) (Epfd).  Typical Value = 1.5. Default: 0.0
-	:eqvd: Reactive load-voltage dependence index (dynamic) (Eqvd).  Typical Value = 2. Default: 0.0
-	:eqfd: Reactive load-frequency dependence index (dynamic) (Eqfd).  Typical Value = 0. Default: 0.0
-	:lfrac: Loading factor - ratio of initial P to motor MVA base (Lfrac).  Typical Value = 0.8. Default: 0.0
-	:h: Inertia constant (H).  Typical Value = 2.5. Default: 0
-	:pfrac: Fraction of constant-power load to be represented by this motor model (Pfrac) (>=0.0 and <=1.0).  Typical Value = 0.5. Default: 0.0
+	:epvs: Active load-voltage dependence index (static) (Epvs).  Typical Value = 0.7. Default: 
+	:epfs: Active load-frequency dependence index (static) (Epfs).  Typical Value = 1.5. Default: 
+	:eqvs: Reactive load-voltage dependence index (static) (Eqvs).  Typical Value = 2. Default: 
+	:eqfs: Reactive load-frequency dependence index (static) (Eqfs).  Typical Value = 0. Default: 
+	:epvd: Active load-voltage dependence index (dynamic) (Epvd).  Typical Value = 0.7. Default: 
+	:epfd: Active load-frequency dependence index (dynamic) (Epfd).  Typical Value = 1.5. Default: 
+	:eqvd: Reactive load-voltage dependence index (dynamic) (Eqvd).  Typical Value = 2. Default: 
+	:eqfd: Reactive load-frequency dependence index (dynamic) (Eqfd).  Typical Value = 0. Default: 
+	:lfrac: Loading factor - ratio of initial P to motor MVA base (Lfrac).  Typical Value = 0.8. Default: 
+	:h: Inertia constant (H).  Typical Value = 2.5. Default: 
+	:pfrac: Fraction of constant-power load to be represented by this motor model (Pfrac) (>=0.0 and <=1.0).  Typical Value = 0.5. Default: 
 		'''
 
 	cgmesProfile = LoadDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'epvs': [cgmesProfile.DY.value, ],
-						'epfs': [cgmesProfile.DY.value, ],
-						'eqvs': [cgmesProfile.DY.value, ],
-						'eqfs': [cgmesProfile.DY.value, ],
-						'epvd': [cgmesProfile.DY.value, ],
-						'epfd': [cgmesProfile.DY.value, ],
-						'eqvd': [cgmesProfile.DY.value, ],
-						'eqfd': [cgmesProfile.DY.value, ],
-						'lfrac': [cgmesProfile.DY.value, ],
-						'h': [cgmesProfile.DY.value, ],
-						'pfrac': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'epvs': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'epfs': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'eqvs': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'eqfs': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'epvd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'epfd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'eqvd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'eqfd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'lfrac': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'h': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'pfrac': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class LoadDynamics: \n' + LoadDynamics.__doc__ 
 
-	def __init__(self, epvs = 0.0, epfs = 0.0, eqvs = 0.0, eqfs = 0.0, epvd = 0.0, epfd = 0.0, eqvd = 0.0, eqfd = 0.0, lfrac = 0.0, h = 0, pfrac = 0.0,  *args, **kw_args):
+	def __init__(self, epvs = , epfs = , eqvs = , eqfs = , epvd = , epfd = , eqvd = , eqfd = , lfrac = , h = , pfrac = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.epvs = epvs

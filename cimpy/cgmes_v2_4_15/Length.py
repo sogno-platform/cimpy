@@ -1,28 +1,28 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from  import Base
 
 
 class Length(Base):
 	'''
 	Unit of length. Never negative.
 
-	:value:  Default: 0.0
-	:unit:  Default: None
-	:multiplier:  Default: None
+	:value:  Default: 
+	:unit:  Default: 
+	:multiplier:  Default: 
 		'''
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, cgmesProfile.EQ.value, ],
-						'value': [cgmesProfile.DY.value, cgmesProfile.EQ.value, ],
-						'unit': [cgmesProfile.DY.value, cgmesProfile.EQ.value, ],
-						'multiplier': [cgmesProfile.DY.value, cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'value': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'unit': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'multiplier': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	
 
-	def __init__(self, value = 0.0, unit = None, multiplier = None,  ):
+	def __init__(self, value = , unit = , multiplier = ,  ):
 	
 		self.value = value
 		self.unit = unit

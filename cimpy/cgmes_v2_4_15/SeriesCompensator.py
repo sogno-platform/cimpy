@@ -1,36 +1,36 @@
-from cimpy.cgmes_v2_4_15.ConductingEquipment import ConductingEquipment
+from cimpy.output.ConductingEquipment import ConductingEquipment
 
 
 class SeriesCompensator(ConductingEquipment):
 	'''
 	A Series Compensator is a series capacitor or reactor or an AC transmission line without charging susceptance.  It is a two terminal device.
 
-	:r: Positive sequence resistance. Default: 0.0
-	:x: Positive sequence reactance. Default: 0.0
-	:varistorPresent: Describe if a metal oxide varistor (mov) for over voltage protection is configured at the series compensator. Default: False
-	:varistorRatedCurrent: The maximum current the varistor is designed to handle at specified duration. Default: 0.0
-	:varistorVoltageThreshold: The dc voltage at which the varistor start conducting. Default: 0.0
-	:r0: Zero sequence resistance. Default: 0.0
-	:x0: Zero sequence reactance. Default: 0.0
+	:r: Positive sequence resistance. Default: 
+	:x: Positive sequence reactance. Default: 
+	:varistorPresent: Describe if a metal oxide varistor (mov) for over voltage protection is configured at the series compensator. Default: 
+	:varistorRatedCurrent: The maximum current the varistor is designed to handle at specified duration. Default: 
+	:varistorVoltageThreshold: The dc voltage at which the varistor start conducting. Default: 
+	:r0: Zero sequence resistance. Default: 
+	:x0: Zero sequence reactance. Default: 
 		'''
 
 	cgmesProfile = ConductingEquipment.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'r': [cgmesProfile.EQ.value, ],
-						'x': [cgmesProfile.EQ.value, ],
-						'varistorPresent': [cgmesProfile.EQ.value, ],
-						'varistorRatedCurrent': [cgmesProfile.EQ.value, ],
-						'varistorVoltageThreshold': [cgmesProfile.EQ.value, ],
-						'r0': [cgmesProfile.EQ.value, ],
-						'x0': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'r': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'x': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'varistorPresent': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'varistorRatedCurrent': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'varistorVoltageThreshold': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'r0': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'x0': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class ConductingEquipment: \n' + ConductingEquipment.__doc__ 
 
-	def __init__(self, r = 0.0, x = 0.0, varistorPresent = False, varistorRatedCurrent = 0.0, varistorVoltageThreshold = 0.0, r0 = 0.0, x0 = 0.0,  *args, **kw_args):
+	def __init__(self, r = , x = , varistorPresent = , varistorRatedCurrent = , varistorVoltageThreshold = , r0 = , x0 = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.r = r

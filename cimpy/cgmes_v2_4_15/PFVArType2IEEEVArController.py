@@ -1,36 +1,36 @@
-from cimpy.cgmes_v2_4_15.PFVArControllerType2Dynamics import PFVArControllerType2Dynamics
+from cimpy.output.PFVArControllerType2Dynamics import PFVArControllerType2Dynamics
 
 
 class PFVArType2IEEEVArController(PFVArControllerType2Dynamics):
 	'''
 	The class represents IEEE VAR Controller Type 2 which is a summing point type controller. It makes up the outside loop of a two-loop system. This controller is implemented as a slow PI type controller, and the voltage regulator forms the inner loop and is implemented as a fast controller.  Reference: IEEE Standard 421.5-2005 Section 11.5.
 
-	:qref: Reactive power reference (). Default: 0.0
-	:vref: Voltage regulator reference (). Default: 0.0
-	:vclmt: Maximum output of the pf controller (). Default: 0.0
-	:kp: Proportional gain of the pf controller (). Default: 0.0
-	:ki: Integral gain of the pf controller (). Default: 0.0
-	:vs: Generator sensing voltage (). Default: 0.0
-	:exlon: Overexcitation or under excitation flag () true = 1 (not in the overexcitation or underexcitation state, integral action is active) false = 0 (in the overexcitation or underexcitation state, so integral action is disabled to allow the limiter to play its role). Default: False
+	:qref: Reactive power reference (). Default: 
+	:vref: Voltage regulator reference (). Default: 
+	:vclmt: Maximum output of the pf controller (). Default: 
+	:kp: Proportional gain of the pf controller (). Default: 
+	:ki: Integral gain of the pf controller (). Default: 
+	:vs: Generator sensing voltage (). Default: 
+	:exlon: Overexcitation or under excitation flag () true = 1 (not in the overexcitation or underexcitation state, integral action is active) false = 0 (in the overexcitation or underexcitation state, so integral action is disabled to allow the limiter to play its role). Default: 
 		'''
 
 	cgmesProfile = PFVArControllerType2Dynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'qref': [cgmesProfile.DY.value, ],
-						'vref': [cgmesProfile.DY.value, ],
-						'vclmt': [cgmesProfile.DY.value, ],
-						'kp': [cgmesProfile.DY.value, ],
-						'ki': [cgmesProfile.DY.value, ],
-						'vs': [cgmesProfile.DY.value, ],
-						'exlon': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'qref': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vref': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vclmt': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kp': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ki': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vs': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'exlon': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PFVArControllerType2Dynamics: \n' + PFVArControllerType2Dynamics.__doc__ 
 
-	def __init__(self, qref = 0.0, vref = 0.0, vclmt = 0.0, kp = 0.0, ki = 0.0, vs = 0.0, exlon = False,  *args, **kw_args):
+	def __init__(self, qref = , vref = , vclmt = , kp = , ki = , vs = , exlon = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.qref = qref

@@ -1,24 +1,24 @@
-from cimpy.cgmes_v2_4_15.PhaseTapChanger import PhaseTapChanger
+from cimpy.output.PhaseTapChanger import PhaseTapChanger
 
 
 class PhaseTapChangerTabular(PhaseTapChanger):
 	'''
 	
 
-	:PhaseTapChangerTable: The phase tap changer table for this phase tap changer. Default: None
+	:PhaseTapChangerTable: The phase tap changer table for this phase tap changer. Default: 
 		'''
 
 	cgmesProfile = PhaseTapChanger.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
-						'PhaseTapChangerTable': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+						'PhaseTapChangerTable': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PhaseTapChanger: \n' + PhaseTapChanger.__doc__ 
 
-	def __init__(self, PhaseTapChangerTable = None,  *args, **kw_args):
+	def __init__(self, PhaseTapChangerTable = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.PhaseTapChangerTable = PhaseTapChangerTable

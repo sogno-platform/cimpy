@@ -1,26 +1,26 @@
-from cimpy.cgmes_v2_4_15.Curve import Curve
+from cimpy.output.Curve import Curve
 
 
 class ReactiveCapabilityCurve(Curve):
 	'''
 	Reactive power rating envelope versus the synchronous machine's active power, in both the generating and motoring modes. For each active power value there is a corresponding high and low reactive power limit  value. Typically there will be a separate curve for each coolant condition, such as hydrogen pressure.  The Y1 axis values represent reactive minimum and the Y2 axis values represent reactive maximum.
 
-	:EquivalentInjection: The reactive capability curve used by this equivalent injection. Default: "list"
-	:InitiallyUsedBySynchronousMachines: The default reactive capability curve for use by a synchronous machine. Default: "list"
+	:EquivalentInjection: The reactive capability curve used by this equivalent injection. Default: 
+	:InitiallyUsedBySynchronousMachines: The default reactive capability curve for use by a synchronous machine. Default: 
 		'''
 
 	cgmesProfile = Curve.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'EquivalentInjection': [cgmesProfile.EQ.value, ],
-						'InitiallyUsedBySynchronousMachines': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'EquivalentInjection': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'InitiallyUsedBySynchronousMachines': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class Curve: \n' + Curve.__doc__ 
 
-	def __init__(self, EquivalentInjection = "list", InitiallyUsedBySynchronousMachines = "list",  *args, **kw_args):
+	def __init__(self, EquivalentInjection = , InitiallyUsedBySynchronousMachines = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.EquivalentInjection = EquivalentInjection

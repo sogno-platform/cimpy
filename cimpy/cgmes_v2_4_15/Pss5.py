@@ -1,56 +1,56 @@
-from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.output.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class Pss5(PowerSystemStabilizerDynamics):
 	'''
 	Italian PSS - Detailed PSS.
 
-	:kpe: Electric power input gain (K).  Typical Value = 0.3. Default: 0.0
-	:kf: Frequency/shaft speed input gain (K).  Typical Value = 5. Default: 0.0
-	:isfreq: Selector for Frequency/shaft speed input (IsFreq). true = speed false = frequency. Typical Value = true. Default: False
-	:kpss: PSS gain (K).  Typical Value = 1. Default: 0.0
-	:ctw2: Selector for Second washout enabling (C). true = second washout filter is bypassed false = second washout filter in use. Typical Value = true. Default: False
-	:tw1: First WashOut (T).  Typical Value = 3.5. Default: 0
-	:tw2: Second WashOut (T).  Typical Value = 0. Default: 0
-	:tl1: Lead/lag time constant (T).  Typical Value = 0. Default: 0
-	:tl2: Lead/lag time constant (T).  Typical Value = 0. Default: 0
-	:tl3: Lead/lag time constant (T).  Typical Value = 0. Default: 0
-	:tl4: Lead/lag time constant (T).  Typical Value = 0. Default: 0
-	:vsmn: Stabilizer output max limit (V).  Typical Value = -0.1. Default: 0.0
-	:vsmx: Stabilizer output min limit (V).  Typical Value = 0.1. Default: 0.0
-	:tpe: Electric power filter time constant (T).  Typical Value = 0.05. Default: 0
-	:pmm: Minimum power PSS enabling (P).  Typical Value = 0.25. Default: 0.0
-	:deadband: Stabilizer output dead band (DeadBand).  Typical Value = 0. Default: 0.0
-	:vadat:  Default: False
+	:kpe: Electric power input gain (K).  Typical Value = 0.3. Default: 
+	:kf: Frequency/shaft speed input gain (K).  Typical Value = 5. Default: 
+	:isfreq: Selector for Frequency/shaft speed input (IsFreq). true = speed false = frequency. Typical Value = true. Default: 
+	:kpss: PSS gain (K).  Typical Value = 1. Default: 
+	:ctw2: Selector for Second washout enabling (C). true = second washout filter is bypassed false = second washout filter in use. Typical Value = true. Default: 
+	:tw1: First WashOut (T).  Typical Value = 3.5. Default: 
+	:tw2: Second WashOut (T).  Typical Value = 0. Default: 
+	:tl1: Lead/lag time constant (T).  Typical Value = 0. Default: 
+	:tl2: Lead/lag time constant (T).  Typical Value = 0. Default: 
+	:tl3: Lead/lag time constant (T).  Typical Value = 0. Default: 
+	:tl4: Lead/lag time constant (T).  Typical Value = 0. Default: 
+	:vsmn: Stabilizer output max limit (V).  Typical Value = -0.1. Default: 
+	:vsmx: Stabilizer output min limit (V).  Typical Value = 0.1. Default: 
+	:tpe: Electric power filter time constant (T).  Typical Value = 0.05. Default: 
+	:pmm: Minimum power PSS enabling (P).  Typical Value = 0.25. Default: 
+	:deadband: Stabilizer output dead band (DeadBand).  Typical Value = 0. Default: 
+	:vadat:  Default: 
 		'''
 
 	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'kpe': [cgmesProfile.DY.value, ],
-						'kf': [cgmesProfile.DY.value, ],
-						'isfreq': [cgmesProfile.DY.value, ],
-						'kpss': [cgmesProfile.DY.value, ],
-						'ctw2': [cgmesProfile.DY.value, ],
-						'tw1': [cgmesProfile.DY.value, ],
-						'tw2': [cgmesProfile.DY.value, ],
-						'tl1': [cgmesProfile.DY.value, ],
-						'tl2': [cgmesProfile.DY.value, ],
-						'tl3': [cgmesProfile.DY.value, ],
-						'tl4': [cgmesProfile.DY.value, ],
-						'vsmn': [cgmesProfile.DY.value, ],
-						'vsmx': [cgmesProfile.DY.value, ],
-						'tpe': [cgmesProfile.DY.value, ],
-						'pmm': [cgmesProfile.DY.value, ],
-						'deadband': [cgmesProfile.DY.value, ],
-						'vadat': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kpe': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'isfreq': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kpss': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ctw2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tw1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tw2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tl1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tl2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tl3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tl4': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vsmn': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vsmx': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tpe': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'pmm': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'deadband': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vadat': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, kpe = 0.0, kf = 0.0, isfreq = False, kpss = 0.0, ctw2 = False, tw1 = 0, tw2 = 0, tl1 = 0, tl2 = 0, tl3 = 0, tl4 = 0, vsmn = 0.0, vsmx = 0.0, tpe = 0, pmm = 0.0, deadband = 0.0, vadat = False,  *args, **kw_args):
+	def __init__(self, kpe = , kf = , isfreq = , kpss = , ctw2 = , tw1 = , tw2 = , tl1 = , tl2 = , tl3 = , tl4 = , vsmn = , vsmx = , tpe = , pmm = , deadband = , vadat = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.kpe = kpe

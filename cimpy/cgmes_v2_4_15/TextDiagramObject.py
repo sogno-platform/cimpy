@@ -1,24 +1,24 @@
-from cimpy.cgmes_v2_4_15.DiagramObject import DiagramObject
+from cimpy.output.DiagramObject import DiagramObject
 
 
 class TextDiagramObject(DiagramObject):
 	'''
 	A diagram object for placing free-text or text derived from an associated domain object.
 
-	:text: The text that is displayed by this text diagram object. Default: ''
+	:text: The text that is displayed by this text diagram object. Default: 
 		'''
 
 	cgmesProfile = DiagramObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
-						'text': [cgmesProfile.DI.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
+						'text': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class DiagramObject: \n' + DiagramObject.__doc__ 
 
-	def __init__(self, text = '',  *args, **kw_args):
+	def __init__(self, text = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.text = text

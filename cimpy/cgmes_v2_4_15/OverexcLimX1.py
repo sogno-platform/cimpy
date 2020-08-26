@@ -1,42 +1,42 @@
-from cimpy.cgmes_v2_4_15.OverexcitationLimiterDynamics import OverexcitationLimiterDynamics
+from cimpy.output.OverexcitationLimiterDynamics import OverexcitationLimiterDynamics
 
 
 class OverexcLimX1(OverexcitationLimiterDynamics):
 	'''
 	Field voltage over excitation limiter.
 
-	:efdrated: Rated field voltage (EFD).  Typical Value = 1.05. Default: 0.0
-	:efd1: Low voltage point on the inverse time characteristic (EFD).  Typical Value = 1.1. Default: 0.0
-	:t1: Time to trip the exciter at the low voltage point on the inverse time characteristic (TIME).  Typical Value = 120. Default: 0
-	:efd2: Mid voltage point on the inverse time characteristic (EFD).  Typical Value = 1.2. Default: 0.0
-	:t2: Time to trip the exciter at the mid voltage point on the inverse time characteristic (TIME).  Typical Value = 40. Default: 0
-	:efd3: High voltage point on the inverse time characteristic (EFD).  Typical Value = 1.5. Default: 0.0
-	:t3: Time to trip the exciter at the high voltage point on the inverse time characteristic (TIME).  Typical Value = 15. Default: 0
-	:efddes: Desired field voltage (EFD).  Typical Value = 0.9. Default: 0.0
-	:kmx: Gain (K).  Typical Value = 0.01. Default: 0.0
-	:vlow: Low voltage limit (V) (>0). Default: 0.0
+	:efdrated: Rated field voltage (EFD).  Typical Value = 1.05. Default: 
+	:efd1: Low voltage point on the inverse time characteristic (EFD).  Typical Value = 1.1. Default: 
+	:t1: Time to trip the exciter at the low voltage point on the inverse time characteristic (TIME).  Typical Value = 120. Default: 
+	:efd2: Mid voltage point on the inverse time characteristic (EFD).  Typical Value = 1.2. Default: 
+	:t2: Time to trip the exciter at the mid voltage point on the inverse time characteristic (TIME).  Typical Value = 40. Default: 
+	:efd3: High voltage point on the inverse time characteristic (EFD).  Typical Value = 1.5. Default: 
+	:t3: Time to trip the exciter at the high voltage point on the inverse time characteristic (TIME).  Typical Value = 15. Default: 
+	:efddes: Desired field voltage (EFD).  Typical Value = 0.9. Default: 
+	:kmx: Gain (K).  Typical Value = 0.01. Default: 
+	:vlow: Low voltage limit (V) (>0). Default: 
 		'''
 
 	cgmesProfile = OverexcitationLimiterDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'efdrated': [cgmesProfile.DY.value, ],
-						'efd1': [cgmesProfile.DY.value, ],
-						't1': [cgmesProfile.DY.value, ],
-						'efd2': [cgmesProfile.DY.value, ],
-						't2': [cgmesProfile.DY.value, ],
-						'efd3': [cgmesProfile.DY.value, ],
-						't3': [cgmesProfile.DY.value, ],
-						'efddes': [cgmesProfile.DY.value, ],
-						'kmx': [cgmesProfile.DY.value, ],
-						'vlow': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'efdrated': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'efd1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'efd2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'efd3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'efddes': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kmx': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vlow': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class OverexcitationLimiterDynamics: \n' + OverexcitationLimiterDynamics.__doc__ 
 
-	def __init__(self, efdrated = 0.0, efd1 = 0.0, t1 = 0, efd2 = 0.0, t2 = 0, efd3 = 0.0, t3 = 0, efddes = 0.0, kmx = 0.0, vlow = 0.0,  *args, **kw_args):
+	def __init__(self, efdrated = , efd1 = , t1 = , efd2 = , t2 = , efd3 = , t3 = , efddes = , kmx = , vlow = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.efdrated = efdrated

@@ -1,26 +1,29 @@
-from cimpy.cgmes_v2_4_15.PowerSystemResource import PowerSystemResource
+from cimpy.output.PowerSystemResource import PowerSystemResource
 
 
 class ConnectivityNodeContainer(PowerSystemResource):
 	'''
 	A base class for all objects that may contain connectivity nodes or topological nodes.
 
-	:TopologicalNode: The topological nodes which belong to this connectivity node container. Default: "list"
+	:ConnectivityNodes: Connectivity nodes which belong to this connectivity node container. Default: 
+	:TopologicalNode: The topological nodes which belong to this connectivity node container. Default: 
 		'''
 
 	cgmesProfile = PowerSystemResource.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.TP.value, ],
-						'TopologicalNode': [cgmesProfile.TP.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP_BD'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
+						'ConnectivityNodes': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
+						'TopologicalNode': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP_BD'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PowerSystemResource: \n' + PowerSystemResource.__doc__ 
 
-	def __init__(self, TopologicalNode = "list",  *args, **kw_args):
+	def __init__(self, ConnectivityNodes = , TopologicalNode = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
+		self.ConnectivityNodes = ConnectivityNodes
 		self.TopologicalNode = TopologicalNode
 		
 	def __str__(self):

@@ -1,30 +1,30 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from  import Base
 
 
 class PerLengthDCLineParameter(Base):
 	'''
 	
 
-	:DCLineSegments: All line segments described by this set of per-length parameters. Default: "list"
-	:capacitance: Capacitance per unit of length of the DC line segment; significant for cables only. Default: 0.0
-	:inductance: Inductance per unit of length of the DC line segment. Default: 0.0
-	:resistance: Resistance per length of the DC line segment. Default: 0.0
+	:DCLineSegments: All line segments described by this set of per-length parameters. Default: 
+	:capacitance: Capacitance per unit of length of the DC line segment; significant for cables only. Default: 
+	:inductance: Inductance per unit of length of the DC line segment. Default: 
+	:resistance: Resistance per length of the DC line segment. Default: 
 		'''
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'DCLineSegments': [cgmesProfile.EQ.value, ],
-						'capacitance': [cgmesProfile.EQ.value, ],
-						'inductance': [cgmesProfile.EQ.value, ],
-						'resistance': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'DCLineSegments': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'capacitance': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'inductance': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'resistance': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	
 
-	def __init__(self, DCLineSegments = "list", capacitance = 0.0, inductance = 0.0, resistance = 0.0,  ):
+	def __init__(self, DCLineSegments = , capacitance = , inductance = , resistance = ,  ):
 	
 		self.DCLineSegments = DCLineSegments
 		self.capacitance = capacitance

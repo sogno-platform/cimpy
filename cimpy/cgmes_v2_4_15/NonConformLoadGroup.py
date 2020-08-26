@@ -1,26 +1,26 @@
-from cimpy.cgmes_v2_4_15.LoadGroup import LoadGroup
+from cimpy.output.LoadGroup import LoadGroup
 
 
 class NonConformLoadGroup(LoadGroup):
 	'''
 	Loads that do not follow a daily and seasonal load variation pattern.
 
-	:EnergyConsumers: Group of this ConformLoad. Default: "list"
-	:NonConformLoadSchedules: The NonConformLoadSchedules in the NonConformLoadGroup. Default: "list"
+	:EnergyConsumers: Group of this ConformLoad. Default: 
+	:NonConformLoadSchedules: The NonConformLoadSchedules in the NonConformLoadGroup. Default: 
 		'''
 
 	cgmesProfile = LoadGroup.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'EnergyConsumers': [cgmesProfile.EQ.value, ],
-						'NonConformLoadSchedules': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'EnergyConsumers': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'NonConformLoadSchedules': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class LoadGroup: \n' + LoadGroup.__doc__ 
 
-	def __init__(self, EnergyConsumers = "list", NonConformLoadSchedules = "list",  *args, **kw_args):
+	def __init__(self, EnergyConsumers = , NonConformLoadSchedules = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.EnergyConsumers = EnergyConsumers

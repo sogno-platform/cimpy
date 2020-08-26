@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.Connector import Connector
+from cimpy.output.Connector import Connector
 
 
 class Junction(Connector):
@@ -9,7 +9,7 @@ class Junction(Connector):
 
 	cgmesProfile = Connector.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ_BD'}.value, ],
 						 }
 
 	serializationProfile = {}

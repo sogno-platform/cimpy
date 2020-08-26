@@ -1,42 +1,42 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from  import Base
 
 
 class SteadyStateHypothesisVersion(Base):
 	'''
 	Version details.
 
-	:baseUML: Base UML provided by CIM model manager. Default: ''
-	:baseURI: Profile URI used in the Model Exchange header and defined in IEC standards.  It uniquely identifies the Profile and its version. It is given for information only and to identify the closest IEC profile to which this CGMES profile is based on. Default: ''
-	:date: Profile creation date Form is YYYY-MM-DD for example for January 5, 2009 it is 2009-01-05. Default: ''
-	:differenceModelURI: Difference model URI defined by IEC 61970-552. Default: ''
-	:entsoeUML: UML provided by ENTSO-E. Default: ''
-	:entsoeURI: Profile URI defined by ENTSO-E and used in the Model Exchange header.  It uniquely identifies the Profile and its version. The last two elements in the URI (http://entsoe.eu/CIM/SteadyStateHypothesis/yy/zzz) indicate major and minor versions where:  - yy - indicates a major version; - zzz - indicates a minor version. Default: ''
-	:modelDescriptionURI: Model Description URI defined by IEC 61970-552. Default: ''
-	:namespaceRDF: RDF namespace. Default: ''
-	:namespaceUML: CIM UML namespace. Default: ''
-	:shortName: The short name of the profile used in profile documentation. Default: ''
+	:baseUML: Base UML provided by CIM model manager. Default: 
+	:baseURI: Profile URI used in the Model Exchange header and defined in IEC standards.  It uniquely identifies the Profile and its version. It is given for information only and to identify the closest IEC profile to which this CGMES profile is based on. Default: 
+	:date: Profile creation date Form is YYYY-MM-DD for example for January 5, 2009 it is 2009-01-05. Default: 
+	:differenceModelURI: Difference model URI defined by IEC 61970-552. Default: 
+	:entsoeUML: UML provided by ENTSO-E. Default: 
+	:entsoeURI: Profile URI defined by ENTSO-E and used in the Model Exchange header.  It uniquely identifies the Profile and its version. The last two elements in the URI (http://entsoe.eu/CIM/SteadyStateHypothesis/yy/zzz) indicate major and minor versions where:  - yy - indicates a major version; - zzz - indicates a minor version. Default: 
+	:modelDescriptionURI: Model Description URI defined by IEC 61970-552. Default: 
+	:namespaceRDF: RDF namespace. Default: 
+	:namespaceUML: CIM UML namespace. Default: 
+	:shortName: The short name of the profile used in profile documentation. Default: 
 		'''
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.SSH.value, ],
-						'baseUML': [cgmesProfile.SSH.value, ],
-						'baseURI': [cgmesProfile.SSH.value, ],
-						'date': [cgmesProfile.SSH.value, ],
-						'differenceModelURI': [cgmesProfile.SSH.value, ],
-						'entsoeUML': [cgmesProfile.SSH.value, ],
-						'entsoeURI': [cgmesProfile.SSH.value, ],
-						'modelDescriptionURI': [cgmesProfile.SSH.value, ],
-						'namespaceRDF': [cgmesProfile.SSH.value, ],
-						'namespaceUML': [cgmesProfile.SSH.value, ],
-						'shortName': [cgmesProfile.SSH.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+						'baseUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+						'baseURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+						'date': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+						'differenceModelURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+						'entsoeUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+						'entsoeURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+						'modelDescriptionURI': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+						'namespaceRDF': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+						'namespaceUML': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+						'shortName': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	
 
-	def __init__(self, baseUML = '', baseURI = '', date = '', differenceModelURI = '', entsoeUML = '', entsoeURI = '', modelDescriptionURI = '', namespaceRDF = '', namespaceUML = '', shortName = '',  ):
+	def __init__(self, baseUML = , baseURI = , date = , differenceModelURI = , entsoeUML = , entsoeURI = , modelDescriptionURI = , namespaceRDF = , namespaceUML = , shortName = ,  ):
 	
 		self.baseUML = baseUML
 		self.baseURI = baseURI

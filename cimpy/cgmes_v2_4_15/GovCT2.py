@@ -1,134 +1,134 @@
-from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.output.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovCT2(TurbineGovernorDynamics):
 	'''
 	General governor model with frequency-dependent fuel flow limit.  This model is a modification of the GovCT1model in order to represent the frequency-dependent fuel flow limit of a specific gas turbine manufacturer.
 
-	:mwbase: Base for power values (MWbase) (> 0).  Unit = MW. Default: 0.0
-	:r: Permanent droop (R).  Typical Value = 0.05. Default: 0.0
-	:rselect: Feedback signal for droop (Rselect).  Typical Value = electricalPower. Default: None
-	:tpelec: Electrical power transducer time constant (Tpelec).  Typical Value = 2.5. Default: 0
-	:maxerr: Maximum value for speed error signal (Maxerr).  Typical Value = 1. Default: 0.0
-	:minerr: Minimum value for speed error signal (Minerr).  Typical Value = -1. Default: 0.0
-	:kpgov: Governor proportional gain (Kpgov).  Typical Value = 4. Default: 0.0
-	:kigov: Governor integral gain (Kigov).  Typical Value = 0.45. Default: 0.0
-	:kdgov: Governor derivative gain (Kdgov).  Typical Value = 0. Default: 0.0
-	:tdgov: Governor derivative controller time constant (Tdgov).  Typical Value = 1. Default: 0
-	:vmax: Maximum valve position limit (Vmax).  Typical Value = 1. Default: 0.0
-	:vmin: Minimum valve position limit (Vmin).  Typical Value = 0.175. Default: 0.0
-	:tact: Actuator time constant (Tact).  Typical Value = 0.4. Default: 0
-	:kturb: Turbine gain (Kturb).  Typical Value = 1.9168. Default: 0.0
-	:wfnl: No load fuel flow (Wfnl).  Typical Value = 0.187. Default: 0.0
-	:tb: Turbine lag time constant (Tb).  Typical Value = 0.1. Default: 0
-	:tc: Turbine lead time constant (Tc).  Typical Value = 0. Default: 0
-	:wfspd: Switch for fuel source characteristic to recognize that fuel flow, for a given fuel valve stroke, can be proportional to engine speed (Wfspd). true = fuel flow proportional to speed (for some gas turbines and diesel engines with positive displacement fuel injectors) false = fuel control system keeps fuel flow independent of engine speed. Typical Value = false. Default: False
-	:teng: Transport time delay for diesel engine used in representing diesel engines where there is a small but measurable transport delay between a change in fuel flow setting and the development of torque (Teng).  Teng should be zero in all but special cases where this transport delay is of particular concern.  Typical Value = 0. Default: 0
-	:tfload: Load Limiter time constant (Tfload).  Typical Value = 3. Default: 0
-	:kpload: Load limiter proportional gain for PI controller (Kpload).  Typical Value = 1. Default: 0.0
-	:kiload: Load limiter integral gain for PI controller (Kiload).  Typical Value = 1. Default: 0.0
-	:ldref: Load limiter reference value (Ldref).  Typical Value = 1. Default: 0.0
-	:dm: Speed sensitivity coefficient (Dm).  Dm can represent either the variation of the engine power with the shaft speed or the variation of maximum power capability with shaft speed.  If it is positive it describes the falling slope of the engine speed verses power characteristic as speed increases. A slightly falling characteristic is typical for reciprocating engines and some aero-derivative turbines.  If it is negative the engine power is assumed to be unaffected by the shaft speed, but the maximum permissible fuel flow is taken to fall with falling shaft speed. This is characteristic of single-shaft industrial turbines due to exhaust temperature limits.  Typical Value = 0. Default: 0.0
-	:ropen: Maximum valve opening rate (Ropen).  Unit = PU/sec.  Typical Value = 99. Default: 0.0
-	:rclose: Minimum valve closing rate (Rclose).  Unit = PU/sec.  Typical Value = -99. Default: 0.0
-	:kimw: Power controller (reset) gain (Kimw).  The default value of 0.01 corresponds to a reset time of 100 seconds.  A value of 0.001 corresponds to a relatively slow acting load controller.  Typical Value = 0. Default: 0.0
-	:aset: Acceleration limiter setpoint (Aset).  Unit = PU/sec.  Typical Value = 10. Default: 0.0
-	:ka: Acceleration limiter Gain (Ka).  Typical Value = 10. Default: 0.0
-	:ta: Acceleration limiter time constant (Ta).  Typical Value = 1. Default: 0
-	:db: Speed governor dead band in per unit speed (db).  In the majority of applications, it is recommended that this value be set to zero.  Typical Value = 0. Default: 0.0
-	:tsa: Temperature detection lead time constant (Tsa).  Typical Value = 0. Default: 0
-	:tsb: Temperature detection lag time constant (Tsb).  Typical Value = 50. Default: 0
-	:rup: Maximum rate of load limit increase (Rup).  Typical Value = 99. Default: 0.0
-	:rdown: Maximum rate of load limit decrease (Rdown).  Typical Value = -99. Default: 0.0
-	:prate: Ramp rate for frequency-dependent power limit (Prate).  Typical Value = 0.017. Default: 0.0
-	:flim1: Frequency threshold 1 (Flim1).  Unit = Hz.  Typical Value = 59. Default: 0.0
-	:plim1: Power limit 1 (Plim1).  Typical Value = 0.8325. Default: 0.0
-	:flim2: Frequency threshold 2 (Flim2).  Unit = Hz.  Typical Value = 0. Default: 0.0
-	:plim2: Power limit 2 (Plim2).  Typical Value = 0. Default: 0.0
-	:flim3: Frequency threshold 3 (Flim3).  Unit = Hz.  Typical Value = 0. Default: 0.0
-	:plim3: Power limit 3 (Plim3).  Typical Value = 0. Default: 0.0
-	:flim4: Frequency threshold 4 (Flim4).  Unit = Hz.  Typical Value = 0. Default: 0.0
-	:plim4: Power limit 4 (Plim4).  Typical Value = 0. Default: 0.0
-	:flim5: Frequency threshold 5 (Flim5).  Unit = Hz.  Typical Value = 0. Default: 0.0
-	:plim5: Power limit 5 (Plim5).  Typical Value = 0. Default: 0.0
-	:flim6: Frequency threshold 6 (Flim6).  Unit = Hz.  Typical Value = 0. Default: 0.0
-	:plim6: Power limit 6 (Plim6).  Typical Value = 0. Default: 0.0
-	:flim7: Frequency threshold 7 (Flim7).  Unit = Hz.  Typical Value = 0. Default: 0.0
-	:plim7: Power limit 7 (Plim7).  Typical Value = 0. Default: 0.0
-	:flim8: Frequency threshold 8 (Flim8).  Unit = Hz.  Typical Value = 0. Default: 0.0
-	:plim8: Power limit 8 (Plim8).  Typical Value = 0. Default: 0.0
-	:flim9: Frequency threshold 9 (Flim9).  Unit = Hz.  Typical Value = 0. Default: 0.0
-	:plim9: Power Limit 9 (Plim9).  Typical Value = 0. Default: 0.0
-	:flim10: Frequency threshold 10 (Flim10).  Unit = Hz.  Typical Value = 0. Default: 0.0
-	:plim10: Power limit 10 (Plim10).  Typical Value = 0. Default: 0.0
+	:mwbase: Base for power values (MWbase) (> 0).  Unit = MW. Default: 
+	:r: Permanent droop (R).  Typical Value = 0.05. Default: 
+	:rselect: Feedback signal for droop (Rselect).  Typical Value = electricalPower. Default: 
+	:tpelec: Electrical power transducer time constant (Tpelec).  Typical Value = 2.5. Default: 
+	:maxerr: Maximum value for speed error signal (Maxerr).  Typical Value = 1. Default: 
+	:minerr: Minimum value for speed error signal (Minerr).  Typical Value = -1. Default: 
+	:kpgov: Governor proportional gain (Kpgov).  Typical Value = 4. Default: 
+	:kigov: Governor integral gain (Kigov).  Typical Value = 0.45. Default: 
+	:kdgov: Governor derivative gain (Kdgov).  Typical Value = 0. Default: 
+	:tdgov: Governor derivative controller time constant (Tdgov).  Typical Value = 1. Default: 
+	:vmax: Maximum valve position limit (Vmax).  Typical Value = 1. Default: 
+	:vmin: Minimum valve position limit (Vmin).  Typical Value = 0.175. Default: 
+	:tact: Actuator time constant (Tact).  Typical Value = 0.4. Default: 
+	:kturb: Turbine gain (Kturb).  Typical Value = 1.9168. Default: 
+	:wfnl: No load fuel flow (Wfnl).  Typical Value = 0.187. Default: 
+	:tb: Turbine lag time constant (Tb).  Typical Value = 0.1. Default: 
+	:tc: Turbine lead time constant (Tc).  Typical Value = 0. Default: 
+	:wfspd: Switch for fuel source characteristic to recognize that fuel flow, for a given fuel valve stroke, can be proportional to engine speed (Wfspd). true = fuel flow proportional to speed (for some gas turbines and diesel engines with positive displacement fuel injectors) false = fuel control system keeps fuel flow independent of engine speed. Typical Value = false. Default: 
+	:teng: Transport time delay for diesel engine used in representing diesel engines where there is a small but measurable transport delay between a change in fuel flow setting and the development of torque (Teng).  Teng should be zero in all but special cases where this transport delay is of particular concern.  Typical Value = 0. Default: 
+	:tfload: Load Limiter time constant (Tfload).  Typical Value = 3. Default: 
+	:kpload: Load limiter proportional gain for PI controller (Kpload).  Typical Value = 1. Default: 
+	:kiload: Load limiter integral gain for PI controller (Kiload).  Typical Value = 1. Default: 
+	:ldref: Load limiter reference value (Ldref).  Typical Value = 1. Default: 
+	:dm: Speed sensitivity coefficient (Dm).  Dm can represent either the variation of the engine power with the shaft speed or the variation of maximum power capability with shaft speed.  If it is positive it describes the falling slope of the engine speed verses power characteristic as speed increases. A slightly falling characteristic is typical for reciprocating engines and some aero-derivative turbines.  If it is negative the engine power is assumed to be unaffected by the shaft speed, but the maximum permissible fuel flow is taken to fall with falling shaft speed. This is characteristic of single-shaft industrial turbines due to exhaust temperature limits.  Typical Value = 0. Default: 
+	:ropen: Maximum valve opening rate (Ropen).  Unit = PU/sec.  Typical Value = 99. Default: 
+	:rclose: Minimum valve closing rate (Rclose).  Unit = PU/sec.  Typical Value = -99. Default: 
+	:kimw: Power controller (reset) gain (Kimw).  The default value of 0.01 corresponds to a reset time of 100 seconds.  A value of 0.001 corresponds to a relatively slow acting load controller.  Typical Value = 0. Default: 
+	:aset: Acceleration limiter setpoint (Aset).  Unit = PU/sec.  Typical Value = 10. Default: 
+	:ka: Acceleration limiter Gain (Ka).  Typical Value = 10. Default: 
+	:ta: Acceleration limiter time constant (Ta).  Typical Value = 1. Default: 
+	:db: Speed governor dead band in per unit speed (db).  In the majority of applications, it is recommended that this value be set to zero.  Typical Value = 0. Default: 
+	:tsa: Temperature detection lead time constant (Tsa).  Typical Value = 0. Default: 
+	:tsb: Temperature detection lag time constant (Tsb).  Typical Value = 50. Default: 
+	:rup: Maximum rate of load limit increase (Rup).  Typical Value = 99. Default: 
+	:rdown: Maximum rate of load limit decrease (Rdown).  Typical Value = -99. Default: 
+	:prate: Ramp rate for frequency-dependent power limit (Prate).  Typical Value = 0.017. Default: 
+	:flim1: Frequency threshold 1 (Flim1).  Unit = Hz.  Typical Value = 59. Default: 
+	:plim1: Power limit 1 (Plim1).  Typical Value = 0.8325. Default: 
+	:flim2: Frequency threshold 2 (Flim2).  Unit = Hz.  Typical Value = 0. Default: 
+	:plim2: Power limit 2 (Plim2).  Typical Value = 0. Default: 
+	:flim3: Frequency threshold 3 (Flim3).  Unit = Hz.  Typical Value = 0. Default: 
+	:plim3: Power limit 3 (Plim3).  Typical Value = 0. Default: 
+	:flim4: Frequency threshold 4 (Flim4).  Unit = Hz.  Typical Value = 0. Default: 
+	:plim4: Power limit 4 (Plim4).  Typical Value = 0. Default: 
+	:flim5: Frequency threshold 5 (Flim5).  Unit = Hz.  Typical Value = 0. Default: 
+	:plim5: Power limit 5 (Plim5).  Typical Value = 0. Default: 
+	:flim6: Frequency threshold 6 (Flim6).  Unit = Hz.  Typical Value = 0. Default: 
+	:plim6: Power limit 6 (Plim6).  Typical Value = 0. Default: 
+	:flim7: Frequency threshold 7 (Flim7).  Unit = Hz.  Typical Value = 0. Default: 
+	:plim7: Power limit 7 (Plim7).  Typical Value = 0. Default: 
+	:flim8: Frequency threshold 8 (Flim8).  Unit = Hz.  Typical Value = 0. Default: 
+	:plim8: Power limit 8 (Plim8).  Typical Value = 0. Default: 
+	:flim9: Frequency threshold 9 (Flim9).  Unit = Hz.  Typical Value = 0. Default: 
+	:plim9: Power Limit 9 (Plim9).  Typical Value = 0. Default: 
+	:flim10: Frequency threshold 10 (Flim10).  Unit = Hz.  Typical Value = 0. Default: 
+	:plim10: Power limit 10 (Plim10).  Typical Value = 0. Default: 
 		'''
 
 	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'mwbase': [cgmesProfile.DY.value, ],
-						'r': [cgmesProfile.DY.value, ],
-						'rselect': [cgmesProfile.DY.value, ],
-						'tpelec': [cgmesProfile.DY.value, ],
-						'maxerr': [cgmesProfile.DY.value, ],
-						'minerr': [cgmesProfile.DY.value, ],
-						'kpgov': [cgmesProfile.DY.value, ],
-						'kigov': [cgmesProfile.DY.value, ],
-						'kdgov': [cgmesProfile.DY.value, ],
-						'tdgov': [cgmesProfile.DY.value, ],
-						'vmax': [cgmesProfile.DY.value, ],
-						'vmin': [cgmesProfile.DY.value, ],
-						'tact': [cgmesProfile.DY.value, ],
-						'kturb': [cgmesProfile.DY.value, ],
-						'wfnl': [cgmesProfile.DY.value, ],
-						'tb': [cgmesProfile.DY.value, ],
-						'tc': [cgmesProfile.DY.value, ],
-						'wfspd': [cgmesProfile.DY.value, ],
-						'teng': [cgmesProfile.DY.value, ],
-						'tfload': [cgmesProfile.DY.value, ],
-						'kpload': [cgmesProfile.DY.value, ],
-						'kiload': [cgmesProfile.DY.value, ],
-						'ldref': [cgmesProfile.DY.value, ],
-						'dm': [cgmesProfile.DY.value, ],
-						'ropen': [cgmesProfile.DY.value, ],
-						'rclose': [cgmesProfile.DY.value, ],
-						'kimw': [cgmesProfile.DY.value, ],
-						'aset': [cgmesProfile.DY.value, ],
-						'ka': [cgmesProfile.DY.value, ],
-						'ta': [cgmesProfile.DY.value, ],
-						'db': [cgmesProfile.DY.value, ],
-						'tsa': [cgmesProfile.DY.value, ],
-						'tsb': [cgmesProfile.DY.value, ],
-						'rup': [cgmesProfile.DY.value, ],
-						'rdown': [cgmesProfile.DY.value, ],
-						'prate': [cgmesProfile.DY.value, ],
-						'flim1': [cgmesProfile.DY.value, ],
-						'plim1': [cgmesProfile.DY.value, ],
-						'flim2': [cgmesProfile.DY.value, ],
-						'plim2': [cgmesProfile.DY.value, ],
-						'flim3': [cgmesProfile.DY.value, ],
-						'plim3': [cgmesProfile.DY.value, ],
-						'flim4': [cgmesProfile.DY.value, ],
-						'plim4': [cgmesProfile.DY.value, ],
-						'flim5': [cgmesProfile.DY.value, ],
-						'plim5': [cgmesProfile.DY.value, ],
-						'flim6': [cgmesProfile.DY.value, ],
-						'plim6': [cgmesProfile.DY.value, ],
-						'flim7': [cgmesProfile.DY.value, ],
-						'plim7': [cgmesProfile.DY.value, ],
-						'flim8': [cgmesProfile.DY.value, ],
-						'plim8': [cgmesProfile.DY.value, ],
-						'flim9': [cgmesProfile.DY.value, ],
-						'plim9': [cgmesProfile.DY.value, ],
-						'flim10': [cgmesProfile.DY.value, ],
-						'plim10': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'mwbase': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'r': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'rselect': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tpelec': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'maxerr': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'minerr': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kpgov': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kigov': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kdgov': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tdgov': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tact': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kturb': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'wfnl': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tb': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tc': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'wfspd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'teng': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tfload': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kpload': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kiload': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ldref': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'dm': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ropen': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'rclose': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kimw': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'aset': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ka': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ta': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'db': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tsa': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tsb': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'rup': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'rdown': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'prate': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'flim1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'plim1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'flim2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'plim2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'flim3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'plim3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'flim4': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'plim4': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'flim5': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'plim5': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'flim6': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'plim6': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'flim7': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'plim7': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'flim8': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'plim8': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'flim9': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'plim9': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'flim10': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'plim10': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 
-	def __init__(self, mwbase = 0.0, r = 0.0, rselect = None, tpelec = 0, maxerr = 0.0, minerr = 0.0, kpgov = 0.0, kigov = 0.0, kdgov = 0.0, tdgov = 0, vmax = 0.0, vmin = 0.0, tact = 0, kturb = 0.0, wfnl = 0.0, tb = 0, tc = 0, wfspd = False, teng = 0, tfload = 0, kpload = 0.0, kiload = 0.0, ldref = 0.0, dm = 0.0, ropen = 0.0, rclose = 0.0, kimw = 0.0, aset = 0.0, ka = 0.0, ta = 0, db = 0.0, tsa = 0, tsb = 0, rup = 0.0, rdown = 0.0, prate = 0.0, flim1 = 0.0, plim1 = 0.0, flim2 = 0.0, plim2 = 0.0, flim3 = 0.0, plim3 = 0.0, flim4 = 0.0, plim4 = 0.0, flim5 = 0.0, plim5 = 0.0, flim6 = 0.0, plim6 = 0.0, flim7 = 0.0, plim7 = 0.0, flim8 = 0.0, plim8 = 0.0, flim9 = 0.0, plim9 = 0.0, flim10 = 0.0, plim10 = 0.0,  *args, **kw_args):
+	def __init__(self, mwbase = , r = , rselect = , tpelec = , maxerr = , minerr = , kpgov = , kigov = , kdgov = , tdgov = , vmax = , vmin = , tact = , kturb = , wfnl = , tb = , tc = , wfspd = , teng = , tfload = , kpload = , kiload = , ldref = , dm = , ropen = , rclose = , kimw = , aset = , ka = , ta = , db = , tsa = , tsb = , rup = , rdown = , prate = , flim1 = , plim1 = , flim2 = , plim2 = , flim3 = , plim3 = , flim4 = , plim4 = , flim5 = , plim5 = , flim6 = , plim6 = , flim7 = , plim7 = , flim8 = , plim8 = , flim9 = , plim9 = , flim10 = , plim10 = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.mwbase = mwbase

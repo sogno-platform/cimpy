@@ -1,24 +1,24 @@
-from cimpy.cgmes_v2_4_15.DCEquipmentContainer import DCEquipmentContainer
+from cimpy.output.DCEquipmentContainer import DCEquipmentContainer
 
 
 class DCLine(DCEquipmentContainer):
 	'''
 	Overhead lines and/or cables connecting two or more HVDC substations.
 
-	:Region:  Default: None
+	:Region:  Default: 
 		'''
 
 	cgmesProfile = DCEquipmentContainer.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'Region': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
+						'Region': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class DCEquipmentContainer: \n' + DCEquipmentContainer.__doc__ 
 
-	def __init__(self, Region = None,  *args, **kw_args):
+	def __init__(self, Region = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Region = Region

@@ -1,64 +1,64 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.output.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcAVR7(ExcitationSystemDynamics):
 	'''
 	IVO excitation system.
 
-	:k1: Gain (K1).  Typical Value = 1. Default: 0.0
-	:a1: Lead coefficient (A1).  Typical Value = 0.5. Default: 0.0
-	:a2: Lag coefficient (A2).  Typical Value = 0.5. Default: 0.0
-	:t1: Lead time constant (T1).  Typical Value = 0.05. Default: 0
-	:t2: Lag time constant (T2).  Typical Value = 0.1. Default: 0
-	:vmax1: Lead-lag max. limit (Vmax1).  Typical Value = 5. Default: 0.0
-	:vmin1: Lead-lag min. limit (Vmin1).  Typical Value = -5. Default: 0.0
-	:k3: Gain (K3).  Typical Value = 3. Default: 0.0
-	:a3: Lead coefficient (A3).  Typical Value = 0.5. Default: 0.0
-	:a4: Lag coefficient (A4).  Typical Value = 0.5. Default: 0.0
-	:t3: Lead time constant (T3).  Typical Value = 0.1. Default: 0
-	:t4: Lag time constant (T4).  Typical Value = 0.1. Default: 0
-	:vmax3: Lead-lag max. limit (Vmax3).  Typical Value = 5. Default: 0.0
-	:vmin3: Lead-lag min. limit (Vmin3).  Typical Value = -5. Default: 0.0
-	:k5: Gain (K5).  Typical Value = 1. Default: 0.0
-	:a5: Lead coefficient (A5).  Typical Value = 0.5. Default: 0.0
-	:a6: Lag coefficient (A6).  Typical Value = 0.5. Default: 0.0
-	:t5: Lead time constant (T5).  Typical Value = 0.1. Default: 0
-	:t6: Lag time constant (T6).  Typical Value = 0.1. Default: 0
-	:vmax5: Lead-lag max. limit (Vmax5).  Typical Value = 5. Default: 0.0
-	:vmin5: Lead-lag min. limit (Vmin5).  Typical Value = -2. Default: 0.0
+	:k1: Gain (K1).  Typical Value = 1. Default: 
+	:a1: Lead coefficient (A1).  Typical Value = 0.5. Default: 
+	:a2: Lag coefficient (A2).  Typical Value = 0.5. Default: 
+	:t1: Lead time constant (T1).  Typical Value = 0.05. Default: 
+	:t2: Lag time constant (T2).  Typical Value = 0.1. Default: 
+	:vmax1: Lead-lag max. limit (Vmax1).  Typical Value = 5. Default: 
+	:vmin1: Lead-lag min. limit (Vmin1).  Typical Value = -5. Default: 
+	:k3: Gain (K3).  Typical Value = 3. Default: 
+	:a3: Lead coefficient (A3).  Typical Value = 0.5. Default: 
+	:a4: Lag coefficient (A4).  Typical Value = 0.5. Default: 
+	:t3: Lead time constant (T3).  Typical Value = 0.1. Default: 
+	:t4: Lag time constant (T4).  Typical Value = 0.1. Default: 
+	:vmax3: Lead-lag max. limit (Vmax3).  Typical Value = 5. Default: 
+	:vmin3: Lead-lag min. limit (Vmin3).  Typical Value = -5. Default: 
+	:k5: Gain (K5).  Typical Value = 1. Default: 
+	:a5: Lead coefficient (A5).  Typical Value = 0.5. Default: 
+	:a6: Lag coefficient (A6).  Typical Value = 0.5. Default: 
+	:t5: Lead time constant (T5).  Typical Value = 0.1. Default: 
+	:t6: Lag time constant (T6).  Typical Value = 0.1. Default: 
+	:vmax5: Lead-lag max. limit (Vmax5).  Typical Value = 5. Default: 
+	:vmin5: Lead-lag min. limit (Vmin5).  Typical Value = -2. Default: 
 		'''
 
 	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'k1': [cgmesProfile.DY.value, ],
-						'a1': [cgmesProfile.DY.value, ],
-						'a2': [cgmesProfile.DY.value, ],
-						't1': [cgmesProfile.DY.value, ],
-						't2': [cgmesProfile.DY.value, ],
-						'vmax1': [cgmesProfile.DY.value, ],
-						'vmin1': [cgmesProfile.DY.value, ],
-						'k3': [cgmesProfile.DY.value, ],
-						'a3': [cgmesProfile.DY.value, ],
-						'a4': [cgmesProfile.DY.value, ],
-						't3': [cgmesProfile.DY.value, ],
-						't4': [cgmesProfile.DY.value, ],
-						'vmax3': [cgmesProfile.DY.value, ],
-						'vmin3': [cgmesProfile.DY.value, ],
-						'k5': [cgmesProfile.DY.value, ],
-						'a5': [cgmesProfile.DY.value, ],
-						'a6': [cgmesProfile.DY.value, ],
-						't5': [cgmesProfile.DY.value, ],
-						't6': [cgmesProfile.DY.value, ],
-						'vmax5': [cgmesProfile.DY.value, ],
-						'vmin5': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'k1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vmax1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vmin1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'k3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a4': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't4': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vmax3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vmin3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'k5': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a5': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a6': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't5': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't6': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vmax5': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vmin5': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, k1 = 0.0, a1 = 0.0, a2 = 0.0, t1 = 0, t2 = 0, vmax1 = 0.0, vmin1 = 0.0, k3 = 0.0, a3 = 0.0, a4 = 0.0, t3 = 0, t4 = 0, vmax3 = 0.0, vmin3 = 0.0, k5 = 0.0, a5 = 0.0, a6 = 0.0, t5 = 0, t6 = 0, vmax5 = 0.0, vmin5 = 0.0,  *args, **kw_args):
+	def __init__(self, k1 = , a1 = , a2 = , t1 = , t2 = , vmax1 = , vmin1 = , k3 = , a3 = , a4 = , t3 = , t4 = , vmax3 = , vmin3 = , k5 = , a5 = , a6 = , t5 = , t6 = , vmax5 = , vmin5 = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.k1 = k1

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.ProtectedSwitch import ProtectedSwitch
+from cimpy.output.ProtectedSwitch import ProtectedSwitch
 
 
 class Breaker(ProtectedSwitch):
@@ -9,7 +9,7 @@ class Breaker(ProtectedSwitch):
 
 	cgmesProfile = ProtectedSwitch.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
 						 }
 
 	serializationProfile = {}

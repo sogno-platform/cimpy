@@ -1,26 +1,26 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from cimpy.output.IdentifiedObject import IdentifiedObject
 
 
 class TopologicalIsland(IdentifiedObject):
 	'''
 	An electrically connected subset of the network. Topological islands can change as the current network state changes: e.g. due to  - disconnect switches or breakers change state in a SCADA/EMS - manual creation, change or deletion of topological nodes in a planning tool.
 
-	:AngleRefTopologicalNode: The angle reference for the island.   Normally there is one TopologicalNode that is selected as the angle reference for each island.   Other reference schemes exist, so the association is typically optional. Default: None
-	:TopologicalNodes: A topological node belongs to a topological island. Default: "list"
+	:AngleRefTopologicalNode: The angle reference for the island.   Normally there is one TopologicalNode that is selected as the angle reference for each island.   Other reference schemes exist, so the association is typically optional. Default: 
+	:TopologicalNodes: A topological node belongs to a topological island. Default: 
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.SV.value, ],
-						'AngleRefTopologicalNode': [cgmesProfile.SV.value, ],
-						'TopologicalNodes': [cgmesProfile.SV.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
+						'AngleRefTopologicalNode': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
+						'TopologicalNodes': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SV'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, AngleRefTopologicalNode = None, TopologicalNodes = "list",  *args, **kw_args):
+	def __init__(self, AngleRefTopologicalNode = , TopologicalNodes = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.AngleRefTopologicalNode = AngleRefTopologicalNode

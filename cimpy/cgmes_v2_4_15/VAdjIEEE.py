@@ -1,34 +1,34 @@
-from cimpy.cgmes_v2_4_15.VoltageAdjusterDynamics import VoltageAdjusterDynamics
+from cimpy.output.VoltageAdjusterDynamics import VoltageAdjusterDynamics
 
 
 class VAdjIEEE(VoltageAdjusterDynamics):
 	'''
 	The class represents IEEE Voltage Adjuster which is used to represent the voltage adjuster in either a power factor or var control system.  Reference: IEEE Standard 421.5-2005 Section 11.1.
 
-	:vadjf: Set high to provide a continuous raise or lower (). Default: 0.0
-	:adjslew: Rate at which output of adjuster changes ().  Unit = sec./PU.  Typical Value = 300. Default: 0.0
-	:vadjmax: Maximum output of the adjuster ().  Typical Value = 1.1. Default: 0.0
-	:vadjmin: Minimum output of the adjuster ().  Typical Value = 0.9. Default: 0.0
-	:taon: Time that adjuster pulses are on ().  Typical Value = 0.1. Default: 0
-	:taoff: Time that adjuster pulses are off ().  Typical Value = 0.5. Default: 0
+	:vadjf: Set high to provide a continuous raise or lower (). Default: 
+	:adjslew: Rate at which output of adjuster changes ().  Unit = sec./PU.  Typical Value = 300. Default: 
+	:vadjmax: Maximum output of the adjuster ().  Typical Value = 1.1. Default: 
+	:vadjmin: Minimum output of the adjuster ().  Typical Value = 0.9. Default: 
+	:taon: Time that adjuster pulses are on ().  Typical Value = 0.1. Default: 
+	:taoff: Time that adjuster pulses are off ().  Typical Value = 0.5. Default: 
 		'''
 
 	cgmesProfile = VoltageAdjusterDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'vadjf': [cgmesProfile.DY.value, ],
-						'adjslew': [cgmesProfile.DY.value, ],
-						'vadjmax': [cgmesProfile.DY.value, ],
-						'vadjmin': [cgmesProfile.DY.value, ],
-						'taon': [cgmesProfile.DY.value, ],
-						'taoff': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vadjf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'adjslew': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vadjmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vadjmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'taon': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'taoff': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class VoltageAdjusterDynamics: \n' + VoltageAdjusterDynamics.__doc__ 
 
-	def __init__(self, vadjf = 0.0, adjslew = 0.0, vadjmax = 0.0, vadjmin = 0.0, taon = 0, taoff = 0,  *args, **kw_args):
+	def __init__(self, vadjf = , adjslew = , vadjmax = , vadjmin = , taon = , taoff = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.vadjf = vadjf

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.SynchronousMachineDynamics import SynchronousMachineDynamics
+from cimpy.output.SynchronousMachineDynamics import SynchronousMachineDynamics
 
 
 class SynchronousMachineSimplified(SynchronousMachineDynamics):
@@ -9,7 +9,7 @@ class SynchronousMachineSimplified(SynchronousMachineDynamics):
 
 	cgmesProfile = SynchronousMachineDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}

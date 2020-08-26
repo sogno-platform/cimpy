@@ -1,26 +1,26 @@
-from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.output.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class MechanicalLoadDynamics(DynamicsFunctionBlock):
 	'''
 	Mechanical load function block whose behavior is described by reference to a standard model
 
-	:SynchronousMachineDynamics: Synchronous machine model with which this mechanical load model is associated. Default: None
-	:AsynchronousMachineDynamics: Asynchronous machine model with which this mechanical load model is associated. Default: None
+	:SynchronousMachineDynamics: Synchronous machine model with which this mechanical load model is associated. Default: 
+	:AsynchronousMachineDynamics: Asynchronous machine model with which this mechanical load model is associated. Default: 
 		'''
 
 	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'SynchronousMachineDynamics': [cgmesProfile.DY.value, ],
-						'AsynchronousMachineDynamics': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'SynchronousMachineDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'AsynchronousMachineDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class DynamicsFunctionBlock: \n' + DynamicsFunctionBlock.__doc__ 
 
-	def __init__(self, SynchronousMachineDynamics = None, AsynchronousMachineDynamics = None,  *args, **kw_args):
+	def __init__(self, SynchronousMachineDynamics = , AsynchronousMachineDynamics = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.SynchronousMachineDynamics = SynchronousMachineDynamics

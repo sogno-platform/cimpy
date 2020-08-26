@@ -1,38 +1,38 @@
-from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.output.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class ExcitationSystemDynamics(DynamicsFunctionBlock):
 	'''
 	Excitation system function block whose behavior is described by reference to a standard model
 
-	:SynchronousMachineDynamics: Synchronous machine model with which this excitation system model is associated. Default: None
-	:PowerSystemStabilizerDynamics: Power system stabilizer model associated with this excitation system model. Default: None
-	:PFVArControllerType1Dynamics: Power Factor or VAr controller Type I model associated with this excitation system model. Default: None
-	:VoltageCompensatorDynamics: Voltage compensator model associated with this excitation system model. Default: None
-	:DiscontinuousExcitationControlDynamics: Discontinuous excitation control model associated with this excitation system model. Default: None
-	:UnderexcitationLimiterDynamics: Undrexcitation limiter model associated with this excitation system model. Default: None
-	:PFVArControllerType2Dynamics: Power Factor or VAr controller Type II model associated with this excitation system model. Default: None
-	:OverexcitationLimiterDynamics: Overexcitation limiter model associated with this excitation system model. Default: None
+	:SynchronousMachineDynamics: Synchronous machine model with which this excitation system model is associated. Default: 
+	:PowerSystemStabilizerDynamics: Power system stabilizer model associated with this excitation system model. Default: 
+	:PFVArControllerType1Dynamics: Power Factor or VAr controller Type I model associated with this excitation system model. Default: 
+	:VoltageCompensatorDynamics: Voltage compensator model associated with this excitation system model. Default: 
+	:DiscontinuousExcitationControlDynamics: Discontinuous excitation control model associated with this excitation system model. Default: 
+	:UnderexcitationLimiterDynamics: Undrexcitation limiter model associated with this excitation system model. Default: 
+	:PFVArControllerType2Dynamics: Power Factor or VAr controller Type II model associated with this excitation system model. Default: 
+	:OverexcitationLimiterDynamics: Overexcitation limiter model associated with this excitation system model. Default: 
 		'''
 
 	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'SynchronousMachineDynamics': [cgmesProfile.DY.value, ],
-						'PowerSystemStabilizerDynamics': [cgmesProfile.DY.value, ],
-						'PFVArControllerType1Dynamics': [cgmesProfile.DY.value, ],
-						'VoltageCompensatorDynamics': [cgmesProfile.DY.value, ],
-						'DiscontinuousExcitationControlDynamics': [cgmesProfile.DY.value, ],
-						'UnderexcitationLimiterDynamics': [cgmesProfile.DY.value, ],
-						'PFVArControllerType2Dynamics': [cgmesProfile.DY.value, ],
-						'OverexcitationLimiterDynamics': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'SynchronousMachineDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'PowerSystemStabilizerDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'PFVArControllerType1Dynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'VoltageCompensatorDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'DiscontinuousExcitationControlDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'UnderexcitationLimiterDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'PFVArControllerType2Dynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'OverexcitationLimiterDynamics': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class DynamicsFunctionBlock: \n' + DynamicsFunctionBlock.__doc__ 
 
-	def __init__(self, SynchronousMachineDynamics = None, PowerSystemStabilizerDynamics = None, PFVArControllerType1Dynamics = None, VoltageCompensatorDynamics = None, DiscontinuousExcitationControlDynamics = None, UnderexcitationLimiterDynamics = None, PFVArControllerType2Dynamics = None, OverexcitationLimiterDynamics = None,  *args, **kw_args):
+	def __init__(self, SynchronousMachineDynamics = , PowerSystemStabilizerDynamics = , PFVArControllerType1Dynamics = , VoltageCompensatorDynamics = , DiscontinuousExcitationControlDynamics = , UnderexcitationLimiterDynamics = , PFVArControllerType2Dynamics = , OverexcitationLimiterDynamics = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.SynchronousMachineDynamics = SynchronousMachineDynamics

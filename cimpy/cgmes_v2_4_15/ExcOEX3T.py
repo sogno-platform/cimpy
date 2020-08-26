@@ -1,60 +1,60 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.output.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcOEX3T(ExcitationSystemDynamics):
 	'''
 	Modified IEEE Type ST1 Excitation System with semi-continuous and acting terminal voltage limiter.
 
-	:t1: Time constant (T). Default: 0
-	:t2: Time constant (T). Default: 0
-	:t3: Time constant (T). Default: 0
-	:t4: Time constant (T). Default: 0
-	:ka: Gain (K). Default: 0.0
-	:t5: Time constant (T). Default: 0
-	:t6: Time constant (T). Default: 0
-	:vrmax: Limiter (V). Default: 0.0
-	:vrmin: Limiter (V). Default: 0.0
-	:te: Time constant (T). Default: 0
-	:kf: Gain (K). Default: 0.0
-	:tf: Time constant (T). Default: 0
-	:kc: Gain (K). Default: 0.0
-	:kd: Gain (K). Default: 0.0
-	:ke: Gain (K). Default: 0.0
-	:e1: Saturation parameter (E). Default: 0.0
-	:see1: Saturation parameter (S(E)). Default: 0.0
-	:e2: Saturation parameter (E). Default: 0.0
-	:see2: Saturation parameter (S(E)). Default: 0.0
+	:t1: Time constant (T). Default: 
+	:t2: Time constant (T). Default: 
+	:t3: Time constant (T). Default: 
+	:t4: Time constant (T). Default: 
+	:ka: Gain (K). Default: 
+	:t5: Time constant (T). Default: 
+	:t6: Time constant (T). Default: 
+	:vrmax: Limiter (V). Default: 
+	:vrmin: Limiter (V). Default: 
+	:te: Time constant (T). Default: 
+	:kf: Gain (K). Default: 
+	:tf: Time constant (T). Default: 
+	:kc: Gain (K). Default: 
+	:kd: Gain (K). Default: 
+	:ke: Gain (K). Default: 
+	:e1: Saturation parameter (E). Default: 
+	:see1: Saturation parameter (S(E)). Default: 
+	:e2: Saturation parameter (E). Default: 
+	:see2: Saturation parameter (S(E)). Default: 
 		'''
 
 	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						't1': [cgmesProfile.DY.value, ],
-						't2': [cgmesProfile.DY.value, ],
-						't3': [cgmesProfile.DY.value, ],
-						't4': [cgmesProfile.DY.value, ],
-						'ka': [cgmesProfile.DY.value, ],
-						't5': [cgmesProfile.DY.value, ],
-						't6': [cgmesProfile.DY.value, ],
-						'vrmax': [cgmesProfile.DY.value, ],
-						'vrmin': [cgmesProfile.DY.value, ],
-						'te': [cgmesProfile.DY.value, ],
-						'kf': [cgmesProfile.DY.value, ],
-						'tf': [cgmesProfile.DY.value, ],
-						'kc': [cgmesProfile.DY.value, ],
-						'kd': [cgmesProfile.DY.value, ],
-						'ke': [cgmesProfile.DY.value, ],
-						'e1': [cgmesProfile.DY.value, ],
-						'see1': [cgmesProfile.DY.value, ],
-						'e2': [cgmesProfile.DY.value, ],
-						'see2': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't4': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ka': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't5': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't6': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vrmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vrmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'te': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kc': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kd': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ke': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'e1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'see1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'e2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'see2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, t1 = 0, t2 = 0, t3 = 0, t4 = 0, ka = 0.0, t5 = 0, t6 = 0, vrmax = 0.0, vrmin = 0.0, te = 0, kf = 0.0, tf = 0, kc = 0.0, kd = 0.0, ke = 0.0, e1 = 0.0, see1 = 0.0, e2 = 0.0, see2 = 0.0,  *args, **kw_args):
+	def __init__(self, t1 = , t2 = , t3 = , t4 = , ka = , t5 = , t6 = , vrmax = , vrmin = , te = , kf = , tf = , kc = , kd = , ke = , e1 = , see1 = , e2 = , see2 = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.t1 = t1

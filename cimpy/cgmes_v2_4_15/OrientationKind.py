@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from  import Base
 
 
 class OrientationKind(Base):
@@ -9,7 +9,7 @@ class OrientationKind(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
 						 }
 
 	serializationProfile = {}

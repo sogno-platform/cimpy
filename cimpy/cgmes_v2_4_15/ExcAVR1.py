@@ -1,46 +1,46 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.output.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcAVR1(ExcitationSystemDynamics):
 	'''
 	Italian excitation system corresponding to IEEE (1968) Type 1 Model. It represents exciter dynamo and electromechanical regulator.
 
-	:ka: AVR gain (K).  Typical Value = 500. Default: 0.0
-	:vrmn: Maximum AVR output (V).  Typical Value = -6. Default: 0.0
-	:vrmx: Minimum AVR output (V).  Typical Value = 7. Default: 0.0
-	:ta: AVR time constant (T).  Typical Value = 0.2. Default: 0
-	:tb: AVR time constant (T).  Typical Value = 0. Default: 0
-	:te: Exciter time constant (T).  Typical Value = 1. Default: 0
-	:e1: Field voltage value 1  (E1).  Typical Value = 4.18. Default: 0.0
-	:se1: Saturation factor at E1 (S(E1)).  Typical Value = 0.1. Default: 0.0
-	:e2: Field voltage value 2 (E2).  Typical Value = 3.14. Default: 0.0
-	:se2: Saturation factor at E2 (S(E2)).  Typical Value = 0.03. Default: 0.0
-	:kf: Rate feedback gain (K).  Typical Value = 0.02. Default: 0.0
-	:tf: Rate feedback time constant (T).  Typical Value = 1. Default: 0
+	:ka: AVR gain (K).  Typical Value = 500. Default: 
+	:vrmn: Maximum AVR output (V).  Typical Value = -6. Default: 
+	:vrmx: Minimum AVR output (V).  Typical Value = 7. Default: 
+	:ta: AVR time constant (T).  Typical Value = 0.2. Default: 
+	:tb: AVR time constant (T).  Typical Value = 0. Default: 
+	:te: Exciter time constant (T).  Typical Value = 1. Default: 
+	:e1: Field voltage value 1  (E1).  Typical Value = 4.18. Default: 
+	:se1: Saturation factor at E1 (S(E1)).  Typical Value = 0.1. Default: 
+	:e2: Field voltage value 2 (E2).  Typical Value = 3.14. Default: 
+	:se2: Saturation factor at E2 (S(E2)).  Typical Value = 0.03. Default: 
+	:kf: Rate feedback gain (K).  Typical Value = 0.02. Default: 
+	:tf: Rate feedback time constant (T).  Typical Value = 1. Default: 
 		'''
 
 	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'ka': [cgmesProfile.DY.value, ],
-						'vrmn': [cgmesProfile.DY.value, ],
-						'vrmx': [cgmesProfile.DY.value, ],
-						'ta': [cgmesProfile.DY.value, ],
-						'tb': [cgmesProfile.DY.value, ],
-						'te': [cgmesProfile.DY.value, ],
-						'e1': [cgmesProfile.DY.value, ],
-						'se1': [cgmesProfile.DY.value, ],
-						'e2': [cgmesProfile.DY.value, ],
-						'se2': [cgmesProfile.DY.value, ],
-						'kf': [cgmesProfile.DY.value, ],
-						'tf': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ka': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vrmn': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vrmx': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ta': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tb': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'te': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'e1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'se1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'e2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'se2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'kf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tf': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, ka = 0.0, vrmn = 0.0, vrmx = 0.0, ta = 0, tb = 0, te = 0, e1 = 0.0, se1 = 0.0, e2 = 0.0, se2 = 0.0, kf = 0.0, tf = 0,  *args, **kw_args):
+	def __init__(self, ka = , vrmn = , vrmx = , ta = , tb = , te = , e1 = , se1 = , e2 = , se2 = , kf = , tf = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ka = ka

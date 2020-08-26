@@ -1,84 +1,84 @@
-from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.output.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class Pss2B(PowerSystemStabilizerDynamics):
 	'''
 	Modified IEEE PSS2B Model.  Extra lead/lag (or rate) block added at end (up to 4 lead/lags total).
 
-	:inputSignal1Type: Type of input signal #1.  Typical Value = rotorSpeed. Default: None
-	:inputSignal2Type: Type of input signal #2.  Typical Value = generatorElectricalPower. Default: None
-	:vsi1max: Input signal #1 max limit (Vsi1max).  Typical Value = 2. Default: 0.0
-	:vsi1min: Input signal #1 min limit (Vsi1min).  Typical Value = -2. Default: 0.0
-	:tw1: First washout on signal #1 (Tw1).  Typical Value = 2. Default: 0
-	:tw2: Second washout on signal #1 (Tw2).  Typical Value = 2. Default: 0
-	:vsi2max: Input signal #2 max limit (Vsi2max).  Typical Value = 2. Default: 0.0
-	:vsi2min: Input signal #2 min limit (Vsi2min).  Typical Value = -2. Default: 0.0
-	:tw3: First washout on signal #2 (Tw3).  Typical Value = 2. Default: 0
-	:tw4: Second washout on signal #2 (Tw4).  Typical Value = 0. Default: 0
-	:t1: Lead/lag time constant (T1).  Typical Value = 0.12. Default: 0
-	:t2: Lead/lag time constant (T2).  Typical Value = 0.02. Default: 0
-	:t3: Lead/lag time constant (T3).  Typical Value = 0.3. Default: 0
-	:t4: Lead/lag time constant (T4).  Typical Value = 0.02. Default: 0
-	:t6: Time constant on signal #1 (T6).  Typical Value = 0. Default: 0
-	:t7: Time constant on signal #2 (T7).  Typical Value = 2. Default: 0
-	:t8: Lead of ramp tracking filter (T8).  Typical Value = 0.2. Default: 0
-	:t9: Lag of ramp tracking filter (T9).  Typical Value = 0.1. Default: 0
-	:t10: Lead/lag time constant (T10).  Typical Value = 0. Default: 0
-	:t11: Lead/lag time constant (T11).  Typical Value = 0. Default: 0
-	:ks1: Stabilizer gain (Ks1).  Typical Value = 12. Default: 0.0
-	:ks2: Gain on signal #2 (Ks2).  Typical Value = 0.2. Default: 0.0
-	:ks3: Gain on signal #2 input before ramp-tracking filter (Ks3).  Typical Value = 1. Default: 0.0
-	:ks4: Gain on signal #2 input after ramp-tracking filter (Ks4).  Typical Value = 1. Default: 0.0
-	:n: Order of ramp tracking filter (N).  Typical Value = 1. Default: 0
-	:m: Denominator order of ramp tracking filter (M).  Typical Value = 5. Default: 0
-	:vstmax: Stabilizer output max limit (Vstmax).  Typical Value = 0.1. Default: 0.0
-	:vstmin: Stabilizer output min limit (Vstmin).  Typical Value = -0.1. Default: 0.0
-	:a: Numerator constant (a).  Typical Value = 1. Default: 0.0
-	:ta: Lead constant (Ta).  Typical Value = 0. Default: 0
-	:tb: Lag time constant (Tb).  Typical Value = 0. Default: 0
+	:inputSignal1Type: Type of input signal #1.  Typical Value = rotorSpeed. Default: 
+	:inputSignal2Type: Type of input signal #2.  Typical Value = generatorElectricalPower. Default: 
+	:vsi1max: Input signal #1 max limit (Vsi1max).  Typical Value = 2. Default: 
+	:vsi1min: Input signal #1 min limit (Vsi1min).  Typical Value = -2. Default: 
+	:tw1: First washout on signal #1 (Tw1).  Typical Value = 2. Default: 
+	:tw2: Second washout on signal #1 (Tw2).  Typical Value = 2. Default: 
+	:vsi2max: Input signal #2 max limit (Vsi2max).  Typical Value = 2. Default: 
+	:vsi2min: Input signal #2 min limit (Vsi2min).  Typical Value = -2. Default: 
+	:tw3: First washout on signal #2 (Tw3).  Typical Value = 2. Default: 
+	:tw4: Second washout on signal #2 (Tw4).  Typical Value = 0. Default: 
+	:t1: Lead/lag time constant (T1).  Typical Value = 0.12. Default: 
+	:t2: Lead/lag time constant (T2).  Typical Value = 0.02. Default: 
+	:t3: Lead/lag time constant (T3).  Typical Value = 0.3. Default: 
+	:t4: Lead/lag time constant (T4).  Typical Value = 0.02. Default: 
+	:t6: Time constant on signal #1 (T6).  Typical Value = 0. Default: 
+	:t7: Time constant on signal #2 (T7).  Typical Value = 2. Default: 
+	:t8: Lead of ramp tracking filter (T8).  Typical Value = 0.2. Default: 
+	:t9: Lag of ramp tracking filter (T9).  Typical Value = 0.1. Default: 
+	:t10: Lead/lag time constant (T10).  Typical Value = 0. Default: 
+	:t11: Lead/lag time constant (T11).  Typical Value = 0. Default: 
+	:ks1: Stabilizer gain (Ks1).  Typical Value = 12. Default: 
+	:ks2: Gain on signal #2 (Ks2).  Typical Value = 0.2. Default: 
+	:ks3: Gain on signal #2 input before ramp-tracking filter (Ks3).  Typical Value = 1. Default: 
+	:ks4: Gain on signal #2 input after ramp-tracking filter (Ks4).  Typical Value = 1. Default: 
+	:n: Order of ramp tracking filter (N).  Typical Value = 1. Default: 
+	:m: Denominator order of ramp tracking filter (M).  Typical Value = 5. Default: 
+	:vstmax: Stabilizer output max limit (Vstmax).  Typical Value = 0.1. Default: 
+	:vstmin: Stabilizer output min limit (Vstmin).  Typical Value = -0.1. Default: 
+	:a: Numerator constant (a).  Typical Value = 1. Default: 
+	:ta: Lead constant (Ta).  Typical Value = 0. Default: 
+	:tb: Lag time constant (Tb).  Typical Value = 0. Default: 
 		'''
 
 	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'inputSignal1Type': [cgmesProfile.DY.value, ],
-						'inputSignal2Type': [cgmesProfile.DY.value, ],
-						'vsi1max': [cgmesProfile.DY.value, ],
-						'vsi1min': [cgmesProfile.DY.value, ],
-						'tw1': [cgmesProfile.DY.value, ],
-						'tw2': [cgmesProfile.DY.value, ],
-						'vsi2max': [cgmesProfile.DY.value, ],
-						'vsi2min': [cgmesProfile.DY.value, ],
-						'tw3': [cgmesProfile.DY.value, ],
-						'tw4': [cgmesProfile.DY.value, ],
-						't1': [cgmesProfile.DY.value, ],
-						't2': [cgmesProfile.DY.value, ],
-						't3': [cgmesProfile.DY.value, ],
-						't4': [cgmesProfile.DY.value, ],
-						't6': [cgmesProfile.DY.value, ],
-						't7': [cgmesProfile.DY.value, ],
-						't8': [cgmesProfile.DY.value, ],
-						't9': [cgmesProfile.DY.value, ],
-						't10': [cgmesProfile.DY.value, ],
-						't11': [cgmesProfile.DY.value, ],
-						'ks1': [cgmesProfile.DY.value, ],
-						'ks2': [cgmesProfile.DY.value, ],
-						'ks3': [cgmesProfile.DY.value, ],
-						'ks4': [cgmesProfile.DY.value, ],
-						'n': [cgmesProfile.DY.value, ],
-						'm': [cgmesProfile.DY.value, ],
-						'vstmax': [cgmesProfile.DY.value, ],
-						'vstmin': [cgmesProfile.DY.value, ],
-						'a': [cgmesProfile.DY.value, ],
-						'ta': [cgmesProfile.DY.value, ],
-						'tb': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'inputSignal1Type': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'inputSignal2Type': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vsi1max': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vsi1min': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tw1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tw2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vsi2max': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vsi2min': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tw3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tw4': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't4': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't6': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't7': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't8': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't9': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't10': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't11': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ks1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ks2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ks3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ks4': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'n': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'm': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vstmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vstmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ta': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'tb': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, inputSignal1Type = None, inputSignal2Type = None, vsi1max = 0.0, vsi1min = 0.0, tw1 = 0, tw2 = 0, vsi2max = 0.0, vsi2min = 0.0, tw3 = 0, tw4 = 0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, t6 = 0, t7 = 0, t8 = 0, t9 = 0, t10 = 0, t11 = 0, ks1 = 0.0, ks2 = 0.0, ks3 = 0.0, ks4 = 0.0, n = 0, m = 0, vstmax = 0.0, vstmin = 0.0, a = 0.0, ta = 0, tb = 0,  *args, **kw_args):
+	def __init__(self, inputSignal1Type = , inputSignal2Type = , vsi1max = , vsi1min = , tw1 = , tw2 = , vsi2max = , vsi2min = , tw3 = , tw4 = , t1 = , t2 = , t3 = , t4 = , t6 = , t7 = , t8 = , t9 = , t10 = , t11 = , ks1 = , ks2 = , ks3 = , ks4 = , n = , m = , vstmax = , vstmin = , a = , ta = , tb = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.inputSignal1Type = inputSignal1Type

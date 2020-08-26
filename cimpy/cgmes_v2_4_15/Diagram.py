@@ -1,36 +1,36 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from cimpy.output.IdentifiedObject import IdentifiedObject
 
 
 class Diagram(IdentifiedObject):
 	'''
 	The diagram being exchanged.  The coordinate system is a standard Cartesian coordinate system and the orientation attribute defines the orientation.
 
-	:DiagramStyle: A Diagram may have a DiagramStyle. Default: None
-	:orientation: Coordinate system orientation of the diagram. Default: None
-	:x1InitialView: X coordinate of the first corner of the initial view. Default: 0.0
-	:x2InitialView: X coordinate of the second corner of the initial view. Default: 0.0
-	:y1InitialView: Y coordinate of the first corner of the initial view. Default: 0.0
-	:y2InitialView: Y coordinate of the second corner of the initial view. Default: 0.0
-	:DiagramElements: A diagram is made up of multiple diagram objects. Default: "list"
+	:DiagramStyle: A Diagram may have a DiagramStyle. Default: 
+	:orientation: Coordinate system orientation of the diagram. Default: 
+	:x1InitialView: X coordinate of the first corner of the initial view. Default: 
+	:x2InitialView: X coordinate of the second corner of the initial view. Default: 
+	:y1InitialView: Y coordinate of the first corner of the initial view. Default: 
+	:y2InitialView: Y coordinate of the second corner of the initial view. Default: 
+	:DiagramElements: A diagram is made up of multiple diagram objects. Default: 
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
-						'DiagramStyle': [cgmesProfile.DI.value, ],
-						'orientation': [cgmesProfile.DI.value, ],
-						'x1InitialView': [cgmesProfile.DI.value, ],
-						'x2InitialView': [cgmesProfile.DI.value, ],
-						'y1InitialView': [cgmesProfile.DI.value, ],
-						'y2InitialView': [cgmesProfile.DI.value, ],
-						'DiagramElements': [cgmesProfile.DI.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
+						'DiagramStyle': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
+						'orientation': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
+						'x1InitialView': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
+						'x2InitialView': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
+						'y1InitialView': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
+						'y2InitialView': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
+						'DiagramElements': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DL'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, DiagramStyle = None, orientation = None, x1InitialView = 0.0, x2InitialView = 0.0, y1InitialView = 0.0, y2InitialView = 0.0, DiagramElements = "list",  *args, **kw_args):
+	def __init__(self, DiagramStyle = , orientation = , x1InitialView = , x2InitialView = , y1InitialView = , y2InitialView = , DiagramElements = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.DiagramStyle = DiagramStyle

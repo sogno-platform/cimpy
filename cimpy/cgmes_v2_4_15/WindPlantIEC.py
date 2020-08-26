@@ -1,26 +1,26 @@
-from cimpy.cgmes_v2_4_15.WindPlantDynamics import WindPlantDynamics
+from cimpy.output.WindPlantDynamics import WindPlantDynamics
 
 
 class WindPlantIEC(WindPlantDynamics):
 	'''
 	Simplified IEC type plant level model.   Reference: IEC 61400-27-1, AnnexE.
 
-	:WindPlantFreqPcontrolIEC: Wind plant frequency and active power control model associated with this wind plant. Default: None
-	:WindPlantReactiveControlIEC: Wind plant reactive control model associated with this wind plant. Default: None
+	:WindPlantFreqPcontrolIEC: Wind plant frequency and active power control model associated with this wind plant. Default: 
+	:WindPlantReactiveControlIEC: Wind plant reactive control model associated with this wind plant. Default: 
 		'''
 
 	cgmesProfile = WindPlantDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'WindPlantFreqPcontrolIEC': [cgmesProfile.DY.value, ],
-						'WindPlantReactiveControlIEC': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'WindPlantFreqPcontrolIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'WindPlantReactiveControlIEC': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class WindPlantDynamics: \n' + WindPlantDynamics.__doc__ 
 
-	def __init__(self, WindPlantFreqPcontrolIEC = None, WindPlantReactiveControlIEC = None,  *args, **kw_args):
+	def __init__(self, WindPlantFreqPcontrolIEC = , WindPlantReactiveControlIEC = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.WindPlantFreqPcontrolIEC = WindPlantFreqPcontrolIEC

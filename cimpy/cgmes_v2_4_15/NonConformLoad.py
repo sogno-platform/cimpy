@@ -1,24 +1,24 @@
-from cimpy.cgmes_v2_4_15.EnergyConsumer import EnergyConsumer
+from cimpy.output.EnergyConsumer import EnergyConsumer
 
 
 class NonConformLoad(EnergyConsumer):
 	'''
 	NonConformLoad represent loads that do not follow a daily load change pattern and changes are not correlated with the daily load change pattern.
 
-	:LoadGroup: Conform loads assigned to this ConformLoadGroup. Default: None
+	:LoadGroup: Conform loads assigned to this ConformLoadGroup. Default: 
 		'''
 
 	cgmesProfile = EnergyConsumer.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
-						'LoadGroup': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, ],
+						'LoadGroup': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class EnergyConsumer: \n' + EnergyConsumer.__doc__ 
 
-	def __init__(self, LoadGroup = None,  *args, **kw_args):
+	def __init__(self, LoadGroup = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.LoadGroup = LoadGroup

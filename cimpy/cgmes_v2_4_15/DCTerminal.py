@@ -1,24 +1,24 @@
-from cimpy.cgmes_v2_4_15.DCBaseTerminal import DCBaseTerminal
+from cimpy.output.DCBaseTerminal import DCBaseTerminal
 
 
 class DCTerminal(DCBaseTerminal):
 	'''
 	An electrical connection point to generic DC conducting equipment.
 
-	:DCConductingEquipment:  Default: None
+	:DCConductingEquipment:  Default: 
 		'''
 
 	cgmesProfile = DCBaseTerminal.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.TP.value, ],
-						'DCConductingEquipment': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'SSH'}.value, cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'TP'}.value, ],
+						'DCConductingEquipment': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'EQ'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class DCBaseTerminal: \n' + DCBaseTerminal.__doc__ 
 
-	def __init__(self, DCConductingEquipment = None,  *args, **kw_args):
+	def __init__(self, DCConductingEquipment = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.DCConductingEquipment = DCConductingEquipment

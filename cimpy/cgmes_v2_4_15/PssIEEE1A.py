@@ -1,46 +1,46 @@
-from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.output.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class PssIEEE1A(PowerSystemStabilizerDynamics):
 	'''
 	The class represents IEEE Std 421.5-2005 type PSS1A power system stabilizer model. PSS1A is the generalized form of a PSS with a single input. Some common stabilizer input signals are speed, frequency, and power.  Reference: IEEE 1A 421.5-2005 Section 8.1.
 
-	:inputSignalType: Type of input signal.  Typical Value = rotorAngularFrequencyDeviation. Default: None
-	:a1: PSS signal conditioning frequency filter constant (A1).  Typical Value = 0.061. Default: 0.0
-	:a2: PSS signal conditioning frequency filter constant (A2).  Typical Value = 0.0017. Default: 0.0
-	:t1: Lead/lag time constant (T1).  Typical Value = 0.3. Default: 0
-	:t2: Lead/lag time constant (T2).  Typical Value = 0.03. Default: 0
-	:t3: Lead/lag time constant (T3).  Typical Value = 0.3. Default: 0
-	:t4: Lead/lag time constant (T4).  Typical Value = 0.03. Default: 0
-	:t5: Washout time constant (T5).  Typical Value = 10. Default: 0
-	:t6: Transducer time constant (T6).  Typical Value = 0.01. Default: 0
-	:ks: Stabilizer gain (Ks).  Typical Value = 5. Default: 0.0
-	:vrmax: Maximum stabilizer output (Vrmax).  Typical Value = 0.05. Default: 0.0
-	:vrmin: Minimum stabilizer output (Vrmin).  Typical Value = -0.05. Default: 0.0
+	:inputSignalType: Type of input signal.  Typical Value = rotorAngularFrequencyDeviation. Default: 
+	:a1: PSS signal conditioning frequency filter constant (A1).  Typical Value = 0.061. Default: 
+	:a2: PSS signal conditioning frequency filter constant (A2).  Typical Value = 0.0017. Default: 
+	:t1: Lead/lag time constant (T1).  Typical Value = 0.3. Default: 
+	:t2: Lead/lag time constant (T2).  Typical Value = 0.03. Default: 
+	:t3: Lead/lag time constant (T3).  Typical Value = 0.3. Default: 
+	:t4: Lead/lag time constant (T4).  Typical Value = 0.03. Default: 
+	:t5: Washout time constant (T5).  Typical Value = 10. Default: 
+	:t6: Transducer time constant (T6).  Typical Value = 0.01. Default: 
+	:ks: Stabilizer gain (Ks).  Typical Value = 5. Default: 
+	:vrmax: Maximum stabilizer output (Vrmax).  Typical Value = 0.05. Default: 
+	:vrmin: Minimum stabilizer output (Vrmin).  Typical Value = -0.05. Default: 
 		'''
 
 	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'inputSignalType': [cgmesProfile.DY.value, ],
-						'a1': [cgmesProfile.DY.value, ],
-						'a2': [cgmesProfile.DY.value, ],
-						't1': [cgmesProfile.DY.value, ],
-						't2': [cgmesProfile.DY.value, ],
-						't3': [cgmesProfile.DY.value, ],
-						't4': [cgmesProfile.DY.value, ],
-						't5': [cgmesProfile.DY.value, ],
-						't6': [cgmesProfile.DY.value, ],
-						'ks': [cgmesProfile.DY.value, ],
-						'vrmax': [cgmesProfile.DY.value, ],
-						'vrmin': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'inputSignalType': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'a2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't1': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't2': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't3': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't4': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't5': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						't6': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'ks': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vrmax': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
+						'vrmin': [cgmesProfile.{'$rdf:datatype': 'http://www.w3.org/2001/XMLSchema#string', '_': 'DY'}.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, inputSignalType = None, a1 = 0.0, a2 = 0.0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, t5 = 0, t6 = 0, ks = 0.0, vrmax = 0.0, vrmin = 0.0,  *args, **kw_args):
+	def __init__(self, inputSignalType = , a1 = , a2 = , t1 = , t2 = , t3 = , t4 = , t5 = , t6 = , ks = , vrmax = , vrmin = ,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.inputSignalType = inputSignalType
