@@ -1,4 +1,4 @@
-from cimpy.output.DCBaseTerminal import DCBaseTerminal
+from cimpy.cgmes_v2_4_15.DCBaseTerminal import DCBaseTerminal
 
 
 class ACDCConverterDCTerminal(DCBaseTerminal):

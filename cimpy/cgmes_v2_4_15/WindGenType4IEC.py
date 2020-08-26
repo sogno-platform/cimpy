@@ -1,4 +1,4 @@
-from cimpy.output.WindTurbineType3or4IEC import WindTurbineType3or4IEC
+from cimpy.cgmes_v2_4_15.WindTurbineType3or4IEC import WindTurbineType3or4IEC
 
 
 class WindGenType4IEC(WindTurbineType3or4IEC):

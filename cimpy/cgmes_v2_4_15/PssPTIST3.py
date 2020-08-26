@@ -1,4 +1,4 @@
-from cimpy.output.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class PssPTIST3(PowerSystemStabilizerDynamics):

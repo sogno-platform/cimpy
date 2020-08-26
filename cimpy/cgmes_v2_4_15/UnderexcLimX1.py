@@ -1,4 +1,4 @@
-from cimpy.output.UnderexcitationLimiterDynamics import UnderexcitationLimiterDynamics
+from cimpy.cgmes_v2_4_15.UnderexcitationLimiterDynamics import UnderexcitationLimiterDynamics
 
 
 class UnderexcLimX1(UnderexcitationLimiterDynamics):

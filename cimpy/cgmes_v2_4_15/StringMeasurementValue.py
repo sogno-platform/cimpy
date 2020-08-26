@@ -1,4 +1,4 @@
-from cimpy.output.MeasurementValue import MeasurementValue
+from cimpy.cgmes_v2_4_15.MeasurementValue import MeasurementValue
 
 
 class StringMeasurementValue(MeasurementValue):

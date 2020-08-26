@@ -1,4 +1,4 @@
-from cimpy.output.ACDCConverter import ACDCConverter
+from cimpy.cgmes_v2_4_15.ACDCConverter import ACDCConverter
 
 
 class VsConverter(ACDCConverter):

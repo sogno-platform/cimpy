@@ -1,4 +1,4 @@
-from cimpy.output.EarthFaultCompensator import EarthFaultCompensator
+from cimpy.cgmes_v2_4_15.EarthFaultCompensator import EarthFaultCompensator
 
 
 class GroundingImpedance(EarthFaultCompensator):

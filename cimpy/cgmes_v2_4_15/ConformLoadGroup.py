@@ -1,4 +1,4 @@
-from cimpy.output.LoadGroup import LoadGroup
+from cimpy.cgmes_v2_4_15.LoadGroup import LoadGroup
 
 
 class ConformLoadGroup(LoadGroup):

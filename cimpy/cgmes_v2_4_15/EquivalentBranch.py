@@ -1,4 +1,4 @@
-from cimpy.output.EquivalentEquipment import EquivalentEquipment
+from cimpy.cgmes_v2_4_15.EquivalentEquipment import EquivalentEquipment
 
 
 class EquivalentBranch(EquivalentEquipment):

@@ -1,4 +1,4 @@
-from cimpy.output.LimitSet import LimitSet
+from cimpy.cgmes_v2_4_15.LimitSet import LimitSet
 
 
 class AccumulatorLimitSet(LimitSet):

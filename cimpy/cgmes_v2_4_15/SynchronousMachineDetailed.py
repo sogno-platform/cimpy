@@ -1,4 +1,4 @@
-from cimpy.output.SynchronousMachineDynamics import SynchronousMachineDynamics
+from cimpy.cgmes_v2_4_15.SynchronousMachineDynamics import SynchronousMachineDynamics
 
 
 class SynchronousMachineDetailed(SynchronousMachineDynamics):

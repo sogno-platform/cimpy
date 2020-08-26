@@ -1,4 +1,4 @@
-from cimpy.output.RegularIntervalSchedule import RegularIntervalSchedule
+from cimpy.cgmes_v2_4_15.RegularIntervalSchedule import RegularIntervalSchedule
 
 
 class SeasonDayTypeSchedule(RegularIntervalSchedule):

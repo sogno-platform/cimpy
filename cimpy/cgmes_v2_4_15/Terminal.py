@@ -1,4 +1,4 @@
-from cimpy.output.ACDCTerminal import ACDCTerminal
+from cimpy.cgmes_v2_4_15.ACDCTerminal import ACDCTerminal
 
 
 class Terminal(ACDCTerminal):

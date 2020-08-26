@@ -1,4 +1,4 @@
-from cimpy.output.RegulatingCondEq import RegulatingCondEq
+from cimpy.cgmes_v2_4_15.RegulatingCondEq import RegulatingCondEq
 
 
 class ShuntCompensator(RegulatingCondEq):

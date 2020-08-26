@@ -1,4 +1,4 @@
-from cimpy.output.Conductor import Conductor
+from cimpy.cgmes_v2_4_15.Conductor import Conductor
 
 
 class ACLineSegment(Conductor):

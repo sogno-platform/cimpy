@@ -1,4 +1,4 @@
-from cimpy.output.Curve import Curve
+from cimpy.cgmes_v2_4_15.Curve import Curve
 
 
 class VsCapabilityCurve(Curve):

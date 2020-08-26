@@ -1,4 +1,4 @@
-from cimpy.output.SynchronousMachineDetailed import SynchronousMachineDetailed
+from cimpy.cgmes_v2_4_15.SynchronousMachineDetailed import SynchronousMachineDetailed
 
 
 class SynchronousMachineEquivalentCircuit(SynchronousMachineDetailed):

@@ -1,4 +1,4 @@
-from cimpy.output.Connector import Connector
+from cimpy.cgmes_v2_4_15.Connector import Connector
 
 
 class Junction(Connector):

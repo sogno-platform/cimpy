@@ -1,4 +1,4 @@
-from cimpy.output.WindTurbineType1or2Dynamics import WindTurbineType1or2Dynamics
+from cimpy.cgmes_v2_4_15.WindTurbineType1or2Dynamics import WindTurbineType1or2Dynamics
 
 
 class WindType1or2UserDefined(WindTurbineType1or2Dynamics):

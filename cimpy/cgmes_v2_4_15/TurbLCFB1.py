@@ -1,4 +1,4 @@
-from cimpy.output.TurbineLoadControllerDynamics import TurbineLoadControllerDynamics
+from cimpy.cgmes_v2_4_15.TurbineLoadControllerDynamics import TurbineLoadControllerDynamics
 
 
 class TurbLCFB1(TurbineLoadControllerDynamics):

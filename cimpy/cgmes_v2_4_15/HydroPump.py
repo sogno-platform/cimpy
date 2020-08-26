@@ -1,4 +1,4 @@
-from cimpy.output.Equipment import Equipment
+from cimpy.cgmes_v2_4_15.Equipment import Equipment
 
 
 class HydroPump(Equipment):

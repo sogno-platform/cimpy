@@ -1,4 +1,4 @@
-from cimpy.output.DCSwitch import DCSwitch
+from cimpy.cgmes_v2_4_15.DCSwitch import DCSwitch
 
 
 class DCBreaker(DCSwitch):

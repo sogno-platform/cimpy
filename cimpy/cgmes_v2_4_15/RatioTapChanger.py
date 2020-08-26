@@ -1,4 +1,4 @@
-from cimpy.output.TapChanger import TapChanger
+from cimpy.cgmes_v2_4_15.TapChanger import TapChanger
 
 
 class RatioTapChanger(TapChanger):

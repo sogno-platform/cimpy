@@ -1,4 +1,4 @@
-from cimpy.output.EnergyConsumer import EnergyConsumer
+from cimpy.cgmes_v2_4_15.EnergyConsumer import EnergyConsumer
 
 
 class StationSupply(EnergyConsumer):

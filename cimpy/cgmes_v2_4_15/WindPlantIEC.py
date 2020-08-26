@@ -1,4 +1,4 @@
-from cimpy.output.WindPlantDynamics import WindPlantDynamics
+from cimpy.cgmes_v2_4_15.WindPlantDynamics import WindPlantDynamics
 
 
 class WindPlantIEC(WindPlantDynamics):

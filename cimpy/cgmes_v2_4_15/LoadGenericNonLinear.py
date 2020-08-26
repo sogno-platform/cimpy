@@ -1,4 +1,4 @@
-from cimpy.output.LoadDynamics import LoadDynamics
+from cimpy.cgmes_v2_4_15.LoadDynamics import LoadDynamics
 
 
 class LoadGenericNonLinear(LoadDynamics):

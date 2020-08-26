@@ -1,4 +1,4 @@
-from cimpy.output.TurbineGovernorDynamics import TurbineGovernorDynamics
+from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovHydroDD(TurbineGovernorDynamics):

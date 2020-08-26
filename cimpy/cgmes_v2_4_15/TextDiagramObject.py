@@ -1,4 +1,4 @@
-from cimpy.output.DiagramObject import DiagramObject
+from cimpy.cgmes_v2_4_15.DiagramObject import DiagramObject
 
 
 class TextDiagramObject(DiagramObject):

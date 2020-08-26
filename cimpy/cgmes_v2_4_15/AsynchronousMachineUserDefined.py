@@ -1,4 +1,4 @@
-from cimpy.output.AsynchronousMachineDynamics import AsynchronousMachineDynamics
+from cimpy.cgmes_v2_4_15.AsynchronousMachineDynamics import AsynchronousMachineDynamics
 
 
 class AsynchronousMachineUserDefined(AsynchronousMachineDynamics):

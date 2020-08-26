@@ -1,4 +1,4 @@
-from cimpy.output.DiscontinuousExcitationControlDynamics import DiscontinuousExcitationControlDynamics
+from cimpy.cgmes_v2_4_15.DiscontinuousExcitationControlDynamics import DiscontinuousExcitationControlDynamics
 
 
 class DiscExcContIEEEDEC2A(DiscontinuousExcitationControlDynamics):

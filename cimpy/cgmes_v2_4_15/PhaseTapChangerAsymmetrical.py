@@ -1,4 +1,4 @@
-from cimpy.output.PhaseTapChangerNonLinear import PhaseTapChangerNonLinear
+from cimpy.cgmes_v2_4_15.PhaseTapChangerNonLinear import PhaseTapChangerNonLinear
 
 
 class PhaseTapChangerAsymmetrical(PhaseTapChangerNonLinear):

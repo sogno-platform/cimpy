@@ -1,4 +1,4 @@
-from cimpy.output.GeneratingUnit import GeneratingUnit
+from cimpy.cgmes_v2_4_15.GeneratingUnit import GeneratingUnit
 
 
 class NuclearGeneratingUnit(GeneratingUnit):

@@ -1,4 +1,4 @@
-from cimpy.output.DCEquipmentContainer import DCEquipmentContainer
+from cimpy.cgmes_v2_4_15.DCEquipmentContainer import DCEquipmentContainer
 
 
 class DCLine(DCEquipmentContainer):

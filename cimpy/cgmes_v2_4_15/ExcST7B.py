@@ -1,4 +1,4 @@
-from cimpy.output.ExcitationSystemDynamics import ExcitationSystemDynamics
+from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcST7B(ExcitationSystemDynamics):

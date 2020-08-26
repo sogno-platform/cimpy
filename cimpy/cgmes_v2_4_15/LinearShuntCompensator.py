@@ -1,4 +1,4 @@
-from cimpy.output.ShuntCompensator import ShuntCompensator
+from cimpy.cgmes_v2_4_15.ShuntCompensator import ShuntCompensator
 
 
 class LinearShuntCompensator(ShuntCompensator):

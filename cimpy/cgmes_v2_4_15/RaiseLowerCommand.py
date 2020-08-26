@@ -1,4 +1,4 @@
-from cimpy.output.AnalogControl import AnalogControl
+from cimpy.cgmes_v2_4_15.AnalogControl import AnalogControl
 
 
 class RaiseLowerCommand(AnalogControl):

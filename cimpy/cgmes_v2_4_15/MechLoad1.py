@@ -1,4 +1,4 @@
-from cimpy.output.MechanicalLoadDynamics import MechanicalLoadDynamics
+from cimpy.cgmes_v2_4_15.MechanicalLoadDynamics import MechanicalLoadDynamics
 
 
 class MechLoad1(MechanicalLoadDynamics):

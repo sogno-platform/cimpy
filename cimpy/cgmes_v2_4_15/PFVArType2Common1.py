@@ -1,4 +1,4 @@
-from cimpy.output.PFVArControllerType2Dynamics import PFVArControllerType2Dynamics
+from cimpy.cgmes_v2_4_15.PFVArControllerType2Dynamics import PFVArControllerType2Dynamics
 
 
 class PFVArType2Common1(PFVArControllerType2Dynamics):

@@ -1,4 +1,4 @@
-from cimpy.output.EnergyArea import EnergyArea
+from cimpy.cgmes_v2_4_15.EnergyArea import EnergyArea
 
 
 class LoadArea(EnergyArea):

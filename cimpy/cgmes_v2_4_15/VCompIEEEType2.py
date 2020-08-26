@@ -1,4 +1,4 @@
-from cimpy.output.VoltageCompensatorDynamics import VoltageCompensatorDynamics
+from cimpy.cgmes_v2_4_15.VoltageCompensatorDynamics import VoltageCompensatorDynamics
 
 
 class VCompIEEEType2(VoltageCompensatorDynamics):

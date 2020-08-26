@@ -1,4 +1,4 @@
-from cimpy.output.Control import Control
+from cimpy.cgmes_v2_4_15.Control import Control
 
 
 class AnalogControl(Control):

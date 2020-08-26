@@ -1,4 +1,4 @@
-from cimpy.output.DynamicsFunctionBlock import DynamicsFunctionBlock
+from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class DiscontinuousExcitationControlDynamics(DynamicsFunctionBlock):

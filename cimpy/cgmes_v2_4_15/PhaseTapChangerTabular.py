@@ -1,4 +1,4 @@
-from cimpy.output.PhaseTapChanger import PhaseTapChanger
+from cimpy.cgmes_v2_4_15.PhaseTapChanger import PhaseTapChanger
 
 
 class PhaseTapChangerTabular(PhaseTapChanger):

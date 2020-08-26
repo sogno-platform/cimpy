@@ -1,4 +1,4 @@
-from cimpy.output.PowerSystemResource import PowerSystemResource
+from cimpy.cgmes_v2_4_15.PowerSystemResource import PowerSystemResource
 
 
 class ConnectivityNodeContainer(PowerSystemResource):

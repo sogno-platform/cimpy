@@ -1,4 +1,4 @@
-from cimpy.output.DCConductingEquipment import DCConductingEquipment
+from cimpy.cgmes_v2_4_15.DCConductingEquipment import DCConductingEquipment
 
 
 class DCShunt(DCConductingEquipment):

@@ -1,4 +1,4 @@
-from cimpy.output.OperationalLimit import OperationalLimit
+from cimpy.cgmes_v2_4_15.OperationalLimit import OperationalLimit
 
 
 class CurrentLimit(OperationalLimit):

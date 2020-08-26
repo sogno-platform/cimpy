@@ -1,4 +1,4 @@
-from cimpy.output.ConnectivityNodeContainer import ConnectivityNodeContainer
+from cimpy.cgmes_v2_4_15.ConnectivityNodeContainer import ConnectivityNodeContainer
 
 
 class EquivalentNetwork(ConnectivityNodeContainer):

@@ -1,4 +1,4 @@
-from cimpy.output.Quality61850 import Quality61850
+from cimpy.cgmes_v2_4_15.Quality61850 import Quality61850
 
 
 class MeasurementValueQuality(Quality61850):

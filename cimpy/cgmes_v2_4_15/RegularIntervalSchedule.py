@@ -1,4 +1,4 @@
-from cimpy.output.BasicIntervalSchedule import BasicIntervalSchedule
+from cimpy.cgmes_v2_4_15.BasicIntervalSchedule import BasicIntervalSchedule
 
 
 class RegularIntervalSchedule(BasicIntervalSchedule):

@@ -1,4 +1,4 @@
-from cimpy.output.IdentifiedObject import IdentifiedObject
+from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
 
 
 class ACDCTerminal(IdentifiedObject):

@@ -1,4 +1,4 @@
-from cimpy.output.ConductingEquipment import ConductingEquipment
+from cimpy.cgmes_v2_4_15.ConductingEquipment import ConductingEquipment
 
 
 class Switch(ConductingEquipment):

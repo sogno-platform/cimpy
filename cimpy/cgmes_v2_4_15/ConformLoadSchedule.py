@@ -1,4 +1,4 @@
-from cimpy.output.SeasonDayTypeSchedule import SeasonDayTypeSchedule
+from cimpy.cgmes_v2_4_15.SeasonDayTypeSchedule import SeasonDayTypeSchedule
 
 
 class ConformLoadSchedule(SeasonDayTypeSchedule):
