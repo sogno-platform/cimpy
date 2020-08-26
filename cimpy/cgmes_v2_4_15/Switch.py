@@ -5,11 +5,11 @@ class Switch(ConductingEquipment):
 	'''
 	A generic device designed to close, or open, or both, one or more electric circuits.  All switches are two terminal devices including grounding switches.
 
-	:normalOpen: The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurement the Discrete.normalValue is expected to match with the Switch.normalOpen. Default: 
-	:ratedCurrent: The maximum continuous current carrying capacity in amps governed by the device material and construction. Default: 
-	:retained: Branch is retained in a bus branch model.  The flow through retained switches will normally be calculated in power flow. Default: 
-	:SwitchSchedules: A SwitchSchedule is associated with a Switch. Default: 
-	:open: The attribute tells if the switch is considered open when used as input to topology processing. Default: 
+	:normalOpen: The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurement the Discrete.normalValue is expected to match with the Switch.normalOpen. Default: False
+	:ratedCurrent: The maximum continuous current carrying capacity in amps governed by the device material and construction. Default: 0.0
+	:retained: Branch is retained in a bus branch model.  The flow through retained switches will normally be calculated in power flow. Default: False
+	:SwitchSchedules: A SwitchSchedule is associated with a Switch. Default: "list"
+	:open: The attribute tells if the switch is considered open when used as input to topology processing. Default: False
 		'''
 
 	cgmesProfile = ConductingEquipment.cgmesProfile
@@ -26,7 +26,7 @@ class Switch(ConductingEquipment):
 
 	__doc__ += '\n Documentation of parent class ConductingEquipment: \n' + ConductingEquipment.__doc__ 
 
-	def __init__(self, normalOpen = , ratedCurrent = , retained = , SwitchSchedules = , open = ,  *args, **kw_args):
+	def __init__(self, normalOpen = False, ratedCurrent = 0.0, retained = False, SwitchSchedules = "list", open = False,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.normalOpen = normalOpen

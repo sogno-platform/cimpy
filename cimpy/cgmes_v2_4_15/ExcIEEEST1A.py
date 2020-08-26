@@ -5,25 +5,25 @@ class ExcIEEEST1A(ExcitationSystemDynamics):
 	'''
 	The class represents IEEE Std 421.5-2005 type ST1A model. This model represents systems in which excitation power is supplied through a transformer from the generator terminals (or the unit's auxiliary bus) and is regulated by a controlled rectifier.  The maximum exciter voltage available from such systems is directly related to the generator terminal voltage.  Reference: IEEE Standard 421.5-2005 Section 7.1.
 
-	:ilr: Exciter output current limit reference (I).  Typical Value = 0. Default: 
-	:ka: Voltage regulator gain (K).  Typical Value = 190. Default: 
-	:kc: Rectifier loading factor proportional to commutating reactance (K). Typical Value = 0.08. Default: 
-	:kf: Excitation control system stabilizer gains (K).  Typical Value = 0. Default: 
-	:klr: Exciter output current limiter gain (K).  Typical Value = 0. Default: 
-	:pssin: Selector of the Power System Stabilizer (PSS) input (PSSin). true = PSS input (Vs) added to error signal false = PSS input (Vs) added to voltage regulator output. Typical Value = true. Default: 
-	:ta: Voltage regulator time constant (T).  Typical Value = 0. Default: 
-	:tb: Voltage regulator time constant (T).  Typical Value = 10. Default: 
-	:tb1: Voltage regulator time constant (T).  Typical Value = 0. Default: 
-	:tc: Voltage regulator time constant (T).  Typical Value = 1. Default: 
-	:tc1: Voltage regulator time constant (T).  Typical Value = 0. Default: 
-	:tf: Excitation control system stabilizer time constant (T).  Typical Value = 1. Default: 
-	:uelin: Selector of the connection of the UEL input (UELin). Typical Value = ignoreUELsignal. Default: 
-	:vamax: Maximum voltage regulator output (V).  Typical Value = 14.5. Default: 
-	:vamin: Minimum voltage regulator output (V).  Typical Value = -14.5. Default: 
-	:vimax: Maximum voltage regulator input limit (V).  Typical Value = 999. Default: 
-	:vimin: Minimum voltage regulator input limit (V).  Typical Value = -999. Default: 
-	:vrmax: Maximum voltage regulator outputs (V).  Typical Value = 7.8. Default: 
-	:vrmin: Minimum voltage regulator outputs (V).  Typical Value = -6.7. Default: 
+	:ilr: Exciter output current limit reference (I).  Typical Value = 0. Default: 0.0
+	:ka: Voltage regulator gain (K).  Typical Value = 190. Default: 0.0
+	:kc: Rectifier loading factor proportional to commutating reactance (K). Typical Value = 0.08. Default: 0.0
+	:kf: Excitation control system stabilizer gains (K).  Typical Value = 0. Default: 0.0
+	:klr: Exciter output current limiter gain (K).  Typical Value = 0. Default: 0.0
+	:pssin: Selector of the Power System Stabilizer (PSS) input (PSSin). true = PSS input (Vs) added to error signal false = PSS input (Vs) added to voltage regulator output. Typical Value = true. Default: False
+	:ta: Voltage regulator time constant (T).  Typical Value = 0. Default: 0.0
+	:tb: Voltage regulator time constant (T).  Typical Value = 10. Default: 0.0
+	:tb1: Voltage regulator time constant (T).  Typical Value = 0. Default: 0.0
+	:tc: Voltage regulator time constant (T).  Typical Value = 1. Default: 0.0
+	:tc1: Voltage regulator time constant (T).  Typical Value = 0. Default: 0.0
+	:tf: Excitation control system stabilizer time constant (T).  Typical Value = 1. Default: 0.0
+	:uelin: Selector of the connection of the UEL input (UELin). Typical Value = ignoreUELsignal. Default: None
+	:vamax: Maximum voltage regulator output (V).  Typical Value = 14.5. Default: 0.0
+	:vamin: Minimum voltage regulator output (V).  Typical Value = -14.5. Default: 0.0
+	:vimax: Maximum voltage regulator input limit (V).  Typical Value = 999. Default: 0.0
+	:vimin: Minimum voltage regulator input limit (V).  Typical Value = -999. Default: 0.0
+	:vrmax: Maximum voltage regulator outputs (V).  Typical Value = 7.8. Default: 0.0
+	:vrmin: Minimum voltage regulator outputs (V).  Typical Value = -6.7. Default: 0.0
 		'''
 
 	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
@@ -54,7 +54,7 @@ class ExcIEEEST1A(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, ilr = , ka = , kc = , kf = , klr = , pssin = , ta = , tb = , tb1 = , tc = , tc1 = , tf = , uelin = , vamax = , vamin = , vimax = , vimin = , vrmax = , vrmin = ,  *args, **kw_args):
+	def __init__(self, ilr = 0.0, ka = 0.0, kc = 0.0, kf = 0.0, klr = 0.0, pssin = False, ta = 0.0, tb = 0.0, tb1 = 0.0, tc = 0.0, tc1 = 0.0, tf = 0.0, uelin = None, vamax = 0.0, vamin = 0.0, vimax = 0.0, vimin = 0.0, vrmax = 0.0, vrmin = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ilr = ilr

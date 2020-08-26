@@ -5,8 +5,8 @@ class HydroPump(Equipment):
 	'''
 	A synchronous motor-driven pump, typically associated with a pumped storage plant.
 
-	:HydroPowerPlant: The hydro pump may be a member of a pumped storage plant or a pump for distributing water. Default: 
-	:RotatingMachine: The synchronous machine drives the turbine which moves the water from a low elevation to a higher elevation. The direction of machine rotation for pumping may or may not be the same as for generating. Default: 
+	:HydroPowerPlant: The hydro pump may be a member of a pumped storage plant or a pump for distributing water. Default: None
+	:RotatingMachine: The synchronous machine drives the turbine which moves the water from a low elevation to a higher elevation. The direction of machine rotation for pumping may or may not be the same as for generating. Default: None
 		'''
 
 	cgmesProfile = Equipment.cgmesProfile
@@ -20,7 +20,7 @@ class HydroPump(Equipment):
 
 	__doc__ += '\n Documentation of parent class Equipment: \n' + Equipment.__doc__ 
 
-	def __init__(self, HydroPowerPlant = , RotatingMachine = ,  *args, **kw_args):
+	def __init__(self, HydroPowerPlant = None, RotatingMachine = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.HydroPowerPlant = HydroPowerPlant

@@ -5,35 +5,35 @@ class GovHydro2(TurbineGovernorDynamics):
 	'''
 	IEEE hydro turbine governor model represents plants with straightforward penstock configurations and hydraulic-dashpot governors.
 
-	:mwbase: Base for power values (MWbase) (> 0).  Unit = MW. Default: 
-	:tg: Gate servo time constant (Tg).  Typical Value = 0.5. Default: 
-	:tp: Pilot servo valve time constant (Tp).  Typical Value = 0.03. Default: 
-	:uo: Maximum gate opening velocity (Uo).  Unit = PU/sec.  Typical Value = 0.1. Default: 
-	:uc: Maximum gate closing velocity (Uc) (<0).  Unit = PU/sec.   Typical Value = -0.1. Default: 
-	:pmax: Maximum gate opening (Pmax).  Typical Value = 1. Default: 
-	:pmin: Minimum gate opening; ().  Typical Value = 0. Default: 
-	:rperm: Permanent droop (Rperm).  Typical Value = 0.05. Default: 
-	:rtemp: Temporary droop (Rtemp).  Typical Value = 0.5. Default: 
-	:tr: Dashpot time constant (Tr).  Typical Value = 12. Default: 
-	:tw: Water inertia time constant (Tw).  Typical Value = 2. Default: 
-	:kturb: Turbine gain (Kturb).  Typical Value = 1. Default: 
-	:aturb: Turbine numerator multiplier (Aturb).  Typical Value = -1. Default: 
-	:bturb: Turbine denominator multiplier (Bturb).  Typical Value = 0.5. Default: 
-	:db1: Intentional deadband width (db1).  Unit = Hz.  Typical Value = 0. Default: 
-	:eps: Intentional db hysteresis (eps).  Unit = Hz.  Typical Value = 0. Default: 
-	:db2: Unintentional deadband (db2).  Unit = MW.  Typical Value = 0. Default: 
-	:gv1: Nonlinear gain point 1, PU gv (Gv1).  Typical Value = 0. Default: 
-	:pgv1: Nonlinear gain point 1, PU power (Pgv1).  Typical Value = 0. Default: 
-	:gv2: Nonlinear gain point 2, PU gv (Gv2).  Typical Value = 0. Default: 
-	:pgv2: Nonlinear gain point 2, PU power (Pgv2).  Typical Value = 0. Default: 
-	:gv3: Nonlinear gain point 3, PU gv (Gv3).  Typical Value = 0. Default: 
-	:pgv3: Nonlinear gain point 3, PU power (Pgv3).  Typical Value = 0. Default: 
-	:gv4: Nonlinear gain point 4, PU gv (Gv4).  Typical Value = 0. Default: 
-	:pgv4: Nonlinear gain point 4, PU power (Pgv4).  Typical Value = 0. Default: 
-	:gv5: Nonlinear gain point 5, PU gv (Gv5).  Typical Value = 0. Default: 
-	:pgv5: Nonlinear gain point 5, PU power (Pgv5).  Typical Value = 0. Default: 
-	:gv6: Nonlinear gain point 6, PU gv (Gv6).  Typical Value = 0. Default: 
-	:pgv6: Nonlinear gain point 6, PU power (Pgv6).  Typical Value = 0. Default: 
+	:mwbase: Base for power values (MWbase) (> 0).  Unit = MW. Default: 0.0
+	:tg: Gate servo time constant (Tg).  Typical Value = 0.5. Default: 0.0
+	:tp: Pilot servo valve time constant (Tp).  Typical Value = 0.03. Default: 0.0
+	:uo: Maximum gate opening velocity (Uo).  Unit = PU/sec.  Typical Value = 0.1. Default: 0.0
+	:uc: Maximum gate closing velocity (Uc) (<0).  Unit = PU/sec.   Typical Value = -0.1. Default: 0.0
+	:pmax: Maximum gate opening (Pmax).  Typical Value = 1. Default: 0.0
+	:pmin: Minimum gate opening; ().  Typical Value = 0. Default: 0.0
+	:rperm: Permanent droop (Rperm).  Typical Value = 0.05. Default: 0.0
+	:rtemp: Temporary droop (Rtemp).  Typical Value = 0.5. Default: 0.0
+	:tr: Dashpot time constant (Tr).  Typical Value = 12. Default: 0.0
+	:tw: Water inertia time constant (Tw).  Typical Value = 2. Default: 0.0
+	:kturb: Turbine gain (Kturb).  Typical Value = 1. Default: 0.0
+	:aturb: Turbine numerator multiplier (Aturb).  Typical Value = -1. Default: 0.0
+	:bturb: Turbine denominator multiplier (Bturb).  Typical Value = 0.5. Default: 0.0
+	:db1: Intentional deadband width (db1).  Unit = Hz.  Typical Value = 0. Default: 0.0
+	:eps: Intentional db hysteresis (eps).  Unit = Hz.  Typical Value = 0. Default: 0.0
+	:db2: Unintentional deadband (db2).  Unit = MW.  Typical Value = 0. Default: 0.0
+	:gv1: Nonlinear gain point 1, PU gv (Gv1).  Typical Value = 0. Default: 0.0
+	:pgv1: Nonlinear gain point 1, PU power (Pgv1).  Typical Value = 0. Default: 0.0
+	:gv2: Nonlinear gain point 2, PU gv (Gv2).  Typical Value = 0. Default: 0.0
+	:pgv2: Nonlinear gain point 2, PU power (Pgv2).  Typical Value = 0. Default: 0.0
+	:gv3: Nonlinear gain point 3, PU gv (Gv3).  Typical Value = 0. Default: 0.0
+	:pgv3: Nonlinear gain point 3, PU power (Pgv3).  Typical Value = 0. Default: 0.0
+	:gv4: Nonlinear gain point 4, PU gv (Gv4).  Typical Value = 0. Default: 0.0
+	:pgv4: Nonlinear gain point 4, PU power (Pgv4).  Typical Value = 0. Default: 0.0
+	:gv5: Nonlinear gain point 5, PU gv (Gv5).  Typical Value = 0. Default: 0.0
+	:pgv5: Nonlinear gain point 5, PU power (Pgv5).  Typical Value = 0. Default: 0.0
+	:gv6: Nonlinear gain point 6, PU gv (Gv6).  Typical Value = 0. Default: 0.0
+	:pgv6: Nonlinear gain point 6, PU power (Pgv6).  Typical Value = 0. Default: 0.0
 		'''
 
 	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
@@ -74,7 +74,7 @@ class GovHydro2(TurbineGovernorDynamics):
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 
-	def __init__(self, mwbase = , tg = , tp = , uo = , uc = , pmax = , pmin = , rperm = , rtemp = , tr = , tw = , kturb = , aturb = , bturb = , db1 = , eps = , db2 = , gv1 = , pgv1 = , gv2 = , pgv2 = , gv3 = , pgv3 = , gv4 = , pgv4 = , gv5 = , pgv5 = , gv6 = , pgv6 = ,  *args, **kw_args):
+	def __init__(self, mwbase = 0.0, tg = 0.0, tp = 0.0, uo = 0.0, uc = 0.0, pmax = 0.0, pmin = 0.0, rperm = 0.0, rtemp = 0.0, tr = 0.0, tw = 0.0, kturb = 0.0, aturb = 0.0, bturb = 0.0, db1 = 0.0, eps = 0.0, db2 = 0.0, gv1 = 0.0, pgv1 = 0.0, gv2 = 0.0, pgv2 = 0.0, gv3 = 0.0, pgv3 = 0.0, gv4 = 0.0, pgv4 = 0.0, gv5 = 0.0, pgv5 = 0.0, gv6 = 0.0, pgv6 = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.mwbase = mwbase

@@ -5,7 +5,7 @@ class NonConformLoad(EnergyConsumer):
 	'''
 	NonConformLoad represent loads that do not follow a daily load change pattern and changes are not correlated with the daily load change pattern.
 
-	:LoadGroup: Conform loads assigned to this ConformLoadGroup. Default: 
+	:LoadGroup: Conform loads assigned to this ConformLoadGroup. Default: None
 		'''
 
 	cgmesProfile = EnergyConsumer.cgmesProfile
@@ -18,7 +18,7 @@ class NonConformLoad(EnergyConsumer):
 
 	__doc__ += '\n Documentation of parent class EnergyConsumer: \n' + EnergyConsumer.__doc__ 
 
-	def __init__(self, LoadGroup = ,  *args, **kw_args):
+	def __init__(self, LoadGroup = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.LoadGroup = LoadGroup

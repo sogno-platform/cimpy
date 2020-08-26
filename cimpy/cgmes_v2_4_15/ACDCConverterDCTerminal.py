@@ -5,8 +5,8 @@ class ACDCConverterDCTerminal(DCBaseTerminal):
 	'''
 	A DC electrical connection point at the AC/DC converter. The AC/DC converter is electrically connected also to the AC side. The AC connection is inherited from the AC conducting equipment in the same way as any other AC equipment. The AC/DC converter DC terminal is separate from generic DC terminal to restrict the connection with the AC side to AC/DC converter and so that no other DC conducting equipment can be connected to the AC side.
 
-	:DCConductingEquipment:  Default: 
-	:polarity: Represents the normal network polarity condition. Default: 
+	:DCConductingEquipment:  Default: None
+	:polarity: Represents the normal network polarity condition. Default: None
 		'''
 
 	cgmesProfile = DCBaseTerminal.cgmesProfile
@@ -20,7 +20,7 @@ class ACDCConverterDCTerminal(DCBaseTerminal):
 
 	__doc__ += '\n Documentation of parent class DCBaseTerminal: \n' + DCBaseTerminal.__doc__ 
 
-	def __init__(self, DCConductingEquipment = , polarity = ,  *args, **kw_args):
+	def __init__(self, DCConductingEquipment = None, polarity = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.DCConductingEquipment = DCConductingEquipment

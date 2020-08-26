@@ -5,9 +5,9 @@ class ApparentPower(Base):
 	'''
 	Product of the RMS value of the voltage and the RMS value of the current.
 
-	:value:  Default: 
-	:unit:  Default: 
-	:multiplier:  Default: 
+	:value:  Default: 0.0
+	:unit:  Default: None
+	:multiplier:  Default: None
 		'''
 
 	cgmesProfile = Base.cgmesProfile
@@ -22,7 +22,7 @@ class ApparentPower(Base):
 
 	
 
-	def __init__(self, value = , unit = , multiplier = ,  ):
+	def __init__(self, value = 0.0, unit = None, multiplier = None,  ):
 	
 		self.value = value
 		self.unit = unit

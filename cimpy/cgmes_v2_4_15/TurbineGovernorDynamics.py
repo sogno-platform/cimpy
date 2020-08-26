@@ -5,9 +5,9 @@ class TurbineGovernorDynamics(DynamicsFunctionBlock):
 	'''
 	Turbine-governor function block whose behavior is described by reference to a standard model
 
-	:SynchronousMachineDynamics: Turbine-governor model associated with this synchronous machine model. Default: 
-	:AsynchronousMachineDynamics: Asynchronous machine model with which this turbine-governor model is associated. Default: 
-	:TurbineLoadControllerDynamics: Turbine load controller providing input to this turbine-governor. Default: 
+	:SynchronousMachineDynamics: Turbine-governor model associated with this synchronous machine model. Default: "list"
+	:AsynchronousMachineDynamics: Asynchronous machine model with which this turbine-governor model is associated. Default: None
+	:TurbineLoadControllerDynamics: Turbine load controller providing input to this turbine-governor. Default: None
 		'''
 
 	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
@@ -22,7 +22,7 @@ class TurbineGovernorDynamics(DynamicsFunctionBlock):
 
 	__doc__ += '\n Documentation of parent class DynamicsFunctionBlock: \n' + DynamicsFunctionBlock.__doc__ 
 
-	def __init__(self, SynchronousMachineDynamics = , AsynchronousMachineDynamics = , TurbineLoadControllerDynamics = ,  *args, **kw_args):
+	def __init__(self, SynchronousMachineDynamics = "list", AsynchronousMachineDynamics = None, TurbineLoadControllerDynamics = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.SynchronousMachineDynamics = SynchronousMachineDynamics

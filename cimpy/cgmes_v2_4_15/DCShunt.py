@@ -5,9 +5,9 @@ class DCShunt(DCConductingEquipment):
 	'''
 	A shunt device within the DC system, typically used for filtering.  Needed for transient and short circuit studies.
 
-	:capacitance: Capacitance of the DC shunt. Default: 
-	:resistance: Resistance of the DC device. Default: 
-	:ratedUdc: Rated DC device voltage. Converter configuration data used in power flow. Default: 
+	:capacitance: Capacitance of the DC shunt. Default: 0.0
+	:resistance: Resistance of the DC device. Default: 0.0
+	:ratedUdc: Rated DC device voltage. Converter configuration data used in power flow. Default: 0.0
 		'''
 
 	cgmesProfile = DCConductingEquipment.cgmesProfile
@@ -22,7 +22,7 @@ class DCShunt(DCConductingEquipment):
 
 	__doc__ += '\n Documentation of parent class DCConductingEquipment: \n' + DCConductingEquipment.__doc__ 
 
-	def __init__(self, capacitance = , resistance = , ratedUdc = ,  *args, **kw_args):
+	def __init__(self, capacitance = 0.0, resistance = 0.0, ratedUdc = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.capacitance = capacitance

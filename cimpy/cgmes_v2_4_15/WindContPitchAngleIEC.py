@@ -5,17 +5,17 @@ class WindContPitchAngleIEC(IdentifiedObject):
 	'''
 	Pitch angle control model.  Reference: IEC Standard 61400-27-1 Section 6.6.5.8.
 
-	:dthetamax: Maximum pitch positive ramp rate (d). It is type dependent parameter. Unit = degrees/sec. Default: 
-	:dthetamin: Maximum pitch negative ramp rate (d). It is type dependent parameter. Unit = degrees/sec. Default: 
-	:kic: Power PI controller integration gain (). It is type dependent parameter. Default: 
-	:kiomega: Speed PI controller integration gain (). It is type dependent parameter. Default: 
-	:kpc: Power PI controller proportional gain (). It is type dependent parameter. Default: 
-	:kpomega: Speed PI controller proportional gain (). It is type dependent parameter. Default: 
-	:kpx: Pitch cross coupling gain (K). It is type dependent parameter. Default: 
-	:thetamax: Maximum pitch angle (). It is type dependent parameter. Default: 
-	:thetamin: Minimum pitch angle (). It is type dependent parameter. Default: 
-	:ttheta: Pitch time constant (t). It is type dependent parameter. Default: 
-	:WindGenTurbineType3IEC: Wind turbine type 3 model with which this pitch control model is associated. Default: 
+	:dthetamax: Maximum pitch positive ramp rate (d). It is type dependent parameter. Unit = degrees/sec. Default: 0.0
+	:dthetamin: Maximum pitch negative ramp rate (d). It is type dependent parameter. Unit = degrees/sec. Default: 0.0
+	:kic: Power PI controller integration gain (). It is type dependent parameter. Default: 0.0
+	:kiomega: Speed PI controller integration gain (). It is type dependent parameter. Default: 0.0
+	:kpc: Power PI controller proportional gain (). It is type dependent parameter. Default: 0.0
+	:kpomega: Speed PI controller proportional gain (). It is type dependent parameter. Default: 0.0
+	:kpx: Pitch cross coupling gain (K). It is type dependent parameter. Default: 0.0
+	:thetamax: Maximum pitch angle (). It is type dependent parameter. Default: 0.0
+	:thetamin: Minimum pitch angle (). It is type dependent parameter. Default: 0.0
+	:ttheta: Pitch time constant (t). It is type dependent parameter. Default: 0.0
+	:WindGenTurbineType3IEC: Wind turbine type 3 model with which this pitch control model is associated. Default: None
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -38,7 +38,7 @@ class WindContPitchAngleIEC(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, dthetamax = , dthetamin = , kic = , kiomega = , kpc = , kpomega = , kpx = , thetamax = , thetamin = , ttheta = , WindGenTurbineType3IEC = ,  *args, **kw_args):
+	def __init__(self, dthetamax = 0.0, dthetamin = 0.0, kic = 0.0, kiomega = 0.0, kpc = 0.0, kpomega = 0.0, kpx = 0.0, thetamax = 0.0, thetamin = 0.0, ttheta = 0.0, WindGenTurbineType3IEC = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.dthetamax = dthetamax

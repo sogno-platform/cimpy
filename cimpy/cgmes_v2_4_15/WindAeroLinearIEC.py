@@ -5,12 +5,12 @@ class WindAeroLinearIEC(IdentifiedObject):
 	'''
 	The linearised aerodynamic model.    Reference: IEC Standard 614000-27-1 Section 6.6.1.2.
 
-	:dpomega: Partial derivative of aerodynamic power with respect to changes in WTR speed (). It is case dependent parameter. Default: 
-	:dptheta: Partial derivative of aerodynamic power with respect to changes in pitch angle (). It is case dependent parameter. Default: 
-	:omegazero: Rotor speed if the wind turbine is not derated (). It is case dependent parameter. Default: 
-	:pavail: Available aerodynamic power (). It is case dependent parameter. Default: 
-	:thetazero: Pitch angle if the wind turbine is not derated (). It is case dependent parameter. Default: 
-	:WindGenTurbineType3IEC: Wind generator type 3 model with which this wind aerodynamic model is associated. Default: 
+	:dpomega: Partial derivative of aerodynamic power with respect to changes in WTR speed (). It is case dependent parameter. Default: 0.0
+	:dptheta: Partial derivative of aerodynamic power with respect to changes in pitch angle (). It is case dependent parameter. Default: 0.0
+	:omegazero: Rotor speed if the wind turbine is not derated (). It is case dependent parameter. Default: 0.0
+	:pavail: Available aerodynamic power (). It is case dependent parameter. Default: 0.0
+	:thetazero: Pitch angle if the wind turbine is not derated (). It is case dependent parameter. Default: 0.0
+	:WindGenTurbineType3IEC: Wind generator type 3 model with which this wind aerodynamic model is associated. Default: None
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -28,7 +28,7 @@ class WindAeroLinearIEC(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, dpomega = , dptheta = , omegazero = , pavail = , thetazero = , WindGenTurbineType3IEC = ,  *args, **kw_args):
+	def __init__(self, dpomega = 0.0, dptheta = 0.0, omegazero = 0.0, pavail = 0.0, thetazero = 0.0, WindGenTurbineType3IEC = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.dpomega = dpomega

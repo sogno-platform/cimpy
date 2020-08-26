@@ -5,7 +5,7 @@ class WindGenTurbineType1IEC(WindTurbineType1or2IEC):
 	'''
 	Wind turbine IEC Type 1.  Reference: IEC Standard 61400-27-1, section 6.5.2.
 
-	:WindAeroConstIEC: Wind aerodynamic model associated with this wind turbine type 1 model. Default: 
+	:WindAeroConstIEC: Wind aerodynamic model associated with this wind turbine type 1 model. Default: None
 		'''
 
 	cgmesProfile = WindTurbineType1or2IEC.cgmesProfile
@@ -18,7 +18,7 @@ class WindGenTurbineType1IEC(WindTurbineType1or2IEC):
 
 	__doc__ += '\n Documentation of parent class WindTurbineType1or2IEC: \n' + WindTurbineType1or2IEC.__doc__ 
 
-	def __init__(self, WindAeroConstIEC = ,  *args, **kw_args):
+	def __init__(self, WindAeroConstIEC = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.WindAeroConstIEC = WindAeroConstIEC

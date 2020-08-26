@@ -5,7 +5,7 @@ class RegulationSchedule(SeasonDayTypeSchedule):
 	'''
 	A pre-established pattern over time for a controlled variable, e.g., busbar voltage.
 
-	:RegulatingControl: Regulating controls that have this Schedule. Default: 
+	:RegulatingControl: Regulating controls that have this Schedule. Default: None
 		'''
 
 	cgmesProfile = SeasonDayTypeSchedule.cgmesProfile
@@ -18,7 +18,7 @@ class RegulationSchedule(SeasonDayTypeSchedule):
 
 	__doc__ += '\n Documentation of parent class SeasonDayTypeSchedule: \n' + SeasonDayTypeSchedule.__doc__ 
 
-	def __init__(self, RegulatingControl = ,  *args, **kw_args):
+	def __init__(self, RegulatingControl = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.RegulatingControl = RegulatingControl

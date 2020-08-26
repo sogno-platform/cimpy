@@ -5,7 +5,7 @@ class TapSchedule(SeasonDayTypeSchedule):
 	'''
 	A pre-established pattern over time for a tap step.
 
-	:TapChanger: A TapChanger can have TapSchedules. Default: 
+	:TapChanger: A TapChanger can have TapSchedules. Default: None
 		'''
 
 	cgmesProfile = SeasonDayTypeSchedule.cgmesProfile
@@ -18,7 +18,7 @@ class TapSchedule(SeasonDayTypeSchedule):
 
 	__doc__ += '\n Documentation of parent class SeasonDayTypeSchedule: \n' + SeasonDayTypeSchedule.__doc__ 
 
-	def __init__(self, TapChanger = ,  *args, **kw_args):
+	def __init__(self, TapChanger = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.TapChanger = TapChanger

@@ -5,18 +5,18 @@ class GovSteamSGO(TurbineGovernorDynamics):
 	'''
 	Simplified Steam turbine governor model.
 
-	:mwbase: Base for power values (MWbase) (>0).  Unit = MW. Default: 
-	:t1: Controller lag (T1). Default: 
-	:t2: Controller lead compensation (T2). Default: 
-	:t3: Governor lag (T3) (>0). Default: 
-	:t4: Delay due to steam inlet volumes associated with steam chest and inlet piping (T4). Default: 
-	:t5: Reheater delay including hot and cold leads (T5). Default: 
-	:t6: Delay due to IP-LP turbine, crossover pipes and LP end hoods (T6). Default: 
-	:k1: One/per unit regulation (K1). Default: 
-	:k2: Fraction (K2). Default: 
-	:k3: Fraction (K3). Default: 
-	:pmax: Upper power limit (Pmax). Default: 
-	:pmin: Lower power limit (Pmin). Default: 
+	:mwbase: Base for power values (MWbase) (>0).  Unit = MW. Default: 0.0
+	:t1: Controller lag (T1). Default: 0.0
+	:t2: Controller lead compensation (T2). Default: 0.0
+	:t3: Governor lag (T3) (>0). Default: 0.0
+	:t4: Delay due to steam inlet volumes associated with steam chest and inlet piping (T4). Default: 0.0
+	:t5: Reheater delay including hot and cold leads (T5). Default: 0.0
+	:t6: Delay due to IP-LP turbine, crossover pipes and LP end hoods (T6). Default: 0.0
+	:k1: One/per unit regulation (K1). Default: 0.0
+	:k2: Fraction (K2). Default: 0.0
+	:k3: Fraction (K3). Default: 0.0
+	:pmax: Upper power limit (Pmax). Default: 0.0
+	:pmin: Lower power limit (Pmin). Default: 0.0
 		'''
 
 	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
@@ -40,7 +40,7 @@ class GovSteamSGO(TurbineGovernorDynamics):
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 
-	def __init__(self, mwbase = , t1 = , t2 = , t3 = , t4 = , t5 = , t6 = , k1 = , k2 = , k3 = , pmax = , pmin = ,  *args, **kw_args):
+	def __init__(self, mwbase = 0.0, t1 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, t5 = 0.0, t6 = 0.0, k1 = 0.0, k2 = 0.0, k3 = 0.0, pmax = 0.0, pmin = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.mwbase = mwbase

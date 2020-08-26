@@ -5,7 +5,7 @@ class MeasurementValueSource(IdentifiedObject):
 	'''
 	MeasurementValueSource describes the alternative sources updating a MeasurementValue. User conventions for how to use the MeasurementValueSource attributes are described in the introduction to IEC 61970-301.
 
-	:MeasurementValues: A reference to the type of source that updates the MeasurementValue, e.g. SCADA, CCLink, manual, etc. User conventions for the names of sources are contained in the introduction to IEC 61970-301. Default: 
+	:MeasurementValues: A reference to the type of source that updates the MeasurementValue, e.g. SCADA, CCLink, manual, etc. User conventions for the names of sources are contained in the introduction to IEC 61970-301. Default: "list"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -18,7 +18,7 @@ class MeasurementValueSource(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, MeasurementValues = ,  *args, **kw_args):
+	def __init__(self, MeasurementValues = "list",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.MeasurementValues = MeasurementValues

@@ -5,18 +5,18 @@ class VsConverter(ACDCConverter):
 	'''
 	DC side of the voltage source converter (VSC).
 
-	:CapabilityCurve: All converters with this capability curve. Default: 
-	:maxModulationIndex: The max quotient between the AC converter voltage (Uc) and DC voltage (Ud). A factor typically less than 1. VSC configuration data used in power flow. Default: 
-	:maxValveCurrent: The maximum current through a valve. This current limit is the basis for calculating the capability diagram. VSC  configuration data. Default: 
-	:droop: Droop constant; pu value is obtained as D [kV^2 / MW] x Sb / Ubdc^2. Default: 
-	:droopCompensation: Compensation (resistance) constant. Used to compensate for voltage drop when controlling voltage at a distant bus. Default: 
-	:pPccControl: Kind of control of real power and/or DC voltage. Default: 
-	:qPccControl:  Default: 
-	:qShare: Reactive power sharing factor among parallel converters on Uac control. Default: 
-	:targetQpcc: Reactive power injection target in AC grid, at point of common coupling. Default: 
-	:targetUpcc: Voltage target in AC grid, at point of common coupling. Default: 
-	:delta: Angle between uf and uc. Converter state variable used in power flow. Default: 
-	:uf: Filter bus voltage. Converter state variable, result from power flow. Default: 
+	:CapabilityCurve: All converters with this capability curve. Default: None
+	:maxModulationIndex: The max quotient between the AC converter voltage (Uc) and DC voltage (Ud). A factor typically less than 1. VSC configuration data used in power flow. Default: 0.0
+	:maxValveCurrent: The maximum current through a valve. This current limit is the basis for calculating the capability diagram. VSC  configuration data. Default: 0.0
+	:droop: Droop constant; pu value is obtained as D [kV^2 / MW] x Sb / Ubdc^2. Default: 0.0
+	:droopCompensation: Compensation (resistance) constant. Used to compensate for voltage drop when controlling voltage at a distant bus. Default: 0.0
+	:pPccControl: Kind of control of real power and/or DC voltage. Default: None
+	:qPccControl:  Default: None
+	:qShare: Reactive power sharing factor among parallel converters on Uac control. Default: 0.0
+	:targetQpcc: Reactive power injection target in AC grid, at point of common coupling. Default: 0.0
+	:targetUpcc: Voltage target in AC grid, at point of common coupling. Default: 0.0
+	:delta: Angle between uf and uc. Converter state variable used in power flow. Default: 0.0
+	:uf: Filter bus voltage. Converter state variable, result from power flow. Default: 0.0
 		'''
 
 	cgmesProfile = ACDCConverter.cgmesProfile
@@ -40,7 +40,7 @@ class VsConverter(ACDCConverter):
 
 	__doc__ += '\n Documentation of parent class ACDCConverter: \n' + ACDCConverter.__doc__ 
 
-	def __init__(self, CapabilityCurve = , maxModulationIndex = , maxValveCurrent = , droop = , droopCompensation = , pPccControl = , qPccControl = , qShare = , targetQpcc = , targetUpcc = , delta = , uf = ,  *args, **kw_args):
+	def __init__(self, CapabilityCurve = None, maxModulationIndex = 0.0, maxValveCurrent = 0.0, droop = 0.0, droopCompensation = 0.0, pPccControl = None, qPccControl = None, qShare = 0.0, targetQpcc = 0.0, targetUpcc = 0.0, delta = 0.0, uf = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.CapabilityCurve = CapabilityCurve

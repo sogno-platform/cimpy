@@ -5,9 +5,9 @@ class PerCent(Base):
 	'''
 	Percentage on a defined base.   For example, specify as 100 to indicate at the defined base.
 
-	:value: Normally 0 - 100 on a defined base Default: 
-	:unit:  Default: 
-	:multiplier:  Default: 
+	:value: Normally 0 - 100 on a defined base Default: 0.0
+	:unit:  Default: None
+	:multiplier:  Default: None
 		'''
 
 	cgmesProfile = Base.cgmesProfile
@@ -22,7 +22,7 @@ class PerCent(Base):
 
 	
 
-	def __init__(self, value = , unit = , multiplier = ,  ):
+	def __init__(self, value = 0.0, unit = None, multiplier = None,  ):
 	
 		self.value = value
 		self.unit = unit

@@ -5,7 +5,7 @@ class Bay(EquipmentContainer):
 	'''
 	A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry.  A bay typically represents a physical grouping related to modularization of equipment.
 
-	:VoltageLevel: The voltage level containing this bay. Default: 
+	:VoltageLevel: The voltage level containing this bay. Default: None
 		'''
 
 	cgmesProfile = EquipmentContainer.cgmesProfile
@@ -18,7 +18,7 @@ class Bay(EquipmentContainer):
 
 	__doc__ += '\n Documentation of parent class EquipmentContainer: \n' + EquipmentContainer.__doc__ 
 
-	def __init__(self, VoltageLevel = ,  *args, **kw_args):
+	def __init__(self, VoltageLevel = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.VoltageLevel = VoltageLevel

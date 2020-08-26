@@ -5,8 +5,8 @@ class VoltageCompensatorUserDefined(VoltageCompensatorDynamics):
 	'''
 	Voltage compensator function block whose dynamic behaviour is described by
 
-	:proprietary: Behaviour is based on proprietary model as opposed to detailed model. true = user-defined model is proprietary with behaviour mutually understood by sending and receiving applications and parameters passed as general attributes false = user-defined model is explicitly defined in terms of control blocks and their input and output signals. Default: 
-	:ProprietaryParameterDynamics: Parameter of this proprietary user-defined model. Default: 
+	:proprietary: Behaviour is based on proprietary model as opposed to detailed model. true = user-defined model is proprietary with behaviour mutually understood by sending and receiving applications and parameters passed as general attributes false = user-defined model is explicitly defined in terms of control blocks and their input and output signals. Default: False
+	:ProprietaryParameterDynamics: Parameter of this proprietary user-defined model. Default: "list"
 		'''
 
 	cgmesProfile = VoltageCompensatorDynamics.cgmesProfile
@@ -20,7 +20,7 @@ class VoltageCompensatorUserDefined(VoltageCompensatorDynamics):
 
 	__doc__ += '\n Documentation of parent class VoltageCompensatorDynamics: \n' + VoltageCompensatorDynamics.__doc__ 
 
-	def __init__(self, proprietary = , ProprietaryParameterDynamics = ,  *args, **kw_args):
+	def __init__(self, proprietary = False, ProprietaryParameterDynamics = "list",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.proprietary = proprietary

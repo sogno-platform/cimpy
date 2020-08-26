@@ -5,12 +5,12 @@ class NonlinearShuntCompensatorPoint(Base):
 	'''
 	A non linear shunt compensator bank or section admittance value.
 
-	:NonlinearShuntCompensator: Non-linear shunt compensator owning this point. Default: 
-	:b: Positive sequence shunt (charging) susceptance per section Default: 
-	:g: Positive sequence shunt (charging) conductance per section Default: 
-	:sectionNumber: The number of the section. Default: 
-	:b0: Zero sequence shunt (charging) susceptance per section Default: 
-	:g0: Zero sequence shunt (charging) conductance per section Default: 
+	:NonlinearShuntCompensator: Non-linear shunt compensator owning this point. Default: None
+	:b: Positive sequence shunt (charging) susceptance per section Default: 0.0
+	:g: Positive sequence shunt (charging) conductance per section Default: 0.0
+	:sectionNumber: The number of the section. Default: 0
+	:b0: Zero sequence shunt (charging) susceptance per section Default: 0.0
+	:g0: Zero sequence shunt (charging) conductance per section Default: 0.0
 		'''
 
 	cgmesProfile = Base.cgmesProfile
@@ -28,7 +28,7 @@ class NonlinearShuntCompensatorPoint(Base):
 
 	
 
-	def __init__(self, NonlinearShuntCompensator = , b = , g = , sectionNumber = , b0 = , g0 = ,  ):
+	def __init__(self, NonlinearShuntCompensator = None, b = 0.0, g = 0.0, sectionNumber = 0, b0 = 0.0, g0 = 0.0,  ):
 	
 		self.NonlinearShuntCompensator = NonlinearShuntCompensator
 		self.b = b

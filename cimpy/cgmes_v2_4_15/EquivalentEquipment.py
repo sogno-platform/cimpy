@@ -5,7 +5,7 @@ class EquivalentEquipment(ConductingEquipment):
 	'''
 	The class represents equivalent objects that are the result of a network reduction. The class is the base for equivalent objects of different types.
 
-	:EquivalentNetwork: The associated reduced equivalents. Default: 
+	:EquivalentNetwork: The associated reduced equivalents. Default: None
 		'''
 
 	cgmesProfile = ConductingEquipment.cgmesProfile
@@ -18,7 +18,7 @@ class EquivalentEquipment(ConductingEquipment):
 
 	__doc__ += '\n Documentation of parent class ConductingEquipment: \n' + ConductingEquipment.__doc__ 
 
-	def __init__(self, EquivalentNetwork = ,  *args, **kw_args):
+	def __init__(self, EquivalentNetwork = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.EquivalentNetwork = EquivalentNetwork

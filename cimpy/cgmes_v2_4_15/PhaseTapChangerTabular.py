@@ -5,7 +5,7 @@ class PhaseTapChangerTabular(PhaseTapChanger):
 	'''
 	
 
-	:PhaseTapChangerTable: The phase tap changer table for this phase tap changer. Default: 
+	:PhaseTapChangerTable: The phase tap changer table for this phase tap changer. Default: None
 		'''
 
 	cgmesProfile = PhaseTapChanger.cgmesProfile
@@ -18,7 +18,7 @@ class PhaseTapChangerTabular(PhaseTapChanger):
 
 	__doc__ += '\n Documentation of parent class PhaseTapChanger: \n' + PhaseTapChanger.__doc__ 
 
-	def __init__(self, PhaseTapChangerTable = ,  *args, **kw_args):
+	def __init__(self, PhaseTapChangerTable = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.PhaseTapChangerTable = PhaseTapChangerTable

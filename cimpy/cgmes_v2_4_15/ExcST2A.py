@@ -5,21 +5,21 @@ class ExcST2A(ExcitationSystemDynamics):
 	'''
 	Modified IEEE ST2A static excitation system - another lead-lag block added to match  the model defined by WECC.
 
-	:ka: Voltage regulator gain (Ka).  Typical Value = 120. Default: 
-	:ta: Voltage regulator time constant (Ta).  Typical Value = 0.15. Default: 
-	:vrmax: Maximum voltage regulator outputs (Vrmax).  Typical Value = 1. Default: 
-	:vrmin: Minimum voltage regulator outputs (Vrmin).  Typical Value = -1. Default: 
-	:ke: Exciter constant related to self-excited field (Ke).  Typical Value = 1. Default: 
-	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 0.5. Default: 
-	:kf: Excitation control system stabilizer gains (Kf).  Typical Value = 0.05. Default: 
-	:tf: Excitation control system stabilizer time constant (Tf).  Typical Value = 0.7. Default: 
-	:kp: Potential circuit gain coefficient (Kp).  Typical Value = 4.88. Default: 
-	:ki: Potential circuit gain coefficient (Ki).  Typical Value = 8. Default: 
-	:kc: Rectifier loading factor proportional to commutating reactance (Kc).  Typical Value = 1.82. Default: 
-	:efdmax: Maximum field voltage (Efdmax).  Typical Value = 99. Default: 
-	:uelin: UEL input (UELin). true = HV gate false = add to error signal. Typical Value = false. Default: 
-	:tb: Voltage regulator time constant (Tb).  Typical Value = 0. Default: 
-	:tc: Voltage regulator time constant (Tc).  Typical Value = 0. Default: 
+	:ka: Voltage regulator gain (Ka).  Typical Value = 120. Default: 0.0
+	:ta: Voltage regulator time constant (Ta).  Typical Value = 0.15. Default: 0.0
+	:vrmax: Maximum voltage regulator outputs (Vrmax).  Typical Value = 1. Default: 0.0
+	:vrmin: Minimum voltage regulator outputs (Vrmin).  Typical Value = -1. Default: 0.0
+	:ke: Exciter constant related to self-excited field (Ke).  Typical Value = 1. Default: 0.0
+	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 0.5. Default: 0.0
+	:kf: Excitation control system stabilizer gains (Kf).  Typical Value = 0.05. Default: 0.0
+	:tf: Excitation control system stabilizer time constant (Tf).  Typical Value = 0.7. Default: 0.0
+	:kp: Potential circuit gain coefficient (Kp).  Typical Value = 4.88. Default: 0.0
+	:ki: Potential circuit gain coefficient (Ki).  Typical Value = 8. Default: 0.0
+	:kc: Rectifier loading factor proportional to commutating reactance (Kc).  Typical Value = 1.82. Default: 0.0
+	:efdmax: Maximum field voltage (Efdmax).  Typical Value = 99. Default: 0.0
+	:uelin: UEL input (UELin). true = HV gate false = add to error signal. Typical Value = false. Default: False
+	:tb: Voltage regulator time constant (Tb).  Typical Value = 0. Default: 0.0
+	:tc: Voltage regulator time constant (Tc).  Typical Value = 0. Default: 0.0
 		'''
 
 	cgmesProfile = ExcitationSystemDynamics.cgmesProfile
@@ -46,7 +46,7 @@ class ExcST2A(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, ka = , ta = , vrmax = , vrmin = , ke = , te = , kf = , tf = , kp = , ki = , kc = , efdmax = , uelin = , tb = , tc = ,  *args, **kw_args):
+	def __init__(self, ka = 0.0, ta = 0.0, vrmax = 0.0, vrmin = 0.0, ke = 0.0, te = 0.0, kf = 0.0, tf = 0.0, kp = 0.0, ki = 0.0, kc = 0.0, efdmax = 0.0, uelin = False, tb = 0.0, tc = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ka = ka

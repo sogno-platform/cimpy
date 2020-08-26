@@ -5,8 +5,8 @@ class HydroGeneratingUnit(GeneratingUnit):
 	'''
 	A generating unit whose prime mover is a hydraulic turbine (e.g., Francis, Pelton, Kaplan).
 
-	:energyConversionCapability: Energy conversion capability for generating. Default: 
-	:HydroPowerPlant: The hydro generating unit belongs to a hydro power plant. Default: 
+	:energyConversionCapability: Energy conversion capability for generating. Default: None
+	:HydroPowerPlant: The hydro generating unit belongs to a hydro power plant. Default: None
 		'''
 
 	cgmesProfile = GeneratingUnit.cgmesProfile
@@ -20,7 +20,7 @@ class HydroGeneratingUnit(GeneratingUnit):
 
 	__doc__ += '\n Documentation of parent class GeneratingUnit: \n' + GeneratingUnit.__doc__ 
 
-	def __init__(self, energyConversionCapability = , HydroPowerPlant = ,  *args, **kw_args):
+	def __init__(self, energyConversionCapability = None, HydroPowerPlant = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.energyConversionCapability = energyConversionCapability

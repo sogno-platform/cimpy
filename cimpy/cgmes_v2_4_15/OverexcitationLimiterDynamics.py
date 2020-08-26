@@ -5,7 +5,7 @@ class OverexcitationLimiterDynamics(DynamicsFunctionBlock):
 	'''
 	Overexcitation limiter function block whose behaviour is described by reference to a standard model
 
-	:ExcitationSystemDynamics: Excitation system model with which this overexcitation limiter model is associated. Default: 
+	:ExcitationSystemDynamics: Excitation system model with which this overexcitation limiter model is associated. Default: None
 		'''
 
 	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
@@ -18,7 +18,7 @@ class OverexcitationLimiterDynamics(DynamicsFunctionBlock):
 
 	__doc__ += '\n Documentation of parent class DynamicsFunctionBlock: \n' + DynamicsFunctionBlock.__doc__ 
 
-	def __init__(self, ExcitationSystemDynamics = ,  *args, **kw_args):
+	def __init__(self, ExcitationSystemDynamics = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ExcitationSystemDynamics = ExcitationSystemDynamics

@@ -5,9 +5,9 @@ class BasicIntervalSchedule(IdentifiedObject):
 	'''
 	Schedule of values at points in time.
 
-	:startTime: The time for the first time point. Default: 
-	:value1Unit: Value1 units of measure. Default: 
-	:value2Unit: Value2 units of measure. Default: 
+	:startTime: The time for the first time point. Default: ''
+	:value1Unit: Value1 units of measure. Default: None
+	:value2Unit: Value2 units of measure. Default: None
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -22,7 +22,7 @@ class BasicIntervalSchedule(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, startTime = , value1Unit = , value2Unit = ,  *args, **kw_args):
+	def __init__(self, startTime = '', value1Unit = None, value2Unit = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.startTime = startTime

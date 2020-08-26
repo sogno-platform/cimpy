@@ -5,7 +5,7 @@ class SwitchSchedule(SeasonDayTypeSchedule):
 	'''
 	A schedule of switch positions.  If RegularTimePoint.value1 is 0, the switch is open.  If 1, the switch is closed.
 
-	:Switch: A Switch can be associated with SwitchSchedules. Default: 
+	:Switch: A Switch can be associated with SwitchSchedules. Default: None
 		'''
 
 	cgmesProfile = SeasonDayTypeSchedule.cgmesProfile
@@ -18,7 +18,7 @@ class SwitchSchedule(SeasonDayTypeSchedule):
 
 	__doc__ += '\n Documentation of parent class SeasonDayTypeSchedule: \n' + SeasonDayTypeSchedule.__doc__ 
 
-	def __init__(self, Switch = ,  *args, **kw_args):
+	def __init__(self, Switch = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Switch = Switch

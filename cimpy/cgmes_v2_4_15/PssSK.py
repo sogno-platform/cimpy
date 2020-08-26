@@ -5,17 +5,17 @@ class PssSK(PowerSystemStabilizerDynamics):
 	'''
 	PSS Slovakian type - three inputs.
 
-	:k1: Gain P (K1).  Typical Value = -0.3. Default: 
-	:k2: Gain fe (K2).  Typical Value = -0.15. Default: 
-	:k3: Gain If (K3).  Typical Value = 10. Default: 
-	:t1: Denominator time constant (T1).  Typical Value = 0.3. Default: 
-	:t2: Filter time constant (T2).  Typical Value = 0.35. Default: 
-	:t3: Denominator time constant (T3).  Typical Value = 0.22. Default: 
-	:t4: Filter time constant (T4).  Typical Value = 0.02. Default: 
-	:t5: Denominator time constant (T5).  Typical Value = 0.02. Default: 
-	:t6: Filter time constant (T6).  Typical Value = 0.02. Default: 
-	:vsmax: Stabilizer output max limit (Vsmax).  Typical Value = 0.4. Default: 
-	:vsmin: Stabilizer output min limit (Vsmin).  Typical Value = -0.4. Default: 
+	:k1: Gain P (K1).  Typical Value = -0.3. Default: 0.0
+	:k2: Gain fe (K2).  Typical Value = -0.15. Default: 0.0
+	:k3: Gain If (K3).  Typical Value = 10. Default: 0.0
+	:t1: Denominator time constant (T1).  Typical Value = 0.3. Default: 0.0
+	:t2: Filter time constant (T2).  Typical Value = 0.35. Default: 0.0
+	:t3: Denominator time constant (T3).  Typical Value = 0.22. Default: 0.0
+	:t4: Filter time constant (T4).  Typical Value = 0.02. Default: 0.0
+	:t5: Denominator time constant (T5).  Typical Value = 0.02. Default: 0.0
+	:t6: Filter time constant (T6).  Typical Value = 0.02. Default: 0.0
+	:vsmax: Stabilizer output max limit (Vsmax).  Typical Value = 0.4. Default: 0.0
+	:vsmin: Stabilizer output min limit (Vsmin).  Typical Value = -0.4. Default: 0.0
 		'''
 
 	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
@@ -38,7 +38,7 @@ class PssSK(PowerSystemStabilizerDynamics):
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, k1 = , k2 = , k3 = , t1 = , t2 = , t3 = , t4 = , t5 = , t6 = , vsmax = , vsmin = ,  *args, **kw_args):
+	def __init__(self, k1 = 0.0, k2 = 0.0, k3 = 0.0, t1 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, t5 = 0.0, t6 = 0.0, vsmax = 0.0, vsmin = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.k1 = k1

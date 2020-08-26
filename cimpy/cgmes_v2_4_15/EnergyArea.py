@@ -5,7 +5,7 @@ class EnergyArea(IdentifiedObject):
 	'''
 	Describes an area having energy production or consumption.  Specializations are intended to support the load allocation function as typically required in energy management systems or planning studies to allocate hypothesized load levels to individual load points for power flow analysis.  Often the energy area can be linked to both measured and forecast load levels.
 
-	:ControlArea: The control area specification that is used for the load forecast. Default: 
+	:ControlArea: The control area specification that is used for the load forecast. Default: None
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -18,7 +18,7 @@ class EnergyArea(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, ControlArea = ,  *args, **kw_args):
+	def __init__(self, ControlArea = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ControlArea = ControlArea

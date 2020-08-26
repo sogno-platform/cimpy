@@ -5,10 +5,10 @@ class AsynchronousMachineDynamics(RotatingMachineDynamics):
 	'''
 	Asynchronous machine whose behaviour is described by reference to a standard model expressed in either time constant reactance form or equivalent circuit form
 
-	:AsynchronousMachine: Asynchronous machine to which this asynchronous machine dynamics model applies. Default: 
-	:MechanicalLoadDynamics: Mechanical load model associated with this asynchronous machine model. Default: 
-	:WindTurbineType1or2Dynamics: Wind generator type 1 or 2 model associated with this asynchronous machine model. Default: 
-	:TurbineGovernorDynamics: Turbine-governor model associated with this asynchronous machine model. Default: 
+	:AsynchronousMachine: Asynchronous machine to which this asynchronous machine dynamics model applies. Default: None
+	:MechanicalLoadDynamics: Mechanical load model associated with this asynchronous machine model. Default: None
+	:WindTurbineType1or2Dynamics: Wind generator type 1 or 2 model associated with this asynchronous machine model. Default: None
+	:TurbineGovernorDynamics: Turbine-governor model associated with this asynchronous machine model. Default: None
 		'''
 
 	cgmesProfile = RotatingMachineDynamics.cgmesProfile
@@ -24,7 +24,7 @@ class AsynchronousMachineDynamics(RotatingMachineDynamics):
 
 	__doc__ += '\n Documentation of parent class RotatingMachineDynamics: \n' + RotatingMachineDynamics.__doc__ 
 
-	def __init__(self, AsynchronousMachine = , MechanicalLoadDynamics = , WindTurbineType1or2Dynamics = , TurbineGovernorDynamics = ,  *args, **kw_args):
+	def __init__(self, AsynchronousMachine = None, MechanicalLoadDynamics = None, WindTurbineType1or2Dynamics = None, TurbineGovernorDynamics = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.AsynchronousMachine = AsynchronousMachine

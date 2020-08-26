@@ -5,24 +5,24 @@ class LoadStatic(IdentifiedObject):
 	'''
 	General static load model representing the sensitivity of the real and reactive power consumed by the load to the amplitude and frequency of the bus voltage.
 
-	:LoadAggregate: Aggregate load to which this aggregate static load belongs. Default: 
-	:staticLoadModelType: Type of static load model.  Typical Value = constantZ. Default: 
-	:kp1: First term voltage coefficient for active power (Kp1).  Not used when .staticLoadModelType = constantZ. Default: 
-	:kp2: Second term voltage coefficient for active power (Kp2).  Not used when .staticLoadModelType = constantZ. Default: 
-	:kp3: Third term voltage coefficient for active power (Kp3).  Not used when .staticLoadModelType = constantZ. Default: 
-	:kp4: Frequency coefficient for active power (Kp4).  Must be non-zero when .staticLoadModelType = ZIP2.  Not used for all other values of .staticLoadModelType. Default: 
-	:ep1: First term voltage exponent for active power (Ep1).  Used only when .staticLoadModelType = exponential. Default: 
-	:ep2: Second term voltage exponent for active power (Ep2).  Used only when .staticLoadModelType = exponential. Default: 
-	:ep3: Third term voltage exponent for active power (Ep3).  Used only when .staticLoadModelType = exponential. Default: 
-	:kpf: Frequency deviation coefficient for active power (Kpf).  Not used when .staticLoadModelType = constantZ. Default: 
-	:kq1: First term voltage coefficient for reactive power (Kq1).  Not used when .staticLoadModelType = constantZ. Default: 
-	:kq2: Second term voltage coefficient for reactive power (Kq2).  Not used when .staticLoadModelType = constantZ. Default: 
-	:kq3: Third term voltage coefficient for reactive power (Kq3).  Not used when .staticLoadModelType = constantZ. Default: 
-	:kq4: Frequency coefficient for reactive power (Kq4).  Must be non-zero when .staticLoadModelType = ZIP2.  Not used for all other values of .staticLoadModelType. Default: 
-	:eq1: First term voltage exponent for reactive power (Eq1).  Used only when .staticLoadModelType = exponential. Default: 
-	:eq2: Second term voltage exponent for reactive power (Eq2).  Used only when .staticLoadModelType = exponential. Default: 
-	:eq3: Third term voltage exponent for reactive power (Eq3).  Used only when .staticLoadModelType = exponential. Default: 
-	:kqf: Frequency deviation coefficient for reactive power (Kqf).  Not used when .staticLoadModelType = constantZ. Default: 
+	:LoadAggregate: Aggregate load to which this aggregate static load belongs. Default: None
+	:staticLoadModelType: Type of static load model.  Typical Value = constantZ. Default: None
+	:kp1: First term voltage coefficient for active power (Kp1).  Not used when .staticLoadModelType = constantZ. Default: 0.0
+	:kp2: Second term voltage coefficient for active power (Kp2).  Not used when .staticLoadModelType = constantZ. Default: 0.0
+	:kp3: Third term voltage coefficient for active power (Kp3).  Not used when .staticLoadModelType = constantZ. Default: 0.0
+	:kp4: Frequency coefficient for active power (Kp4).  Must be non-zero when .staticLoadModelType = ZIP2.  Not used for all other values of .staticLoadModelType. Default: 0.0
+	:ep1: First term voltage exponent for active power (Ep1).  Used only when .staticLoadModelType = exponential. Default: 0.0
+	:ep2: Second term voltage exponent for active power (Ep2).  Used only when .staticLoadModelType = exponential. Default: 0.0
+	:ep3: Third term voltage exponent for active power (Ep3).  Used only when .staticLoadModelType = exponential. Default: 0.0
+	:kpf: Frequency deviation coefficient for active power (Kpf).  Not used when .staticLoadModelType = constantZ. Default: 0.0
+	:kq1: First term voltage coefficient for reactive power (Kq1).  Not used when .staticLoadModelType = constantZ. Default: 0.0
+	:kq2: Second term voltage coefficient for reactive power (Kq2).  Not used when .staticLoadModelType = constantZ. Default: 0.0
+	:kq3: Third term voltage coefficient for reactive power (Kq3).  Not used when .staticLoadModelType = constantZ. Default: 0.0
+	:kq4: Frequency coefficient for reactive power (Kq4).  Must be non-zero when .staticLoadModelType = ZIP2.  Not used for all other values of .staticLoadModelType. Default: 0.0
+	:eq1: First term voltage exponent for reactive power (Eq1).  Used only when .staticLoadModelType = exponential. Default: 0.0
+	:eq2: Second term voltage exponent for reactive power (Eq2).  Used only when .staticLoadModelType = exponential. Default: 0.0
+	:eq3: Third term voltage exponent for reactive power (Eq3).  Used only when .staticLoadModelType = exponential. Default: 0.0
+	:kqf: Frequency deviation coefficient for reactive power (Kqf).  Not used when .staticLoadModelType = constantZ. Default: 0.0
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -52,7 +52,7 @@ class LoadStatic(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, LoadAggregate = , staticLoadModelType = , kp1 = , kp2 = , kp3 = , kp4 = , ep1 = , ep2 = , ep3 = , kpf = , kq1 = , kq2 = , kq3 = , kq4 = , eq1 = , eq2 = , eq3 = , kqf = ,  *args, **kw_args):
+	def __init__(self, LoadAggregate = None, staticLoadModelType = None, kp1 = 0.0, kp2 = 0.0, kp3 = 0.0, kp4 = 0.0, ep1 = 0.0, ep2 = 0.0, ep3 = 0.0, kpf = 0.0, kq1 = 0.0, kq2 = 0.0, kq3 = 0.0, kq4 = 0.0, eq1 = 0.0, eq2 = 0.0, eq3 = 0.0, kqf = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.LoadAggregate = LoadAggregate

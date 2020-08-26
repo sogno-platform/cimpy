@@ -5,7 +5,7 @@ class Conductor(ConductingEquipment):
 	'''
 	Combination of conducting material with consistent electrical characteristics, building a single electrical system, used to carry current between points in the power system.
 
-	:length: Segment length for calculating line section capabilities Default: 
+	:length: Segment length for calculating line section capabilities Default: 0.0
 		'''
 
 	cgmesProfile = ConductingEquipment.cgmesProfile
@@ -18,7 +18,7 @@ class Conductor(ConductingEquipment):
 
 	__doc__ += '\n Documentation of parent class ConductingEquipment: \n' + ConductingEquipment.__doc__ 
 
-	def __init__(self, length = ,  *args, **kw_args):
+	def __init__(self, length = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.length = length

@@ -5,9 +5,9 @@ class PowerSystemResource(IdentifiedObject):
 	'''
 	A power system resource can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated.
 
-	:Controls: Regulating device governed by this control output. Default: 
-	:Measurements: The power system resource that contains the measurement. Default: 
-	:Location: Location of this power system resource. Default: 
+	:Controls: Regulating device governed by this control output. Default: "list"
+	:Measurements: The power system resource that contains the measurement. Default: "list"
+	:Location: Location of this power system resource. Default: None
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -22,7 +22,7 @@ class PowerSystemResource(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, Controls = , Measurements = , Location = ,  *args, **kw_args):
+	def __init__(self, Controls = "list", Measurements = "list", Location = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Controls = Controls

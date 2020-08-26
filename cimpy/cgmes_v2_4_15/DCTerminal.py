@@ -5,7 +5,7 @@ class DCTerminal(DCBaseTerminal):
 	'''
 	An electrical connection point to generic DC conducting equipment.
 
-	:DCConductingEquipment:  Default: 
+	:DCConductingEquipment:  Default: None
 		'''
 
 	cgmesProfile = DCBaseTerminal.cgmesProfile
@@ -18,7 +18,7 @@ class DCTerminal(DCBaseTerminal):
 
 	__doc__ += '\n Documentation of parent class DCBaseTerminal: \n' + DCBaseTerminal.__doc__ 
 
-	def __init__(self, DCConductingEquipment = ,  *args, **kw_args):
+	def __init__(self, DCConductingEquipment = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.DCConductingEquipment = DCConductingEquipment

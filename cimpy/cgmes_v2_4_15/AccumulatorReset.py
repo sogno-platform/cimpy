@@ -5,7 +5,7 @@ class AccumulatorReset(Control):
 	'''
 	This command reset the counter value to zero.
 
-	:AccumulatorValue: The accumulator value that is reset by the command. Default: 
+	:AccumulatorValue: The accumulator value that is reset by the command. Default: None
 		'''
 
 	cgmesProfile = Control.cgmesProfile
@@ -18,7 +18,7 @@ class AccumulatorReset(Control):
 
 	__doc__ += '\n Documentation of parent class Control: \n' + Control.__doc__ 
 
-	def __init__(self, AccumulatorValue = ,  *args, **kw_args):
+	def __init__(self, AccumulatorValue = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.AccumulatorValue = AccumulatorValue

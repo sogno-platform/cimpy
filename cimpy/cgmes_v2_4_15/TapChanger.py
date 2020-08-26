@@ -5,17 +5,17 @@ class TapChanger(PowerSystemResource):
 	'''
 	Mechanism for changing transformer winding tap positions.
 
-	:highStep: Highest possible tap step position, advance from neutral. The attribute shall be greater than lowStep. Default: 
-	:lowStep: Lowest possible tap step position, retard from neutral Default: 
-	:ltcFlag: Specifies whether or not a TapChanger has load tap changing capabilities. Default: 
-	:neutralStep: The neutral tap step position for this winding. The attribute shall be equal or greater than lowStep and equal or less than highStep. Default: 
-	:neutralU: Voltage at which the winding operates at the neutral tap setting. Default: 
-	:normalStep: The tap step position used in `normal` network operation for this winding. For a `Fixed` tap changer indicates the current physical tap setting. The attribute shall be equal or greater than lowStep and equal or less than highStep. Default: 
-	:TapChangerControl: The tap changers that participates in this regulating tap control scheme. Default: 
-	:TapSchedules: A TapSchedule is associated with a TapChanger. Default: 
-	:controlEnabled: Specifies the regulation status of the equipment.  True is regulating, false is not regulating. Default: 
-	:step: Tap changer position. Starting step for a steady state solution. Non integer values are allowed to support continuous tap variables. The reasons for continuous value are to support study cases where no discrete tap changers has yet been designed, a solutions where a narrow voltage band force the tap step to oscillate or accommodate for a continuous solution as input. The attribute shall be equal or greater than lowStep and equal or less than highStep. Default: 
-	:SvTapStep: The tap step state associated with the tap changer. Default: 
+	:highStep: Highest possible tap step position, advance from neutral. The attribute shall be greater than lowStep. Default: 0
+	:lowStep: Lowest possible tap step position, retard from neutral Default: 0
+	:ltcFlag: Specifies whether or not a TapChanger has load tap changing capabilities. Default: False
+	:neutralStep: The neutral tap step position for this winding. The attribute shall be equal or greater than lowStep and equal or less than highStep. Default: 0
+	:neutralU: Voltage at which the winding operates at the neutral tap setting. Default: 0.0
+	:normalStep: The tap step position used in `normal` network operation for this winding. For a `Fixed` tap changer indicates the current physical tap setting. The attribute shall be equal or greater than lowStep and equal or less than highStep. Default: 0
+	:TapChangerControl: The tap changers that participates in this regulating tap control scheme. Default: None
+	:TapSchedules: A TapSchedule is associated with a TapChanger. Default: "list"
+	:controlEnabled: Specifies the regulation status of the equipment.  True is regulating, false is not regulating. Default: False
+	:step: Tap changer position. Starting step for a steady state solution. Non integer values are allowed to support continuous tap variables. The reasons for continuous value are to support study cases where no discrete tap changers has yet been designed, a solutions where a narrow voltage band force the tap step to oscillate or accommodate for a continuous solution as input. The attribute shall be equal or greater than lowStep and equal or less than highStep. Default: 0.0
+	:SvTapStep: The tap step state associated with the tap changer. Default: None
 		'''
 
 	cgmesProfile = PowerSystemResource.cgmesProfile
@@ -38,7 +38,7 @@ class TapChanger(PowerSystemResource):
 
 	__doc__ += '\n Documentation of parent class PowerSystemResource: \n' + PowerSystemResource.__doc__ 
 
-	def __init__(self, highStep = , lowStep = , ltcFlag = , neutralStep = , neutralU = , normalStep = , TapChangerControl = , TapSchedules = , controlEnabled = , step = , SvTapStep = ,  *args, **kw_args):
+	def __init__(self, highStep = 0, lowStep = 0, ltcFlag = False, neutralStep = 0, neutralU = 0.0, normalStep = 0, TapChangerControl = None, TapSchedules = "list", controlEnabled = False, step = 0.0, SvTapStep = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.highStep = highStep

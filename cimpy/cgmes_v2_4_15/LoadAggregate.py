@@ -5,8 +5,8 @@ class LoadAggregate(LoadDynamics):
 	'''
 	Standard aggregate load model comprised of static and/or dynamic components.  A static load model represents the sensitivity of the real and reactive power consumed by the load to the amplitude and frequency of the bus voltage. A dynamic load model can used to represent the aggregate response of the motor components of the load.
 
-	:LoadStatic: Aggregate static load associated with this aggregate load. Default: 
-	:LoadMotor: Aggregate motor (dynamic) load associated with this aggregate load. Default: 
+	:LoadStatic: Aggregate static load associated with this aggregate load. Default: None
+	:LoadMotor: Aggregate motor (dynamic) load associated with this aggregate load. Default: None
 		'''
 
 	cgmesProfile = LoadDynamics.cgmesProfile
@@ -20,7 +20,7 @@ class LoadAggregate(LoadDynamics):
 
 	__doc__ += '\n Documentation of parent class LoadDynamics: \n' + LoadDynamics.__doc__ 
 
-	def __init__(self, LoadStatic = , LoadMotor = ,  *args, **kw_args):
+	def __init__(self, LoadStatic = None, LoadMotor = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.LoadStatic = LoadStatic

@@ -5,7 +5,7 @@ class DCLine(DCEquipmentContainer):
 	'''
 	Overhead lines and/or cables connecting two or more HVDC substations.
 
-	:Region:  Default: 
+	:Region:  Default: None
 		'''
 
 	cgmesProfile = DCEquipmentContainer.cgmesProfile
@@ -18,7 +18,7 @@ class DCLine(DCEquipmentContainer):
 
 	__doc__ += '\n Documentation of parent class DCEquipmentContainer: \n' + DCEquipmentContainer.__doc__ 
 
-	def __init__(self, Region = ,  *args, **kw_args):
+	def __init__(self, Region = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Region = Region

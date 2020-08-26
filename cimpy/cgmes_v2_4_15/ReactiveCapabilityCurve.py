@@ -5,8 +5,8 @@ class ReactiveCapabilityCurve(Curve):
 	'''
 	Reactive power rating envelope versus the synchronous machine's active power, in both the generating and motoring modes. For each active power value there is a corresponding high and low reactive power limit  value. Typically there will be a separate curve for each coolant condition, such as hydrogen pressure.  The Y1 axis values represent reactive minimum and the Y2 axis values represent reactive maximum.
 
-	:EquivalentInjection: The reactive capability curve used by this equivalent injection. Default: 
-	:InitiallyUsedBySynchronousMachines: The default reactive capability curve for use by a synchronous machine. Default: 
+	:EquivalentInjection: The reactive capability curve used by this equivalent injection. Default: "list"
+	:InitiallyUsedBySynchronousMachines: The default reactive capability curve for use by a synchronous machine. Default: "list"
 		'''
 
 	cgmesProfile = Curve.cgmesProfile
@@ -20,7 +20,7 @@ class ReactiveCapabilityCurve(Curve):
 
 	__doc__ += '\n Documentation of parent class Curve: \n' + Curve.__doc__ 
 
-	def __init__(self, EquivalentInjection = , InitiallyUsedBySynchronousMachines = ,  *args, **kw_args):
+	def __init__(self, EquivalentInjection = "list", InitiallyUsedBySynchronousMachines = "list",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.EquivalentInjection = EquivalentInjection

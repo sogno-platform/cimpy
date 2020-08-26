@@ -5,9 +5,9 @@ class Temperature(Base):
 	'''
 	Value of temperature in degrees Celsius.
 
-	:multiplier:  Default: 
-	:unit:  Default: 
-	:value:  Default: 
+	:multiplier:  Default: None
+	:unit:  Default: None
+	:value:  Default: 0.0
 		'''
 
 	cgmesProfile = Base.cgmesProfile
@@ -22,7 +22,7 @@ class Temperature(Base):
 
 	
 
-	def __init__(self, multiplier = , unit = , value = ,  ):
+	def __init__(self, multiplier = None, unit = None, value = 0.0,  ):
 	
 		self.multiplier = multiplier
 		self.unit = unit

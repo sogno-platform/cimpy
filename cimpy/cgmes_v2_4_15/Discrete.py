@@ -5,8 +5,8 @@ class Discrete(Measurement):
 	'''
 	Discrete represents a discrete Measurement, i.e. a Measurement representing discrete values, e.g. a Breaker position.
 
-	:DiscreteValues: Measurement to which this value is connected. Default: 
-	:ValueAliasSet: The ValueAliasSet used for translation of a MeasurementValue.value to a name. Default: 
+	:DiscreteValues: Measurement to which this value is connected. Default: "list"
+	:ValueAliasSet: The ValueAliasSet used for translation of a MeasurementValue.value to a name. Default: None
 		'''
 
 	cgmesProfile = Measurement.cgmesProfile
@@ -20,7 +20,7 @@ class Discrete(Measurement):
 
 	__doc__ += '\n Documentation of parent class Measurement: \n' + Measurement.__doc__ 
 
-	def __init__(self, DiscreteValues = , ValueAliasSet = ,  *args, **kw_args):
+	def __init__(self, DiscreteValues = "list", ValueAliasSet = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.DiscreteValues = DiscreteValues

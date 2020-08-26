@@ -5,28 +5,28 @@ class ProprietaryParameterDynamics(Base):
 	'''
 	Supports definition of one or more parameters of several different datatypes for use by proprietary user-defined models.  NOTE: This class does not inherit from IdentifiedObject since it is not intended that a single instance of it be referenced by more than one proprietary user-defined model instance.
 
-	:WindPlantUserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:WindType1or2UserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:WindType3or4UserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:SynchronousMachineUserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:AsynchronousMachineUserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:TurbineGovernorUserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:TurbineLoadControllerUserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:MechanicalLoadUserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:ExcitationSystemUserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:OverexcitationLimiterUserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:UnderexcitationLimiterUserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:PowerSystemStabilizerUserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:DiscontinuousExcitationControlUserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:PFVArControllerType1UserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:VoltageAdjusterUserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:PFVArControllerType2UserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:VoltageCompensatorUserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:LoadUserDefined: Proprietary user-defined model with which this parameter is associated. Default: 
-	:parameterNumber: Sequence number of the parameter among the set of parameters associated with the related proprietary user-defined model. Default: 
-	:booleanParameterValue: Used for boolean parameter value. If this attribute is populated, integerParameterValue and floatParameterValue will not be. Default: 
-	:integerParameterValue: Used for integer parameter value.  If this attribute is populated, booleanParameterValue and floatParameterValue will not be. Default: 
-	:floatParameterValue: Used for floating point parameter value.  If this attribute is populated, booleanParameterValue and integerParameterValue will not be. Default: 
+	:WindPlantUserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:WindType1or2UserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:WindType3or4UserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:SynchronousMachineUserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:AsynchronousMachineUserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:TurbineGovernorUserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:TurbineLoadControllerUserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:MechanicalLoadUserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:ExcitationSystemUserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:OverexcitationLimiterUserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:UnderexcitationLimiterUserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:PowerSystemStabilizerUserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:DiscontinuousExcitationControlUserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:PFVArControllerType1UserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:VoltageAdjusterUserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:PFVArControllerType2UserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:VoltageCompensatorUserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:LoadUserDefined: Proprietary user-defined model with which this parameter is associated. Default: None
+	:parameterNumber: Sequence number of the parameter among the set of parameters associated with the related proprietary user-defined model. Default: 0
+	:booleanParameterValue: Used for boolean parameter value. If this attribute is populated, integerParameterValue and floatParameterValue will not be. Default: False
+	:integerParameterValue: Used for integer parameter value.  If this attribute is populated, booleanParameterValue and floatParameterValue will not be. Default: 0
+	:floatParameterValue: Used for floating point parameter value.  If this attribute is populated, booleanParameterValue and integerParameterValue will not be. Default: 0.0
 		'''
 
 	cgmesProfile = Base.cgmesProfile
@@ -60,7 +60,7 @@ class ProprietaryParameterDynamics(Base):
 
 	
 
-	def __init__(self, WindPlantUserDefined = , WindType1or2UserDefined = , WindType3or4UserDefined = , SynchronousMachineUserDefined = , AsynchronousMachineUserDefined = , TurbineGovernorUserDefined = , TurbineLoadControllerUserDefined = , MechanicalLoadUserDefined = , ExcitationSystemUserDefined = , OverexcitationLimiterUserDefined = , UnderexcitationLimiterUserDefined = , PowerSystemStabilizerUserDefined = , DiscontinuousExcitationControlUserDefined = , PFVArControllerType1UserDefined = , VoltageAdjusterUserDefined = , PFVArControllerType2UserDefined = , VoltageCompensatorUserDefined = , LoadUserDefined = , parameterNumber = , booleanParameterValue = , integerParameterValue = , floatParameterValue = ,  ):
+	def __init__(self, WindPlantUserDefined = None, WindType1or2UserDefined = None, WindType3or4UserDefined = None, SynchronousMachineUserDefined = None, AsynchronousMachineUserDefined = None, TurbineGovernorUserDefined = None, TurbineLoadControllerUserDefined = None, MechanicalLoadUserDefined = None, ExcitationSystemUserDefined = None, OverexcitationLimiterUserDefined = None, UnderexcitationLimiterUserDefined = None, PowerSystemStabilizerUserDefined = None, DiscontinuousExcitationControlUserDefined = None, PFVArControllerType1UserDefined = None, VoltageAdjusterUserDefined = None, PFVArControllerType2UserDefined = None, VoltageCompensatorUserDefined = None, LoadUserDefined = None, parameterNumber = 0, booleanParameterValue = False, integerParameterValue = 0, floatParameterValue = 0.0,  ):
 	
 		self.WindPlantUserDefined = WindPlantUserDefined
 		self.WindType1or2UserDefined = WindType1or2UserDefined

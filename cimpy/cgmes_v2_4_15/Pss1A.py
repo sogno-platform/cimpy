@@ -5,28 +5,28 @@ class Pss1A(PowerSystemStabilizerDynamics):
 	'''
 	Single input power system stabilizer. It is a modified version in order to allow representation of various vendors' implementations on PSS type 1A.
 
-	:inputSignalType: Type of input signal. Default: 
-	:a1: Notch filter parameter (A1). Default: 
-	:a2: Notch filter parameter (A2). Default: 
-	:t1: Lead/lag time constant (T1). Default: 
-	:t2: Lead/lag time constant (T2). Default: 
-	:t3: Lead/lag time constant (T3). Default: 
-	:t4: Lead/lag time constant (T4). Default: 
-	:t5: Washout time constant (T5). Default: 
-	:t6: Transducer time constant (T6). Default: 
-	:ks: Stabilizer gain (Ks). Default: 
-	:vrmax: Maximum stabilizer output (Vrmax). Default: 
-	:vrmin: Minimum stabilizer output (Vrmin). Default: 
-	:vcu: Stabilizer input cutoff threshold (Vcu). Default: 
-	:vcl: Stabilizer input cutoff threshold (Vcl). Default: 
-	:a3: Notch filter parameter (A3). Default: 
-	:a4: Notch filter parameter (A4). Default: 
-	:a5: Notch filter parameter (A5). Default: 
-	:a6: Notch filter parameter (A6). Default: 
-	:a7: Notch filter parameter (A7). Default: 
-	:a8: Notch filter parameter (A8). Default: 
-	:kd: Selector (Kd).  true = e used false = e not used. Default: 
-	:tdelay: Time constant (Tdelay). Default: 
+	:inputSignalType: Type of input signal. Default: None
+	:a1: Notch filter parameter (A1). Default: 0.0
+	:a2: Notch filter parameter (A2). Default: 0.0
+	:t1: Lead/lag time constant (T1). Default: 0.0
+	:t2: Lead/lag time constant (T2). Default: 0.0
+	:t3: Lead/lag time constant (T3). Default: 0.0
+	:t4: Lead/lag time constant (T4). Default: 0.0
+	:t5: Washout time constant (T5). Default: 0.0
+	:t6: Transducer time constant (T6). Default: 0.0
+	:ks: Stabilizer gain (Ks). Default: 0.0
+	:vrmax: Maximum stabilizer output (Vrmax). Default: 0.0
+	:vrmin: Minimum stabilizer output (Vrmin). Default: 0.0
+	:vcu: Stabilizer input cutoff threshold (Vcu). Default: 0.0
+	:vcl: Stabilizer input cutoff threshold (Vcl). Default: 0.0
+	:a3: Notch filter parameter (A3). Default: 0.0
+	:a4: Notch filter parameter (A4). Default: 0.0
+	:a5: Notch filter parameter (A5). Default: 0.0
+	:a6: Notch filter parameter (A6). Default: 0.0
+	:a7: Notch filter parameter (A7). Default: 0.0
+	:a8: Notch filter parameter (A8). Default: 0.0
+	:kd: Selector (Kd).  true = e used false = e not used. Default: False
+	:tdelay: Time constant (Tdelay). Default: 0.0
 		'''
 
 	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
@@ -60,7 +60,7 @@ class Pss1A(PowerSystemStabilizerDynamics):
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, inputSignalType = , a1 = , a2 = , t1 = , t2 = , t3 = , t4 = , t5 = , t6 = , ks = , vrmax = , vrmin = , vcu = , vcl = , a3 = , a4 = , a5 = , a6 = , a7 = , a8 = , kd = , tdelay = ,  *args, **kw_args):
+	def __init__(self, inputSignalType = None, a1 = 0.0, a2 = 0.0, t1 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, t5 = 0.0, t6 = 0.0, ks = 0.0, vrmax = 0.0, vrmin = 0.0, vcu = 0.0, vcl = 0.0, a3 = 0.0, a4 = 0.0, a5 = 0.0, a6 = 0.0, a7 = 0.0, a8 = 0.0, kd = False, tdelay = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.inputSignalType = inputSignalType

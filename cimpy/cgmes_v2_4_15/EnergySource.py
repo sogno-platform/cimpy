@@ -5,19 +5,19 @@ class EnergySource(ConductingEquipment):
 	'''
 	A generic equivalent for an energy supplier on a transmission or distribution voltage level.
 
-	:EnergySchedulingType: Energy Source of a particular Energy Scheduling Type Default: 
-	:nominalVoltage: Phase-to-phase nominal voltage. Default: 
-	:r: Positive sequence Thevenin resistance. Default: 
-	:r0: Zero sequence Thevenin resistance. Default: 
-	:rn: Negative sequence Thevenin resistance. Default: 
-	:voltageAngle: Phase angle of a-phase open circuit. Default: 
-	:voltageMagnitude: Phase-to-phase open circuit voltage magnitude. Default: 
-	:x: Positive sequence Thevenin reactance. Default: 
-	:x0: Zero sequence Thevenin reactance. Default: 
-	:xn: Negative sequence Thevenin reactance. Default: 
-	:activePower: High voltage source active injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for steady state solutions. Default: 
-	:reactivePower: High voltage source reactive injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for steady state solutions. Default: 
-	:WindTurbineType3or4Dynamics: Wind generator Type 3 or 4 dynamics model associated with this energy source. Default: 
+	:EnergySchedulingType: Energy Source of a particular Energy Scheduling Type Default: None
+	:nominalVoltage: Phase-to-phase nominal voltage. Default: 0.0
+	:r: Positive sequence Thevenin resistance. Default: 0.0
+	:r0: Zero sequence Thevenin resistance. Default: 0.0
+	:rn: Negative sequence Thevenin resistance. Default: 0.0
+	:voltageAngle: Phase angle of a-phase open circuit. Default: 0.0
+	:voltageMagnitude: Phase-to-phase open circuit voltage magnitude. Default: 0.0
+	:x: Positive sequence Thevenin reactance. Default: 0.0
+	:x0: Zero sequence Thevenin reactance. Default: 0.0
+	:xn: Negative sequence Thevenin reactance. Default: 0.0
+	:activePower: High voltage source active injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for steady state solutions. Default: 0.0
+	:reactivePower: High voltage source reactive injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for steady state solutions. Default: 0.0
+	:WindTurbineType3or4Dynamics: Wind generator Type 3 or 4 dynamics model associated with this energy source. Default: None
 		'''
 
 	cgmesProfile = ConductingEquipment.cgmesProfile
@@ -42,7 +42,7 @@ class EnergySource(ConductingEquipment):
 
 	__doc__ += '\n Documentation of parent class ConductingEquipment: \n' + ConductingEquipment.__doc__ 
 
-	def __init__(self, EnergySchedulingType = , nominalVoltage = , r = , r0 = , rn = , voltageAngle = , voltageMagnitude = , x = , x0 = , xn = , activePower = , reactivePower = , WindTurbineType3or4Dynamics = ,  *args, **kw_args):
+	def __init__(self, EnergySchedulingType = None, nominalVoltage = 0.0, r = 0.0, r0 = 0.0, rn = 0.0, voltageAngle = 0.0, voltageMagnitude = 0.0, x = 0.0, x0 = 0.0, xn = 0.0, activePower = 0.0, reactivePower = 0.0, WindTurbineType3or4Dynamics = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.EnergySchedulingType = EnergySchedulingType

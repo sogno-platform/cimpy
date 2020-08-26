@@ -5,10 +5,10 @@ class LinearShuntCompensator(ShuntCompensator):
 	'''
 	A linear shunt compensator has banks or sections with equal admittance values.
 
-	:bPerSection: Positive sequence shunt (charging) susceptance per section Default: 
-	:gPerSection: Positive sequence shunt (charging) conductance per section Default: 
-	:b0PerSection: Zero sequence shunt (charging) susceptance per section Default: 
-	:g0PerSection: Zero sequence shunt (charging) conductance per section Default: 
+	:bPerSection: Positive sequence shunt (charging) susceptance per section Default: 0.0
+	:gPerSection: Positive sequence shunt (charging) conductance per section Default: 0.0
+	:b0PerSection: Zero sequence shunt (charging) susceptance per section Default: 0.0
+	:g0PerSection: Zero sequence shunt (charging) conductance per section Default: 0.0
 		'''
 
 	cgmesProfile = ShuntCompensator.cgmesProfile
@@ -24,7 +24,7 @@ class LinearShuntCompensator(ShuntCompensator):
 
 	__doc__ += '\n Documentation of parent class ShuntCompensator: \n' + ShuntCompensator.__doc__ 
 
-	def __init__(self, bPerSection = , gPerSection = , b0PerSection = , g0PerSection = ,  *args, **kw_args):
+	def __init__(self, bPerSection = 0.0, gPerSection = 0.0, b0PerSection = 0.0, g0PerSection = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.bPerSection = bPerSection

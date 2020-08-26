@@ -5,7 +5,7 @@ class Line(EquipmentContainer):
 	'''
 	Contains equipment beyond a substation belonging to a power transmission line.
 
-	:Region: The sub-geographical region of the line. Default: 
+	:Region: The sub-geographical region of the line. Default: None
 		'''
 
 	cgmesProfile = EquipmentContainer.cgmesProfile
@@ -18,7 +18,7 @@ class Line(EquipmentContainer):
 
 	__doc__ += '\n Documentation of parent class EquipmentContainer: \n' + EquipmentContainer.__doc__ 
 
-	def __init__(self, Region = ,  *args, **kw_args):
+	def __init__(self, Region = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Region = Region

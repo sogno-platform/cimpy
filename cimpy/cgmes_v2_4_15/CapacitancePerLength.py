@@ -5,11 +5,11 @@ class CapacitancePerLength(Base):
 	'''
 	Capacitance per unit of length.
 
-	:value:  Default: 
-	:unit:  Default: 
-	:multiplier:  Default: 
-	:denominatorUnit:  Default: 
-	:denominatorMultiplier:  Default: 
+	:value:  Default: 0.0
+	:unit:  Default: None
+	:multiplier:  Default: None
+	:denominatorUnit:  Default: None
+	:denominatorMultiplier:  Default: None
 		'''
 
 	cgmesProfile = Base.cgmesProfile
@@ -26,7 +26,7 @@ class CapacitancePerLength(Base):
 
 	
 
-	def __init__(self, value = , unit = , multiplier = , denominatorUnit = , denominatorMultiplier = ,  ):
+	def __init__(self, value = 0.0, unit = None, multiplier = None, denominatorUnit = None, denominatorMultiplier = None,  ):
 	
 		self.value = value
 		self.unit = unit

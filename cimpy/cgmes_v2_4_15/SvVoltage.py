@@ -5,9 +5,9 @@ class SvVoltage(Base):
 	'''
 	State variable for voltage.
 
-	:angle: The voltage angle of the topological node complex voltage with respect to system reference. Default: 
-	:v: The voltage magnitude of the topological node. Default: 
-	:TopologicalNode: The state voltage associated with the topological node. Default: 
+	:angle: The voltage angle of the topological node complex voltage with respect to system reference. Default: 0.0
+	:v: The voltage magnitude of the topological node. Default: 0.0
+	:TopologicalNode: The state voltage associated with the topological node. Default: None
 		'''
 
 	cgmesProfile = Base.cgmesProfile
@@ -22,7 +22,7 @@ class SvVoltage(Base):
 
 	
 
-	def __init__(self, angle = , v = , TopologicalNode = ,  ):
+	def __init__(self, angle = 0.0, v = 0.0, TopologicalNode = None,  ):
 	
 		self.angle = angle
 		self.v = v

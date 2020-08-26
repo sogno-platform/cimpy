@@ -5,8 +5,8 @@ class PhaseTapChangerTablePoint(TapChangerTablePoint):
 	'''
 	Describes each tap step in the phase tap changer tabular curve.
 
-	:PhaseTapChangerTable: The table of this point. Default: 
-	:angle: The angle difference in degrees. Default: 
+	:PhaseTapChangerTable: The table of this point. Default: None
+	:angle: The angle difference in degrees. Default: 0.0
 		'''
 
 	cgmesProfile = TapChangerTablePoint.cgmesProfile
@@ -20,7 +20,7 @@ class PhaseTapChangerTablePoint(TapChangerTablePoint):
 
 	__doc__ += '\n Documentation of parent class TapChangerTablePoint: \n' + TapChangerTablePoint.__doc__ 
 
-	def __init__(self, PhaseTapChangerTable = , angle = ,  *args, **kw_args):
+	def __init__(self, PhaseTapChangerTable = None, angle = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.PhaseTapChangerTable = PhaseTapChangerTable

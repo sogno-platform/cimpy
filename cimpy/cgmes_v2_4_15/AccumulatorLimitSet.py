@@ -5,8 +5,8 @@ class AccumulatorLimitSet(LimitSet):
 	'''
 	An AccumulatorLimitSet specifies a set of Limits that are associated with an Accumulator measurement.
 
-	:Measurements: A measurement may have zero or more limit ranges defined for it. Default: 
-	:Limits: The set of limits. Default: 
+	:Measurements: A measurement may have zero or more limit ranges defined for it. Default: "list"
+	:Limits: The set of limits. Default: "list"
 		'''
 
 	cgmesProfile = LimitSet.cgmesProfile
@@ -20,7 +20,7 @@ class AccumulatorLimitSet(LimitSet):
 
 	__doc__ += '\n Documentation of parent class LimitSet: \n' + LimitSet.__doc__ 
 
-	def __init__(self, Measurements = , Limits = ,  *args, **kw_args):
+	def __init__(self, Measurements = "list", Limits = "list",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Measurements = Measurements

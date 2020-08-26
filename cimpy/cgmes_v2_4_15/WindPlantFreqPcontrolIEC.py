@@ -5,18 +5,18 @@ class WindPlantFreqPcontrolIEC(IdentifiedObject):
 	'''
 	Frequency and active power controller model.  Reference: IEC Standard 61400-27-1 Annex E.
 
-	:WindDynamicsLookupTable: The frequency and active power wind plant control model with which this wind dynamics lookup table is associated. Default: 
-	:dprefmax: Maximum ramp rate of  request from the plant controller to the wind turbines (). It is project dependent parameter. Default: 
-	:dprefmin: Minimum (negative) ramp rate of  request from the plant controller to the wind turbines (). It is project dependent parameter. Default: 
-	:kiwpp: Plant P controller integral gain (). It is type dependent parameter. Default: 
-	:kpwpp: Plant P controller proportional gain (). It is type dependent parameter. Default: 
-	:prefmax: Maximum  request from the plant controller to the wind turbines (). It is type dependent parameter. Default: 
-	:prefmin: Minimum  request from the plant controller to the wind turbines (). It is type dependent parameter. Default: 
-	:tpft: Lead time constant in reference value transfer function (). It is type dependent parameter. Default: 
-	:tpfv: Lag time constant in reference value transfer function (). It is type dependent parameter. Default: 
-	:twpffilt: Filter time constant for frequency measurement (). It is type dependent parameter. Default: 
-	:twppfilt: Filter time constant for active power measurement (). It is type dependent parameter. Default: 
-	:WindPlantIEC: Wind plant model with which this wind plant frequency and active power control is associated. Default: 
+	:WindDynamicsLookupTable: The frequency and active power wind plant control model with which this wind dynamics lookup table is associated. Default: "list"
+	:dprefmax: Maximum ramp rate of  request from the plant controller to the wind turbines (). It is project dependent parameter. Default: 0.0
+	:dprefmin: Minimum (negative) ramp rate of  request from the plant controller to the wind turbines (). It is project dependent parameter. Default: 0.0
+	:kiwpp: Plant P controller integral gain (). It is type dependent parameter. Default: 0.0
+	:kpwpp: Plant P controller proportional gain (). It is type dependent parameter. Default: 0.0
+	:prefmax: Maximum  request from the plant controller to the wind turbines (). It is type dependent parameter. Default: 0.0
+	:prefmin: Minimum  request from the plant controller to the wind turbines (). It is type dependent parameter. Default: 0.0
+	:tpft: Lead time constant in reference value transfer function (). It is type dependent parameter. Default: 0.0
+	:tpfv: Lag time constant in reference value transfer function (). It is type dependent parameter. Default: 0.0
+	:twpffilt: Filter time constant for frequency measurement (). It is type dependent parameter. Default: 0.0
+	:twppfilt: Filter time constant for active power measurement (). It is type dependent parameter. Default: 0.0
+	:WindPlantIEC: Wind plant model with which this wind plant frequency and active power control is associated. Default: None
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -40,7 +40,7 @@ class WindPlantFreqPcontrolIEC(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, WindDynamicsLookupTable = , dprefmax = , dprefmin = , kiwpp = , kpwpp = , prefmax = , prefmin = , tpft = , tpfv = , twpffilt = , twppfilt = , WindPlantIEC = ,  *args, **kw_args):
+	def __init__(self, WindDynamicsLookupTable = "list", dprefmax = 0.0, dprefmin = 0.0, kiwpp = 0.0, kpwpp = 0.0, prefmax = 0.0, prefmin = 0.0, tpft = 0.0, tpfv = 0.0, twpffilt = 0.0, twppfilt = 0.0, WindPlantIEC = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.WindDynamicsLookupTable = WindDynamicsLookupTable

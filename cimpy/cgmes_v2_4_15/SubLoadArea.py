@@ -5,8 +5,8 @@ class SubLoadArea(EnergyArea):
 	'''
 	The class is the second level in a hierarchical structure for grouping of loads for the purpose of load flow load scaling.
 
-	:LoadArea: The LoadArea where the SubLoadArea belongs. Default: 
-	:LoadGroups: The Loadgroups in the SubLoadArea. Default: 
+	:LoadArea: The LoadArea where the SubLoadArea belongs. Default: None
+	:LoadGroups: The Loadgroups in the SubLoadArea. Default: "list"
 		'''
 
 	cgmesProfile = EnergyArea.cgmesProfile
@@ -20,7 +20,7 @@ class SubLoadArea(EnergyArea):
 
 	__doc__ += '\n Documentation of parent class EnergyArea: \n' + EnergyArea.__doc__ 
 
-	def __init__(self, LoadArea = , LoadGroups = ,  *args, **kw_args):
+	def __init__(self, LoadArea = None, LoadGroups = "list",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.LoadArea = LoadArea

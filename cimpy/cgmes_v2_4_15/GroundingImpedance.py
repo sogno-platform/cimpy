@@ -5,7 +5,7 @@ class GroundingImpedance(EarthFaultCompensator):
 	'''
 	A fixed impedance device used for grounding.
 
-	:x: Reactance of device. Default: 
+	:x: Reactance of device. Default: 0.0
 		'''
 
 	cgmesProfile = EarthFaultCompensator.cgmesProfile
@@ -18,7 +18,7 @@ class GroundingImpedance(EarthFaultCompensator):
 
 	__doc__ += '\n Documentation of parent class EarthFaultCompensator: \n' + EarthFaultCompensator.__doc__ 
 
-	def __init__(self, x = ,  *args, **kw_args):
+	def __init__(self, x = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.x = x

@@ -5,7 +5,7 @@ class WindGeneratingUnit(GeneratingUnit):
 	'''
 	A wind driven generating unit.  May be used to represent a single turbine or an aggregation.
 
-	:windGenUnitType: The kind of wind generating unit Default: 
+	:windGenUnitType: The kind of wind generating unit Default: None
 		'''
 
 	cgmesProfile = GeneratingUnit.cgmesProfile
@@ -18,7 +18,7 @@ class WindGeneratingUnit(GeneratingUnit):
 
 	__doc__ += '\n Documentation of parent class GeneratingUnit: \n' + GeneratingUnit.__doc__ 
 
-	def __init__(self, windGenUnitType = ,  *args, **kw_args):
+	def __init__(self, windGenUnitType = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.windGenUnitType = windGenUnitType

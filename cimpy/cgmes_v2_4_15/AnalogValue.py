@@ -5,9 +5,9 @@ class AnalogValue(MeasurementValue):
 	'''
 	AnalogValue represents an analog MeasurementValue.
 
-	:Analog: The values connected to this measurement. Default: 
-	:AnalogControl: The MeasurementValue that is controlled. Default: 
-	:value: The value to supervise. Default: 
+	:Analog: The values connected to this measurement. Default: None
+	:AnalogControl: The MeasurementValue that is controlled. Default: None
+	:value: The value to supervise. Default: 0.0
 		'''
 
 	cgmesProfile = MeasurementValue.cgmesProfile
@@ -22,7 +22,7 @@ class AnalogValue(MeasurementValue):
 
 	__doc__ += '\n Documentation of parent class MeasurementValue: \n' + MeasurementValue.__doc__ 
 
-	def __init__(self, Analog = , AnalogControl = , value = ,  *args, **kw_args):
+	def __init__(self, Analog = None, AnalogControl = None, value = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Analog = Analog

@@ -5,17 +5,17 @@ class PssPTIST1(PowerSystemStabilizerDynamics):
 	'''
 	PTI Microprocessor-Based Stabilizer type 1.
 
-	:m: (M).  M=2*H.  Typical Value = 5. Default: 
-	:tf: Time constant (Tf).  Typical Value = 0.2. Default: 
-	:tp: Time constant (Tp).  Typical Value = 0.2. Default: 
-	:t1: Time constant (T1).  Typical Value = 0.3. Default: 
-	:t2: Time constant (T2).  Typical Value = 1. Default: 
-	:t3: Time constant (T3).  Typical Value = 0.2. Default: 
-	:t4: Time constant (T4).  Typical Value = 0.05. Default: 
-	:k: Gain (K).  Typical Value = 9. Default: 
-	:dtf: Time step frequency calculation (Dtf).  Typical Value = 0.025. Default: 
-	:dtc: Time step related to activation of controls (Dtc).  Typical Value = 0.025. Default: 
-	:dtp: Time step active power calculation (Dtp).  Typical Value = 0.0125. Default: 
+	:m: (M).  M=2*H.  Typical Value = 5. Default: 0.0
+	:tf: Time constant (Tf).  Typical Value = 0.2. Default: 0.0
+	:tp: Time constant (Tp).  Typical Value = 0.2. Default: 0.0
+	:t1: Time constant (T1).  Typical Value = 0.3. Default: 0.0
+	:t2: Time constant (T2).  Typical Value = 1. Default: 0.0
+	:t3: Time constant (T3).  Typical Value = 0.2. Default: 0.0
+	:t4: Time constant (T4).  Typical Value = 0.05. Default: 0.0
+	:k: Gain (K).  Typical Value = 9. Default: 0.0
+	:dtf: Time step frequency calculation (Dtf).  Typical Value = 0.025. Default: 0.0
+	:dtc: Time step related to activation of controls (Dtc).  Typical Value = 0.025. Default: 0.0
+	:dtp: Time step active power calculation (Dtp).  Typical Value = 0.0125. Default: 0.0
 		'''
 
 	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
@@ -38,7 +38,7 @@ class PssPTIST1(PowerSystemStabilizerDynamics):
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, m = , tf = , tp = , t1 = , t2 = , t3 = , t4 = , k = , dtf = , dtc = , dtp = ,  *args, **kw_args):
+	def __init__(self, m = 0.0, tf = 0.0, tp = 0.0, t1 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, k = 0.0, dtf = 0.0, dtc = 0.0, dtp = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.m = m

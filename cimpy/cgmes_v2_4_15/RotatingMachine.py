@@ -5,13 +5,13 @@ class RotatingMachine(RegulatingCondEq):
 	'''
 	A rotating machine which may be used as a generator or motor.
 
-	:GeneratingUnit: A synchronous machine may operate as a generator and as such becomes a member of a generating unit. Default: 
-	:HydroPump: The synchronous machine drives the turbine which moves the water from a low elevation to a higher elevation. The direction of machine rotation for pumping may or may not be the same as for generating. Default: 
-	:ratedPowerFactor: Power factor (nameplate data). It is primarily used for short circuit data exchange according to IEC 60909. Default: 
-	:ratedS: Nameplate apparent power rating for the unit. The attribute shall have a positive value. Default: 
-	:ratedU: Rated voltage (nameplate data, Ur in IEC 60909-0). It is primarily used for short circuit data exchange according to IEC 60909. Default: 
-	:p: Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for a steady state solution. Default: 
-	:q: Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for a steady state solution. Default: 
+	:GeneratingUnit: A synchronous machine may operate as a generator and as such becomes a member of a generating unit. Default: None
+	:HydroPump: The synchronous machine drives the turbine which moves the water from a low elevation to a higher elevation. The direction of machine rotation for pumping may or may not be the same as for generating. Default: None
+	:ratedPowerFactor: Power factor (nameplate data). It is primarily used for short circuit data exchange according to IEC 60909. Default: 0.0
+	:ratedS: Nameplate apparent power rating for the unit. The attribute shall have a positive value. Default: 0.0
+	:ratedU: Rated voltage (nameplate data, Ur in IEC 60909-0). It is primarily used for short circuit data exchange according to IEC 60909. Default: 0.0
+	:p: Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for a steady state solution. Default: 0.0
+	:q: Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for a steady state solution. Default: 0.0
 		'''
 
 	cgmesProfile = RegulatingCondEq.cgmesProfile
@@ -30,7 +30,7 @@ class RotatingMachine(RegulatingCondEq):
 
 	__doc__ += '\n Documentation of parent class RegulatingCondEq: \n' + RegulatingCondEq.__doc__ 
 
-	def __init__(self, GeneratingUnit = , HydroPump = , ratedPowerFactor = , ratedS = , ratedU = , p = , q = ,  *args, **kw_args):
+	def __init__(self, GeneratingUnit = None, HydroPump = None, ratedPowerFactor = 0.0, ratedS = 0.0, ratedU = 0.0, p = 0.0, q = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.GeneratingUnit = GeneratingUnit

@@ -5,11 +5,11 @@ class VoltagePerReactivePower(Base):
 	'''
 	Voltage variation with reactive power.
 
-	:value:  Default: 
-	:unit:  Default: 
-	:denominatorMultiplier:  Default: 
-	:multiplier:  Default: 
-	:denominatorUnit:  Default: 
+	:value:  Default: 0.0
+	:unit:  Default: None
+	:denominatorMultiplier:  Default: None
+	:multiplier:  Default: None
+	:denominatorUnit:  Default: None
 		'''
 
 	cgmesProfile = Base.cgmesProfile
@@ -26,7 +26,7 @@ class VoltagePerReactivePower(Base):
 
 	
 
-	def __init__(self, value = , unit = , denominatorMultiplier = , multiplier = , denominatorUnit = ,  ):
+	def __init__(self, value = 0.0, unit = None, denominatorMultiplier = None, multiplier = None, denominatorUnit = None,  ):
 	
 		self.value = value
 		self.unit = unit

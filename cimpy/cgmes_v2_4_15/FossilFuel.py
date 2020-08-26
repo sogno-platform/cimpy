@@ -5,8 +5,8 @@ class FossilFuel(IdentifiedObject):
 	'''
 	The fossil fuel consumed by the non-nuclear thermal generating unit.   For example, coal, oil, gas, etc.   This a the specific fuels that the generating unit can consume.
 
-	:fossilFuelType: The type of fossil fuel, such as coal, oil, or gas. Default: 
-	:ThermalGeneratingUnit: A thermal generating unit may have one or more fossil fuels. Default: 
+	:fossilFuelType: The type of fossil fuel, such as coal, oil, or gas. Default: None
+	:ThermalGeneratingUnit: A thermal generating unit may have one or more fossil fuels. Default: None
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -20,7 +20,7 @@ class FossilFuel(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, fossilFuelType = , ThermalGeneratingUnit = ,  *args, **kw_args):
+	def __init__(self, fossilFuelType = None, ThermalGeneratingUnit = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.fossilFuelType = fossilFuelType

@@ -5,8 +5,8 @@ class SvStatus(Base):
 	'''
 	State variable for status.
 
-	:ConductingEquipment: The conducting equipment associated with the status state variable. Default: 
-	:inService: The in service status as a result of topology processing. Default: 
+	:ConductingEquipment: The conducting equipment associated with the status state variable. Default: None
+	:inService: The in service status as a result of topology processing. Default: False
 		'''
 
 	cgmesProfile = Base.cgmesProfile
@@ -20,7 +20,7 @@ class SvStatus(Base):
 
 	
 
-	def __init__(self, ConductingEquipment = , inService = ,  ):
+	def __init__(self, ConductingEquipment = None, inService = False,  ):
 	
 		self.ConductingEquipment = ConductingEquipment
 		self.inService = inService

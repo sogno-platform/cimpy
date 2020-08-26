@@ -5,12 +5,12 @@ class PFVArType1IEEEVArController(PFVArControllerType1Dynamics):
 	'''
 	The class represents IEEE VAR Controller Type 1 which operates by moving the voltage reference directly.  Reference: IEEE Standard 421.5-2005 Section 11.3.
 
-	:tvarc: Var controller time delay ().  Typical Value = 5. Default: 
-	:vvar: Synchronous machine power factor (). Default: 
-	:vvarcbw: Var controller dead band ().  Typical Value = 0.02. Default: 
-	:vvarref: Var controller reference (). Default: 
-	:vvtmax: Maximum machine terminal voltage needed for pf/var controller to be enabled (). Default: 
-	:vvtmin: Minimum machine terminal voltage needed to enable pf/var controller (). Default: 
+	:tvarc: Var controller time delay ().  Typical Value = 5. Default: 0.0
+	:vvar: Synchronous machine power factor (). Default: 0.0
+	:vvarcbw: Var controller dead band ().  Typical Value = 0.02. Default: 0.0
+	:vvarref: Var controller reference (). Default: 0.0
+	:vvtmax: Maximum machine terminal voltage needed for pf/var controller to be enabled (). Default: 0.0
+	:vvtmin: Minimum machine terminal voltage needed to enable pf/var controller (). Default: 0.0
 		'''
 
 	cgmesProfile = PFVArControllerType1Dynamics.cgmesProfile
@@ -28,7 +28,7 @@ class PFVArType1IEEEVArController(PFVArControllerType1Dynamics):
 
 	__doc__ += '\n Documentation of parent class PFVArControllerType1Dynamics: \n' + PFVArControllerType1Dynamics.__doc__ 
 
-	def __init__(self, tvarc = , vvar = , vvarcbw = , vvarref = , vvtmax = , vvtmin = ,  *args, **kw_args):
+	def __init__(self, tvarc = 0.0, vvar = 0.0, vvarcbw = 0.0, vvarref = 0.0, vvtmax = 0.0, vvtmin = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.tvarc = tvarc

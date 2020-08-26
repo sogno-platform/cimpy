@@ -5,9 +5,9 @@ class OperationalLimitSet(IdentifiedObject):
 	'''
 	A set of limits associated with equipment.  Sets of limits might apply to a specific temperature, or season for example. A set of limits may contain different severities of limit levels that would apply to the same equipment. The set may contain limits of different types such as apparent power and current limits or high and low voltage limits  that are logically applied together as a set.
 
-	:Terminal:  Default: 
-	:Equipment: The equipment to which the limit set applies. Default: 
-	:OperationalLimitValue: The limit set to which the limit values belong. Default: 
+	:Terminal:  Default: None
+	:Equipment: The equipment to which the limit set applies. Default: None
+	:OperationalLimitValue: The limit set to which the limit values belong. Default: "list"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -22,7 +22,7 @@ class OperationalLimitSet(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, Terminal = , Equipment = , OperationalLimitValue = ,  *args, **kw_args):
+	def __init__(self, Terminal = None, Equipment = None, OperationalLimitValue = "list",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Terminal = Terminal

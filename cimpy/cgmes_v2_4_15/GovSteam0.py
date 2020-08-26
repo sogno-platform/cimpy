@@ -5,14 +5,14 @@ class GovSteam0(TurbineGovernorDynamics):
 	'''
 	A simplified steam turbine governor model.
 
-	:mwbase: Base for power values (MWbase)  (>0).  Unit = MW. Default: 
-	:r: Permanent droop (R).  Typical Value = 0.05. Default: 
-	:t1: Steam bowl time constant (T1).  Typical Value = 0.5. Default: 
-	:vmax: Maximum valve position, PU of mwcap (Vmax).  Typical Value = 1. Default: 
-	:vmin: Minimum valve position, PU of mwcap (Vmin).  Typical Value = 0. Default: 
-	:t2: Numerator time constant of T2/T3 block (T2).  Typical Value = 3. Default: 
-	:t3: Reheater time constant (T3).  Typical Value = 10. Default: 
-	:dt: Turbine damping coefficient (Dt).  Unit = delta P / delta speed. Typical Value = 0. Default: 
+	:mwbase: Base for power values (MWbase)  (>0).  Unit = MW. Default: 0.0
+	:r: Permanent droop (R).  Typical Value = 0.05. Default: 0.0
+	:t1: Steam bowl time constant (T1).  Typical Value = 0.5. Default: 0.0
+	:vmax: Maximum valve position, PU of mwcap (Vmax).  Typical Value = 1. Default: 0.0
+	:vmin: Minimum valve position, PU of mwcap (Vmin).  Typical Value = 0. Default: 0.0
+	:t2: Numerator time constant of T2/T3 block (T2).  Typical Value = 3. Default: 0.0
+	:t3: Reheater time constant (T3).  Typical Value = 10. Default: 0.0
+	:dt: Turbine damping coefficient (Dt).  Unit = delta P / delta speed. Typical Value = 0. Default: 0.0
 		'''
 
 	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
@@ -32,7 +32,7 @@ class GovSteam0(TurbineGovernorDynamics):
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 
-	def __init__(self, mwbase = , r = , t1 = , vmax = , vmin = , t2 = , t3 = , dt = ,  *args, **kw_args):
+	def __init__(self, mwbase = 0.0, r = 0.0, t1 = 0.0, vmax = 0.0, vmin = 0.0, t2 = 0.0, t3 = 0.0, dt = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.mwbase = mwbase

@@ -5,11 +5,11 @@ class Curve(IdentifiedObject):
 	'''
 	A multi-purpose curve or functional relationship between an independent variable (X-axis) and dependent (Y-axis) variables.
 
-	:curveStyle: The style or shape of the curve. Default: 
-	:xUnit: The X-axis units of measure. Default: 
-	:y1Unit: The Y1-axis units of measure. Default: 
-	:y2Unit: The Y2-axis units of measure. Default: 
-	:CurveDatas: The curve of  this curve data point. Default: 
+	:curveStyle: The style or shape of the curve. Default: None
+	:xUnit: The X-axis units of measure. Default: None
+	:y1Unit: The Y1-axis units of measure. Default: None
+	:y2Unit: The Y2-axis units of measure. Default: None
+	:CurveDatas: The curve of  this curve data point. Default: "list"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -26,7 +26,7 @@ class Curve(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, curveStyle = , xUnit = , y1Unit = , y2Unit = , CurveDatas = ,  *args, **kw_args):
+	def __init__(self, curveStyle = None, xUnit = None, y1Unit = None, y2Unit = None, CurveDatas = "list",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.curveStyle = curveStyle

@@ -5,8 +5,8 @@ class RegulatingCondEq(ConductingEquipment):
 	'''
 	A type of conducting equipment that can regulate a quantity (i.e. voltage or flow) at a specific point in the network.
 
-	:RegulatingControl: The regulating control scheme in which this equipment participates. Default: 
-	:controlEnabled: Specifies the regulation status of the equipment.  True is regulating, false is not regulating. Default: 
+	:RegulatingControl: The regulating control scheme in which this equipment participates. Default: None
+	:controlEnabled: Specifies the regulation status of the equipment.  True is regulating, false is not regulating. Default: False
 		'''
 
 	cgmesProfile = ConductingEquipment.cgmesProfile
@@ -20,7 +20,7 @@ class RegulatingCondEq(ConductingEquipment):
 
 	__doc__ += '\n Documentation of parent class ConductingEquipment: \n' + ConductingEquipment.__doc__ 
 
-	def __init__(self, RegulatingControl = , controlEnabled = ,  *args, **kw_args):
+	def __init__(self, RegulatingControl = None, controlEnabled = False,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.RegulatingControl = RegulatingControl

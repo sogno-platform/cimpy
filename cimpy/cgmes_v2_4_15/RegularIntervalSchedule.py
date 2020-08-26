@@ -5,9 +5,9 @@ class RegularIntervalSchedule(BasicIntervalSchedule):
 	'''
 	The schedule has time points where the time between them is constant.
 
-	:timeStep: The time between each pair of subsequent regular time points in sequence order. Default: 
-	:endTime: The time for the last time point. Default: 
-	:TimePoints: The regular interval time point data values that define this schedule. Default: 
+	:timeStep: The time between each pair of subsequent regular time points in sequence order. Default: 0.0
+	:endTime: The time for the last time point. Default: ''
+	:TimePoints: The regular interval time point data values that define this schedule. Default: "list"
 		'''
 
 	cgmesProfile = BasicIntervalSchedule.cgmesProfile
@@ -22,7 +22,7 @@ class RegularIntervalSchedule(BasicIntervalSchedule):
 
 	__doc__ += '\n Documentation of parent class BasicIntervalSchedule: \n' + BasicIntervalSchedule.__doc__ 
 
-	def __init__(self, timeStep = , endTime = , TimePoints = ,  *args, **kw_args):
+	def __init__(self, timeStep = 0.0, endTime = '', TimePoints = "list",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.timeStep = timeStep

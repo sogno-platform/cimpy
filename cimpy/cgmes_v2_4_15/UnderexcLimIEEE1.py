@@ -5,21 +5,21 @@ class UnderexcLimIEEE1(UnderexcitationLimiterDynamics):
 	'''
 	The class represents the Type UEL1 model which has a circular limit boundary when plotted in terms of machine reactive power vs. real power output.  Reference: IEEE UEL1 421.5-2005 Section 10.1.
 
-	:kur: UEL radius setting (K).  Typical Value = 1.95. Default: 
-	:kuc: UEL center setting (K).  Typical Value = 1.38. Default: 
-	:kuf: UEL excitation system stabilizer gain (K).  Typical Value = 3.3. Default: 
-	:vurmax: UEL maximum limit for radius phasor magnitude (V).  Typical Value = 5.8. Default: 
-	:vucmax: UEL maximum limit for operating point phasor magnitude (V).  Typical Value = 5.8. Default: 
-	:kui: UEL integral gain (K).  Typical Value = 0. Default: 
-	:kul: UEL proportional gain (K).  Typical Value = 100. Default: 
-	:vuimax: UEL integrator output maximum limit (V). Default: 
-	:vuimin: UEL integrator output minimum limit (V). Default: 
-	:tu1: UEL lead time constant (T).  Typical Value = 0. Default: 
-	:tu2: UEL lag time constant (T).  Typical Value = 0.05. Default: 
-	:tu3: UEL lead time constant (T).  Typical Value = 0. Default: 
-	:tu4: UEL lag time constant (T).  Typical Value = 0. Default: 
-	:vulmax: UEL output maximum limit (V).  Typical Value = 18. Default: 
-	:vulmin: UEL output minimum limit (V).  Typical Value = -18. Default: 
+	:kur: UEL radius setting (K).  Typical Value = 1.95. Default: 0.0
+	:kuc: UEL center setting (K).  Typical Value = 1.38. Default: 0.0
+	:kuf: UEL excitation system stabilizer gain (K).  Typical Value = 3.3. Default: 0.0
+	:vurmax: UEL maximum limit for radius phasor magnitude (V).  Typical Value = 5.8. Default: 0.0
+	:vucmax: UEL maximum limit for operating point phasor magnitude (V).  Typical Value = 5.8. Default: 0.0
+	:kui: UEL integral gain (K).  Typical Value = 0. Default: 0.0
+	:kul: UEL proportional gain (K).  Typical Value = 100. Default: 0.0
+	:vuimax: UEL integrator output maximum limit (V). Default: 0.0
+	:vuimin: UEL integrator output minimum limit (V). Default: 0.0
+	:tu1: UEL lead time constant (T).  Typical Value = 0. Default: 0.0
+	:tu2: UEL lag time constant (T).  Typical Value = 0.05. Default: 0.0
+	:tu3: UEL lead time constant (T).  Typical Value = 0. Default: 0.0
+	:tu4: UEL lag time constant (T).  Typical Value = 0. Default: 0.0
+	:vulmax: UEL output maximum limit (V).  Typical Value = 18. Default: 0.0
+	:vulmin: UEL output minimum limit (V).  Typical Value = -18. Default: 0.0
 		'''
 
 	cgmesProfile = UnderexcitationLimiterDynamics.cgmesProfile
@@ -46,7 +46,7 @@ class UnderexcLimIEEE1(UnderexcitationLimiterDynamics):
 
 	__doc__ += '\n Documentation of parent class UnderexcitationLimiterDynamics: \n' + UnderexcitationLimiterDynamics.__doc__ 
 
-	def __init__(self, kur = , kuc = , kuf = , vurmax = , vucmax = , kui = , kul = , vuimax = , vuimin = , tu1 = , tu2 = , tu3 = , tu4 = , vulmax = , vulmin = ,  *args, **kw_args):
+	def __init__(self, kur = 0.0, kuc = 0.0, kuf = 0.0, vurmax = 0.0, vucmax = 0.0, kui = 0.0, kul = 0.0, vuimax = 0.0, vuimin = 0.0, tu1 = 0.0, tu2 = 0.0, tu3 = 0.0, tu4 = 0.0, vulmax = 0.0, vulmin = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.kur = kur

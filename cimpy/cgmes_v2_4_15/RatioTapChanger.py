@@ -5,10 +5,10 @@ class RatioTapChanger(TapChanger):
 	'''
 	A tap changer that changes the voltage ratio impacting the voltage magnitude but not the phase angle across the transformer.
 
-	:tculControlMode: Specifies the regulation control mode (voltage or reactive) of the RatioTapChanger. Default: 
-	:stepVoltageIncrement: Tap step increment, in per cent of nominal voltage, per step position. Default: 
-	:RatioTapChangerTable: The ratio tap changer of this tap ratio table. Default: 
-	:TransformerEnd: Ratio tap changer associated with this transformer end. Default: 
+	:tculControlMode: Specifies the regulation control mode (voltage or reactive) of the RatioTapChanger. Default: None
+	:stepVoltageIncrement: Tap step increment, in per cent of nominal voltage, per step position. Default: 0.0
+	:RatioTapChangerTable: The ratio tap changer of this tap ratio table. Default: None
+	:TransformerEnd: Ratio tap changer associated with this transformer end. Default: None
 		'''
 
 	cgmesProfile = TapChanger.cgmesProfile
@@ -24,7 +24,7 @@ class RatioTapChanger(TapChanger):
 
 	__doc__ += '\n Documentation of parent class TapChanger: \n' + TapChanger.__doc__ 
 
-	def __init__(self, tculControlMode = , stepVoltageIncrement = , RatioTapChangerTable = , TransformerEnd = ,  *args, **kw_args):
+	def __init__(self, tculControlMode = None, stepVoltageIncrement = 0.0, RatioTapChangerTable = None, TransformerEnd = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.tculControlMode = tculControlMode

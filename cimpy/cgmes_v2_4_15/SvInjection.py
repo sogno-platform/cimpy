@@ -5,9 +5,9 @@ class SvInjection(Base):
 	'''
 	The SvInjection is reporting the calculated bus injection minus the sum of the terminal flows. The terminal flow is positive out from the bus (load sign convention) and bus injection has positive flow into the bus. SvInjection may have the remainder after state estimation or slack after power flow calculation.
 
-	:pInjection: The active power injected into the bus in addition to injections from equipment terminals.  Positive sign means injection into the TopologicalNode (bus). Default: 
-	:qInjection: The reactive power injected into the bus in addition to injections from equipment terminals. Positive sign means injection into the TopologicalNode (bus). Default: 
-	:TopologicalNode: The injection flows state variables associated with the topological node. Default: 
+	:pInjection: The active power injected into the bus in addition to injections from equipment terminals.  Positive sign means injection into the TopologicalNode (bus). Default: 0.0
+	:qInjection: The reactive power injected into the bus in addition to injections from equipment terminals. Positive sign means injection into the TopologicalNode (bus). Default: 0.0
+	:TopologicalNode: The injection flows state variables associated with the topological node. Default: None
 		'''
 
 	cgmesProfile = Base.cgmesProfile
@@ -22,7 +22,7 @@ class SvInjection(Base):
 
 	
 
-	def __init__(self, pInjection = , qInjection = , TopologicalNode = ,  ):
+	def __init__(self, pInjection = 0.0, qInjection = 0.0, TopologicalNode = None,  ):
 	
 		self.pInjection = pInjection
 		self.qInjection = qInjection

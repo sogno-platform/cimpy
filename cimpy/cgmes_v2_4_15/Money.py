@@ -5,9 +5,9 @@ class Money(Base):
 	'''
 	Amount of money.
 
-	:unit:  Default: 
-	:multiplier:  Default: 
-	:value:  Default: 
+	:unit:  Default: None
+	:multiplier:  Default: None
+	:value:  Default: 0.0
 		'''
 
 	cgmesProfile = Base.cgmesProfile
@@ -22,7 +22,7 @@ class Money(Base):
 
 	
 
-	def __init__(self, unit = , multiplier = , value = ,  ):
+	def __init__(self, unit = None, multiplier = None, value = 0.0,  ):
 	
 		self.unit = unit
 		self.multiplier = multiplier

@@ -5,8 +5,8 @@ class SvTapStep(Base):
 	'''
 	State variable for transformer tap step.     This class is to be used for taps of LTC (load tap changing) transformers, not fixed tap transformers.
 
-	:position: The floating point tap position.   This is not the tap ratio, but rather the tap step position as defined by the related tap changer model and normally is constrained to be within the range of minimum and maximum tap positions. Default: 
-	:TapChanger: The tap changer associated with the tap step state. Default: 
+	:position: The floating point tap position.   This is not the tap ratio, but rather the tap step position as defined by the related tap changer model and normally is constrained to be within the range of minimum and maximum tap positions. Default: 0.0
+	:TapChanger: The tap changer associated with the tap step state. Default: None
 		'''
 
 	cgmesProfile = Base.cgmesProfile
@@ -20,7 +20,7 @@ class SvTapStep(Base):
 
 	
 
-	def __init__(self, position = , TapChanger = ,  ):
+	def __init__(self, position = 0.0, TapChanger = None,  ):
 	
 		self.position = position
 		self.TapChanger = TapChanger

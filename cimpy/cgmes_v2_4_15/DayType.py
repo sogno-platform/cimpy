@@ -5,7 +5,7 @@ class DayType(IdentifiedObject):
 	'''
 	Group of similar days.   For example it could be used to represent weekdays, weekend, or holidays.
 
-	:SeasonDayTypeSchedules: DayType for the Schedule. Default: 
+	:SeasonDayTypeSchedules: DayType for the Schedule. Default: "list"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -18,7 +18,7 @@ class DayType(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, SeasonDayTypeSchedules = ,  *args, **kw_args):
+	def __init__(self, SeasonDayTypeSchedules = "list",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.SeasonDayTypeSchedules = SeasonDayTypeSchedules

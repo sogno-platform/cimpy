@@ -5,24 +5,24 @@ class PssWECC(PowerSystemStabilizerDynamics):
 	'''
 	Dual input Power System Stabilizer, based on IEEE type 2, with modified output limiter defined by WECC (Western Electricity Coordinating Council, USA).
 
-	:inputSignal1Type: Type of input signal #1. Default: 
-	:inputSignal2Type: Type of input signal #2. Default: 
-	:k1: Input signal 1 gain  (K). Default: 
-	:t1: Input signal 1 transducer time constant (T). Default: 
-	:k2: Input signal 2 gain (K). Default: 
-	:t2: Input signal 2 transducer time constant (T). Default: 
-	:t3: Stabilizer washout time constant (T). Default: 
-	:t4: Stabilizer washout time lag constant (T) (>0). Default: 
-	:t5: Lead time constant (T). Default: 
-	:t6: Lag time constant (T). Default: 
-	:t7: Lead time constant (T). Default: 
-	:t8: Lag time constant (T). Default: 
-	:t10: Lag time constant (T). Default: 
-	:t9: Lead time constant (T). Default: 
-	:vsmax: Maximum output signal (Vsmax). Default: 
-	:vsmin: Minimum output signal (Vsmin). Default: 
-	:vcu: Maximum value for voltage compensator output (V). Default: 
-	:vcl: Minimum value for voltage compensator output (V). Default: 
+	:inputSignal1Type: Type of input signal #1. Default: None
+	:inputSignal2Type: Type of input signal #2. Default: None
+	:k1: Input signal 1 gain  (K). Default: 0.0
+	:t1: Input signal 1 transducer time constant (T). Default: 0.0
+	:k2: Input signal 2 gain (K). Default: 0.0
+	:t2: Input signal 2 transducer time constant (T). Default: 0.0
+	:t3: Stabilizer washout time constant (T). Default: 0.0
+	:t4: Stabilizer washout time lag constant (T) (>0). Default: 0.0
+	:t5: Lead time constant (T). Default: 0.0
+	:t6: Lag time constant (T). Default: 0.0
+	:t7: Lead time constant (T). Default: 0.0
+	:t8: Lag time constant (T). Default: 0.0
+	:t10: Lag time constant (T). Default: 0.0
+	:t9: Lead time constant (T). Default: 0.0
+	:vsmax: Maximum output signal (Vsmax). Default: 0.0
+	:vsmin: Minimum output signal (Vsmin). Default: 0.0
+	:vcu: Maximum value for voltage compensator output (V). Default: 0.0
+	:vcl: Minimum value for voltage compensator output (V). Default: 0.0
 		'''
 
 	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
@@ -52,7 +52,7 @@ class PssWECC(PowerSystemStabilizerDynamics):
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, inputSignal1Type = , inputSignal2Type = , k1 = , t1 = , k2 = , t2 = , t3 = , t4 = , t5 = , t6 = , t7 = , t8 = , t10 = , t9 = , vsmax = , vsmin = , vcu = , vcl = ,  *args, **kw_args):
+	def __init__(self, inputSignal1Type = None, inputSignal2Type = None, k1 = 0.0, t1 = 0.0, k2 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, t5 = 0.0, t6 = 0.0, t7 = 0.0, t8 = 0.0, t10 = 0.0, t9 = 0.0, vsmax = 0.0, vsmin = 0.0, vcu = 0.0, vcl = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.inputSignal1Type = inputSignal1Type

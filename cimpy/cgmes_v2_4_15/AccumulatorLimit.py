@@ -5,8 +5,8 @@ class AccumulatorLimit(Limit):
 	'''
 	Limit values for Accumulator measurements.
 
-	:value: The value to supervise against. The value is positive. Default: 
-	:LimitSet: The limit values used for supervision of Measurements. Default: 
+	:value: The value to supervise against. The value is positive. Default: 0
+	:LimitSet: The limit values used for supervision of Measurements. Default: None
 		'''
 
 	cgmesProfile = Limit.cgmesProfile
@@ -20,7 +20,7 @@ class AccumulatorLimit(Limit):
 
 	__doc__ += '\n Documentation of parent class Limit: \n' + Limit.__doc__ 
 
-	def __init__(self, value = , LimitSet = ,  *args, **kw_args):
+	def __init__(self, value = 0, LimitSet = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.value = value

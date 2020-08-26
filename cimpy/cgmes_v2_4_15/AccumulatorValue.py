@@ -5,9 +5,9 @@ class AccumulatorValue(MeasurementValue):
 	'''
 	AccumulatorValue represents an accumulated (counted) MeasurementValue.
 
-	:Accumulator: The values connected to this measurement. Default: 
-	:AccumulatorReset: The command that reset the accumulator value. Default: 
-	:value: The value to supervise. The value is positive. Default: 
+	:Accumulator: The values connected to this measurement. Default: None
+	:AccumulatorReset: The command that reset the accumulator value. Default: None
+	:value: The value to supervise. The value is positive. Default: 0
 		'''
 
 	cgmesProfile = MeasurementValue.cgmesProfile
@@ -22,7 +22,7 @@ class AccumulatorValue(MeasurementValue):
 
 	__doc__ += '\n Documentation of parent class MeasurementValue: \n' + MeasurementValue.__doc__ 
 
-	def __init__(self, Accumulator = , AccumulatorReset = , value = ,  *args, **kw_args):
+	def __init__(self, Accumulator = None, AccumulatorReset = None, value = 0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Accumulator = Accumulator

@@ -5,8 +5,8 @@ class WindPlantIEC(WindPlantDynamics):
 	'''
 	Simplified IEC type plant level model.   Reference: IEC 61400-27-1, AnnexE.
 
-	:WindPlantFreqPcontrolIEC: Wind plant frequency and active power control model associated with this wind plant. Default: 
-	:WindPlantReactiveControlIEC: Wind plant reactive control model associated with this wind plant. Default: 
+	:WindPlantFreqPcontrolIEC: Wind plant frequency and active power control model associated with this wind plant. Default: None
+	:WindPlantReactiveControlIEC: Wind plant reactive control model associated with this wind plant. Default: None
 		'''
 
 	cgmesProfile = WindPlantDynamics.cgmesProfile
@@ -20,7 +20,7 @@ class WindPlantIEC(WindPlantDynamics):
 
 	__doc__ += '\n Documentation of parent class WindPlantDynamics: \n' + WindPlantDynamics.__doc__ 
 
-	def __init__(self, WindPlantFreqPcontrolIEC = , WindPlantReactiveControlIEC = ,  *args, **kw_args):
+	def __init__(self, WindPlantFreqPcontrolIEC = None, WindPlantReactiveControlIEC = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.WindPlantFreqPcontrolIEC = WindPlantFreqPcontrolIEC

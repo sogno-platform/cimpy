@@ -5,9 +5,9 @@ class Seconds(Base):
 	'''
 	Time, in seconds.
 
-	:value: Time, in seconds Default: 
-	:unit:  Default: 
-	:multiplier:  Default: 
+	:value: Time, in seconds Default: 0.0
+	:unit:  Default: None
+	:multiplier:  Default: None
 		'''
 
 	cgmesProfile = Base.cgmesProfile
@@ -22,7 +22,7 @@ class Seconds(Base):
 
 	
 
-	def __init__(self, value = , unit = , multiplier = ,  ):
+	def __init__(self, value = 0.0, unit = None, multiplier = None,  ):
 	
 		self.value = value
 		self.unit = unit

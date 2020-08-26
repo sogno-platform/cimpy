@@ -5,9 +5,9 @@ class ConductingEquipment(Equipment):
 	'''
 	The parts of the AC power system that are designed to carry current or that are conductively connected through terminals.
 
-	:BaseVoltage: All conducting equipment with this base voltage.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers. Default: 
-	:Terminals: Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes. Default: 
-	:SvStatus: The status state variable associated with this conducting equipment. Default: 
+	:BaseVoltage: All conducting equipment with this base voltage.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers. Default: None
+	:Terminals: Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes. Default: "list"
+	:SvStatus: The status state variable associated with this conducting equipment. Default: None
 		'''
 
 	cgmesProfile = Equipment.cgmesProfile
@@ -22,7 +22,7 @@ class ConductingEquipment(Equipment):
 
 	__doc__ += '\n Documentation of parent class Equipment: \n' + Equipment.__doc__ 
 
-	def __init__(self, BaseVoltage = , Terminals = , SvStatus = ,  *args, **kw_args):
+	def __init__(self, BaseVoltage = None, Terminals = "list", SvStatus = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.BaseVoltage = BaseVoltage

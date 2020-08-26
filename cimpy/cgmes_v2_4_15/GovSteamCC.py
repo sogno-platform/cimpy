@@ -5,23 +5,23 @@ class GovSteamCC(TurbineGovernorDynamics):
 	'''
 	Cross compound turbine governor model.
 
-	:mwbase: Base for power values (MWbase) (>0).  Unit = MW. Default: 
-	:pmaxhp: Maximum HP value position (Pmaxhp).  Typical Value = 1. Default: 
-	:rhp: HP governor droop (Rhp).  Typical Value = 0.05. Default: 
-	:t1hp: HP governor time constant (T1hp).  Typical Value = 0.1. Default: 
-	:t3hp: HP turbine time constant (T3hp).  Typical Value = 0.1. Default: 
-	:t4hp: HP turbine time constant (T4hp).  Typical Value = 0.1. Default: 
-	:t5hp: HP reheater time constant (T5hp).  Typical Value = 10. Default: 
-	:fhp: Fraction of HP power ahead of reheater (Fhp).  Typical Value = 0.3. Default: 
-	:dhp: HP damping factor (Dhp).  Typical Value = 0. Default: 
-	:pmaxlp: Maximum LP value position (Pmaxlp).  Typical Value = 1. Default: 
-	:rlp: LP governor droop (Rlp).  Typical Value = 0.05. Default: 
-	:t1lp: LP governor time constant (T1lp).  Typical Value = 0.1. Default: 
-	:t3lp: LP turbine time constant (T3lp).  Typical Value = 0.1. Default: 
-	:t4lp: LP turbine time constant (T4lp).  Typical Value = 0.1. Default: 
-	:t5lp: LP reheater time constant (T5lp).  Typical Value = 10. Default: 
-	:flp: Fraction of LP power ahead of reheater (Flp).  Typical Value = 0.7. Default: 
-	:dlp: LP damping factor (Dlp).  Typical Value = 0. Default: 
+	:mwbase: Base for power values (MWbase) (>0).  Unit = MW. Default: 0.0
+	:pmaxhp: Maximum HP value position (Pmaxhp).  Typical Value = 1. Default: 0.0
+	:rhp: HP governor droop (Rhp).  Typical Value = 0.05. Default: 0.0
+	:t1hp: HP governor time constant (T1hp).  Typical Value = 0.1. Default: 0.0
+	:t3hp: HP turbine time constant (T3hp).  Typical Value = 0.1. Default: 0.0
+	:t4hp: HP turbine time constant (T4hp).  Typical Value = 0.1. Default: 0.0
+	:t5hp: HP reheater time constant (T5hp).  Typical Value = 10. Default: 0.0
+	:fhp: Fraction of HP power ahead of reheater (Fhp).  Typical Value = 0.3. Default: 0.0
+	:dhp: HP damping factor (Dhp).  Typical Value = 0. Default: 0.0
+	:pmaxlp: Maximum LP value position (Pmaxlp).  Typical Value = 1. Default: 0.0
+	:rlp: LP governor droop (Rlp).  Typical Value = 0.05. Default: 0.0
+	:t1lp: LP governor time constant (T1lp).  Typical Value = 0.1. Default: 0.0
+	:t3lp: LP turbine time constant (T3lp).  Typical Value = 0.1. Default: 0.0
+	:t4lp: LP turbine time constant (T4lp).  Typical Value = 0.1. Default: 0.0
+	:t5lp: LP reheater time constant (T5lp).  Typical Value = 10. Default: 0.0
+	:flp: Fraction of LP power ahead of reheater (Flp).  Typical Value = 0.7. Default: 0.0
+	:dlp: LP damping factor (Dlp).  Typical Value = 0. Default: 0.0
 		'''
 
 	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
@@ -50,7 +50,7 @@ class GovSteamCC(TurbineGovernorDynamics):
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 
-	def __init__(self, mwbase = , pmaxhp = , rhp = , t1hp = , t3hp = , t4hp = , t5hp = , fhp = , dhp = , pmaxlp = , rlp = , t1lp = , t3lp = , t4lp = , t5lp = , flp = , dlp = ,  *args, **kw_args):
+	def __init__(self, mwbase = 0.0, pmaxhp = 0.0, rhp = 0.0, t1hp = 0.0, t3hp = 0.0, t4hp = 0.0, t5hp = 0.0, fhp = 0.0, dhp = 0.0, pmaxlp = 0.0, rlp = 0.0, t1lp = 0.0, t3lp = 0.0, t4lp = 0.0, t5lp = 0.0, flp = 0.0, dlp = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.mwbase = mwbase

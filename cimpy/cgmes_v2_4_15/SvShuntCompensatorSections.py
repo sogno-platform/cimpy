@@ -5,8 +5,8 @@ class SvShuntCompensatorSections(Base):
 	'''
 	State variable for the number of sections in service for a shunt compensator.
 
-	:sections: The number of sections in service as a continous variable. To get integer value scale with ShuntCompensator.bPerSection. Default: 
-	:ShuntCompensator: The shunt compensator for which the state applies. Default: 
+	:sections: The number of sections in service as a continous variable. To get integer value scale with ShuntCompensator.bPerSection. Default: 0.0
+	:ShuntCompensator: The shunt compensator for which the state applies. Default: None
 		'''
 
 	cgmesProfile = Base.cgmesProfile
@@ -20,7 +20,7 @@ class SvShuntCompensatorSections(Base):
 
 	
 
-	def __init__(self, sections = , ShuntCompensator = ,  ):
+	def __init__(self, sections = 0.0, ShuntCompensator = None,  ):
 	
 		self.sections = sections
 		self.ShuntCompensator = ShuntCompensator

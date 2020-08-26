@@ -5,7 +5,7 @@ class LoadGroup(IdentifiedObject):
 	'''
 	The class is the third level in a hierarchical structure for grouping of loads for the purpose of load flow load scaling.
 
-	:SubLoadArea: The SubLoadArea where the Loadgroup belongs. Default: 
+	:SubLoadArea: The SubLoadArea where the Loadgroup belongs. Default: None
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -18,7 +18,7 @@ class LoadGroup(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, SubLoadArea = ,  *args, **kw_args):
+	def __init__(self, SubLoadArea = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.SubLoadArea = SubLoadArea

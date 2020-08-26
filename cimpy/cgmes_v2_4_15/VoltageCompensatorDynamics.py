@@ -5,8 +5,8 @@ class VoltageCompensatorDynamics(DynamicsFunctionBlock):
 	'''
 	Voltage compensator function block whose behaviour is described by reference to a standard model
 
-	:RemoteInputSignal: Remote input signal used by this voltage compensator model. Default: 
-	:ExcitationSystemDynamics: Excitation system model with which this voltage compensator is associated. Default: 
+	:RemoteInputSignal: Remote input signal used by this voltage compensator model. Default: None
+	:ExcitationSystemDynamics: Excitation system model with which this voltage compensator is associated. Default: None
 		'''
 
 	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
@@ -20,7 +20,7 @@ class VoltageCompensatorDynamics(DynamicsFunctionBlock):
 
 	__doc__ += '\n Documentation of parent class DynamicsFunctionBlock: \n' + DynamicsFunctionBlock.__doc__ 
 
-	def __init__(self, RemoteInputSignal = , ExcitationSystemDynamics = ,  *args, **kw_args):
+	def __init__(self, RemoteInputSignal = None, ExcitationSystemDynamics = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.RemoteInputSignal = RemoteInputSignal

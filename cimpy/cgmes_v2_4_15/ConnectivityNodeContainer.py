@@ -5,8 +5,8 @@ class ConnectivityNodeContainer(PowerSystemResource):
 	'''
 	A base class for all objects that may contain connectivity nodes or topological nodes.
 
-	:ConnectivityNodes: Connectivity nodes which belong to this connectivity node container. Default: 
-	:TopologicalNode: The topological nodes which belong to this connectivity node container. Default: 
+	:ConnectivityNodes: Connectivity nodes which belong to this connectivity node container. Default: "list"
+	:TopologicalNode: The topological nodes which belong to this connectivity node container. Default: "list"
 		'''
 
 	cgmesProfile = PowerSystemResource.cgmesProfile
@@ -20,7 +20,7 @@ class ConnectivityNodeContainer(PowerSystemResource):
 
 	__doc__ += '\n Documentation of parent class PowerSystemResource: \n' + PowerSystemResource.__doc__ 
 
-	def __init__(self, ConnectivityNodes = , TopologicalNode = ,  *args, **kw_args):
+	def __init__(self, ConnectivityNodes = "list", TopologicalNode = "list",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ConnectivityNodes = ConnectivityNodes

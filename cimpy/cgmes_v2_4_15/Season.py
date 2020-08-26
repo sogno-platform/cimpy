@@ -5,9 +5,9 @@ class Season(IdentifiedObject):
 	'''
 	A specified time period of the year.
 
-	:endDate: Date season ends. Default: 
-	:startDate: Date season starts. Default: 
-	:SeasonDayTypeSchedules: Season for the Schedule. Default: 
+	:endDate: Date season ends. Default: 0.0
+	:startDate: Date season starts. Default: 0.0
+	:SeasonDayTypeSchedules: Season for the Schedule. Default: "list"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -22,7 +22,7 @@ class Season(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, endDate = , startDate = , SeasonDayTypeSchedules = ,  *args, **kw_args):
+	def __init__(self, endDate = 0.0, startDate = 0.0, SeasonDayTypeSchedules = "list",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.endDate = endDate

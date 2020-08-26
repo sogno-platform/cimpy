@@ -5,7 +5,7 @@ class ApparentPowerLimit(OperationalLimit):
 	'''
 	Apparent power limit.
 
-	:value: The apparent power limit. Default: 
+	:value: The apparent power limit. Default: 0.0
 		'''
 
 	cgmesProfile = OperationalLimit.cgmesProfile
@@ -18,7 +18,7 @@ class ApparentPowerLimit(OperationalLimit):
 
 	__doc__ += '\n Documentation of parent class OperationalLimit: \n' + OperationalLimit.__doc__ 
 
-	def __init__(self, value = ,  *args, **kw_args):
+	def __init__(self, value = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.value = value

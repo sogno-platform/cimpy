@@ -5,11 +5,11 @@ class VoltageLevel(EquipmentContainer):
 	'''
 	A collection of equipment at one common system voltage forming a switchgear. The equipment typically consist of breakers, busbars, instrumentation, control, regulation and protection devices as well as assemblies of all these.
 
-	:BaseVoltage: The base voltage used for all equipment within the voltage level. Default: 
-	:Substation: The substation of the voltage level. Default: 
-	:highVoltageLimit: The bus bar`s high voltage limit Default: 
-	:lowVoltageLimit: The bus bar`s low voltage limit Default: 
-	:Bays: The bays within this voltage level. Default: 
+	:BaseVoltage: The base voltage used for all equipment within the voltage level. Default: None
+	:Substation: The substation of the voltage level. Default: None
+	:highVoltageLimit: The bus bar`s high voltage limit Default: 0.0
+	:lowVoltageLimit: The bus bar`s low voltage limit Default: 0.0
+	:Bays: The bays within this voltage level. Default: "list"
 		'''
 
 	cgmesProfile = EquipmentContainer.cgmesProfile
@@ -26,7 +26,7 @@ class VoltageLevel(EquipmentContainer):
 
 	__doc__ += '\n Documentation of parent class EquipmentContainer: \n' + EquipmentContainer.__doc__ 
 
-	def __init__(self, BaseVoltage = , Substation = , highVoltageLimit = , lowVoltageLimit = , Bays = ,  *args, **kw_args):
+	def __init__(self, BaseVoltage = None, Substation = None, highVoltageLimit = 0.0, lowVoltageLimit = 0.0, Bays = "list",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.BaseVoltage = BaseVoltage

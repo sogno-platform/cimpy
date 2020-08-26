@@ -5,9 +5,9 @@ class DiscreteValue(MeasurementValue):
 	'''
 	DiscreteValue represents a discrete MeasurementValue.
 
-	:Command: The MeasurementValue that is controlled. Default: 
-	:Discrete: The values connected to this measurement. Default: 
-	:value: The value to supervise. Default: 
+	:Command: The MeasurementValue that is controlled. Default: None
+	:Discrete: The values connected to this measurement. Default: None
+	:value: The value to supervise. Default: 0
 		'''
 
 	cgmesProfile = MeasurementValue.cgmesProfile
@@ -22,7 +22,7 @@ class DiscreteValue(MeasurementValue):
 
 	__doc__ += '\n Documentation of parent class MeasurementValue: \n' + MeasurementValue.__doc__ 
 
-	def __init__(self, Command = , Discrete = , value = ,  *args, **kw_args):
+	def __init__(self, Command = None, Discrete = None, value = 0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Command = Command

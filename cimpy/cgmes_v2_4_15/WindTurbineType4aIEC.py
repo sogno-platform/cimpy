@@ -5,7 +5,7 @@ class WindTurbineType4aIEC(WindGenType4IEC):
 	'''
 	Wind turbine IEC Type 4A.  Reference: IEC Standard 61400-27-1, section 6.5.5.2.
 
-	:WindContPType4aIEC: Wind control P type 4A model associated with this wind turbine type 4A model. Default: 
+	:WindContPType4aIEC: Wind control P type 4A model associated with this wind turbine type 4A model. Default: None
 		'''
 
 	cgmesProfile = WindGenType4IEC.cgmesProfile
@@ -18,7 +18,7 @@ class WindTurbineType4aIEC(WindGenType4IEC):
 
 	__doc__ += '\n Documentation of parent class WindGenType4IEC: \n' + WindGenType4IEC.__doc__ 
 
-	def __init__(self, WindContPType4aIEC = ,  *args, **kw_args):
+	def __init__(self, WindContPType4aIEC = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.WindContPType4aIEC = WindContPType4aIEC

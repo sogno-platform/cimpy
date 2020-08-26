@@ -5,8 +5,8 @@ class EquivalentShunt(EquivalentEquipment):
 	'''
 	The class represents equivalent shunts.
 
-	:b: Positive sequence shunt susceptance. Default: 
-	:g: Positive sequence shunt conductance. Default: 
+	:b: Positive sequence shunt susceptance. Default: 0.0
+	:g: Positive sequence shunt conductance. Default: 0.0
 		'''
 
 	cgmesProfile = EquivalentEquipment.cgmesProfile
@@ -20,7 +20,7 @@ class EquivalentShunt(EquivalentEquipment):
 
 	__doc__ += '\n Documentation of parent class EquivalentEquipment: \n' + EquivalentEquipment.__doc__ 
 
-	def __init__(self, b = , g = ,  *args, **kw_args):
+	def __init__(self, b = 0.0, g = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.b = b

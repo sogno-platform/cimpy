@@ -5,13 +5,13 @@ class WindMechIEC(IdentifiedObject):
 	'''
 	Two mass model.  Reference: IEC Standard 61400-27-1 Section 6.6.2.1.
 
-	:WindGenTurbineType3IEC: Wind turbine Type 3 model with which this wind mechanical model is associated. Default: 
-	:cdrt: Drive train damping (. It is type dependent parameter. Default: 
-	:hgen: Inertia constant of generator (). It is type dependent parameter. Default: 
-	:hwtr: Inertia constant of wind turbine rotor (). It is type dependent parameter. Default: 
-	:kdrt: Drive train stiffness (). It is type dependent parameter. Default: 
-	:WindTurbineType4bIEC: Wind turbine type 4B model with which this wind mechanical model is associated. Default: 
-	:WindTurbineType1or2IEC: Wind generator type 1 or 2 model with which this wind mechanical model is associated. Default: 
+	:WindGenTurbineType3IEC: Wind turbine Type 3 model with which this wind mechanical model is associated. Default: None
+	:cdrt: Drive train damping (. It is type dependent parameter. Default: 0.0
+	:hgen: Inertia constant of generator (). It is type dependent parameter. Default: 0.0
+	:hwtr: Inertia constant of wind turbine rotor (). It is type dependent parameter. Default: 0.0
+	:kdrt: Drive train stiffness (). It is type dependent parameter. Default: 0.0
+	:WindTurbineType4bIEC: Wind turbine type 4B model with which this wind mechanical model is associated. Default: None
+	:WindTurbineType1or2IEC: Wind generator type 1 or 2 model with which this wind mechanical model is associated. Default: None
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
@@ -30,7 +30,7 @@ class WindMechIEC(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, WindGenTurbineType3IEC = , cdrt = , hgen = , hwtr = , kdrt = , WindTurbineType4bIEC = , WindTurbineType1or2IEC = ,  *args, **kw_args):
+	def __init__(self, WindGenTurbineType3IEC = None, cdrt = 0.0, hgen = 0.0, hwtr = 0.0, kdrt = 0.0, WindTurbineType4bIEC = None, WindTurbineType1or2IEC = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.WindGenTurbineType3IEC = WindGenTurbineType3IEC

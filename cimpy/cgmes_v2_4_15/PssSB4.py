@@ -5,17 +5,17 @@ class PssSB4(PowerSystemStabilizerDynamics):
 	'''
 	Power sensitive stabilizer model.
 
-	:tt: Time constant (Tt). Default: 
-	:kx: Gain (Kx). Default: 
-	:tx2: Time constant (Tx2). Default: 
-	:ta: Time constant (Ta). Default: 
-	:tx1: Reset time constant (Tx1). Default: 
-	:tb: Time constant (Tb). Default: 
-	:tc: Time constant (Tc). Default: 
-	:td: Time constant (Td). Default: 
-	:te: Time constant (Te). Default: 
-	:vsmax: Limiter (Vsmax). Default: 
-	:vsmin: Limiter (Vsmin). Default: 
+	:tt: Time constant (Tt). Default: 0.0
+	:kx: Gain (Kx). Default: 0.0
+	:tx2: Time constant (Tx2). Default: 0.0
+	:ta: Time constant (Ta). Default: 0.0
+	:tx1: Reset time constant (Tx1). Default: 0.0
+	:tb: Time constant (Tb). Default: 0.0
+	:tc: Time constant (Tc). Default: 0.0
+	:td: Time constant (Td). Default: 0.0
+	:te: Time constant (Te). Default: 0.0
+	:vsmax: Limiter (Vsmax). Default: 0.0
+	:vsmin: Limiter (Vsmin). Default: 0.0
 		'''
 
 	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
@@ -38,7 +38,7 @@ class PssSB4(PowerSystemStabilizerDynamics):
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, tt = , kx = , tx2 = , ta = , tx1 = , tb = , tc = , td = , te = , vsmax = , vsmin = ,  *args, **kw_args):
+	def __init__(self, tt = 0.0, kx = 0.0, tx2 = 0.0, ta = 0.0, tx1 = 0.0, tb = 0.0, tc = 0.0, td = 0.0, te = 0.0, vsmax = 0.0, vsmin = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.tt = tt

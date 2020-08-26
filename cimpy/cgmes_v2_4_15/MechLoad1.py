@@ -5,10 +5,10 @@ class MechLoad1(MechanicalLoadDynamics):
 	'''
 	Mechanical load model type 1.
 
-	:a: Speed squared coefficient (a). Default: 
-	:b: Speed coefficient (b). Default: 
-	:d: Speed to the exponent coefficient (d). Default: 
-	:e: Exponent (e). Default: 
+	:a: Speed squared coefficient (a). Default: 0.0
+	:b: Speed coefficient (b). Default: 0.0
+	:d: Speed to the exponent coefficient (d). Default: 0.0
+	:e: Exponent (e). Default: 0.0
 		'''
 
 	cgmesProfile = MechanicalLoadDynamics.cgmesProfile
@@ -24,7 +24,7 @@ class MechLoad1(MechanicalLoadDynamics):
 
 	__doc__ += '\n Documentation of parent class MechanicalLoadDynamics: \n' + MechanicalLoadDynamics.__doc__ 
 
-	def __init__(self, a = , b = , d = , e = ,  *args, **kw_args):
+	def __init__(self, a = 0.0, b = 0.0, d = 0.0, e = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.a = a

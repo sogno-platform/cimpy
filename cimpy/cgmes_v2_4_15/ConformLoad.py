@@ -5,7 +5,7 @@ class ConformLoad(EnergyConsumer):
 	'''
 	ConformLoad represent loads that follow a daily load change pattern where the pattern can be used to scale the load with a system load.
 
-	:LoadGroup: Group of this ConformLoad. Default: 
+	:LoadGroup: Group of this ConformLoad. Default: None
 		'''
 
 	cgmesProfile = EnergyConsumer.cgmesProfile
@@ -18,7 +18,7 @@ class ConformLoad(EnergyConsumer):
 
 	__doc__ += '\n Documentation of parent class EnergyConsumer: \n' + EnergyConsumer.__doc__ 
 
-	def __init__(self, LoadGroup = ,  *args, **kw_args):
+	def __init__(self, LoadGroup = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.LoadGroup = LoadGroup

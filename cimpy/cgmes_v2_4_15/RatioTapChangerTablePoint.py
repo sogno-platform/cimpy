@@ -5,7 +5,7 @@ class RatioTapChangerTablePoint(TapChangerTablePoint):
 	'''
 	Describes each tap step in the ratio tap changer tabular curve.
 
-	:RatioTapChangerTable: Points of this table. Default: 
+	:RatioTapChangerTable: Points of this table. Default: None
 		'''
 
 	cgmesProfile = TapChangerTablePoint.cgmesProfile
@@ -18,7 +18,7 @@ class RatioTapChangerTablePoint(TapChangerTablePoint):
 
 	__doc__ += '\n Documentation of parent class TapChangerTablePoint: \n' + TapChangerTablePoint.__doc__ 
 
-	def __init__(self, RatioTapChangerTable = ,  *args, **kw_args):
+	def __init__(self, RatioTapChangerTable = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.RatioTapChangerTable = RatioTapChangerTable

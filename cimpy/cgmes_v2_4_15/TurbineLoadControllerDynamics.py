@@ -5,7 +5,7 @@ class TurbineLoadControllerDynamics(DynamicsFunctionBlock):
 	'''
 	Turbine load controller function block whose behavior is described by reference to a standard model
 
-	:TurbineGovernorDynamics: Turbine-governor controlled by this turbine load controller. Default: 
+	:TurbineGovernorDynamics: Turbine-governor controlled by this turbine load controller. Default: None
 		'''
 
 	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
@@ -18,7 +18,7 @@ class TurbineLoadControllerDynamics(DynamicsFunctionBlock):
 
 	__doc__ += '\n Documentation of parent class DynamicsFunctionBlock: \n' + DynamicsFunctionBlock.__doc__ 
 
-	def __init__(self, TurbineGovernorDynamics = ,  *args, **kw_args):
+	def __init__(self, TurbineGovernorDynamics = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.TurbineGovernorDynamics = TurbineGovernorDynamics

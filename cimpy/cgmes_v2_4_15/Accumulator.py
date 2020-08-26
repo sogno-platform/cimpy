@@ -5,8 +5,8 @@ class Accumulator(Measurement):
 	'''
 	Accumulator represents an accumulated (counted) Measurement, e.g. an energy value.
 
-	:LimitSets: The Measurements using the LimitSet. Default: 
-	:AccumulatorValues: Measurement to which this value is connected. Default: 
+	:LimitSets: The Measurements using the LimitSet. Default: "list"
+	:AccumulatorValues: Measurement to which this value is connected. Default: "list"
 		'''
 
 	cgmesProfile = Measurement.cgmesProfile
@@ -20,7 +20,7 @@ class Accumulator(Measurement):
 
 	__doc__ += '\n Documentation of parent class Measurement: \n' + Measurement.__doc__ 
 
-	def __init__(self, LimitSets = , AccumulatorValues = ,  *args, **kw_args):
+	def __init__(self, LimitSets = "list", AccumulatorValues = "list",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.LimitSets = LimitSets

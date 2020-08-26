@@ -5,11 +5,11 @@ class ActivePowerPerCurrentFlow(Base):
 	'''
 	
 
-	:denominatorMultiplier:  Default: 
-	:denominatorUnit:  Default: 
-	:multiplier:  Default: 
-	:unit:  Default: 
-	:value:  Default: 
+	:denominatorMultiplier:  Default: None
+	:denominatorUnit:  Default: None
+	:multiplier:  Default: None
+	:unit:  Default: None
+	:value:  Default: 0.0
 		'''
 
 	cgmesProfile = Base.cgmesProfile
@@ -26,7 +26,7 @@ class ActivePowerPerCurrentFlow(Base):
 
 	
 
-	def __init__(self, denominatorMultiplier = , denominatorUnit = , multiplier = , unit = , value = ,  ):
+	def __init__(self, denominatorMultiplier = None, denominatorUnit = None, multiplier = None, unit = None, value = 0.0,  ):
 	
 		self.denominatorMultiplier = denominatorMultiplier
 		self.denominatorUnit = denominatorUnit

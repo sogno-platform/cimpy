@@ -5,7 +5,7 @@ class Simple_Float(Base):
 	'''
 	A floating point number. The range is unspecified and not limited.
 
-	:value:  Default: 
+	:value:  Default: 0.0
 		'''
 
 	cgmesProfile = Base.cgmesProfile
@@ -18,7 +18,7 @@ class Simple_Float(Base):
 
 	
 
-	def __init__(self, value = ,  ):
+	def __init__(self, value = 0.0,  ):
 	
 		self.value = value
 		

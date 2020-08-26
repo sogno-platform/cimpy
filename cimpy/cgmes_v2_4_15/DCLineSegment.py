@@ -5,11 +5,11 @@ class DCLineSegment(DCConductingEquipment):
 	'''
 	A wire or combination of wires not insulated from one another, with consistent electrical characteristics, used to carry direct current between points in the DC region of the power system.
 
-	:capacitance: Capacitance of the DC line segment. Significant for cables only. Default: 
-	:inductance: Inductance of the DC line segment. Neglectable compared with DCSeriesDevice used for smoothing. Default: 
-	:resistance: Resistance of the DC line segment. Default: 
-	:length: Segment length for calculating line section capabilities. Default: 
-	:PerLengthParameter: Set of per-length parameters for this line segment. Default: 
+	:capacitance: Capacitance of the DC line segment. Significant for cables only. Default: 0.0
+	:inductance: Inductance of the DC line segment. Neglectable compared with DCSeriesDevice used for smoothing. Default: 0.0
+	:resistance: Resistance of the DC line segment. Default: 0.0
+	:length: Segment length for calculating line section capabilities. Default: 0.0
+	:PerLengthParameter: Set of per-length parameters for this line segment. Default: None
 		'''
 
 	cgmesProfile = DCConductingEquipment.cgmesProfile
@@ -26,7 +26,7 @@ class DCLineSegment(DCConductingEquipment):
 
 	__doc__ += '\n Documentation of parent class DCConductingEquipment: \n' + DCConductingEquipment.__doc__ 
 
-	def __init__(self, capacitance = , inductance = , resistance = , length = , PerLengthParameter = ,  *args, **kw_args):
+	def __init__(self, capacitance = 0.0, inductance = 0.0, resistance = 0.0, length = 0.0, PerLengthParameter = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.capacitance = capacitance
