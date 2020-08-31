@@ -31,6 +31,9 @@ class Profile (Enum):
     DY = 4
     GL = 5
     DI = 6
+    DL = 7
+    TP_BD = 8
+    EQ_BD = 9
 
     def long_name(self):
         """Testdocumentation
