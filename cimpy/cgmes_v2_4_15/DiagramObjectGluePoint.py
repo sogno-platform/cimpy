@@ -1,4 +1,4 @@
-from  import Base
+from cimpy.cgmes_v2_4_15.Base import Base
 
 
 class DiagramObjectGluePoint(Base):
