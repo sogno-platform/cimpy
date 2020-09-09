@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.SeasonDayTypeSchedule import SeasonDayTypeSchedule
+from .SeasonDayTypeSchedule import SeasonDayTypeSchedule
 
 
 class NonConformLoadSchedule(SeasonDayTypeSchedule):

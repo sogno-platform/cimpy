@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.AnalogControl import AnalogControl
+from .AnalogControl import AnalogControl
 
 
 class SetPoint(AnalogControl):

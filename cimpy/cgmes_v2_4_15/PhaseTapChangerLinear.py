@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.PhaseTapChanger import PhaseTapChanger
+from .PhaseTapChanger import PhaseTapChanger
 
 
 class PhaseTapChangerLinear(PhaseTapChanger):

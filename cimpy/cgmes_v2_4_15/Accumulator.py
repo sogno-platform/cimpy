@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.Measurement import Measurement
+from .Measurement import Measurement
 
 
 class Accumulator(Measurement):

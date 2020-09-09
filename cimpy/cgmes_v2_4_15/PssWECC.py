@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from .PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class PssWECC(PowerSystemStabilizerDynamics):
@@ -8,17 +8,17 @@ class PssWECC(PowerSystemStabilizerDynamics):
 	:inputSignal1Type: Type of input signal #1. Default: None
 	:inputSignal2Type: Type of input signal #2. Default: None
 	:k1: Input signal 1 gain  (K). Default: 0.0
-	:t1: Input signal 1 transducer time constant (T). Default: 0.0
+	:t1: Input signal 1 transducer time constant (T). Default: 0
 	:k2: Input signal 2 gain (K). Default: 0.0
-	:t2: Input signal 2 transducer time constant (T). Default: 0.0
-	:t3: Stabilizer washout time constant (T). Default: 0.0
-	:t4: Stabilizer washout time lag constant (T) (>0). Default: 0.0
-	:t5: Lead time constant (T). Default: 0.0
-	:t6: Lag time constant (T). Default: 0.0
-	:t7: Lead time constant (T). Default: 0.0
-	:t8: Lag time constant (T). Default: 0.0
-	:t10: Lag time constant (T). Default: 0.0
-	:t9: Lead time constant (T). Default: 0.0
+	:t2: Input signal 2 transducer time constant (T). Default: 0
+	:t3: Stabilizer washout time constant (T). Default: 0
+	:t4: Stabilizer washout time lag constant (T) (>0). Default: 0
+	:t5: Lead time constant (T). Default: 0
+	:t6: Lag time constant (T). Default: 0
+	:t7: Lead time constant (T). Default: 0
+	:t8: Lag time constant (T). Default: 0
+	:t10: Lag time constant (T). Default: 0
+	:t9: Lead time constant (T). Default: 0
 	:vsmax: Maximum output signal (Vsmax). Default: 0.0
 	:vsmin: Minimum output signal (Vsmin). Default: 0.0
 	:vcu: Maximum value for voltage compensator output (V). Default: 0.0
@@ -52,7 +52,7 @@ class PssWECC(PowerSystemStabilizerDynamics):
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, inputSignal1Type = None, inputSignal2Type = None, k1 = 0.0, t1 = 0.0, k2 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, t5 = 0.0, t6 = 0.0, t7 = 0.0, t8 = 0.0, t10 = 0.0, t9 = 0.0, vsmax = 0.0, vsmin = 0.0, vcu = 0.0, vcl = 0.0,  *args, **kw_args):
+	def __init__(self, inputSignal1Type = None, inputSignal2Type = None, k1 = 0.0, t1 = 0, k2 = 0.0, t2 = 0, t3 = 0, t4 = 0, t5 = 0, t6 = 0, t7 = 0, t8 = 0, t10 = 0, t9 = 0, vsmax = 0.0, vsmin = 0.0, vcu = 0.0, vcl = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.inputSignal1Type = inputSignal1Type

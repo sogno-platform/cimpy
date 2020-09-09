@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.TurbineLoadControllerDynamics import TurbineLoadControllerDynamics
+from .TurbineLoadControllerDynamics import TurbineLoadControllerDynamics
 
 
 class TurbLCFB1(TurbineLoadControllerDynamics):
@@ -14,7 +14,7 @@ class TurbLCFB1(TurbineLoadControllerDynamics):
 	:ki: Integral gain (Ki).  Typical Value = 0. Default: 0.0
 	:fbf: Frequency bias flag (Fbf). true = enable frequency bias false = disable frequency bias. Typical Value = false. Default: False
 	:pbf: Power controller flag (Pbf). true = enable load controller false = disable load controller. Typical Value = false. Default: False
-	:tpelec: Power transducer time constant (Tpelec).  Typical Value = 0. Default: 0.0
+	:tpelec: Power transducer time constant (Tpelec).  Typical Value = 0. Default: 0
 	:irmax: Maximum turbine speed/load reference bias (Irmax) (note 3).  Typical Value = 0. Default: 0.0
 	:pmwset: Power controller setpoint (Pmwset) (note 1).  Unit = MW. Typical Value = 0. Default: 0.0
 		'''
@@ -40,7 +40,7 @@ class TurbLCFB1(TurbineLoadControllerDynamics):
 
 	__doc__ += '\n Documentation of parent class TurbineLoadControllerDynamics: \n' + TurbineLoadControllerDynamics.__doc__ 
 
-	def __init__(self, mwbase = 0.0, speedReferenceGovernor = False, db = 0.0, emax = 0.0, fb = 0.0, kp = 0.0, ki = 0.0, fbf = False, pbf = False, tpelec = 0.0, irmax = 0.0, pmwset = 0.0,  *args, **kw_args):
+	def __init__(self, mwbase = 0.0, speedReferenceGovernor = False, db = 0.0, emax = 0.0, fb = 0.0, kp = 0.0, ki = 0.0, fbf = False, pbf = False, tpelec = 0, irmax = 0.0, pmwset = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.mwbase = mwbase

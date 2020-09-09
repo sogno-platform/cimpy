@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from .ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcIEEEST7B(ExcitationSystemDynamics):
@@ -10,11 +10,11 @@ class ExcIEEEST7B(ExcitationSystemDynamics):
 	:kl: Low-value gate feedback gain (K).  Typical Value 1. Default: 0.0
 	:kpa: Voltage regulator proportional gain (K).  Typical Value = 40. Default: 0.0
 	:oelin: OEL input selector (OELin). Typical Value = noOELinput. Default: None
-	:tb: Regulator lag time constant (T).  Typical Value 1. Default: 0.0
-	:tc: Regulator lead time constant (T).  Typical Value 1. Default: 0.0
-	:tf: Excitation control system stabilizer time constant (T).  Typical Value 1. Default: 0.0
-	:tg: Feedback time constant of inner loop field voltage regulator (T). Typical Value 1. Default: 0.0
-	:tia: Feedback time constant (T).  Typical Value = 3. Default: 0.0
+	:tb: Regulator lag time constant (T).  Typical Value 1. Default: 0
+	:tc: Regulator lead time constant (T).  Typical Value 1. Default: 0
+	:tf: Excitation control system stabilizer time constant (T).  Typical Value 1. Default: 0
+	:tg: Feedback time constant of inner loop field voltage regulator (T). Typical Value 1. Default: 0
+	:tia: Feedback time constant (T).  Typical Value = 3. Default: 0
 	:uelin: UEL input selector (UELin). Typical Value = noUELinput. Default: None
 	:vmax: Maximum voltage reference signal (V).  Typical Value = 1.1. Default: 0.0
 	:vmin: Minimum voltage reference signal (V).  Typical Value = 0.9. Default: 0.0
@@ -46,7 +46,7 @@ class ExcIEEEST7B(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, kh = 0.0, kia = 0.0, kl = 0.0, kpa = 0.0, oelin = None, tb = 0.0, tc = 0.0, tf = 0.0, tg = 0.0, tia = 0.0, uelin = None, vmax = 0.0, vmin = 0.0, vrmax = 0.0, vrmin = 0.0,  *args, **kw_args):
+	def __init__(self, kh = 0.0, kia = 0.0, kl = 0.0, kpa = 0.0, oelin = None, tb = 0, tc = 0, tf = 0, tg = 0, tia = 0, uelin = None, vmax = 0.0, vmin = 0.0, vrmax = 0.0, vrmin = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.kh = kh

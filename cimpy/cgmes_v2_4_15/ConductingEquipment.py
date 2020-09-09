@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.Equipment import Equipment
+from .Equipment import Equipment
 
 
 class ConductingEquipment(Equipment):

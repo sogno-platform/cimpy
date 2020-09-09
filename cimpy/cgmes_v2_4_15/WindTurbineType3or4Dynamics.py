@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.DynamicsFunctionBlock import DynamicsFunctionBlock
+from .DynamicsFunctionBlock import DynamicsFunctionBlock
 
 
 class WindTurbineType3or4Dynamics(DynamicsFunctionBlock):

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
+from .TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovHydro4(TurbineGovernorDynamics):
@@ -6,16 +6,16 @@ class GovHydro4(TurbineGovernorDynamics):
 	Hydro turbine and governor. Represents plants with straight-forward penstock configurations and hydraulic governors of traditional 'dashpot' type.  This model can be used to represent simple, Francis, Pelton or Kaplan turbines.
 
 	:mwbase: Base for power values (MWbase) (>0).  Unit = MW. Default: 0.0
-	:tg: Gate servo time constant (Tg) (>0).  Typical Value = 0.5. Default: 0.0
-	:tp: Pilot servo time constant (Tp).  Typical Value = 0.1. Default: 0.0
+	:tg: Gate servo time constant (Tg) (>0).  Typical Value = 0.5. Default: 0
+	:tp: Pilot servo time constant (Tp).  Typical Value = 0.1. Default: 0
 	:uo: Max gate opening velocity (Uo).  Typical Vlaue = 0.2. Default: 0.0
 	:uc: Max gate closing velocity (Uc).  Typical Value = 0.2. Default: 0.0
 	:gmax: Maximum gate opening, PU of MWbase (Gmax).  Typical Value = 1. Default: 0.0
 	:gmin: Minimum gate opening, PU of MWbase (Gmin).  Typical Value = 0. Default: 0.0
-	:rperm: Permanent droop (Rperm).  Typical Value = 0.05. Default: 0.0
-	:rtemp: Temporary droop (Rtemp).  Typical Value = 0.3. Default: 0.0
-	:tr: Dashpot time constant (Tr) (>0).  Typical Value = 5. Default: 0.0
-	:tw: Water inertia time constant (Tw) (>0).  Typical Value = 1. Default: 0.0
+	:rperm: Permanent droop (Rperm).  Typical Value = 0.05. Default: 0
+	:rtemp: Temporary droop (Rtemp).  Typical Value = 0.3. Default: 0
+	:tr: Dashpot time constant (Tr) (>0).  Typical Value = 5. Default: 0
+	:tw: Water inertia time constant (Tw) (>0).  Typical Value = 1. Default: 0
 	:at: Turbine gain (At).  Typical Value = 1.2. Default: 0.0
 	:dturb: Turbine damping factor (Dturb).  Unit = delta P (PU of MWbase) / delta speed (PU). Typical Value = 0.5.  Typical Value Francis = 1.1, Kaplan = 1.1. Default: 0.0
 	:hdam: Head available at dam (hdam).  Typical Value = 1. Default: 0.0
@@ -42,7 +42,7 @@ class GovHydro4(TurbineGovernorDynamics):
 	:bgv4: Kaplan blade servo point 4 (Bgv4).  Typical Value = 0.  Typical Value Francis = 0, Kaplan = 0.9. Default: 0.0
 	:bgv5: Kaplan blade servo point 5 (Bgv5). Typical Value = 0.  Typical Value Francis = 0, Kaplan = 1. Default: 0.0
 	:bmax: Maximum blade adjustment factor (Bmax). Typical Value = 0.  Typical Value Francis = 0, Kaplan = 1.1276. Default: 0.0
-	:tblade: Blade servo time constant (Tblade).  Typical Value = 100. Default: 0.0
+	:tblade: Blade servo time constant (Tblade).  Typical Value = 100. Default: 0
 		'''
 
 	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
@@ -92,7 +92,7 @@ class GovHydro4(TurbineGovernorDynamics):
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 
-	def __init__(self, mwbase = 0.0, tg = 0.0, tp = 0.0, uo = 0.0, uc = 0.0, gmax = 0.0, gmin = 0.0, rperm = 0.0, rtemp = 0.0, tr = 0.0, tw = 0.0, at = 0.0, dturb = 0.0, hdam = 0.0, qn1 = 0.0, db1 = 0.0, eps = 0.0, db2 = 0.0, gv0 = 0.0, pgv0 = 0.0, gv1 = 0.0, pgv1 = 0.0, gv2 = 0.0, pgv2 = 0.0, gv3 = 0.0, pgv3 = 0.0, gv4 = 0.0, pgv4 = 0.0, gv5 = 0.0, pgv5 = 0.0, bgv0 = 0.0, bgv1 = 0.0, bgv2 = 0.0, bgv3 = 0.0, bgv4 = 0.0, bgv5 = 0.0, bmax = 0.0, tblade = 0.0,  *args, **kw_args):
+	def __init__(self, mwbase = 0.0, tg = 0, tp = 0, uo = 0.0, uc = 0.0, gmax = 0.0, gmin = 0.0, rperm = 0, rtemp = 0, tr = 0, tw = 0, at = 0.0, dturb = 0.0, hdam = 0.0, qn1 = 0.0, db1 = 0.0, eps = 0.0, db2 = 0.0, gv0 = 0.0, pgv0 = 0.0, gv1 = 0.0, pgv1 = 0.0, gv2 = 0.0, pgv2 = 0.0, gv3 = 0.0, pgv3 = 0.0, gv4 = 0.0, pgv4 = 0.0, gv5 = 0.0, pgv5 = 0.0, bgv0 = 0.0, bgv1 = 0.0, bgv2 = 0.0, bgv3 = 0.0, bgv4 = 0.0, bgv5 = 0.0, bmax = 0.0, tblade = 0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.mwbase = mwbase

@@ -1,21 +1,21 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from .ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcAC3A(ExcitationSystemDynamics):
 	'''
 	Modified IEEE AC3A alternator-supplied rectifier excitation system with different field current limit.
 
-	:tb: Voltage regulator time constant (Tb).  Typical Value = 0. Default: 0.0
-	:tc: Voltage regulator time constant (T).  Typical Value = 0. Default: 0.0
-	:ka: Voltage regulator gain (Ka).  Typical Value = 45.62. Default: 0.0
+	:tb: Voltage regulator time constant (Tb).  Typical Value = 0. Default: 0
+	:tc: Voltage regulator time constant (T).  Typical Value = 0. Default: 0
+	:ka: Voltage regulator gain (Ka).  Typical Value = 45.62. Default: 0
 	:ta: Voltage regulator time constant (Ta).  Typical Value = 0.013. Default: 0.0
 	:vamax: Maximum voltage regulator output (V).  Typical Value = 1. Default: 0.0
 	:vamin: Minimum voltage regulator output (V).  Typical Value = -0.95. Default: 0.0
-	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 1.17. Default: 0.0
+	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 1.17. Default: 0
 	:vemin: Minimum exciter voltage output (Vemin).  Typical Value = 0.1. Default: 0.0
 	:kr: Constant associated with regulator and alternator field power supply (Kr).  Typical Value =3.77. Default: 0.0
 	:kf: Excitation control system stabilizer gains (Kf).  Typical Value = 0.143. Default: 0.0
-	:tf: Excitation control system stabilizer time constant (Tf).  Typical Value = 1. Default: 0.0
+	:tf: Excitation control system stabilizer time constant (Tf).  Typical Value = 1. Default: 0
 	:kn: Excitation control system stabilizer gain (Kn).  Typical Value =0.05. Default: 0.0
 	:efdn: Value of at which feedback gain changes (Efdn).  Typical Value = 2.36. Default: 0.0
 	:kc: Rectifier loading factor proportional to commutating reactance (Kc).  Typical Value = 0.104. Default: 0.0
@@ -68,7 +68,7 @@ class ExcAC3A(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, tb = 0.0, tc = 0.0, ka = 0.0, ta = 0.0, vamax = 0.0, vamin = 0.0, te = 0.0, vemin = 0.0, kr = 0.0, kf = 0.0, tf = 0.0, kn = 0.0, efdn = 0.0, kc = 0.0, kd = 0.0, ke = 0.0, klv = 0.0, kf1 = 0.0, kf2 = 0.0, ks = 0.0, vfemax = 0.0, ve1 = 0.0, seve1 = 0.0, ve2 = 0.0, seve2 = 0.0, vlv = 0.0,  *args, **kw_args):
+	def __init__(self, tb = 0, tc = 0, ka = 0, ta = 0.0, vamax = 0.0, vamin = 0.0, te = 0, vemin = 0.0, kr = 0.0, kf = 0.0, tf = 0, kn = 0.0, efdn = 0.0, kc = 0.0, kd = 0.0, ke = 0.0, klv = 0.0, kf1 = 0.0, kf2 = 0.0, ks = 0.0, vfemax = 0.0, ve1 = 0.0, seve1 = 0.0, ve2 = 0.0, seve2 = 0.0, vlv = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.tb = tb

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.TransformerEnd import TransformerEnd
+from .TransformerEnd import TransformerEnd
 
 
 class PowerTransformerEnd(TransformerEnd):

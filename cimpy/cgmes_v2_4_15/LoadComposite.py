@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.LoadDynamics import LoadDynamics
+from .LoadDynamics import LoadDynamics
 
 
 class LoadComposite(LoadDynamics):
@@ -14,7 +14,7 @@ class LoadComposite(LoadDynamics):
 	:eqvd: Reactive load-voltage dependence index (dynamic) (Eqvd).  Typical Value = 2. Default: 0.0
 	:eqfd: Reactive load-frequency dependence index (dynamic) (Eqfd).  Typical Value = 0. Default: 0.0
 	:lfrac: Loading factor - ratio of initial P to motor MVA base (Lfrac).  Typical Value = 0.8. Default: 0.0
-	:h: Inertia constant (H).  Typical Value = 2.5. Default: 0.0
+	:h: Inertia constant (H).  Typical Value = 2.5. Default: 0
 	:pfrac: Fraction of constant-power load to be represented by this motor model (Pfrac) (>=0.0 and <=1.0).  Typical Value = 0.5. Default: 0.0
 		'''
 
@@ -38,7 +38,7 @@ class LoadComposite(LoadDynamics):
 
 	__doc__ += '\n Documentation of parent class LoadDynamics: \n' + LoadDynamics.__doc__ 
 
-	def __init__(self, epvs = 0.0, epfs = 0.0, eqvs = 0.0, eqfs = 0.0, epvd = 0.0, epfd = 0.0, eqvd = 0.0, eqfd = 0.0, lfrac = 0.0, h = 0.0, pfrac = 0.0,  *args, **kw_args):
+	def __init__(self, epvs = 0.0, epfs = 0.0, eqvs = 0.0, eqfs = 0.0, epvd = 0.0, epfd = 0.0, eqvd = 0.0, eqfd = 0.0, lfrac = 0.0, h = 0, pfrac = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.epvs = epvs

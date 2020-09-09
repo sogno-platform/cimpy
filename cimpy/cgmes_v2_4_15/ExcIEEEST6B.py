@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from .ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcIEEEST6B(ExcitationSystemDynamics):
@@ -14,7 +14,7 @@ class ExcIEEEST6B(ExcitationSystemDynamics):
 	:km: Forward gain constant of the inner loop field regulator (K).  Typical Value = 1. Default: 0.0
 	:kpa: Voltage regulator proportional gain (K).  Typical Value = 18.038. Default: 0.0
 	:oelin: OEL input selector (OELin). Typical Value = noOELinput. Default: None
-	:tg: Feedback time constant of inner loop field voltage regulator (T). Typical Value = 0.02. Default: 0.0
+	:tg: Feedback time constant of inner loop field voltage regulator (T). Typical Value = 0.02. Default: 0
 	:vamax: Maximum voltage regulator output (V).  Typical Value = 4.81. Default: 0.0
 	:vamin: Minimum voltage regulator output (V).  Typical Value = -3.85. Default: 0.0
 	:vrmax: Maximum voltage regulator output (V).  Typical Value = 4.81. Default: 0.0
@@ -44,7 +44,7 @@ class ExcIEEEST6B(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, ilr = 0.0, kci = 0.0, kff = 0.0, kg = 0.0, kia = 0.0, klr = 0.0, km = 0.0, kpa = 0.0, oelin = None, tg = 0.0, vamax = 0.0, vamin = 0.0, vrmax = 0.0, vrmin = 0.0,  *args, **kw_args):
+	def __init__(self, ilr = 0.0, kci = 0.0, kff = 0.0, kg = 0.0, kia = 0.0, klr = 0.0, km = 0.0, kpa = 0.0, oelin = None, tg = 0, vamax = 0.0, vamin = 0.0, vrmax = 0.0, vrmin = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ilr = ilr

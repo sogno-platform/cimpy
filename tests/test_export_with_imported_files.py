@@ -8,7 +8,7 @@ import pytest_check as check
 logging.basicConfig(filename='Test_export_with_imported_files.log', level=logging.INFO, filemode='w')
 
 short_profile_name = {
-    "DiagramLayout": 'DI',
+    "DiagramLayout": 'DL',
     "Dynamics": "DY",
     "Equipment": "EQ",
     "GeographicalLocation": "GL",
@@ -29,7 +29,7 @@ def test_export_with_imported_files():
     for file in example_path.glob('*.xml'):
         import_files.append(str(file.absolute()))
 
-    activeProfileList = ['DI', 'EQ', 'SV', 'TP']
+    activeProfileList = ['DL', 'EQ', 'SSH', 'SV', 'TP']
 
     imported_result = cimpy.cim_import(import_files, 'cgmes_v2_4_15')
     cimpy.cim_export(imported_result, 'EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)

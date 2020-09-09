@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.UnderexcitationLimiterDynamics import UnderexcitationLimiterDynamics
+from .UnderexcitationLimiterDynamics import UnderexcitationLimiterDynamics
 
 
 class UnderexcLimIEEE1(UnderexcitationLimiterDynamics):
@@ -14,10 +14,10 @@ class UnderexcLimIEEE1(UnderexcitationLimiterDynamics):
 	:kul: UEL proportional gain (K).  Typical Value = 100. Default: 0.0
 	:vuimax: UEL integrator output maximum limit (V). Default: 0.0
 	:vuimin: UEL integrator output minimum limit (V). Default: 0.0
-	:tu1: UEL lead time constant (T).  Typical Value = 0. Default: 0.0
-	:tu2: UEL lag time constant (T).  Typical Value = 0.05. Default: 0.0
-	:tu3: UEL lead time constant (T).  Typical Value = 0. Default: 0.0
-	:tu4: UEL lag time constant (T).  Typical Value = 0. Default: 0.0
+	:tu1: UEL lead time constant (T).  Typical Value = 0. Default: 0
+	:tu2: UEL lag time constant (T).  Typical Value = 0.05. Default: 0
+	:tu3: UEL lead time constant (T).  Typical Value = 0. Default: 0
+	:tu4: UEL lag time constant (T).  Typical Value = 0. Default: 0
 	:vulmax: UEL output maximum limit (V).  Typical Value = 18. Default: 0.0
 	:vulmin: UEL output minimum limit (V).  Typical Value = -18. Default: 0.0
 		'''
@@ -46,7 +46,7 @@ class UnderexcLimIEEE1(UnderexcitationLimiterDynamics):
 
 	__doc__ += '\n Documentation of parent class UnderexcitationLimiterDynamics: \n' + UnderexcitationLimiterDynamics.__doc__ 
 
-	def __init__(self, kur = 0.0, kuc = 0.0, kuf = 0.0, vurmax = 0.0, vucmax = 0.0, kui = 0.0, kul = 0.0, vuimax = 0.0, vuimin = 0.0, tu1 = 0.0, tu2 = 0.0, tu3 = 0.0, tu4 = 0.0, vulmax = 0.0, vulmin = 0.0,  *args, **kw_args):
+	def __init__(self, kur = 0.0, kuc = 0.0, kuf = 0.0, vurmax = 0.0, vucmax = 0.0, kui = 0.0, kul = 0.0, vuimax = 0.0, vuimin = 0.0, tu1 = 0, tu2 = 0, tu3 = 0, tu4 = 0, vulmax = 0.0, vulmin = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.kur = kur

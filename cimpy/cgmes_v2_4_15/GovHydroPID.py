@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
+from .TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovHydroPID(TurbineGovernorDynamics):
@@ -9,19 +9,19 @@ class GovHydroPID(TurbineGovernorDynamics):
 	:pmax: Maximum gate opening, PU of MWbase (Pmax).  Typical Value = 1. Default: 0.0
 	:pmin: Minimum gate opening, PU of MWbase (Pmin).  Typical Value = 0. Default: 0.0
 	:r: Steady state droop (R).  Typical Value = 0.05. Default: 0.0
-	:td: Input filter time constant (Td).  Typical Value = 0. Default: 0.0
-	:tf: Washout time constant (Tf).  Typical Value = 0.1. Default: 0.0
-	:tp: Gate servo time constant (Tp).  Typical Value = 0.35. Default: 0.0
+	:td: Input filter time constant (Td).  Typical Value = 0. Default: 0
+	:tf: Washout time constant (Tf).  Typical Value = 0.1. Default: 0
+	:tp: Gate servo time constant (Tp).  Typical Value = 0.35. Default: 0
 	:velop: Maximum gate opening velocity (Velop).  Unit = PU/sec.  Typical Value = 0.09. Default: 0.0
 	:velcl: Maximum gate closing velocity (Velcl).  Unit = PU/sec.  Typical Value = -0.14. Default: 0.0
 	:kd: Derivative gain (Kd).  Typical Value = 1.11. Default: 0.0
 	:kp: Proportional gain (Kp).  Typical Value = 0.1. Default: 0.0
 	:ki: Integral gain (Ki).  Typical Value = 0.36. Default: 0.0
 	:kg: Gate servo gain (Kg).  Typical Value = 2.5. Default: 0.0
-	:tturb: Turbine time constant (Tturb) (note 3).  Typical Value = 0.8. Default: 0.0
+	:tturb: Turbine time constant (Tturb) (note 3).  Typical Value = 0.8. Default: 0
 	:aturb: Turbine numerator multiplier (Aturb) (note 3).  Typical Value -1. Default: 0.0
 	:bturb: Turbine denominator multiplier (Bturb) (note 3).  Typical Value = 0.5. Default: 0.0
-	:tt: Power feedback time constant (Tt).  Typical Value = 0.02. Default: 0.0
+	:tt: Power feedback time constant (Tt).  Typical Value = 0.02. Default: 0
 	:db1: Intentional dead-band width (db1).  Unit = Hz.  Typical Value = 0. Default: 0.0
 	:inputSignal: Input signal switch (Flag).  true = Pe input is used false = feedback is received from CV. Flag is normally dependent on Tt.  If Tf is zero, Flag is set to false. If Tf is not zero, Flag is set to true.  Typical Value = true. Default: False
 	:eps: Intentional db hysteresis (eps).  Unit = Hz.  Typical Value = 0. Default: 0.0
@@ -82,7 +82,7 @@ class GovHydroPID(TurbineGovernorDynamics):
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 
-	def __init__(self, mwbase = 0.0, pmax = 0.0, pmin = 0.0, r = 0.0, td = 0.0, tf = 0.0, tp = 0.0, velop = 0.0, velcl = 0.0, kd = 0.0, kp = 0.0, ki = 0.0, kg = 0.0, tturb = 0.0, aturb = 0.0, bturb = 0.0, tt = 0.0, db1 = 0.0, inputSignal = False, eps = 0.0, db2 = 0.0, gv1 = 0.0, pgv1 = 0.0, gv2 = 0.0, pgv2 = 0.0, gv3 = 0.0, pgv3 = 0.0, gv4 = 0.0, pgv4 = 0.0, gv5 = 0.0, pgv5 = 0.0, gv6 = 0.0, pgv6 = 0.0,  *args, **kw_args):
+	def __init__(self, mwbase = 0.0, pmax = 0.0, pmin = 0.0, r = 0.0, td = 0, tf = 0, tp = 0, velop = 0.0, velcl = 0.0, kd = 0.0, kp = 0.0, ki = 0.0, kg = 0.0, tturb = 0, aturb = 0.0, bturb = 0.0, tt = 0, db1 = 0.0, inputSignal = False, eps = 0.0, db2 = 0.0, gv1 = 0.0, pgv1 = 0.0, gv2 = 0.0, pgv2 = 0.0, gv3 = 0.0, pgv3 = 0.0, gv4 = 0.0, pgv4 = 0.0, gv5 = 0.0, pgv5 = 0.0, gv6 = 0.0, pgv6 = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.mwbase = mwbase

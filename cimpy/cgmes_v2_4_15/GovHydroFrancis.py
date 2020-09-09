@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
+from .TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovHydroFrancis(TurbineGovernorDynamics):
@@ -20,12 +20,12 @@ class GovHydroFrancis(TurbineGovernorDynamics):
 	:kt: Washout gain (Kt).  Typical Value = 0.25. Default: 0.0
 	:qc0: No-load turbine flow at nominal head (Qc0).  Typical Value = 0.21. Default: 0.0
 	:qn: Rated flow (Q). Unit = m/s. Typical Value = 40. Default: 0.0
-	:ta: Derivative gain (Ta).  Typical Value = 3. Default: 0.0
-	:td: Washout time constant (Td).  Typical Value = 3. Default: 0.0
-	:ts: Gate servo time constant (Ts).  Typical Value = 0.5. Default: 0.0
-	:twnc: Water inertia time constant (Twnc).  Typical Value = 1. Default: 0.0
-	:twng: Water tunnel and surge chamber inertia time constant (Twng). Typical Value = 3. Default: 0.0
-	:tx: Derivative feedback gain (Tx).  Typical Value = 1. Default: 0.0
+	:ta: Derivative gain (Ta).  Typical Value = 3. Default: 0
+	:td: Washout time constant (Td).  Typical Value = 3. Default: 0
+	:ts: Gate servo time constant (Ts).  Typical Value = 0.5. Default: 0
+	:twnc: Water inertia time constant (Twnc).  Typical Value = 1. Default: 0
+	:twng: Water tunnel and surge chamber inertia time constant (Twng). Typical Value = 3. Default: 0
+	:tx: Derivative feedback gain (Tx).  Typical Value = 1. Default: 0
 	:va: Maximum gate opening velocity (Va).  Unit = PU/sec.  Typical Value = 0.011. Default: 0.0
 	:valvmax: Maximum gate opening (ValvMax).  Typical Value = 1. Default: 0.0
 	:valvmin: Minimum gate opening (ValvMin).  Typical Value = 0. Default: 0.0
@@ -70,7 +70,7 @@ class GovHydroFrancis(TurbineGovernorDynamics):
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 
-	def __init__(self, am = 0.0, av0 = 0.0, av1 = 0.0, bp = 0.0, db1 = 0.0, etamax = 0.0, governorControl = None, h1 = 0.0, h2 = 0.0, hn = 0.0, kc = 0.0, kg = 0.0, kt = 0.0, qc0 = 0.0, qn = 0.0, ta = 0.0, td = 0.0, ts = 0.0, twnc = 0.0, twng = 0.0, tx = 0.0, va = 0.0, valvmax = 0.0, valvmin = 0.0, vc = 0.0, waterTunnelSurgeChamberSimulation = False, zsfc = 0.0,  *args, **kw_args):
+	def __init__(self, am = 0.0, av0 = 0.0, av1 = 0.0, bp = 0.0, db1 = 0.0, etamax = 0.0, governorControl = None, h1 = 0.0, h2 = 0.0, hn = 0.0, kc = 0.0, kg = 0.0, kt = 0.0, qc0 = 0.0, qn = 0.0, ta = 0, td = 0, ts = 0, twnc = 0, twng = 0, tx = 0, va = 0.0, valvmax = 0.0, valvmin = 0.0, vc = 0.0, waterTunnelSurgeChamberSimulation = False, zsfc = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.am = am

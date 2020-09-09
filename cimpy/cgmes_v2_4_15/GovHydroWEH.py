@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
+from .TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovHydroWEH(TurbineGovernorDynamics):
@@ -8,20 +8,20 @@ class GovHydroWEH(TurbineGovernorDynamics):
 	:mwbase: Base for power values (MWbase) (>0).  Unit = MW. Default: 0.0
 	:rpg: Permanent droop for governor output feedback (R-Perm-Gate). Default: 0.0
 	:rpp: Permanent droop for electrical power feedback (R-Perm-Pe). Default: 0.0
-	:tpe: Electrical power droop time constant (Tpe). Default: 0.0
+	:tpe: Electrical power droop time constant (Tpe). Default: 0
 	:kp: Derivative control gain (Kp). Default: 0.0
 	:ki: Derivative controller Integral gain (Ki). Default: 0.0
 	:kd: Derivative controller derivative gain (Kd). Default: 0.0
-	:td: Derivative controller time constant to limit the derivative characteristic beyond a breakdown frequency to avoid amplification of high-frequency noise (Td). Default: 0.0
-	:tp: Pilot Valve time lag time constant (Tp). Default: 0.0
-	:tdv: Distributive Valve time lag time constant (Tdv). Default: 0.0
-	:tg: Value to allow the Distribution valve controller to advance beyond the gate movement rate limit (Tg). Default: 0.0
+	:td: Derivative controller time constant to limit the derivative characteristic beyond a breakdown frequency to avoid amplification of high-frequency noise (Td). Default: 0
+	:tp: Pilot Valve time lag time constant (Tp). Default: 0
+	:tdv: Distributive Valve time lag time constant (Tdv). Default: 0
+	:tg: Value to allow the Distribution valve controller to advance beyond the gate movement rate limit (Tg). Default: 0
 	:gtmxop: Maximum gate opening rate (Gtmxop). Default: 0.0
 	:gtmxcl: Maximum gate closing rate (Gtmxcl). Default: 0.0
 	:gmax: Maximum Gate Position (Gmax). Default: 0.0
 	:gmin: Minimum Gate Position (Gmin). Default: 0.0
 	:dturb: Turbine damping factor (Dturb).  Unit = delta P (PU of MWbase) / delta speed (PU). Default: 0.0
-	:tw: Water inertia time constant (Tw) (>0). Default: 0.0
+	:tw: Water inertia time constant (Tw) (>0). Default: 0
 	:db: Speed Dead Band (db). Default: 0.0
 	:dpv: Value to allow the Pilot valve controller to advance beyond the gate limits (Dpv). Default: 0.0
 	:dicn: Value to allow the integral controller to advance beyond the gate limits (Dicn). Default: 0.0
@@ -118,7 +118,7 @@ class GovHydroWEH(TurbineGovernorDynamics):
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 
-	def __init__(self, mwbase = 0.0, rpg = 0.0, rpp = 0.0, tpe = 0.0, kp = 0.0, ki = 0.0, kd = 0.0, td = 0.0, tp = 0.0, tdv = 0.0, tg = 0.0, gtmxop = 0.0, gtmxcl = 0.0, gmax = 0.0, gmin = 0.0, dturb = 0.0, tw = 0.0, db = 0.0, dpv = 0.0, dicn = 0.0, feedbackSignal = False, gv1 = 0.0, gv2 = 0.0, gv3 = 0.0, gv4 = 0.0, gv5 = 0.0, fl1 = 0.0, fl2 = 0.0, fl3 = 0.0, fl4 = 0.0, fl5 = 0.0, fp1 = 0.0, fp2 = 0.0, fp3 = 0.0, fp4 = 0.0, fp5 = 0.0, fp6 = 0.0, fp7 = 0.0, fp8 = 0.0, fp9 = 0.0, fp10 = 0.0, pmss1 = 0.0, pmss2 = 0.0, pmss3 = 0.0, pmss4 = 0.0, pmss5 = 0.0, pmss6 = 0.0, pmss7 = 0.0, pmss8 = 0.0, pmss9 = 0.0, pmss10 = 0.0,  *args, **kw_args):
+	def __init__(self, mwbase = 0.0, rpg = 0.0, rpp = 0.0, tpe = 0, kp = 0.0, ki = 0.0, kd = 0.0, td = 0, tp = 0, tdv = 0, tg = 0, gtmxop = 0.0, gtmxcl = 0.0, gmax = 0.0, gmin = 0.0, dturb = 0.0, tw = 0, db = 0.0, dpv = 0.0, dicn = 0.0, feedbackSignal = False, gv1 = 0.0, gv2 = 0.0, gv3 = 0.0, gv4 = 0.0, gv5 = 0.0, fl1 = 0.0, fl2 = 0.0, fl3 = 0.0, fl4 = 0.0, fl5 = 0.0, fp1 = 0.0, fp2 = 0.0, fp3 = 0.0, fp4 = 0.0, fp5 = 0.0, fp6 = 0.0, fp7 = 0.0, fp8 = 0.0, fp9 = 0.0, fp10 = 0.0, pmss1 = 0.0, pmss2 = 0.0, pmss3 = 0.0, pmss4 = 0.0, pmss5 = 0.0, pmss6 = 0.0, pmss7 = 0.0, pmss8 = 0.0, pmss9 = 0.0, pmss10 = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.mwbase = mwbase

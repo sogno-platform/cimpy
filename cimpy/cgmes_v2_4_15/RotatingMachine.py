@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.RegulatingCondEq import RegulatingCondEq
+from .RegulatingCondEq import RegulatingCondEq
 
 
 class RotatingMachine(RegulatingCondEq):

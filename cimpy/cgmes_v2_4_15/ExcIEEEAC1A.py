@@ -1,19 +1,19 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from .ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcIEEEAC1A(ExcitationSystemDynamics):
 	'''
 	The class represents IEEE Std 421.5-2005 type AC1A model. The model represents the field-controlled alternator-rectifier excitation systems designated Type AC1A. These excitation systems consist of an alternator main exciter with non-controlled rectifiers.  Reference: IEEE Standard 421.5-2005 Section 6.1.
 
-	:tb: Voltage regulator time constant (T).  Typical Value = 0. Default: 0.0
-	:tc: Voltage regulator time constant (T).  Typical Value = 0. Default: 0.0
+	:tb: Voltage regulator time constant (T).  Typical Value = 0. Default: 0
+	:tc: Voltage regulator time constant (T).  Typical Value = 0. Default: 0
 	:ka: Voltage regulator gain (K).  Typical Value = 400. Default: 0.0
-	:ta: Voltage regulator time constant (T).  Typical Value = 0.02. Default: 0.0
+	:ta: Voltage regulator time constant (T).  Typical Value = 0.02. Default: 0
 	:vamax: Maximum voltage regulator output (V).  Typical Value = 14.5. Default: 0.0
 	:vamin: Minimum voltage regulator output (V).  Typical Value = -14.5. Default: 0.0
-	:te: Exciter time constant, integration rate associated with exciter control (T).  Typical Value = 0.8. Default: 0.0
+	:te: Exciter time constant, integration rate associated with exciter control (T).  Typical Value = 0.8. Default: 0
 	:kf: Excitation control system stabilizer gains (K).  Typical Value = 0.03. Default: 0.0
-	:tf: Excitation control system stabilizer time constant (T).  Typical Value = 1. Default: 0.0
+	:tf: Excitation control system stabilizer time constant (T).  Typical Value = 1. Default: 0
 	:kc: Rectifier loading factor proportional to commutating reactance (K).  Typical Value = 0.2. Default: 0.0
 	:kd: Demagnetizing factor, a function of exciter alternator reactances (K).  Typical Value = 0.38. Default: 0.0
 	:ke: Exciter constant related to self-excited field (K).  Typical Value = 1. Default: 0.0
@@ -52,7 +52,7 @@ class ExcIEEEAC1A(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, tb = 0.0, tc = 0.0, ka = 0.0, ta = 0.0, vamax = 0.0, vamin = 0.0, te = 0.0, kf = 0.0, tf = 0.0, kc = 0.0, kd = 0.0, ke = 0.0, ve1 = 0.0, seve1 = 0.0, ve2 = 0.0, seve2 = 0.0, vrmax = 0.0, vrmin = 0.0,  *args, **kw_args):
+	def __init__(self, tb = 0, tc = 0, ka = 0.0, ta = 0, vamax = 0.0, vamin = 0.0, te = 0, kf = 0.0, tf = 0, kc = 0.0, kd = 0.0, ke = 0.0, ve1 = 0.0, seve1 = 0.0, ve2 = 0.0, seve2 = 0.0, vrmax = 0.0, vrmin = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.tb = tb

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from .IdentifiedObject import IdentifiedObject
 
 
 class WindContQIEC(IdentifiedObject):
@@ -17,11 +17,11 @@ class WindContQIEC(IdentifiedObject):
 	:qmax: Maximum reactive power (q). It is type dependent parameter. Default: 0.0
 	:qmin: Minimum reactive power (q). It is type dependent parameter. Default: 0.0
 	:rdroop: Resistive component of voltage drop impedance (). It is project dependent parameter. Default: 0.0
-	:tiq: Time constant in reactive current lag (T). It is type dependent parameter. Default: 0.0
-	:tpfilt: Power measurement filter time constant (). It is type dependent parameter. Default: 0.0
-	:tpost: Length of time period where post fault reactive power is injected (). It is project dependent parameter. Default: 0.0
-	:tqord: Time constant in reactive power order lag (). It is type dependent parameter. Default: 0.0
-	:tufilt: Voltage measurement filter time constant (). It is type dependent parameter. Default: 0.0
+	:tiq: Time constant in reactive current lag (T). It is type dependent parameter. Default: 0
+	:tpfilt: Power measurement filter time constant (). It is type dependent parameter. Default: 0
+	:tpost: Length of time period where post fault reactive power is injected (). It is project dependent parameter. Default: 0
+	:tqord: Time constant in reactive power order lag (). It is type dependent parameter. Default: 0
+	:tufilt: Voltage measurement filter time constant (). It is type dependent parameter. Default: 0
 	:udb1: Voltage dead band lower limit (). It is type dependent parameter. Default: 0.0
 	:udb2: Voltage dead band upper limit (). It is type dependent parameter. Default: 0.0
 	:umax: Maximum voltage in voltage PI controller integral term (u). It is type dependent parameter. Default: 0.0
@@ -70,7 +70,7 @@ class WindContQIEC(IdentifiedObject):
 
 	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
 
-	def __init__(self, iqh1 = 0.0, iqmax = 0.0, iqmin = 0.0, iqpost = 0.0, kiq = 0.0, kiu = 0.0, kpq = 0.0, kpu = 0.0, kqv = 0.0, qmax = 0.0, qmin = 0.0, rdroop = 0.0, tiq = 0.0, tpfilt = 0.0, tpost = 0.0, tqord = 0.0, tufilt = 0.0, udb1 = 0.0, udb2 = 0.0, umax = 0.0, umin = 0.0, uqdip = 0.0, uref0 = 0.0, windLVRTQcontrolModesType = None, windQcontrolModesType = None, xdroop = 0.0, WindTurbineType3or4IEC = None,  *args, **kw_args):
+	def __init__(self, iqh1 = 0.0, iqmax = 0.0, iqmin = 0.0, iqpost = 0.0, kiq = 0.0, kiu = 0.0, kpq = 0.0, kpu = 0.0, kqv = 0.0, qmax = 0.0, qmin = 0.0, rdroop = 0.0, tiq = 0, tpfilt = 0, tpost = 0, tqord = 0, tufilt = 0, udb1 = 0.0, udb2 = 0.0, umax = 0.0, umin = 0.0, uqdip = 0.0, uref0 = 0.0, windLVRTQcontrolModesType = None, windQcontrolModesType = None, xdroop = 0.0, WindTurbineType3or4IEC = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.iqh1 = iqh1

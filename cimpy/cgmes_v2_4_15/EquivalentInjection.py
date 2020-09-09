@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.EquivalentEquipment import EquivalentEquipment
+from .EquivalentEquipment import EquivalentEquipment
 
 
 class EquivalentInjection(EquivalentEquipment):

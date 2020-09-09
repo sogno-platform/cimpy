@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.SynchronousMachineDetailed import SynchronousMachineDetailed
+from .SynchronousMachineDetailed import SynchronousMachineDetailed
 
 
 class SynchronousMachineTimeConstantReactance(SynchronousMachineDetailed):
@@ -14,11 +14,11 @@ class SynchronousMachineTimeConstantReactance(SynchronousMachineDetailed):
 	:xQuadSync: Quadrature-axis synchronous reactance (Xq) (> =X`q). The ratio of the component of reactive armature voltage, due to the quadrature-axis component of armature current, to this component of current, under steady state conditions and at rated frequency.  Typical Value = 1.6. Default: 0.0
 	:xQuadTrans: Quadrature-axis transient reactance (X`q) (> =X``q).  Typical Value = 0.3. Default: 0.0
 	:xQuadSubtrans: Quadrature-axis subtransient reactance (X``q) (> Xl).  Typical Value = 0.2. Default: 0.0
-	:tpdo: Direct-axis transient rotor time constant (T`do) (> T``do).  Typical Value = 5. Default: 0.0
-	:tppdo: Direct-axis subtransient rotor time constant (T``do) (> 0).  Typical Value = 0.03. Default: 0.0
-	:tpqo: Quadrature-axis transient rotor time constant (T`qo) (> T``qo). Typical Value = 0.5. Default: 0.0
-	:tppqo: Quadrature-axis subtransient rotor time constant (T``qo) (> 0). Typical Value = 0.03. Default: 0.0
-	:tc: Damping time constant for `Canay` reactance.  Typical Value = 0. Default: 0.0
+	:tpdo: Direct-axis transient rotor time constant (T`do) (> T``do).  Typical Value = 5. Default: 0
+	:tppdo: Direct-axis subtransient rotor time constant (T``do) (> 0).  Typical Value = 0.03. Default: 0
+	:tpqo: Quadrature-axis transient rotor time constant (T`qo) (> T``qo). Typical Value = 0.5. Default: 0
+	:tppqo: Quadrature-axis subtransient rotor time constant (T``qo) (> 0). Typical Value = 0.03. Default: 0
+	:tc: Damping time constant for `Canay` reactance.  Typical Value = 0. Default: 0
 		'''
 
 	cgmesProfile = SynchronousMachineDetailed.cgmesProfile
@@ -44,7 +44,7 @@ class SynchronousMachineTimeConstantReactance(SynchronousMachineDetailed):
 
 	__doc__ += '\n Documentation of parent class SynchronousMachineDetailed: \n' + SynchronousMachineDetailed.__doc__ 
 
-	def __init__(self, rotorType = None, modelType = None, ks = 0.0, xDirectSync = 0.0, xDirectTrans = 0.0, xDirectSubtrans = 0.0, xQuadSync = 0.0, xQuadTrans = 0.0, xQuadSubtrans = 0.0, tpdo = 0.0, tppdo = 0.0, tpqo = 0.0, tppqo = 0.0, tc = 0.0,  *args, **kw_args):
+	def __init__(self, rotorType = None, modelType = None, ks = 0.0, xDirectSync = 0.0, xDirectTrans = 0.0, xDirectSubtrans = 0.0, xQuadSync = 0.0, xQuadTrans = 0.0, xQuadSubtrans = 0.0, tpdo = 0, tppdo = 0, tpqo = 0, tppqo = 0, tc = 0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.rotorType = rotorType

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.LoadDynamics import LoadDynamics
+from .LoadDynamics import LoadDynamics
 
 
 class LoadUserDefined(LoadDynamics):

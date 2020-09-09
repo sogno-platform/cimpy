@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.PowerSystemResource import PowerSystemResource
+from .PowerSystemResource import PowerSystemResource
 
 
 class Equipment(PowerSystemResource):

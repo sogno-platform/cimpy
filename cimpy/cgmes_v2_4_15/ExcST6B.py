@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from .ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcST6B(ExcitationSystemDynamics):
@@ -16,9 +16,9 @@ class ExcST6B(ExcitationSystemDynamics):
 	:kpa: Voltage regulator proportional gain (Kpa).  Typical Value = 18.038. Default: 0.0
 	:kvd: Voltage regulator derivative gain (Kvd).  Typical Value = 0. Default: 0.0
 	:oelin: OEL input selector (OELin). Typical Value = noOELinput. Default: None
-	:tg: Feedback time constant of inner loop field voltage regulator (Tg).  Typical Value = 0.02. Default: 0.0
-	:ts: Rectifier firing time constant (Ts).  Typical Value = 0. Default: 0.0
-	:tvd: Voltage regulator derivative gain (Tvd).  Typical Value = 0. Default: 0.0
+	:tg: Feedback time constant of inner loop field voltage regulator (Tg).  Typical Value = 0.02. Default: 0
+	:ts: Rectifier firing time constant (Ts).  Typical Value = 0. Default: 0
+	:tvd: Voltage regulator derivative gain (Tvd).  Typical Value = 0. Default: 0
 	:vamax: Maximum voltage regulator output (Vamax).  Typical Value = 4.81. Default: 0.0
 	:vamin: Minimum voltage regulator output (Vamin).  Typical Value = -3.85. Default: 0.0
 	:vilim: Selector (Vilim). true = Vimin-Vimax limiter is active false = Vimin-Vimax limiter is not active. Typical Value = true. Default: False
@@ -62,7 +62,7 @@ class ExcST6B(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, ilr = 0.0, k1 = False, kcl = 0.0, kff = 0.0, kg = 0.0, kia = 0.0, klr = 0.0, km = 0.0, kpa = 0.0, kvd = 0.0, oelin = None, tg = 0.0, ts = 0.0, tvd = 0.0, vamax = 0.0, vamin = 0.0, vilim = False, vimax = 0.0, vimin = 0.0, vmult = False, vrmax = 0.0, vrmin = 0.0, xc = 0.0,  *args, **kw_args):
+	def __init__(self, ilr = 0.0, k1 = False, kcl = 0.0, kff = 0.0, kg = 0.0, kia = 0.0, klr = 0.0, km = 0.0, kpa = 0.0, kvd = 0.0, oelin = None, tg = 0, ts = 0, tvd = 0, vamax = 0.0, vamin = 0.0, vilim = False, vimax = 0.0, vimin = 0.0, vmult = False, vrmax = 0.0, vrmin = 0.0, xc = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ilr = ilr

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.DCEquipmentContainer import DCEquipmentContainer
+from .DCEquipmentContainer import DCEquipmentContainer
 
 
 class DCConverterUnit(DCEquipmentContainer):

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.MeasurementValue import MeasurementValue
+from .MeasurementValue import MeasurementValue
 
 
 class AnalogValue(MeasurementValue):

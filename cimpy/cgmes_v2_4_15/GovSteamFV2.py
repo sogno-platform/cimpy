@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
+from .TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovSteamFV2(TurbineGovernorDynamics):
@@ -7,17 +7,17 @@ class GovSteamFV2(TurbineGovernorDynamics):
 
 	:mwbase: Alternate Base used instead of Machine base in equipment model if necessary (MWbase) (>0).  Unit = MW. Default: 0.0
 	:r: (R). Default: 0.0
-	:t1: Governor time constant (T1). Default: 0.0
+	:t1: Governor time constant (T1). Default: 0
 	:vmax: (Vmax). Default: 0.0
 	:vmin: (Vmin). Default: 0.0
 	:k: Fraction of the turbine power developed by turbine sections not involved in fast valving (K). Default: 0.0
-	:t3: Reheater time constant (T3). Default: 0.0
+	:t3: Reheater time constant (T3). Default: 0
 	:dt: (Dt). Default: 0.0
-	:tt: Time constant with which power falls off after intercept valve closure (Tt). Default: 0.0
-	:ta: Time after initial time for valve to close (Ta). Default: 0.0
-	:tb: Time after initial time for valve to begin opening (Tb). Default: 0.0
-	:tc: Time after initial time for valve to become fully open (Tc). Default: 0.0
-	:ti: Initial time to begin fast valving (Ti). Default: 0.0
+	:tt: Time constant with which power falls off after intercept valve closure (Tt). Default: 0
+	:ta: Time after initial time for valve to close (Ta). Default: 0
+	:tb: Time after initial time for valve to begin opening (Tb). Default: 0
+	:tc: Time after initial time for valve to become fully open (Tc). Default: 0
+	:ti: Initial time to begin fast valving (Ti). Default: 0
 		'''
 
 	cgmesProfile = TurbineGovernorDynamics.cgmesProfile
@@ -42,7 +42,7 @@ class GovSteamFV2(TurbineGovernorDynamics):
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 
-	def __init__(self, mwbase = 0.0, r = 0.0, t1 = 0.0, vmax = 0.0, vmin = 0.0, k = 0.0, t3 = 0.0, dt = 0.0, tt = 0.0, ta = 0.0, tb = 0.0, tc = 0.0, ti = 0.0,  *args, **kw_args):
+	def __init__(self, mwbase = 0.0, r = 0.0, t1 = 0, vmax = 0.0, vmin = 0.0, k = 0.0, t3 = 0, dt = 0.0, tt = 0, ta = 0, tb = 0, tc = 0, ti = 0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.mwbase = mwbase

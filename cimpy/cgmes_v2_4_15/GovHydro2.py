@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
+from .TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovHydro2(TurbineGovernorDynamics):
@@ -6,16 +6,16 @@ class GovHydro2(TurbineGovernorDynamics):
 	IEEE hydro turbine governor model represents plants with straightforward penstock configurations and hydraulic-dashpot governors.
 
 	:mwbase: Base for power values (MWbase) (> 0).  Unit = MW. Default: 0.0
-	:tg: Gate servo time constant (Tg).  Typical Value = 0.5. Default: 0.0
-	:tp: Pilot servo valve time constant (Tp).  Typical Value = 0.03. Default: 0.0
+	:tg: Gate servo time constant (Tg).  Typical Value = 0.5. Default: 0
+	:tp: Pilot servo valve time constant (Tp).  Typical Value = 0.03. Default: 0
 	:uo: Maximum gate opening velocity (Uo).  Unit = PU/sec.  Typical Value = 0.1. Default: 0.0
 	:uc: Maximum gate closing velocity (Uc) (<0).  Unit = PU/sec.   Typical Value = -0.1. Default: 0.0
 	:pmax: Maximum gate opening (Pmax).  Typical Value = 1. Default: 0.0
 	:pmin: Minimum gate opening; ().  Typical Value = 0. Default: 0.0
 	:rperm: Permanent droop (Rperm).  Typical Value = 0.05. Default: 0.0
 	:rtemp: Temporary droop (Rtemp).  Typical Value = 0.5. Default: 0.0
-	:tr: Dashpot time constant (Tr).  Typical Value = 12. Default: 0.0
-	:tw: Water inertia time constant (Tw).  Typical Value = 2. Default: 0.0
+	:tr: Dashpot time constant (Tr).  Typical Value = 12. Default: 0
+	:tw: Water inertia time constant (Tw).  Typical Value = 2. Default: 0
 	:kturb: Turbine gain (Kturb).  Typical Value = 1. Default: 0.0
 	:aturb: Turbine numerator multiplier (Aturb).  Typical Value = -1. Default: 0.0
 	:bturb: Turbine denominator multiplier (Bturb).  Typical Value = 0.5. Default: 0.0
@@ -74,7 +74,7 @@ class GovHydro2(TurbineGovernorDynamics):
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 
-	def __init__(self, mwbase = 0.0, tg = 0.0, tp = 0.0, uo = 0.0, uc = 0.0, pmax = 0.0, pmin = 0.0, rperm = 0.0, rtemp = 0.0, tr = 0.0, tw = 0.0, kturb = 0.0, aturb = 0.0, bturb = 0.0, db1 = 0.0, eps = 0.0, db2 = 0.0, gv1 = 0.0, pgv1 = 0.0, gv2 = 0.0, pgv2 = 0.0, gv3 = 0.0, pgv3 = 0.0, gv4 = 0.0, pgv4 = 0.0, gv5 = 0.0, pgv5 = 0.0, gv6 = 0.0, pgv6 = 0.0,  *args, **kw_args):
+	def __init__(self, mwbase = 0.0, tg = 0, tp = 0, uo = 0.0, uc = 0.0, pmax = 0.0, pmin = 0.0, rperm = 0.0, rtemp = 0.0, tr = 0, tw = 0, kturb = 0.0, aturb = 0.0, bturb = 0.0, db1 = 0.0, eps = 0.0, db2 = 0.0, gv1 = 0.0, pgv1 = 0.0, gv2 = 0.0, pgv2 = 0.0, gv3 = 0.0, pgv3 = 0.0, gv4 = 0.0, pgv4 = 0.0, gv5 = 0.0, pgv5 = 0.0, gv6 = 0.0, pgv6 = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.mwbase = mwbase

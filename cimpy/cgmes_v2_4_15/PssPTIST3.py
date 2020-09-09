@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from .PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class PssPTIST3(PowerSystemStabilizerDynamics):
@@ -6,18 +6,18 @@ class PssPTIST3(PowerSystemStabilizerDynamics):
 	PTI Microprocessor-Based Stabilizer type 3.
 
 	:m: (M).  M=2*H.  Typical Value = 5. Default: 0.0
-	:tf: Time constant (Tf).  Typical Value = 0.2. Default: 0.0
-	:tp: Time constant (Tp).  Typical Value = 0.2. Default: 0.0
-	:t1: Time constant (T1).  Typical Value = 0.3. Default: 0.0
-	:t2: Time constant (T2).  Typical Value = 1. Default: 0.0
-	:t3: Time constant (T3).  Typical Value = 0.2. Default: 0.0
-	:t4: Time constant (T4).  Typical Value = 0.05. Default: 0.0
+	:tf: Time constant (Tf).  Typical Value = 0.2. Default: 0
+	:tp: Time constant (Tp).  Typical Value = 0.2. Default: 0
+	:t1: Time constant (T1).  Typical Value = 0.3. Default: 0
+	:t2: Time constant (T2).  Typical Value = 1. Default: 0
+	:t3: Time constant (T3).  Typical Value = 0.2. Default: 0
+	:t4: Time constant (T4).  Typical Value = 0.05. Default: 0
 	:k: Gain (K).  Typical Value = 9. Default: 0.0
-	:dtf: Time step frequency calculation (0.03 for 50 Hz) (Dtf).  Typical Value = 0.025. Default: 0.0
-	:dtc: Time step related to activation of controls (0.03 for 50 Hz) (Dtc).  Typical Value = 0.025. Default: 0.0
-	:dtp: Time step active power calculation (0.015 for 50 Hz) (Dtp).  Typical Value = 0.0125. Default: 0.0
-	:t5: Time constant (T5). Default: 0.0
-	:t6: Time constant (T6). Default: 0.0
+	:dtf: Time step frequency calculation (0.03 for 50 Hz) (Dtf).  Typical Value = 0.025. Default: 0
+	:dtc: Time step related to activation of controls (0.03 for 50 Hz) (Dtc).  Typical Value = 0.025. Default: 0
+	:dtp: Time step active power calculation (0.015 for 50 Hz) (Dtp).  Typical Value = 0.0125. Default: 0
+	:t5: Time constant (T5). Default: 0
+	:t6: Time constant (T6). Default: 0
 	:a0: Filter coefficient (A0). Default: 0.0
 	:a1: Limiter (Al). Default: 0.0
 	:a2: Filter coefficient (A2). Default: 0.0
@@ -84,7 +84,7 @@ class PssPTIST3(PowerSystemStabilizerDynamics):
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, m = 0.0, tf = 0.0, tp = 0.0, t1 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, k = 0.0, dtf = 0.0, dtc = 0.0, dtp = 0.0, t5 = 0.0, t6 = 0.0, a0 = 0.0, a1 = 0.0, a2 = 0.0, b0 = 0.0, b1 = 0.0, b2 = 0.0, a3 = 0.0, a4 = 0.0, a5 = 0.0, b3 = 0.0, b4 = 0.0, b5 = 0.0, athres = 0.0, dl = 0.0, al = 0.0, lthres = 0.0, pmin = 0.0, isw = False, nav = 0.0, ncl = 0.0, ncr = 0.0,  *args, **kw_args):
+	def __init__(self, m = 0.0, tf = 0, tp = 0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, k = 0.0, dtf = 0, dtc = 0, dtp = 0, t5 = 0, t6 = 0, a0 = 0.0, a1 = 0.0, a2 = 0.0, b0 = 0.0, b1 = 0.0, b2 = 0.0, a3 = 0.0, a4 = 0.0, a5 = 0.0, b3 = 0.0, b4 = 0.0, b5 = 0.0, athres = 0.0, dl = 0.0, al = 0.0, lthres = 0.0, pmin = 0.0, isw = False, nav = 0.0, ncl = 0.0, ncr = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.m = m

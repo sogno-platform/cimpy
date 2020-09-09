@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.DCConductingEquipment import DCConductingEquipment
+from .DCConductingEquipment import DCConductingEquipment
 
 
 class DCBusbar(DCConductingEquipment):

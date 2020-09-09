@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from .PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class Pss1(PowerSystemStabilizerDynamics):
@@ -12,13 +12,13 @@ class Pss1(PowerSystemStabilizerDynamics):
 	:ks: PSS gain (K).  Typical Value = 1. Default: 0.0
 	:vsmn: Stabilizer output max limit (V).  Typical Value = -0.06. Default: 0.0
 	:vsmx: Stabilizer output min limit (V).  Typical Value = 0.06. Default: 0.0
-	:tpe: Electric power filter time constant (T).  Typical Value = 0.05. Default: 0.0
-	:t5: Washout (T).  Typical Value = 3.5. Default: 0.0
-	:t6: Filter time constant (T).  Typical Value = 0. Default: 0.0
-	:t7: Lead/lag time constant (T).  Typical Value = 0. Default: 0.0
-	:t8: Lead/lag time constant (T).  Typical Value = 0. Default: 0.0
-	:t9: Lead/lag time constant (T).  Typical Value = 0. Default: 0.0
-	:t10: Lead/lag time constant (T).  Typical Value = 0. Default: 0.0
+	:tpe: Electric power filter time constant (T).  Typical Value = 0.05. Default: 0
+	:t5: Washout (T).  Typical Value = 3.5. Default: 0
+	:t6: Filter time constant (T).  Typical Value = 0. Default: 0
+	:t7: Lead/lag time constant (T).  Typical Value = 0. Default: 0
+	:t8: Lead/lag time constant (T).  Typical Value = 0. Default: 0
+	:t9: Lead/lag time constant (T).  Typical Value = 0. Default: 0
+	:t10: Lead/lag time constant (T).  Typical Value = 0. Default: 0
 	:vadat:  Default: False
 		'''
 
@@ -46,7 +46,7 @@ class Pss1(PowerSystemStabilizerDynamics):
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, kw = 0.0, kf = 0.0, kpe = 0.0, pmin = 0.0, ks = 0.0, vsmn = 0.0, vsmx = 0.0, tpe = 0.0, t5 = 0.0, t6 = 0.0, t7 = 0.0, t8 = 0.0, t9 = 0.0, t10 = 0.0, vadat = False,  *args, **kw_args):
+	def __init__(self, kw = 0.0, kf = 0.0, kpe = 0.0, pmin = 0.0, ks = 0.0, vsmn = 0.0, vsmx = 0.0, tpe = 0, t5 = 0, t6 = 0, t7 = 0, t8 = 0, t9 = 0, t10 = 0, vadat = False,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.kw = kw

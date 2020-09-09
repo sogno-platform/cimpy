@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from .ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcAVR3(ExcitationSystemDynamics):
@@ -8,11 +8,11 @@ class ExcAVR3(ExcitationSystemDynamics):
 	:ka: AVR gain (K).  Typical Value = 3000. Default: 0.0
 	:vrmn: Maximum AVR output (V).  Typical Value = -7.5. Default: 0.0
 	:vrmx: Minimum AVR output (V).  Typical Value = 7.5. Default: 0.0
-	:t1: AVR time constant (T).  Typical Value = 220. Default: 0.0
-	:t2: AVR time constant (T).  Typical Value = 1.6. Default: 0.0
-	:t3: AVR time constant (T).  Typical Value = 0.66. Default: 0.0
-	:t4: AVR time constant (T).  Typical Value = 0.07. Default: 0.0
-	:te: Exciter time constant (T).  Typical Value = 1. Default: 0.0
+	:t1: AVR time constant (T).  Typical Value = 220. Default: 0
+	:t2: AVR time constant (T).  Typical Value = 1.6. Default: 0
+	:t3: AVR time constant (T).  Typical Value = 0.66. Default: 0
+	:t4: AVR time constant (T).  Typical Value = 0.07. Default: 0
+	:te: Exciter time constant (T).  Typical Value = 1. Default: 0
 	:e1: Field voltage value 1 (E1).  Typical Value = 4.18. Default: 0.0
 	:se1: Saturation factor at E1 (S(E1)).  Typical Value = 0.1. Default: 0.0
 	:e2: Field voltage value 2 (E2).  Typical Value = 3.14. Default: 0.0
@@ -40,7 +40,7 @@ class ExcAVR3(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, ka = 0.0, vrmn = 0.0, vrmx = 0.0, t1 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, te = 0.0, e1 = 0.0, se1 = 0.0, e2 = 0.0, se2 = 0.0,  *args, **kw_args):
+	def __init__(self, ka = 0.0, vrmn = 0.0, vrmx = 0.0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, te = 0, e1 = 0.0, se1 = 0.0, e2 = 0.0, se2 = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ka = ka

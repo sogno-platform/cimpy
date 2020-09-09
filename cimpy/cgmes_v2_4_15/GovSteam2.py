@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
+from .TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovSteam2(TurbineGovernorDynamics):
@@ -7,8 +7,8 @@ class GovSteam2(TurbineGovernorDynamics):
 
 	:k: Governor gain (reciprocal of droop) (K).  Typical Value = 20. Default: 0.0
 	:dbf: Frequency dead band (DBF).  Typical Value = 0. Default: 0.0
-	:t1: Governor lag time constant (T) (>0).  Typical Value = 0.45. Default: 0.0
-	:t2: Governor lead time constant (T) (may be 0).  Typical Value = 0. Default: 0.0
+	:t1: Governor lag time constant (T) (>0).  Typical Value = 0.45. Default: 0
+	:t2: Governor lead time constant (T) (may be 0).  Typical Value = 0. Default: 0
 	:pmax: Maximum fuel flow (P).  Typical Value = 1. Default: 0.0
 	:pmin: Minimum fuel flow (P).  Typical Value = 0. Default: 0.0
 	:mxef: Fuel flow maximum positive error value (MX).  Typical Value = 1. Default: 0.0
@@ -32,7 +32,7 @@ class GovSteam2(TurbineGovernorDynamics):
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 
-	def __init__(self, k = 0.0, dbf = 0.0, t1 = 0.0, t2 = 0.0, pmax = 0.0, pmin = 0.0, mxef = 0.0, mnef = 0.0,  *args, **kw_args):
+	def __init__(self, k = 0.0, dbf = 0.0, t1 = 0, t2 = 0, pmax = 0.0, pmin = 0.0, mxef = 0.0, mnef = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.k = k

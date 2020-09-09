@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.LoadDynamics import LoadDynamics
+from .LoadDynamics import LoadDynamics
 
 
 class LoadGenericNonLinear(LoadDynamics):
@@ -8,8 +8,8 @@ class LoadGenericNonLinear(LoadDynamics):
 	:genericNonLinearLoadModelType: Type of generic non-linear load model. Default: None
 	:pt: Dynamic portion of active load (P). Default: 0.0
 	:qt: Dynamic portion of reactive load (Q). Default: 0.0
-	:tp: Time constant of lag function of active power (T). Default: 0.0
-	:tq: Time constant of lag function of reactive power (T). Default: 0.0
+	:tp: Time constant of lag function of active power (T). Default: 0
+	:tq: Time constant of lag function of reactive power (T). Default: 0
 	:ls: Steady state voltage index for active power (LS). Default: 0.0
 	:lt: Transient voltage index for active power (LT). Default: 0.0
 	:bs: Steady state voltage index for reactive power (BS). Default: 0.0
@@ -34,7 +34,7 @@ class LoadGenericNonLinear(LoadDynamics):
 
 	__doc__ += '\n Documentation of parent class LoadDynamics: \n' + LoadDynamics.__doc__ 
 
-	def __init__(self, genericNonLinearLoadModelType = None, pt = 0.0, qt = 0.0, tp = 0.0, tq = 0.0, ls = 0.0, lt = 0.0, bs = 0.0, bt = 0.0,  *args, **kw_args):
+	def __init__(self, genericNonLinearLoadModelType = None, pt = 0.0, qt = 0.0, tp = 0, tq = 0, ls = 0.0, lt = 0.0, bs = 0.0, bt = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.genericNonLinearLoadModelType = genericNonLinearLoadModelType

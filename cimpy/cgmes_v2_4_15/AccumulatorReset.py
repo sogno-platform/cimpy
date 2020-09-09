@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.Control import Control
+from .Control import Control
 
 
 class AccumulatorReset(Control):

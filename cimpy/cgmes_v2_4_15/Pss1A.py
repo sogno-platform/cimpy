@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from .PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class Pss1A(PowerSystemStabilizerDynamics):
@@ -8,12 +8,12 @@ class Pss1A(PowerSystemStabilizerDynamics):
 	:inputSignalType: Type of input signal. Default: None
 	:a1: Notch filter parameter (A1). Default: 0.0
 	:a2: Notch filter parameter (A2). Default: 0.0
-	:t1: Lead/lag time constant (T1). Default: 0.0
-	:t2: Lead/lag time constant (T2). Default: 0.0
-	:t3: Lead/lag time constant (T3). Default: 0.0
-	:t4: Lead/lag time constant (T4). Default: 0.0
-	:t5: Washout time constant (T5). Default: 0.0
-	:t6: Transducer time constant (T6). Default: 0.0
+	:t1: Lead/lag time constant (T1). Default: 0
+	:t2: Lead/lag time constant (T2). Default: 0
+	:t3: Lead/lag time constant (T3). Default: 0
+	:t4: Lead/lag time constant (T4). Default: 0
+	:t5: Washout time constant (T5). Default: 0
+	:t6: Transducer time constant (T6). Default: 0
 	:ks: Stabilizer gain (Ks). Default: 0.0
 	:vrmax: Maximum stabilizer output (Vrmax). Default: 0.0
 	:vrmin: Minimum stabilizer output (Vrmin). Default: 0.0
@@ -26,7 +26,7 @@ class Pss1A(PowerSystemStabilizerDynamics):
 	:a7: Notch filter parameter (A7). Default: 0.0
 	:a8: Notch filter parameter (A8). Default: 0.0
 	:kd: Selector (Kd).  true = e used false = e not used. Default: False
-	:tdelay: Time constant (Tdelay). Default: 0.0
+	:tdelay: Time constant (Tdelay). Default: 0
 		'''
 
 	cgmesProfile = PowerSystemStabilizerDynamics.cgmesProfile
@@ -60,7 +60,7 @@ class Pss1A(PowerSystemStabilizerDynamics):
 
 	__doc__ += '\n Documentation of parent class PowerSystemStabilizerDynamics: \n' + PowerSystemStabilizerDynamics.__doc__ 
 
-	def __init__(self, inputSignalType = None, a1 = 0.0, a2 = 0.0, t1 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, t5 = 0.0, t6 = 0.0, ks = 0.0, vrmax = 0.0, vrmin = 0.0, vcu = 0.0, vcl = 0.0, a3 = 0.0, a4 = 0.0, a5 = 0.0, a6 = 0.0, a7 = 0.0, a8 = 0.0, kd = False, tdelay = 0.0,  *args, **kw_args):
+	def __init__(self, inputSignalType = None, a1 = 0.0, a2 = 0.0, t1 = 0, t2 = 0, t3 = 0, t4 = 0, t5 = 0, t6 = 0, ks = 0.0, vrmax = 0.0, vrmin = 0.0, vcu = 0.0, vcl = 0.0, a3 = 0.0, a4 = 0.0, a5 = 0.0, a6 = 0.0, a7 = 0.0, a8 = 0.0, kd = False, tdelay = 0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.inputSignalType = inputSignalType

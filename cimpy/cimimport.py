@@ -404,7 +404,7 @@ def _get_rdf_namespace(namespaces):
 # TODO: use cimpy.cgmes.Profile instead
 # used to map the profile name to their abbreviations according to the CGMES standard
 short_package_name = {
-    "DiagramLayout": 'DI',
+    "DiagramLayout": 'DL',
     "Dynamics": "DY",
     "Equipment": "EQ",
     "GeographicalLocation": "GL",

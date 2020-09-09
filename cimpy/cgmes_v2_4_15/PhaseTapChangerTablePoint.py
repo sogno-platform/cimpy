@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.TapChangerTablePoint import TapChangerTablePoint
+from .TapChangerTablePoint import TapChangerTablePoint
 
 
 class PhaseTapChangerTablePoint(TapChangerTablePoint):

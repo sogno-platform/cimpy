@@ -1,22 +1,22 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from .ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcOEX3T(ExcitationSystemDynamics):
 	'''
 	Modified IEEE Type ST1 Excitation System with semi-continuous and acting terminal voltage limiter.
 
-	:t1: Time constant (T). Default: 0.0
-	:t2: Time constant (T). Default: 0.0
-	:t3: Time constant (T). Default: 0.0
-	:t4: Time constant (T). Default: 0.0
+	:t1: Time constant (T). Default: 0
+	:t2: Time constant (T). Default: 0
+	:t3: Time constant (T). Default: 0
+	:t4: Time constant (T). Default: 0
 	:ka: Gain (K). Default: 0.0
-	:t5: Time constant (T). Default: 0.0
-	:t6: Time constant (T). Default: 0.0
+	:t5: Time constant (T). Default: 0
+	:t6: Time constant (T). Default: 0
 	:vrmax: Limiter (V). Default: 0.0
 	:vrmin: Limiter (V). Default: 0.0
-	:te: Time constant (T). Default: 0.0
+	:te: Time constant (T). Default: 0
 	:kf: Gain (K). Default: 0.0
-	:tf: Time constant (T). Default: 0.0
+	:tf: Time constant (T). Default: 0
 	:kc: Gain (K). Default: 0.0
 	:kd: Gain (K). Default: 0.0
 	:ke: Gain (K). Default: 0.0
@@ -54,7 +54,7 @@ class ExcOEX3T(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, t1 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, ka = 0.0, t5 = 0.0, t6 = 0.0, vrmax = 0.0, vrmin = 0.0, te = 0.0, kf = 0.0, tf = 0.0, kc = 0.0, kd = 0.0, ke = 0.0, e1 = 0.0, see1 = 0.0, e2 = 0.0, see2 = 0.0,  *args, **kw_args):
+	def __init__(self, t1 = 0, t2 = 0, t3 = 0, t4 = 0, ka = 0.0, t5 = 0, t6 = 0, vrmax = 0.0, vrmin = 0.0, te = 0, kf = 0.0, tf = 0, kc = 0.0, kd = 0.0, ke = 0.0, e1 = 0.0, see1 = 0.0, e2 = 0.0, see2 = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.t1 = t1

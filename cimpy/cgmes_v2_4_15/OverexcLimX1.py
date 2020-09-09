@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.OverexcitationLimiterDynamics import OverexcitationLimiterDynamics
+from .OverexcitationLimiterDynamics import OverexcitationLimiterDynamics
 
 
 class OverexcLimX1(OverexcitationLimiterDynamics):
@@ -7,11 +7,11 @@ class OverexcLimX1(OverexcitationLimiterDynamics):
 
 	:efdrated: Rated field voltage (EFD).  Typical Value = 1.05. Default: 0.0
 	:efd1: Low voltage point on the inverse time characteristic (EFD).  Typical Value = 1.1. Default: 0.0
-	:t1: Time to trip the exciter at the low voltage point on the inverse time characteristic (TIME).  Typical Value = 120. Default: 0.0
+	:t1: Time to trip the exciter at the low voltage point on the inverse time characteristic (TIME).  Typical Value = 120. Default: 0
 	:efd2: Mid voltage point on the inverse time characteristic (EFD).  Typical Value = 1.2. Default: 0.0
-	:t2: Time to trip the exciter at the mid voltage point on the inverse time characteristic (TIME).  Typical Value = 40. Default: 0.0
+	:t2: Time to trip the exciter at the mid voltage point on the inverse time characteristic (TIME).  Typical Value = 40. Default: 0
 	:efd3: High voltage point on the inverse time characteristic (EFD).  Typical Value = 1.5. Default: 0.0
-	:t3: Time to trip the exciter at the high voltage point on the inverse time characteristic (TIME).  Typical Value = 15. Default: 0.0
+	:t3: Time to trip the exciter at the high voltage point on the inverse time characteristic (TIME).  Typical Value = 15. Default: 0
 	:efddes: Desired field voltage (EFD).  Typical Value = 0.9. Default: 0.0
 	:kmx: Gain (K).  Typical Value = 0.01. Default: 0.0
 	:vlow: Low voltage limit (V) (>0). Default: 0.0
@@ -36,7 +36,7 @@ class OverexcLimX1(OverexcitationLimiterDynamics):
 
 	__doc__ += '\n Documentation of parent class OverexcitationLimiterDynamics: \n' + OverexcitationLimiterDynamics.__doc__ 
 
-	def __init__(self, efdrated = 0.0, efd1 = 0.0, t1 = 0.0, efd2 = 0.0, t2 = 0.0, efd3 = 0.0, t3 = 0.0, efddes = 0.0, kmx = 0.0, vlow = 0.0,  *args, **kw_args):
+	def __init__(self, efdrated = 0.0, efd1 = 0.0, t1 = 0, efd2 = 0.0, t2 = 0, efd3 = 0.0, t3 = 0, efddes = 0.0, kmx = 0.0, vlow = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.efdrated = efdrated

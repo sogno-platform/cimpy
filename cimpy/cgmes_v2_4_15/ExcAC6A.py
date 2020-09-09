@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from .ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcAC6A(ExcitationSystemDynamics):
@@ -7,18 +7,18 @@ class ExcAC6A(ExcitationSystemDynamics):
 
 	:ka: Voltage regulator gain (Ka).  Typical Value = 536. Default: 0.0
 	:ks: Coefficient to allow different usage of the model-speed coefficient (Ks).  Typical Value = 0. Default: 0.0
-	:ta: Voltage regulator time constant (Ta).  Typical Value = 0.086. Default: 0.0
-	:tk: Voltage regulator time constant (Tk).  Typical Value = 0.18. Default: 0.0
-	:tb: Voltage regulator time constant (Tb).  Typical Value = 9. Default: 0.0
-	:tc: Voltage regulator time constant (Tc).  Typical Value = 3. Default: 0.0
+	:ta: Voltage regulator time constant (Ta).  Typical Value = 0.086. Default: 0
+	:tk: Voltage regulator time constant (Tk).  Typical Value = 0.18. Default: 0
+	:tb: Voltage regulator time constant (Tb).  Typical Value = 9. Default: 0
+	:tc: Voltage regulator time constant (Tc).  Typical Value = 3. Default: 0
 	:vamax: Maximum voltage regulator output (Vamax).  Typical Value = 75. Default: 0.0
 	:vamin: Minimum voltage regulator output (Vamin).  Typical Value = -75. Default: 0.0
 	:vrmax: Maximum voltage regulator output (Vrmax).  Typical Value = 44. Default: 0.0
 	:vrmin: Minimum voltage regulator output (Vrmin).  Typical Value = -36. Default: 0.0
-	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 1. Default: 0.0
+	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 1. Default: 0
 	:kh: Exciter field current limiter gain (Kh).  Typical Value = 92. Default: 0.0
-	:tj: Exciter field current limiter time constant (Tj).  Typical Value = 0.02. Default: 0.0
-	:th: Exciter field current limiter time constant (Th).  Typical Value = 0.08. Default: 0.0
+	:tj: Exciter field current limiter time constant (Tj).  Typical Value = 0.02. Default: 0
+	:th: Exciter field current limiter time constant (Th).  Typical Value = 0.08. Default: 0
 	:vfelim: Exciter field current limit reference (Vfelim).  Typical Value = 19. Default: 0.0
 	:vhmax: Maximum field current limiter signal reference (Vhmax).  Typical Value = 75. Default: 0.0
 	:kc: Rectifier loading factor proportional to commutating reactance (Kc).  Typical Value = 0.173. Default: 0.0
@@ -62,7 +62,7 @@ class ExcAC6A(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, ka = 0.0, ks = 0.0, ta = 0.0, tk = 0.0, tb = 0.0, tc = 0.0, vamax = 0.0, vamin = 0.0, vrmax = 0.0, vrmin = 0.0, te = 0.0, kh = 0.0, tj = 0.0, th = 0.0, vfelim = 0.0, vhmax = 0.0, kc = 0.0, kd = 0.0, ke = 0.0, ve1 = 0.0, seve1 = 0.0, ve2 = 0.0, seve2 = 0.0,  *args, **kw_args):
+	def __init__(self, ka = 0.0, ks = 0.0, ta = 0, tk = 0, tb = 0, tc = 0, vamax = 0.0, vamin = 0.0, vrmax = 0.0, vrmin = 0.0, te = 0, kh = 0.0, tj = 0, th = 0, vfelim = 0.0, vhmax = 0.0, kc = 0.0, kd = 0.0, ke = 0.0, ve1 = 0.0, seve1 = 0.0, ve2 = 0.0, seve2 = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.ka = ka

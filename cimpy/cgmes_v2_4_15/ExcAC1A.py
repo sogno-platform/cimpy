@@ -1,22 +1,22 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from .ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcAC1A(ExcitationSystemDynamics):
 	'''
 	Modified IEEE AC1A alternator-supplied rectifier excitation system with different rate feedback source.
 
-	:tb: Voltage regulator time constant (Tb).  Typical Value = 0. Default: 0.0
-	:tc: Voltage regulator time constant (T).  Typical Value = 0. Default: 0.0
+	:tb: Voltage regulator time constant (Tb).  Typical Value = 0. Default: 0
+	:tc: Voltage regulator time constant (T).  Typical Value = 0. Default: 0
 	:ka: Voltage regulator gain (Ka).  Typical Value = 400. Default: 0.0
-	:ta: Voltage regulator time constant (Ta).  Typical Value = 0.02. Default: 0.0
+	:ta: Voltage regulator time constant (Ta).  Typical Value = 0.02. Default: 0
 	:vamax: Maximum voltage regulator output (V).  Typical Value = 14.5. Default: 0.0
 	:vamin: Minimum voltage regulator output (V).  Typical Value = -14.5. Default: 0.0
-	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 0.8. Default: 0.0
+	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 0.8. Default: 0
 	:kf: Excitation control system stabilizer gains (Kf).  Typical Value = 0.03. Default: 0.0
 	:kf1: Coefficient to allow different usage of the model (Kf1).  Typical Value = 0. Default: 0.0
 	:kf2: Coefficient to allow different usage of the model (Kf2).  Typical Value = 1. Default: 0.0
 	:ks: Coefficient to allow different usage of the model-speed coefficient (Ks).  Typical Value = 0. Default: 0.0
-	:tf: Excitation control system stabilizer time constant (Tf).  Typical Value = 1. Default: 0.0
+	:tf: Excitation control system stabilizer time constant (Tf).  Typical Value = 1. Default: 0
 	:kc: Rectifier loading factor proportional to commutating reactance (Kc). Typical Value = 0.2. Default: 0.0
 	:kd: Demagnetizing factor, a function of exciter alternator reactances (Kd).  Typical Value = 0.38. Default: 0.0
 	:ke: Exciter constant related to self-excited field (Ke).  Typical Value = 1. Default: 0.0
@@ -60,7 +60,7 @@ class ExcAC1A(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, tb = 0.0, tc = 0.0, ka = 0.0, ta = 0.0, vamax = 0.0, vamin = 0.0, te = 0.0, kf = 0.0, kf1 = 0.0, kf2 = 0.0, ks = 0.0, tf = 0.0, kc = 0.0, kd = 0.0, ke = 0.0, ve1 = 0.0, seve1 = 0.0, ve2 = 0.0, seve2 = 0.0, vrmax = 0.0, vrmin = 0.0, hvlvgates = False,  *args, **kw_args):
+	def __init__(self, tb = 0, tc = 0, ka = 0.0, ta = 0, vamax = 0.0, vamin = 0.0, te = 0, kf = 0.0, kf1 = 0.0, kf2 = 0.0, ks = 0.0, tf = 0, kc = 0.0, kd = 0.0, ke = 0.0, ve1 = 0.0, seve1 = 0.0, ve2 = 0.0, seve2 = 0.0, vrmax = 0.0, vrmin = 0.0, hvlvgates = False,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.tb = tb

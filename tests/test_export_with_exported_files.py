@@ -28,7 +28,7 @@ def test_export_with_exported_files():
     for file in example_path.glob('*.xml'):
         import_files.append(str(file.absolute()))
 
-    activeProfileList = ['DI', 'EQ', 'SV', 'TP']
+    activeProfileList = ['DL', 'EQ', 'SV', 'TP']
 
     imported_result = cimpy.cim_import(import_files, 'cgmes_v2_4_15')
     cimpy.cim_export(imported_result, 'EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)

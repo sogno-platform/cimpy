@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.ExcitationSystemDynamics import ExcitationSystemDynamics
+from .ExcitationSystemDynamics import ExcitationSystemDynamics
 
 
 class ExcIEEEAC8B(ExcitationSystemDynamics):
@@ -8,12 +8,12 @@ class ExcIEEEAC8B(ExcitationSystemDynamics):
 	:kpr: Voltage regulator proportional gain (K).  Typical Value = 80. Default: 0.0
 	:kir: Voltage regulator integral gain (K).  Typical Value = 5. Default: 0.0
 	:kdr: Voltage regulator derivative gain (K).  Typical Value = 10. Default: 0.0
-	:tdr: Lag time constant (T).  Typical Value = 0.1. Default: 0.0
+	:tdr: Lag time constant (T).  Typical Value = 0.1. Default: 0
 	:vrmax: Maximum voltage regulator output (V).  Typical Value = 35. Default: 0.0
 	:vrmin: Minimum voltage regulator output (V).  Typical Value = 0. Default: 0.0
 	:ka: Voltage regulator gain (K).  Typical Value = 1. Default: 0.0
-	:ta: Voltage regulator time constant (T).  Typical Value = 0. Default: 0.0
-	:te: Exciter time constant, integration rate associated with exciter control (T).  Typical Value = 1.2. Default: 0.0
+	:ta: Voltage regulator time constant (T).  Typical Value = 0. Default: 0
+	:te: Exciter time constant, integration rate associated with exciter control (T).  Typical Value = 1.2. Default: 0
 	:vfemax: Exciter field current limit reference (V).  Typical Value = 6. Default: 0.0
 	:vemin: Minimum exciter voltage output (V).  Typical Value = 0. Default: 0.0
 	:ke: Exciter constant related to self-excited field (K).  Typical Value = 1. Default: 0.0
@@ -52,7 +52,7 @@ class ExcIEEEAC8B(ExcitationSystemDynamics):
 
 	__doc__ += '\n Documentation of parent class ExcitationSystemDynamics: \n' + ExcitationSystemDynamics.__doc__ 
 
-	def __init__(self, kpr = 0.0, kir = 0.0, kdr = 0.0, tdr = 0.0, vrmax = 0.0, vrmin = 0.0, ka = 0.0, ta = 0.0, te = 0.0, vfemax = 0.0, vemin = 0.0, ke = 0.0, kc = 0.0, kd = 0.0, ve1 = 0.0, seve1 = 0.0, ve2 = 0.0, seve2 = 0.0,  *args, **kw_args):
+	def __init__(self, kpr = 0.0, kir = 0.0, kdr = 0.0, tdr = 0, vrmax = 0.0, vrmin = 0.0, ka = 0.0, ta = 0, te = 0, vfemax = 0.0, vemin = 0.0, ke = 0.0, kc = 0.0, kd = 0.0, ve1 = 0.0, seve1 = 0.0, ve2 = 0.0, seve2 = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.kpr = kpr

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
+from .TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovHydro3(TurbineGovernorDynamics):
@@ -11,20 +11,20 @@ class GovHydro3(TurbineGovernorDynamics):
 	:governorControl: Governor control flag (Cflag). true = PID control is active false = double derivative control is active. Typical Value = true. Default: False
 	:rgate: Steady-state droop, PU, for governor output feedback (Rgate).  Typical Value = 0. Default: 0.0
 	:relec: Steady-state droop, PU, for electrical power feedback (Relec).  Typical Value = 0.05. Default: 0.0
-	:td: Input filter time constant (Td).  Typical Value = 0.05. Default: 0.0
-	:tf: Washout time constant (Tf).  Typical Value = 0.1. Default: 0.0
-	:tp: Gate servo time constant (Tp).  Typical Value = 0.05. Default: 0.0
+	:td: Input filter time constant (Td).  Typical Value = 0.05. Default: 0
+	:tf: Washout time constant (Tf).  Typical Value = 0.1. Default: 0
+	:tp: Gate servo time constant (Tp).  Typical Value = 0.05. Default: 0
 	:velop: Maximum gate opening velocity (Velop).  Unit = PU/sec. Typical Value = 0.2. Default: 0.0
 	:velcl: Maximum gate closing velocity (Velcl).  Unit = PU/sec.  Typical Value = -0.2. Default: 0.0
 	:k1: Derivative gain (K1).  Typical Value = 0.01. Default: 0.0
 	:k2: Double derivative gain, if Cflag = -1 (K2).  Typical Value = 2.5. Default: 0.0
 	:ki: Integral gain (Ki).  Typical Value = 0.5. Default: 0.0
 	:kg: Gate servo gain (Kg).  Typical Value = 2. Default: 0.0
-	:tt: Power feedback time constant (Tt).  Typical Value = 0.2. Default: 0.0
+	:tt: Power feedback time constant (Tt).  Typical Value = 0.2. Default: 0
 	:db1: Intentional dead-band width (db1).  Unit = Hz.  Typical Value = 0. Default: 0.0
 	:eps: Intentional db hysteresis (eps).  Unit = Hz.  Typical Value = 0. Default: 0.0
 	:db2: Unintentional dead-band (db2).  Unit = MW.  Typical Value = 0. Default: 0.0
-	:tw: Water inertia time constant (Tw).  Typical Value = 1. Default: 0.0
+	:tw: Water inertia time constant (Tw).  Typical Value = 1. Default: 0
 	:at: Turbine gain (At).  Typical Value = 1.2. Default: 0.0
 	:dturb: Turbine damping factor (Dturb).  Typical Value = 0.2. Default: 0.0
 	:qnl: No-load turbine flow at nominal head (Qnl).  Typical Value = 0.08. Default: 0.0
@@ -88,7 +88,7 @@ class GovHydro3(TurbineGovernorDynamics):
 
 	__doc__ += '\n Documentation of parent class TurbineGovernorDynamics: \n' + TurbineGovernorDynamics.__doc__ 
 
-	def __init__(self, mwbase = 0.0, pmax = 0.0, pmin = 0.0, governorControl = False, rgate = 0.0, relec = 0.0, td = 0.0, tf = 0.0, tp = 0.0, velop = 0.0, velcl = 0.0, k1 = 0.0, k2 = 0.0, ki = 0.0, kg = 0.0, tt = 0.0, db1 = 0.0, eps = 0.0, db2 = 0.0, tw = 0.0, at = 0.0, dturb = 0.0, qnl = 0.0, h0 = 0.0, gv1 = 0.0, pgv1 = 0.0, gv2 = 0.0, pgv2 = 0.0, gv3 = 0.0, pgv3 = 0.0, gv4 = 0.0, pgv4 = 0.0, gv5 = 0.0, pgv5 = 0.0, gv6 = 0.0, pgv6 = 0.0,  *args, **kw_args):
+	def __init__(self, mwbase = 0.0, pmax = 0.0, pmin = 0.0, governorControl = False, rgate = 0.0, relec = 0.0, td = 0, tf = 0, tp = 0, velop = 0.0, velcl = 0.0, k1 = 0.0, k2 = 0.0, ki = 0.0, kg = 0.0, tt = 0, db1 = 0.0, eps = 0.0, db2 = 0.0, tw = 0, at = 0.0, dturb = 0.0, qnl = 0.0, h0 = 0.0, gv1 = 0.0, pgv1 = 0.0, gv2 = 0.0, pgv2 = 0.0, gv3 = 0.0, pgv3 = 0.0, gv4 = 0.0, pgv4 = 0.0, gv5 = 0.0, pgv5 = 0.0, gv6 = 0.0, pgv6 = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.mwbase = mwbase
