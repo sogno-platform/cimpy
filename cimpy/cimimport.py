@@ -94,6 +94,10 @@ def _instantiate_classes(import_result, xml_files, cgmes_version_path, namespace
 
         logger.info('START of parsing file \"%s\"', xml_file)
 
+        # Reset stream
+        if hasattr(xml_file, "seek"):
+            xml_file.seek(0)
+
         # get an iterable
         context = etree.iterparse(xml_file, ("start", "end"))
 
@@ -194,6 +198,10 @@ def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_groupe
 
         # get an iterable and turn it into an iterator (required for cElementTree).
         context = iter(etree.iterparse(xml_file, ("start", "end")))
+
+        # Reset stream
+        if hasattr(xml_file, "seek"):
+            xml_file.seek(0)
 
         # Get the root element ({http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF).
         _, root = next(context)
