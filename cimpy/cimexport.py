@@ -293,13 +293,13 @@ def cim_export(import_result, file_name, version, activeProfileList):
     set_attributes_or_reference function is a lamda function for chevron to decide whether the value of an attribute is
     a reference to another class object or not.
 
-    :param import_result: a dictionary containing the topology and meta information. The topology can be extracted via
-    import_result['topology']. The topology dictionary contains all objects accessible via their mRID. The meta
-    information can be extracted via import_result['meta_info']. The meta_info dictionary contains a new dictionary with
-    the keys: 'author', 'namespaces' and 'urls'. The last two are also dictionaries. 'urls' contains a mapping
-    between references to URLs and the extracted value of the URL, e.g. 'absoluteValue':
-    'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue' These mappings are accessible
-    via the name of the attribute, e.g. import_result['meta_info']['urls'}[attr_name] = {mapping like example above}.
+    :param import_result: a dictionary containing the topology and meta information. The topology can be extracted via \
+    import_result['topology']. The topology dictionary contains all objects accessible via their mRID. The meta \
+    information can be extracted via import_result['meta_info']. The meta_info dictionary contains a new dictionary with \
+    the keys: 'author', 'namespaces' and 'urls'. The last two are also dictionaries. 'urls' contains a mapping \
+    between references to URLs and the extracted value of the URL, e.g. 'absoluteValue': \
+    'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue' These mappings are accessible \
+    via the name of the attribute, e.g. import_result['meta_info']['urls'}[attr_name] = {mapping like example above}. \
     'namespaces' is a dictionary containing all RDF namespaces used in the imported xml files.
     :param file_name: a string with the name of the xml files which will be created
     :param version: cgmes version, e.g. version = "cgmes_v2_4_15"
