@@ -3,7 +3,7 @@ import os
 from tempfile import mkstemp
 from shutil import move, copy
 
-directory = os.path.abspath(os.path.join('..', 'documentation-build'))
+directory = os.path.abspath(os.path.join('..', 'documentation'))
 
 # if 'conf.py' in os.listdir(directory):
 #     conf_file = os.path.abspath(os.path.join(directory, 'conf.py'))
@@ -32,7 +32,7 @@ for file in os.listdir(directory):
                         if 'automodule' in line:
                             name = line.split('::')[1]
                         elif 'show-inheritance' in line:
-                            new_file.write('Inheritance Diagram:\n')
+                            new_file.write('\nInheritance Diagram:\n')
                             new_file.write('""""""""""""""""""""\n')
                             new_file.write('.. inheritance-diagram:: ' + name)
                             new_file.write('    :parts: 1')
