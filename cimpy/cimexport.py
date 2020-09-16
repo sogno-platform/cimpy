@@ -5,6 +5,7 @@ from datetime import datetime
 from enum import Enum
 from time import time
 import logging
+import sys
 
 logger = logging.getLogger(__name__)
 
@@ -320,21 +321,25 @@ def cim_export(import_result, file_name, version, activeProfileList):
         full_path = os.path.join(cwd, full_file_name)
 
         if not os.path.exists(full_path):
+            output = generate_xml(import_result, version, file_name, profile, profile_list)
+
             with open(full_path, 'w') as file:
                 logger.info('Write file \"%s\"', full_path)
 
-                output = generate_xml(import_result, version, profile_short_name, file_name, activeProfileList)
-
                 file.write(output)
         else:
-            logger.warning('File {} already exists in path {}. Delete file or change file name to serialize CGMES '
+            logger.error('File {} already exists in path {}. Delete file or change file name to serialize CGMES '
                            'classes.'.format(full_file_name, cwd))
+            print('[ERROR:] File {} already exists in path {}. Delete file or change file name to serialize CGMES '
+                           'classes.'.format(full_file_name, cwd), file=sys.stderr)
+            os.chdir(cwd)
+            exit(-1)
+
     os.chdir(cwd)
     logger.info('End export procedure. Elapsed time: {}'.format(time() - t0))
 
 
-# TODO: activeProfileList -> active Profile enum
-def generate_xml(cim_data, version, profile, model_name, available_profiles):
+def generate_xml(cim_data, version, model_name, profile, available_profiles):
     """Function for serialization of cgmes classes
 
     This function serializes cgmes classes with the template engine chevron and returns them as a string.
@@ -437,7 +442,7 @@ def _get_attributes(class_object):
         # get all possibleProfileLists from all parent classes except the Base class (no attributes)
         # the serializationProfile from parent classes is not needed because entries in the serializationProfile
         # are only generated for the inherited class
-        if class_name is not 'Base':
+        if class_name != 'Base':
             attributes_dict['possibleProfileList'][class_name] = parent_class.possibleProfileList
 
     return attributes_dict
