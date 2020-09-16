@@ -311,70 +311,93 @@ def cim_export(import_result, file_name, version, activeProfileList):
     t0 = time()
     logger.info('Start export procedure.')
 
-    # returns all classes with their attributes and resolved references
-    class_attributes_list = _get_class_attributes_with_references(import_result, version)
-
-    # determine class and attribute export profiles. The export dict contains all classes and their attributes where
-    # the class definition and the attribute definitions are in the same profile. Every entry in about_dict generates
-    # a rdf:about in another profile
-    export_dict, about_dict = _sort_classes_to_profile(class_attributes_list, activeProfileList)
-
-    namespaces_list = _create_namespaces_list(import_result['meta_info']['namespaces'])
-
-    # get information for Model header
-    created = {'attr_name': 'created', 'value': datetime.now().strftime("%d/%m/%Y %H:%M:%S")}
-    authority = {'attr_name': 'modelingAuthoritySet', 'value': 'www.acs.eonerc.rwth-aachen.de'}
-
     # iterate over all profiles
-    for profile_name, short_name in short_profile_name.items():
-        model_name \
-            = {'mRID': file_name, 'description': []}
-        model_description = {'model': [model_name]}
-        model_description['model'][0]['description'].append(created)
-        model_description['model'][0]['description'].append(authority)
-
-        if short_name not in export_dict.keys() and short_name not in about_dict.keys():
-            # nothing to do for current profile
-            continue
-        else:
-            # extract class lists from export_dict and about_dict
-            if short_name in export_dict.keys():
-                classes = export_dict[short_name]['classes']
-            else:
-                classes = False
-
-            if short_name in about_dict.keys():
-                about = about_dict[short_name]['classes']
-            else:
-                about = False
+    for profile_name, profile_short_name in filter(lambda a: a[1] in activeProfileList, short_profile_name.items()):
 
         # File name
         full_file_name = file_name + '_' + profile_name + '.xml'
 
         full_path = os.path.join(cwd, full_file_name)
 
-        profile = {'attr_name': 'profile', 'value': profile_name}
-        model_description['model'][0]['description'].append(profile)
-
         if not os.path.exists(full_path):
             with open(full_path, 'w') as file:
                 logger.info('Write file \"%s\"', full_path)
 
-                with open('export_template.mustache') as f:
-                    output = chevron.render(f, {"classes": classes,
-                                                "about": about,
-                                                "set_attributes_or_reference": _set_attribute_or_reference,
-                                                "set_attributes_or_reference_model": _set_attribute_or_reference_model,
-                                                "namespaces": namespaces_list,
-                                                "model": model_description['model']})
+                output = generate_xml(import_result, version, profile_short_name, file_name, activeProfileList)
+
                 file.write(output)
         else:
             logger.warning('File {} already exists in path {}. Delete file or change file name to serialize CGMES '
                            'classes.'.format(full_file_name, cwd))
-        del model_description, model_name
     os.chdir(cwd)
     logger.info('End export procedure. Elapsed time: {}'.format(time() - t0))
 
+
+# TODO: activeProfileList -> active Profile enum
+def generate_xml(cim_data, version, profile, model_name, available_profiles):
+    """Function for serialization of cgmes classes
+
+    This function serializes cgmes classes with the template engine chevron and returns them as a string.
+
+    :param cim_data: a dictionary containing the topology and meta information. It can be created via :func:`~cimimport.cimimport()`
+    :param version: cgmes version, e.g. version = "cgmes_v2_4_15"
+    :param profile: The profile for which the serialization should be generated. . Possible values are TODO: enum
+    :param model_name: a string with the name of the model.
+    :param available_profiles: a list containing the strings of all short names of the profiles in `cim_data`
+    """
+
+    # returns all classes with their attributes and resolved references
+    class_attributes_list = _get_class_attributes_with_references(
+        cim_data, version)
+
+    # determine class and attribute export profiles. The export dict contains all classes and their attributes where
+    # the class definition and the attribute definitions are in the same profile. Every entry in about_dict generates
+    # a rdf:about in another profile
+    export_dict, about_dict = _sort_classes_to_profile(
+        class_attributes_list, available_profiles)
+
+    namespaces_list = _create_namespaces_list(
+        cim_data['meta_info']['namespaces'])
+
+    # short_name = profile.name
+    short_name = profile
+
+    if short_name not in export_dict.keys() and short_name not in about_dict.keys():
+        raise RuntimeError("Profile not available for export")
+
+    # extract class lists from export_dict and about_dict
+    if short_name in export_dict.keys():
+        classes = export_dict[short_name]['classes']
+    else:
+        classes = False
+
+    if short_name in about_dict.keys():
+        about = about_dict[short_name]['classes']
+    else:
+        about = False
+
+    #Model header
+    model_description = {
+        'mRID': model_name,
+        'description': [
+            {'attr_name': 'created', 'value': datetime.now().strftime(
+                "%d/%m/%Y %H:%M:%S")},
+            {'attr_name': 'modelingAuthoritySet',
+             'value': 'www.acs.eonerc.rwth-aachen.de'},
+            {'attr_name': 'profile',
+             'value': long_profile_name[short_name]}
+        ]
+    }
+
+    with open('export_template.mustache') as f:
+        output = chevron.render(f, {"classes": classes,
+                                    "about": about,
+                                    "set_attributes_or_reference": _set_attribute_or_reference,
+                                    "set_attributes_or_reference_model": _set_attribute_or_reference_model,
+                                    "namespaces": namespaces_list,
+                                    "model": [model_description]})
+    del model_description
+    return output
 
 # This function extracts all attributes from class_object in the form of Class_Name.Attribute_Name
 def _get_attributes(class_object):
@@ -429,6 +452,15 @@ short_profile_name = {
     "StateVariables": "SV",
     "SteadyStateHypothesis": "SSH",
     "Topology": "TP"
+}
+long_profile_name = {
+    'DI': "DiagramLayout",
+    "DY": "Dynamics",
+    "EQ": "Equipment",
+    "GL": "GeographicalLocation",
+    "SV": "StateVariables",
+    "SSH": "SteadyStateHypothesis",
+    "TP": "Topology",
 }
 
 # Enum containing all profiles and their export priority
