@@ -2,8 +2,8 @@ import os
 import importlib
 import chevron
 from datetime import datetime
-from enum import Enum
 from time import time
+from cimpy.cgmes import Profile
 import logging
 import sys
 
@@ -178,9 +178,9 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
 
         if 'class' in serializationProfile.keys():
             # class was imported
-            if serializationProfile['class'] in activeProfileList:
+            if Profile[serializationProfile['class']] in activeProfileList:
                 # else: class origin profile not active for export, get active profile from possibleProfileList
-                if cgmesProfile[serializationProfile['class']].value in possibleProfileList[klass['name']]['class']:
+                if Profile[serializationProfile['class']].value in possibleProfileList[klass['name']]['class']:
                     # profile active and in possibleProfileList
                     # else: class should not have been imported from this profile, get allowed profile
                     # from possibleProfileList
@@ -198,9 +198,9 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                 if 'class' in possibleProfileList[klass['name']].keys():
                     possibleProfileList[klass['name']]['class'].sort()
                     for klass_profile in possibleProfileList[klass['name']]['class']:
-                        if cgmesProfile(klass_profile).name in activeProfileList:
+                        if Profile[klass_profile].name in activeProfileList:
                             # active profile for class export found
-                            class_serializationProfile = cgmesProfile(klass_profile).name
+                            class_serializationProfile = Profile[klass_profile].name
                             break
                     if class_serializationProfile == '':
                         # no profile in possibleProfileList active
@@ -226,8 +226,8 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
 
                 if attribute_name in serializationProfile.keys():
                     # attribute was imported
-                    if serializationProfile[attribute_name] in activeProfileList:
-                        attr_value = cgmesProfile[serializationProfile[attribute_name]].value
+                    if Profile[serializationProfile[attribute_name]] in activeProfileList:
+                        attr_value = Profile[serializationProfile[attribute_name]].value
                         if attr_value in possibleProfileList[attribute_class][attribute_name]:
                             attribute_serializationProfile = serializationProfile[attribute_name]
 
@@ -237,9 +237,9 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                         if attribute_name in possibleProfileList[attribute_class].keys():
                             possibleProfileList[attribute_class][attribute_name].sort()
                             for attr_profile in possibleProfileList[attribute_class][attribute_name]:
-                                if cgmesProfile(attr_profile).name in activeProfileList:
+                                if Profile(attr_profile) in activeProfileList:
                                     # active profile for class export found
-                                    attribute_serializationProfile = cgmesProfile(attr_profile).name
+                                    attribute_serializationProfile = Profile(attr_profile).name
                                     break
                             if attribute_serializationProfile == '':
                                 # no profile in possibleProfileList active, skip attribute
@@ -312,11 +312,13 @@ def cim_export(import_result, file_name, version, activeProfileList):
     t0 = time()
     logger.info('Start export procedure.')
 
+    profile_list = list(map(lambda a: Profile[a], activeProfileList))
+
     # iterate over all profiles
-    for profile_name, profile_short_name in filter(lambda a: a[1] in activeProfileList, short_profile_name.items()):
+    for profile in profile_list:
 
         # File name
-        full_file_name = file_name + '_' + profile_name + '.xml'
+        full_file_name = file_name + '_' + profile.long_name() + '.xml'
 
         full_path = os.path.join(cwd, full_file_name)
 
@@ -346,9 +348,9 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
 
     :param cim_data: a dictionary containing the topology and meta information. It can be created via :func:`~cimimport.cimimport()`
     :param version: cgmes version, e.g. version = "cgmes_v2_4_15"
-    :param profile: The profile for which the serialization should be generated. . Possible values are TODO: enum
+    :param profile: The :class:`~cgmes.Profile` for which the serialization should be generated. . Possible values are TODO: enum
     :param model_name: a string with the name of the model.
-    :param available_profiles: a list containing the strings of all short names of the profiles in `cim_data`
+    :param available_profiles: a list of all :class:`~cgmes.Profile`s in `cim_data`
     """
 
     # returns all classes with their attributes and resolved references
@@ -364,20 +366,17 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
     namespaces_list = _create_namespaces_list(
         cim_data['meta_info']['namespaces'])
 
-    # short_name = profile.name
-    short_name = profile
-
-    if short_name not in export_dict.keys() and short_name not in about_dict.keys():
+    if profile.name not in export_dict.keys() and profile.name not in about_dict.keys():
         raise RuntimeError("Profile not available for export")
 
     # extract class lists from export_dict and about_dict
-    if short_name in export_dict.keys():
-        classes = export_dict[short_name]['classes']
+    if profile.name in export_dict.keys():
+        classes = export_dict[profile.name]['classes']
     else:
         classes = False
 
-    if short_name in about_dict.keys():
-        about = about_dict[short_name]['classes']
+    if profile.name in about_dict.keys():
+        about = about_dict[profile.name]['classes']
     else:
         about = False
 
@@ -390,7 +389,7 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
             {'attr_name': 'modelingAuthoritySet',
              'value': 'www.acs.eonerc.rwth-aachen.de'},
             {'attr_name': 'profile',
-             'value': long_profile_name[short_name]}
+             'value': profile.long_name()}
         ]
     }
 
@@ -446,27 +445,3 @@ def _get_attributes(class_object):
             attributes_dict['possibleProfileList'][class_name] = parent_class.possibleProfileList
 
     return attributes_dict
-
-
-# Mapping between the profiles and their short names
-short_profile_name = {
-    "DiagramLayout": 'DI',
-    "Dynamics": "DY",
-    "Equipment": "EQ",
-    "GeographicalLocation": "GL",
-    "StateVariables": "SV",
-    "SteadyStateHypothesis": "SSH",
-    "Topology": "TP"
-}
-long_profile_name = {
-    'DI': "DiagramLayout",
-    "DY": "Dynamics",
-    "EQ": "Equipment",
-    "GL": "GeographicalLocation",
-    "SV": "StateVariables",
-    "SSH": "SteadyStateHypothesis",
-    "TP": "Topology",
-}
-
-# Enum containing all profiles and their export priority
-cgmesProfile = Enum("cgmesProfile", {"EQ": 0, "SSH": 1, "TP": 2, "SV": 3, "DY": 4, "GL": 5, "DI": 6})
