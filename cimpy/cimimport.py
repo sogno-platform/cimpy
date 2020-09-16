@@ -150,7 +150,7 @@ def _instantiate_classes(import_result, xml_files, cgmes_version_path, namespace
                     if hasattr(topology[uuid], 'mRID'):
                         topology[uuid].mRID = uuid
 
-                    if package is not '':
+                    if package != '':
                         topology[uuid].serializationProfile['class'] = short_package_name[package]
                     else:
                         error_msg = 'Package information not found for class {}'.format(
@@ -344,7 +344,7 @@ def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_groupe
                                         val = uuid2.rsplit(".", 1)[1]
                                         setattr(obj, attr, val)
 
-                                if package is not '':
+                                if package != '':
                                     obj.serializationProfile[attr] = short_package_name[package]
                                 else:
                                     error_msg = 'Package information not found for class {}, attribute {}'.format(
