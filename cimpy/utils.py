@@ -1,8 +1,8 @@
 import importlib
-import cimpy
-
 
 def node_breaker_to_bus_branch(import_result):
+    """TODO: Add documentation
+    """
     res = import_result['topology']
     breaker_list = []
     terminals_list = []
@@ -86,6 +86,8 @@ def node_breaker_to_bus_branch(import_result):
 
 
 def add_external_network_injection(import_result, version, mRID, voltage_set_point):
+    """TODO: Add documentation
+    """
     res = import_result['topology']
     TopologicalNode = ''
     if mRID in res:

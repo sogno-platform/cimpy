@@ -35,7 +35,7 @@ for file in os.listdir(directory):
                             new_file.write('\nInheritance Diagram:\n')
                             new_file.write('""""""""""""""""""""\n')
                             new_file.write('.. inheritance-diagram:: ' + name)
-                            new_file.write('    :parts: 1')
+                            new_file.write('    :parts: 1\n')
                             new_file.write('')
                             new_file.write('')
 

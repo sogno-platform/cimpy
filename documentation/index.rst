@@ -30,5 +30,4 @@ Contact
 
    Install
    Start
-   Functions
-   Versions
+   cimpy
