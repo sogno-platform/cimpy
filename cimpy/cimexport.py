@@ -3,7 +3,7 @@ import importlib
 import chevron
 from datetime import datetime
 from time import time
-from cimpy.cgmes import Profile
+from cimpy.cgmes_v2_4_15.Base import Profile
 import logging
 import sys
 
