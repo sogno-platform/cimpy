@@ -8,7 +8,7 @@ from pathlib import Path
 logging.basicConfig(filename='Test_export_with_exported_files.log', level=logging.INFO, filemode='w')
 
 short_profile_name = {
-    "DiagramLayout": 'DI',
+    "DiagramLayout": 'DL',
     "Dynamics": "DY",
     "Equipment": "EQ",
     "GeographicalLocation": "GL",

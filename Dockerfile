@@ -28,6 +28,8 @@ RUN pip3 install pytest
 
 RUN pip3 install pytest-check
 
-# ADD . /cimpy
+ADD . /cimpy
 
-# WORKDIR /cimpy
+WORKDIR /cimpy
+
+RUN python3 setup.py install

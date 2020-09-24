@@ -2,7 +2,7 @@ from enum import Enum
 
 # Mapping between the profiles and their short names
 short_profile_name = {
-    "DiagramLayout": 'DI',
+    "DiagramLayout": 'DL',
     "Dynamics": "DY",
     "Equipment": "EQ",
     "GeographicalLocation": "GL",
@@ -11,6 +11,7 @@ short_profile_name = {
     "Topology": "TP"
 }
 long_profile_name = {
+    'DL': "DiagramLayout",
     'DI': "DiagramLayout",
     "DY": "Dynamics",
     "EQ": "Equipment",
