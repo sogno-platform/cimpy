@@ -9,5 +9,5 @@ cimpy consists of the following modules:
    cimpy.cgmes_v2_4_15
    cimpy.cimexport
    cimpy.cimimport
-   cimpy.examples
+   cimpy.cimexamples
    cimpy.utils
