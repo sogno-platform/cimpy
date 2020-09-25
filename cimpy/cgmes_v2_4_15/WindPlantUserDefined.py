@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.WindPlantDynamics import WindPlantDynamics
+from .WindPlantDynamics import WindPlantDynamics
 
 
 class WindPlantUserDefined(WindPlantDynamics):

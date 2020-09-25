@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.RotatingMachineDynamics import RotatingMachineDynamics
+from .RotatingMachineDynamics import RotatingMachineDynamics
 
 
 class SynchronousMachineDynamics(RotatingMachineDynamics):
@@ -9,7 +9,7 @@ class SynchronousMachineDynamics(RotatingMachineDynamics):
 	:TurbineGovernorDynamics: Synchronous machine model with which this turbine-governor model is associated. Default: "list"
 	:ExcitationSystemDynamics: Excitation system model associated with this synchronous machine model. Default: None
 	:MechanicalLoadDynamics: Mechanical load model associated with this synchronous machine model. Default: None
-	:GenICompensationForGenJ: Compensation of voltage compensator's generator for current flow out of this  generator. Default: "list"
+	:GenICompensationForGenJ: Compensation of voltage compensator`s generator for current flow out of this  generator. Default: "list"
 		'''
 
 	cgmesProfile = RotatingMachineDynamics.cgmesProfile

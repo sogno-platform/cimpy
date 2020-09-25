@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.Equipment import Equipment
+from .Equipment import Equipment
 
 
 class GeneratingUnit(Equipment):
@@ -13,7 +13,7 @@ class GeneratingUnit(Equipment):
 	:maxOperatingP: This is the maximum operating active power limit the dispatcher can enter for this unit. Default: 0.0
 	:minOperatingP: This is the minimum operating active power limit the dispatcher can enter for this unit. Default: 0.0
 	:nominalP: The nominal power of the generating unit.  Used to give precise meaning to percentage based attributes such as the governor speed change droop (governorSCD attribute). The attribute shall be a positive value equal or less than RotatingMachine.ratedS. Default: 0.0
-	:ratedGrossMaxP: The unit's gross rated maximum capacity (book value). Default: 0.0
+	:ratedGrossMaxP: The unit`s gross rated maximum capacity (book value). Default: 0.0
 	:ratedGrossMinP: The gross rated minimum generation level which the unit can safely operate at while delivering power to the transmission grid. Default: 0.0
 	:ratedNetMaxP: The net rated maximum capacity determined by subtracting the auxiliary power used to operate the internal plant machinery from the rated gross maximum capacity. Default: 0.0
 	:shortPF: Generating unit short term economic participation factor. Default: 0.0
@@ -22,6 +22,7 @@ class GeneratingUnit(Equipment):
 	:totalEfficiency: The efficiency of the unit in converting the fuel into electrical energy. Default: 0.0
 	:ControlAreaGeneratingUnit: ControlArea specifications for this generating unit. Default: "list"
 	:RotatingMachine: A synchronous machine may operate as a generator and as such becomes a member of a generating unit. Default: "list"
+	:GrossToNetActivePowerCurves: A generating unit may have a gross active power to net active power curve, describing the losses and auxiliary power requirements of the unit. Default: "list"
 	:normalPF: Generating unit economic participation factor. Default: 0.0
 		'''
 
@@ -45,6 +46,7 @@ class GeneratingUnit(Equipment):
 						'totalEfficiency': [cgmesProfile.EQ.value, ],
 						'ControlAreaGeneratingUnit': [cgmesProfile.EQ.value, ],
 						'RotatingMachine': [cgmesProfile.EQ.value, ],
+						'GrossToNetActivePowerCurves': [cgmesProfile.EQ.value, ],
 						'normalPF': [cgmesProfile.SSH.value, ],
 						 }
 
@@ -52,7 +54,7 @@ class GeneratingUnit(Equipment):
 
 	__doc__ += '\n Documentation of parent class Equipment: \n' + Equipment.__doc__ 
 
-	def __init__(self, genControlSource = None, governorSCD = 0.0, initialP = 0.0, longPF = 0.0, maximumAllowableSpinningReserve = 0.0, maxOperatingP = 0.0, minOperatingP = 0.0, nominalP = 0.0, ratedGrossMaxP = 0.0, ratedGrossMinP = 0.0, ratedNetMaxP = 0.0, shortPF = 0.0, startupCost = 0.0, variableCost = 0.0, totalEfficiency = 0.0, ControlAreaGeneratingUnit = "list", RotatingMachine = "list", normalPF = 0.0,  *args, **kw_args):
+	def __init__(self, genControlSource = None, governorSCD = 0.0, initialP = 0.0, longPF = 0.0, maximumAllowableSpinningReserve = 0.0, maxOperatingP = 0.0, minOperatingP = 0.0, nominalP = 0.0, ratedGrossMaxP = 0.0, ratedGrossMinP = 0.0, ratedNetMaxP = 0.0, shortPF = 0.0, startupCost = 0.0, variableCost = 0.0, totalEfficiency = 0.0, ControlAreaGeneratingUnit = "list", RotatingMachine = "list", GrossToNetActivePowerCurves = "list", normalPF = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.genControlSource = genControlSource
@@ -72,6 +74,7 @@ class GeneratingUnit(Equipment):
 		self.totalEfficiency = totalEfficiency
 		self.ControlAreaGeneratingUnit = ControlAreaGeneratingUnit
 		self.RotatingMachine = RotatingMachine
+		self.GrossToNetActivePowerCurves = GrossToNetActivePowerCurves
 		self.normalPF = normalPF
 		
 	def __str__(self):

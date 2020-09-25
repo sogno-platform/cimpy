@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from .Base import Base
 
 
 class IdentifiedObject(Base):
@@ -15,13 +15,13 @@ class IdentifiedObject(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DI.value, cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.GL.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, cgmesProfile.TP.value, ],
-						'DiagramObjects': [cgmesProfile.DI.value, ],
-						'mRID': [cgmesProfile.DI.value, cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.GL.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, cgmesProfile.TP.value, ],
-						'name': [cgmesProfile.DI.value, cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.GL.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, cgmesProfile.TP.value, ],
-						'description': [cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.TP.value, ],
-						'energyIdentCodeEic': [cgmesProfile.EQ.value, cgmesProfile.TP.value, ],
-						'shortName': [cgmesProfile.EQ.value, cgmesProfile.TP.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DL.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.SV.value, cgmesProfile.GL.value, cgmesProfile.DY.value, cgmesProfile.TP.value, cgmesProfile.TP_BD.value, cgmesProfile.EQ_BD.value, ],
+						'DiagramObjects': [cgmesProfile.DL.value, ],
+						'mRID': [cgmesProfile.DL.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.SV.value, cgmesProfile.GL.value, cgmesProfile.DY.value, cgmesProfile.TP.value, cgmesProfile.TP_BD.value, cgmesProfile.EQ_BD.value, ],
+						'name': [cgmesProfile.DL.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.SV.value, cgmesProfile.GL.value, cgmesProfile.DY.value, cgmesProfile.TP.value, cgmesProfile.TP_BD.value, cgmesProfile.EQ_BD.value, ],
+						'description': [cgmesProfile.EQ.value, cgmesProfile.DY.value, cgmesProfile.TP.value, cgmesProfile.TP_BD.value, cgmesProfile.EQ_BD.value, ],
+						'energyIdentCodeEic': [cgmesProfile.EQ.value, cgmesProfile.TP.value, cgmesProfile.TP_BD.value, cgmesProfile.EQ_BD.value, ],
+						'shortName': [cgmesProfile.EQ.value, cgmesProfile.TP.value, cgmesProfile.TP_BD.value, cgmesProfile.EQ_BD.value, ],
 						 }
 
 	serializationProfile = {}

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.LoadGroup import LoadGroup
+from .LoadGroup import LoadGroup
 
 
 class NonConformLoadGroup(LoadGroup):

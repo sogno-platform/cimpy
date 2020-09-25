@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.Switch import Switch
+from .Switch import Switch
 
 
 class Disconnector(Switch):

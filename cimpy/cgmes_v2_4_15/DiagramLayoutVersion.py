@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from .Base import Base
 
 
 class DiagramLayoutVersion(Base):
@@ -19,17 +19,17 @@ class DiagramLayoutVersion(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
-						'baseUML': [cgmesProfile.DI.value, ],
-						'baseURI': [cgmesProfile.DI.value, ],
-						'date': [cgmesProfile.DI.value, ],
-						'differenceModelURI': [cgmesProfile.DI.value, ],
-						'entsoeUML': [cgmesProfile.DI.value, ],
-						'entsoeURI': [cgmesProfile.DI.value, ],
-						'modelDescriptionURI': [cgmesProfile.DI.value, ],
-						'namespaceRDF': [cgmesProfile.DI.value, ],
-						'namespaceUML': [cgmesProfile.DI.value, ],
-						'shortName': [cgmesProfile.DI.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DL.value, ],
+						'baseUML': [cgmesProfile.DL.value, ],
+						'baseURI': [cgmesProfile.DL.value, ],
+						'date': [cgmesProfile.DL.value, ],
+						'differenceModelURI': [cgmesProfile.DL.value, ],
+						'entsoeUML': [cgmesProfile.DL.value, ],
+						'entsoeURI': [cgmesProfile.DL.value, ],
+						'modelDescriptionURI': [cgmesProfile.DL.value, ],
+						'namespaceRDF': [cgmesProfile.DL.value, ],
+						'namespaceUML': [cgmesProfile.DL.value, ],
+						'shortName': [cgmesProfile.DL.value, ],
 						 }
 
 	serializationProfile = {}

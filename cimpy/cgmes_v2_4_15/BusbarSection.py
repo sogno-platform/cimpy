@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.Connector import Connector
+from .Connector import Connector
 
 
 class BusbarSection(Connector):

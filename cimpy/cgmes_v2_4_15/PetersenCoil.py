@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.EarthFaultCompensator import EarthFaultCompensator
+from .EarthFaultCompensator import EarthFaultCompensator
 
 
 class PetersenCoil(EarthFaultCompensator):

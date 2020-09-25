@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.Curve import Curve
+from .Curve import Curve
 
 
 class ReactiveCapabilityCurve(Curve):

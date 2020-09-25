@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.PowerSystemResource import PowerSystemResource
+from .PowerSystemResource import PowerSystemResource
 
 
 class RegulatingControl(PowerSystemResource):
@@ -8,6 +8,7 @@ class RegulatingControl(PowerSystemResource):
 	:Terminal: The controls regulating this terminal. Default: None
 	:RegulatingCondEq: The equipment that participates in this regulating control scheme. Default: "list"
 	:mode: The regulating control mode presently available.  This specification allows for determining the kind of regulation without need for obtaining the units from a schedule. Default: None
+	:RegulationSchedule: Schedule for this Regulating regulating control. Default: "list"
 	:discrete: The regulation is performed in a discrete mode. This applies to equipment with discrete controls, e.g. tap changers and shunt compensators. Default: False
 	:enabled: The flag tells if regulation is enabled. Default: False
 	:targetDeadband: This is a deadband used with discrete control to avoid excessive update of controls like tap changers and shunt compensator banks while regulating. The units of those appropriate for the mode. Default: 0.0
@@ -21,6 +22,7 @@ class RegulatingControl(PowerSystemResource):
 						'Terminal': [cgmesProfile.EQ.value, ],
 						'RegulatingCondEq': [cgmesProfile.EQ.value, ],
 						'mode': [cgmesProfile.EQ.value, ],
+						'RegulationSchedule': [cgmesProfile.EQ.value, ],
 						'discrete': [cgmesProfile.SSH.value, ],
 						'enabled': [cgmesProfile.SSH.value, ],
 						'targetDeadband': [cgmesProfile.SSH.value, ],
@@ -32,12 +34,13 @@ class RegulatingControl(PowerSystemResource):
 
 	__doc__ += '\n Documentation of parent class PowerSystemResource: \n' + PowerSystemResource.__doc__ 
 
-	def __init__(self, Terminal = None, RegulatingCondEq = "list", mode = None, discrete = False, enabled = False, targetDeadband = 0.0, targetValue = 0.0, targetValueUnitMultiplier = None,  *args, **kw_args):
+	def __init__(self, Terminal = None, RegulatingCondEq = "list", mode = None, RegulationSchedule = "list", discrete = False, enabled = False, targetDeadband = 0.0, targetValue = 0.0, targetValueUnitMultiplier = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.Terminal = Terminal
 		self.RegulatingCondEq = RegulatingCondEq
 		self.mode = mode
+		self.RegulationSchedule = RegulationSchedule
 		self.discrete = discrete
 		self.enabled = enabled
 		self.targetDeadband = targetDeadband

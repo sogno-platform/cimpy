@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.OverexcitationLimiterDynamics import OverexcitationLimiterDynamics
+from .OverexcitationLimiterDynamics import OverexcitationLimiterDynamics
 
 
 class OverexcitationLimiterUserDefined(OverexcitationLimiterDynamics):

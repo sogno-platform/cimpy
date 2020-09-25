@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.VoltageAdjusterDynamics import VoltageAdjusterDynamics
+from .VoltageAdjusterDynamics import VoltageAdjusterDynamics
 
 
 class VAdjIEEE(VoltageAdjusterDynamics):

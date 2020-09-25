@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.EquipmentContainer import EquipmentContainer
+from .EquipmentContainer import EquipmentContainer
 
 
 class VoltageLevel(EquipmentContainer):
@@ -7,8 +7,9 @@ class VoltageLevel(EquipmentContainer):
 
 	:BaseVoltage: The base voltage used for all equipment within the voltage level. Default: None
 	:Substation: The substation of the voltage level. Default: None
-	:highVoltageLimit: The bus bar's high voltage limit Default: 0.0
-	:lowVoltageLimit: The bus bar's low voltage limit Default: 0.0
+	:highVoltageLimit: The bus bar`s high voltage limit Default: 0.0
+	:lowVoltageLimit: The bus bar`s low voltage limit Default: 0.0
+	:Bays: The bays within this voltage level. Default: "list"
 		'''
 
 	cgmesProfile = EquipmentContainer.cgmesProfile
@@ -18,19 +19,21 @@ class VoltageLevel(EquipmentContainer):
 						'Substation': [cgmesProfile.EQ.value, ],
 						'highVoltageLimit': [cgmesProfile.EQ.value, ],
 						'lowVoltageLimit': [cgmesProfile.EQ.value, ],
+						'Bays': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class EquipmentContainer: \n' + EquipmentContainer.__doc__ 
 
-	def __init__(self, BaseVoltage = None, Substation = None, highVoltageLimit = 0.0, lowVoltageLimit = 0.0,  *args, **kw_args):
+	def __init__(self, BaseVoltage = None, Substation = None, highVoltageLimit = 0.0, lowVoltageLimit = 0.0, Bays = "list",  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.BaseVoltage = BaseVoltage
 		self.Substation = Substation
 		self.highVoltageLimit = highVoltageLimit
 		self.lowVoltageLimit = lowVoltageLimit
+		self.Bays = Bays
 		
 	def __str__(self):
 		str = 'class=VoltageLevel\n'

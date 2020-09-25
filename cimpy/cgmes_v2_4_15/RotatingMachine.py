@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.RegulatingCondEq import RegulatingCondEq
+from .RegulatingCondEq import RegulatingCondEq
 
 
 class RotatingMachine(RegulatingCondEq):
@@ -16,7 +16,7 @@ class RotatingMachine(RegulatingCondEq):
 
 	cgmesProfile = RegulatingCondEq.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.DY.value, ],
 						'GeneratingUnit': [cgmesProfile.EQ.value, ],
 						'HydroPump': [cgmesProfile.EQ.value, ],
 						'ratedPowerFactor': [cgmesProfile.EQ.value, ],

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from .Base import Base
 
 
 class SVCControlMode(Base):

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
+from .PowerSystemStabilizerDynamics import PowerSystemStabilizerDynamics
 
 
 class PssIEEE1A(PowerSystemStabilizerDynamics):

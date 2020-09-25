@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.VoltageCompensatorDynamics import VoltageCompensatorDynamics
+from .VoltageCompensatorDynamics import VoltageCompensatorDynamics
 
 
 class VCompIEEEType2(VoltageCompensatorDynamics):
@@ -6,7 +6,7 @@ class VCompIEEEType2(VoltageCompensatorDynamics):
 	
 
 	:tr:  Default: 0
-	:GenICompensationForGenJ: Compensation of this voltage compensator's generator for current flow out of another generator. Default: "list"
+	:GenICompensationForGenJ: Compensation of this voltage compensator`s generator for current flow out of another generator. Default: "list"
 		'''
 
 	cgmesProfile = VoltageCompensatorDynamics.cgmesProfile

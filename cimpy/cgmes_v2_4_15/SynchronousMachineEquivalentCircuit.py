@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.SynchronousMachineDetailed import SynchronousMachineDetailed
+from .SynchronousMachineDetailed import SynchronousMachineDetailed
 
 
 class SynchronousMachineEquivalentCircuit(SynchronousMachineDetailed):
@@ -10,7 +10,7 @@ class SynchronousMachineEquivalentCircuit(SynchronousMachineDetailed):
 	:xfd: Field winding leakage reactance. Default: 0.0
 	:r1d: D-axis damper 1 winding resistance. Default: 0.0
 	:x1d: D-axis damper 1 winding leakage reactance. Default: 0.0
-	:xf1d: Differential mutual ("Canay") reactance. Default: 0.0
+	:xf1d: Differential mutual (`Canay`) reactance. Default: 0.0
 	:xaq: Q-axis mutual reactance. Default: 0.0
 	:r1q: Q-axis damper 1 winding resistance. Default: 0.0
 	:x1q: Q-axis damper 1 winding leakage reactance. Default: 0.0

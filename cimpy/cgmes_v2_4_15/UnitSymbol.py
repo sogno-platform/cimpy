@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from .Base import Base
 
 
 class UnitSymbol(Base):
@@ -9,7 +9,7 @@ class UnitSymbol(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DI.value, cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SV.value, cgmesProfile.SSH.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DL.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.SV.value, cgmesProfile.DY.value, cgmesProfile.EQ_BD.value, ],
 						 }
 
 	serializationProfile = {}

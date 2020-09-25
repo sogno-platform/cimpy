@@ -1,11 +1,10 @@
-from cimpy.cgmes_v2_4_15.RotatingMachine import RotatingMachine
+from .RotatingMachine import RotatingMachine
 
 
 class AsynchronousMachine(RotatingMachine):
 	'''
 	A rotating machine whose shaft rotates asynchronously with the electrical field.  Also known as an induction machine with no external connection to the rotor windings, e.g squirrel-cage induction machine.
 
-	:AsynchronousMachineDynamics: Asynchronous machine dynamics model used to describe dynamic behavior of this asynchronous machine. Default: None
 	:nominalFrequency: Nameplate data indicates if the machine is 50 or 60 Hz. Default: 0.0
 	:nominalSpeed: Nameplate data.  Depends on the slip and number of pole pairs. Default: 0.0
 	:converterFedDrive: Indicates whether the machine is a converter fed drive. Used for short circuit data exchange according to IEC 60909 Default: False
@@ -16,12 +15,12 @@ class AsynchronousMachine(RotatingMachine):
 	:reversible: Indicates for converter drive motors if the power can be reversible. Used for short circuit data exchange according to IEC 60909 Default: False
 	:rxLockedRotorRatio: Locked rotor ratio (R/X). Used for short circuit data exchange according to IEC 60909 Default: 0.0
 	:asynchronousMachineType: Indicates the type of Asynchronous Machine (motor or generator). Default: None
+	:AsynchronousMachineDynamics: Asynchronous machine dynamics model used to describe dynamic behavior of this asynchronous machine. Default: None
 		'''
 
 	cgmesProfile = RotatingMachine.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
-						'AsynchronousMachineDynamics': [cgmesProfile.DY.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.DY.value, ],
 						'nominalFrequency': [cgmesProfile.EQ.value, ],
 						'nominalSpeed': [cgmesProfile.EQ.value, ],
 						'converterFedDrive': [cgmesProfile.EQ.value, ],
@@ -32,16 +31,16 @@ class AsynchronousMachine(RotatingMachine):
 						'reversible': [cgmesProfile.EQ.value, ],
 						'rxLockedRotorRatio': [cgmesProfile.EQ.value, ],
 						'asynchronousMachineType': [cgmesProfile.SSH.value, ],
+						'AsynchronousMachineDynamics': [cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}
 
 	__doc__ += '\n Documentation of parent class RotatingMachine: \n' + RotatingMachine.__doc__ 
 
-	def __init__(self, AsynchronousMachineDynamics = None, nominalFrequency = 0.0, nominalSpeed = 0.0, converterFedDrive = False, efficiency = 0.0, iaIrRatio = 0.0, polePairNumber = 0, ratedMechanicalPower = 0.0, reversible = False, rxLockedRotorRatio = 0.0, asynchronousMachineType = None,  *args, **kw_args):
+	def __init__(self, nominalFrequency = 0.0, nominalSpeed = 0.0, converterFedDrive = False, efficiency = 0.0, iaIrRatio = 0.0, polePairNumber = 0, ratedMechanicalPower = 0.0, reversible = False, rxLockedRotorRatio = 0.0, asynchronousMachineType = None, AsynchronousMachineDynamics = None,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
-		self.AsynchronousMachineDynamics = AsynchronousMachineDynamics
 		self.nominalFrequency = nominalFrequency
 		self.nominalSpeed = nominalSpeed
 		self.converterFedDrive = converterFedDrive
@@ -52,6 +51,7 @@ class AsynchronousMachine(RotatingMachine):
 		self.reversible = reversible
 		self.rxLockedRotorRatio = rxLockedRotorRatio
 		self.asynchronousMachineType = asynchronousMachineType
+		self.AsynchronousMachineDynamics = AsynchronousMachineDynamics
 		
 	def __str__(self):
 		str = 'class=AsynchronousMachine\n'

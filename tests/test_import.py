@@ -7,7 +7,7 @@ from pathlib import Path
 logging.basicConfig(filename='Test_import.log', level=logging.INFO, filemode='w')
 
 short_profile_name = {
-    "DiagramLayout": 'DI',
+    "DiagramLayout": 'DL',
     "Dynamics": "DY",
     "Equipment": "EQ",
     "GeographicalLocation": "GL",

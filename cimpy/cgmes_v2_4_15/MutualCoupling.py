@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from .IdentifiedObject import IdentifiedObject
 
 
 class MutualCoupling(IdentifiedObject):
@@ -8,10 +8,10 @@ class MutualCoupling(IdentifiedObject):
 	:First_Terminal: The starting terminal for the calculation of distances along the first branch of the mutual coupling.  Normally MutualCoupling would only be used for terminals of AC line segments.  The first and second terminals of a mutual coupling should point to different AC line segments. Default: None
 	:Second_Terminal: The starting terminal for the calculation of distances along the second branch of the mutual coupling. Default: None
 	:b0ch: Zero sequence mutual coupling shunt (charging) susceptance, uniformly distributed, of the entire line section. Default: 0.0
-	:distance11: Distance to the start of the coupled region from the first line's terminal having sequence number equal to 1. Default: 0.0
-	:distance12: Distance to the end of the coupled region from the first line's terminal with sequence number equal to 1. Default: 0.0
-	:distance21: Distance to the start of coupled region from the second line's terminal with sequence number equal to 1. Default: 0.0
-	:distance22: Distance to the end of coupled region from the second line's terminal with sequence number equal to 1. Default: 0.0
+	:distance11: Distance to the start of the coupled region from the first line`s terminal having sequence number equal to 1. Default: 0.0
+	:distance12: Distance to the end of the coupled region from the first line`s terminal with sequence number equal to 1. Default: 0.0
+	:distance21: Distance to the start of coupled region from the second line`s terminal with sequence number equal to 1. Default: 0.0
+	:distance22: Distance to the end of coupled region from the second line`s terminal with sequence number equal to 1. Default: 0.0
 	:g0ch: Zero sequence mutual coupling shunt (charging) conductance, uniformly distributed, of the entire line section. Default: 0.0
 	:r0: Zero sequence branch-to-branch mutual impedance coupling, resistance. Default: 0.0
 	:x0: Zero sequence branch-to-branch mutual impedance coupling, reactance. Default: 0.0

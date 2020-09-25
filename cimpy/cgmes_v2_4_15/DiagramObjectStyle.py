@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from .IdentifiedObject import IdentifiedObject
 
 
 class DiagramObjectStyle(IdentifiedObject):
@@ -10,8 +10,8 @@ class DiagramObjectStyle(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
-						'StyledObjects': [cgmesProfile.DI.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DL.value, ],
+						'StyledObjects': [cgmesProfile.DL.value, ],
 						 }
 
 	serializationProfile = {}

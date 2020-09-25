@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.DiagramObject import DiagramObject
+from .DiagramObject import DiagramObject
 
 
 class TextDiagramObject(DiagramObject):
@@ -10,8 +10,8 @@ class TextDiagramObject(DiagramObject):
 
 	cgmesProfile = DiagramObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
-						'text': [cgmesProfile.DI.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DL.value, ],
+						'text': [cgmesProfile.DL.value, ],
 						 }
 
 	serializationProfile = {}

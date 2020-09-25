@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
+from .TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovGAST2(TurbineGovernorDynamics):
@@ -34,9 +34,9 @@ class GovGAST2(TurbineGovernorDynamics):
 	:af2: Coefficient equal to 0.5(1-speed) (Af2). Default: 0.0
 	:bf2: Turbine Torque Coefficient K (depends on heating value of fuel stream in combustion chamber) (Bf2). Default: 0.0
 	:cf2: Coefficient defining fuel flow where power output is 0% (Cf2).  Synchronous but no output.  Typically 0.23 x K (23% fuel flow). Default: 0.0
-	:tr: Rated temperature (Tr).  Unit = C depending on parameters Af1 and Bf1. Default: 0.0
+	:tr: Rated temperature (Tr).  Unit = [SYMBOL REMOVED]C depending on parameters Af1 and Bf1. Default: 0.0
 	:k6: Minimum fuel flow (K6). Default: 0.0
-	:tc: Temperature control (Tc).  Unit = F or C depending on constants Af1 and Bf1. Default: 0.0
+	:tc: Temperature control (Tc).  Unit = [SYMBOL REMOVED]F or [SYMBOL REMOVED]C depending on constants Af1 and Bf1. Default: 0.0
 		'''
 
 	cgmesProfile = TurbineGovernorDynamics.cgmesProfile

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.ProtectedSwitch import ProtectedSwitch
+from .ProtectedSwitch import ProtectedSwitch
 
 
 class LoadBreakSwitch(ProtectedSwitch):

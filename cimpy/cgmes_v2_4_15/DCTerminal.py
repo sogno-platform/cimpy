@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.DCBaseTerminal import DCBaseTerminal
+from .DCBaseTerminal import DCBaseTerminal
 
 
 class DCTerminal(DCBaseTerminal):

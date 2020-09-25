@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.EquipmentContainer import EquipmentContainer
+from .EquipmentContainer import EquipmentContainer
 
 
 class DCEquipmentContainer(EquipmentContainer):

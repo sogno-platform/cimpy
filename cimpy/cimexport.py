@@ -6,6 +6,8 @@ from time import time
 from cimpy.cgmes_v2_4_15.Base import Profile
 import logging
 import sys
+from cimpy.cgmes_v2_4_15.Base import Base
+cgmesProfile = Base.cgmesProfile
 
 logger = logging.getLogger(__name__)
 

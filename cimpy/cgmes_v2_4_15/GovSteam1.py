@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.TurbineGovernorDynamics import TurbineGovernorDynamics
+from .TurbineGovernorDynamics import TurbineGovernorDynamics
 
 
 class GovSteam1(TurbineGovernorDynamics):
@@ -29,7 +29,7 @@ class GovSteam1(TurbineGovernorDynamics):
 	:db1: Intentional deadband width (db1).  Unit = Hz.  Typical Value = 0. Default: 0.0
 	:eps: Intentional db hysteresis (eps).  Unit = Hz.  Typical Value = 0. Default: 0.0
 	:sdb1: Intentional deadband indicator. true = intentional deadband is applied false = intentional deadband is not applied. Typical Value = true. Default: False
-	:sdb2: Unintentional deadband location. true = intentional deadband is applied before point "A" false = intentional deadband is applied after point "A". Typical Value = true. Default: False
+	:sdb2: Unintentional deadband location. true = intentional deadband is applied before point `A` false = intentional deadband is applied after point `A`. Typical Value = true. Default: False
 	:db2: Unintentional deadband (db2).  Unit = MW.  Typical Value = 0. Default: 0.0
 	:valve: Nonlinear valve characteristic. true = nonlinear valve characteristic is used false = nonlinear valve characteristic is not used. Typical Value = true. Default: False
 	:gv1: Nonlinear gain valve position point 1 (GV1).  Typical Value = 0. Default: 0.0

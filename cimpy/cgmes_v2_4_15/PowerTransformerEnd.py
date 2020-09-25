@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.TransformerEnd import TransformerEnd
+from .TransformerEnd import TransformerEnd
 
 
 class PowerTransformerEnd(TransformerEnd):
@@ -14,7 +14,7 @@ class PowerTransformerEnd(TransformerEnd):
 	:r: Resistance (star-model) of the transformer end. The attribute shall be equal or greater than zero for non-equivalent transformers. Default: 0.0
 	:x: Positive sequence series reactance (star-model) of the transformer end. Default: 0.0
 	:b0: Zero sequence magnetizing branch susceptance. Default: 0.0
-	:phaseAngleClock: Terminal voltage phase angle displacement where 360 degrees are represented with clock hours. The valid values are 0 to 11. For example, for the secondary side end of a transformer with vector group code of 'Dyn11', specify the connection kind as wye with neutral and specify the phase angle of the clock as 11.  The clock value of the transformer end number specified as 1, is assumed to be zero.  Note the transformer end number is not assumed to be the same as the terminal sequence number. Default: 0
+	:phaseAngleClock: Terminal voltage phase angle displacement where 360 degrees are represented with clock hours. The valid values are 0 to 11. For example, for the secondary side end of a transformer with vector group code of `Dyn11`, specify the connection kind as wye with neutral and specify the phase angle of the clock as 11.  The clock value of the transformer end number specified as 1, is assumed to be zero.  Note the transformer end number is not assumed to be the same as the terminal sequence number. Default: 0
 	:g0: Zero sequence magnetizing branch conductance (star-model). Default: 0.0
 	:r0: Zero sequence series resistance (star-model) of the transformer end. Default: 0.0
 	:x0: Zero sequence series reactance of the transformer end. Default: 0.0

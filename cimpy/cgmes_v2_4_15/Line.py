@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.EquipmentContainer import EquipmentContainer
+from .EquipmentContainer import EquipmentContainer
 
 
 class Line(EquipmentContainer):
@@ -10,8 +10,8 @@ class Line(EquipmentContainer):
 
 	cgmesProfile = EquipmentContainer.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'Region': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.EQ_BD.value, ],
+						'Region': [cgmesProfile.EQ.value, cgmesProfile.EQ_BD.value, ],
 						 }
 
 	serializationProfile = {}

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.GeneratingUnit import GeneratingUnit
+from .GeneratingUnit import GeneratingUnit
 
 
 class HydroGeneratingUnit(GeneratingUnit):

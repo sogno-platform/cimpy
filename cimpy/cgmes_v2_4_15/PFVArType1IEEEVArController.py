@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.PFVArControllerType1Dynamics import PFVArControllerType1Dynamics
+from .PFVArControllerType1Dynamics import PFVArControllerType1Dynamics
 
 
 class PFVArType1IEEEVArController(PFVArControllerType1Dynamics):

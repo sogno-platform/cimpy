@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.PowerSystemResource import PowerSystemResource
+from .PowerSystemResource import PowerSystemResource
 
 
 class Equipment(PowerSystemResource):
@@ -12,9 +12,9 @@ class Equipment(PowerSystemResource):
 
 	cgmesProfile = PowerSystemResource.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.DY.value, cgmesProfile.EQ_BD.value, ],
 						'aggregate': [cgmesProfile.EQ.value, ],
-						'EquipmentContainer': [cgmesProfile.EQ.value, ],
+						'EquipmentContainer': [cgmesProfile.EQ.value, cgmesProfile.EQ_BD.value, ],
 						'OperationalLimitSet': [cgmesProfile.EQ.value, ],
 						 }
 

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.ConnectivityNodeContainer import ConnectivityNodeContainer
+from .ConnectivityNodeContainer import ConnectivityNodeContainer
 
 
 class EquipmentContainer(ConnectivityNodeContainer):
@@ -10,8 +10,8 @@ class EquipmentContainer(ConnectivityNodeContainer):
 
 	cgmesProfile = ConnectivityNodeContainer.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'Equipments': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.EQ_BD.value, ],
+						'Equipments': [cgmesProfile.EQ.value, cgmesProfile.EQ_BD.value, ],
 						 }
 
 	serializationProfile = {}

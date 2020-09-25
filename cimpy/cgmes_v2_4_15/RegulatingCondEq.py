@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.ConductingEquipment import ConductingEquipment
+from .ConductingEquipment import ConductingEquipment
 
 
 class RegulatingCondEq(ConductingEquipment):
@@ -11,7 +11,7 @@ class RegulatingCondEq(ConductingEquipment):
 
 	cgmesProfile = ConductingEquipment.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.DY.value, ],
 						'RegulatingControl': [cgmesProfile.EQ.value, ],
 						'controlEnabled': [cgmesProfile.SSH.value, ],
 						 }

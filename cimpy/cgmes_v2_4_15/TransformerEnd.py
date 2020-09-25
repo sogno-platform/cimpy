@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from .IdentifiedObject import IdentifiedObject
 
 
 class TransformerEnd(IdentifiedObject):
@@ -9,10 +9,10 @@ class TransformerEnd(IdentifiedObject):
 	:Terminal: Terminal of the power transformer to which this transformer end belongs. Default: None
 	:PhaseTapChanger: Transformer end to which this phase tap changer belongs. Default: None
 	:RatioTapChanger: Transformer end to which this ratio tap changer belongs. Default: None
-	:endNumber: Number for this transformer end, corresponding to the end's order in the power transformer vector group or phase angle clock number.  Highest voltage winding should be 1.  Each end within a power transformer should have a unique subsequent end number.   Note the transformer end number need not match the terminal sequence number. Default: 0
-	:rground: (for Yn and Zn connections) Resistance part of neutral impedance where 'grounded' is true. Default: 0.0
+	:endNumber: Number for this transformer end, corresponding to the end`s order in the power transformer vector group or phase angle clock number.  Highest voltage winding should be 1.  Each end within a power transformer should have a unique subsequent end number.   Note the transformer end number need not match the terminal sequence number. Default: 0
+	:rground: (for Yn and Zn connections) Resistance part of neutral impedance where `grounded` is true. Default: 0.0
 	:grounded: (for Yn and Zn connections) True if the neutral is solidly grounded. Default: False
-	:xground: (for Yn and Zn connections) Reactive part of neutral impedance where 'grounded' is true. Default: 0.0
+	:xground: (for Yn and Zn connections) Reactive part of neutral impedance where `grounded` is true. Default: 0.0
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile

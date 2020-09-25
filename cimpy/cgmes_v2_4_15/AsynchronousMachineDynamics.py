@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.RotatingMachineDynamics import RotatingMachineDynamics
+from .RotatingMachineDynamics import RotatingMachineDynamics
 
 
 class AsynchronousMachineDynamics(RotatingMachineDynamics):

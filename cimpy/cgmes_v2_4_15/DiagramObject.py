@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from .IdentifiedObject import IdentifiedObject
 
 
 class DiagramObject(IdentifiedObject):
@@ -19,17 +19,17 @@ class DiagramObject(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DI.value, ],
-						'Diagram': [cgmesProfile.DI.value, ],
-						'drawingOrder': [cgmesProfile.DI.value, ],
-						'isPolygon': [cgmesProfile.DI.value, ],
-						'offsetX': [cgmesProfile.DI.value, ],
-						'offsetY': [cgmesProfile.DI.value, ],
-						'rotation': [cgmesProfile.DI.value, ],
-						'IdentifiedObject': [cgmesProfile.DI.value, ],
-						'DiagramObjectPoints': [cgmesProfile.DI.value, ],
-						'VisibilityLayers': [cgmesProfile.DI.value, ],
-						'DiagramObjectStyle': [cgmesProfile.DI.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DL.value, ],
+						'Diagram': [cgmesProfile.DL.value, ],
+						'drawingOrder': [cgmesProfile.DL.value, ],
+						'isPolygon': [cgmesProfile.DL.value, ],
+						'offsetX': [cgmesProfile.DL.value, ],
+						'offsetY': [cgmesProfile.DL.value, ],
+						'rotation': [cgmesProfile.DL.value, ],
+						'IdentifiedObject': [cgmesProfile.DL.value, ],
+						'DiagramObjectPoints': [cgmesProfile.DL.value, ],
+						'VisibilityLayers': [cgmesProfile.DL.value, ],
+						'DiagramObjectStyle': [cgmesProfile.DL.value, ],
 						 }
 
 	serializationProfile = {}

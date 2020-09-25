@@ -23,6 +23,6 @@ import_result = cimpy.cim_import(xml_files, "cgmes_v2_4_15")
 
 import_result = cimpy.utils.node_breaker_to_bus_branch(import_result)
 
-activeProfileList = ['DI', 'EQ', 'TP']
+activeProfileList = ['DL', 'EQ', 'TP']
 
 cimpy.cim_export(import_result, 'Bus_Branch_Converted', 'cgmes_v2_4_15', activeProfileList)

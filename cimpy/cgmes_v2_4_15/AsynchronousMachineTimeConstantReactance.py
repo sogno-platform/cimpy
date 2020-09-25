@@ -1,15 +1,15 @@
-from cimpy.cgmes_v2_4_15.AsynchronousMachineDynamics import AsynchronousMachineDynamics
+from .AsynchronousMachineDynamics import AsynchronousMachineDynamics
 
 
 class AsynchronousMachineTimeConstantReactance(AsynchronousMachineDynamics):
 	'''
 	The parameters used for models expressed in time constant reactance form include:
 
-	:xs: Synchronous reactance (Xs) (>= X').  Typical Value = 1.8. Default: 0.0
-	:xp: Transient reactance (unsaturated) (X') (>=X'').  Typical Value = 0.5. Default: 0.0
-	:xpp: Subtransient reactance (unsaturated) (X'') (> Xl).  Typical Value = 0.2. Default: 0.0
-	:tpo: Transient rotor time constant (T'o) (> T''o).  Typical Value = 5. Default: 0
-	:tppo: Subtransient rotor time constant (T''o) (> 0).  Typical Value = 0.03. Default: 0
+	:xs: Synchronous reactance (Xs) (>= X`).  Typical Value = 1.8. Default: 0.0
+	:xp: Transient reactance (unsaturated) (X`) (>=X``).  Typical Value = 0.5. Default: 0.0
+	:xpp: Subtransient reactance (unsaturated) (X``) (> Xl).  Typical Value = 0.2. Default: 0.0
+	:tpo: Transient rotor time constant (T`o) (> T``o).  Typical Value = 5. Default: 0
+	:tppo: Subtransient rotor time constant (T``o) (> 0).  Typical Value = 0.03. Default: 0
 		'''
 
 	cgmesProfile = AsynchronousMachineDynamics.cgmesProfile

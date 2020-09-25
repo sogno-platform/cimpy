@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from .IdentifiedObject import IdentifiedObject
 
 
 class Location(IdentifiedObject):
@@ -7,7 +7,7 @@ class Location(IdentifiedObject):
 
 	:CoordinateSystem: Coordinate system used to describe position points of this location. Default: None
 	:PowerSystemResources: All power system resources at this location. Default: None
-	:PositionPoints: Sequence of position points describing this location, expressed in coordinate system 'Location.CoordinateSystem'. Default: "list"
+	:PositionPoints: Sequence of position points describing this location, expressed in coordinate system `Location.CoordinateSystem`. Default: "list"
 		'''
 
 	cgmesProfile = IdentifiedObject.cgmesProfile

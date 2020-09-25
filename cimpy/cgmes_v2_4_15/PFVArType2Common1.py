@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.PFVArControllerType2Dynamics import PFVArControllerType2Dynamics
+from .PFVArControllerType2Dynamics import PFVArControllerType2Dynamics
 
 
 class PFVArType2Common1(PFVArControllerType2Dynamics):
@@ -9,7 +9,7 @@ class PFVArType2Common1(PFVArControllerType2Dynamics):
 	:kp: Proportional gain (Kp). Default: 0.0
 	:ki: Reset gain (Ki). Default: 0.0
 	:max: Output limit (max). Default: 0.0
-	:ref: Reference value of reactive power or power factor (Ref). The reference value is initialised by this model. This initialisation may override the value exchanged by this attribute to represent a plant operator's change of the reference setting. Default: 0.0
+	:ref: Reference value of reactive power or power factor (Ref). The reference value is initialised by this model. This initialisation may override the value exchanged by this attribute to represent a plant operator`s change of the reference setting. Default: 0.0
 		'''
 
 	cgmesProfile = PFVArControllerType2Dynamics.cgmesProfile

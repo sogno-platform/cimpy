@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from .IdentifiedObject import IdentifiedObject
 
 
 class SubGeographicalRegion(IdentifiedObject):
@@ -13,10 +13,10 @@ class SubGeographicalRegion(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.EQ_BD.value, ],
 						'DCLines': [cgmesProfile.EQ.value, ],
-						'Region': [cgmesProfile.EQ.value, ],
-						'Lines': [cgmesProfile.EQ.value, ],
+						'Region': [cgmesProfile.EQ.value, cgmesProfile.EQ_BD.value, ],
+						'Lines': [cgmesProfile.EQ.value, cgmesProfile.EQ_BD.value, ],
 						'Substations': [cgmesProfile.EQ.value, ],
 						 }
 

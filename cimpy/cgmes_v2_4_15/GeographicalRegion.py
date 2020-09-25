@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from .IdentifiedObject import IdentifiedObject
 
 
 class GeographicalRegion(IdentifiedObject):
@@ -10,8 +10,8 @@ class GeographicalRegion(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'Regions': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.EQ_BD.value, ],
+						'Regions': [cgmesProfile.EQ.value, cgmesProfile.EQ_BD.value, ],
 						 }
 
 	serializationProfile = {}

@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from .Base import Base
 
 
 class Integer(Base):
@@ -9,7 +9,7 @@ class Integer(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DI.value, cgmesProfile.DY.value, cgmesProfile.EQ.value, cgmesProfile.GL.value, cgmesProfile.SSH.value, ],
+	possibleProfileList = {'class': [cgmesProfile.DL.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.GL.value, cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

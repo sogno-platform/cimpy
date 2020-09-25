@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.EnergyConsumer import EnergyConsumer
+from .EnergyConsumer import EnergyConsumer
 
 
 class StationSupply(EnergyConsumer):
@@ -9,7 +9,7 @@ class StationSupply(EnergyConsumer):
 
 	cgmesProfile = EnergyConsumer.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.SSH.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
 						 }
 
 	serializationProfile = {}

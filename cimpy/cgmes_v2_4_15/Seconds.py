@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.Base import Base
+from .Base import Base
 
 
 class Seconds(Base):
@@ -12,10 +12,10 @@ class Seconds(Base):
 
 	cgmesProfile = Base.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, cgmesProfile.EQ.value, ],
-						'value': [cgmesProfile.DY.value, cgmesProfile.EQ.value, ],
-						'unit': [cgmesProfile.DY.value, cgmesProfile.EQ.value, ],
-						'multiplier': [cgmesProfile.DY.value, cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.DY.value, ],
+						'value': [cgmesProfile.EQ.value, cgmesProfile.DY.value, ],
+						'unit': [cgmesProfile.EQ.value, cgmesProfile.DY.value, ],
+						'multiplier': [cgmesProfile.EQ.value, cgmesProfile.DY.value, ],
 						 }
 
 	serializationProfile = {}

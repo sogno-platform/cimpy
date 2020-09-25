@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.RegulatingControl import RegulatingControl
+from .RegulatingControl import RegulatingControl
 
 
 class TapChangerControl(RegulatingControl):

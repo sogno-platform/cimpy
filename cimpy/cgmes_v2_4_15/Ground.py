@@ -1,4 +1,4 @@
-from cimpy.cgmes_v2_4_15.ConductingEquipment import ConductingEquipment
+from .ConductingEquipment import ConductingEquipment
 
 
 class Ground(ConductingEquipment):

@@ -1,11 +1,11 @@
-from cimpy.cgmes_v2_4_15.IdentifiedObject import IdentifiedObject
+from .IdentifiedObject import IdentifiedObject
 
 
 class BaseVoltage(IdentifiedObject):
 	'''
 	Defines a system base voltage which is referenced.
 
-	:nominalVoltage: The power system resource's base voltage. Default: 0.0
+	:nominalVoltage: The power system resource`s base voltage. Default: 0.0
 	:ConductingEquipment: Base voltage of this conducting equipment.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers. Default: "list"
 	:VoltageLevel: The voltage levels having this base voltage. Default: "list"
 	:TransformerEnds: Transformer ends at the base voltage.  This is essential for PU calculation. Default: "list"
@@ -14,12 +14,12 @@ class BaseVoltage(IdentifiedObject):
 
 	cgmesProfile = IdentifiedObject.cgmesProfile
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.TP.value, ],
-						'nominalVoltage': [cgmesProfile.EQ.value, ],
+	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.TP.value, cgmesProfile.TP_BD.value, cgmesProfile.EQ_BD.value, ],
+						'nominalVoltage': [cgmesProfile.EQ.value, cgmesProfile.EQ_BD.value, ],
 						'ConductingEquipment': [cgmesProfile.EQ.value, ],
 						'VoltageLevel': [cgmesProfile.EQ.value, ],
 						'TransformerEnds': [cgmesProfile.EQ.value, ],
-						'TopologicalNode': [cgmesProfile.TP.value, ],
+						'TopologicalNode': [cgmesProfile.TP.value, cgmesProfile.TP_BD.value, ],
 						 }
 
 	serializationProfile = {}
