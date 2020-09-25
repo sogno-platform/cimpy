@@ -18,7 +18,7 @@ short_profile_name = {
 }
 
 tests = Path('.').resolve().parent
-example_path = tests / 'examples' / 'sampledata' / 'CIGRE_MV'
+example_path = tests / 'cimpy' / 'examples' / 'sampledata' / 'CIGRE_MV'
 
 
 # This test function tests the export functionality by comparing files before the import and export procedure with the

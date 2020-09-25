@@ -18,7 +18,7 @@ short_profile_name = {
 }
 
 tests = Path('.').resolve().parent
-example_path = tests / 'examples' / 'sampledata' / 'CIGRE_MV'
+example_path = tests / 'cimpy' / 'examples' / 'sampledata' / 'CIGRE_MV'
 
 
 # This test tests the export functionality of this package by first importing the CIGRE_MV_Rudion_With_LoadFlow_Results
