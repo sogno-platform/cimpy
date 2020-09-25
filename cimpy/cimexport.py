@@ -198,9 +198,9 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                 if 'class' in possibleProfileList[klass['name']].keys():
                     possibleProfileList[klass['name']]['class'].sort()
                     for klass_profile in possibleProfileList[klass['name']]['class']:
-                        if Profile[klass_profile].name in activeProfileList:
+                        if Profile(klass_profile).name in activeProfileList:
                             # active profile for class export found
-                            class_serializationProfile = Profile[klass_profile].name
+                            class_serializationProfile = Profile(klass_profile).name
                             break
                     if class_serializationProfile == '':
                         # no profile in possibleProfileList active
@@ -367,7 +367,7 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
         cim_data['meta_info']['namespaces'])
 
     if profile.name not in export_dict.keys() and profile.name not in about_dict.keys():
-        raise RuntimeError("Profile not available for export")
+        raise RuntimeError("Profile " + profile.name + " not available for export, export_dict=" + str(export_dict.keys()) + ' and about_dict='+ str(about_dict.keys()) + '.')
 
     # extract class lists from export_dict and about_dict
     if profile.name in export_dict.keys():
