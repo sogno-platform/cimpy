@@ -4,10 +4,10 @@ from pathlib import Path
 
 logging.basicConfig(filename='importCIGREMV.log', level=logging.INFO, filemode='w')
 
-example = Path(__file__).resolve().parent.parent
+example = Path(__file__).resolve().parent
 
 # called as cimpy.examples.addExternalNetworkInjection() or file run from quickstart directory?
-if 'examples.py' in str(__file__):
+if 'cimexamples.py' in str(__file__):
     sample_folder = example / 'examples' / 'sampledata' / 'CIGRE_MV'
 else:
     sample_folder = example / 'sampledata' / 'CIGRE_MV'
