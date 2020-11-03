@@ -9,28 +9,32 @@ from pathlib import Path
 
 logging.basicConfig(filename='Test_export_with_exported_files.log', level=logging.INFO, filemode='w')
 
+# Import the sampledata
 example_dir = Path(os.path.join(os.path.dirname(__file__), '../cimpy/examples/sampledata/CIGRE_MV')).resolve()
+import_files = []
+for file in example_dir.glob('*.xml'):
+    import_files.append(str(file.absolute()))
+imported_result = cimpy.cim_import(import_files, 'cgmes_v2_4_15')
 
-# This test tests the export functionality of this package by first importing the CIGRE_MV_Rudion_With_LoadFlow_Results
-# example and exporting them. The exported files are compared with previously exported files which were checked manually
-def test_export_with_exported_files():
-    global example_dir
-    import_files = []
-    for file in example_dir.glob('*.xml'):
-        import_files.append(str(file.absolute()))
 
-    activeProfileList = ['DL', 'EQ', 'SV', 'TP']
-
-    imported_result = cimpy.cim_import(import_files, 'cgmes_v2_4_15')
-    cimpy.cim_export(imported_result, 'EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
-
+def read_ref_xml():
     test_list = []
+
     for file in os.listdir(os.getcwd()):
         if '.xml' in file and 'EXPORTED' not in file:
             xmlstring = open(file, encoding='utf8').read()
             parsed_export_file = xmltodict.parse(xmlstring, attr_prefix="$", cdata_key="_", dict_constructor=dict)
             test_list.append(parsed_export_file['rdf:RDF'])
 
+    test_dict = {}
+    for elem in test_list:
+        profile = elem['md:FullModel']['md:Model.profile']
+        for key in short_profile_name.keys():
+            if key in profile:
+                test_dict[key] = elem
+    return test_dict
+
+def read_exported_xml():
     export_list = []
     for file in os.listdir(os.getcwd()):
         if file.endswith(".xml") and 'EXPORTED' in str(file):
@@ -44,13 +48,17 @@ def test_export_with_exported_files():
         for key in short_profile_name.keys():
             if key in profile:
                 export_dict[key] = export_file
+    return export_dict
 
-    test_dict = {}
-    for elem in test_list:
-        profile = elem['md:FullModel']['md:Model.profile']
-        for key in short_profile_name.keys():
-            if key in profile:
-                test_dict[key] = elem
+# This test tests the export functionality of this package by first importing the CIGRE_MV_Rudion_With_LoadFlow_Results
+# example and exporting them. The exported files are compared with previously exported files which were checked manually
+def test_export_with_exported_files():
+    activeProfileList = ['DL', 'EQ', 'SV', 'TP']
+
+    cimpy.cim_export(imported_result, 'EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
+
+    test_dict = read_ref_xml()
+    export_dict = read_exported_xml()
 
     for profile, current_test_dict in test_dict.items():
         check.is_in(profile, export_dict.keys())
@@ -74,42 +82,12 @@ def test_export_with_exported_files():
             os.remove(file)
 
 def test_export_with_imported_files():
-    global example_dir
-    import_files = []
-    for file in example_dir.glob('*.xml'):
-        import_files.append(str(file.absolute()))
-
     activeProfileList = ['DL', 'EQ', 'SSH', 'SV', 'TP']
 
-    imported_result = cimpy.cim_import(import_files, 'cgmes_v2_4_15')
     cimpy.cim_export(imported_result, 'EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
 
-    test_list = []
-    for file in import_files:
-        xmlstring = open(file, encoding='utf8').read()
-        parsed_export_file = xmltodict.parse(xmlstring, attr_prefix="$", cdata_key="_", dict_constructor=dict)
-        test_list.append(parsed_export_file['rdf:RDF'])
-
-    export_list = []
-    for file in os.listdir(os.getcwd()):
-        if file.endswith(".xml") and 'EXPORTED' in str(file):
-            xmlstring = open(file, encoding='utf8').read()
-            parsed_export_file = xmltodict.parse(xmlstring, attr_prefix="$", cdata_key="_", dict_constructor=dict)
-            export_list.append(parsed_export_file['rdf:RDF'])
-
-    export_dict = {}
-    for export_file in export_list:
-        profile = export_file['md:FullModel']['md:Model.profile']
-        for key in short_profile_name.keys():
-            if key in profile:
-                export_dict[key] = export_file
-
-    test_dict = {}
-    for elem in test_list:
-        profile = elem['md:FullModel']['md:Model.profile']
-        for key in short_profile_name.keys():
-            if key in profile:
-                test_dict[key] = elem
+    test_dict = read_ref_xml()
+    export_dict = read_exported_xml()
 
     for profile, current_test_dict in test_dict.items():
         check.is_in(profile, export_dict.keys())
