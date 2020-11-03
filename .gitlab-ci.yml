@@ -58,31 +58,14 @@ pages:
     only:
         - master
 
-
-
-test:import:
+test:
     stage: test
     variables:
         PYTHONPATH: "build/Source/Python:Source/Python"
     script:
-        - python3 setup.py develop
-        - cd tests && pytest -v test_import.py
+        - pytest -v -cov --junitxml=report.xml
     image: ${CI_REGISTRY_IMAGE}:${DOCKER_IMAGE_DEV}-base-image
 
-test:export-against-imported-files:
-    stage: test
-    variables:
-        PYTHONPATH: "build/Source/Python:Source/Python"
-    script:
-        - python3 setup.py develop
-        - cd tests && pytest -v test_export_with_imported_files.py
-    image: ${CI_REGISTRY_IMAGE}:${DOCKER_IMAGE_DEV}-base-image
-
-test:export-against-exported-files:
-    stage: test
-    variables:
-        PYTHONPATH: "build/Source/Python:Source/Python"
-    script:
-        - python3 setup.py develop
-        - cd tests && pytest -v test_export_with_exported_files.py
-    image: ${CI_REGISTRY_IMAGE}:${DOCKER_IMAGE_DEV}-base-image
+    artifacts:
+        reports:
+            junit: report.xml
