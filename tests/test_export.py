@@ -6,15 +6,18 @@ import os
 import glob
 import pytest_check as check
 from pathlib import Path
+import pytest
 
 logging.basicConfig(filename='Test_export_with_exported_files.log', level=logging.INFO, filemode='w')
 
 # Import the sampledata
-example_dir = Path(os.path.join(os.path.dirname(__file__), '../cimpy/examples/sampledata/CIGRE_MV')).resolve()
-import_files = []
-for file in example_dir.glob('*.xml'):
-    import_files.append(str(file.absolute()))
-imported_result = cimpy.cim_import(import_files, 'cgmes_v2_4_15')
+@pytest.fixture
+def sample_cimdata():
+    example_dir = Path(os.path.join(os.path.dirname(__file__), '../cimpy/examples/sampledata/CIGRE_MV')).resolve()
+    import_files = []
+    for file in example_dir.glob('*.xml'):
+        import_files.append(str(file.absolute()))
+    return cimpy.cim_import(import_files, 'cgmes_v2_4_15')
 
 
 def read_ref_xml():
@@ -52,10 +55,10 @@ def read_exported_xml():
 
 # This test tests the export functionality of this package by first importing the CIGRE_MV_Rudion_With_LoadFlow_Results
 # example and exporting them. The exported files are compared with previously exported files which were checked manually
-def test_export_with_exported_files():
+def test_export_with_exported_files(sample_cimdata):
     activeProfileList = ['DL', 'EQ', 'SV', 'TP']
 
-    cimpy.cim_export(imported_result, 'EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
+    cimpy.cim_export(sample_cimdata, 'EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
 
     test_dict = read_ref_xml()
     export_dict = read_exported_xml()
@@ -81,10 +84,10 @@ def test_export_with_exported_files():
         if 'EXPORTED' in str(file):
             os.remove(file)
 
-def test_export_with_imported_files():
+def test_export_with_imported_files(sample_cimdata):
     activeProfileList = ['DL', 'EQ', 'SSH', 'SV', 'TP']
 
-    cimpy.cim_export(imported_result, 'EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
+    cimpy.cim_export(sample_cimdata, 'EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
 
     test_dict = read_ref_xml()
     export_dict = read_exported_xml()
