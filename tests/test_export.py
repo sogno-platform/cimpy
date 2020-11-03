@@ -55,10 +55,10 @@ def read_exported_xml():
 
 # This test tests the export functionality of this package by first importing the CIGRE_MV_Rudion_With_LoadFlow_Results
 # example and exporting them. The exported files are compared with previously exported files which were checked manually
-def test_export_with_exported_files(sample_cimdata):
+def test_export_with_exported_files(sample_cimdata, tmpdir):
     activeProfileList = ['DL', 'EQ', 'SV', 'TP']
 
-    cimpy.cim_export(sample_cimdata, 'EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
+    cimpy.cim_export(sample_cimdata, tmpdir + '/EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
 
     test_dict = read_ref_xml()
     export_dict = read_exported_xml()
@@ -80,14 +80,10 @@ def test_export_with_exported_files(sample_cimdata):
                     else:
                         check.equal(current_test_class, current_export_class)
 
-    for file in os.listdir(os.getcwd()):
-        if 'EXPORTED' in str(file):
-            os.remove(file)
-
-def test_export_with_imported_files(sample_cimdata):
+def test_export_with_imported_files(sample_cimdata, tmpdir):
     activeProfileList = ['DL', 'EQ', 'SSH', 'SV', 'TP']
 
-    cimpy.cim_export(sample_cimdata, 'EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
+    cimpy.cim_export(sample_cimdata, tmpdir + '/EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
 
     test_dict = read_ref_xml()
     export_dict = read_exported_xml()
@@ -188,6 +184,3 @@ def test_export_with_imported_files(sample_cimdata):
 
                                 check.is_in(test_item, export_attr)
 
-    for file in os.listdir(os.getcwd()):
-        if 'EXPORTED' in str(file):
-            os.remove(file)
