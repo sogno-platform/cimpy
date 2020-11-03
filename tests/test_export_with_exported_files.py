@@ -2,6 +2,7 @@ import logging
 import cimpy
 import xmltodict
 import os
+import glob
 import pytest_check as check
 from pathlib import Path
 
@@ -17,15 +18,14 @@ short_profile_name = {
     "Topology": "TP"
 }
 
-tests = Path('.').resolve().parent
-example_path = tests / 'cimpy' / 'examples' / 'sampledata' / 'CIGRE_MV'
-
+example_dir = Path(os.path.join(os.path.dirname(__file__), '../cimpy/examples/sampledata/CIGRE_MV')).resolve()
 
 # This test tests the export functionality of this package by first importing the CIGRE_MV_Rudion_With_LoadFlow_Results
 # example and exporting them. The exported files are compared with previously exported files which were checked manually
 def test_export_with_exported_files():
+    global example_dir
     import_files = []
-    for file in example_path.glob('*.xml'):
+    for file in example_dir.glob('*.xml'):
         import_files.append(str(file.absolute()))
 
     activeProfileList = ['DL', 'EQ', 'SV', 'TP']
