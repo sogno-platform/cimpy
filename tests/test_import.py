@@ -1,5 +1,6 @@
 import logging
 import cimpy
+from cimpy.cgmes_v2_4_15.Base import short_profile_name
 import os
 import glob
 import pytest_check as check
@@ -7,16 +8,6 @@ import pickle
 from pathlib import Path
 
 logging.basicConfig(filename='Test_import.log', level=logging.INFO, filemode='w')
-
-short_profile_name = {
-    "DiagramLayout": 'DL',
-    "Dynamics": "DY",
-    "Equipment": "EQ",
-    "GeographicalLocation": "GL",
-    "StateVariables": "SV",
-    "SteadyStateHypothesis": "SSH",
-    "Topology": "TP"
-}
 
 example_dir = Path(os.path.join(os.path.dirname(__file__), '../cimpy/examples/sampledata/CIGRE_MV')).resolve()
 
