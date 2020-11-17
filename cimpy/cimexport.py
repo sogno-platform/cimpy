@@ -8,6 +8,7 @@ import logging
 import sys
 from cimpy.cgmes_v2_4_15.Base import Base
 cgmesProfile = Base.cgmesProfile
+from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
@@ -309,8 +310,6 @@ def cim_export(import_result, file_name, version, activeProfileList):
     :param activeProfileList: a list containing the strings of all short names of the profiles used for serialization
     """
 
-    cwd = os.getcwd()
-    os.chdir(os.path.dirname(__file__))
     t0 = time()
     logger.info('Start export procedure.')
 
@@ -322,24 +321,20 @@ def cim_export(import_result, file_name, version, activeProfileList):
         # File name
         full_file_name = file_name + '_' + profile.long_name() + '.xml'
 
-        full_path = os.path.join(cwd, full_file_name)
-
-        if not os.path.exists(full_path):
+        if not os.path.exists(full_file_name):
             output = generate_xml(import_result, version, file_name, profile, profile_list)
 
-            with open(full_path, 'w') as file:
-                logger.info('Write file \"%s\"', full_path)
+            with open(full_file_name, 'w') as file:
+                logger.info('Write file \"%s\"', full_file_name)
 
                 file.write(output)
         else:
-            logger.error('File {} already exists in path {}. Delete file or change file name to serialize CGMES '
-                           'classes.'.format(full_file_name, cwd))
-            print('[ERROR:] File {} already exists in path {}. Delete file or change file name to serialize CGMES '
-                           'classes.'.format(full_file_name, cwd), file=sys.stderr)
-            os.chdir(cwd)
+            logger.error('File {} already exists. Delete file or change file name to serialize CGMES '
+                           'classes.'.format(full_file_name))
+            print('[ERROR:] File {} already exists. Delete file or change file name to serialize CGMES '
+                           'classes.'.format(full_file_name), file=sys.stderr)
             exit(-1)
 
-    os.chdir(cwd)
     logger.info('End export procedure. Elapsed time: {}'.format(time() - t0))
 
 
@@ -394,8 +389,8 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
              'value': profile.long_name()}
         ]
     }
-
-    with open('export_template.mustache') as f:
+    template_path = Path(os.path.join(os.path.dirname(__file__), 'export_template.mustache')).resolve()
+    with open(template_path) as f:
         output = chevron.render(f, {"classes": classes,
                                     "about": about,
                                     "set_attributes_or_reference": _set_attribute_or_reference,
