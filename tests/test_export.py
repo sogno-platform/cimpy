@@ -8,12 +8,16 @@ import pytest_check as check
 from pathlib import Path
 import pytest
 
-logging.basicConfig(filename='Test_export_with_exported_files.log', level=logging.INFO, filemode='w')
+logging.basicConfig(filename='Test_export_with_exported_files.log',
+                    level=logging.INFO, filemode='w')
 
-# Import the sampledata
+
 @pytest.fixture
 def sample_cimdata():
-    example_dir = Path(os.path.join(os.path.dirname(__file__), '../cimpy/examples/sampledata/CIGRE_MV')).resolve()
+    """ Import the sampledata using cimpy
+    """
+    example_dir = Path(os.path.join(os.path.dirname(
+        __file__), '../cimpy/examples/sampledata/CIGRE_MV')).resolve()
     import_files = []
     for file in example_dir.glob('*.xml'):
         import_files.append(str(file.absolute()))
@@ -21,6 +25,8 @@ def sample_cimdata():
 
 
 def read_ref_xml():
+    """ Read the reference xmls into a dict
+    """
     test_list = []
 
     test_dir = Path(os.path.dirname(__file__)).resolve()
@@ -61,10 +67,13 @@ def read_exported_xml(directory):
 
 # This test tests the export functionality of this package by first importing the CIGRE_MV_Rudion_With_LoadFlow_Results
 # example and exporting them. The exported files are compared with previously exported files which were checked manually
+
+
 def test_export_with_exported_files(sample_cimdata, tmpdir):
     activeProfileList = ['DL', 'EQ', 'SV', 'TP']
 
-    cimpy.cim_export(sample_cimdata, tmpdir + '/EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
+    cimpy.cim_export(sample_cimdata, tmpdir + '/EXPORTED_Test',
+                     'cgmes_v2_4_15', activeProfileList)
 
     test_dict = read_ref_xml()
     export_dict = read_exported_xml(tmpdir)
@@ -86,10 +95,12 @@ def test_export_with_exported_files(sample_cimdata, tmpdir):
                     else:
                         check.equal(current_test_class, current_export_class)
 
+
 def test_export_with_imported_files(sample_cimdata, tmpdir):
     activeProfileList = ['DL', 'EQ', 'SSH', 'SV', 'TP']
 
-    cimpy.cim_export(sample_cimdata, tmpdir + '/EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
+    cimpy.cim_export(sample_cimdata, tmpdir + '/EXPORTED_Test',
+                     'cgmes_v2_4_15', activeProfileList)
 
     test_dict = read_ref_xml()
     export_dict = read_exported_xml(tmpdir)
@@ -122,14 +133,18 @@ def test_export_with_imported_files(sample_cimdata, tmpdir):
                     else:
                         try:
                             test_mRIDs.append(current_test_class['$rdf:ID'])
-                            test_class_dict[current_test_class['$rdf:ID']] = current_test_class
+                            test_class_dict[current_test_class['$rdf:ID']
+                                            ] = current_test_class
                         except KeyError:
                             try:
-                                test_mRIDs.append(current_test_class['$rdf:about'])
+                                test_mRIDs.append(
+                                    current_test_class['$rdf:about'])
                                 test_class_dict[current_test_class['$rdf:about']] = obj
                             except KeyError:
-                                check.is_in('$rdf:about', current_test_class.keys())
-                                check.is_in('$rdf:ID', current_test_class.keys())
+                                check.is_in(
+                                    '$rdf:about', current_test_class.keys())
+                                check.is_in(
+                                    '$rdf:ID', current_test_class.keys())
 
                     export_mRIDs = []
                     export_class_dict = {}
@@ -147,15 +162,20 @@ def test_export_with_imported_files(sample_cimdata, tmpdir):
                                     check.is_in('$rdf:ID', obj.keys())
                     else:
                         try:
-                            export_mRIDs.append(current_export_class['$rdf:ID'])
-                            export_class_dict[current_export_class['$rdf:ID']] = current_export_class
+                            export_mRIDs.append(
+                                current_export_class['$rdf:ID'])
+                            export_class_dict[current_export_class['$rdf:ID']
+                                              ] = current_export_class
                         except KeyError:
                             try:
-                                export_mRIDs.append(current_export_class['$rdf:about'])
+                                export_mRIDs.append(
+                                    current_export_class['$rdf:about'])
                                 export_class_dict[current_export_class['$rdf:about']] = obj
                             except KeyError:
-                                check.is_in('$rdf:about', current_export_class.keys())
-                                check.is_in('$rdf:ID', current_export_class.keys())
+                                check.is_in(
+                                    '$rdf:about', current_export_class.keys())
+                                check.is_in(
+                                    '$rdf:ID', current_export_class.keys())
 
                     for mRID in test_mRIDs:
                         check.is_in(mRID, export_mRIDs)
@@ -178,7 +198,8 @@ def test_export_with_imported_files(sample_cimdata, tmpdir):
                                     test_item = item
                                 elif len(item[1].split('.')) > 1:
                                     try:
-                                        test_item = (item[0], str(float(item[1])))
+                                        test_item = (
+                                            item[0], str(float(item[1])))
                                     except ValueError:
                                         continue
                                     except TypeError:
