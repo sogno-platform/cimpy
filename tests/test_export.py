@@ -174,7 +174,7 @@ def test_export_with_imported_files(sample_cimdata, tmpdir):
                                 if item[1] in ['0', '0e+000', '0.0', '', 'false', 'None', 'list',
                                                {'$rdf:resource': '#_32d6d32e-c3f0-43d4-8103-079a15594fc6'}]:
                                     continue
-                                if isinstance(item[1], dict):
+                                if isinstance(item[1], dict) or isinstance(item[1], list):
                                     test_item = item
                                 elif len(item[1].split('.')) > 1:
                                     try:
