@@ -23,11 +23,13 @@ def sample_cimdata():
 def read_ref_xml():
     test_list = []
 
-    for file in os.listdir(os.getcwd()):
-        if '.xml' in file and 'EXPORTED' not in file:
-            xmlstring = open(file, encoding='utf8').read()
-            parsed_export_file = xmltodict.parse(xmlstring, attr_prefix="$", cdata_key="_", dict_constructor=dict)
-            test_list.append(parsed_export_file['rdf:RDF'])
+    test_dir = Path(os.path.dirname(__file__)).resolve()
+
+    for file in test_dir.glob('CIGREMV_reference*.xml'):
+        xmlstring = open(file, encoding='utf8').read()
+        parsed_export_file = xmltodict.parse(
+            xmlstring, attr_prefix="$", cdata_key="_", dict_constructor=dict)
+        test_list.append(parsed_export_file['rdf:RDF'])
 
     test_dict = {}
     for elem in test_list:
@@ -37,13 +39,17 @@ def read_ref_xml():
                 test_dict[key] = elem
     return test_dict
 
-def read_exported_xml():
+
+def read_exported_xml(directory):
     export_list = []
-    for file in os.listdir(os.getcwd()):
-        if file.endswith(".xml") and 'EXPORTED' in str(file):
-            xmlstring = open(file, encoding='utf8').read()
-            parsed_export_file = xmltodict.parse(xmlstring, attr_prefix="$", cdata_key="_", dict_constructor=dict)
-            export_list.append(parsed_export_file['rdf:RDF'])
+
+    test_dir = Path(directory).resolve()
+
+    for file in test_dir.glob('*EXPORTED*.xml'):
+        xmlstring = open(file, encoding='utf8').read()
+        parsed_export_file = xmltodict.parse(
+            xmlstring, attr_prefix="$", cdata_key="_", dict_constructor=dict)
+        export_list.append(parsed_export_file['rdf:RDF'])
 
     export_dict = {}
     for export_file in export_list:
@@ -61,7 +67,7 @@ def test_export_with_exported_files(sample_cimdata, tmpdir):
     cimpy.cim_export(sample_cimdata, tmpdir + '/EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
 
     test_dict = read_ref_xml()
-    export_dict = read_exported_xml()
+    export_dict = read_exported_xml(tmpdir)
 
     for profile, current_test_dict in test_dict.items():
         check.is_in(profile, export_dict.keys())
@@ -86,7 +92,7 @@ def test_export_with_imported_files(sample_cimdata, tmpdir):
     cimpy.cim_export(sample_cimdata, tmpdir + '/EXPORTED_Test', 'cgmes_v2_4_15', activeProfileList)
 
     test_dict = read_ref_xml()
-    export_dict = read_exported_xml()
+    export_dict = read_exported_xml(tmpdir)
 
     for profile, current_test_dict in test_dict.items():
         check.is_in(profile, export_dict.keys())
