@@ -298,7 +298,7 @@ def cim_export(import_result, file_name, version, activeProfileList):
     a reference to another class object or not.
 
     :param import_result: a dictionary containing the topology and meta information. The topology can be extracted via \
-    import_result['topology']. The topology dictionary contains all objects accessible via their mRID. The meta \
+    :func:`~cimpy.cimimport.cim_import()`. The topology dictionary contains all objects accessible via their mRID. The meta \
     information can be extracted via import_result['meta_info']. The meta_info dictionary contains a new dictionary with \
     the keys: 'author', 'namespaces' and 'urls'. The last two are also dictionaries. 'urls' contains a mapping \
     between references to URLs and the extracted value of the URL, e.g. 'absoluteValue': \
@@ -343,11 +343,11 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
 
     This function serializes cgmes classes with the template engine chevron and returns them as a string.
 
-    :param cim_data: a dictionary containing the topology and meta information. It can be created via :func:`~cimimport.cimimport()`
-    :param version: cgmes version, e.g. version = "cgmes_v2_4_15"
-    :param profile: The :class:`~cgmes.Profile` for which the serialization should be generated. . Possible values are TODO: enum
+    :param cim_data: a dictionary containing the topology and meta information. It can be created via :func:`~cimpy.cimimport.cim_import()`
+    :param version: cgmes version, e.g.  ``version="cgmes_v2_4_15"``
+    :param profile: The :class:`~cimpy.cgmes_v2_4_15.Base.Profile` for which the serialization should be generated.
     :param model_name: a string with the name of the model.
-    :param available_profiles: a list of all :class:`~cgmes.Profile`s in `cim_data`
+    :param available_profiles: a list of all :class:`~cimpy.cgmes_v2_4_15.Base.Profile`s in `cim_data`
     """
 
     # returns all classes with their attributes and resolved references
