@@ -9,6 +9,7 @@ import sys
 from cimpy.cgmes_v2_4_15.Base import Base
 cgmesProfile = Base.cgmesProfile
 from pathlib import Path
+import copy
 
 logger = logging.getLogger(__name__)
 
@@ -174,8 +175,8 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
 
         # store serializationProfile and possibleProfileList
         # serializationProfile class attribute, same for multiple instances of same class, only last origin of variable stored
-        serializationProfile = klass['attributes'][0]['serializationProfile']
-        possibleProfileList = klass['attributes'][1]['possibleProfileList']
+        serializationProfile = copy.deepcopy(klass['attributes'][0]['serializationProfile'])
+        possibleProfileList = copy.deepcopy(klass['attributes'][1]['possibleProfileList'])
 
         class_serializationProfile = ''
 
