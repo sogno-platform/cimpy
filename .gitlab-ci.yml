@@ -28,6 +28,10 @@ documentation:
             - documentation
     tags:
         - docker
+    cache:
+        key: secret-cimpy
+        paths:
+            - documentation
 
 
 pages:
