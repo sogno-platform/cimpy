@@ -17,6 +17,19 @@ docker:
         - shell
         - linux
 
+cached-documentation:
+    stage: generate
+    script:
+        - cd documentation && ./docu.sh
+    image: ${DOCKER_IMAGE_DEV}:${DOCKER_TAG_DEV}
+    tags:
+        - docker
+    cache:
+        key: secret-cimpy
+        paths:
+            - documentation
+    except:
+        - master
 
 documentation:
     stage: generate
@@ -28,10 +41,8 @@ documentation:
             - documentation
     tags:
         - docker
-    cache:
-        key: secret-cimpy
-        paths:
-            - documentation
+    only:
+        - master
 
 
 pages:
