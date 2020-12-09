@@ -23,22 +23,18 @@ prepare:
     - /kaniko/executor --context ${CI_PROJECT_DIR} --dockerfile ${DOCKER_FILE} --destination ${CI_REGISTRY_IMAGE}:${DOCKER_IMAGE_DEV}-base-image --cache=true --snapshotMode=redo --use-new-run
 
 
-cached-documentation:
+text-documentation:
     stage: generate
     script:
         - cd documentation && ./docu.sh
     image: ${CI_REGISTRY_IMAGE}:${DOCKER_IMAGE_DEV}-base-image
-    cache:
-        key: secret-cimpy
-        paths:
-            - documentation
     except:
         - master
 
-documentation:
+html-documentation:
     stage: generate
     script:
-        - cd documentation && ./docu.sh
+        - cd documentation && ./docu.sh --release
     image: ${CI_REGISTRY_IMAGE}:${DOCKER_IMAGE_DEV}-base-image
     artifacts:
         paths:
@@ -58,7 +54,7 @@ pages:
             - public
             - .public
     dependencies:
-        - documentation
+        - html-documentation
     only:
         - master
 
