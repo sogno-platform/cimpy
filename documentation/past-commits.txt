@@ -3,3 +3,43 @@ I, Markus Mirz hereby sign-off-by all of my past commits to this repo subject to
 5f24cfaf2abf647bd3e6a7bf4ee4f90e79bbc6ec fix setup package list
 6e092af68cbb9b3cf1ed122281b0478ba999e54f fix setup
 76a7cf5167d7ee176e4001f13ba509ad208c6997 update install instructions
+
+I, Jonathan Klimt hereby sign-off-by all of my past commits to this repo subject to the Developer Certificate of Origin (DCO), Version 1.1. In the past I have used emails: jonathan.klimt@eonerc.rwth-aachen.de
+
+ef5fd334719699975a264fb3ae91e5a7df801003 Execute docu build earlier in CI
+c8a3fa9cc070ace749bd2e99bb8a48390f9eb6f5 Autoformat of tests
+5de95b1f3b3874d6449ca7245d56cbd3c0357226 fixed failing test due to split of list
+835b90ca8f956f32645d4829da9a62615e1cdd96 made tests independent of cwd
+fd88bf8c0544cdac2d99c76eda852a4482540100 Added conftest for reliable test module import
+fcaa2e8cae53a88c1f9fddee30d6bd7a9fc21923 Adapted gitlab CI: only one test stage and gitlab results integration
+b2638345946cd9b6df2edeee329202d7b8160a23 Use tmpdirs in tests
+3725c521ec75d36d5b31ab290031142632e1ba58 use fixture to generate cimdata
+134770569b6e284f35d5495b01b47c7ab40e4555 reduced duplicate code in export test
+450cf6bae1ebb0031b4fc24335c02f251b7dc676 Use the short-profile name from cgmes in test
+2daecfda0b368da6545f0ff157efa15f5bdc7add Put export tests in a single file
+9e071d6d40b44ac98c87f851d014114d5a263ae2 Tests are not sensitive to the cwd of the test-caller anymore
+74a59bc89b995af937d2f3c5248f27cda6e4c03a removed cache and use text build for dev branches instead
+c8002029e60a1d2e09e91a21dba6323711110781 Ported CI to Kaniko&Kubernetes
+68e2c59a9053c3db7a6b65b07ddc2c11e269b798 Use cache only on not-master branch
+4087a10461423541d99fbdc098d8acdd4dcd0aaf Cache documentation files for faster CI
+9170bc4b4e75490df891bda9b2f1d326bc117c31 Adapted set_inheritance_diagram.py so that it does not set the inheritance diagram multiple times and does not modify files unnecessary.
+700c7481fdec8eafe6e45818aeda9c9a6ac07f62 Fixed a bug that _sort_classes_to_profiles had global state. Thanks @richard for finding
+a30bb8d3877a2ac78cb209c081dc1690e866e5b7 Doc formatting fixes
+1924bc7d483a98dc56d622beb0ffe303aa14719f Made cimpy not depending on the cwd anymore. Use relative paths instead
+e772edc93b0c46ee70806cbf4c6cad602476f57e Added gitignore for documentation
+57537a0bb491d27827f43c477b0b21fea5c45330 Improved the doumentation
+ff20242f8d807d3ca011f331cf62e308a9fc0d77 Use profile from cgmes package instead of own one
+74e39cc03564e4dea8afb1620f84470362e2fc15 Minor syntax fixes
+10daec556b766e5eafebcafcd9794ff68a0941fe Use Profile enum instead of list. Moved enum to separate file
+e259207101c9b6177fba10eeb898e5d103e29ce9 Smaller fixes: don't create a file if generation fails. Print error when file exists and syntax fixes
+2b015042846a72c59b3275c6397ccbc5107b4e2f Seperated xml_generation and file output
+84cb6d6eb459e0b4c2c20a69247d0dc4ee736bb9 Reset xml input before running iterparse on it
+1e0d7ee8d7fee7ed014ee393e09fa3127ec41a11 Added Link to the existing Functions page to the Sidebar
+714f37d062b280fe4f8499428dc9d02b10b9435f Excluded setup.py from the documentation
+5c64e6311844b15ecc0c1a4136399e6500de98a0 Fixed Inheritance Diagram
+0c72a46941477d9d7f3c5917d0206e946d2ca539 Fix doc warnings by better link description than 'here'
+3ced27850a910c630de5b616aa668ea04e7676a1 Fix documentation warnings
+d35e043d2fde3ed70a5608cee3e95381b3b41f1e removed set_inheritance_diagram.py as it seems broken
+1f5b5cb80efa394cf0cc4a13267de0bbaf29fbd9 Class Documentation now shows cim functions as well and is clearer
+ceae7ee9ccaf9768c3356c8ffaad795e62977853 CI: Do not deploy when not on master
+84de61d3adfa60898237780d71b8138e18a96acc Removed duplicate docu script. Fixes #22
