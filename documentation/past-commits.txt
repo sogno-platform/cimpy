@@ -1,3 +1,38 @@
+I, Jan Dinkelbach hereby sign-off-by all of my past commits to this repo subject to the Developer Certificate of Origin (DCO), Version 1.1. In the past I have used emails: jdinkelbach@eonerc.rwth-aachen.de
+
+c5d9bee8681c31ee59fe2c679337eadf99675cc0 bump v1.0.2
+5e190880e94f6b903a33aa2eb056a11455924cfd fix toctree after renaming cimpy.examles to cimpy.cimexamples
+f4741a3c85d562ff7668ff2d6fd3bac50cd189d4 fix convertToBusBranch example
+95fd702ab8f895fd2254be869de793c9f76a47f6 fix setting profile if serializationProfile unset
+bbd5973f787bf3d6c3cfecd712da63f3ea541289 add mustache template to cimpy package
+b00ba117d5609d19607b9689c1a15de5f3c2dab2 fix xml paths in example tests
+8e20f768dc9439e688c079288e46a2889a7b2aa3 move examples to cimpy package folder
+7175d365c82f062808576a50f8658fb23ba9af06 bump version 1.0.0
+74f674bf757813143227c30cffb51f2e19265431 Update README.md
+ce319181bea5c52a00e2f39c7147c28a62e9ef1d Update README
+7f1d437bb6b585c52e00a08c3de22e1ced4da0ce fix CI
+c3309d6e46f02bf3ce9a643d5fd58c28b45335e1 fix general text on package
+685c6c8dcfa5740dea3457af33a49b0e71304e9e Update .gitlab-ci.yml
+49b2de7f00ea7535bde086d022e706d19029c740 Update README.md
+0afa5e26c70e7a10f4817987c3db0022a501fa65 Update README.md
+08351a2e6fc7aed47beab3e12ae2576ca6e2c188 Update README.md
+0cc244bea211c85d43773e5d36c8ae72ab2478a4 Fix documentation
+35923870e0cda5d9ac864b0d714bbd6a9b219d8c Fix documentation
+4f8e6969c7927ea17c461e378df914621df51e99 Update files for documentation
+11c83f60d14c95d16a06de0d117510d65fea09d3 Update readme and setup.py
+2071e78e50e24ed0a203d7e3bdcfc51b2153e7a9 Update README
+9661a55ee89f70d27211ae7758089ae332916792 Add LICENSE
+b5a45bc587dccd6aeae3501132602c90255bcb07 update logo
+648b14bd5a774fe8918c5d7a5b763890ead4c46f update logo
+ba29bf0992f4cba387167b4c0ca3495651a74dc0 add logo
+3263a910ed302229c886420fc6c7833f7b3b9e3e update docu.sh
+fb9e43e364d5666f10bcc6ac84d28f778da06d60 update ci yaml
+aca24b6098a7dea4da77fb8b489250aae3555af5 add ci yaml
+2f562d28fd8d5efbda51df920a96efae87dae141 add dockerfile and scripts for building documentation
+3a31e3ce36a4e2ce1533adbe6a0a75d84f96c2e2 rename cimgen_v2_4_15 to cgmes_v2_4_15
+4218f030980afe40989765ff269dd6e805937ccb Update README.md
+015790c5bace15f41770d57cca12cbacaed908ac initial commit of cimpy package
+
 I, Markus Mirz hereby sign-off-by all of my past commits to this repo subject to the Developer Certificate of Origin (DCO), Version 1.1. In the past I have used emails: mmirz@eonerc.rwth-aachen.de
 
 5f24cfaf2abf647bd3e6a7bf4ee4f90e79bbc6ec fix setup package list
