@@ -43,3 +43,17 @@ d35e043d2fde3ed70a5608cee3e95381b3b41f1e removed set_inheritance_diagram.py as i
 1f5b5cb80efa394cf0cc4a13267de0bbaf29fbd9 Class Documentation now shows cim functions as well and is clearer
 ceae7ee9ccaf9768c3356c8ffaad795e62977853 CI: Do not deploy when not on master
 84de61d3adfa60898237780d71b8138e18a96acc Removed duplicate docu script. Fixes #22
+
+I, Richard Marston hereby sign-off-by all of my past commits to this repo subject to the Developer Certificate of Origin (DCO), Version 1.1. In the past I have used emails: rmarston@eonerc.rwth-aachen.de
+
+712df574eff9b318391394b5508be3557fc8235b Build cimpy in Dockerfile
+Merge fixes
+c3ff50857f8f5f9dc845abac7306f92d58757fcf Create pickle dump and submit python code for this process
+1f536db39bc86fec3a473eb38cc781ce8ca4b7bd Fix for export tests
+2626a849151d41227cf98326eb1b074139612b07 Import cgmesProfile
+62a8b22a7ba4d66a588d5c3fcfc67dffef197f60 Fix cgmesProfile enum
+49df372b75a4ce1c3d5ca3c0dcaf456e84190797 Correct base path
+67e66ae9807a11240cb202968b912a6f7acd52ab Correct defaults
+b2f267d428d9137c3924e3fa73bbc1ccfe6a46af Correct import
+ae261c95d8df98ea3b2f9c80d52467e2e2959e4c Correct short name
+58883eafcfe9ebcedff2914c04754e219f28ffd5 Copy in new python files created by cimgen
