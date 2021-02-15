@@ -92,3 +92,8 @@ c3ff50857f8f5f9dc845abac7306f92d58757fcf Create pickle dump and submit python co
 b2f267d428d9137c3924e3fa73bbc1ccfe6a46af Correct import
 ae261c95d8df98ea3b2f9c80d52467e2e2959e4c Correct short name
 58883eafcfe9ebcedff2914c04754e219f28ffd5 Copy in new python files created by cimgen
+
+I, Moraga Martin hereby sign-off-by all of my past commits to this repo subject to the Developer Certificate of Origin (DCO), Version 1.1. In the past I have used emails: martin.moraga@rwth-aachen.de
+
+c19419ee2aa75000607b9e46bb83c418be520b93 fixed issue #11
+e0944692d20033a5d01a0a2e4a26e2ed694e2672 fixed some errors
