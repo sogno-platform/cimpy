@@ -14,13 +14,3 @@ The documentation provides instructions on CIMpy's installation, getting started
 ## License
 
 This project is released under the terms of the [Mozilla Public License Version 2.0](./LICENSE).
-
-## Contact
-
-[![EONERC ACS Logo](https://www.fein-aachen.org/img/logos/eonerc.png)](http://www.acs.eonerc.rwth-aachen.de)
-
-- Jan Dinkelbach <jdinkelbach@eonerc.rwth-aachen.de>
-
-[Institute for Automation of Complex Power Systems (ACS)](http://www.acs.eonerc.rwth-aachen.de)  
-[EON Energy Research Center (EONERC)](http://www.eonerc.rwth-aachen.de)  
-[RWTH University Aachen, Germany](http://www.rwth-aachen.de)  
