@@ -1,0 +1,7 @@
+# action.yml
+name: 'Build Documentation'
+description: 'We are going to build the documentation!'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  entrypoint: './entrypoint.sh'
