@@ -1,0 +1,5 @@
+<map id="inheritancec496efa272" name="inheritancec496efa272">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="26,5,98,31"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="5,79,119,104"/>
+<area shape="rect" id="node3" href="#cimpy.cgmes_v2_4_15.LoadGroup.LoadGroup" target="_top" title="The class is the third level in a hierarchical structure for grouping of loads for the purpose of load flow load scaling." alt="" coords="19,152,105,177"/>
+</map>

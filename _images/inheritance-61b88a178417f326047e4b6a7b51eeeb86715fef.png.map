@@ -1,0 +1,7 @@
+<map id="inheritance3a24970336" name="inheritance3a24970336">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="85,5,157,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="64,79,177,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="39,152,203,177"/>
+<area shape="rect" id="node4" href="cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics.html#cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics.PowerSystemStabilizerDynamics" target="_top" title="Power system stabilizer function block whose behaviour is described by reference to a standard model" alt="" coords="12,225,229,251"/>
+<area shape="rect" id="node5" href="#cimpy.cgmes_v2_4_15.PowerSystemStabilizerUserDefined.PowerSystemStabilizerUserDefined" target="_top" title="function block whose dynamic behaviour is described by" alt="" coords="5,299,236,324"/>
+</map>

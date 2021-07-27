@@ -1,0 +1,7 @@
+<map id="inheritance5536abc21f" name="inheritance5536abc21f">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="78,5,150,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="57,79,171,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="32,152,196,177"/>
+<area shape="rect" id="node4" href="cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics.html#cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics.PowerSystemStabilizerDynamics" target="_top" title="Power system stabilizer function block whose behaviour is described by reference to a standard model" alt="" coords="5,225,223,251"/>
+<area shape="rect" id="node5" href="#cimpy.cgmes_v2_4_15.Pss2ST.Pss2ST" target="_top" title="PTI Microprocessor&#45;Based Stabilizer type 1." alt="" coords="78,299,150,324"/>
+</map>

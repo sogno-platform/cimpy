@@ -1,0 +1,7 @@
+<map id="inheritanceb8f97b0fdb" name="inheritanceb8f97b0fdb">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="57,5,129,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="37,79,150,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="11,152,175,177"/>
+<area shape="rect" id="node5" href="cimpy.cgmes_v2_4_15.TurbineGovernorDynamics.html#cimpy.cgmes_v2_4_15.TurbineGovernorDynamics.TurbineGovernorDynamics" target="_top" title="Turbine&#45;governor function block whose behavior is described by reference to a standard model" alt="" coords="5,225,181,251"/>
+<area shape="rect" id="node4" href="#cimpy.cgmes_v2_4_15.GovHydro3.GovHydro3" target="_top" title="Modified IEEE Hydro Governor&#45;Turbine Model. &#160;This model differs from that defined in the IEEE modeling guideline paper in that the limits on gate position and velocity do not permit &quot;wind up&quot; of the upstream signals." alt="" coords="49,299,137,324"/>
+</map>

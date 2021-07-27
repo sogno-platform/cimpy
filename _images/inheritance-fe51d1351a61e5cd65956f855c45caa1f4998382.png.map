@@ -1,0 +1,7 @@
+<map id="inheritancecfc9b2d745" name="inheritancecfc9b2d745">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="51,5,123,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="31,79,144,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="5,152,169,177"/>
+<area shape="rect" id="node4" href="cimpy.cgmes_v2_4_15.WindPlantDynamics.html#cimpy.cgmes_v2_4_15.WindPlantDynamics.WindPlantDynamics" target="_top" title="Parent class supporting relationships to wind turbines Type 3 and 4 and wind plant IEC and user defined wind plants including their control models." alt="" coords="17,225,158,251"/>
+<area shape="rect" id="node5" href="#cimpy.cgmes_v2_4_15.WindPlantIEC.WindPlantIEC" target="_top" title="Simplified IEC type plant level model. &#160;&#160;Reference: IEC 61400&#45;27&#45;1, AnnexE." alt="" coords="35,299,140,324"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="inheritance6b8314faf1" name="inheritance6b8314faf1">
+<area shape="rect" id="node1" href="#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="5,5,77,31"/>
+<area shape="rect" id="node2" title="Generic enumeration." alt="" coords="101,5,173,31"/>
+<area shape="rect" id="node3" href="#cimpy.cgmes_v2_4_15.Base.Profile" target="_top" title="Enum containing all CGMES profiles and their export priority." alt="" coords="101,79,173,104"/>
+</map>

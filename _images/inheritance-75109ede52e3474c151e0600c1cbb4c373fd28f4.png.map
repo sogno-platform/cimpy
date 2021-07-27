@@ -1,0 +1,5 @@
+<map id="inheritance8130ed686d" name="inheritance8130ed686d">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="57,5,129,31"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="36,79,149,104"/>
+<area shape="rect" id="node3" href="#cimpy.cgmes_v2_4_15.MeasurementValueSource.MeasurementValueSource" target="_top" title="MeasurementValueSource describes the alternative sources updating a MeasurementValue. User conventions for how to use the MeasurementValueSource attributes are described in the introduction to IEC 61970&#45;301." alt="" coords="5,152,180,177"/>
+</map>

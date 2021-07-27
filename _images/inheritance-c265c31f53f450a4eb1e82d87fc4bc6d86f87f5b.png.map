@@ -1,0 +1,4 @@
+<map id="inheritance8ccdc77802" name="inheritance8ccdc77802">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="71,5,143,31"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.ProprietaryParameterDynamics.ProprietaryParameterDynamics" target="_top" title="Supports definition of one or more parameters of several different datatypes for use by proprietary user&#45;defined models. &#160;NOTE: This class does not inherit from IdentifiedObject since it is not intended that a single instance of it be referenced by more than one proprietary user&#45;defined model instance." alt="" coords="5,79,209,104"/>
+</map>

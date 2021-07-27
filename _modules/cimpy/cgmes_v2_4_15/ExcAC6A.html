@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>cimpy.cgmes_v2_4_15.ExcAC6A &mdash; cimpy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> cimpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cimpy.html">cimpy Package Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cimpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>cimpy.cgmes_v2_4_15.ExcAC6A</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for cimpy.cgmes_v2_4_15.ExcAC6A</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.ExcitationSystemDynamics</span> <span class="kn">import</span> <span class="n">ExcitationSystemDynamics</span>
+
+
+<div class="viewcode-block" id="ExcAC6A"><a class="viewcode-back" href="../../../cimpy.cgmes_v2_4_15.ExcAC6A.html#cimpy.cgmes_v2_4_15.ExcAC6A.ExcAC6A">[docs]</a><span class="k">class</span> <span class="nc">ExcAC6A</span><span class="p">(</span><span class="n">ExcitationSystemDynamics</span><span class="p">):</span>
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	Modified IEEE AC6A alternator-supplied rectifier excitation system with speed input.</span>
+
+<span class="sd">	:ka: Voltage regulator gain (Ka).  Typical Value = 536. Default: 0.0</span>
+<span class="sd">	:ks: Coefficient to allow different usage of the model-speed coefficient (Ks).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:ta: Voltage regulator time constant (Ta).  Typical Value = 0.086. Default: 0</span>
+<span class="sd">	:tk: Voltage regulator time constant (Tk).  Typical Value = 0.18. Default: 0</span>
+<span class="sd">	:tb: Voltage regulator time constant (Tb).  Typical Value = 9. Default: 0</span>
+<span class="sd">	:tc: Voltage regulator time constant (Tc).  Typical Value = 3. Default: 0</span>
+<span class="sd">	:vamax: Maximum voltage regulator output (Vamax).  Typical Value = 75. Default: 0.0</span>
+<span class="sd">	:vamin: Minimum voltage regulator output (Vamin).  Typical Value = -75. Default: 0.0</span>
+<span class="sd">	:vrmax: Maximum voltage regulator output (Vrmax).  Typical Value = 44. Default: 0.0</span>
+<span class="sd">	:vrmin: Minimum voltage regulator output (Vrmin).  Typical Value = -36. Default: 0.0</span>
+<span class="sd">	:te: Exciter time constant, integration rate associated with exciter control (Te).  Typical Value = 1. Default: 0</span>
+<span class="sd">	:kh: Exciter field current limiter gain (Kh).  Typical Value = 92. Default: 0.0</span>
+<span class="sd">	:tj: Exciter field current limiter time constant (Tj).  Typical Value = 0.02. Default: 0</span>
+<span class="sd">	:th: Exciter field current limiter time constant (Th).  Typical Value = 0.08. Default: 0</span>
+<span class="sd">	:vfelim: Exciter field current limit reference (Vfelim).  Typical Value = 19. Default: 0.0</span>
+<span class="sd">	:vhmax: Maximum field current limiter signal reference (Vhmax).  Typical Value = 75. Default: 0.0</span>
+<span class="sd">	:kc: Rectifier loading factor proportional to commutating reactance (Kc).  Typical Value = 0.173. Default: 0.0</span>
+<span class="sd">	:kd: Demagnetizing factor, a function of exciter alternator reactances (Kd).  Typical Value = 1.91. Default: 0.0</span>
+<span class="sd">	:ke: Exciter constant related to self-excited field (Ke).  Typical Value = 1.6. Default: 0.0</span>
+<span class="sd">	:ve1: Exciter alternator output voltages back of commutating reactance at which saturation is defined (Ve).  Typical Value = 7.4. Default: 0.0</span>
+<span class="sd">	:seve1: Exciter saturation function value at the corresponding exciter voltage, Ve1, back of commutating reactance (Se[Ve1]).  Typical Value = 0.214. Default: 0.0</span>
+<span class="sd">	:ve2: Exciter alternator output voltages back of commutating reactance at which saturation is defined (Ve2).  Typical Value = 5.55. Default: 0.0</span>
+<span class="sd">	:seve2: Exciter saturation function value at the corresponding exciter voltage, Ve2, back of commutating reactance (Se[Ve2]).  Typical Value = 0.044. Default: 0.0</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+	<span class="n">cgmesProfile</span> <span class="o">=</span> <span class="n">ExcitationSystemDynamics</span><span class="o">.</span><span class="n">cgmesProfile</span>
+
+	<span class="n">possibleProfileList</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ka&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ks&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ta&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tk&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tb&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vamax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vamin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vrmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vrmin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;te&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kh&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tj&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;th&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vfelim&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vhmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kd&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ke&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ve1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;seve1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ve2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;seve2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						 <span class="p">}</span>
+
+	<span class="n">serializationProfile</span> <span class="o">=</span> <span class="p">{}</span>
+
+	<span class="vm">__doc__</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Documentation of parent class ExcitationSystemDynamics: </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">ExcitationSystemDynamics</span><span class="o">.</span><span class="vm">__doc__</span> 
+
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ka</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ks</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ta</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tk</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tb</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vamax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vamin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vrmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vrmin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">te</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">kh</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">tj</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vfelim</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vhmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kc</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kd</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ke</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ve1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">seve1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ve2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">seve2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">)</span>
+	
+		<span class="bp">self</span><span class="o">.</span><span class="n">ka</span> <span class="o">=</span> <span class="n">ka</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ks</span> <span class="o">=</span> <span class="n">ks</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ta</span> <span class="o">=</span> <span class="n">ta</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tk</span> <span class="o">=</span> <span class="n">tk</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tb</span> <span class="o">=</span> <span class="n">tb</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tc</span> <span class="o">=</span> <span class="n">tc</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vamax</span> <span class="o">=</span> <span class="n">vamax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vamin</span> <span class="o">=</span> <span class="n">vamin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vrmax</span> <span class="o">=</span> <span class="n">vrmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vrmin</span> <span class="o">=</span> <span class="n">vrmin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">te</span> <span class="o">=</span> <span class="n">te</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kh</span> <span class="o">=</span> <span class="n">kh</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tj</span> <span class="o">=</span> <span class="n">tj</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">th</span> <span class="o">=</span> <span class="n">th</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vfelim</span> <span class="o">=</span> <span class="n">vfelim</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vhmax</span> <span class="o">=</span> <span class="n">vhmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kc</span> <span class="o">=</span> <span class="n">kc</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kd</span> <span class="o">=</span> <span class="n">kd</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ke</span> <span class="o">=</span> <span class="n">ke</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ve1</span> <span class="o">=</span> <span class="n">ve1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">seve1</span> <span class="o">=</span> <span class="n">seve1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ve2</span> <span class="o">=</span> <span class="n">ve2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">seve2</span> <span class="o">=</span> <span class="n">seve2</span>
+		
+	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;class=ExcAC6A</span><span class="se">\n</span><span class="s1">&#39;</span>
+		<span class="n">attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span>
+		<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">attributes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+			<span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;=</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+		<span class="k">return</span> <span class="nb">str</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, ACS RWTH Aachen University.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+<map id="inheritancef2c4daf88b" name="inheritancef2c4daf88b">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="69,5,141,31"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="48,79,161,104"/>
+<area shape="rect" id="node3" href="#cimpy.cgmes_v2_4_15.WindPlantReactiveControlIEC.WindPlantReactiveControlIEC" target="_top" title="Simplified plant voltage and reactive power control model for use with type 3 and type 4 wind turbine models. &#160;Reference: IEC Standard 61400&#45;27&#45;1 Annex E." alt="" coords="5,152,204,177"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="inheritance32e8960b63" name="inheritance32e8960b63">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="37,5,109,31"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="17,79,130,104"/>
+<area shape="rect" id="node3" href="#cimpy.cgmes_v2_4_15.OperationalLimitSet.OperationalLimitSet" target="_top" title="A set of limits associated with equipment. &#160;Sets of limits might apply to a specific temperature, or season for example. A set of limits may contain different severities of limit levels that would apply to the same equipment. The set may contain limits of different types such as apparent power and current limits or high and low voltage limits &#160;that are logically applied together as a set." alt="" coords="5,152,141,177"/>
+</map>

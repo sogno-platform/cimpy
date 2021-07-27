@@ -1,0 +1,5 @@
+<map id="inheritance1a8c3a4a3d" name="inheritance1a8c3a4a3d">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="41,5,113,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="20,79,133,104"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.DCTopologicalIsland.DCTopologicalIsland" target="_top" title="An electrically connected subset of the network. DC topological islands can change as the current network state changes: e.g. due to &#160;&#45; disconnect switches or breakers change state in a SCADA/EMS &#45; manual creation, change or deletion of topological nodes in a planning tool." alt="" coords="5,152,148,177"/>
+</map>

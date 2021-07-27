@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>cimpy.cgmes_v2_4_15.PowerTransformer &mdash; cimpy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> cimpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cimpy.html">cimpy Package Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cimpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>cimpy.cgmes_v2_4_15.PowerTransformer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for cimpy.cgmes_v2_4_15.PowerTransformer</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.ConductingEquipment</span> <span class="kn">import</span> <span class="n">ConductingEquipment</span>
+
+
+<div class="viewcode-block" id="PowerTransformer"><a class="viewcode-back" href="../../../cimpy.cgmes_v2_4_15.PowerTransformer.html#cimpy.cgmes_v2_4_15.PowerTransformer.PowerTransformer">[docs]</a><span class="k">class</span> <span class="nc">PowerTransformer</span><span class="p">(</span><span class="n">ConductingEquipment</span><span class="p">):</span>
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow). A power transformer may be composed of separate transformer tanks that need not be identical. A power transformer can be modeled with or without tanks and is intended for use in both balanced and unbalanced representations.   A power transformer typically has two terminals, but may have one (grounding), three or more terminals. The inherited association ConductingEquipment.BaseVoltage should not be used.  The association from TransformerEnd to BaseVoltage should be used instead.</span>
+
+<span class="sd">	:PowerTransformerEnd: The power transformer of this power transformer end. Default: &quot;list&quot;</span>
+<span class="sd">	:beforeShCircuitHighestOperatingCurrent: The highest operating current (Ib in the IEC 60909-0) before short circuit (depends on network configuration and relevant reliability philosophy). It is used for calculation of the impedance correction factor KT defined in IEC 60909-0. Default: 0.0</span>
+<span class="sd">	:beforeShCircuitHighestOperatingVoltage: The highest operating voltage (Ub in the IEC 60909-0) before short circuit. It is used for calculation of the impedance correction factor KT defined in IEC 60909-0. This is worst case voltage on the low side winding (Section 3.7.1 in the standard). Used to define operating conditions. Default: 0.0</span>
+<span class="sd">	:beforeShortCircuitAnglePf: The angle of power factor before short circuit (phib in the IEC 60909-0). It is used for calculation of the impedance correction factor KT defined in IEC 60909-0. This is the worst case power factor. Used to define operating conditions. Default: 0.0</span>
+<span class="sd">	:highSideMinOperatingU: The minimum operating voltage (uQmin in the IEC 60909-0) at the high voltage side (Q side) of the unit transformer of the power station unit. A value well established from long-term operating experience of the system. It is used for calculation of the impedance correction factor KG defined in IEC 60909-0 Default: 0.0</span>
+<span class="sd">	:isPartOfGeneratorUnit: Indicates whether the machine is part of a power station unit. Used for short circuit data exchange according to IEC 60909 Default: False</span>
+<span class="sd">	:operationalValuesConsidered: It is used to define if the data (other attributes related to short circuit data exchange) defines long term operational conditions or not. Used for short circuit data exchange according to IEC 60909. Default: False</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+	<span class="n">cgmesProfile</span> <span class="o">=</span> <span class="n">ConductingEquipment</span><span class="o">.</span><span class="n">cgmesProfile</span>
+
+	<span class="n">possibleProfileList</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;PowerTransformerEnd&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;beforeShCircuitHighestOperatingCurrent&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;beforeShCircuitHighestOperatingVoltage&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;beforeShortCircuitAnglePf&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;highSideMinOperatingU&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;isPartOfGeneratorUnit&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;operationalValuesConsidered&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						 <span class="p">}</span>
+
+	<span class="n">serializationProfile</span> <span class="o">=</span> <span class="p">{}</span>
+
+	<span class="vm">__doc__</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Documentation of parent class ConductingEquipment: </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">ConductingEquipment</span><span class="o">.</span><span class="vm">__doc__</span> 
+
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">PowerTransformerEnd</span> <span class="o">=</span> <span class="s2">&quot;list&quot;</span><span class="p">,</span> <span class="n">beforeShCircuitHighestOperatingCurrent</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">beforeShCircuitHighestOperatingVoltage</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">beforeShortCircuitAnglePf</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">highSideMinOperatingU</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">isPartOfGeneratorUnit</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">operationalValuesConsidered</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">)</span>
+	
+		<span class="bp">self</span><span class="o">.</span><span class="n">PowerTransformerEnd</span> <span class="o">=</span> <span class="n">PowerTransformerEnd</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">beforeShCircuitHighestOperatingCurrent</span> <span class="o">=</span> <span class="n">beforeShCircuitHighestOperatingCurrent</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">beforeShCircuitHighestOperatingVoltage</span> <span class="o">=</span> <span class="n">beforeShCircuitHighestOperatingVoltage</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">beforeShortCircuitAnglePf</span> <span class="o">=</span> <span class="n">beforeShortCircuitAnglePf</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">highSideMinOperatingU</span> <span class="o">=</span> <span class="n">highSideMinOperatingU</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">isPartOfGeneratorUnit</span> <span class="o">=</span> <span class="n">isPartOfGeneratorUnit</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">operationalValuesConsidered</span> <span class="o">=</span> <span class="n">operationalValuesConsidered</span>
+		
+	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;class=PowerTransformer</span><span class="se">\n</span><span class="s1">&#39;</span>
+		<span class="n">attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span>
+		<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">attributes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+			<span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;=</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+		<span class="k">return</span> <span class="nb">str</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, ACS RWTH Aachen University.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

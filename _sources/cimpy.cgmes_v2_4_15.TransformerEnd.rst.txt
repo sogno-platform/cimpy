@@ -1,0 +1,10 @@
+cimpy.cgmes\_v2\_4\_15.TransformerEnd module
+============================================
+
+.. automodule:: cimpy.cgmes_v2_4_15.TransformerEnd
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.cgmes_v2_4_15.TransformerEnd
+    :parts: 1

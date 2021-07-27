@@ -1,0 +1,6 @@
+<map id="inheritance92ce4d2b0b" name="inheritance92ce4d2b0b">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="35,5,107,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="14,79,127,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.Curve.html#cimpy.cgmes_v2_4_15.Curve.Curve" target="_top" title="A multi&#45;purpose curve or functional relationship between an independent variable (X&#45;axis) and dependent (Y&#45;axis) variables." alt="" coords="35,152,107,177"/>
+<area shape="rect" id="node4" href="#cimpy.cgmes_v2_4_15.VsCapabilityCurve.VsCapabilityCurve" target="_top" title="The P&#45;Q capability curve for a voltage source converter, with P on x&#45;axis and Qmin and Qmax on y1&#45;axis and y2&#45;axis." alt="" coords="5,225,136,251"/>
+</map>

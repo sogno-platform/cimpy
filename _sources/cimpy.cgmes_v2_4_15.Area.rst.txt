@@ -1,0 +1,10 @@
+cimpy.cgmes\_v2\_4\_15.Area module
+==================================
+
+.. automodule:: cimpy.cgmes_v2_4_15.Area
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.cgmes_v2_4_15.Area
+    :parts: 1

@@ -1,0 +1,10 @@
+cimpy.cgmes\_v2\_4\_15.LoadMotor module
+=======================================
+
+.. automodule:: cimpy.cgmes_v2_4_15.LoadMotor
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.cgmes_v2_4_15.LoadMotor
+    :parts: 1

@@ -1,0 +1,10 @@
+cimpy.cgmes\_v2\_4\_15.VsCapabilityCurve module
+===============================================
+
+.. automodule:: cimpy.cgmes_v2_4_15.VsCapabilityCurve
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.cgmes_v2_4_15.VsCapabilityCurve
+    :parts: 1

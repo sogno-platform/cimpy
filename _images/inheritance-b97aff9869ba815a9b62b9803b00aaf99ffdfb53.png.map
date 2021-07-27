@@ -1,0 +1,5 @@
+<map id="inheritance1d1b240a22" name="inheritance1d1b240a22">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="44,5,116,31"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="23,79,137,104"/>
+<area shape="rect" id="node3" href="#cimpy.cgmes_v2_4_15.WindContCurrLimIEC.WindContCurrLimIEC" target="_top" title="Current limitation model. &#160;The current limitation model combines the physical limits. &#160;Reference: IEC Standard 61400&#45;27&#45;1 Section 6.6.5.7." alt="" coords="5,152,155,177"/>
+</map>

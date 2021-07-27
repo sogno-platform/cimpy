@@ -1,0 +1,10 @@
+cimpy.cgmes\_v2\_4\_15.PssSK module
+===================================
+
+.. automodule:: cimpy.cgmes_v2_4_15.PssSK
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.cgmes_v2_4_15.PssSK
+    :parts: 1

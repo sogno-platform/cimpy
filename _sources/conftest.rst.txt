@@ -1,0 +1,10 @@
+conftest module
+===============
+
+.. automodule:: conftest
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  conftest
+    :parts: 1

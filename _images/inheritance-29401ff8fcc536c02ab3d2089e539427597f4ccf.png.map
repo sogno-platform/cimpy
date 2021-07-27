@@ -1,0 +1,4 @@
+<map id="inheritancebe1461e074" name="inheritancebe1461e074">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="19,5,91,31"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.PositionPoint.PositionPoint" target="_top" title="Set of spatial coordinates that determine a point, defined in the coordinate system specified in &#39;Location.CoordinateSystem&#39;. Use a single position point instance to desribe a point&#45;oriented location. Use a sequence of position points to describe a line&#45;oriented object (physical location of non&#45;point oriented objects like cables or lines), or area of an object (like a substation or a geographical zone &#45; in this case, have first and last position point with the same values)." alt="" coords="5,79,104,104"/>
+</map>

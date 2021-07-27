@@ -1,0 +1,5 @@
+<map id="inheritance8f54561748" name="inheritance8f54561748">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="65,5,137,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.TapChangerTablePoint.html#cimpy.cgmes_v2_4_15.TapChangerTablePoint.TapChangerTablePoint" target="_top" title=":b: The magnetizing branch susceptance deviation in percent of nominal value. The actual susceptance is calculated as follows: calculated magnetizing susceptance = b(nominal) * (1 + b(from this class)/100). &#160;&#160;The b(nominal) is defined as the static magnetizing susceptance on the associated power transformer end or ends. &#160;This model assumes the star impedance (pi model) form. Default: 0.0" alt="" coords="24,79,177,104"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.PhaseTapChangerTablePoint.PhaseTapChangerTablePoint" target="_top" title="Describes each tap step in the phase tap changer tabular curve." alt="" coords="5,152,196,177"/>
+</map>

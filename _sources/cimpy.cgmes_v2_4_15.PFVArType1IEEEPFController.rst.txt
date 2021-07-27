@@ -1,0 +1,10 @@
+cimpy.cgmes\_v2\_4\_15.PFVArType1IEEEPFController module
+========================================================
+
+.. automodule:: cimpy.cgmes_v2_4_15.PFVArType1IEEEPFController
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.cgmes_v2_4_15.PFVArType1IEEEPFController
+    :parts: 1

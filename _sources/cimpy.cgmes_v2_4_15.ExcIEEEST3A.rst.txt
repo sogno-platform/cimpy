@@ -1,0 +1,10 @@
+cimpy.cgmes\_v2\_4\_15.ExcIEEEST3A module
+=========================================
+
+.. automodule:: cimpy.cgmes_v2_4_15.ExcIEEEST3A
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.cgmes_v2_4_15.ExcIEEEST3A
+    :parts: 1

@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>cimpy.cgmes_v2_4_15.GovGAST1 &mdash; cimpy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> cimpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cimpy.html">cimpy Package Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cimpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>cimpy.cgmes_v2_4_15.GovGAST1</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for cimpy.cgmes_v2_4_15.GovGAST1</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.TurbineGovernorDynamics</span> <span class="kn">import</span> <span class="n">TurbineGovernorDynamics</span>
+
+
+<div class="viewcode-block" id="GovGAST1"><a class="viewcode-back" href="../../../cimpy.cgmes_v2_4_15.GovGAST1.html#cimpy.cgmes_v2_4_15.GovGAST1.GovGAST1">[docs]</a><span class="k">class</span> <span class="nc">GovGAST1</span><span class="p">(</span><span class="n">TurbineGovernorDynamics</span><span class="p">):</span>
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	Modified single shaft gas turbine.</span>
+
+<span class="sd">	:mwbase: Base for power values (MWbase) (&gt; 0).  Unit = MW. Default: 0.0</span>
+<span class="sd">	:r: Permanent droop (R).  Typical Value = 0.04. Default: 0.0</span>
+<span class="sd">	:t1: Governor mechanism time constant (T1).  T1 represents the natural valve positioning time constant of the governor for small disturbances, as seen when rate limiting is not in effect.  Typical Value = 0.5. Default: 0</span>
+<span class="sd">	:t2: Turbine power time constant (T2).  T2 represents delay due to internal energy storage of the gas turbine engine. T2 can be used to give a rough approximation to the delay associated with acceleration of the compressor spool of a multi-shaft engine, or with the compressibility of gas in the plenum of the free power turbine of an aero-derivative unit, for example.  Typical Value = 0.5. Default: 0</span>
+<span class="sd">	:t3: Turbine exhaust temperature time constant (T3).  T3 represents delay in the exhaust temperature and load limiting system. Typical Value = 3. Default: 0</span>
+<span class="sd">	:lmax: Ambient temperature load limit (Lmax).  Lmax is the turbine power output corresponding to the limiting exhaust gas temperature.  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:kt: Temperature limiter gain (Kt).  Typical Value = 3. Default: 0.0</span>
+<span class="sd">	:vmax: Maximum turbine power, PU of MWbase (Vmax).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:vmin: Minimum turbine power, PU of MWbase (Vmin).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:fidle: Fuel flow at zero power output (Fidle).  Typical Value = 0.18. Default: 0.0</span>
+<span class="sd">	:rmax: Maximum fuel valve opening rate (Rmax).  Unit = PU/sec.  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:loadinc: Valve position change allowed at fast rate (Loadinc).  Typical Value = 0.05. Default: 0.0</span>
+<span class="sd">	:tltr: Valve position averaging time constant (Tltr).  Typical Value = 10. Default: 0</span>
+<span class="sd">	:ltrate: Maximum long term fuel valve opening rate (Ltrate).  Typical Value = 0.02. Default: 0.0</span>
+<span class="sd">	:a: Turbine power time constant numerator scale factor (a).  Typical Value = 0.8. Default: 0.0</span>
+<span class="sd">	:b: Turbine power time constant denominator scale factor (b).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:db1: Intentional dead-band width (db1).  Unit = Hz.  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:eps: Intentional db hysteresis (eps).  Unit = Hz.  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:db2: Unintentional dead-band (db2).  Unit = MW.  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:gv1: Nonlinear gain point 1, PU gv (Gv1).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:pgv1: Nonlinear gain point 1, PU power (Pgv1).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:gv2: Nonlinear gain point 2,PU gv (Gv2).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:pgv2: Nonlinear gain point 2, PU power (Pgv2).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:gv3: Nonlinear gain point 3, PU gv (Gv3).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:pgv3: Nonlinear gain point 3, PU power (Pgv3).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:gv4: Nonlinear gain point 4, PU gv (Gv4).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:pgv4: Nonlinear gain point 4, PU power (Pgv4).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:gv5: Nonlinear gain point 5, PU gv (Gv5).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:pgv5: Nonlinear gain point 5, PU power (Pgv5).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:gv6: Nonlinear gain point 6, PU gv (Gv6).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:pgv6: Nonlinear gain point 6, PU power (Pgv6).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:ka: Governor gain (Ka).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:t4: Governor lead time constant (T4).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:t5: Governor lag time constant (T5).  Typical Value = 0. Default: 0</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+	<span class="n">cgmesProfile</span> <span class="o">=</span> <span class="n">TurbineGovernorDynamics</span><span class="o">.</span><span class="n">cgmesProfile</span>
+
+	<span class="n">possibleProfileList</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;mwbase&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;t1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;t2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;t3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;lmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kt&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vmin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;fidle&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;rmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;loadinc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tltr&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ltrate&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;db1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;eps&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;db2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;gv1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;pgv1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;gv2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;pgv2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;gv3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;pgv3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;gv4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;pgv4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;gv5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;pgv5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;gv6&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;pgv6&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ka&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;t4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;t5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						 <span class="p">}</span>
+
+	<span class="n">serializationProfile</span> <span class="o">=</span> <span class="p">{}</span>
+
+	<span class="vm">__doc__</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Documentation of parent class TurbineGovernorDynamics: </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">TurbineGovernorDynamics</span><span class="o">.</span><span class="vm">__doc__</span> 
+
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mwbase</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">t1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">lmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kt</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">fidle</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">rmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">loadinc</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">tltr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ltrate</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">db1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">eps</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">db2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">gv1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">pgv1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">gv2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">pgv2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">gv3</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">pgv3</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">gv4</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">pgv4</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">gv5</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">pgv5</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">gv6</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">pgv6</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ka</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">t4</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t5</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">)</span>
+	
+		<span class="bp">self</span><span class="o">.</span><span class="n">mwbase</span> <span class="o">=</span> <span class="n">mwbase</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">t1</span> <span class="o">=</span> <span class="n">t1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">t2</span> <span class="o">=</span> <span class="n">t2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">t3</span> <span class="o">=</span> <span class="n">t3</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">lmax</span> <span class="o">=</span> <span class="n">lmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kt</span> <span class="o">=</span> <span class="n">kt</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vmax</span> <span class="o">=</span> <span class="n">vmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vmin</span> <span class="o">=</span> <span class="n">vmin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">fidle</span> <span class="o">=</span> <span class="n">fidle</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">rmax</span> <span class="o">=</span> <span class="n">rmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">loadinc</span> <span class="o">=</span> <span class="n">loadinc</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tltr</span> <span class="o">=</span> <span class="n">tltr</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ltrate</span> <span class="o">=</span> <span class="n">ltrate</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">db1</span> <span class="o">=</span> <span class="n">db1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">eps</span> <span class="o">=</span> <span class="n">eps</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">db2</span> <span class="o">=</span> <span class="n">db2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">gv1</span> <span class="o">=</span> <span class="n">gv1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pgv1</span> <span class="o">=</span> <span class="n">pgv1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">gv2</span> <span class="o">=</span> <span class="n">gv2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pgv2</span> <span class="o">=</span> <span class="n">pgv2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">gv3</span> <span class="o">=</span> <span class="n">gv3</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pgv3</span> <span class="o">=</span> <span class="n">pgv3</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">gv4</span> <span class="o">=</span> <span class="n">gv4</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pgv4</span> <span class="o">=</span> <span class="n">pgv4</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">gv5</span> <span class="o">=</span> <span class="n">gv5</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pgv5</span> <span class="o">=</span> <span class="n">pgv5</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">gv6</span> <span class="o">=</span> <span class="n">gv6</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pgv6</span> <span class="o">=</span> <span class="n">pgv6</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ka</span> <span class="o">=</span> <span class="n">ka</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">t4</span> <span class="o">=</span> <span class="n">t4</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">t5</span> <span class="o">=</span> <span class="n">t5</span>
+		
+	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;class=GovGAST1</span><span class="se">\n</span><span class="s1">&#39;</span>
+		<span class="n">attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span>
+		<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">attributes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+			<span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;=</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+		<span class="k">return</span> <span class="nb">str</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, ACS RWTH Aachen University.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

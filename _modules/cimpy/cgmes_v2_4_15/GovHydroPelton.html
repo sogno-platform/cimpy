@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>cimpy.cgmes_v2_4_15.GovHydroPelton &mdash; cimpy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> cimpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cimpy.html">cimpy Package Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cimpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>cimpy.cgmes_v2_4_15.GovHydroPelton</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for cimpy.cgmes_v2_4_15.GovHydroPelton</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.TurbineGovernorDynamics</span> <span class="kn">import</span> <span class="n">TurbineGovernorDynamics</span>
+
+
+<div class="viewcode-block" id="GovHydroPelton"><a class="viewcode-back" href="../../../cimpy.cgmes_v2_4_15.GovHydroPelton.html#cimpy.cgmes_v2_4_15.GovHydroPelton.GovHydroPelton">[docs]</a><span class="k">class</span> <span class="nc">GovHydroPelton</span><span class="p">(</span><span class="n">TurbineGovernorDynamics</span><span class="p">):</span>
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	Detailed hydro unit - Pelton model.  This model can be used to represent the dynamic related to water tunnel and surge chamber. A schematic of the hydraulic system of detailed hydro unit models, like Francis and Pelton, is located under the GovHydroFrancis class.</span>
+
+<span class="sd">	:av0: Area of the surge tank (A). Unit = m. Typical Value = 30. Default: 0.0</span>
+<span class="sd">	:av1: Area of the compensation tank (A). Unit = m. Typical Value = 700. Default: 0.0</span>
+<span class="sd">	:bp: Droop (bp).  Typical Value = 0.05. Default: 0.0</span>
+<span class="sd">	:db1: Intentional dead-band width (DB1).  Unit = Hz.  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:db2: Intentional dead-band width of valve opening error (DB2). Unit = Hz.  Typical Value = 0.01. Default: 0.0</span>
+<span class="sd">	:h1: Head of compensation chamber water level with respect to the level of penstock (H).  Unit = m. Typical Value = 4. Default: 0.0</span>
+<span class="sd">	:h2: Head of surge tank water level with respect to the level of penstock (H).  Unit = m. Typical Value = 40. Default: 0.0</span>
+<span class="sd">	:hn: Rated hydraulic head (H).  Unit = m. Typical Value = 250. Default: 0.0</span>
+<span class="sd">	:kc: Penstock loss coefficient (due to friction) (Kc).  Typical Value = 0.025. Default: 0.0</span>
+<span class="sd">	:kg: Water tunnel and surge chamber loss coefficient (due to friction) (Kg).  Typical Value = -0.025. Default: 0.0</span>
+<span class="sd">	:qc0: No-load turbine flow at nominal head (Qc0).  Typical Value = 0.05. Default: 0.0</span>
+<span class="sd">	:qn: Rated flow (Q). Unit = m/s. Typical Value = 40. Default: 0.0</span>
+<span class="sd">	:simplifiedPelton: Simplified Pelton model simulation (Sflag). true = enable of simplified Pelton model simulation false = enable of complete Pelton model simulation (non linear gain). Typical Value = false. Default: False</span>
+<span class="sd">	:staticCompensating: Static compensating characteristic (Cflag). true = enable of static compensating characteristic  false = inhibit of static compensating characteristic. Typical Value = false. Default: False</span>
+<span class="sd">	:ta: Derivative gain (accelerometer time constant) (Ta).  Typical Value = 3. Default: 0</span>
+<span class="sd">	:ts: Gate servo time constant (Ts).  Typical Value = 0.15. Default: 0</span>
+<span class="sd">	:tv: Servomotor integrator time constant (TV).  Typical Value = 0.3. Default: 0</span>
+<span class="sd">	:twnc: Water inertia time constant (Twnc).  Typical Value = 1. Default: 0</span>
+<span class="sd">	:twng: Water tunnel and surge chamber inertia time constant (Twng). Typical Value = 3. Default: 0</span>
+<span class="sd">	:tx: Electronic integrator time constant (Tx).  Typical Value = 0.5. Default: 0</span>
+<span class="sd">	:va: Maximum gate opening velocity (Va).  Unit = PU/sec.  Typical Value = 0.016. Default: 0.0</span>
+<span class="sd">	:valvmax: Maximum gate opening (ValvMax).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:valvmin: Minimum gate opening (ValvMin).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:vav: Maximum servomotor valve opening velocity (Vav).  Typical Value = 0.017. Default: 0.0</span>
+<span class="sd">	:vc: Maximum gate closing velocity (Vc).  Unit = PU/sec.  Typical Value = -0.016. Default: 0.0</span>
+<span class="sd">	:vcv: Maximum servomotor valve closing velocity (Vcv).  Typical Value = -0.017. Default: 0.0</span>
+<span class="sd">	:waterTunnelSurgeChamberSimulation: Water tunnel and surge chamber simulation (Tflag). true = enable of water tunnel and surge chamber simulation false = inhibit of water tunnel and surge chamber simulation. Typical Value = false. Default: False</span>
+<span class="sd">	:zsfc: Head of upper water level with respect to the level of penstock (Zsfc).  Unit = m. Typical Value = 25. Default: 0.0</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+	<span class="n">cgmesProfile</span> <span class="o">=</span> <span class="n">TurbineGovernorDynamics</span><span class="o">.</span><span class="n">cgmesProfile</span>
+
+	<span class="n">possibleProfileList</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;av0&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;av1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;bp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;db1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;db2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;h1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;h2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;hn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kg&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;qc0&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;qn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;simplifiedPelton&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;staticCompensating&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ta&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ts&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tv&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;twnc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;twng&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tx&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;va&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;valvmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;valvmin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vav&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vcv&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;waterTunnelSurgeChamberSimulation&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;zsfc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						 <span class="p">}</span>
+
+	<span class="n">serializationProfile</span> <span class="o">=</span> <span class="p">{}</span>
+
+	<span class="vm">__doc__</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Documentation of parent class TurbineGovernorDynamics: </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">TurbineGovernorDynamics</span><span class="o">.</span><span class="vm">__doc__</span> 
+
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">av0</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">av1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">bp</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">db1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">db2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">h1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">h2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">hn</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kc</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kg</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">qc0</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">qn</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">simplifiedPelton</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">staticCompensating</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">ta</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ts</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tv</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">twnc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">twng</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">va</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">valvmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">valvmin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vav</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vc</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vcv</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">waterTunnelSurgeChamberSimulation</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">zsfc</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">)</span>
+	
+		<span class="bp">self</span><span class="o">.</span><span class="n">av0</span> <span class="o">=</span> <span class="n">av0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">av1</span> <span class="o">=</span> <span class="n">av1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">bp</span> <span class="o">=</span> <span class="n">bp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">db1</span> <span class="o">=</span> <span class="n">db1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">db2</span> <span class="o">=</span> <span class="n">db2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">h1</span> <span class="o">=</span> <span class="n">h1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">h2</span> <span class="o">=</span> <span class="n">h2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">hn</span> <span class="o">=</span> <span class="n">hn</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kc</span> <span class="o">=</span> <span class="n">kc</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kg</span> <span class="o">=</span> <span class="n">kg</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">qc0</span> <span class="o">=</span> <span class="n">qc0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">qn</span> <span class="o">=</span> <span class="n">qn</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">simplifiedPelton</span> <span class="o">=</span> <span class="n">simplifiedPelton</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">staticCompensating</span> <span class="o">=</span> <span class="n">staticCompensating</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ta</span> <span class="o">=</span> <span class="n">ta</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ts</span> <span class="o">=</span> <span class="n">ts</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tv</span> <span class="o">=</span> <span class="n">tv</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">twnc</span> <span class="o">=</span> <span class="n">twnc</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">twng</span> <span class="o">=</span> <span class="n">twng</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tx</span> <span class="o">=</span> <span class="n">tx</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">va</span> <span class="o">=</span> <span class="n">va</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">valvmax</span> <span class="o">=</span> <span class="n">valvmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">valvmin</span> <span class="o">=</span> <span class="n">valvmin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vav</span> <span class="o">=</span> <span class="n">vav</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vc</span> <span class="o">=</span> <span class="n">vc</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vcv</span> <span class="o">=</span> <span class="n">vcv</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">waterTunnelSurgeChamberSimulation</span> <span class="o">=</span> <span class="n">waterTunnelSurgeChamberSimulation</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">zsfc</span> <span class="o">=</span> <span class="n">zsfc</span>
+		
+	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;class=GovHydroPelton</span><span class="se">\n</span><span class="s1">&#39;</span>
+		<span class="n">attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span>
+		<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">attributes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+			<span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;=</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+		<span class="k">return</span> <span class="nb">str</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, ACS RWTH Aachen University.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

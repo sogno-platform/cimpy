@@ -1,0 +1,4 @@
+<map id="inheritancea7a6bc4a76" name="inheritancea7a6bc4a76">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="15,5,87,31"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.PhaseCode.PhaseCode" target="_top" title="Enumeration of phase identifiers. Allows designation of phases for both transmission and distribution equipment, circuits and loads. Residential and small commercial loads are often served from single&#45;phase, or split&#45;phase, secondary circuits. For example of s12N, phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single&#45;phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three&#45;phase loads, use the A, B, C phase codes instead of s12N." alt="" coords="5,79,96,104"/>
+</map>

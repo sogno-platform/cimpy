@@ -1,0 +1,7 @@
+<map id="inheritance96f26f0749" name="inheritance96f26f0749">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="78,5,150,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="57,79,171,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="32,152,196,177"/>
+<area shape="rect" id="node4" href="cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics.html#cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics.PowerSystemStabilizerDynamics" target="_top" title="Power system stabilizer function block whose behaviour is described by reference to a standard model" alt="" coords="5,225,223,251"/>
+<area shape="rect" id="node5" href="#cimpy.cgmes_v2_4_15.PssIEEE3B.PssIEEE3B" target="_top" title="The class represents IEEE Std 421.5&#45;2005 type PSS3B power system stabilizer model. The PSS model PSS3B has dual inputs of electrical power and rotor angular frequency deviation. The signals are used to derive an equivalent mechanical power signal. &#160;Reference: IEEE 3B 421.5&#45;2005 Section 8.3." alt="" coords="68,299,160,324"/>
+</map>

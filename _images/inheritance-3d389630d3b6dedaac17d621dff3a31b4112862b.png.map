@@ -1,0 +1,4 @@
+<map id="inheritancecc00171d68" name="inheritancecc00171d68">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="12,5,84,31"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.CurveData.CurveData" target="_top" title="Multi&#45;purpose data points for defining a curve. &#160;The use of this generic class is discouraged if a more specific class &#160;can be used to specify the x and y axis values along with their specific data types." alt="" coords="5,79,91,104"/>
+</map>

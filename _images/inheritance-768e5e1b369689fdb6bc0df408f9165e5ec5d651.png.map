@@ -1,0 +1,7 @@
+<map id="inheritance07686b7a65" name="inheritance07686b7a65">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="49,5,121,31"/>
+<area shape="rect" id="node5" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="29,79,142,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.Equipment.html#cimpy.cgmes_v2_4_15.Equipment.Equipment" target="_top" title="The parts of a power system that are physical devices, electronic or mechanical." alt="" coords="43,225,127,251"/>
+<area shape="rect" id="node4" href="#cimpy.cgmes_v2_4_15.HydroPump.HydroPump" target="_top" title="A synchronous motor&#45;driven pump, typically associated with a pumped storage plant." alt="" coords="40,299,131,324"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.PowerSystemResource.html#cimpy.cgmes_v2_4_15.PowerSystemResource.PowerSystemResource" target="_top" title="A power system resource can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub&#45;control area. Power system resources can have measurements associated." alt="" coords="5,152,165,177"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="inheritance48f61e2473" name="inheritance48f61e2473">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="36,5,108,31"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="15,79,129,104"/>
+<area shape="rect" id="node3" href="#cimpy.cgmes_v2_4_15.RemoteInputSignal.RemoteInputSignal" target="_top" title="Supports connection to a terminal associated with a remote bus from which an input signal of a specific type is coming." alt="" coords="5,152,139,177"/>
+</map>

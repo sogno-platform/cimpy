@@ -1,0 +1,5 @@
+<map id="inheritance73a8a03f7b" name="inheritance73a8a03f7b">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="42,5,114,31"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="21,79,135,104"/>
+<area shape="rect" id="node3" href="#cimpy.cgmes_v2_4_15.WindContRotorRIEC.WindContRotorRIEC" target="_top" title="Rotor resistance control model. &#160;Reference: IEC Standard 61400&#45;27&#45;1 Section 6.6.5.2." alt="" coords="5,152,151,177"/>
+</map>

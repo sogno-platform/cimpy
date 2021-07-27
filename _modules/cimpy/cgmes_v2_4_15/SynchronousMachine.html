@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>cimpy.cgmes_v2_4_15.SynchronousMachine &mdash; cimpy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> cimpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cimpy.html">cimpy Package Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cimpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>cimpy.cgmes_v2_4_15.SynchronousMachine</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for cimpy.cgmes_v2_4_15.SynchronousMachine</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.RotatingMachine</span> <span class="kn">import</span> <span class="n">RotatingMachine</span>
+
+
+<div class="viewcode-block" id="SynchronousMachine"><a class="viewcode-back" href="../../../cimpy.cgmes_v2_4_15.SynchronousMachine.html#cimpy.cgmes_v2_4_15.SynchronousMachine.SynchronousMachine">[docs]</a><span class="k">class</span> <span class="nc">SynchronousMachine</span><span class="p">(</span><span class="n">RotatingMachine</span><span class="p">):</span>
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	An electromechanical device that operates with shaft rotating synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump.</span>
+
+<span class="sd">	:InitialReactiveCapabilityCurve: Synchronous machines using this curve as default. Default: None</span>
+<span class="sd">	:maxQ: Maximum reactive power limit. This is the maximum (nameplate) limit for the unit. Default: 0.0</span>
+<span class="sd">	:minQ: Minimum reactive power limit for the unit. Default: 0.0</span>
+<span class="sd">	:qPercent: Percent of the coordinated reactive control that comes from this machine. Default: 0.0</span>
+<span class="sd">	:type: Modes that this synchronous machine can operate in. Default: None</span>
+<span class="sd">	:earthing: Indicates whether or not the generator is earthed. Used for short circuit data exchange according to IEC 60909 Default: False</span>
+<span class="sd">	:earthingStarPointR: Generator star point earthing resistance (Re). Used for short circuit data exchange according to IEC 60909 Default: 0.0</span>
+<span class="sd">	:earthingStarPointX: Generator star point earthing reactance (Xe). Used for short circuit data exchange according to IEC 60909 Default: 0.0</span>
+<span class="sd">	:ikk: Steady-state short-circuit current (in A for the profile) of generator with compound excitation during 3-phase short circuit. - Ikk=0: Generator with no compound excitation. - Ikk?0: Generator with compound excitation. Ikk is used to calculate the minimum steady-state short-circuit current for generators with compound excitation (Section 4.6.1.2 in the IEC 60909-0) Used only for single fed short circuit on a generator. (Section 4.3.4.2. in the IEC 60909-0) Default: 0.0</span>
+<span class="sd">	:mu: Factor to calculate the breaking current (Section 4.5.2.1 in the IEC 60909-0). Used only for single fed short circuit on a generator (Section 4.3.4.2. in the IEC 60909-0). Default: 0.0</span>
+<span class="sd">	:r0: Zero sequence resistance of the synchronous machine. Default: 0.0</span>
+<span class="sd">	:r2: Negative sequence resistance. Default: 0.0</span>
+<span class="sd">	:satDirectSubtransX: Direct-axis subtransient reactance saturated, also known as Xd`sat. Default: 0.0</span>
+<span class="sd">	:satDirectSyncX: Direct-axes saturated synchronous reactance (xdsat); reciprocal of short-circuit ration. Used for short circuit data exchange, only for single fed short circuit on a generator. (Section 4.3.4.2. in the IEC 60909-0). Default: 0.0</span>
+<span class="sd">	:satDirectTransX: Saturated Direct-axis transient reactance. The attribute is primarily used for short circuit calculations according to ANSI. Default: 0.0</span>
+<span class="sd">	:shortCircuitRotorType: Type of rotor, used by short circuit applications, only for single fed short circuit according to IEC 60909. Default: None</span>
+<span class="sd">	:voltageRegulationRange: Range of generator voltage regulation (PG in the IEC 60909-0) used for calculation of the impedance correction factor KG defined in IEC 60909-0 This attribute is used to describe the operating voltage of the generating unit. Default: 0.0</span>
+<span class="sd">	:r: Equivalent resistance (RG) of generator. RG is considered for the calculation of all currents, except for the calculation of the peak current ip. Used for short circuit data exchange according to IEC 60909 Default: 0.0</span>
+<span class="sd">	:x0: Zero sequence reactance of the synchronous machine. Default: 0.0</span>
+<span class="sd">	:x2: Negative sequence reactance. Default: 0.0</span>
+<span class="sd">	:operatingMode: Current mode of operation. Default: None</span>
+<span class="sd">	:referencePriority: Priority of unit for use as powerflow voltage phase angle reference bus selection. 0 = don t care (default) 1 = highest priority. 2 is less than 1 and so on. Default: 0</span>
+<span class="sd">	:SynchronousMachineDynamics: Synchronous machine dynamics model used to describe dynamic behavior of this synchronous machine. Default: None</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+	<span class="n">cgmesProfile</span> <span class="o">=</span> <span class="n">RotatingMachine</span><span class="o">.</span><span class="n">cgmesProfile</span>
+
+	<span class="n">possibleProfileList</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cgmesProfile</span><span class="o">.</span><span class="n">SSH</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;InitialReactiveCapabilityCurve&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;maxQ&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;minQ&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;qPercent&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;earthing&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;earthingStarPointR&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;earthingStarPointX&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ikk&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;mu&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;r0&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;r2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;satDirectSubtransX&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;satDirectSyncX&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;satDirectTransX&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;shortCircuitRotorType&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;voltageRegulationRange&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;x0&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;x2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;operatingMode&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">SSH</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;referencePriority&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">SSH</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;SynchronousMachineDynamics&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						 <span class="p">}</span>
+
+	<span class="n">serializationProfile</span> <span class="o">=</span> <span class="p">{}</span>
+
+	<span class="vm">__doc__</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Documentation of parent class RotatingMachine: </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">RotatingMachine</span><span class="o">.</span><span class="vm">__doc__</span> 
+
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">InitialReactiveCapabilityCurve</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">maxQ</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">minQ</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">qPercent</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">earthing</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">earthingStarPointR</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">earthingStarPointX</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ikk</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">mu</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">r0</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">r2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">satDirectSubtransX</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">satDirectSyncX</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">satDirectTransX</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">shortCircuitRotorType</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">voltageRegulationRange</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">operatingMode</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">referencePriority</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SynchronousMachineDynamics</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">)</span>
+	
+		<span class="bp">self</span><span class="o">.</span><span class="n">InitialReactiveCapabilityCurve</span> <span class="o">=</span> <span class="n">InitialReactiveCapabilityCurve</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">maxQ</span> <span class="o">=</span> <span class="n">maxQ</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">minQ</span> <span class="o">=</span> <span class="n">minQ</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">qPercent</span> <span class="o">=</span> <span class="n">qPercent</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="nb">type</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">earthing</span> <span class="o">=</span> <span class="n">earthing</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">earthingStarPointR</span> <span class="o">=</span> <span class="n">earthingStarPointR</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">earthingStarPointX</span> <span class="o">=</span> <span class="n">earthingStarPointX</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ikk</span> <span class="o">=</span> <span class="n">ikk</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">mu</span> <span class="o">=</span> <span class="n">mu</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">r0</span> <span class="o">=</span> <span class="n">r0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">r2</span> <span class="o">=</span> <span class="n">r2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">satDirectSubtransX</span> <span class="o">=</span> <span class="n">satDirectSubtransX</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">satDirectSyncX</span> <span class="o">=</span> <span class="n">satDirectSyncX</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">satDirectTransX</span> <span class="o">=</span> <span class="n">satDirectTransX</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">shortCircuitRotorType</span> <span class="o">=</span> <span class="n">shortCircuitRotorType</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">voltageRegulationRange</span> <span class="o">=</span> <span class="n">voltageRegulationRange</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">x0</span> <span class="o">=</span> <span class="n">x0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">x2</span> <span class="o">=</span> <span class="n">x2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">operatingMode</span> <span class="o">=</span> <span class="n">operatingMode</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">referencePriority</span> <span class="o">=</span> <span class="n">referencePriority</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">SynchronousMachineDynamics</span> <span class="o">=</span> <span class="n">SynchronousMachineDynamics</span>
+		
+	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;class=SynchronousMachine</span><span class="se">\n</span><span class="s1">&#39;</span>
+		<span class="n">attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span>
+		<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">attributes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+			<span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;=</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+		<span class="k">return</span> <span class="nb">str</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, ACS RWTH Aachen University.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

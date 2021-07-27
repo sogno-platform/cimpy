@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>cimpy.cgmes_v2_4_15.PssIEEE3B &mdash; cimpy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> cimpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cimpy.html">cimpy Package Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cimpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>cimpy.cgmes_v2_4_15.PssIEEE3B</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for cimpy.cgmes_v2_4_15.PssIEEE3B</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.PowerSystemStabilizerDynamics</span> <span class="kn">import</span> <span class="n">PowerSystemStabilizerDynamics</span>
+
+
+<div class="viewcode-block" id="PssIEEE3B"><a class="viewcode-back" href="../../../cimpy.cgmes_v2_4_15.PssIEEE3B.html#cimpy.cgmes_v2_4_15.PssIEEE3B.PssIEEE3B">[docs]</a><span class="k">class</span> <span class="nc">PssIEEE3B</span><span class="p">(</span><span class="n">PowerSystemStabilizerDynamics</span><span class="p">):</span>
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	The class represents IEEE Std 421.5-2005 type PSS3B power system stabilizer model. The PSS model PSS3B has dual inputs of electrical power and rotor angular frequency deviation. The signals are used to derive an equivalent mechanical power signal.  Reference: IEEE 3B 421.5-2005 Section 8.3.</span>
+
+<span class="sd">	:inputSignal1Type: Type of input signal #1.  Typical Value = generatorElectricalPower. Default: None</span>
+<span class="sd">	:inputSignal2Type: Type of input signal #2.  Typical Value = rotorSpeed. Default: None</span>
+<span class="sd">	:t1: Transducer time constant (T1).  Typical Value = 0.012. Default: 0</span>
+<span class="sd">	:t2: Transducer time constant (T2).  Typical Value = 0.012. Default: 0</span>
+<span class="sd">	:tw1: Washout time constant (Tw1).  Typical Value = 0.3. Default: 0</span>
+<span class="sd">	:tw2: Washout time constant (Tw2).  Typical Value = 0.3. Default: 0</span>
+<span class="sd">	:tw3: Washout time constant (Tw3).  Typical Value = 0.6. Default: 0</span>
+<span class="sd">	:ks1: Gain on signal # 1 (Ks1).  Typical Value = -0.602. Default: 0.0</span>
+<span class="sd">	:ks2: Gain on signal # 2 (Ks2).  Typical Value = 30.12. Default: 0.0</span>
+<span class="sd">	:a1: Notch filter parameter (A1).  Typical Value = 0.359. Default: 0.0</span>
+<span class="sd">	:a2: Notch filter parameter (A2).  Typical Value = 0.586. Default: 0.0</span>
+<span class="sd">	:a3: Notch filter parameter (A3).  Typical Value = 0.429. Default: 0.0</span>
+<span class="sd">	:a4: Notch filter parameter (A4).  Typical Value = 0.564. Default: 0.0</span>
+<span class="sd">	:a5: Notch filter parameter (A5).  Typical Value = 0.001. Default: 0.0</span>
+<span class="sd">	:a6: Notch filter parameter (A6).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:a7: Notch filter parameter (A7).  Typical Value = 0.031. Default: 0.0</span>
+<span class="sd">	:a8: Notch filter parameter (A8).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:vstmax: Stabilizer output max limit (Vstmax).  Typical Value = 0.1. Default: 0.0</span>
+<span class="sd">	:vstmin: Stabilizer output min limit (Vstmin).  Typical Value = -0.1. Default: 0.0</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+	<span class="n">cgmesProfile</span> <span class="o">=</span> <span class="n">PowerSystemStabilizerDynamics</span><span class="o">.</span><span class="n">cgmesProfile</span>
+
+	<span class="n">possibleProfileList</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;inputSignal1Type&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;inputSignal2Type&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;t1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;t2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tw1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tw2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tw3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ks1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ks2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;a1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;a2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;a3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;a4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;a5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;a6&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;a7&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;a8&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vstmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vstmin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						 <span class="p">}</span>
+
+	<span class="n">serializationProfile</span> <span class="o">=</span> <span class="p">{}</span>
+
+	<span class="vm">__doc__</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Documentation of parent class PowerSystemStabilizerDynamics: </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">PowerSystemStabilizerDynamics</span><span class="o">.</span><span class="vm">__doc__</span> 
+
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputSignal1Type</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">inputSignal2Type</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">t1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tw1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tw2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tw3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ks1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ks2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">a1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">a2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">a3</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">a4</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">a5</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">a6</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">a7</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">a8</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vstmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vstmin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">)</span>
+	
+		<span class="bp">self</span><span class="o">.</span><span class="n">inputSignal1Type</span> <span class="o">=</span> <span class="n">inputSignal1Type</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">inputSignal2Type</span> <span class="o">=</span> <span class="n">inputSignal2Type</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">t1</span> <span class="o">=</span> <span class="n">t1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">t2</span> <span class="o">=</span> <span class="n">t2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tw1</span> <span class="o">=</span> <span class="n">tw1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tw2</span> <span class="o">=</span> <span class="n">tw2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tw3</span> <span class="o">=</span> <span class="n">tw3</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ks1</span> <span class="o">=</span> <span class="n">ks1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ks2</span> <span class="o">=</span> <span class="n">ks2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">a1</span> <span class="o">=</span> <span class="n">a1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">a2</span> <span class="o">=</span> <span class="n">a2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">a3</span> <span class="o">=</span> <span class="n">a3</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">a4</span> <span class="o">=</span> <span class="n">a4</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">a5</span> <span class="o">=</span> <span class="n">a5</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">a6</span> <span class="o">=</span> <span class="n">a6</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">a7</span> <span class="o">=</span> <span class="n">a7</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">a8</span> <span class="o">=</span> <span class="n">a8</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vstmax</span> <span class="o">=</span> <span class="n">vstmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vstmin</span> <span class="o">=</span> <span class="n">vstmin</span>
+		
+	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;class=PssIEEE3B</span><span class="se">\n</span><span class="s1">&#39;</span>
+		<span class="n">attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span>
+		<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">attributes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+			<span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;=</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+		<span class="k">return</span> <span class="nb">str</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, ACS RWTH Aachen University.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

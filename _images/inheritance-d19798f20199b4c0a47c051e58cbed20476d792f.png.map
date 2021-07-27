@@ -1,0 +1,5 @@
+<map id="inheritance7e994a172f" name="inheritance7e994a172f">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="26,5,98,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="5,79,119,104"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.BaseVoltage.BaseVoltage" target="_top" title="Defines a system base voltage which is referenced." alt="" coords="15,152,109,177"/>
+</map>

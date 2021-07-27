@@ -1,0 +1,5 @@
+<map id="inheritanced944a32019" name="inheritanced944a32019">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="39,5,111,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="18,79,131,104"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.DiagramObjectStyle.DiagramObjectStyle" target="_top" title="A reference to a style used by the originating system for a diagram object. &#160;A diagram object style describes information such as line thickness, shape such as circle or rectangle etc, and color." alt="" coords="5,152,144,177"/>
+</map>

@@ -1,0 +1,10 @@
+cimpy.cgmes\_v2\_4\_15.StringMeasurementValue module
+====================================================
+
+.. automodule:: cimpy.cgmes_v2_4_15.StringMeasurementValue
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.cgmes_v2_4_15.StringMeasurementValue
+    :parts: 1

@@ -1,0 +1,10 @@
+cimpy.cgmes\_v2\_4\_15.RatioTapChangerTablePoint module
+=======================================================
+
+.. automodule:: cimpy.cgmes_v2_4_15.RatioTapChangerTablePoint
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.cgmes_v2_4_15.RatioTapChangerTablePoint
+    :parts: 1

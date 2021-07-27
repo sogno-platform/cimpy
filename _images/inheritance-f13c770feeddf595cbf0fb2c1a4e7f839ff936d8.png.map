@@ -1,0 +1,5 @@
+<map id="inheritanceb9936e165e" name="inheritanceb9936e165e">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="49,5,121,31"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="29,79,142,104"/>
+<area shape="rect" id="node3" href="#cimpy.cgmes_v2_4_15.PhaseTapChangerTable.PhaseTapChangerTable" target="_top" title="Describes a tabular curve for how the phase angle difference and impedance varies with the tap step." alt="" coords="5,152,165,177"/>
+</map>

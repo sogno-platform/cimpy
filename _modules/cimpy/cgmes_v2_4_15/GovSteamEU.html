@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>cimpy.cgmes_v2_4_15.GovSteamEU &mdash; cimpy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> cimpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cimpy.html">cimpy Package Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cimpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>cimpy.cgmes_v2_4_15.GovSteamEU</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for cimpy.cgmes_v2_4_15.GovSteamEU</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.TurbineGovernorDynamics</span> <span class="kn">import</span> <span class="n">TurbineGovernorDynamics</span>
+
+
+<div class="viewcode-block" id="GovSteamEU"><a class="viewcode-back" href="../../../cimpy.cgmes_v2_4_15.GovSteamEU.html#cimpy.cgmes_v2_4_15.GovSteamEU.GovSteamEU">[docs]</a><span class="k">class</span> <span class="nc">GovSteamEU</span><span class="p">(</span><span class="n">TurbineGovernorDynamics</span><span class="p">):</span>
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	Simplified model  of boiler and steam turbine with PID governor.</span>
+
+<span class="sd">	:mwbase: Base for power values (MWbase) (&gt;0).  Unit = MW. Default: 0.0</span>
+<span class="sd">	:tp: Power transducer time constant (Tp).  Typical Value = 0.07. Default: 0</span>
+<span class="sd">	:ke: Gain of the power controller (Ke).  Typical Value = 0.65. Default: 0.0</span>
+<span class="sd">	:tip: Integral time constant of the power controller (Tip).  Typical Value = 2. Default: 0</span>
+<span class="sd">	:tdp: Derivative time constant of the power controller (Tdp).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:tfp: Time constant of the power controller (Tfp).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:tf: Frequency transducer time constant (Tf).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:kfcor: Gain of the frequency corrector (Kfcor).  Typical Value = 20. Default: 0.0</span>
+<span class="sd">	:db1: Dead band of the frequency corrector (db1).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:wfmax: Upper limit for frequency correction (Wfmax).  Typical Value = 0.05. Default: 0.0</span>
+<span class="sd">	:wfmin: Lower limit for frequency correction (Wfmin).  Typical Value = -0.05. Default: 0.0</span>
+<span class="sd">	:pmax: Maximal active power of the turbine (Pmax).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:ten: Electro hydraulic transducer (Ten).  Typical Value = 0.1. Default: 0</span>
+<span class="sd">	:tw: Speed transducer time constant (Tw).  Typical Value = 0.02. Default: 0</span>
+<span class="sd">	:kwcor: Gain of the speed governor (Kwcor).  Typical Value = 20. Default: 0.0</span>
+<span class="sd">	:db2: Dead band of the speed governor (db2).  Typical Value = 0.0004. Default: 0.0</span>
+<span class="sd">	:wwmax: Upper limit for the speed governor (Wwmax).  Typical Value = 0.1. Default: 0.0</span>
+<span class="sd">	:wwmin: Lower limit for the speed governor frequency correction (Wwmin).  Typical Value = -1. Default: 0.0</span>
+<span class="sd">	:wmax1: Emergency speed control lower limit (wmax1).  Typical Value = 1.025. Default: 0.0</span>
+<span class="sd">	:wmax2: Emergency speed control upper limit (wmax2).  Typical Value = 1.05. Default: 0.0</span>
+<span class="sd">	:tvhp: Control valves servo time constant (Tvhp).  Typical Value = 0.1. Default: 0</span>
+<span class="sd">	:cho: Control valves rate opening limit (Cho).  Unit = PU/sec.  Typical Value = 0.17. Default: 0.0</span>
+<span class="sd">	:chc: Control valves rate closing limit (Chc).  Unit = PU/sec.  Typical Value = -3.3. Default: 0.0</span>
+<span class="sd">	:hhpmax: Maximum control valve position (Hhpmax).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:tvip: Intercept valves servo time constant (Tvip).  Typical Value = 0.15. Default: 0</span>
+<span class="sd">	:cio: Intercept valves rate opening limit (Cio).  Typical Value = 0.123. Default: 0.0</span>
+<span class="sd">	:cic: Intercept valves rate closing limit (Cic).  Typical Value = -2.2. Default: 0.0</span>
+<span class="sd">	:simx: Intercept valves transfer limit (Simx).  Typical Value = 0.425. Default: 0.0</span>
+<span class="sd">	:thp: High pressure (HP) time constant of the turbine (Thp).  Typical Value = 0.31. Default: 0</span>
+<span class="sd">	:trh: Reheater  time constant of the turbine (Trh).  Typical Value = 8. Default: 0</span>
+<span class="sd">	:tlp: Low pressure(LP) time constant of the turbine (Tlp).  Typical Value = 0.45. Default: 0</span>
+<span class="sd">	:prhmax: Maximum low pressure limit (Prhmax).  Typical Value = 1.4. Default: 0.0</span>
+<span class="sd">	:khp: Fraction of total turbine output generated by HP part (Khp).  Typical Value = 0.277. Default: 0.0</span>
+<span class="sd">	:klp: Fraction of total turbine output generated by HP part (Klp).  Typical Value = 0.723. Default: 0.0</span>
+<span class="sd">	:tb: Boiler time constant (Tb).  Typical Value = 100. Default: 0</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+	<span class="n">cgmesProfile</span> <span class="o">=</span> <span class="n">TurbineGovernorDynamics</span><span class="o">.</span><span class="n">cgmesProfile</span>
+
+	<span class="n">possibleProfileList</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;mwbase&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ke&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tip&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tdp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tfp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tf&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kfcor&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;db1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;wfmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;wfmin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;pmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ten&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tw&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kwcor&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;db2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;wwmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;wwmin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;wmax1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;wmax2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tvhp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;cho&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;chc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;hhpmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tvip&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;cio&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;cic&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;simx&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;thp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;trh&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tlp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;prhmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;khp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;klp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tb&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						 <span class="p">}</span>
+
+	<span class="n">serializationProfile</span> <span class="o">=</span> <span class="p">{}</span>
+
+	<span class="vm">__doc__</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Documentation of parent class TurbineGovernorDynamics: </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">TurbineGovernorDynamics</span><span class="o">.</span><span class="vm">__doc__</span> 
+
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mwbase</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">tp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ke</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">tip</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tdp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tfp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tf</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">kfcor</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">db1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">wfmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">wfmin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">pmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ten</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tw</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">kwcor</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">db2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">wwmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">wwmin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">wmax1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">wmax2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">tvhp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">cho</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">chc</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">hhpmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">tvip</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">cio</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">cic</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">simx</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">thp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">trh</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tlp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">prhmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">khp</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">klp</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">tb</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">)</span>
+	
+		<span class="bp">self</span><span class="o">.</span><span class="n">mwbase</span> <span class="o">=</span> <span class="n">mwbase</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tp</span> <span class="o">=</span> <span class="n">tp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ke</span> <span class="o">=</span> <span class="n">ke</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tip</span> <span class="o">=</span> <span class="n">tip</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tdp</span> <span class="o">=</span> <span class="n">tdp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tfp</span> <span class="o">=</span> <span class="n">tfp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tf</span> <span class="o">=</span> <span class="n">tf</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kfcor</span> <span class="o">=</span> <span class="n">kfcor</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">db1</span> <span class="o">=</span> <span class="n">db1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">wfmax</span> <span class="o">=</span> <span class="n">wfmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">wfmin</span> <span class="o">=</span> <span class="n">wfmin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pmax</span> <span class="o">=</span> <span class="n">pmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ten</span> <span class="o">=</span> <span class="n">ten</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tw</span> <span class="o">=</span> <span class="n">tw</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kwcor</span> <span class="o">=</span> <span class="n">kwcor</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">db2</span> <span class="o">=</span> <span class="n">db2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">wwmax</span> <span class="o">=</span> <span class="n">wwmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">wwmin</span> <span class="o">=</span> <span class="n">wwmin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">wmax1</span> <span class="o">=</span> <span class="n">wmax1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">wmax2</span> <span class="o">=</span> <span class="n">wmax2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tvhp</span> <span class="o">=</span> <span class="n">tvhp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">cho</span> <span class="o">=</span> <span class="n">cho</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">chc</span> <span class="o">=</span> <span class="n">chc</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">hhpmax</span> <span class="o">=</span> <span class="n">hhpmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tvip</span> <span class="o">=</span> <span class="n">tvip</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">cio</span> <span class="o">=</span> <span class="n">cio</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">cic</span> <span class="o">=</span> <span class="n">cic</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">simx</span> <span class="o">=</span> <span class="n">simx</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">thp</span> <span class="o">=</span> <span class="n">thp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">trh</span> <span class="o">=</span> <span class="n">trh</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tlp</span> <span class="o">=</span> <span class="n">tlp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">prhmax</span> <span class="o">=</span> <span class="n">prhmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">khp</span> <span class="o">=</span> <span class="n">khp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">klp</span> <span class="o">=</span> <span class="n">klp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tb</span> <span class="o">=</span> <span class="n">tb</span>
+		
+	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;class=GovSteamEU</span><span class="se">\n</span><span class="s1">&#39;</span>
+		<span class="n">attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span>
+		<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">attributes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+			<span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;=</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+		<span class="k">return</span> <span class="nb">str</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, ACS RWTH Aachen University.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

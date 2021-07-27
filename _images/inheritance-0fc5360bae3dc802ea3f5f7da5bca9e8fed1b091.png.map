@@ -1,0 +1,6 @@
+<map id="inheritanced89f827513" name="inheritanced89f827513">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="26,5,98,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="5,79,119,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.EnergyArea.html#cimpy.cgmes_v2_4_15.EnergyArea.EnergyArea" target="_top" title="Describes an area having energy production or consumption. &#160;Specializations are intended to support the load allocation function as typically required in energy management systems or planning studies to allocate hypothesized load levels to individual load points for power flow analysis. &#160;Often the energy area can be linked to both measured and forecast load levels." alt="" coords="17,152,107,177"/>
+<area shape="rect" id="node4" href="#cimpy.cgmes_v2_4_15.SubLoadArea.SubLoadArea" target="_top" title="The class is the second level in a hierarchical structure for grouping of loads for the purpose of load flow load scaling." alt="" coords="12,225,112,251"/>
+</map>

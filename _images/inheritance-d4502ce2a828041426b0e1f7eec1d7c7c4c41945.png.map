@@ -1,0 +1,5 @@
+<map id="inheritancee663ab6423" name="inheritancee663ab6423">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="27,5,99,31"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="6,79,119,104"/>
+<area shape="rect" id="node3" href="#cimpy.cgmes_v2_4_15.TransformerEnd.TransformerEnd" target="_top" title="A conducting connection point of a power transformer. It corresponds to a physical transformer winding terminal. &#160;In earlier CIM versions, the TransformerWinding class served a similar purpose, but this class is more flexible because it associates to terminal but is not a specialization of ConductingEquipment." alt="" coords="5,152,120,177"/>
+</map>

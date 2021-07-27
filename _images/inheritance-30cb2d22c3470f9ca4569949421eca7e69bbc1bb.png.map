@@ -1,0 +1,5 @@
+<map id="inheritance8338367f49" name="inheritance8338367f49">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="26,5,98,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="5,79,119,104"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.Diagram.Diagram" target="_top" title="The diagram being exchanged. &#160;The coordinate system is a standard Cartesian coordinate system and the orientation attribute defines the orientation." alt="" coords="26,152,98,177"/>
+</map>

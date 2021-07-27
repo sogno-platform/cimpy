@@ -1,0 +1,7 @@
+<map id="inheritance918d6efcd0" name="inheritance918d6efcd0">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="81,5,153,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="61,79,174,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="35,152,199,177"/>
+<area shape="rect" id="node4" href="cimpy.cgmes_v2_4_15.PFVArControllerType1Dynamics.html#cimpy.cgmes_v2_4_15.PFVArControllerType1Dynamics.PFVArControllerType1Dynamics" target="_top" title="Power Factor or VAr controller Type I function block whose behaviour is described by reference to a standard model" alt="" coords="12,225,223,251"/>
+<area shape="rect" id="node5" href="#cimpy.cgmes_v2_4_15.PFVArControllerType1UserDefined.PFVArControllerType1UserDefined" target="_top" title="Power Factor or VAr controller Type I function block whose dynamic behaviour is described by" alt="" coords="5,299,229,324"/>
+</map>

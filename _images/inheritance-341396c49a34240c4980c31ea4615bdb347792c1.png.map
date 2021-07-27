@@ -1,0 +1,8 @@
+<map id="inheritance6cfcbb6112" name="inheritance6cfcbb6112">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.AsynchronousMachineDynamics.html#cimpy.cgmes_v2_4_15.AsynchronousMachineDynamics.AsynchronousMachineDynamics" target="_top" title="Asynchronous machine whose behaviour is described by reference to a standard model expressed in either time constant reactance form or equivalent circuit form" alt="" coords="48,299,261,324"/>
+<area shape="rect" id="node3" href="#cimpy.cgmes_v2_4_15.AsynchronousMachineTimeConstantReactance.AsynchronousMachineTimeConstantReactance" target="_top" title="The parameters used for models expressed in time constant reactance form include:" alt="" coords="5,372,304,397"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.RotatingMachineDynamics.html#cimpy.cgmes_v2_4_15.RotatingMachineDynamics.RotatingMachineDynamics" target="_top" title="Abstract parent class for all synchronous and asynchronous machine standard models." alt="" coords="65,225,244,251"/>
+<area shape="rect" id="node4" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="119,5,191,31"/>
+<area shape="rect" id="node6" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="98,79,211,104"/>
+<area shape="rect" id="node5" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="73,152,237,177"/>
+</map>

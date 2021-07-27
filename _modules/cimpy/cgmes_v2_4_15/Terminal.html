@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>cimpy.cgmes_v2_4_15.Terminal &mdash; cimpy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> cimpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cimpy.html">cimpy Package Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cimpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>cimpy.cgmes_v2_4_15.Terminal</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for cimpy.cgmes_v2_4_15.Terminal</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.ACDCTerminal</span> <span class="kn">import</span> <span class="n">ACDCTerminal</span>
+
+
+<div class="viewcode-block" id="Terminal"><a class="viewcode-back" href="../../../cimpy.cgmes_v2_4_15.Terminal.html#cimpy.cgmes_v2_4_15.Terminal.Terminal">[docs]</a><span class="k">class</span> <span class="nc">Terminal</span><span class="p">(</span><span class="n">ACDCTerminal</span><span class="p">):</span>
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	An AC electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes.</span>
+
+<span class="sd">	:ConverterDCSides: Point of common coupling terminal for this converter DC side. It is typically the terminal on the power transformer (or switch) closest to the AC network. The power flow measurement must be the sum of all flows into the transformer. Default: &quot;list&quot;</span>
+<span class="sd">	:ConductingEquipment: The conducting equipment of the terminal.  Conducting equipment have  terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes. Default: None</span>
+<span class="sd">	:phases: Represents the normal network phasing condition. If the attribute is missing three phases (ABC or ABCN) shall be assumed. Default: None</span>
+<span class="sd">	:RegulatingControl: The terminal associated with this regulating control.  The terminal is associated instead of a node, since the terminal could connect into either a topological node (bus in bus-branch model) or a connectivity node (detailed switch model).  Sometimes it is useful to model regulation at a terminal of a bus bar object since the bus bar can be present in both a bus-branch model or a model with switch detail. Default: None</span>
+<span class="sd">	:TieFlow: The control area tie flows to which this terminal associates. Default: &quot;list&quot;</span>
+<span class="sd">	:TransformerEnd: All transformer ends connected at this terminal. Default: &quot;list&quot;</span>
+<span class="sd">	:ConnectivityNode: Terminals interconnected with zero impedance at a this connectivity node. Default: None</span>
+<span class="sd">	:HasFirstMutualCoupling: Mutual couplings associated with the branch as the first branch. Default: &quot;list&quot;</span>
+<span class="sd">	:HasSecondMutualCoupling: Mutual couplings with the branch associated as the first branch. Default: &quot;list&quot;</span>
+<span class="sd">	:SvPowerFlow: The power flow state variable associated with the terminal. Default: None</span>
+<span class="sd">	:RemoteInputSignal: Input signal coming from this terminal. Default: &quot;list&quot;</span>
+<span class="sd">	:TopologicalNode: The terminals associated with the topological node.   This can be used as an alternative to the connectivity node path to terminal, thus making it unneccesary to model connectivity nodes in some cases.   Note that if connectivity nodes are in the model, this association would probably not be used as an input specification. Default: None</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+	<span class="n">cgmesProfile</span> <span class="o">=</span> <span class="n">ACDCTerminal</span><span class="o">.</span><span class="n">cgmesProfile</span>
+
+	<span class="n">possibleProfileList</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cgmesProfile</span><span class="o">.</span><span class="n">SSH</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cgmesProfile</span><span class="o">.</span><span class="n">SV</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cgmesProfile</span><span class="o">.</span><span class="n">TP</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ_BD</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ConverterDCSides&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ConductingEquipment&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ_BD</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;phases&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;RegulatingControl&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;TieFlow&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;TransformerEnd&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ConnectivityNode&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;HasFirstMutualCoupling&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;HasSecondMutualCoupling&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">EQ</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;SvPowerFlow&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">SV</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;RemoteInputSignal&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;TopologicalNode&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">TP</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						 <span class="p">}</span>
+
+	<span class="n">serializationProfile</span> <span class="o">=</span> <span class="p">{}</span>
+
+	<span class="vm">__doc__</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Documentation of parent class ACDCTerminal: </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">ACDCTerminal</span><span class="o">.</span><span class="vm">__doc__</span> 
+
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ConverterDCSides</span> <span class="o">=</span> <span class="s2">&quot;list&quot;</span><span class="p">,</span> <span class="n">ConductingEquipment</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">phases</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">RegulatingControl</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">TieFlow</span> <span class="o">=</span> <span class="s2">&quot;list&quot;</span><span class="p">,</span> <span class="n">TransformerEnd</span> <span class="o">=</span> <span class="s2">&quot;list&quot;</span><span class="p">,</span> <span class="n">ConnectivityNode</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">HasFirstMutualCoupling</span> <span class="o">=</span> <span class="s2">&quot;list&quot;</span><span class="p">,</span> <span class="n">HasSecondMutualCoupling</span> <span class="o">=</span> <span class="s2">&quot;list&quot;</span><span class="p">,</span> <span class="n">SvPowerFlow</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">RemoteInputSignal</span> <span class="o">=</span> <span class="s2">&quot;list&quot;</span><span class="p">,</span> <span class="n">TopologicalNode</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">)</span>
+	
+		<span class="bp">self</span><span class="o">.</span><span class="n">ConverterDCSides</span> <span class="o">=</span> <span class="n">ConverterDCSides</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ConductingEquipment</span> <span class="o">=</span> <span class="n">ConductingEquipment</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">phases</span> <span class="o">=</span> <span class="n">phases</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">RegulatingControl</span> <span class="o">=</span> <span class="n">RegulatingControl</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">TieFlow</span> <span class="o">=</span> <span class="n">TieFlow</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">TransformerEnd</span> <span class="o">=</span> <span class="n">TransformerEnd</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ConnectivityNode</span> <span class="o">=</span> <span class="n">ConnectivityNode</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">HasFirstMutualCoupling</span> <span class="o">=</span> <span class="n">HasFirstMutualCoupling</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">HasSecondMutualCoupling</span> <span class="o">=</span> <span class="n">HasSecondMutualCoupling</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">SvPowerFlow</span> <span class="o">=</span> <span class="n">SvPowerFlow</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">RemoteInputSignal</span> <span class="o">=</span> <span class="n">RemoteInputSignal</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">TopologicalNode</span> <span class="o">=</span> <span class="n">TopologicalNode</span>
+		
+	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;class=Terminal</span><span class="se">\n</span><span class="s1">&#39;</span>
+		<span class="n">attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span>
+		<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">attributes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+			<span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;=</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+		<span class="k">return</span> <span class="nb">str</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, ACS RWTH Aachen University.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

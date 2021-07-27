@@ -1,0 +1,6 @@
+<map id="inheritance8fed5e663a" name="inheritance8fed5e663a">
+<area shape="rect" id="node1" href="#cimpy.cgmes_v2_4_15.AccumulatorLimitSet.AccumulatorLimitSet" target="_top" title="An AccumulatorLimitSet specifies a set of Limits that are associated with an Accumulator measurement." alt="" coords="5,225,148,251"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.LimitSet.html#cimpy.cgmes_v2_4_15.LimitSet.LimitSet" target="_top" title="Specifies a set of Limits that are associated with a Measurement. A Measurement may have several LimitSets corresponding to seasonal or other changing conditions. The condition is captured in the name and description attributes. The same LimitSet may be used for several Measurements. In particular percentage limits are used this way." alt="" coords="41,152,113,177"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="41,5,113,31"/>
+<area shape="rect" id="node4" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="20,79,133,104"/>
+</map>

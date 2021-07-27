@@ -1,0 +1,647 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>cimpy.cimexport &mdash; cimpy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> cimpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cimpy.html">cimpy Package Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">cimpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>cimpy.cimexport</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for cimpy.cimexport</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">import</span> <span class="nn">chevron</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">from</span> <span class="nn">cimpy.cgmes_v2_4_15.Base</span> <span class="kn">import</span> <span class="n">Profile</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">cimpy.cgmes_v2_4_15.Base</span> <span class="kn">import</span> <span class="n">Base</span>
+<span class="n">cgmesProfile</span> <span class="o">=</span> <span class="n">Base</span><span class="o">.</span><span class="n">cgmesProfile</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="c1"># This function gets all attributes of an object and resolves references to other objects</span>
+<span class="k">def</span> <span class="nf">_get_class_attributes_with_references</span><span class="p">(</span><span class="n">import_result</span><span class="p">,</span> <span class="n">version</span><span class="p">):</span>
+    <span class="n">class_attributes_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># extract topology and urls</span>
+    <span class="n">topology</span> <span class="o">=</span> <span class="n">import_result</span><span class="p">[</span><span class="s1">&#39;topology&#39;</span><span class="p">]</span>
+    <span class="n">urls</span> <span class="o">=</span> <span class="n">import_result</span><span class="p">[</span><span class="s1">&#39;meta_info&#39;</span><span class="p">][</span><span class="s1">&#39;urls&#39;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">topology</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">class_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">topology</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="n">class_dict</span><span class="p">[</span><span class="s1">&#39;mRID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span>
+        <span class="c1"># array containing all attributes, attribute references to objects</span>
+        <span class="n">attributes_dict</span> <span class="o">=</span> <span class="n">_get_attributes</span><span class="p">(</span><span class="n">topology</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+        <span class="c1"># change attribute references to mRID of the object, res needed because classes like SvPowerFlow does not have</span>
+        <span class="c1"># mRID as an attribute. Therefore the corresponding class has to be searched in the res dictionary</span>
+        <span class="n">class_dict</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_get_reference_uuid</span><span class="p">(</span><span class="n">attributes_dict</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">topology</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">urls</span><span class="p">)</span>
+        <span class="n">class_attributes_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">class_dict</span><span class="p">)</span>
+        <span class="k">del</span> <span class="n">class_dict</span>
+
+    <span class="k">return</span> <span class="n">class_attributes_list</span>
+
+
+<span class="c1"># This function resolves references to objects</span>
+<span class="k">def</span> <span class="nf">_get_reference_uuid</span><span class="p">(</span><span class="n">attr_dict</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">topology</span><span class="p">,</span> <span class="n">mRID</span><span class="p">,</span> <span class="n">urls</span><span class="p">):</span>
+    <span class="n">reference_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">base_class_name</span> <span class="o">=</span> <span class="s1">&#39;cimpy.&#39;</span> <span class="o">+</span> <span class="n">version</span> <span class="o">+</span> <span class="s1">&#39;.Base&#39;</span>
+    <span class="n">base_module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">base_class_name</span><span class="p">)</span>
+    <span class="n">base_class</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">base_module</span><span class="p">,</span> <span class="s1">&#39;Base&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">attr_dict</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;serializationProfile&#39;</span><span class="p">,</span> <span class="s1">&#39;possibleProfileList&#39;</span><span class="p">]:</span>
+            <span class="n">reference_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="n">key</span><span class="p">:</span> <span class="n">attr_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]})</span>
+            <span class="k">continue</span>
+
+        <span class="n">attributes</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">attr_dict</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>  <span class="c1"># many</span>
+            <span class="n">array</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">attr_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">elem</span><span class="p">),</span> <span class="n">base_class</span><span class="p">):</span>
+                    <span class="c1"># classes like SvVoltage does not have an attribute called mRID, the mRID is only stored as a key</span>
+                    <span class="c1"># for this object in the res dictionary</span>
+                    <span class="c1"># The % added before the mRID is used in the lambda _set_attribute_or_reference</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="s1">&#39;mRID&#39;</span><span class="p">):</span>
+                        <span class="c1"># search for the object in the res dictionary and return the mRID</span>
+                        <span class="n">UUID</span> <span class="o">=</span> <span class="s1">&#39;%&#39;</span> <span class="o">+</span> <span class="n">_search_mRID</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">topology</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">UUID</span> <span class="o">==</span> <span class="s1">&#39;%&#39;</span><span class="p">:</span>
+                            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Object of type </span><span class="si">{}</span><span class="s1"> not found as reference for object with UUID </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                <span class="n">elem</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">mRID</span><span class="p">))</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">UUID</span> <span class="o">=</span> <span class="s1">&#39;%&#39;</span> <span class="o">+</span> <span class="n">elem</span><span class="o">.</span><span class="n">mRID</span>
+
+                    <span class="n">array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">UUID</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Reference object not subclass of Base class for object with UUID </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mRID</span><span class="p">))</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">array</span>
+        <span class="k">elif</span> <span class="nb">issubclass</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">attr_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]),</span> <span class="n">base_class</span><span class="p">):</span>  <span class="c1"># 0..1, 1..1</span>
+            <span class="c1"># resource = key + &#39; rdf:resource=&#39;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">attr_dict</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="s1">&#39;mRID&#39;</span><span class="p">):</span>
+                <span class="c1"># search for object in res dict and return mRID</span>
+                <span class="c1"># The % added before the mRID is used in the lambda _set_attribute_or_reference</span>
+                <span class="n">UUID</span> <span class="o">=</span> <span class="s1">&#39;%&#39;</span> <span class="o">+</span> <span class="n">_search_mRID</span><span class="p">(</span><span class="n">attr_dict</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">topology</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">UUID</span> <span class="o">==</span> <span class="s1">&#39;%&#39;</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Object of type </span><span class="si">{}</span><span class="s1"> not found as reference for object with UUID </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">attr_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">mRID</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">UUID</span> <span class="o">=</span> <span class="s1">&#39;%&#39;</span> <span class="o">+</span> <span class="n">attr_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">mRID</span>
+            <span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">UUID</span>
+        <span class="k">elif</span> <span class="n">attr_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="ow">or</span> <span class="n">attr_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># attribute in urls dict?</span>
+            <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">urls</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="c1"># value in urls dict? should always be true</span>
+                <span class="k">if</span> <span class="n">attr_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                    <span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;%URL%&#39;</span> <span class="o">+</span> <span class="n">urls</span><span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]][</span><span class="n">attr_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;URL reference for attribute </span><span class="si">{}</span><span class="s1"> and value </span><span class="si">{}</span><span class="s1"> not found!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">attr_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">attr_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+        <span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;attr_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span>
+        <span class="k">if</span> <span class="s1">&#39;value&#39;</span> <span class="ow">in</span> <span class="n">attributes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">reference_item</span> <span class="ow">in</span> <span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]:</span>
+                    <span class="c1"># ignore default values</span>
+                    <span class="k">if</span> <span class="n">reference_item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]:</span>
+                        <span class="n">reference_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">reference_item</span><span class="p">,</span> <span class="s1">&#39;attr_name&#39;</span><span class="p">:</span> <span class="n">key</span><span class="p">})</span>
+            <span class="c1"># ignore default values</span>
+            <span class="k">elif</span> <span class="n">attributes</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;list&#39;</span><span class="p">]:</span>
+                <span class="n">reference_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attributes</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">reference_list</span>
+
+
+<span class="c1"># This function searches a class_object in the res dictionary and returns the corresponding key (the mRID). Necessary</span>
+<span class="c1"># for classes without mRID as attribute like SvVoltage</span>
+<span class="k">def</span> <span class="nf">_search_mRID</span><span class="p">(</span><span class="n">class_object</span><span class="p">,</span> <span class="n">topology</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">mRID</span><span class="p">,</span> <span class="n">class_obj</span> <span class="ow">in</span> <span class="n">topology</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">class_object</span> <span class="o">==</span> <span class="n">class_obj</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">mRID</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+
+<span class="c1"># Lambda function for chevron renderer to decide whether the current element is a reference or an attribute</span>
+<span class="k">def</span> <span class="nf">_set_attribute_or_reference</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">render</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">render</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="p">)</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">attr_name</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="s1">&#39;%URL%&#39;</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+        <span class="n">reference</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">return</span> <span class="s1">&#39; rdf:resource=&quot;&#39;</span> <span class="o">+</span> <span class="n">reference</span> <span class="o">+</span> <span class="s1">&#39;&quot;/&gt;&#39;</span>
+    <span class="k">elif</span> <span class="s1">&#39;%&#39;</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+        <span class="n">reference</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="s1">&#39; rdf:resource=&quot;#&#39;</span> <span class="o">+</span> <span class="n">reference</span> <span class="o">+</span> <span class="s1">&#39;&quot;/&gt;&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;&gt;&#39;</span> <span class="o">+</span> <span class="n">value</span> <span class="o">+</span> <span class="s1">&#39;&lt;/cim:&#39;</span> <span class="o">+</span> <span class="n">attr_name</span> <span class="o">+</span> <span class="s1">&#39;&gt;&#39;</span>
+
+
+<span class="c1"># Lambda function for chevron renderer to set an attribute or a reference in the model description.</span>
+<span class="k">def</span> <span class="nf">_set_attribute_or_reference_model</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">render</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">render</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="p">)</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">attr_name</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="s1">&#39;%&#39;</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+        <span class="n">reference</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;%&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="s1">&#39; rdf:resource=&quot;&#39;</span> <span class="o">+</span> <span class="n">reference</span> <span class="o">+</span> <span class="s1">&#39;&quot;/&gt;&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;&gt;&#39;</span> <span class="o">+</span> <span class="n">value</span> <span class="o">+</span> <span class="s1">&#39;&lt;/md:Model.&#39;</span> <span class="o">+</span> <span class="n">attr_name</span> <span class="o">+</span> <span class="s1">&#39;&gt;&#39;</span>
+
+
+<span class="c1"># Restructures the namespaces dict into a list. The template engine writes each entry in the RDF header</span>
+<span class="k">def</span> <span class="nf">_create_namespaces_list</span><span class="p">(</span><span class="n">namespaces_dict</span><span class="p">):</span>
+    <span class="n">namespaces_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">namespaces_dict</span><span class="p">:</span>
+        <span class="n">namespace</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">namespaces_dict</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+        <span class="n">namespaces_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">namespace</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">namespaces_list</span>
+
+
+<span class="c1"># This function sorts the classes and their attributes to the corresponding profiles. Either the classes/attributes are</span>
+<span class="c1"># imported or they are set afterwards. In the first case the serializationProfile is used to determine from which</span>
+<span class="c1"># profile this class/attribute was read. If an entry exists the class/attribute is added to this profile. In the</span>
+<span class="c1"># possibleProfileList dictionary the possible origins of the class/attributes is stored. All profiles have a different</span>
+<span class="c1"># priority which is stored in the enum cgmesProfile. As default the smallest entry in the dictionary is used to</span>
+<span class="c1"># determine the profile for the class/attributes.</span>
+<span class="k">def</span> <span class="nf">_sort_classes_to_profile</span><span class="p">(</span><span class="n">class_attributes_list</span><span class="p">,</span> <span class="n">activeProfileList</span><span class="p">):</span>
+    <span class="n">export_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">export_about_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># iterate over classes</span>
+    <span class="k">for</span> <span class="n">klass</span> <span class="ow">in</span> <span class="n">class_attributes_list</span><span class="p">:</span>
+        <span class="n">same_package_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">about_dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># store serializationProfile and possibleProfileList</span>
+        <span class="c1"># serializationProfile class attribute, same for multiple instances of same class, only last origin of variable stored</span>
+        <span class="n">serializationProfile</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;serializationProfile&#39;</span><span class="p">])</span>
+        <span class="n">possibleProfileList</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;possibleProfileList&#39;</span><span class="p">])</span>
+
+        <span class="n">class_serializationProfile</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="k">if</span> <span class="s1">&#39;class&#39;</span> <span class="ow">in</span> <span class="n">serializationProfile</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="c1"># class was imported</span>
+            <span class="k">if</span> <span class="n">Profile</span><span class="p">[</span><span class="n">serializationProfile</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]]</span> <span class="ow">in</span> <span class="n">activeProfileList</span><span class="p">:</span>
+                <span class="c1"># else: class origin profile not active for export, get active profile from possibleProfileList</span>
+                <span class="k">if</span> <span class="n">Profile</span><span class="p">[</span><span class="n">serializationProfile</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">value</span> <span class="ow">in</span> <span class="n">possibleProfileList</span><span class="p">[</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]][</span><span class="s1">&#39;class&#39;</span><span class="p">]:</span>
+                    <span class="c1"># profile active and in possibleProfileList</span>
+                    <span class="c1"># else: class should not have been imported from this profile, get allowed profile</span>
+                    <span class="c1"># from possibleProfileList</span>
+                    <span class="n">class_serializationProfile</span> <span class="o">=</span> <span class="n">serializationProfile</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Class </span><span class="si">{}</span><span class="s1"> was read from profile </span><span class="si">{}</span><span class="s1"> but this profile is not possible for this class&#39;</span>
+                                   <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">serializationProfile</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Class </span><span class="si">{}</span><span class="s1"> was read from profile </span><span class="si">{}</span><span class="s1"> but this profile is not active for the export. Use&#39;</span>
+                            <span class="s1">&#39;default profile from possibleProfileList.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">serializationProfile</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]))</span>
+
+        <span class="k">if</span> <span class="n">class_serializationProfile</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+            <span class="c1"># class was created</span>
+            <span class="k">if</span> <span class="n">klass</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">possibleProfileList</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="k">if</span> <span class="s1">&#39;class&#39;</span> <span class="ow">in</span> <span class="n">possibleProfileList</span><span class="p">[</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                    <span class="n">possibleProfileList</span><span class="p">[</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]][</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+                    <span class="k">for</span> <span class="n">klass_profile</span> <span class="ow">in</span> <span class="n">possibleProfileList</span><span class="p">[</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]][</span><span class="s1">&#39;class&#39;</span><span class="p">]:</span>
+                        <span class="k">if</span> <span class="n">Profile</span><span class="p">(</span><span class="n">klass_profile</span><span class="p">)</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">activeProfileList</span><span class="p">:</span>
+                            <span class="c1"># active profile for class export found</span>
+                            <span class="n">class_serializationProfile</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="n">klass_profile</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+                            <span class="k">break</span>
+                    <span class="k">if</span> <span class="n">class_serializationProfile</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                        <span class="c1"># no profile in possibleProfileList active</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;All possible export profiles for class </span><span class="si">{}</span><span class="s1"> not active. Skip class for export.&#39;</span>
+                                       <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]))</span>
+                        <span class="k">continue</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Class </span><span class="si">{}</span><span class="s1"> has no profile to export to.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Class </span><span class="si">{}</span><span class="s1"> has no profile to export to.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]))</span>
+
+        <span class="c1"># iterate over attributes</span>
+        <span class="k">for</span> <span class="n">attribute</span> <span class="ow">in</span> <span class="n">klass</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="s1">&#39;attr_name&#39;</span> <span class="ow">in</span> <span class="n">attribute</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">attribute_class</span> <span class="o">=</span> <span class="n">attribute</span><span class="p">[</span><span class="s1">&#39;attr_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">attribute_name</span> <span class="o">=</span> <span class="n">attribute</span><span class="p">[</span><span class="s1">&#39;attr_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+                <span class="c1"># IdentifiedObject.mRID is not exported as an attribute</span>
+                <span class="k">if</span> <span class="n">attribute_name</span> <span class="o">==</span> <span class="s1">&#39;mRID&#39;</span><span class="p">:</span>
+                    <span class="k">continue</span>
+
+                <span class="n">attribute_serializationProfile</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+                <span class="k">if</span> <span class="n">attribute_name</span> <span class="ow">in</span> <span class="n">serializationProfile</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                    <span class="c1"># attribute was imported</span>
+                    <span class="k">if</span> <span class="n">Profile</span><span class="p">[</span><span class="n">serializationProfile</span><span class="p">[</span><span class="n">attribute_name</span><span class="p">]]</span> <span class="ow">in</span> <span class="n">activeProfileList</span><span class="p">:</span>
+                        <span class="n">attr_value</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">[</span><span class="n">serializationProfile</span><span class="p">[</span><span class="n">attribute_name</span><span class="p">]]</span><span class="o">.</span><span class="n">value</span>
+                        <span class="k">if</span> <span class="n">attr_value</span> <span class="ow">in</span> <span class="n">possibleProfileList</span><span class="p">[</span><span class="n">attribute_class</span><span class="p">][</span><span class="n">attribute_name</span><span class="p">]:</span>
+                            <span class="n">attribute_serializationProfile</span> <span class="o">=</span> <span class="n">serializationProfile</span><span class="p">[</span><span class="n">attribute_name</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">attribute_serializationProfile</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                    <span class="c1"># attribute was added</span>
+                    <span class="k">if</span> <span class="n">attribute_class</span> <span class="ow">in</span> <span class="n">possibleProfileList</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                        <span class="k">if</span> <span class="n">attribute_name</span> <span class="ow">in</span> <span class="n">possibleProfileList</span><span class="p">[</span><span class="n">attribute_class</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                            <span class="n">possibleProfileList</span><span class="p">[</span><span class="n">attribute_class</span><span class="p">][</span><span class="n">attribute_name</span><span class="p">]</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+                            <span class="k">for</span> <span class="n">attr_profile</span> <span class="ow">in</span> <span class="n">possibleProfileList</span><span class="p">[</span><span class="n">attribute_class</span><span class="p">][</span><span class="n">attribute_name</span><span class="p">]:</span>
+                                <span class="k">if</span> <span class="n">Profile</span><span class="p">(</span><span class="n">attr_profile</span><span class="p">)</span> <span class="ow">in</span> <span class="n">activeProfileList</span><span class="p">:</span>
+                                    <span class="c1"># active profile for class export found</span>
+                                    <span class="n">attribute_serializationProfile</span> <span class="o">=</span> <span class="n">Profile</span><span class="p">(</span><span class="n">attr_profile</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+                                    <span class="k">break</span>
+                            <span class="k">if</span> <span class="n">attribute_serializationProfile</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                                <span class="c1"># no profile in possibleProfileList active, skip attribute</span>
+                                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;All possible export profiles for attribute </span><span class="si">{}</span><span class="s1">.</span><span class="si">{}</span><span class="s1"> of class </span><span class="si">{}</span><span class="s1"> &#39;</span>
+                                               <span class="s1">&#39;not active. Skip attribute for export.&#39;</span>
+                                               <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attribute_class</span><span class="p">,</span> <span class="n">attribute_name</span><span class="p">,</span> <span class="n">klass</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]))</span>
+                                <span class="k">continue</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;Attribute </span><span class="si">{}</span><span class="s1">.</span><span class="si">{}</span><span class="s1"> of class </span><span class="si">{}</span><span class="s1"> has no profile to export to.&#39;</span><span class="o">.</span>
+                                           <span class="nb">format</span><span class="p">(</span><span class="n">attribute_class</span><span class="p">,</span> <span class="n">attribute_name</span><span class="p">,</span> <span class="n">klass</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]))</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;The class </span><span class="si">{}</span><span class="s1"> for attribute </span><span class="si">{}</span><span class="s1"> is not in the possibleProfileList&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">attribute_class</span><span class="p">,</span> <span class="n">attribute_name</span><span class="p">))</span>
+
+                <span class="k">if</span> <span class="n">attribute_serializationProfile</span> <span class="o">==</span> <span class="n">class_serializationProfile</span><span class="p">:</span>
+                    <span class="c1"># class and current attribute belong to same profile</span>
+                    <span class="n">same_package_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attribute</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># class and current attribute does not belong to same profile -&gt; rdf:about in</span>
+                    <span class="c1"># attribute origin profile</span>
+                    <span class="k">if</span> <span class="n">attribute_serializationProfile</span> <span class="ow">in</span> <span class="n">about_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                        <span class="n">about_dict</span><span class="p">[</span><span class="n">attribute_serializationProfile</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attribute</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">about_dict</span><span class="p">[</span><span class="n">attribute_serializationProfile</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">attribute</span><span class="p">]</span>
+
+        <span class="c1"># add class with all attributes in the same profile to the export dict sorted by the profile</span>
+        <span class="k">if</span> <span class="n">class_serializationProfile</span> <span class="ow">in</span> <span class="n">export_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">export_class</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">mRID</span><span class="o">=</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;mRID&#39;</span><span class="p">],</span> <span class="n">attributes</span><span class="o">=</span><span class="n">same_package_list</span><span class="p">)</span>
+            <span class="n">export_dict</span><span class="p">[</span><span class="n">class_serializationProfile</span><span class="p">][</span><span class="s1">&#39;classes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">export_class</span><span class="p">)</span>
+            <span class="k">del</span> <span class="n">export_class</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">export_class</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">mRID</span><span class="o">=</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;mRID&#39;</span><span class="p">],</span> <span class="n">attributes</span><span class="o">=</span><span class="n">same_package_list</span><span class="p">)</span>
+            <span class="n">export_dict</span><span class="p">[</span><span class="n">class_serializationProfile</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;classes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">export_class</span><span class="p">]}</span>
+
+        <span class="c1"># add class with all attributes defined in another profile to the about_key sorted by the profile</span>
+        <span class="k">for</span> <span class="n">about_key</span> <span class="ow">in</span> <span class="n">about_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">about_key</span> <span class="ow">in</span> <span class="n">export_about_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">export_about_class</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">mRID</span><span class="o">=</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;mRID&#39;</span><span class="p">],</span> <span class="n">attributes</span><span class="o">=</span><span class="n">about_dict</span><span class="p">[</span><span class="n">about_key</span><span class="p">])</span>
+                <span class="n">export_about_dict</span><span class="p">[</span><span class="n">about_key</span><span class="p">][</span><span class="s1">&#39;classes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">export_about_class</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">export_about_class</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">mRID</span><span class="o">=</span><span class="n">klass</span><span class="p">[</span><span class="s1">&#39;mRID&#39;</span><span class="p">],</span> <span class="n">attributes</span><span class="o">=</span><span class="n">about_dict</span><span class="p">[</span><span class="n">about_key</span><span class="p">])</span>
+                <span class="n">export_about_dict</span><span class="p">[</span><span class="n">about_key</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;classes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">export_about_class</span><span class="p">]}</span>
+
+    <span class="k">return</span> <span class="n">export_dict</span><span class="p">,</span> <span class="n">export_about_dict</span>
+
+
+<div class="viewcode-block" id="cim_export"><a class="viewcode-back" href="../../cimpy.cimexport.html#cimpy.cimexport.cim_export">[docs]</a><span class="k">def</span> <span class="nf">cim_export</span><span class="p">(</span><span class="n">import_result</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">activeProfileList</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Function for serialization of cgmes classes</span>
+
+<span class="sd">    This function serializes cgmes classes with the template engine chevron. The classes are separated by their profile</span>
+<span class="sd">    and one xml file for each profile is created. The package name is added after the file name. The</span>
+<span class="sd">    set_attributes_or_reference function is a lamda function for chevron to decide whether the value of an attribute is</span>
+<span class="sd">    a reference to another class object or not.</span>
+
+<span class="sd">    :param import_result: a dictionary containing the topology and meta information. The topology can be extracted via \</span>
+<span class="sd">    :func:`~cimpy.cimimport.cim_import()`. The topology dictionary contains all objects accessible via their mRID. The meta \</span>
+<span class="sd">    information can be extracted via import_result[&#39;meta_info&#39;]. The meta_info dictionary contains a new dictionary with \</span>
+<span class="sd">    the keys: &#39;author&#39;, &#39;namespaces&#39; and &#39;urls&#39;. The last two are also dictionaries. &#39;urls&#39; contains a mapping \</span>
+<span class="sd">    between references to URLs and the extracted value of the URL, e.g. &#39;absoluteValue&#39;: \</span>
+<span class="sd">    &#39;http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue&#39; These mappings are accessible \</span>
+<span class="sd">    via the name of the attribute, e.g. import_result[&#39;meta_info&#39;][&#39;urls&#39;}[attr_name] = {mapping like example above}. \</span>
+<span class="sd">    &#39;namespaces&#39; is a dictionary containing all RDF namespaces used in the imported xml files.</span>
+<span class="sd">    :param file_name: a string with the name of the xml files which will be created</span>
+<span class="sd">    :param version: cgmes version, e.g. version = &quot;cgmes_v2_4_15&quot;</span>
+<span class="sd">    :param activeProfileList: a list containing the strings of all short names of the profiles used for serialization</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Start export procedure.&#39;</span><span class="p">)</span>
+
+    <span class="n">profile_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">Profile</span><span class="p">[</span><span class="n">a</span><span class="p">],</span> <span class="n">activeProfileList</span><span class="p">))</span>
+
+    <span class="c1"># iterate over all profiles</span>
+    <span class="k">for</span> <span class="n">profile</span> <span class="ow">in</span> <span class="n">profile_list</span><span class="p">:</span>
+
+        <span class="c1"># File name</span>
+        <span class="n">full_file_name</span> <span class="o">=</span> <span class="n">file_name</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">profile</span><span class="o">.</span><span class="n">long_name</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;.xml&#39;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">full_file_name</span><span class="p">):</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">generate_xml</span><span class="p">(</span><span class="n">import_result</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">profile</span><span class="p">,</span> <span class="n">profile_list</span><span class="p">)</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">full_file_name</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Write file </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">full_file_name</span><span class="p">)</span>
+
+                <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;File </span><span class="si">{}</span><span class="s1"> already exists. Delete file or change file name to serialize CGMES &#39;</span>
+                           <span class="s1">&#39;classes.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">full_file_name</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[ERROR:] File </span><span class="si">{}</span><span class="s1"> already exists. Delete file or change file name to serialize CGMES &#39;</span>
+                           <span class="s1">&#39;classes.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">full_file_name</span><span class="p">),</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+            <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;End export procedure. Elapsed time: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="generate_xml"><a class="viewcode-back" href="../../cimpy.cimexport.html#cimpy.cimexport.generate_xml">[docs]</a><span class="k">def</span> <span class="nf">generate_xml</span><span class="p">(</span><span class="n">cim_data</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">model_name</span><span class="p">,</span> <span class="n">profile</span><span class="p">,</span> <span class="n">available_profiles</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Function for serialization of cgmes classes</span>
+
+<span class="sd">    This function serializes cgmes classes with the template engine chevron and returns them as a string.</span>
+
+<span class="sd">    :param cim_data: a dictionary containing the topology and meta information. It can be created via :func:`~cimpy.cimimport.cim_import()`</span>
+<span class="sd">    :param version: cgmes version, e.g.  ``version=&quot;cgmes_v2_4_15&quot;``</span>
+<span class="sd">    :param profile: The :class:`~cimpy.cgmes_v2_4_15.Base.Profile` for which the serialization should be generated.</span>
+<span class="sd">    :param model_name: a string with the name of the model.</span>
+<span class="sd">    :param available_profiles: a list of all :class:`~cimpy.cgmes_v2_4_15.Base.Profile`s in `cim_data`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># returns all classes with their attributes and resolved references</span>
+    <span class="n">class_attributes_list</span> <span class="o">=</span> <span class="n">_get_class_attributes_with_references</span><span class="p">(</span>
+        <span class="n">cim_data</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+
+    <span class="c1"># determine class and attribute export profiles. The export dict contains all classes and their attributes where</span>
+    <span class="c1"># the class definition and the attribute definitions are in the same profile. Every entry in about_dict generates</span>
+    <span class="c1"># a rdf:about in another profile</span>
+    <span class="n">export_dict</span><span class="p">,</span> <span class="n">about_dict</span> <span class="o">=</span> <span class="n">_sort_classes_to_profile</span><span class="p">(</span>
+        <span class="n">class_attributes_list</span><span class="p">,</span> <span class="n">available_profiles</span><span class="p">)</span>
+
+    <span class="n">namespaces_list</span> <span class="o">=</span> <span class="n">_create_namespaces_list</span><span class="p">(</span>
+        <span class="n">cim_data</span><span class="p">[</span><span class="s1">&#39;meta_info&#39;</span><span class="p">][</span><span class="s1">&#39;namespaces&#39;</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">profile</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">export_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">and</span> <span class="n">profile</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">about_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Profile &quot;</span> <span class="o">+</span> <span class="n">profile</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot; not available for export, export_dict=&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">export_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">+</span> <span class="s1">&#39; and about_dict=&#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">about_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># extract class lists from export_dict and about_dict</span>
+    <span class="k">if</span> <span class="n">profile</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">export_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">classes</span> <span class="o">=</span> <span class="n">export_dict</span><span class="p">[</span><span class="n">profile</span><span class="o">.</span><span class="n">name</span><span class="p">][</span><span class="s1">&#39;classes&#39;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">classes</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">if</span> <span class="n">profile</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">about_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">about</span> <span class="o">=</span> <span class="n">about_dict</span><span class="p">[</span><span class="n">profile</span><span class="o">.</span><span class="n">name</span><span class="p">][</span><span class="s1">&#39;classes&#39;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">about</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1">#Model header</span>
+    <span class="n">model_description</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;mRID&#39;</span><span class="p">:</span> <span class="n">model_name</span><span class="p">,</span>
+        <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s1">&#39;attr_name&#39;</span><span class="p">:</span> <span class="s1">&#39;created&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span>
+                <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">/%m/%Y %H:%M:%S&quot;</span><span class="p">)},</span>
+            <span class="p">{</span><span class="s1">&#39;attr_name&#39;</span><span class="p">:</span> <span class="s1">&#39;modelingAuthoritySet&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;www.acs.eonerc.rwth-aachen.de&#39;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s1">&#39;attr_name&#39;</span><span class="p">:</span> <span class="s1">&#39;profile&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">profile</span><span class="o">.</span><span class="n">long_name</span><span class="p">()}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+    <span class="n">template_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;export_template.mustache&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">template_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">chevron</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;classes&quot;</span><span class="p">:</span> <span class="n">classes</span><span class="p">,</span>
+                                    <span class="s2">&quot;about&quot;</span><span class="p">:</span> <span class="n">about</span><span class="p">,</span>
+                                    <span class="s2">&quot;set_attributes_or_reference&quot;</span><span class="p">:</span> <span class="n">_set_attribute_or_reference</span><span class="p">,</span>
+                                    <span class="s2">&quot;set_attributes_or_reference_model&quot;</span><span class="p">:</span> <span class="n">_set_attribute_or_reference_model</span><span class="p">,</span>
+                                    <span class="s2">&quot;namespaces&quot;</span><span class="p">:</span> <span class="n">namespaces_list</span><span class="p">,</span>
+                                    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">model_description</span><span class="p">]})</span>
+    <span class="k">del</span> <span class="n">model_description</span>
+    <span class="k">return</span> <span class="n">output</span></div>
+
+<span class="c1"># This function extracts all attributes from class_object in the form of Class_Name.Attribute_Name</span>
+<span class="k">def</span> <span class="nf">_get_attributes</span><span class="p">(</span><span class="n">class_object</span><span class="p">):</span>
+    <span class="n">inheritance_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">class_object</span><span class="p">]</span>
+    <span class="n">class_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">class_object</span><span class="p">)</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">class_object</span>
+
+    <span class="c1"># get parent classes</span>
+    <span class="k">while</span> <span class="s1">&#39;Base.Base&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">class_type</span><span class="p">):</span>
+        <span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">[</span><span class="mi">0</span><span class="p">]()</span>
+        <span class="c1"># insert parent class at beginning of list, classes inherit from top to bottom</span>
+        <span class="n">inheritance_list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+        <span class="n">class_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+
+    <span class="c1"># dictionary containing all attributes with key: &#39;Class_Name.Attribute_Name&#39;</span>
+    <span class="n">attributes_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">serializationProfile</span><span class="o">=</span><span class="n">class_object</span><span class="o">.</span><span class="n">serializationProfile</span><span class="p">,</span> <span class="n">possibleProfileList</span><span class="o">=</span><span class="p">{})</span>
+
+    <span class="c1"># __dict__ of a subclass returns also the attributes of the parent classes</span>
+    <span class="c1"># to avoid multiple attributes create list with all attributes already processed</span>
+    <span class="n">attributes_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># iterate over parent classes from top to bottom</span>
+    <span class="k">for</span> <span class="n">parent_class</span> <span class="ow">in</span> <span class="n">inheritance_list</span><span class="p">:</span>
+        <span class="c1"># get all attributes of the current parent class</span>
+        <span class="n">parent_attributes_dict</span> <span class="o">=</span> <span class="n">parent_class</span><span class="o">.</span><span class="vm">__dict__</span>
+        <span class="n">class_name</span> <span class="o">=</span> <span class="n">parent_class</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+
+        <span class="c1"># check if new attribute or old attribute</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">parent_attributes_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">attributes_list</span><span class="p">:</span>
+                <span class="n">attributes_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+                <span class="n">attributes_name</span> <span class="o">=</span> <span class="n">class_name</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">key</span>
+                <span class="n">attributes_dict</span><span class="p">[</span><span class="n">attributes_name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">class_object</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+        <span class="c1"># get all possibleProfileLists from all parent classes except the Base class (no attributes)</span>
+        <span class="c1"># the serializationProfile from parent classes is not needed because entries in the serializationProfile</span>
+        <span class="c1"># are only generated for the inherited class</span>
+        <span class="k">if</span> <span class="n">class_name</span> <span class="o">!=</span> <span class="s1">&#39;Base&#39;</span><span class="p">:</span>
+            <span class="n">attributes_dict</span><span class="p">[</span><span class="s1">&#39;possibleProfileList&#39;</span><span class="p">][</span><span class="n">class_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">parent_class</span><span class="o">.</span><span class="n">possibleProfileList</span>
+
+    <span class="k">return</span> <span class="n">attributes_dict</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, ACS RWTH Aachen University.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

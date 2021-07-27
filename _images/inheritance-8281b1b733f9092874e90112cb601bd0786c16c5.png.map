@@ -1,0 +1,7 @@
+<map id="inheritance4d0bc69a9c" name="inheritance4d0bc69a9c">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="75,5,147,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="54,79,167,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="29,152,193,177"/>
+<area shape="rect" id="node5" href="cimpy.cgmes_v2_4_15.UnderexcitationLimiterDynamics.html#cimpy.cgmes_v2_4_15.UnderexcitationLimiterDynamics.UnderexcitationLimiterDynamics" target="_top" title="Underexcitation limiter function block whose behaviour is described by reference to a standard model" alt="" coords="5,225,216,251"/>
+<area shape="rect" id="node4" href="#cimpy.cgmes_v2_4_15.UnderexcLimIEEE1.UnderexcLimIEEE1" target="_top" title="The class represents the Type UEL1 model which has a circular limit boundary when plotted in terms of machine reactive power vs. real power output. &#160;Reference: IEEE UEL1 421.5&#45;2005 Section 10.1." alt="" coords="42,299,179,324"/>
+</map>

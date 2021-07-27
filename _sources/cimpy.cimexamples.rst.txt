@@ -1,0 +1,10 @@
+cimpy.cimexamples module
+========================
+
+.. automodule:: cimpy.cimexamples
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.cimexamples
+    :parts: 1

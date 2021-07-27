@@ -1,0 +1,7 @@
+<map id="inheritance0d0eac1296" name="inheritance0d0eac1296">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="82,5,154,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="61,79,175,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="36,152,200,177"/>
+<area shape="rect" id="node4" href="cimpy.cgmes_v2_4_15.UnderexcitationLimiterDynamics.html#cimpy.cgmes_v2_4_15.UnderexcitationLimiterDynamics.UnderexcitationLimiterDynamics" target="_top" title="Underexcitation limiter function block whose behaviour is described by reference to a standard model" alt="" coords="13,225,223,251"/>
+<area shape="rect" id="node5" href="#cimpy.cgmes_v2_4_15.UnderexcitationLimiterUserDefined.UnderexcitationLimiterUserDefined" target="_top" title="Underexcitation limiter function block whose dynamic behaviour is described by" alt="" coords="5,299,231,324"/>
+</map>

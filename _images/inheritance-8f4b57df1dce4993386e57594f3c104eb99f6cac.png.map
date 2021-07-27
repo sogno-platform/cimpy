@@ -1,0 +1,4 @@
+<map id="inheritance94a45f5715" name="inheritance94a45f5715">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="39,5,111,31"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.DiagramObjectPoint.DiagramObjectPoint" target="_top" title="A point in a given space defined by 3 coordinates and associated to a diagram object. &#160;The coordinates may be positive or negative as the origin does not have to be in the corner of a diagram." alt="" coords="5,79,144,104"/>
+</map>

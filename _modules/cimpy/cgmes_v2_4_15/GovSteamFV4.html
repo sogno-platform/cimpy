@@ -1,0 +1,383 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>cimpy.cgmes_v2_4_15.GovSteamFV4 &mdash; cimpy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> cimpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cimpy.html">cimpy Package Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cimpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>cimpy.cgmes_v2_4_15.GovSteamFV4</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for cimpy.cgmes_v2_4_15.GovSteamFV4</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.TurbineGovernorDynamics</span> <span class="kn">import</span> <span class="n">TurbineGovernorDynamics</span>
+
+
+<div class="viewcode-block" id="GovSteamFV4"><a class="viewcode-back" href="../../../cimpy.cgmes_v2_4_15.GovSteamFV4.html#cimpy.cgmes_v2_4_15.GovSteamFV4.GovSteamFV4">[docs]</a><span class="k">class</span> <span class="nc">GovSteamFV4</span><span class="p">(</span><span class="n">TurbineGovernorDynamics</span><span class="p">):</span>
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	Detailed electro-hydraulic governor for steam unit.</span>
+
+<span class="sd">	:kf1: Frequency bias (reciprocal of droop) (Kf1).  Typical Value = 20. Default: 0.0</span>
+<span class="sd">	:kf3: Frequency control (reciprocal of droop) (Kf3).  Typical Value = 20. Default: 0.0</span>
+<span class="sd">	:lps: Maximum positive power error (Lps).  Typical Value = 0.03. Default: 0.0</span>
+<span class="sd">	:lpi: Maximum negative power error (Lpi).  Typical Value = -0.15. Default: 0.0</span>
+<span class="sd">	:mxef: Upper limit for frequency correction (MX).  Typical Value = 0.05. Default: 0.0</span>
+<span class="sd">	:mnef: Lower limit for frequency correction (MN).  Typical Value = -0.05. Default: 0.0</span>
+<span class="sd">	:crmx: Maximum value of regulator set-point (Crmx).  Typical Value = 1.2. Default: 0.0</span>
+<span class="sd">	:crmn: Minimum value of regulator set-point (Crmn).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:kpt: Proportional gain of electro-hydraulic regulator (Kpt).  Typical Value = 0.3. Default: 0.0</span>
+<span class="sd">	:kit: Integral gain of electro-hydraulic regulator (Kit).  Typical Value = 0.04. Default: 0.0</span>
+<span class="sd">	:rvgmx: Maximum value of integral regulator (Rvgmx).  Typical Value = 1.2. Default: 0.0</span>
+<span class="sd">	:rvgmn: Minimum value of integral regulator (Rvgmn).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:svmx: Maximum regulator gate opening velocity (Svmx).  Typical Value = 0.0333. Default: 0.0</span>
+<span class="sd">	:svmn: Maximum regulator gate closing velocity (Svmn).  Typical Value = -0.0333. Default: 0.0</span>
+<span class="sd">	:srmx: Maximum valve opening (Srmx).  Typical Value = 1.1. Default: 0.0</span>
+<span class="sd">	:srmn: Minimum valve opening (Srmn).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:kpp: Proportional gain of pressure feedback regulator (Kpp).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:kip: Integral gain of pressure feedback regulator (Kip).  Typical Value = 0.5. Default: 0.0</span>
+<span class="sd">	:rsmimx: Maximum value of integral regulator (Rsmimx).  Typical Value = 1.1. Default: 0.0</span>
+<span class="sd">	:rsmimn: Minimum value of integral regulator (Rsmimn).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:kmp1: First gain coefficient of  intercept valves characteristic (Kmp1).  Typical Value = 0.5. Default: 0.0</span>
+<span class="sd">	:kmp2: Second gain coefficient of intercept valves characteristic (Kmp2).  Typical Value = 3.5. Default: 0.0</span>
+<span class="sd">	:srsmp: Intercept valves characteristic discontinuity point (Srsmp).  Typical Value = 0.43. Default: 0.0</span>
+<span class="sd">	:ta: Control valves rate opening time (Ta).  Typical Value = 0.8. Default: 0</span>
+<span class="sd">	:tc: Control valves rate closing time (Tc).  Typical Value = 0.5. Default: 0</span>
+<span class="sd">	:ty: Control valves servo time constant (Ty).  Typical Value = 0.1. Default: 0</span>
+<span class="sd">	:yhpmx: Maximum control valve position (Yhpmx).  Typical Value = 1.1. Default: 0.0</span>
+<span class="sd">	:yhpmn: Minimum control valve position (Yhpmn).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:tam: Intercept valves rate opening time (Tam).  Typical Value = 0.8. Default: 0</span>
+<span class="sd">	:tcm: Intercept valves rate closing time (Tcm).  Typical Value = 0.5. Default: 0</span>
+<span class="sd">	:ympmx: Maximum intercept valve position (Ympmx).  Typical Value = 1.1. Default: 0.0</span>
+<span class="sd">	:ympmn: Minimum intercept valve position (Ympmn).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:y: Coefficient of linearized equations of turbine (Stodola formulation) (Y).  Typical Value = 0.13. Default: 0.0</span>
+<span class="sd">	:thp: High pressure (HP) time constant of the turbine (Thp).  Typical Value = 0.15. Default: 0</span>
+<span class="sd">	:trh: Reheater  time constant of the turbine (Trh).  Typical Value = 10. Default: 0</span>
+<span class="sd">	:tmp: Low pressure (LP) time constant of the turbine (Tmp).  Typical Value = 0.4. Default: 0</span>
+<span class="sd">	:khp: Fraction  of total turbine output generated by HP part (Khp).  Typical Value = 0.35. Default: 0.0</span>
+<span class="sd">	:pr1: First value of pressure set point static characteristic (Pr1).  Typical Value = 0.2. Default: 0.0</span>
+<span class="sd">	:pr2: Second value of pressure set point static characteristic, corresponding to Ps0 = 1.0 PU (Pr2).  Typical Value = 0.75. Default: 0.0</span>
+<span class="sd">	:psmn: Minimum value of pressure set point static characteristic (Psmn).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:kpc: Proportional gain of pressure regulator (Kpc).  Typical Value = 0.5. Default: 0.0</span>
+<span class="sd">	:kic: Integral gain of pressure regulator (Kic).  Typical Value = 0.0033. Default: 0.0</span>
+<span class="sd">	:kdc: Derivative gain of pressure regulator (Kdc).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:tdc: Derivative time constant of pressure regulator (Tdc).  Typical Value = 90. Default: 0</span>
+<span class="sd">	:cpsmx: Maximum value of pressure regulator output (Cpsmx).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:cpsmn: Minimum value of pressure regulator output (Cpsmn).  Typical Value = -1. Default: 0.0</span>
+<span class="sd">	:krc: Maximum variation of fuel flow (Krc).  Typical Value = 0.05. Default: 0.0</span>
+<span class="sd">	:tf1: Time constant of fuel regulation (Tf1).  Typical Value = 10. Default: 0</span>
+<span class="sd">	:tf2: Time constant of steam chest (Tf2).  Typical Value = 10. Default: 0</span>
+<span class="sd">	:tv: Boiler time constant (Tv).  Typical Value = 60. Default: 0</span>
+<span class="sd">	:ksh: Pressure loss due to flow friction in the boiler tubes (Ksh).  Typical Value = 0.08. Default: 0.0</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+	<span class="n">cgmesProfile</span> <span class="o">=</span> <span class="n">TurbineGovernorDynamics</span><span class="o">.</span><span class="n">cgmesProfile</span>
+
+	<span class="n">possibleProfileList</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kf1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kf3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;lps&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;lpi&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;mxef&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;mnef&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;crmx&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;crmn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kpt&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kit&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;rvgmx&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;rvgmn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;svmx&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;svmn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;srmx&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;srmn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kpp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kip&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;rsmimx&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;rsmimn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kmp1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kmp2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;srsmp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ta&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ty&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;yhpmx&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;yhpmn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tam&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tcm&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ympmx&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ympmn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;thp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;trh&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tmp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;khp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;pr1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;pr2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;psmn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kpc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kic&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kdc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tdc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;cpsmx&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;cpsmn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;krc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tf1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tf2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tv&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ksh&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						 <span class="p">}</span>
+
+	<span class="n">serializationProfile</span> <span class="o">=</span> <span class="p">{}</span>
+
+	<span class="vm">__doc__</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Documentation of parent class TurbineGovernorDynamics: </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">TurbineGovernorDynamics</span><span class="o">.</span><span class="vm">__doc__</span> 
+
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kf1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kf3</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">lps</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">lpi</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">mxef</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">mnef</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">crmx</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">crmn</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kpt</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kit</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">rvgmx</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">rvgmn</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">svmx</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">svmn</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">srmx</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">srmn</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kpp</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kip</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">rsmimx</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">rsmimn</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kmp1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kmp2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">srsmp</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ta</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ty</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">yhpmx</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">yhpmn</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">tam</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tcm</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ympmx</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ympmn</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">thp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">trh</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">khp</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">pr1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">pr2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">psmn</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kpc</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kic</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kdc</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">tdc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">cpsmx</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">cpsmn</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">krc</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">tf1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tf2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tv</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ksh</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">)</span>
+	
+		<span class="bp">self</span><span class="o">.</span><span class="n">kf1</span> <span class="o">=</span> <span class="n">kf1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kf3</span> <span class="o">=</span> <span class="n">kf3</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">lps</span> <span class="o">=</span> <span class="n">lps</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">lpi</span> <span class="o">=</span> <span class="n">lpi</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">mxef</span> <span class="o">=</span> <span class="n">mxef</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">mnef</span> <span class="o">=</span> <span class="n">mnef</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">crmx</span> <span class="o">=</span> <span class="n">crmx</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">crmn</span> <span class="o">=</span> <span class="n">crmn</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kpt</span> <span class="o">=</span> <span class="n">kpt</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kit</span> <span class="o">=</span> <span class="n">kit</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">rvgmx</span> <span class="o">=</span> <span class="n">rvgmx</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">rvgmn</span> <span class="o">=</span> <span class="n">rvgmn</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">svmx</span> <span class="o">=</span> <span class="n">svmx</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">svmn</span> <span class="o">=</span> <span class="n">svmn</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">srmx</span> <span class="o">=</span> <span class="n">srmx</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">srmn</span> <span class="o">=</span> <span class="n">srmn</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kpp</span> <span class="o">=</span> <span class="n">kpp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kip</span> <span class="o">=</span> <span class="n">kip</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">rsmimx</span> <span class="o">=</span> <span class="n">rsmimx</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">rsmimn</span> <span class="o">=</span> <span class="n">rsmimn</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kmp1</span> <span class="o">=</span> <span class="n">kmp1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kmp2</span> <span class="o">=</span> <span class="n">kmp2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">srsmp</span> <span class="o">=</span> <span class="n">srsmp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ta</span> <span class="o">=</span> <span class="n">ta</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tc</span> <span class="o">=</span> <span class="n">tc</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ty</span> <span class="o">=</span> <span class="n">ty</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">yhpmx</span> <span class="o">=</span> <span class="n">yhpmx</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">yhpmn</span> <span class="o">=</span> <span class="n">yhpmn</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tam</span> <span class="o">=</span> <span class="n">tam</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tcm</span> <span class="o">=</span> <span class="n">tcm</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ympmx</span> <span class="o">=</span> <span class="n">ympmx</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ympmn</span> <span class="o">=</span> <span class="n">ympmn</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">thp</span> <span class="o">=</span> <span class="n">thp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">trh</span> <span class="o">=</span> <span class="n">trh</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">khp</span> <span class="o">=</span> <span class="n">khp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pr1</span> <span class="o">=</span> <span class="n">pr1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pr2</span> <span class="o">=</span> <span class="n">pr2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">psmn</span> <span class="o">=</span> <span class="n">psmn</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kpc</span> <span class="o">=</span> <span class="n">kpc</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kic</span> <span class="o">=</span> <span class="n">kic</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kdc</span> <span class="o">=</span> <span class="n">kdc</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tdc</span> <span class="o">=</span> <span class="n">tdc</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">cpsmx</span> <span class="o">=</span> <span class="n">cpsmx</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">cpsmn</span> <span class="o">=</span> <span class="n">cpsmn</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">krc</span> <span class="o">=</span> <span class="n">krc</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tf1</span> <span class="o">=</span> <span class="n">tf1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tf2</span> <span class="o">=</span> <span class="n">tf2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tv</span> <span class="o">=</span> <span class="n">tv</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ksh</span> <span class="o">=</span> <span class="n">ksh</span>
+		
+	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;class=GovSteamFV4</span><span class="se">\n</span><span class="s1">&#39;</span>
+		<span class="n">attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span>
+		<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">attributes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+			<span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;=</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+		<span class="k">return</span> <span class="nb">str</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, ACS RWTH Aachen University.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+<map id="inheritancee94ebfcbf0" name="inheritancee94ebfcbf0">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="33,5,105,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="12,79,125,104"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.ConnectivityNode.ConnectivityNode" target="_top" title="Connectivity nodes are points where terminals of AC conducting equipment are connected together with zero impedance." alt="" coords="5,152,132,177"/>
+</map>

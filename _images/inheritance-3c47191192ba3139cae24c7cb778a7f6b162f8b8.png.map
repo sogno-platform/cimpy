@@ -1,0 +1,4 @@
+<map id="inheritancee71d6ed983" name="inheritancee71d6ed983">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="46,5,118,31"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.TapChangerTablePoint.TapChangerTablePoint" target="_top" title=":b: The magnetizing branch susceptance deviation in percent of nominal value. The actual susceptance is calculated as follows: calculated magnetizing susceptance = b(nominal) * (1 + b(from this class)/100). &#160;&#160;The b(nominal) is defined as the static magnetizing susceptance on the associated power transformer end or ends. &#160;This model assumes the star impedance (pi model) form. Default: 0.0" alt="" coords="5,79,159,104"/>
+</map>

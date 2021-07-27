@@ -1,0 +1,5 @@
+<map id="inheritance704697bf6e" name="inheritance704697bf6e">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="38,5,110,31"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="17,79,131,104"/>
+<area shape="rect" id="node3" href="#cimpy.cgmes_v2_4_15.WindAeroConstIEC.WindAeroConstIEC" target="_top" title="The constant aerodynamic torque model assumes that the aerodynamic torque is constant. &#160;Reference: IEC Standard 61400&#45;27&#45;1 Section 6.6.1.1." alt="" coords="5,152,143,177"/>
+</map>

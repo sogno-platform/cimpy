@@ -1,0 +1,4 @@
+<map id="inheritance4470e4ce2f" name="inheritance4470e4ce2f">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="21,5,93,31"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.SvPowerFlow.SvPowerFlow" target="_top" title="State variable for power flow. Load convention is used for flow direction. This means flow out from the TopologicalNode into the equipment is positive." alt="" coords="5,79,108,104"/>
+</map>

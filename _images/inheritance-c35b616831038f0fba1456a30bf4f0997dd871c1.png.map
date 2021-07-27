@@ -1,0 +1,7 @@
+<map id="inheritance77bcb75127" name="inheritance77bcb75127">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="63,5,135,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="42,79,155,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="17,152,181,177"/>
+<area shape="rect" id="node4" href="cimpy.cgmes_v2_4_15.VoltageAdjusterDynamics.html#cimpy.cgmes_v2_4_15.VoltageAdjusterDynamics.VoltageAdjusterDynamics" target="_top" title="Voltage adjuster function block whose behaviour is described by reference to a standard model" alt="" coords="13,225,185,251"/>
+<area shape="rect" id="node5" href="#cimpy.cgmes_v2_4_15.VoltageAdjusterUserDefined.VoltageAdjusterUserDefined" target="_top" title="function block whose dynamic behaviour is described by" alt="" coords="5,299,192,324"/>
+</map>

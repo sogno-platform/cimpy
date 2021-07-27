@@ -1,0 +1,7 @@
+<map id="inheritance3915bad0a5" name="inheritance3915bad0a5">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="61,5,133,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="41,79,154,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="15,152,179,177"/>
+<area shape="rect" id="node5" href="cimpy.cgmes_v2_4_15.ExcitationSystemDynamics.html#cimpy.cgmes_v2_4_15.ExcitationSystemDynamics.ExcitationSystemDynamics" target="_top" title="Excitation system function block whose behavior is described by reference to a standard model" alt="" coords="5,225,189,251"/>
+<area shape="rect" id="node4" href="#cimpy.cgmes_v2_4_15.ExcREXS.ExcREXS" target="_top" title="General Purpose Rotating Excitation System Model. &#160;This model can be used to represent a wide range of excitation systems whose DC power source is an AC or DC generator. It encompasses IEEE type AC1, AC2, DC1, and DC2 excitation system models." alt="" coords="56,299,139,324"/>
+</map>

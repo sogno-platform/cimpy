@@ -1,0 +1,10 @@
+cimpy.cimimport module
+======================
+
+.. automodule:: cimpy.cimimport
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.cimimport
+    :parts: 1

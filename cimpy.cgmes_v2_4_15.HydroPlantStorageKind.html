@@ -1,0 +1,730 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>cimpy.cgmes_v2_4_15.HydroPlantStorageKind module &mdash; cimpy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="cimpy.cgmes_v2_4_15.HydroPowerPlant module" href="cimpy.cgmes_v2_4_15.HydroPowerPlant.html" />
+    <link rel="prev" title="cimpy.cgmes_v2_4_15.HydroGeneratingUnit module" href="cimpy.cgmes_v2_4_15.HydroGeneratingUnit.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> cimpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Start.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cimpy.html">cimpy Package Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="cimpy.cgmes_v2_4_15.html">cimpy.cgmes_v2_4_15 package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ACDCConverter.html">cimpy.cgmes_v2_4_15.ACDCConverter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ACDCConverterDCTerminal.html">cimpy.cgmes_v2_4_15.ACDCConverterDCTerminal module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ACDCTerminal.html">cimpy.cgmes_v2_4_15.ACDCTerminal module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ACLineSegment.html">cimpy.cgmes_v2_4_15.ACLineSegment module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Accumulator.html">cimpy.cgmes_v2_4_15.Accumulator module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.AccumulatorLimit.html">cimpy.cgmes_v2_4_15.AccumulatorLimit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.AccumulatorLimitSet.html">cimpy.cgmes_v2_4_15.AccumulatorLimitSet module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.AccumulatorReset.html">cimpy.cgmes_v2_4_15.AccumulatorReset module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.AccumulatorValue.html">cimpy.cgmes_v2_4_15.AccumulatorValue module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ActivePower.html">cimpy.cgmes_v2_4_15.ActivePower module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ActivePowerLimit.html">cimpy.cgmes_v2_4_15.ActivePowerLimit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ActivePowerPerCurrentFlow.html">cimpy.cgmes_v2_4_15.ActivePowerPerCurrentFlow module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ActivePowerPerFrequency.html">cimpy.cgmes_v2_4_15.ActivePowerPerFrequency module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Analog.html">cimpy.cgmes_v2_4_15.Analog module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.AnalogControl.html">cimpy.cgmes_v2_4_15.AnalogControl module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.AnalogLimit.html">cimpy.cgmes_v2_4_15.AnalogLimit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.AnalogLimitSet.html">cimpy.cgmes_v2_4_15.AnalogLimitSet module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.AnalogValue.html">cimpy.cgmes_v2_4_15.AnalogValue module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.AngleDegrees.html">cimpy.cgmes_v2_4_15.AngleDegrees module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.AngleRadians.html">cimpy.cgmes_v2_4_15.AngleRadians module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ApparentPower.html">cimpy.cgmes_v2_4_15.ApparentPower module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ApparentPowerLimit.html">cimpy.cgmes_v2_4_15.ApparentPowerLimit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Area.html">cimpy.cgmes_v2_4_15.Area module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.AsynchronousMachine.html">cimpy.cgmes_v2_4_15.AsynchronousMachine module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.AsynchronousMachineDynamics.html">cimpy.cgmes_v2_4_15.AsynchronousMachineDynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.AsynchronousMachineEquivalentCircuit.html">cimpy.cgmes_v2_4_15.AsynchronousMachineEquivalentCircuit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.AsynchronousMachineKind.html">cimpy.cgmes_v2_4_15.AsynchronousMachineKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.AsynchronousMachineTimeConstantReactance.html">cimpy.cgmes_v2_4_15.AsynchronousMachineTimeConstantReactance module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.AsynchronousMachineUserDefined.html">cimpy.cgmes_v2_4_15.AsynchronousMachineUserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Base.html">cimpy.cgmes_v2_4_15.Base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.BaseVoltage.html">cimpy.cgmes_v2_4_15.BaseVoltage module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.BasicIntervalSchedule.html">cimpy.cgmes_v2_4_15.BasicIntervalSchedule module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Bay.html">cimpy.cgmes_v2_4_15.Bay module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Boolean.html">cimpy.cgmes_v2_4_15.Boolean module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Breaker.html">cimpy.cgmes_v2_4_15.Breaker module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.BusNameMarker.html">cimpy.cgmes_v2_4_15.BusNameMarker module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.BusbarSection.html">cimpy.cgmes_v2_4_15.BusbarSection module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Capacitance.html">cimpy.cgmes_v2_4_15.Capacitance module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.CapacitancePerLength.html">cimpy.cgmes_v2_4_15.CapacitancePerLength module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Command.html">cimpy.cgmes_v2_4_15.Command module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Conductance.html">cimpy.cgmes_v2_4_15.Conductance module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ConductingEquipment.html">cimpy.cgmes_v2_4_15.ConductingEquipment module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Conductor.html">cimpy.cgmes_v2_4_15.Conductor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ConformLoad.html">cimpy.cgmes_v2_4_15.ConformLoad module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ConformLoadGroup.html">cimpy.cgmes_v2_4_15.ConformLoadGroup module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ConformLoadSchedule.html">cimpy.cgmes_v2_4_15.ConformLoadSchedule module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ConnectivityNode.html">cimpy.cgmes_v2_4_15.ConnectivityNode module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ConnectivityNodeContainer.html">cimpy.cgmes_v2_4_15.ConnectivityNodeContainer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Connector.html">cimpy.cgmes_v2_4_15.Connector module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Control.html">cimpy.cgmes_v2_4_15.Control module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ControlArea.html">cimpy.cgmes_v2_4_15.ControlArea module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ControlAreaGeneratingUnit.html">cimpy.cgmes_v2_4_15.ControlAreaGeneratingUnit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ControlAreaTypeKind.html">cimpy.cgmes_v2_4_15.ControlAreaTypeKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.CoordinateSystem.html">cimpy.cgmes_v2_4_15.CoordinateSystem module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.CsConverter.html">cimpy.cgmes_v2_4_15.CsConverter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.CsOperatingModeKind.html">cimpy.cgmes_v2_4_15.CsOperatingModeKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.CsPpccControlKind.html">cimpy.cgmes_v2_4_15.CsPpccControlKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Currency.html">cimpy.cgmes_v2_4_15.Currency module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.CurrentFlow.html">cimpy.cgmes_v2_4_15.CurrentFlow module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.CurrentLimit.html">cimpy.cgmes_v2_4_15.CurrentLimit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Curve.html">cimpy.cgmes_v2_4_15.Curve module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.CurveData.html">cimpy.cgmes_v2_4_15.CurveData module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.CurveStyle.html">cimpy.cgmes_v2_4_15.CurveStyle module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCBaseTerminal.html">cimpy.cgmes_v2_4_15.DCBaseTerminal module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCBreaker.html">cimpy.cgmes_v2_4_15.DCBreaker module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCBusbar.html">cimpy.cgmes_v2_4_15.DCBusbar module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCChopper.html">cimpy.cgmes_v2_4_15.DCChopper module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCConductingEquipment.html">cimpy.cgmes_v2_4_15.DCConductingEquipment module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCConverterOperatingModeKind.html">cimpy.cgmes_v2_4_15.DCConverterOperatingModeKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCConverterUnit.html">cimpy.cgmes_v2_4_15.DCConverterUnit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCDisconnector.html">cimpy.cgmes_v2_4_15.DCDisconnector module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCEquipmentContainer.html">cimpy.cgmes_v2_4_15.DCEquipmentContainer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCGround.html">cimpy.cgmes_v2_4_15.DCGround module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCLine.html">cimpy.cgmes_v2_4_15.DCLine module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCLineSegment.html">cimpy.cgmes_v2_4_15.DCLineSegment module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCNode.html">cimpy.cgmes_v2_4_15.DCNode module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCPolarityKind.html">cimpy.cgmes_v2_4_15.DCPolarityKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCSeriesDevice.html">cimpy.cgmes_v2_4_15.DCSeriesDevice module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCShunt.html">cimpy.cgmes_v2_4_15.DCShunt module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCSwitch.html">cimpy.cgmes_v2_4_15.DCSwitch module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCTerminal.html">cimpy.cgmes_v2_4_15.DCTerminal module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCTopologicalIsland.html">cimpy.cgmes_v2_4_15.DCTopologicalIsland module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DCTopologicalNode.html">cimpy.cgmes_v2_4_15.DCTopologicalNode module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Date.html">cimpy.cgmes_v2_4_15.Date module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DateTime.html">cimpy.cgmes_v2_4_15.DateTime module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DayType.html">cimpy.cgmes_v2_4_15.DayType module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Decimal.html">cimpy.cgmes_v2_4_15.Decimal module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Diagram.html">cimpy.cgmes_v2_4_15.Diagram module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DiagramLayoutVersion.html">cimpy.cgmes_v2_4_15.DiagramLayoutVersion module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DiagramObject.html">cimpy.cgmes_v2_4_15.DiagramObject module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DiagramObjectGluePoint.html">cimpy.cgmes_v2_4_15.DiagramObjectGluePoint module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DiagramObjectPoint.html">cimpy.cgmes_v2_4_15.DiagramObjectPoint module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DiagramObjectStyle.html">cimpy.cgmes_v2_4_15.DiagramObjectStyle module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DiagramStyle.html">cimpy.cgmes_v2_4_15.DiagramStyle module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DiscExcContIEEEDEC1A.html">cimpy.cgmes_v2_4_15.DiscExcContIEEEDEC1A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DiscExcContIEEEDEC2A.html">cimpy.cgmes_v2_4_15.DiscExcContIEEEDEC2A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DiscExcContIEEEDEC3A.html">cimpy.cgmes_v2_4_15.DiscExcContIEEEDEC3A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Disconnector.html">cimpy.cgmes_v2_4_15.Disconnector module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DiscontinuousExcitationControlDynamics.html">cimpy.cgmes_v2_4_15.DiscontinuousExcitationControlDynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DiscontinuousExcitationControlUserDefined.html">cimpy.cgmes_v2_4_15.DiscontinuousExcitationControlUserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Discrete.html">cimpy.cgmes_v2_4_15.Discrete module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DiscreteValue.html">cimpy.cgmes_v2_4_15.DiscreteValue module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DroopSignalFeedbackKind.html">cimpy.cgmes_v2_4_15.DroopSignalFeedbackKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html">cimpy.cgmes_v2_4_15.DynamicsFunctionBlock module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.DynamicsVersion.html">cimpy.cgmes_v2_4_15.DynamicsVersion module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.EarthFaultCompensator.html">cimpy.cgmes_v2_4_15.EarthFaultCompensator module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.EnergyArea.html">cimpy.cgmes_v2_4_15.EnergyArea module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.EnergyConsumer.html">cimpy.cgmes_v2_4_15.EnergyConsumer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.EnergySchedulingType.html">cimpy.cgmes_v2_4_15.EnergySchedulingType module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.EnergySource.html">cimpy.cgmes_v2_4_15.EnergySource module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Equipment.html">cimpy.cgmes_v2_4_15.Equipment module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.EquipmentBoundaryVersion.html">cimpy.cgmes_v2_4_15.EquipmentBoundaryVersion module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.EquipmentContainer.html">cimpy.cgmes_v2_4_15.EquipmentContainer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.EquipmentVersion.html">cimpy.cgmes_v2_4_15.EquipmentVersion module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.EquivalentBranch.html">cimpy.cgmes_v2_4_15.EquivalentBranch module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.EquivalentEquipment.html">cimpy.cgmes_v2_4_15.EquivalentEquipment module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.EquivalentInjection.html">cimpy.cgmes_v2_4_15.EquivalentInjection module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.EquivalentNetwork.html">cimpy.cgmes_v2_4_15.EquivalentNetwork module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.EquivalentShunt.html">cimpy.cgmes_v2_4_15.EquivalentShunt module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcAC1A.html">cimpy.cgmes_v2_4_15.ExcAC1A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcAC2A.html">cimpy.cgmes_v2_4_15.ExcAC2A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcAC3A.html">cimpy.cgmes_v2_4_15.ExcAC3A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcAC4A.html">cimpy.cgmes_v2_4_15.ExcAC4A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcAC5A.html">cimpy.cgmes_v2_4_15.ExcAC5A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcAC6A.html">cimpy.cgmes_v2_4_15.ExcAC6A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcAC8B.html">cimpy.cgmes_v2_4_15.ExcAC8B module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcANS.html">cimpy.cgmes_v2_4_15.ExcANS module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcAVR1.html">cimpy.cgmes_v2_4_15.ExcAVR1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcAVR2.html">cimpy.cgmes_v2_4_15.ExcAVR2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcAVR3.html">cimpy.cgmes_v2_4_15.ExcAVR3 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcAVR4.html">cimpy.cgmes_v2_4_15.ExcAVR4 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcAVR5.html">cimpy.cgmes_v2_4_15.ExcAVR5 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcAVR7.html">cimpy.cgmes_v2_4_15.ExcAVR7 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcBBC.html">cimpy.cgmes_v2_4_15.ExcBBC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcCZ.html">cimpy.cgmes_v2_4_15.ExcCZ module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcDC1A.html">cimpy.cgmes_v2_4_15.ExcDC1A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcDC2A.html">cimpy.cgmes_v2_4_15.ExcDC2A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcDC3A.html">cimpy.cgmes_v2_4_15.ExcDC3A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcDC3A1.html">cimpy.cgmes_v2_4_15.ExcDC3A1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcELIN1.html">cimpy.cgmes_v2_4_15.ExcELIN1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcELIN2.html">cimpy.cgmes_v2_4_15.ExcELIN2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcHU.html">cimpy.cgmes_v2_4_15.ExcHU module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEAC1A.html">cimpy.cgmes_v2_4_15.ExcIEEEAC1A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEAC2A.html">cimpy.cgmes_v2_4_15.ExcIEEEAC2A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEAC3A.html">cimpy.cgmes_v2_4_15.ExcIEEEAC3A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEAC4A.html">cimpy.cgmes_v2_4_15.ExcIEEEAC4A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEAC5A.html">cimpy.cgmes_v2_4_15.ExcIEEEAC5A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEAC6A.html">cimpy.cgmes_v2_4_15.ExcIEEEAC6A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEAC7B.html">cimpy.cgmes_v2_4_15.ExcIEEEAC7B module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEAC8B.html">cimpy.cgmes_v2_4_15.ExcIEEEAC8B module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEDC1A.html">cimpy.cgmes_v2_4_15.ExcIEEEDC1A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEDC2A.html">cimpy.cgmes_v2_4_15.ExcIEEEDC2A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEDC3A.html">cimpy.cgmes_v2_4_15.ExcIEEEDC3A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEDC4B.html">cimpy.cgmes_v2_4_15.ExcIEEEDC4B module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEST1A.html">cimpy.cgmes_v2_4_15.ExcIEEEST1A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEST1AUELselectorKind.html">cimpy.cgmes_v2_4_15.ExcIEEEST1AUELselectorKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEST2A.html">cimpy.cgmes_v2_4_15.ExcIEEEST2A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEST3A.html">cimpy.cgmes_v2_4_15.ExcIEEEST3A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEST4B.html">cimpy.cgmes_v2_4_15.ExcIEEEST4B module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEST5B.html">cimpy.cgmes_v2_4_15.ExcIEEEST5B module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEST6B.html">cimpy.cgmes_v2_4_15.ExcIEEEST6B module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcIEEEST7B.html">cimpy.cgmes_v2_4_15.ExcIEEEST7B module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcOEX3T.html">cimpy.cgmes_v2_4_15.ExcOEX3T module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcPIC.html">cimpy.cgmes_v2_4_15.ExcPIC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcREXS.html">cimpy.cgmes_v2_4_15.ExcREXS module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcREXSFeedbackSignalKind.html">cimpy.cgmes_v2_4_15.ExcREXSFeedbackSignalKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcSCRX.html">cimpy.cgmes_v2_4_15.ExcSCRX module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcSEXS.html">cimpy.cgmes_v2_4_15.ExcSEXS module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcSK.html">cimpy.cgmes_v2_4_15.ExcSK module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcST1A.html">cimpy.cgmes_v2_4_15.ExcST1A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcST2A.html">cimpy.cgmes_v2_4_15.ExcST2A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcST3A.html">cimpy.cgmes_v2_4_15.ExcST3A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcST4B.html">cimpy.cgmes_v2_4_15.ExcST4B module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcST6B.html">cimpy.cgmes_v2_4_15.ExcST6B module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcST6BOELselectorKind.html">cimpy.cgmes_v2_4_15.ExcST6BOELselectorKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcST7B.html">cimpy.cgmes_v2_4_15.ExcST7B module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcST7BOELselectorKind.html">cimpy.cgmes_v2_4_15.ExcST7BOELselectorKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcST7BUELselectorKind.html">cimpy.cgmes_v2_4_15.ExcST7BUELselectorKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcitationSystemDynamics.html">cimpy.cgmes_v2_4_15.ExcitationSystemDynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExcitationSystemUserDefined.html">cimpy.cgmes_v2_4_15.ExcitationSystemUserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ExternalNetworkInjection.html">cimpy.cgmes_v2_4_15.ExternalNetworkInjection module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Float.html">cimpy.cgmes_v2_4_15.Float module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.FossilFuel.html">cimpy.cgmes_v2_4_15.FossilFuel module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.FrancisGovernorControlKind.html">cimpy.cgmes_v2_4_15.FrancisGovernorControlKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Frequency.html">cimpy.cgmes_v2_4_15.Frequency module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.FuelType.html">cimpy.cgmes_v2_4_15.FuelType module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GenICompensationForGenJ.html">cimpy.cgmes_v2_4_15.GenICompensationForGenJ module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GeneratingUnit.html">cimpy.cgmes_v2_4_15.GeneratingUnit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GeneratorControlSource.html">cimpy.cgmes_v2_4_15.GeneratorControlSource module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GenericNonLinearLoadModelKind.html">cimpy.cgmes_v2_4_15.GenericNonLinearLoadModelKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GeographicalLocationVersion.html">cimpy.cgmes_v2_4_15.GeographicalLocationVersion module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GeographicalRegion.html">cimpy.cgmes_v2_4_15.GeographicalRegion module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovCT1.html">cimpy.cgmes_v2_4_15.GovCT1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovCT2.html">cimpy.cgmes_v2_4_15.GovCT2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovGAST.html">cimpy.cgmes_v2_4_15.GovGAST module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovGAST1.html">cimpy.cgmes_v2_4_15.GovGAST1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovGAST2.html">cimpy.cgmes_v2_4_15.GovGAST2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovGAST3.html">cimpy.cgmes_v2_4_15.GovGAST3 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovGAST4.html">cimpy.cgmes_v2_4_15.GovGAST4 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovGASTWD.html">cimpy.cgmes_v2_4_15.GovGASTWD module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovHydro1.html">cimpy.cgmes_v2_4_15.GovHydro1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovHydro2.html">cimpy.cgmes_v2_4_15.GovHydro2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovHydro3.html">cimpy.cgmes_v2_4_15.GovHydro3 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovHydro4.html">cimpy.cgmes_v2_4_15.GovHydro4 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovHydroDD.html">cimpy.cgmes_v2_4_15.GovHydroDD module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovHydroFrancis.html">cimpy.cgmes_v2_4_15.GovHydroFrancis module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovHydroIEEE0.html">cimpy.cgmes_v2_4_15.GovHydroIEEE0 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovHydroIEEE2.html">cimpy.cgmes_v2_4_15.GovHydroIEEE2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovHydroPID.html">cimpy.cgmes_v2_4_15.GovHydroPID module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovHydroPID2.html">cimpy.cgmes_v2_4_15.GovHydroPID2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovHydroPelton.html">cimpy.cgmes_v2_4_15.GovHydroPelton module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovHydroR.html">cimpy.cgmes_v2_4_15.GovHydroR module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovHydroWEH.html">cimpy.cgmes_v2_4_15.GovHydroWEH module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovHydroWPID.html">cimpy.cgmes_v2_4_15.GovHydroWPID module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovSteam0.html">cimpy.cgmes_v2_4_15.GovSteam0 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovSteam1.html">cimpy.cgmes_v2_4_15.GovSteam1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovSteam2.html">cimpy.cgmes_v2_4_15.GovSteam2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovSteamCC.html">cimpy.cgmes_v2_4_15.GovSteamCC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovSteamEU.html">cimpy.cgmes_v2_4_15.GovSteamEU module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovSteamFV2.html">cimpy.cgmes_v2_4_15.GovSteamFV2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovSteamFV3.html">cimpy.cgmes_v2_4_15.GovSteamFV3 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovSteamFV4.html">cimpy.cgmes_v2_4_15.GovSteamFV4 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovSteamIEEE1.html">cimpy.cgmes_v2_4_15.GovSteamIEEE1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GovSteamSGO.html">cimpy.cgmes_v2_4_15.GovSteamSGO module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GrossToNetActivePowerCurve.html">cimpy.cgmes_v2_4_15.GrossToNetActivePowerCurve module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Ground.html">cimpy.cgmes_v2_4_15.Ground module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GroundDisconnector.html">cimpy.cgmes_v2_4_15.GroundDisconnector module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.GroundingImpedance.html">cimpy.cgmes_v2_4_15.GroundingImpedance module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.HydroEnergyConversionKind.html">cimpy.cgmes_v2_4_15.HydroEnergyConversionKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.HydroGeneratingUnit.html">cimpy.cgmes_v2_4_15.HydroGeneratingUnit module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">cimpy.cgmes_v2_4_15.HydroPlantStorageKind module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#inheritance-diagram">Inheritance Diagram:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.HydroPowerPlant.html">cimpy.cgmes_v2_4_15.HydroPowerPlant module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.HydroPump.html">cimpy.cgmes_v2_4_15.HydroPump module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html">cimpy.cgmes_v2_4_15.IdentifiedObject module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.IfdBaseKind.html">cimpy.cgmes_v2_4_15.IfdBaseKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Inductance.html">cimpy.cgmes_v2_4_15.Inductance module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.InductancePerLength.html">cimpy.cgmes_v2_4_15.InductancePerLength module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.InputSignalKind.html">cimpy.cgmes_v2_4_15.InputSignalKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Integer.html">cimpy.cgmes_v2_4_15.Integer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Junction.html">cimpy.cgmes_v2_4_15.Junction module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Length.html">cimpy.cgmes_v2_4_15.Length module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Limit.html">cimpy.cgmes_v2_4_15.Limit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.LimitSet.html">cimpy.cgmes_v2_4_15.LimitSet module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.LimitTypeKind.html">cimpy.cgmes_v2_4_15.LimitTypeKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Line.html">cimpy.cgmes_v2_4_15.Line module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.LinearShuntCompensator.html">cimpy.cgmes_v2_4_15.LinearShuntCompensator module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.LoadAggregate.html">cimpy.cgmes_v2_4_15.LoadAggregate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.LoadArea.html">cimpy.cgmes_v2_4_15.LoadArea module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.LoadBreakSwitch.html">cimpy.cgmes_v2_4_15.LoadBreakSwitch module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.LoadComposite.html">cimpy.cgmes_v2_4_15.LoadComposite module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.LoadDynamics.html">cimpy.cgmes_v2_4_15.LoadDynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.LoadGenericNonLinear.html">cimpy.cgmes_v2_4_15.LoadGenericNonLinear module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.LoadGroup.html">cimpy.cgmes_v2_4_15.LoadGroup module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.LoadMotor.html">cimpy.cgmes_v2_4_15.LoadMotor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.LoadResponseCharacteristic.html">cimpy.cgmes_v2_4_15.LoadResponseCharacteristic module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.LoadStatic.html">cimpy.cgmes_v2_4_15.LoadStatic module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.LoadUserDefined.html">cimpy.cgmes_v2_4_15.LoadUserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Location.html">cimpy.cgmes_v2_4_15.Location module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Measurement.html">cimpy.cgmes_v2_4_15.Measurement module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.MeasurementValue.html">cimpy.cgmes_v2_4_15.MeasurementValue module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.MeasurementValueQuality.html">cimpy.cgmes_v2_4_15.MeasurementValueQuality module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.MeasurementValueSource.html">cimpy.cgmes_v2_4_15.MeasurementValueSource module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.MechLoad1.html">cimpy.cgmes_v2_4_15.MechLoad1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.MechanicalLoadDynamics.html">cimpy.cgmes_v2_4_15.MechanicalLoadDynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.MechanicalLoadUserDefined.html">cimpy.cgmes_v2_4_15.MechanicalLoadUserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Money.html">cimpy.cgmes_v2_4_15.Money module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.MonthDay.html">cimpy.cgmes_v2_4_15.MonthDay module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.MutualCoupling.html">cimpy.cgmes_v2_4_15.MutualCoupling module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.NonConformLoad.html">cimpy.cgmes_v2_4_15.NonConformLoad module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.NonConformLoadGroup.html">cimpy.cgmes_v2_4_15.NonConformLoadGroup module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.NonConformLoadSchedule.html">cimpy.cgmes_v2_4_15.NonConformLoadSchedule module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.NonlinearShuntCompensator.html">cimpy.cgmes_v2_4_15.NonlinearShuntCompensator module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.NonlinearShuntCompensatorPoint.html">cimpy.cgmes_v2_4_15.NonlinearShuntCompensatorPoint module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.NuclearGeneratingUnit.html">cimpy.cgmes_v2_4_15.NuclearGeneratingUnit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.OperationalLimit.html">cimpy.cgmes_v2_4_15.OperationalLimit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.OperationalLimitDirectionKind.html">cimpy.cgmes_v2_4_15.OperationalLimitDirectionKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.OperationalLimitSet.html">cimpy.cgmes_v2_4_15.OperationalLimitSet module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.OperationalLimitType.html">cimpy.cgmes_v2_4_15.OperationalLimitType module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.OrientationKind.html">cimpy.cgmes_v2_4_15.OrientationKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.OverexcLim2.html">cimpy.cgmes_v2_4_15.OverexcLim2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.OverexcLimIEEE.html">cimpy.cgmes_v2_4_15.OverexcLimIEEE module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.OverexcLimX1.html">cimpy.cgmes_v2_4_15.OverexcLimX1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.OverexcLimX2.html">cimpy.cgmes_v2_4_15.OverexcLimX2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.OverexcitationLimiterDynamics.html">cimpy.cgmes_v2_4_15.OverexcitationLimiterDynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.OverexcitationLimiterUserDefined.html">cimpy.cgmes_v2_4_15.OverexcitationLimiterUserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PFVArControllerType1Dynamics.html">cimpy.cgmes_v2_4_15.PFVArControllerType1Dynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PFVArControllerType1UserDefined.html">cimpy.cgmes_v2_4_15.PFVArControllerType1UserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PFVArControllerType2Dynamics.html">cimpy.cgmes_v2_4_15.PFVArControllerType2Dynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PFVArControllerType2UserDefined.html">cimpy.cgmes_v2_4_15.PFVArControllerType2UserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PFVArType1IEEEPFController.html">cimpy.cgmes_v2_4_15.PFVArType1IEEEPFController module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PFVArType1IEEEVArController.html">cimpy.cgmes_v2_4_15.PFVArType1IEEEVArController module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PFVArType2Common1.html">cimpy.cgmes_v2_4_15.PFVArType2Common1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PFVArType2IEEEPFController.html">cimpy.cgmes_v2_4_15.PFVArType2IEEEPFController module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PFVArType2IEEEVArController.html">cimpy.cgmes_v2_4_15.PFVArType2IEEEVArController module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PU.html">cimpy.cgmes_v2_4_15.PU module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PerCent.html">cimpy.cgmes_v2_4_15.PerCent module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PerLengthDCLineParameter.html">cimpy.cgmes_v2_4_15.PerLengthDCLineParameter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PetersenCoil.html">cimpy.cgmes_v2_4_15.PetersenCoil module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PetersenCoilModeKind.html">cimpy.cgmes_v2_4_15.PetersenCoilModeKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PhaseCode.html">cimpy.cgmes_v2_4_15.PhaseCode module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PhaseTapChanger.html">cimpy.cgmes_v2_4_15.PhaseTapChanger module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PhaseTapChangerAsymmetrical.html">cimpy.cgmes_v2_4_15.PhaseTapChangerAsymmetrical module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PhaseTapChangerLinear.html">cimpy.cgmes_v2_4_15.PhaseTapChangerLinear module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PhaseTapChangerNonLinear.html">cimpy.cgmes_v2_4_15.PhaseTapChangerNonLinear module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PhaseTapChangerSymmetrical.html">cimpy.cgmes_v2_4_15.PhaseTapChangerSymmetrical module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PhaseTapChangerTable.html">cimpy.cgmes_v2_4_15.PhaseTapChangerTable module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PhaseTapChangerTablePoint.html">cimpy.cgmes_v2_4_15.PhaseTapChangerTablePoint module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PhaseTapChangerTabular.html">cimpy.cgmes_v2_4_15.PhaseTapChangerTabular module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PositionPoint.html">cimpy.cgmes_v2_4_15.PositionPoint module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PowerSystemResource.html">cimpy.cgmes_v2_4_15.PowerSystemResource module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics.html">cimpy.cgmes_v2_4_15.PowerSystemStabilizerDynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PowerSystemStabilizerUserDefined.html">cimpy.cgmes_v2_4_15.PowerSystemStabilizerUserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PowerTransformer.html">cimpy.cgmes_v2_4_15.PowerTransformer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PowerTransformerEnd.html">cimpy.cgmes_v2_4_15.PowerTransformerEnd module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ProprietaryParameterDynamics.html">cimpy.cgmes_v2_4_15.ProprietaryParameterDynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ProtectedSwitch.html">cimpy.cgmes_v2_4_15.ProtectedSwitch module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Pss1.html">cimpy.cgmes_v2_4_15.Pss1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Pss1A.html">cimpy.cgmes_v2_4_15.Pss1A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Pss2B.html">cimpy.cgmes_v2_4_15.Pss2B module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Pss2ST.html">cimpy.cgmes_v2_4_15.Pss2ST module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Pss5.html">cimpy.cgmes_v2_4_15.Pss5 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PssELIN2.html">cimpy.cgmes_v2_4_15.PssELIN2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PssIEEE1A.html">cimpy.cgmes_v2_4_15.PssIEEE1A module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PssIEEE2B.html">cimpy.cgmes_v2_4_15.PssIEEE2B module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PssIEEE3B.html">cimpy.cgmes_v2_4_15.PssIEEE3B module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PssIEEE4B.html">cimpy.cgmes_v2_4_15.PssIEEE4B module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PssPTIST1.html">cimpy.cgmes_v2_4_15.PssPTIST1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PssPTIST3.html">cimpy.cgmes_v2_4_15.PssPTIST3 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PssSB4.html">cimpy.cgmes_v2_4_15.PssSB4 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PssSH.html">cimpy.cgmes_v2_4_15.PssSH module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PssSK.html">cimpy.cgmes_v2_4_15.PssSK module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.PssWECC.html">cimpy.cgmes_v2_4_15.PssWECC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Quality61850.html">cimpy.cgmes_v2_4_15.Quality61850 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.RaiseLowerCommand.html">cimpy.cgmes_v2_4_15.RaiseLowerCommand module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.RatioTapChanger.html">cimpy.cgmes_v2_4_15.RatioTapChanger module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.RatioTapChangerTable.html">cimpy.cgmes_v2_4_15.RatioTapChangerTable module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.RatioTapChangerTablePoint.html">cimpy.cgmes_v2_4_15.RatioTapChangerTablePoint module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Reactance.html">cimpy.cgmes_v2_4_15.Reactance module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ReactiveCapabilityCurve.html">cimpy.cgmes_v2_4_15.ReactiveCapabilityCurve module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ReactivePower.html">cimpy.cgmes_v2_4_15.ReactivePower module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.RegularIntervalSchedule.html">cimpy.cgmes_v2_4_15.RegularIntervalSchedule module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.RegularTimePoint.html">cimpy.cgmes_v2_4_15.RegularTimePoint module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.RegulatingCondEq.html">cimpy.cgmes_v2_4_15.RegulatingCondEq module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.RegulatingControl.html">cimpy.cgmes_v2_4_15.RegulatingControl module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.RegulatingControlModeKind.html">cimpy.cgmes_v2_4_15.RegulatingControlModeKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.RegulationSchedule.html">cimpy.cgmes_v2_4_15.RegulationSchedule module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.RemoteInputSignal.html">cimpy.cgmes_v2_4_15.RemoteInputSignal module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.RemoteSignalKind.html">cimpy.cgmes_v2_4_15.RemoteSignalKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ReportingGroup.html">cimpy.cgmes_v2_4_15.ReportingGroup module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Resistance.html">cimpy.cgmes_v2_4_15.Resistance module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ResistancePerLength.html">cimpy.cgmes_v2_4_15.ResistancePerLength module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.RotatingMachine.html">cimpy.cgmes_v2_4_15.RotatingMachine module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.RotatingMachineDynamics.html">cimpy.cgmes_v2_4_15.RotatingMachineDynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.RotationSpeed.html">cimpy.cgmes_v2_4_15.RotationSpeed module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.RotorKind.html">cimpy.cgmes_v2_4_15.RotorKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SVCControlMode.html">cimpy.cgmes_v2_4_15.SVCControlMode module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Season.html">cimpy.cgmes_v2_4_15.Season module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SeasonDayTypeSchedule.html">cimpy.cgmes_v2_4_15.SeasonDayTypeSchedule module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Seconds.html">cimpy.cgmes_v2_4_15.Seconds module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SeriesCompensator.html">cimpy.cgmes_v2_4_15.SeriesCompensator module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SetPoint.html">cimpy.cgmes_v2_4_15.SetPoint module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ShortCircuitRotorKind.html">cimpy.cgmes_v2_4_15.ShortCircuitRotorKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ShuntCompensator.html">cimpy.cgmes_v2_4_15.ShuntCompensator module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Simple_Float.html">cimpy.cgmes_v2_4_15.Simple_Float module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SolarGeneratingUnit.html">cimpy.cgmes_v2_4_15.SolarGeneratingUnit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Source.html">cimpy.cgmes_v2_4_15.Source module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.StateVariablesVersion.html">cimpy.cgmes_v2_4_15.StateVariablesVersion module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.StaticLoadModelKind.html">cimpy.cgmes_v2_4_15.StaticLoadModelKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.StaticVarCompensator.html">cimpy.cgmes_v2_4_15.StaticVarCompensator module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.StationSupply.html">cimpy.cgmes_v2_4_15.StationSupply module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SteadyStateHypothesisVersion.html">cimpy.cgmes_v2_4_15.SteadyStateHypothesisVersion module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.String.html">cimpy.cgmes_v2_4_15.String module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.StringMeasurement.html">cimpy.cgmes_v2_4_15.StringMeasurement module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.StringMeasurementValue.html">cimpy.cgmes_v2_4_15.StringMeasurementValue module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SubGeographicalRegion.html">cimpy.cgmes_v2_4_15.SubGeographicalRegion module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SubLoadArea.html">cimpy.cgmes_v2_4_15.SubLoadArea module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Substation.html">cimpy.cgmes_v2_4_15.Substation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Susceptance.html">cimpy.cgmes_v2_4_15.Susceptance module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SvInjection.html">cimpy.cgmes_v2_4_15.SvInjection module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SvPowerFlow.html">cimpy.cgmes_v2_4_15.SvPowerFlow module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SvShuntCompensatorSections.html">cimpy.cgmes_v2_4_15.SvShuntCompensatorSections module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SvStatus.html">cimpy.cgmes_v2_4_15.SvStatus module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SvTapStep.html">cimpy.cgmes_v2_4_15.SvTapStep module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SvVoltage.html">cimpy.cgmes_v2_4_15.SvVoltage module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Switch.html">cimpy.cgmes_v2_4_15.Switch module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SwitchSchedule.html">cimpy.cgmes_v2_4_15.SwitchSchedule module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SynchronousMachine.html">cimpy.cgmes_v2_4_15.SynchronousMachine module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SynchronousMachineDetailed.html">cimpy.cgmes_v2_4_15.SynchronousMachineDetailed module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SynchronousMachineDynamics.html">cimpy.cgmes_v2_4_15.SynchronousMachineDynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SynchronousMachineEquivalentCircuit.html">cimpy.cgmes_v2_4_15.SynchronousMachineEquivalentCircuit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SynchronousMachineKind.html">cimpy.cgmes_v2_4_15.SynchronousMachineKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SynchronousMachineModelKind.html">cimpy.cgmes_v2_4_15.SynchronousMachineModelKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SynchronousMachineOperatingMode.html">cimpy.cgmes_v2_4_15.SynchronousMachineOperatingMode module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SynchronousMachineSimplified.html">cimpy.cgmes_v2_4_15.SynchronousMachineSimplified module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SynchronousMachineTimeConstantReactance.html">cimpy.cgmes_v2_4_15.SynchronousMachineTimeConstantReactance module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.SynchronousMachineUserDefined.html">cimpy.cgmes_v2_4_15.SynchronousMachineUserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TapChanger.html">cimpy.cgmes_v2_4_15.TapChanger module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TapChangerControl.html">cimpy.cgmes_v2_4_15.TapChangerControl module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TapChangerTablePoint.html">cimpy.cgmes_v2_4_15.TapChangerTablePoint module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TapSchedule.html">cimpy.cgmes_v2_4_15.TapSchedule module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Temperature.html">cimpy.cgmes_v2_4_15.Temperature module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Terminal.html">cimpy.cgmes_v2_4_15.Terminal module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TextDiagramObject.html">cimpy.cgmes_v2_4_15.TextDiagramObject module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ThermalGeneratingUnit.html">cimpy.cgmes_v2_4_15.ThermalGeneratingUnit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TieFlow.html">cimpy.cgmes_v2_4_15.TieFlow module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TopologicalIsland.html">cimpy.cgmes_v2_4_15.TopologicalIsland module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TopologicalNode.html">cimpy.cgmes_v2_4_15.TopologicalNode module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TopologyBoundaryVersion.html">cimpy.cgmes_v2_4_15.TopologyBoundaryVersion module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TopologyVersion.html">cimpy.cgmes_v2_4_15.TopologyVersion module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TransformerControlMode.html">cimpy.cgmes_v2_4_15.TransformerControlMode module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TransformerEnd.html">cimpy.cgmes_v2_4_15.TransformerEnd module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TurbLCFB1.html">cimpy.cgmes_v2_4_15.TurbLCFB1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TurbineGovernorDynamics.html">cimpy.cgmes_v2_4_15.TurbineGovernorDynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TurbineGovernorUserDefined.html">cimpy.cgmes_v2_4_15.TurbineGovernorUserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TurbineLoadControllerDynamics.html">cimpy.cgmes_v2_4_15.TurbineLoadControllerDynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.TurbineLoadControllerUserDefined.html">cimpy.cgmes_v2_4_15.TurbineLoadControllerUserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.UnderexcLim2Simplified.html">cimpy.cgmes_v2_4_15.UnderexcLim2Simplified module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.UnderexcLimIEEE1.html">cimpy.cgmes_v2_4_15.UnderexcLimIEEE1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.UnderexcLimIEEE2.html">cimpy.cgmes_v2_4_15.UnderexcLimIEEE2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.UnderexcLimX1.html">cimpy.cgmes_v2_4_15.UnderexcLimX1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.UnderexcLimX2.html">cimpy.cgmes_v2_4_15.UnderexcLimX2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.UnderexcitationLimiterDynamics.html">cimpy.cgmes_v2_4_15.UnderexcitationLimiterDynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.UnderexcitationLimiterUserDefined.html">cimpy.cgmes_v2_4_15.UnderexcitationLimiterUserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.UnitMultiplier.html">cimpy.cgmes_v2_4_15.UnitMultiplier module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.UnitSymbol.html">cimpy.cgmes_v2_4_15.UnitSymbol module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.VAdjIEEE.html">cimpy.cgmes_v2_4_15.VAdjIEEE module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.VCompIEEEType1.html">cimpy.cgmes_v2_4_15.VCompIEEEType1 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.VCompIEEEType2.html">cimpy.cgmes_v2_4_15.VCompIEEEType2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Validity.html">cimpy.cgmes_v2_4_15.Validity module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ValueAliasSet.html">cimpy.cgmes_v2_4_15.ValueAliasSet module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.ValueToAlias.html">cimpy.cgmes_v2_4_15.ValueToAlias module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.VisibilityLayer.html">cimpy.cgmes_v2_4_15.VisibilityLayer module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.Voltage.html">cimpy.cgmes_v2_4_15.Voltage module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.VoltageAdjusterDynamics.html">cimpy.cgmes_v2_4_15.VoltageAdjusterDynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.VoltageAdjusterUserDefined.html">cimpy.cgmes_v2_4_15.VoltageAdjusterUserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.VoltageCompensatorDynamics.html">cimpy.cgmes_v2_4_15.VoltageCompensatorDynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.VoltageCompensatorUserDefined.html">cimpy.cgmes_v2_4_15.VoltageCompensatorUserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.VoltageLevel.html">cimpy.cgmes_v2_4_15.VoltageLevel module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.VoltageLimit.html">cimpy.cgmes_v2_4_15.VoltageLimit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.VoltagePerReactivePower.html">cimpy.cgmes_v2_4_15.VoltagePerReactivePower module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.VolumeFlowRate.html">cimpy.cgmes_v2_4_15.VolumeFlowRate module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.VsCapabilityCurve.html">cimpy.cgmes_v2_4_15.VsCapabilityCurve module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.VsConverter.html">cimpy.cgmes_v2_4_15.VsConverter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.VsPpccControlKind.html">cimpy.cgmes_v2_4_15.VsPpccControlKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.VsQpccControlKind.html">cimpy.cgmes_v2_4_15.VsQpccControlKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindAeroConstIEC.html">cimpy.cgmes_v2_4_15.WindAeroConstIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindAeroLinearIEC.html">cimpy.cgmes_v2_4_15.WindAeroLinearIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindContCurrLimIEC.html">cimpy.cgmes_v2_4_15.WindContCurrLimIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindContPType3IEC.html">cimpy.cgmes_v2_4_15.WindContPType3IEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindContPType4aIEC.html">cimpy.cgmes_v2_4_15.WindContPType4aIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindContPType4bIEC.html">cimpy.cgmes_v2_4_15.WindContPType4bIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindContPitchAngleIEC.html">cimpy.cgmes_v2_4_15.WindContPitchAngleIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindContQIEC.html">cimpy.cgmes_v2_4_15.WindContQIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindContRotorRIEC.html">cimpy.cgmes_v2_4_15.WindContRotorRIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindDynamicsLookupTable.html">cimpy.cgmes_v2_4_15.WindDynamicsLookupTable module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindGenTurbineType1IEC.html">cimpy.cgmes_v2_4_15.WindGenTurbineType1IEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindGenTurbineType2IEC.html">cimpy.cgmes_v2_4_15.WindGenTurbineType2IEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindGenTurbineType3IEC.html">cimpy.cgmes_v2_4_15.WindGenTurbineType3IEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindGenTurbineType3aIEC.html">cimpy.cgmes_v2_4_15.WindGenTurbineType3aIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindGenTurbineType3bIEC.html">cimpy.cgmes_v2_4_15.WindGenTurbineType3bIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindGenType4IEC.html">cimpy.cgmes_v2_4_15.WindGenType4IEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindGenUnitKind.html">cimpy.cgmes_v2_4_15.WindGenUnitKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindGeneratingUnit.html">cimpy.cgmes_v2_4_15.WindGeneratingUnit module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindLVRTQcontrolModesKind.html">cimpy.cgmes_v2_4_15.WindLVRTQcontrolModesKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindLookupTableFunctionKind.html">cimpy.cgmes_v2_4_15.WindLookupTableFunctionKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindMechIEC.html">cimpy.cgmes_v2_4_15.WindMechIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindPitchContEmulIEC.html">cimpy.cgmes_v2_4_15.WindPitchContEmulIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindPlantDynamics.html">cimpy.cgmes_v2_4_15.WindPlantDynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindPlantFreqPcontrolIEC.html">cimpy.cgmes_v2_4_15.WindPlantFreqPcontrolIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindPlantIEC.html">cimpy.cgmes_v2_4_15.WindPlantIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindPlantReactiveControlIEC.html">cimpy.cgmes_v2_4_15.WindPlantReactiveControlIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindPlantUserDefined.html">cimpy.cgmes_v2_4_15.WindPlantUserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindProtectionIEC.html">cimpy.cgmes_v2_4_15.WindProtectionIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindQcontrolModesKind.html">cimpy.cgmes_v2_4_15.WindQcontrolModesKind module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindTurbineType1or2Dynamics.html">cimpy.cgmes_v2_4_15.WindTurbineType1or2Dynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindTurbineType1or2IEC.html">cimpy.cgmes_v2_4_15.WindTurbineType1or2IEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindTurbineType3or4Dynamics.html">cimpy.cgmes_v2_4_15.WindTurbineType3or4Dynamics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindTurbineType3or4IEC.html">cimpy.cgmes_v2_4_15.WindTurbineType3or4IEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindTurbineType4aIEC.html">cimpy.cgmes_v2_4_15.WindTurbineType4aIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindTurbineType4bIEC.html">cimpy.cgmes_v2_4_15.WindTurbineType4bIEC module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindType1or2UserDefined.html">cimpy.cgmes_v2_4_15.WindType1or2UserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindType3or4UserDefined.html">cimpy.cgmes_v2_4_15.WindType3or4UserDefined module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cimpy.cgmes_v2_4_15.WindingConnection.html">cimpy.cgmes_v2_4_15.WindingConnection module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cimpy.cimexport.html">cimpy.cimexport module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cimpy.cimimport.html">cimpy.cimimport module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cimpy.cimexamples.html">cimpy.cimexamples module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cimpy.utils.html">cimpy.utils module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">cimpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cimpy.html">cimpy Package Documentation</a> &raquo;</li>
+        
+          <li><a href="cimpy.cgmes_v2_4_15.html">cimpy.cgmes_v2_4_15 package</a> &raquo;</li>
+        
+      <li>cimpy.cgmes_v2_4_15.HydroPlantStorageKind module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/cimpy.cgmes_v2_4_15.HydroPlantStorageKind.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-cimpy.cgmes_v2_4_15.HydroPlantStorageKind">
+<span id="cimpy-cgmes-v2-4-15-hydroplantstoragekind-module"></span><h1>cimpy.cgmes_v2_4_15.HydroPlantStorageKind module<a class="headerlink" href="#module-cimpy.cgmes_v2_4_15.HydroPlantStorageKind" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="cimpy.cgmes_v2_4_15.HydroPlantStorageKind.HydroPlantStorageKind">
+<em class="property">class </em><code class="sig-prename descclassname">cimpy.cgmes_v2_4_15.HydroPlantStorageKind.</code><code class="sig-name descname">HydroPlantStorageKind</code><a class="reference internal" href="_modules/cimpy/cgmes_v2_4_15/HydroPlantStorageKind.html#HydroPlantStorageKind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cimpy.cgmes_v2_4_15.HydroPlantStorageKind.HydroPlantStorageKind" title="Permalink to this definition">¶</a></dt>
+<dd><p>The type of hydro power plant.</p>
+<dl class="attribute">
+<dt id="cimpy.cgmes_v2_4_15.HydroPlantStorageKind.HydroPlantStorageKind.cgmesProfile">
+<code class="sig-name descname">cgmesProfile</code><a class="headerlink" href="#cimpy.cgmes_v2_4_15.HydroPlantStorageKind.HydroPlantStorageKind.cgmesProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Profile" title="cimpy.cgmes_v2_4_15.Base.Profile"><code class="xref py py-class docutils literal notranslate"><span class="pre">cimpy.cgmes_v2_4_15.Base.Profile</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="inheritance-diagram">
+<h2>Inheritance Diagram:<a class="headerlink" href="#inheritance-diagram" title="Permalink to this headline">¶</a></h2>
+<div class="graphviz"><img src="_images/inheritance-a332cc36592edca81f35f1bc3085b67ab5f33ec0.png" alt="Inheritance diagram of cimpy.cgmes_v2_4_15.HydroPlantStorageKind" usemap="#inheritance47a1757351" class="inheritance graphviz" /></div>
+<map id="inheritance47a1757351" name="inheritance47a1757351">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="49,5,121,31"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.HydroPlantStorageKind.HydroPlantStorageKind" target="_top" title="The type of hydro power plant." alt="" coords="5,79,164,104"/>
+</map></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="cimpy.cgmes_v2_4_15.HydroPowerPlant.html" class="btn btn-neutral float-right" title="cimpy.cgmes_v2_4_15.HydroPowerPlant module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cimpy.cgmes_v2_4_15.HydroGeneratingUnit.html" class="btn btn-neutral float-left" title="cimpy.cgmes_v2_4_15.HydroGeneratingUnit module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, ACS RWTH Aachen University.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

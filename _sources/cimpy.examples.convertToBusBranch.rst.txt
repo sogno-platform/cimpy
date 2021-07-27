@@ -1,0 +1,10 @@
+cimpy.examples.convertToBusBranch module
+========================================
+
+.. automodule:: cimpy.examples.convertToBusBranch
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.examples.convertToBusBranch
+    :parts: 1

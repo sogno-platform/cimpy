@@ -1,0 +1,10 @@
+cimpy.cgmes\_v2\_4\_15.GovCT1 module
+====================================
+
+.. automodule:: cimpy.cgmes_v2_4_15.GovCT1
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.cgmes_v2_4_15.GovCT1
+    :parts: 1

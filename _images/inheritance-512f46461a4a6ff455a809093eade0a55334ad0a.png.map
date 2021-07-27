@@ -1,0 +1,6 @@
+<map id="inheritance18033687b2" name="inheritance18033687b2">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="37,5,109,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="16,79,129,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DiagramObject.html#cimpy.cgmes_v2_4_15.DiagramObject.DiagramObject" target="_top" title="An object that defines one or more points in a given space. This object can be associated with anything that specializes IdentifiedObject. For single line diagrams such objects typically include such items as analog values, breakers, disconnectors, power transformers, and transmission lines." alt="" coords="18,152,127,177"/>
+<area shape="rect" id="node4" href="#cimpy.cgmes_v2_4_15.TextDiagramObject.TextDiagramObject" target="_top" title="A diagram object for placing free&#45;text or text derived from an associated domain object." alt="" coords="5,225,140,251"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="inheritance1cc3e3fd1f" name="inheritance1cc3e3fd1f">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="73,5,145,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="52,79,165,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="27,152,191,177"/>
+<area shape="rect" id="node4" href="cimpy.cgmes_v2_4_15.RotatingMachineDynamics.html#cimpy.cgmes_v2_4_15.RotatingMachineDynamics.RotatingMachineDynamics" target="_top" title="Abstract parent class for all synchronous and asynchronous machine standard models." alt="" coords="19,225,198,251"/>
+<area shape="rect" id="node5" href="#cimpy.cgmes_v2_4_15.SynchronousMachineDynamics.SynchronousMachineDynamics" target="_top" title="Synchronous machine whose behaviour is described by reference to a standard model expressed in one of the following forms:" alt="" coords="5,299,212,324"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="inheritancee1aacdbb5d" name="inheritancee1aacdbb5d">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="73,5,145,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="52,79,165,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="27,152,191,177"/>
+<area shape="rect" id="node6" href="cimpy.cgmes_v2_4_15.WindTurbineType1or2Dynamics.html#cimpy.cgmes_v2_4_15.WindTurbineType1or2Dynamics.WindTurbineType1or2Dynamics" target="_top" title="Parent class supporting relationships to wind turbines Type 1 and 2 and their control models." alt="" coords="5,225,212,251"/>
+<area shape="rect" id="node4" href="#cimpy.cgmes_v2_4_15.WindGenTurbineType2IEC.WindGenTurbineType2IEC" target="_top" title="Wind turbine IEC Type 2. &#160;Reference: IEC Standard 61400&#45;27&#45;1, section 6.5.3." alt="" coords="21,372,196,397"/>
+<area shape="rect" id="node5" href="cimpy.cgmes_v2_4_15.WindTurbineType1or2IEC.html#cimpy.cgmes_v2_4_15.WindTurbineType1or2IEC.WindTurbineType1or2IEC" target="_top" title="Generator model for wind turbine of IEC Type 1 or Type 2 is a standard asynchronous generator model. &#160;Reference: IEC Standard 614000&#45;27&#45;1 Section 6.6.3.1." alt="" coords="23,299,194,324"/>
+</map>

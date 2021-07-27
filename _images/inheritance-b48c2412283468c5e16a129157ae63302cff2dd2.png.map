@@ -1,0 +1,6 @@
+<map id="inheritance3fa3a4e44f" name="inheritance3fa3a4e44f">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="101,5,173,31"/>
+<area shape="rect" id="node4" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="81,79,194,104"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.DiscontinuousExcitationControlDynamics.DiscontinuousExcitationControlDynamics" target="_top" title="Discontinuous excitation control function block whose behaviour is described by reference to a standard model ." alt="" coords="5,225,269,251"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="55,152,219,177"/>
+</map>

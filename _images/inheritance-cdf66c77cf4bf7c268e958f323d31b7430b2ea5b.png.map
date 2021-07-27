@@ -1,0 +1,5 @@
+<map id="inheritancea8c2c20284" name="inheritancea8c2c20284">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="26,5,98,31"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="5,79,119,104"/>
+<area shape="rect" id="node3" href="#cimpy.cgmes_v2_4_15.LoadStatic.LoadStatic" target="_top" title="General static load model representing the sensitivity of the real and reactive power consumed by the load to the amplitude and frequency of the bus voltage." alt="" coords="20,152,104,177"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="inheritance1107be923b" name="inheritance1107be923b">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="26,5,98,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="5,79,119,104"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.DiagramStyle.DiagramStyle" target="_top" title="The diagram style refer to a style used by the originating system for a diagram. &#160;A diagram style describes information such as schematic, geographic, bus&#45;branch etc." alt="" coords="11,152,113,177"/>
+</map>

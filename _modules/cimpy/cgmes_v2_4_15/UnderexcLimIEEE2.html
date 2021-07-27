@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>cimpy.cgmes_v2_4_15.UnderexcLimIEEE2 &mdash; cimpy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> cimpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cimpy.html">cimpy Package Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cimpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>cimpy.cgmes_v2_4_15.UnderexcLimIEEE2</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for cimpy.cgmes_v2_4_15.UnderexcLimIEEE2</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.UnderexcitationLimiterDynamics</span> <span class="kn">import</span> <span class="n">UnderexcitationLimiterDynamics</span>
+
+
+<div class="viewcode-block" id="UnderexcLimIEEE2"><a class="viewcode-back" href="../../../cimpy.cgmes_v2_4_15.UnderexcLimIEEE2.html#cimpy.cgmes_v2_4_15.UnderexcLimIEEE2.UnderexcLimIEEE2">[docs]</a><span class="k">class</span> <span class="nc">UnderexcLimIEEE2</span><span class="p">(</span><span class="n">UnderexcitationLimiterDynamics</span><span class="p">):</span>
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	The class represents the Type UEL2 which has either a straight-line or multi-segment characteristic when plotted in terms of machine reactive power output vs. real power output.  Reference: IEEE UEL2 421.5-2005 Section 10.2.  (Limit characteristic lookup table shown in Figure 10.4 (p 32) of the standard).</span>
+
+<span class="sd">	:tuv: Voltage filter time constant (T).  Typical Value = 5. Default: 0</span>
+<span class="sd">	:tup: Real power filter time constant (T).  Typical Value = 5. Default: 0</span>
+<span class="sd">	:tuq: Reactive power filter time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:kui: UEL integral gain (K).  Typical Value = 0.5. Default: 0.0</span>
+<span class="sd">	:kul: UEL proportional gain (K).  Typical Value = 0.8. Default: 0.0</span>
+<span class="sd">	:vuimax: UEL integrator output maximum limit (V).  Typical Value = 0.25. Default: 0.0</span>
+<span class="sd">	:vuimin: UEL integrator output minimum limit (V).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:kuf: UEL excitation system stabilizer gain (K).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:kfb: Gain associated with optional integrator feedback input signal to UEL (K).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:tul: Time constant associated with optional integrator feedback input signal to UEL (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:tu1: UEL lead time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:tu2: UEL lag time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:tu3: UEL lead time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:tu4: UEL lag time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:vulmax: UEL output maximum limit (V).  Typical Value = 0.25. Default: 0.0</span>
+<span class="sd">	:vulmin: UEL output minimum limit (V).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:p0: Real power values for endpoints (P).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:q0: Reactive power values for endpoints (Q).  Typical Value = -0.31. Default: 0.0</span>
+<span class="sd">	:p1: Real power values for endpoints (P).  Typical Value = 0.3. Default: 0.0</span>
+<span class="sd">	:q1: Reactive power values for endpoints (Q).  Typical Value = -0.31. Default: 0.0</span>
+<span class="sd">	:p2: Real power values for endpoints (P).  Typical Value = 0.6. Default: 0.0</span>
+<span class="sd">	:q2: Reactive power values for endpoints (Q).  Typical Value = -0.28. Default: 0.0</span>
+<span class="sd">	:p3: Real power values for endpoints (P).  Typical Value = 0.9. Default: 0.0</span>
+<span class="sd">	:q3: Reactive power values for endpoints (Q).  Typical Value = -0.21. Default: 0.0</span>
+<span class="sd">	:p4: Real power values for endpoints (P).  Typical Value = 1.02. Default: 0.0</span>
+<span class="sd">	:q4: Reactive power values for endpoints (Q).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:p5: Real power values for endpoints (P). Default: 0.0</span>
+<span class="sd">	:q5: Reactive power values for endpoints (Q). Default: 0.0</span>
+<span class="sd">	:p6: Real power values for endpoints (P). Default: 0.0</span>
+<span class="sd">	:q6: Reactive power values for endpoints (Q). Default: 0.0</span>
+<span class="sd">	:p7: Real power values for endpoints (P). Default: 0.0</span>
+<span class="sd">	:q7: Reactive power values for endpoints (Q). Default: 0.0</span>
+<span class="sd">	:p8: Real power values for endpoints (P). Default: 0.0</span>
+<span class="sd">	:q8: Reactive power values for endpoints (Q). Default: 0.0</span>
+<span class="sd">	:p9: Real power values for endpoints (P). Default: 0.0</span>
+<span class="sd">	:q9: Reactive power values for endpoints (Q). Default: 0.0</span>
+<span class="sd">	:p10: Real power values for endpoints (P). Default: 0.0</span>
+<span class="sd">	:q10: Reactive power values for endpoints (Q). Default: 0.0</span>
+<span class="sd">	:k1: UEL terminal voltage exponent applied to real power input to UEL limit look-up table (k1).  Typical Value = 2. Default: 0.0</span>
+<span class="sd">	:k2: UEL terminal voltage exponent applied to reactive power output from UEL limit look-up table (k2).  Typical Value = 2. Default: 0.0</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+	<span class="n">cgmesProfile</span> <span class="o">=</span> <span class="n">UnderexcitationLimiterDynamics</span><span class="o">.</span><span class="n">cgmesProfile</span>
+
+	<span class="n">possibleProfileList</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tuv&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tup&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tuq&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kui&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kul&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vuimax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vuimin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kuf&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kfb&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tul&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tu1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tu2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tu3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tu4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vulmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vulmin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;p0&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;q0&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;p1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;q1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;p2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;q2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;p3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;q3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;p4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;q4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;p5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;q5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;p6&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;q6&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;p7&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;q7&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;p8&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;q8&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;p9&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;q9&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;p10&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;q10&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;k1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;k2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						 <span class="p">}</span>
+
+	<span class="n">serializationProfile</span> <span class="o">=</span> <span class="p">{}</span>
+
+	<span class="vm">__doc__</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Documentation of parent class UnderexcitationLimiterDynamics: </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">UnderexcitationLimiterDynamics</span><span class="o">.</span><span class="vm">__doc__</span> 
+
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tuv</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tup</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tuq</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">kui</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kul</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vuimax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vuimin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kuf</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kfb</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">tul</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tu1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tu2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tu3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tu4</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vulmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vulmin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">p0</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">q0</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">p1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">q1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">q2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">p3</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">q3</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">p4</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">q4</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">p5</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">q5</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">p6</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">q6</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">p7</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">q7</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">p8</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">q8</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">p9</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">q9</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">p10</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">q10</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">k1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">k2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">)</span>
+	
+		<span class="bp">self</span><span class="o">.</span><span class="n">tuv</span> <span class="o">=</span> <span class="n">tuv</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tup</span> <span class="o">=</span> <span class="n">tup</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tuq</span> <span class="o">=</span> <span class="n">tuq</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kui</span> <span class="o">=</span> <span class="n">kui</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kul</span> <span class="o">=</span> <span class="n">kul</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vuimax</span> <span class="o">=</span> <span class="n">vuimax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vuimin</span> <span class="o">=</span> <span class="n">vuimin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kuf</span> <span class="o">=</span> <span class="n">kuf</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kfb</span> <span class="o">=</span> <span class="n">kfb</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tul</span> <span class="o">=</span> <span class="n">tul</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tu1</span> <span class="o">=</span> <span class="n">tu1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tu2</span> <span class="o">=</span> <span class="n">tu2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tu3</span> <span class="o">=</span> <span class="n">tu3</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tu4</span> <span class="o">=</span> <span class="n">tu4</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vulmax</span> <span class="o">=</span> <span class="n">vulmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vulmin</span> <span class="o">=</span> <span class="n">vulmin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">p0</span> <span class="o">=</span> <span class="n">p0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">q0</span> <span class="o">=</span> <span class="n">q0</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">p1</span> <span class="o">=</span> <span class="n">p1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">q1</span> <span class="o">=</span> <span class="n">q1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">p2</span> <span class="o">=</span> <span class="n">p2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">q2</span> <span class="o">=</span> <span class="n">q2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">p3</span> <span class="o">=</span> <span class="n">p3</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">q3</span> <span class="o">=</span> <span class="n">q3</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">p4</span> <span class="o">=</span> <span class="n">p4</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">q4</span> <span class="o">=</span> <span class="n">q4</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">p5</span> <span class="o">=</span> <span class="n">p5</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">q5</span> <span class="o">=</span> <span class="n">q5</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">p6</span> <span class="o">=</span> <span class="n">p6</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">q6</span> <span class="o">=</span> <span class="n">q6</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">p7</span> <span class="o">=</span> <span class="n">p7</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">q7</span> <span class="o">=</span> <span class="n">q7</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">p8</span> <span class="o">=</span> <span class="n">p8</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">q8</span> <span class="o">=</span> <span class="n">q8</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">p9</span> <span class="o">=</span> <span class="n">p9</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">q9</span> <span class="o">=</span> <span class="n">q9</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">p10</span> <span class="o">=</span> <span class="n">p10</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">q10</span> <span class="o">=</span> <span class="n">q10</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">k1</span> <span class="o">=</span> <span class="n">k1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">k2</span> <span class="o">=</span> <span class="n">k2</span>
+		
+	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;class=UnderexcLimIEEE2</span><span class="se">\n</span><span class="s1">&#39;</span>
+		<span class="n">attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span>
+		<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">attributes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+			<span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;=</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+		<span class="k">return</span> <span class="nb">str</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, ACS RWTH Aachen University.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

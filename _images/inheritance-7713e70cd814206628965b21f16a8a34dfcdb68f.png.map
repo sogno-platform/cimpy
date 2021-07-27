@@ -1,0 +1,4 @@
+<map id="inheritance87bcddfeef" name="inheritance87bcddfeef">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="53,5,125,31"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.DiagramObjectGluePoint.DiagramObjectGluePoint" target="_top" title="This is used for grouping diagram object points from different diagram objects that are considered to be glued together in a diagram even if they are not at the exact same coordinates." alt="" coords="5,79,172,104"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="inheritancee20119e2b7" name="inheritancee20119e2b7">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="57,5,129,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="37,79,150,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="11,152,175,177"/>
+<area shape="rect" id="node5" href="cimpy.cgmes_v2_4_15.TurbineGovernorDynamics.html#cimpy.cgmes_v2_4_15.TurbineGovernorDynamics.TurbineGovernorDynamics" target="_top" title="Turbine&#45;governor function block whose behavior is described by reference to a standard model" alt="" coords="5,225,181,251"/>
+<area shape="rect" id="node4" href="#cimpy.cgmes_v2_4_15.GovGASTWD.GovGASTWD" target="_top" title="Woodward Gas turbine governor model." alt="" coords="41,299,146,324"/>
+</map>

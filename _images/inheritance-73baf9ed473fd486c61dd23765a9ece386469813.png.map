@@ -1,0 +1,7 @@
+<map id="inheritance1c94e9fd1d" name="inheritance1c94e9fd1d">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="71,5,143,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="51,79,164,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="25,152,189,177"/>
+<area shape="rect" id="node5" href="cimpy.cgmes_v2_4_15.OverexcitationLimiterDynamics.html#cimpy.cgmes_v2_4_15.OverexcitationLimiterDynamics.OverexcitationLimiterDynamics" target="_top" title="Overexcitation limiter function block whose behaviour is described by reference to a standard model" alt="" coords="5,225,209,251"/>
+<area shape="rect" id="node4" href="#cimpy.cgmes_v2_4_15.OverexcLim2.OverexcLim2" target="_top" title="Different from LimIEEEOEL, LimOEL2 has a fixed pickup threshold and reduces the excitation set&#45;point by mean of non&#45;windup integral regulator. Irated is the rated machine excitation current (calculated from nameplate conditions: V, P, CosPhi)." alt="" coords="58,299,157,324"/>
+</map>

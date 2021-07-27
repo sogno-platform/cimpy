@@ -1,0 +1,7 @@
+<map id="inheritancee42300d069" name="inheritancee42300d069">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.ACDCTerminal.html#cimpy.cgmes_v2_4_15.ACDCTerminal.ACDCTerminal" target="_top" title="An electrical connection point (AC or DC) to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes." alt="" coords="11,152,121,177"/>
+<area shape="rect" id="node4" href="cimpy.cgmes_v2_4_15.DCBaseTerminal.html#cimpy.cgmes_v2_4_15.DCBaseTerminal.DCBaseTerminal" target="_top" title="An electrical connection point at a piece of DC conducting equipment. DC terminals are connected at one physical DC node that may have multiple DC terminals connected. A DC node is similar to an AC connectivity node. The model enforces that DC connections are distinct from AC connections." alt="" coords="5,225,127,251"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="9,79,123,104"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="30,5,102,31"/>
+<area shape="rect" id="node5" href="#cimpy.cgmes_v2_4_15.DCTerminal.DCTerminal" target="_top" title="An electrical connection point to generic DC conducting equipment." alt="" coords="21,299,111,324"/>
+</map>

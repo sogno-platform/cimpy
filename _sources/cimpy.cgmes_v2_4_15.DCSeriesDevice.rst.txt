@@ -1,0 +1,10 @@
+cimpy.cgmes\_v2\_4\_15.DCSeriesDevice module
+============================================
+
+.. automodule:: cimpy.cgmes_v2_4_15.DCSeriesDevice
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.cgmes_v2_4_15.DCSeriesDevice
+    :parts: 1

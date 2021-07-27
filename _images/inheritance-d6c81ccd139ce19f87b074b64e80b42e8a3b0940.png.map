@@ -1,0 +1,5 @@
+<map id="inheritance9eb20907f7" name="inheritance9eb20907f7">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="61,5,133,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="41,79,154,104"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.GenICompensationForGenJ.GenICompensationForGenJ" target="_top" title="This class provides the resistive and reactive components of compensation for the generator associated with the IEEE Type 2 voltage compensator for current flow out of one of the other generators in the interconnection." alt="" coords="5,152,189,177"/>
+</map>

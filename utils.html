@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Utils &mdash; cimpy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="cimpy Package Documentation" href="cimpy.html" />
+    <link rel="prev" title="Export Example Documentation" href="Export.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> cimpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Start.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Start.html#import-example">Import Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Start.html#export-example">Export Example</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Start.html#utils">Utils</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Utils</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#convert-node-breaker-to-bus-branch">Convert Node-Breaker to Bus-Branch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-external-network-injection">Add external network injection</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Start.html#add-external-network-injection">Add External Network injection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Start.html#convert-node-breaker-to-bus-branch">Convert Node-Breaker to Bus-Branch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cimpy.html">cimpy Package Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">cimpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="Start.html">Getting Started</a> &raquo;</li>
+        
+      <li>Utils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/utils.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="utils">
+<h1>Utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h1>
+<p>This part of the package provides two basic functions to modify the imported CIM data.</p>
+<div class="section" id="convert-node-breaker-to-bus-branch">
+<h2>Convert Node-Breaker to Bus-Branch<a class="headerlink" href="#convert-node-breaker-to-bus-branch" title="Permalink to this headline">¶</a></h2>
+<p>This function converts as the name suggests a Node-Breaker topology into a Bus-Branch topology.</p>
+<p>First we have to import the grid data. For more information see the documentation of the import function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">cimpy</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;importCIGREMV.log&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="n">filemode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+<span class="n">example</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+<span class="n">sample_folder</span> <span class="o">=</span> <span class="n">example</span> <span class="o">/</span> <span class="s1">&#39;examples&#39;</span> <span class="o">/</span> <span class="s1">&#39;sampledata&#39;</span> <span class="o">/</span> <span class="s1">&#39;Sample_Grid_Switches&#39;</span> <span class="o">/</span> <span class="s1">&#39;Bus-Branch&#39;</span>
+
+<span class="n">sample_files</span> <span class="o">=</span> <span class="n">sample_folder</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.xml&#39;</span><span class="p">)</span>
+
+<span class="n">xml_files</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">sample_folder</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.xml&#39;</span><span class="p">):</span>
+    <span class="n">xml_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">absolute</span><span class="p">()))</span>
+
+<span class="n">import_result</span> <span class="o">=</span> <span class="n">cimpy</span><span class="o">.</span><span class="n">cim_import</span><span class="p">(</span><span class="n">xml_files</span><span class="p">,</span> <span class="s2">&quot;cgmes_v2_4_15&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now we can convert the imported topology into a Bus-Branch topology.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">import_result</span> <span class="o">=</span> <span class="n">cimpy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">node_breaker_to_bus_branch</span><span class="p">(</span><span class="n">import_result</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The converted grid data is stored in import_result[‘topology’]</p>
+</div>
+<div class="section" id="add-external-network-injection">
+<h2>Add external network injection<a class="headerlink" href="#add-external-network-injection" title="Permalink to this headline">¶</a></h2>
+<p>This function adds an external network injection to the imported grid data. First we have to import some grid data. Here we use the same data as the import example. The imported data is stored in import_example.</p>
+<p>To add the external network injection we need the mRID of either a Topological Node or a Connectivity Node.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">import_result</span> <span class="o">=</span> <span class="n">cimpy</span><span class="o">.</span><span class="n">cim_import</span><span class="p">(</span><span class="n">xml_files</span><span class="p">,</span> <span class="s2">&quot;cgmes_v2_4_15&quot;</span><span class="p">)</span>
+<span class="n">import_result</span> <span class="o">=</span> <span class="n">cimpy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">add_external_network_injection</span><span class="p">(</span><span class="n">import_result</span><span class="p">,</span> <span class="s2">&quot;cgmes_v2_4_15&quot;</span><span class="p">,</span> <span class="s2">&quot;N1&quot;</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here the the external network injection is added to the node with the mRID “N1” with a voltage set point of 20.0. For this function the CIM version must also be given to the function.</p>
+<p>After the injection is added the modified grid data can be exported with cim_export.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">activeProfileList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DI&#39;</span><span class="p">,</span> <span class="s1">&#39;EQ&#39;</span><span class="p">,</span> <span class="s1">&#39;SV&#39;</span><span class="p">,</span> <span class="s1">&#39;TP&#39;</span><span class="p">]</span>
+<span class="n">cimpy</span><span class="o">.</span><span class="n">cim_export</span><span class="p">(</span><span class="n">import_result</span><span class="p">,</span> <span class="s1">&#39;ExternalInjection&#39;</span><span class="p">,</span> <span class="s1">&#39;cgmes_v2_4_15&#39;</span><span class="p">,</span> <span class="n">activeProfileList</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="cimpy.html" class="btn btn-neutral float-right" title="cimpy Package Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Export.html" class="btn btn-neutral float-left" title="Export Example Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, ACS RWTH Aachen University.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

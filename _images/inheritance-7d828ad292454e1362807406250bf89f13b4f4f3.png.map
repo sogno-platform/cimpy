@@ -1,0 +1,5 @@
+<map id="inheritanceb21515bf0c" name="inheritanceb21515bf0c">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="57,5,129,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.Quality61850.html#cimpy.cgmes_v2_4_15.Quality61850.Quality61850" target="_top" title="Quality flags in this class are as defined in IEC 61850, except for estimatorReplaced, which has been included in this class for convenience." alt="" coords="43,79,142,104"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.MeasurementValueQuality.MeasurementValueQuality" target="_top" title="Measurement quality flags. Bits 0&#45;10 are defined for substation automation in draft IEC 61850 part 7&#45;3. Bits 11&#45;15 are reserved for future expansion by that document. Bits 16&#45;31 are reserved for EMS applications." alt="" coords="5,152,180,177"/>
+</map>

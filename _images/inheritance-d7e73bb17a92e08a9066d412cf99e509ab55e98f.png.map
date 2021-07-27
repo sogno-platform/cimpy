@@ -1,0 +1,5 @@
+<map id="inheritance9c420d6891" name="inheritance9c420d6891">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="51,5,123,31"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="30,79,143,104"/>
+<area shape="rect" id="node3" href="#cimpy.cgmes_v2_4_15.WindPitchContEmulIEC.WindPitchContEmulIEC" target="_top" title="Pitch control emulator model. &#160;Reference: IEC Standard 61400&#45;27&#45;1 Section 6.6.5.1." alt="" coords="5,152,168,177"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="inheritance8377b53eb6" name="inheritance8377b53eb6">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="13,5,85,31"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.SvInjection.SvInjection" target="_top" title="The SvInjection is reporting the calculated bus injection minus the sum of the terminal flows. The terminal flow is positive out from the bus (load sign convention) and bus injection has positive flow into the bus. SvInjection may have the remainder after state estimation or slack after power flow calculation." alt="" coords="5,79,92,104"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="inheritancecfa168ffa4" name="inheritancecfa168ffa4">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="75,5,147,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="54,79,167,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="29,152,193,177"/>
+<area shape="rect" id="node5" href="cimpy.cgmes_v2_4_15.UnderexcitationLimiterDynamics.html#cimpy.cgmes_v2_4_15.UnderexcitationLimiterDynamics.UnderexcitationLimiterDynamics" target="_top" title="Underexcitation limiter function block whose behaviour is described by reference to a standard model" alt="" coords="5,225,216,251"/>
+<area shape="rect" id="node4" href="#cimpy.cgmes_v2_4_15.UnderexcLim2Simplified.UnderexcLim2Simplified" target="_top" title="This model can be derived from UnderexcLimIEEE2. The limit characteristic (look &#45;up table) is a single straight&#45;line, the same as UnderexcLimIEEE2 (see Figure 10.4 (p 32), IEEE 421.5&#45;2005 Section 10.2)." alt="" coords="29,299,192,324"/>
+</map>

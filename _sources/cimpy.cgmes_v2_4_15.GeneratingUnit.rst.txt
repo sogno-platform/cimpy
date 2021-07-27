@@ -1,0 +1,10 @@
+cimpy.cgmes\_v2\_4\_15.GeneratingUnit module
+============================================
+
+.. automodule:: cimpy.cgmes_v2_4_15.GeneratingUnit
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.cgmes_v2_4_15.GeneratingUnit
+    :parts: 1

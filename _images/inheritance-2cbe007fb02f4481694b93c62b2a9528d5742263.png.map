@@ -1,0 +1,8 @@
+<map id="inheritancefaf6c3072e" name="inheritancefaf6c3072e">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="59,5,131,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="38,79,151,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.BasicIntervalSchedule.html#cimpy.cgmes_v2_4_15.BasicIntervalSchedule.BasicIntervalSchedule" target="_top" title="Schedule of values at points in time." alt="" coords="19,152,171,177"/>
+<area shape="rect" id="node6" href="cimpy.cgmes_v2_4_15.RegularIntervalSchedule.html#cimpy.cgmes_v2_4_15.RegularIntervalSchedule.RegularIntervalSchedule" target="_top" title="The schedule has time points where the time between them is constant." alt="" coords="13,225,177,251"/>
+<area shape="rect" id="node4" href="#cimpy.cgmes_v2_4_15.NonConformLoadSchedule.NonConformLoadSchedule" target="_top" title="An active power (Y1&#45;axis) and reactive power (Y2&#45;axis) schedule (curves) versus time (X&#45;axis) for non&#45;conforming loads, e.g., large industrial load or power station service (where modeled)." alt="" coords="5,372,184,397"/>
+<area shape="rect" id="node5" href="cimpy.cgmes_v2_4_15.SeasonDayTypeSchedule.html#cimpy.cgmes_v2_4_15.SeasonDayTypeSchedule.SeasonDayTypeSchedule" target="_top" title="A time schedule covering a 24 hour period, with curve data for a specific type of season and day." alt="" coords="9,299,181,324"/>
+</map>

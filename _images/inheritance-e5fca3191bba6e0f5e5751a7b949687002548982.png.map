@@ -1,0 +1,5 @@
+<map id="inheritance233cc8769f" name="inheritance233cc8769f">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="36,5,108,31"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="15,79,129,104"/>
+<area shape="rect" id="node3" href="#cimpy.cgmes_v2_4_15.MeasurementValue.MeasurementValue" target="_top" title="The current state for a measurement. A state value is an instance of a measurement from a specific source. Measurements can be associated with many state values, each representing a different source for the measurement." alt="" coords="5,152,139,177"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="inheritance69a5e5d680" name="inheritance69a5e5d680">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="5,5,77,31"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.Date.Date" target="_top" title="Date as &quot;yyyy&#45;mm&#45;dd&quot;, which conforms with ISO 8601. UTC time zone is specified as &quot;yyyy&#45;mm&#45;ddZ&quot;. A local timezone relative UTC is specified as &quot;yyyy&#45;mm&#45;dd(+/&#45;)hh:mm&quot;." alt="" coords="5,79,77,104"/>
+</map>

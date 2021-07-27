@@ -1,0 +1,4 @@
+<map id="inheritancec4f78b16c2" name="inheritancec4f78b16c2">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="19,5,91,31"/>
+<area shape="rect" id="node2" href="#cimpy.cgmes_v2_4_15.Conductance.Conductance" target="_top" title="Factor by which voltage must be multiplied to give corresponding power lost from a circuit. Real part of admittance." alt="" coords="5,79,104,104"/>
+</map>

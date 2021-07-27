@@ -1,0 +1,4 @@
+<map id="inheritanceeea731ddcd" name="inheritanceeea731ddcd">
+<area shape="rect" id="node1" href="#cimpy.cgmes_v2_4_15.ActivePower.ActivePower" target="_top" title="Product of RMS value of the voltage and the RMS value of the in&#45;phase component of the current." alt="" coords="5,79,101,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="17,5,89,31"/>
+</map>

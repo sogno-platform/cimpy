@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>cimpy.cgmes_v2_4_15.ExcSK &mdash; cimpy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> cimpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cimpy.html">cimpy Package Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cimpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>cimpy.cgmes_v2_4_15.ExcSK</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for cimpy.cgmes_v2_4_15.ExcSK</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.ExcitationSystemDynamics</span> <span class="kn">import</span> <span class="n">ExcitationSystemDynamics</span>
+
+
+<div class="viewcode-block" id="ExcSK"><a class="viewcode-back" href="../../../cimpy.cgmes_v2_4_15.ExcSK.html#cimpy.cgmes_v2_4_15.ExcSK.ExcSK">[docs]</a><span class="k">class</span> <span class="nc">ExcSK</span><span class="p">(</span><span class="n">ExcitationSystemDynamics</span><span class="p">):</span>
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	Slovakian Excitation System Model.  UEL and secondary voltage control are included in this model. When this model is used, there cannot be a separate underexcitation limiter or VAr controller model.</span>
+
+<span class="sd">	:efdmax: Field voltage clipping limit (Efdmax). Default: 0.0</span>
+<span class="sd">	:efdmin: Field voltage clipping limit (Efdmin). Default: 0.0</span>
+<span class="sd">	:emax: Maximum field voltage output (Emax).  Typical Value = 20. Default: 0.0</span>
+<span class="sd">	:emin: Minimum field voltage output (Emin).  Typical Value = -20. Default: 0.0</span>
+<span class="sd">	:k: Gain (K).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:k1: Parameter of underexcitation limit (K1).  Typical Value = 0.1364. Default: 0.0</span>
+<span class="sd">	:k2: Parameter of underexcitation limit (K2).  Typical Value = -0.3861. Default: 0.0</span>
+<span class="sd">	:kc: PI controller gain (Kc).  Typical Value = 70. Default: 0.0</span>
+<span class="sd">	:kce: Rectifier regulation factor (Kce).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:kd: Exciter internal reactance (Kd).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:kgob: P controller gain (Kgob).  Typical Value = 10. Default: 0.0</span>
+<span class="sd">	:kp: PI controller gain (Kp).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:kqi: PI controller gain of integral component (Kqi).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:kqob: Rate of rise of the reactive power (Kqob). Default: 0.0</span>
+<span class="sd">	:kqp: PI controller gain (Kqp).  Typical Value = 0. Default: 0.0</span>
+<span class="sd">	:nq: Dead band of reactive power (nq).  Determines the range of sensitivity.  Typical Value = 0.001. Default: 0.0</span>
+<span class="sd">	:qconoff: Secondary voltage control state (Qc_on_off). true = secondary voltage control is ON false = secondary voltage control is OFF. Typical Value = false. Default: False</span>
+<span class="sd">	:qz: Desired value (setpoint) of reactive power, manual setting (Qz). Default: 0.0</span>
+<span class="sd">	:remote: Selector to apply automatic calculation in secondary controller model. true = automatic calculation is activated false = manual set is active; the use of desired value of reactive power (Qz) is required. Typical Value = true. Default: False</span>
+<span class="sd">	:sbase: Apparent power of the unit (Sbase).  Unit = MVA.  Typical Value = 259. Default: 0.0</span>
+<span class="sd">	:tc: PI controller phase lead time constant (Tc).  Typical Value = 8. Default: 0</span>
+<span class="sd">	:te: Time constant of gain block (Te).  Typical Value = 0.1. Default: 0</span>
+<span class="sd">	:ti: PI controller phase lead time constant (Ti).  Typical Value = 2. Default: 0</span>
+<span class="sd">	:tp: Time constant (Tp).  Typical Value = 0.1. Default: 0</span>
+<span class="sd">	:tr: Voltage transducer time constant (Tr).  Typical Value = 0.01. Default: 0</span>
+<span class="sd">	:uimax: Maximum error (Uimax).  Typical Value = 10. Default: 0.0</span>
+<span class="sd">	:uimin: Minimum error (UImin).  Typical Value = -10. Default: 0.0</span>
+<span class="sd">	:urmax: Maximum controller output (URmax).  Typical Value = 10. Default: 0.0</span>
+<span class="sd">	:urmin: Minimum controller output (URmin).  Typical Value = -10. Default: 0.0</span>
+<span class="sd">	:vtmax: Maximum terminal voltage input (Vtmax).  Determines the range of voltage dead band.  Typical Value = 1.05. Default: 0.0</span>
+<span class="sd">	:vtmin: Minimum terminal voltage input (Vtmin).  Determines the range of voltage dead band.  Typical Value = 0.95. Default: 0.0</span>
+<span class="sd">	:yp: Maximum output (Yp).  Minimum output = 0.  Typical Value = 1. Default: 0.0</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+	<span class="n">cgmesProfile</span> <span class="o">=</span> <span class="n">ExcitationSystemDynamics</span><span class="o">.</span><span class="n">cgmesProfile</span>
+
+	<span class="n">possibleProfileList</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;efdmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;efdmin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;emax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;emin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;k&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;k1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;k2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kce&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kd&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kgob&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kqi&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kqob&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kqp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;nq&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;qconoff&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;qz&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;remote&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;sbase&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;te&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ti&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tr&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;uimax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;uimin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;urmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;urmin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vtmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vtmin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;yp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						 <span class="p">}</span>
+
+	<span class="n">serializationProfile</span> <span class="o">=</span> <span class="p">{}</span>
+
+	<span class="vm">__doc__</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Documentation of parent class ExcitationSystemDynamics: </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">ExcitationSystemDynamics</span><span class="o">.</span><span class="vm">__doc__</span> 
+
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">efdmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">efdmin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">emax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">emin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">k1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">k2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kc</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kce</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kd</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kgob</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kp</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kqi</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kqob</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kqp</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">nq</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">qconoff</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">qz</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">remote</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">sbase</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">tc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">te</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ti</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">uimax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">uimin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">urmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">urmin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vtmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vtmin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">yp</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">)</span>
+	
+		<span class="bp">self</span><span class="o">.</span><span class="n">efdmax</span> <span class="o">=</span> <span class="n">efdmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">efdmin</span> <span class="o">=</span> <span class="n">efdmin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">emax</span> <span class="o">=</span> <span class="n">emax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">emin</span> <span class="o">=</span> <span class="n">emin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="n">k</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">k1</span> <span class="o">=</span> <span class="n">k1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">k2</span> <span class="o">=</span> <span class="n">k2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kc</span> <span class="o">=</span> <span class="n">kc</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kce</span> <span class="o">=</span> <span class="n">kce</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kd</span> <span class="o">=</span> <span class="n">kd</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kgob</span> <span class="o">=</span> <span class="n">kgob</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kp</span> <span class="o">=</span> <span class="n">kp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kqi</span> <span class="o">=</span> <span class="n">kqi</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kqob</span> <span class="o">=</span> <span class="n">kqob</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kqp</span> <span class="o">=</span> <span class="n">kqp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">nq</span> <span class="o">=</span> <span class="n">nq</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">qconoff</span> <span class="o">=</span> <span class="n">qconoff</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">qz</span> <span class="o">=</span> <span class="n">qz</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">remote</span> <span class="o">=</span> <span class="n">remote</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">sbase</span> <span class="o">=</span> <span class="n">sbase</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tc</span> <span class="o">=</span> <span class="n">tc</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">te</span> <span class="o">=</span> <span class="n">te</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ti</span> <span class="o">=</span> <span class="n">ti</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tp</span> <span class="o">=</span> <span class="n">tp</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tr</span> <span class="o">=</span> <span class="n">tr</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">uimax</span> <span class="o">=</span> <span class="n">uimax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">uimin</span> <span class="o">=</span> <span class="n">uimin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">urmax</span> <span class="o">=</span> <span class="n">urmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">urmin</span> <span class="o">=</span> <span class="n">urmin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vtmax</span> <span class="o">=</span> <span class="n">vtmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vtmin</span> <span class="o">=</span> <span class="n">vtmin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">yp</span> <span class="o">=</span> <span class="n">yp</span>
+		
+	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;class=ExcSK</span><span class="se">\n</span><span class="s1">&#39;</span>
+		<span class="n">attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span>
+		<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">attributes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+			<span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;=</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+		<span class="k">return</span> <span class="nb">str</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, ACS RWTH Aachen University.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

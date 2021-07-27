@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>cimpy.cgmes_v2_4_15.PssIEEE4B &mdash; cimpy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> cimpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cimpy.html">cimpy Package Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">cimpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>cimpy.cgmes_v2_4_15.PssIEEE4B</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for cimpy.cgmes_v2_4_15.PssIEEE4B</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">.PowerSystemStabilizerDynamics</span> <span class="kn">import</span> <span class="n">PowerSystemStabilizerDynamics</span>
+
+
+<div class="viewcode-block" id="PssIEEE4B"><a class="viewcode-back" href="../../../cimpy.cgmes_v2_4_15.PssIEEE4B.html#cimpy.cgmes_v2_4_15.PssIEEE4B.PssIEEE4B">[docs]</a><span class="k">class</span> <span class="nc">PssIEEE4B</span><span class="p">(</span><span class="n">PowerSystemStabilizerDynamics</span><span class="p">):</span>
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	The class represents IEEE Std 421.5-2005 type PSS2B power system stabilizer model. The PSS4B model represents a structure based on multiple working frequency bands. Three separate bands, respectively dedicated to the low-, intermediate- and high-frequency modes of oscillations, are used in this delta-omega (speed input) PSS.  Reference: IEEE 4B 421.5-2005 Section 8.4.</span>
+
+<span class="sd">	:bwh1: Notch filter 1 (high-frequency band): Three dB bandwidth (B). Default: 0.0</span>
+<span class="sd">	:bwh2: Notch filter 2 (high-frequency band): Three dB bandwidth (B). Default: 0.0</span>
+<span class="sd">	:bwl1: Notch filter 1 (low-frequency band): Three dB bandwidth (B). Default: 0.0</span>
+<span class="sd">	:bwl2: Notch filter 2 (low-frequency band): Three dB bandwidth (B). Default: 0.0</span>
+<span class="sd">	:kh: High band gain (K).  Typical Value = 120. Default: 0.0</span>
+<span class="sd">	:kh1: High band differential filter gain (K).  Typical Value = 66. Default: 0.0</span>
+<span class="sd">	:kh11: High band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:kh17: High band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:kh2: High band differential filter gain (K).  Typical Value = 66. Default: 0.0</span>
+<span class="sd">	:ki: Intermediate band gain (K).  Typical Value = 30. Default: 0.0</span>
+<span class="sd">	:ki1: Intermediate band differential filter gain (K).  Typical Value = 66. Default: 0.0</span>
+<span class="sd">	:ki11: Intermediate band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:ki17: Intermediate band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:ki2: Intermediate band differential filter gain (K).  Typical Value = 66. Default: 0.0</span>
+<span class="sd">	:kl: Low band gain (K).  Typical Value = 7.5. Default: 0.0</span>
+<span class="sd">	:kl1: Low band differential filter gain (K).  Typical Value = 66. Default: 0.0</span>
+<span class="sd">	:kl11: Low band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:kl17: Low band first lead-lag blocks coefficient (K).  Typical Value = 1. Default: 0.0</span>
+<span class="sd">	:kl2: Low band differential filter gain (K).  Typical Value = 66. Default: 0.0</span>
+<span class="sd">	:omeganh1: Notch filter 1 (high-frequency band): filter frequency (omega). Default: 0.0</span>
+<span class="sd">	:omeganh2: Notch filter 2 (high-frequency band): filter frequency (omega). Default: 0.0</span>
+<span class="sd">	:omeganl1: Notch filter 1 (low-frequency band): filter frequency (omega). Default: 0.0</span>
+<span class="sd">	:omeganl2: Notch filter 2 (low-frequency band): filter frequency (omega). Default: 0.0</span>
+<span class="sd">	:th1: High band time constant (T).  Typical Value = 0.01513. Default: 0</span>
+<span class="sd">	:th10: High band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:th11: High band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:th12: High band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:th2: High band time constant (T).  Typical Value = 0.01816. Default: 0</span>
+<span class="sd">	:th3: High band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:th4: High band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:th5: High band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:th6: High band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:th7: High band time constant (T).  Typical Value = 0.01816. Default: 0</span>
+<span class="sd">	:th8: High band time constant (T).  Typical Value = 0.02179. Default: 0</span>
+<span class="sd">	:th9: High band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:ti1: Intermediate band time constant (T).  Typical Value = 0.173. Default: 0</span>
+<span class="sd">	:ti10: Intermediate band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:ti11: Intermediate band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:ti12: Intermediate band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:ti2: Intermediate band time constant (T).  Typical Value = 0.2075. Default: 0</span>
+<span class="sd">	:ti3: Intermediate band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:ti4: Intermediate band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:ti5: Intermediate band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:ti6: Intermediate band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:ti7: Intermediate band time constant (T).  Typical Value = 0.2075. Default: 0</span>
+<span class="sd">	:ti8: Intermediate band time constant (T).  Typical Value = 0.2491. Default: 0</span>
+<span class="sd">	:ti9: Intermediate band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:tl1: Low band time constant (T).  Typical Value = 1.73. Default: 0</span>
+<span class="sd">	:tl10: Low band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:tl11: Low band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:tl12: Low band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:tl2: Low band time constant (T).  Typical Value = 2.075. Default: 0</span>
+<span class="sd">	:tl3: Low band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:tl4: Low band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:tl5: Low band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:tl6: Low band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:tl7: Low band time constant (T).  Typical Value = 2.075. Default: 0</span>
+<span class="sd">	:tl8: Low band time constant (T).  Typical Value = 2.491. Default: 0</span>
+<span class="sd">	:tl9: Low band time constant (T).  Typical Value = 0. Default: 0</span>
+<span class="sd">	:vhmax: High band output maximum limit (V).  Typical Value = 0.6. Default: 0.0</span>
+<span class="sd">	:vhmin: High band output minimum limit (V).  Typical Value = -0.6. Default: 0.0</span>
+<span class="sd">	:vimax: Intermediate band output maximum limit (V).  Typical Value = 0.6. Default: 0.0</span>
+<span class="sd">	:vimin: Intermediate band output minimum limit (V).  Typical Value = -0.6. Default: 0.0</span>
+<span class="sd">	:vlmax: Low band output maximum limit (V).  Typical Value = 0.075. Default: 0.0</span>
+<span class="sd">	:vlmin: Low band output minimum limit (V).  Typical Value = -0.075. Default: 0.0</span>
+<span class="sd">	:vstmax: PSS output maximum limit (V).  Typical Value = 0.15. Default: 0.0</span>
+<span class="sd">	:vstmin: PSS output minimum limit (V).  Typical Value = -0.15. Default: 0.0</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+	<span class="n">cgmesProfile</span> <span class="o">=</span> <span class="n">PowerSystemStabilizerDynamics</span><span class="o">.</span><span class="n">cgmesProfile</span>
+
+	<span class="n">possibleProfileList</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;bwh1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;bwh2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;bwl1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;bwl2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kh&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kh1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kh11&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kh17&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kh2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ki&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ki1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ki11&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ki17&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ki2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kl&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kl1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kl11&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kl17&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;kl2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;omeganh1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;omeganh2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;omeganl1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;omeganl2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;th1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;th10&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;th11&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;th12&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;th2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;th3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;th4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;th5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;th6&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;th7&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;th8&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;th9&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ti1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ti10&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ti11&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ti12&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ti2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ti3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ti4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ti5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ti6&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ti7&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ti8&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;ti9&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tl1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tl10&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tl11&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tl12&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tl2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tl3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tl4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tl5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tl6&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tl7&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tl8&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;tl9&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vhmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vhmin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vimax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vimin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vlmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vlmin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vstmax&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						<span class="s1">&#39;vstmin&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">cgmesProfile</span><span class="o">.</span><span class="n">DY</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">],</span>
+						 <span class="p">}</span>
+
+	<span class="n">serializationProfile</span> <span class="o">=</span> <span class="p">{}</span>
+
+	<span class="vm">__doc__</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Documentation of parent class PowerSystemStabilizerDynamics: </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">PowerSystemStabilizerDynamics</span><span class="o">.</span><span class="vm">__doc__</span> 
+
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bwh1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">bwh2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">bwl1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">bwl2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kh</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kh1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kh11</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kh17</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kh2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ki</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ki1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ki11</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ki17</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">ki2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kl</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kl1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kl11</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kl17</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">kl2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">omeganh1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">omeganh2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">omeganl1</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">omeganl2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">th1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th10</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th11</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th12</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th4</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th5</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th6</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th7</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th8</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th9</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ti1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ti10</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ti11</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ti12</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ti2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ti3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ti4</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ti5</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ti6</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ti7</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ti8</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ti9</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tl1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tl10</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tl11</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tl12</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tl2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tl3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tl4</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tl5</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tl6</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tl7</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tl8</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tl9</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vhmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vhmin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vimax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vimin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vlmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vlmin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vstmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">vstmin</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>  <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">):</span>
+		<span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw_args</span><span class="p">)</span>
+	
+		<span class="bp">self</span><span class="o">.</span><span class="n">bwh1</span> <span class="o">=</span> <span class="n">bwh1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">bwh2</span> <span class="o">=</span> <span class="n">bwh2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">bwl1</span> <span class="o">=</span> <span class="n">bwl1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">bwl2</span> <span class="o">=</span> <span class="n">bwl2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kh</span> <span class="o">=</span> <span class="n">kh</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kh1</span> <span class="o">=</span> <span class="n">kh1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kh11</span> <span class="o">=</span> <span class="n">kh11</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kh17</span> <span class="o">=</span> <span class="n">kh17</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kh2</span> <span class="o">=</span> <span class="n">kh2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ki</span> <span class="o">=</span> <span class="n">ki</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ki1</span> <span class="o">=</span> <span class="n">ki1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ki11</span> <span class="o">=</span> <span class="n">ki11</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ki17</span> <span class="o">=</span> <span class="n">ki17</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ki2</span> <span class="o">=</span> <span class="n">ki2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kl</span> <span class="o">=</span> <span class="n">kl</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kl1</span> <span class="o">=</span> <span class="n">kl1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kl11</span> <span class="o">=</span> <span class="n">kl11</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kl17</span> <span class="o">=</span> <span class="n">kl17</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">kl2</span> <span class="o">=</span> <span class="n">kl2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">omeganh1</span> <span class="o">=</span> <span class="n">omeganh1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">omeganh2</span> <span class="o">=</span> <span class="n">omeganh2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">omeganl1</span> <span class="o">=</span> <span class="n">omeganl1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">omeganl2</span> <span class="o">=</span> <span class="n">omeganl2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">th1</span> <span class="o">=</span> <span class="n">th1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">th10</span> <span class="o">=</span> <span class="n">th10</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">th11</span> <span class="o">=</span> <span class="n">th11</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">th12</span> <span class="o">=</span> <span class="n">th12</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">th2</span> <span class="o">=</span> <span class="n">th2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">th3</span> <span class="o">=</span> <span class="n">th3</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">th4</span> <span class="o">=</span> <span class="n">th4</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">th5</span> <span class="o">=</span> <span class="n">th5</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">th6</span> <span class="o">=</span> <span class="n">th6</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">th7</span> <span class="o">=</span> <span class="n">th7</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">th8</span> <span class="o">=</span> <span class="n">th8</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">th9</span> <span class="o">=</span> <span class="n">th9</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ti1</span> <span class="o">=</span> <span class="n">ti1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ti10</span> <span class="o">=</span> <span class="n">ti10</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ti11</span> <span class="o">=</span> <span class="n">ti11</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ti12</span> <span class="o">=</span> <span class="n">ti12</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ti2</span> <span class="o">=</span> <span class="n">ti2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ti3</span> <span class="o">=</span> <span class="n">ti3</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ti4</span> <span class="o">=</span> <span class="n">ti4</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ti5</span> <span class="o">=</span> <span class="n">ti5</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ti6</span> <span class="o">=</span> <span class="n">ti6</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ti7</span> <span class="o">=</span> <span class="n">ti7</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ti8</span> <span class="o">=</span> <span class="n">ti8</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ti9</span> <span class="o">=</span> <span class="n">ti9</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tl1</span> <span class="o">=</span> <span class="n">tl1</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tl10</span> <span class="o">=</span> <span class="n">tl10</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tl11</span> <span class="o">=</span> <span class="n">tl11</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tl12</span> <span class="o">=</span> <span class="n">tl12</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tl2</span> <span class="o">=</span> <span class="n">tl2</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tl3</span> <span class="o">=</span> <span class="n">tl3</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tl4</span> <span class="o">=</span> <span class="n">tl4</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tl5</span> <span class="o">=</span> <span class="n">tl5</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tl6</span> <span class="o">=</span> <span class="n">tl6</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tl7</span> <span class="o">=</span> <span class="n">tl7</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tl8</span> <span class="o">=</span> <span class="n">tl8</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tl9</span> <span class="o">=</span> <span class="n">tl9</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vhmax</span> <span class="o">=</span> <span class="n">vhmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vhmin</span> <span class="o">=</span> <span class="n">vhmin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vimax</span> <span class="o">=</span> <span class="n">vimax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vimin</span> <span class="o">=</span> <span class="n">vimin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vlmax</span> <span class="o">=</span> <span class="n">vlmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vlmin</span> <span class="o">=</span> <span class="n">vlmin</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vstmax</span> <span class="o">=</span> <span class="n">vstmax</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">vstmin</span> <span class="o">=</span> <span class="n">vstmin</span>
+		
+	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;class=PssIEEE4B</span><span class="se">\n</span><span class="s1">&#39;</span>
+		<span class="n">attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span>
+		<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">attributes</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+			<span class="nb">str</span> <span class="o">=</span> <span class="nb">str</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s1">&#39;=</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">attributes</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+		<span class="k">return</span> <span class="nb">str</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, ACS RWTH Aachen University.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

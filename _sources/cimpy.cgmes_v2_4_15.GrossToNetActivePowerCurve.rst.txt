@@ -1,0 +1,10 @@
+cimpy.cgmes\_v2\_4\_15.GrossToNetActivePowerCurve module
+========================================================
+
+.. automodule:: cimpy.cgmes_v2_4_15.GrossToNetActivePowerCurve
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.cgmes_v2_4_15.GrossToNetActivePowerCurve
+    :parts: 1

@@ -1,0 +1,10 @@
+cimpy.examples.exportCIGREMV module
+===================================
+
+.. automodule:: cimpy.examples.exportCIGREMV
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.examples.exportCIGREMV
+    :parts: 1

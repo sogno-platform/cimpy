@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>cimpy.cimimport module &mdash; cimpy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="cimpy.cimexamples module" href="cimpy.cimexamples.html" />
+    <link rel="prev" title="cimpy.cimexport module" href="cimpy.cimexport.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> cimpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Start.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="cimpy.html">cimpy Package Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cimpy.cgmes_v2_4_15.html">cimpy.cgmes_v2_4_15 package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cimpy.cimexport.html">cimpy.cimexport module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">cimpy.cimimport module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inheritance-diagram">Inheritance Diagram:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cimpy.cimexamples.html">cimpy.cimexamples module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cimpy.utils.html">cimpy.utils module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">cimpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="cimpy.html">cimpy Package Documentation</a> &raquo;</li>
+        
+      <li>cimpy.cimimport module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/cimpy.cimimport.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-cimpy.cimimport">
+<span id="cimpy-cimimport-module"></span><h1>cimpy.cimimport module<a class="headerlink" href="#module-cimpy.cimimport" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="cimpy.cimimport.cim_import">
+<code class="sig-prename descclassname">cimpy.cimimport.</code><code class="sig-name descname">cim_import</code><span class="sig-paren">(</span><em class="sig-param">xml_files</em>, <em class="sig-param">cgmes_version</em>, <em class="sig-param">start_dict=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cimpy/cimimport.html#cim_import"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cimpy.cimimport.cim_import" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to read cimgen files and instantiate the classes</p>
+<p>This function parses xml files containing a cgmes topology and instantiates these classes with their attributes.
+The instantiation is done in two steps. In the first step all classes are instantiated with default values and
+in a second step the attributes contained in the xml files are set. The origin of all classes and attributes are
+stored in the class attribute serializationProfile.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xml_files</strong> – CIM RDF/XML file.</p></li>
+<li><p><strong>cgmes_version</strong> – cgmes version, e.g. “cgmes_v2_4_15”</p></li>
+<li><p><strong>start_dict</strong> – a list of classes which indicates which classes will be read
+e.g. elements=[“BaseVoltage”, “ACLineSegment”]
+* If start_dict=None the complete file will be read</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>import_result: a dictionary containing the topology and meta information. The topology can be extracted via     import_result[‘topology’]. The topology dictionary contains all objects accessible via their mRID. The meta     information can be extracted via import_result[‘meta_info’]. The meta_info dictionary contains a new dictionary with     the keys: ‘author’, ‘namespaces’ and ‘urls’. The last two are also dictionaries. ‘urls’ contains a mapping     between references to URLs and the extracted value of the URL, e.g. ‘absoluteValue’:     ‘<a class="reference external" href="http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue">http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue</a>’ These mappings are accessible     via the name of the attribute, e.g. import_result[‘meta_info’][‘urls’}[attr_name] = {mapping like example above}.     ‘namespaces’ is a dictionary containing all RDF namespaces used in the imported xml files.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="inheritance-diagram">
+<h2>Inheritance Diagram:<a class="headerlink" href="#inheritance-diagram" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="cimpy.cimexamples.html" class="btn btn-neutral float-right" title="cimpy.cimexamples module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cimpy.cimexport.html" class="btn btn-neutral float-left" title="cimpy.cimexport module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2019, ACS RWTH Aachen University.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

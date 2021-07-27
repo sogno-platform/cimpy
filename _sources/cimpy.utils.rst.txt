@@ -1,0 +1,10 @@
+cimpy.utils module
+==================
+
+.. automodule:: cimpy.utils
+   :members:
+
+Inheritance Diagram:
+""""""""""""""""""""
+.. inheritance-diagram::  cimpy.utils
+    :parts: 1

@@ -1,0 +1,6 @@
+<map id="inheritancec02be8f5cd" name="inheritancec02be8f5cd">
+<area shape="rect" id="node1" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Base" target="_top" title="Base Class for CIM" alt="" coords="73,5,145,31"/>
+<area shape="rect" id="node3" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="52,79,165,104"/>
+<area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.html#cimpy.cgmes_v2_4_15.DynamicsFunctionBlock.DynamicsFunctionBlock" target="_top" title="Abstract parent class for all Dynamics function blocks." alt="" coords="27,152,191,177"/>
+<area shape="rect" id="node4" href="#cimpy.cgmes_v2_4_15.WindTurbineType1or2Dynamics.WindTurbineType1or2Dynamics" target="_top" title="Parent class supporting relationships to wind turbines Type 1 and 2 and their control models." alt="" coords="5,225,212,251"/>
+</map>
