@@ -1,0 +1,41 @@
+name: Pytest
+on: push
+jobs:
+   test:
+        runs-on: ubuntu-latest        
+        steps:
+          - name: checkout repo content
+            uses: actions/checkout@v3 # checkout the repository content to github runner.
+          - name: setup python
+            uses: actions/setup-python@v4
+            with:
+              python-version: 3.8
+          - name: Install graphviz
+            run: sudo apt-get install graphviz
+            shell: bash 
+          - name: Install dependencies
+            run: |
+              sudo pip3 install --upgrade pip
+              sudo pip3 install sphinx_rtd_theme
+              sudo pip3 install sphinx==2.2.0
+              sudo pip3 install pytest
+              sudo pip3 install pytest-check
+              sudo pip3 install chevron
+              sudo pip3 install lxml
+              sudo pip3 install xmltodict
+         
+          - name: Execute py script
+            env:
+              working-directory: ${{runner.workspace}}/cimpy
+            run: |  
+              python3 setup.py install
+          - name: Pytest
+            run: |
+              pytest -v -cov --junitxml=report.xml
+            
+          - name: Upload pytest test results
+            uses: actions/upload-artifact@v3
+            with:
+              name: pytest-results
+              path: ${{runner.workspace}}/cimpy/report.xml        
+            if: ${{ always() }}
