@@ -34,8 +34,9 @@ jobs:
       - name: Execute py script
         env:
               working-directory: ${{runner.workspace}}/cimpy
-      #- name: build-documentation
-      #  uses: ./
+        run: |  
+              sudo python3 setup.py install
+    
 
       - name: Create doc redirect
         uses: "finnp/create-file-action@master"
