@@ -30,12 +30,13 @@ jobs:
               working-directory: ${{runner.workspace}}/cimpy
             run: |  
               python3 setup.py build
-              python3 setup.py install easy_install .
+              python3 setup.py install easy_install --build-directory ${{runner.workspace}}/cimpy
               #install easy_install
           - name: Pytest
             env:
               working-directory: ${{runner.workspace}}/cimpy
             run: |
+              python3 setup.py install easy_install --build-directory ${{runner.workspace}}/cimpy
               pytest -v -cov --junitxml=report.xml
             
           - name: Upload pytest test results
