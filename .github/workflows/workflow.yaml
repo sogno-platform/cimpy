@@ -15,9 +15,27 @@ jobs:
     steps:
       - name: git-checkout
         uses: actions/checkout@v3
-
-      - name: build-documentation
-        uses: ./
+      - name: checkout repo content
+        uses: actions/checkout@v3 # checkout the repository content to github runner.
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+              python-version: 3.8
+      - name: Install graphviz
+        run: sudo apt install graphviz
+        shell: bash 
+      - name: Install dependencies
+        run: |
+              sudo pip3 install --upgrade pip
+              sudo pip3 install sphinx_rtd_theme
+              sudo pip3 install sphinx==2.2.0
+              sudo pip3 install pytest
+              sudo pip3 install pytest-check            
+      - name: Execute py script
+        env:
+              working-directory: ${{runner.workspace}}/cimpy
+      #- name: build-documentation
+      #  uses: ./
 
       - name: Create doc redirect
         uses: "finnp/create-file-action@master"
