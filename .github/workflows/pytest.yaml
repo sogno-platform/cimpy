@@ -29,9 +29,15 @@ jobs:
             env:
               working-directory: ${{runner.workspace}}/cimpy
             run: |  
-              python3 setup.py install
-             
+              python3 setup.py 
+          - name: Execute
+            env:
+              working-directory: ${{runner.workspace}}/cimpy
+            run: |  
+              python3 install
           - name: Pytest
+            env:
+              working-directory: ${{runner.workspace}}/cimpy
             run: |
               pytest -v -cov --junitxml=report.xml
             
