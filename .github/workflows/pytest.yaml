@@ -29,12 +29,8 @@ jobs:
             env:
               working-directory: ${{runner.workspace}}/cimpy
             run: |  
-              python3 setup.py install easy_install
-          - name: Execute
-            env:
-              working-directory: ${{runner.workspace}}/cimpy
-            run: |  
-              python3 setup.py install
+              python3 setup.py build_py
+              #install easy_install
           - name: Pytest
             env:
               working-directory: ${{runner.workspace}}/cimpy
