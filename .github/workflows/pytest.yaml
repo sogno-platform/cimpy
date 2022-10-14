@@ -20,6 +20,7 @@ jobs:
               sudo pip3 install sphinx==2.2.0
               sudo pip3 install pytest
               sudo pip3 install pytest-check
+              sudo pip3 install setuptools
               #sudo pip3 install chevron
               #sudo pip3 install lxml
               #sudo pip3 install xmltodict
