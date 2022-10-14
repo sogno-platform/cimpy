@@ -11,31 +11,25 @@ jobs:
             with:
               python-version: 3.8
           - name: Install graphviz
-            run: apt install graphviz
+            run: sudo apt install graphviz
             shell: bash 
           - name: Install dependencies
             run: |
-              pip3 install --upgrade pip
-              pip3 install sphinx_rtd_theme
-              pip3 install sphinx==2.2.0
-              pip3 install pytest
-              pip3 install pytest-check
-              pip3 install setuptools
-                    
+              sudo pip3 install --upgrade pip
+              sudo pip3 install sphinx_rtd_theme
+              sudo pip3 install sphinx==2.2.0
+              sudo pip3 install pytest
+              sudo pip3 install pytest-check            
           - name: Execute py script
             env:
               working-directory: ${{runner.workspace}}/cimpy
             run: |  
-              python3 setup.py install
-             
-              
-             
+              sudo python3 setup.py install             
           - name: Pytest
             env:
               working-directory: ${{runner.workspace}}/cimpy
             run: |
-              pytest -v -cov --junitxml=report.xml
-            
+              sudo pytest -v -cov --junitxml=report.xml            
           - name: Upload pytest test results
             uses: actions/upload-artifact@v3
             with:
