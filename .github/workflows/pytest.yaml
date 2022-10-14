@@ -29,15 +29,16 @@ jobs:
             env:
               working-directory: ${{runner.workspace}}/cimpy
             run: |  
-              sudo python3 setup.py build
+              sudo python3 setup.py install
+              #build
               
              
           - name: Pytest
             env:
               working-directory: ${{runner.workspace}}/cimpy
             run: |
-              python3 setup.py install easy_install --build-directory ${{runner.workspace}}/cimpy
-              pytest -v -cov --junitxml=report.xml
+              #python3 setup.py install easy_install --build-directory ${{runner.workspace}}/cimpy
+              sudo pytest -v -cov --junitxml=report.xml
             
           - name: Upload pytest test results
             uses: actions/upload-artifact@v3
