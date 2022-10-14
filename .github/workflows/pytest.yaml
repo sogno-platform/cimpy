@@ -21,23 +21,19 @@ jobs:
               sudo pip3 install pytest
               sudo pip3 install pytest-check
               sudo pip3 install setuptools
-              #sudo pip3 install chevron
-              #sudo pip3 install lxml
-              #sudo pip3 install xmltodict
-         
+                    
           - name: Execute py script
             env:
               working-directory: ${{runner.workspace}}/cimpy
             run: |  
-              sudo python3 setup.py install
-              #build
+              python3 setup.py install
+             
               
              
           - name: Pytest
             env:
               working-directory: ${{runner.workspace}}/cimpy
             run: |
-              #python3 setup.py install easy_install --build-directory ${{runner.workspace}}/cimpy
               sudo pytest -v -cov --junitxml=report.xml
             
           - name: Upload pytest test results
