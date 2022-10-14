@@ -11,7 +11,7 @@ jobs:
             with:
               python-version: 3.8
           - name: Install graphviz
-            run: sudo apt-get install graphviz
+            run: sudo apt install graphviz
             shell: bash 
           - name: Install dependencies
             run: |
@@ -30,10 +30,10 @@ jobs:
               working-directory: ${{runner.workspace}}/cimpy
             run: |  
               python3 setup.py install
+             
+          - name: Pytest
+            run: |
               pytest -v -cov --junitxml=report.xml
-         # - name: Pytest
-         #   run: |
-          #    pytest -v -cov --junitxml=report.xml
             
           - name: Upload pytest test results
             uses: actions/upload-artifact@v3
