@@ -29,12 +29,12 @@ jobs:
             env:
               working-directory: ${{runner.workspace}}/cimpy
             run: |  
-              python3 setup.py 
+              python3 setup.py build
           - name: Execute
             env:
               working-directory: ${{runner.workspace}}/cimpy
             run: |  
-              python3 install
+              python3 setup.py install
           - name: Pytest
             env:
               working-directory: ${{runner.workspace}}/cimpy
