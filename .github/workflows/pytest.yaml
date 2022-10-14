@@ -29,7 +29,7 @@ jobs:
             env:
               working-directory: ${{runner.workspace}}/cimpy
             run: |  
-              python3 setup.py build
+              python3 setup.py easy_install
           - name: Execute
             env:
               working-directory: ${{runner.workspace}}/cimpy
