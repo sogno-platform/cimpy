@@ -22,7 +22,7 @@ RUN dnf --refresh -y install \
 
 RUN pip3 install sphinx_rtd_theme
 
-RUN pip3 install sphinx==2.2.0
+RUN pip3 install sphinx
 
 RUN pip3 install pytest
 
