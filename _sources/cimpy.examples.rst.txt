@@ -5,6 +5,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    cimpy.examples.addExternalNetworkInjection
    cimpy.examples.convertToBusBranch

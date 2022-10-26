@@ -1,72 +1,37 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>cimpy.cgmes_v2_4_15.ACDCConverter module &mdash; cimpy  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="cimpy.cgmes_v2_4_15.ACDCConverterDCTerminal module" href="cimpy.cgmes_v2_4_15.ACDCConverterDCTerminal.html" />
     <link rel="prev" title="cimpy.cgmes_v2_4_15 package" href="cimpy.cgmes_v2_4_15.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> cimpy
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -74,24 +39,14 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Start.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="cimpy.html">cimpy Package Documentation</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="cimpy.cgmes_v2_4_15.html">cimpy.cgmes_v2_4_15 package</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">cimpy.cgmes_v2_4_15.ACDCConverter module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cimpy.cgmes_v2_4_15.ACDCConverter.ACDCConverter"><code class="docutils literal notranslate"><span class="pre">ACDCConverter</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#inheritance-diagram">Inheritance Diagram:</a></li>
 </ul>
 </li>
@@ -587,80 +542,37 @@
 </li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">cimpy</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="cimpy.html">cimpy Package Documentation</a> &raquo;</li>
-        
           <li><a href="cimpy.cgmes_v2_4_15.html">cimpy.cgmes_v2_4_15 package</a> &raquo;</li>
-        
       <li>cimpy.cgmes_v2_4_15.ACDCConverter module</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/cimpy.cgmes_v2_4_15.ACDCConverter.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="module-cimpy.cgmes_v2_4_15.ACDCConverter">
-<span id="cimpy-cgmes-v2-4-15-acdcconverter-module"></span><h1>cimpy.cgmes_v2_4_15.ACDCConverter module<a class="headerlink" href="#module-cimpy.cgmes_v2_4_15.ACDCConverter" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="cimpy.cgmes_v2_4_15.ACDCConverter.ACDCConverter">
-<em class="property">class </em><code class="sig-prename descclassname">cimpy.cgmes_v2_4_15.ACDCConverter.</code><code class="sig-name descname">ACDCConverter</code><span class="sig-paren">(</span><em class="sig-param">baseS=0.0</em>, <em class="sig-param">idleLoss=0.0</em>, <em class="sig-param">maxUdc=0.0</em>, <em class="sig-param">minUdc=0.0</em>, <em class="sig-param">numberOfValves=0</em>, <em class="sig-param">ratedUdc=0.0</em>, <em class="sig-param">resistiveLoss=0.0</em>, <em class="sig-param">switchingLoss=0.0</em>, <em class="sig-param">valveU0=0.0</em>, <em class="sig-param">DCTerminals='list'</em>, <em class="sig-param">PccTerminal=None</em>, <em class="sig-param">p=0.0</em>, <em class="sig-param">q=0.0</em>, <em class="sig-param">targetPpcc=0.0</em>, <em class="sig-param">targetUdc=0.0</em>, <em class="sig-param">idc=0.0</em>, <em class="sig-param">poleLossP=0.0</em>, <em class="sig-param">uc=0.0</em>, <em class="sig-param">udc=0.0</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kw_args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cimpy/cgmes_v2_4_15/ACDCConverter.html#ACDCConverter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cimpy.cgmes_v2_4_15.ACDCConverter.ACDCConverter" title="Permalink to this definition">¶</a></dt>
+             
+  <section id="module-cimpy.cgmes_v2_4_15.ACDCConverter">
+<span id="cimpy-cgmes-v2-4-15-acdcconverter-module"></span><h1>cimpy.cgmes_v2_4_15.ACDCConverter module<a class="headerlink" href="#module-cimpy.cgmes_v2_4_15.ACDCConverter" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="cimpy.cgmes_v2_4_15.ACDCConverter.ACDCConverter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cimpy.cgmes_v2_4_15.ACDCConverter.</span></span><span class="sig-name descname"><span class="pre">ACDCConverter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baseS</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idleLoss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxUdc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minUdc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numberOfValves</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratedUdc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resistiveLoss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">switchingLoss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valveU0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DCTerminals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'list'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PccTerminal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetPpcc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetUdc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">poleLossP</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">udc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw_args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/cimpy/cgmes_v2_4_15/ACDCConverter.html#ACDCConverter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cimpy.cgmes_v2_4_15.ACDCConverter.ACDCConverter" title="Permalink to this definition"></a></dt>
 <dd><blockquote>
 <div><p>A unit with valves for three phases, together with unit control equipment, essential protective and switching devices, DC storage capacitors, phase reactors and auxiliaries, if any, used for conversion.</p>
 <dl class="field-list simple">
@@ -792,17 +704,17 @@
 </dd>
 </dl>
 </div></blockquote>
-<dl class="attribute">
-<dt id="cimpy.cgmes_v2_4_15.ACDCConverter.ACDCConverter.cgmesProfile">
-<code class="sig-name descname">cgmesProfile</code><a class="headerlink" href="#cimpy.cgmes_v2_4_15.ACDCConverter.ACDCConverter.cgmesProfile" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Profile" title="cimpy.cgmes_v2_4_15.Base.Profile"><code class="xref py py-class docutils literal notranslate"><span class="pre">cimpy.cgmes_v2_4_15.Base.Profile</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="cimpy.cgmes_v2_4_15.ACDCConverter.ACDCConverter.cgmesProfile">
+<span class="sig-name descname"><span class="pre">cgmesProfile</span></span><a class="headerlink" href="#cimpy.cgmes_v2_4_15.ACDCConverter.ACDCConverter.cgmesProfile" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="cimpy.cgmes_v2_4_15.Base.html#cimpy.cgmes_v2_4_15.Base.Profile" title="cimpy.cgmes_v2_4_15.Base.Profile"><code class="xref py py-class docutils literal notranslate"><span class="pre">Profile</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
 
-<div class="section" id="inheritance-diagram">
-<h2>Inheritance Diagram:<a class="headerlink" href="#inheritance-diagram" title="Permalink to this headline">¶</a></h2>
-<div class="graphviz"><img src="_images/inheritance-846a0314a4263a90fc9fb5435f229328aa19783a.png" alt="Inheritance diagram of cimpy.cgmes_v2_4_15.ACDCConverter" usemap="#inheritance00280c340f" class="inheritance graphviz" /></div>
+<section id="inheritance-diagram">
+<h2>Inheritance Diagram:<a class="headerlink" href="#inheritance-diagram" title="Permalink to this heading"></a></h2>
+<div class="graphviz"><img src="_images/inheritance-c8c907766d0f26c7ed973dd5c405b54261b9ebbc.png" alt="Inheritance diagram of cimpy.cgmes_v2_4_15.ACDCConverter" usemap="#inheritance00280c340f" class="inheritance graphviz" /></div>
 <map id="inheritance00280c340f" name="inheritance00280c340f">
 <area shape="rect" id="node1" href="#cimpy.cgmes_v2_4_15.ACDCConverter.ACDCConverter" target="_top" title="A unit with valves for three phases, together with unit control equipment, essential protective and switching devices, DC storage capacitors, phase reactors and auxiliaries, if any, used for conversion." alt="" coords="26,372,145,397"/>
 <area shape="rect" id="node2" href="cimpy.cgmes_v2_4_15.ConductingEquipment.html#cimpy.cgmes_v2_4_15.ConductingEquipment.ConductingEquipment" target="_top" title="The parts of the AC power system that are designed to carry current or that are conductively connected through terminals." alt="" coords="10,299,161,324"/>
@@ -810,55 +722,38 @@
 <area shape="rect" id="node6" href="cimpy.cgmes_v2_4_15.IdentifiedObject.html#cimpy.cgmes_v2_4_15.IdentifiedObject.IdentifiedObject" target="_top" title="This is a root class to provide common identification for all classes needing identification and naming attributes." alt="" coords="29,79,142,104"/>
 <area shape="rect" id="node4" href="cimpy.cgmes_v2_4_15.Equipment.html#cimpy.cgmes_v2_4_15.Equipment.Equipment" target="_top" title="The parts of a power system that are physical devices, electronic or mechanical." alt="" coords="43,225,127,251"/>
 <area shape="rect" id="node5" href="cimpy.cgmes_v2_4_15.PowerSystemResource.html#cimpy.cgmes_v2_4_15.PowerSystemResource.PowerSystemResource" target="_top" title="A power system resource can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub&#45;control area. Power system resources can have measurements associated." alt="" coords="5,152,165,177"/>
-</map></div>
-</div>
+</map></section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="cimpy.cgmes_v2_4_15.ACDCConverterDCTerminal.html" class="btn btn-neutral float-right" title="cimpy.cgmes_v2_4_15.ACDCConverterDCTerminal module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="cimpy.cgmes_v2_4_15.html" class="btn btn-neutral float-left" title="cimpy.cgmes_v2_4_15 package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cimpy.cgmes_v2_4_15.ACDCConverterDCTerminal.html" class="btn btn-neutral float-right" title="cimpy.cgmes_v2_4_15.ACDCConverterDCTerminal module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2019, ACS RWTH Aachen University.
-
-    </p>
+    <p>&#169; Copyright 2019, ACS RWTH Aachen University.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

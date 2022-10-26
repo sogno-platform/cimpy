@@ -1,72 +1,37 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Utils &mdash; cimpy  documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="cimpy Package Documentation" href="cimpy.html" />
     <link rel="prev" title="Export Example Documentation" href="Export.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> cimpy
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -74,18 +39,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Install.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Start.html">Getting Started</a><ul class="current">
@@ -106,78 +60,36 @@
 <li class="toctree-l1"><a class="reference internal" href="cimpy.html">cimpy Package Documentation</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">cimpy</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="Start.html">Getting Started</a> &raquo;</li>
-        
       <li>Utils</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/utils.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="utils">
-<h1>Utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="utils">
+<h1>Utils<a class="headerlink" href="#utils" title="Permalink to this heading"></a></h1>
 <p>This part of the package provides two basic functions to modify the imported CIM data.</p>
-<div class="section" id="convert-node-breaker-to-bus-branch">
-<h2>Convert Node-Breaker to Bus-Branch<a class="headerlink" href="#convert-node-breaker-to-bus-branch" title="Permalink to this headline">¶</a></h2>
+<section id="convert-node-breaker-to-bus-branch">
+<h2>Convert Node-Breaker to Bus-Branch<a class="headerlink" href="#convert-node-breaker-to-bus-branch" title="Permalink to this heading"></a></h2>
 <p>This function converts as the name suggests a Node-Breaker topology into a Bus-Branch topology.</p>
 <p>First we have to import the grid data. For more information see the documentation of the import function.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
@@ -203,9 +115,9 @@
 </pre></div>
 </div>
 <p>The converted grid data is stored in import_result[‘topology’]</p>
-</div>
-<div class="section" id="add-external-network-injection">
-<h2>Add external network injection<a class="headerlink" href="#add-external-network-injection" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="add-external-network-injection">
+<h2>Add external network injection<a class="headerlink" href="#add-external-network-injection" title="Permalink to this heading"></a></h2>
 <p>This function adds an external network injection to the imported grid data. First we have to import some grid data. Here we use the same data as the import example. The imported data is stored in import_example.</p>
 <p>To add the external network injection we need the mRID of either a Topological Node or a Connectivity Node.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">import_result</span> <span class="o">=</span> <span class="n">cimpy</span><span class="o">.</span><span class="n">cim_import</span><span class="p">(</span><span class="n">xml_files</span><span class="p">,</span> <span class="s2">&quot;cgmes_v2_4_15&quot;</span><span class="p">)</span>
@@ -218,55 +130,38 @@
 <span class="n">cimpy</span><span class="o">.</span><span class="n">cim_export</span><span class="p">(</span><span class="n">import_result</span><span class="p">,</span> <span class="s1">&#39;ExternalInjection&#39;</span><span class="p">,</span> <span class="s1">&#39;cgmes_v2_4_15&#39;</span><span class="p">,</span> <span class="n">activeProfileList</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="cimpy.html" class="btn btn-neutral float-right" title="cimpy Package Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="Export.html" class="btn btn-neutral float-left" title="Export Example Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cimpy.html" class="btn btn-neutral float-right" title="cimpy Package Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2019, ACS RWTH Aachen University.
-
-    </p>
+    <p>&#169; Copyright 2019, ACS RWTH Aachen University.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
