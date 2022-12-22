@@ -5,10 +5,7 @@ LABEL \
 	org.label-schema.name = "cimpy" \
 	org.label-schema.license = "Mozilla Public License Version 2.0" \
 	org.label-schema.vendor = "Institute for Automation of Complex Power Systems, RWTH Aachen University" \
-	org.label-schema.author.name = "Jan Dinkelbach" \
-	org.label-schema.author.email = "acs-software@eonerc.rwth-aachen.de" \
-	org.label-schema.vcs-url = "https://git.rwth-aachen.de/acs/public/cim/cimpy"
-
+	org.label-schema.author.name = "Jan Dinkelbach"
 
 RUN dnf -y update
 
