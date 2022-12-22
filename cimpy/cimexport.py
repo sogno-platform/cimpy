@@ -385,7 +385,7 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
             {'attr_name': 'created', 'value': datetime.now().strftime(
                 "%d/%m/%Y %H:%M:%S")},
             {'attr_name': 'modelingAuthoritySet',
-             'value': 'www.acs.eonerc.rwth-aachen.de'},
+             'value': 'www.sogno.energy'},
             {'attr_name': 'profile',
              'value': profile.long_name()}
         ]
