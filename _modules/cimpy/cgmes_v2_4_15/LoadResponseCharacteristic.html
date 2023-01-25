@@ -72,7 +72,7 @@
 
 
 <div class="viewcode-block" id="LoadResponseCharacteristic"><a class="viewcode-back" href="../../../cimpy.cgmes_v2_4_15.LoadResponseCharacteristic.html#cimpy.cgmes_v2_4_15.LoadResponseCharacteristic.LoadResponseCharacteristic">[docs]</a><span class="k">class</span> <span class="nc">LoadResponseCharacteristic</span><span class="p">(</span><span class="n">IdentifiedObject</span><span class="p">):</span>
-	<span class="sd">&#39;&#39;&#39;</span>
+<span class="w">	</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">	Models the characteristic response of the load demand due to changes in system conditions such as voltage and frequency. This is not related to demand response.  If LoadResponseCharacteristic.exponentModel is True, the voltage exponents are specified and used as to calculate:  Active power component = Pnominal * (Voltage/cim:BaseVoltage.nominalVoltage) ** cim:LoadResponseCharacteristic.pVoltageExponent  Reactive power component = Qnominal * (Voltage/cim:BaseVoltage.nominalVoltage)** cim:LoadResponseCharacteristic.qVoltageExponent  Where  * means &quot;multiply&quot; and ** is &quot;raised to power of&quot;.</span>
 
 <span class="sd">	:EnergyConsumer: The set of loads that have the response characteristics. Default: &quot;list&quot;</span>

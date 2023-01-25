@@ -72,7 +72,7 @@
 
 
 <div class="viewcode-block" id="PhaseTapChangerLinear"><a class="viewcode-back" href="../../../cimpy.cgmes_v2_4_15.PhaseTapChangerLinear.html#cimpy.cgmes_v2_4_15.PhaseTapChangerLinear.PhaseTapChangerLinear">[docs]</a><span class="k">class</span> <span class="nc">PhaseTapChangerLinear</span><span class="p">(</span><span class="n">PhaseTapChanger</span><span class="p">):</span>
-	<span class="sd">&#39;&#39;&#39;</span>
+<span class="w">	</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">	Describes a tap changer with a linear relation between the tap step and the phase angle difference across the transformer. This is a mathematical model that is an approximation of a real phase tap changer. The phase angle is computed as stepPhaseShitfIncrement times the tap position. The secondary side voltage magnitude is the same as at the primary side.</span>
 
 <span class="sd">	:stepPhaseShiftIncrement: Phase shift per step position. A positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer). The actual phase shift increment might be more accurately computed from the symmetrical or asymmetrical models or a tap step table lookup if those are available. Default: 0.0</span>
