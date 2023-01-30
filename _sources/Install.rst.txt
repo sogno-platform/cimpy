@@ -7,7 +7,7 @@ User Installation
 
 .. code-block:: bash
 
-   $ git clone https://git.rwth-aachen.de/acs/public/cim/cimpy
+   $ git clone https://github.com/sogno-platform/cimpy.git
    $ cd cimpy
    $ python setup.py install
 
@@ -22,7 +22,7 @@ Developer Installation
 
 .. code-block:: bash
 
-   $ git clone https://git.rwth-aachen.de/acs/public/cim/cimpy
+   $ git clone https://github.com/sogno-platform/cimpy.git
    $ cd cimpy
    $ python setup.py develop
 
