@@ -1,6 +1,6 @@
 import logging
 import cimpy
-from cimpy.cgmes_v2_4_15.Base import short_profile_name
+from cimpy.cgmes_v3_0_0.Base import short_profile_name
 import os
 import glob
 import pytest_check as check
@@ -23,10 +23,10 @@ def test_import():
     for file in example_dir.glob('*.xml'):
         test_files.append(str(file.absolute()))
 
-    imported_result = cimpy.cim_import(test_files, 'cgmes_v2_4_15')
+    imported_result = cimpy.cim_import(test_files, 'cgmes_v3_0_0')
 
     import_resolved = cimpy.cimexport._get_class_attributes_with_references(
-        imported_result, 'cgmes_v2_4_15')
+        imported_result, 'cgmes_v3_0_0')
 
     ref_dict_path = Path(os.path.join(os.path.dirname(
         __file__), 'CIGREMV_import_reference_cgmes_v2_4_15.p'))
