@@ -1,17 +1,19 @@
 import logging
-import cimpy
-from cimpy.cgmes_v3_0_0.Base import short_profile_name
-import os
+import os, sys
 import glob
 import pytest_check as check
 import pickle
 from pathlib import Path
+ 
+sys.path.append(os.getcwd())
+import cimpy
+from cimpy.cgmes_v3_0_0.Base import short_profile_name
 
 logging.basicConfig(filename='Test_import.log',
                     level=logging.INFO, filemode='w')
 
 example_dir = Path(os.path.join(os.path.dirname(__file__),
-                                '../cimpy/examples/sampledata/CIGRE_MV')).resolve()
+                                '../cimpy/examples/sampledata/CIM_LV_Simbench_Grid')).resolve()
 
 
 def test_import():
@@ -29,7 +31,7 @@ def test_import():
         imported_result, 'cgmes_v3_0_0')
 
     ref_dict_path = Path(os.path.join(os.path.dirname(
-        __file__), 'CIGREMV_import_reference_cgmes_v2_4_15.p'))
+        __file__), 'CIM_v3_import_reference.p1'))
     check_dict_pickle = pickle.load(open(ref_dict_path, 'rb'))
 
     for elem in import_resolved:
