@@ -19,7 +19,7 @@ class Equipment(PowerSystemResource):
 						'aggregate': [cgmesProfile.EQ.value, ],
 						'normallyInService': [cgmesProfile.EQ.value, ],
 						'EquipmentContainer': [cgmesProfile.EQ.value, cgmesProfile.EQBD.value, ],
-						'OperationalLimitSet': [cgmesProfile.EQ.value, ],
+#						'OperationalLimitSet': [cgmesProfile.EQ.value, ],
 						 }
 
 	serializationProfile = {}

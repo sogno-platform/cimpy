@@ -13,9 +13,9 @@ class Substation(EquipmentContainer):
 	cgmesProfile = EquipmentContainer.cgmesProfile
 
 	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.EQBD.value, ],
-						'DCConverterUnit': [cgmesProfile.EQ.value, ],
+#						'DCConverterUnit': [cgmesProfile.EQ.value, ],
 						'Region': [cgmesProfile.EQ.value, cgmesProfile.EQBD.value, ],
-						'VoltageLevels': [cgmesProfile.EQ.value, cgmesProfile.EQBD.value, ],
+#						'VoltageLevels': [cgmesProfile.EQ.value, cgmesProfile.EQBD.value, ],
 						 }
 
 	serializationProfile = {}
