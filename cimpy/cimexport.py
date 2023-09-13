@@ -3,11 +3,8 @@ import importlib
 import chevron
 from datetime import datetime
 from time import time
-from cimpy.cgmes_v2_4_15.Base import Profile
 import logging
 import sys
-from cimpy.cgmes_v2_4_15.Base import Base
-cgmesProfile = Base.cgmesProfile
 from pathlib import Path
 import copy
 
@@ -164,7 +161,7 @@ def _create_namespaces_list(namespaces_dict):
 # possibleProfileList dictionary the possible origins of the class/attributes is stored. All profiles have a different
 # priority which is stored in the enum cgmesProfile. As default the smallest entry in the dictionary is used to
 # determine the profile for the class/attributes.
-def _sort_classes_to_profile(class_attributes_list, activeProfileList):
+def _sort_classes_to_profile(class_attributes_list, activeProfileList, version):
     export_dict = {}
     export_about_dict = {}
 
@@ -179,6 +176,11 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
         possibleProfileList = copy.deepcopy(klass['attributes'][1]['possibleProfileList'])
 
         class_serializationProfile = ''
+
+        if version == 'cgmes_v3_0_0':
+            from cimpy.cgmes_v3_0_0.Base import Profile
+        else:
+            from cimpy.cgmes_v2_4_15.Base import Profile
 
         if 'class' in serializationProfile.keys():
             # class was imported
@@ -314,6 +316,11 @@ def cim_export(import_result, file_name, version, activeProfileList):
     t0 = time()
     logger.info('Start export procedure.')
 
+    if version == 'cgmes_v3_0_0':
+        from cimpy.cgmes_v3_0_0.Base import Profile
+    else:
+        from cimpy.cgmes_v2_4_15.Base import Profile
+
     profile_list = list(map(lambda a: Profile[a], activeProfileList))
 
     # iterate over all profiles
@@ -359,7 +366,7 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
     # the class definition and the attribute definitions are in the same profile. Every entry in about_dict generates
     # a rdf:about in another profile
     export_dict, about_dict = _sort_classes_to_profile(
-        class_attributes_list, available_profiles)
+        class_attributes_list, available_profiles, version)
 
     namespaces_list = _create_namespaces_list(
         cim_data['meta_info']['namespaces'])
