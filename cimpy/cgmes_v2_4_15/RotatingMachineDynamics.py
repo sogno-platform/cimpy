@@ -28,7 +28,7 @@ class RotatingMachineDynamics(DynamicsFunctionBlock):
 
 	__doc__ += '\n Documentation of parent class DynamicsFunctionBlock: \n' + DynamicsFunctionBlock.__doc__ 
 
-	def __init__(self, damping = 0.0, inertia = 0, saturationFactor = 0.0, saturationFactor120 = 0.0, statorLeakageReactance = 0.0, statorResistance = 0.0,  *args, **kw_args):
+	def __init__(self, damping = 0.0, inertia = 0.0, saturationFactor = 0.0, saturationFactor120 = 0.0, statorLeakageReactance = 0.0, statorResistance = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.damping = damping
