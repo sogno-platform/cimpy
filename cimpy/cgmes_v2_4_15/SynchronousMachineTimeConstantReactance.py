@@ -44,7 +44,7 @@ class SynchronousMachineTimeConstantReactance(SynchronousMachineDetailed):
 
 	__doc__ += '\n Documentation of parent class SynchronousMachineDetailed: \n' + SynchronousMachineDetailed.__doc__ 
 
-	def __init__(self, rotorType = None, modelType = None, ks = 0.0, xDirectSync = 0.0, xDirectTrans = 0.0, xDirectSubtrans = 0.0, xQuadSync = 0.0, xQuadTrans = 0.0, xQuadSubtrans = 0.0, tpdo = 0, tppdo = 0, tpqo = 0, tppqo = 0, tc = 0,  *args, **kw_args):
+	def __init__(self, rotorType = None, modelType = None, ks = 0.0, xDirectSync = 0.0, xDirectTrans = 0.0, xDirectSubtrans = 0.0, xQuadSync = 0.0, xQuadTrans = 0.0, xQuadSubtrans = 0.0, tpdo = 0.0, tppdo = 0.0, tpqo = 0.0, tppqo = 0.0, tc = 0.0,  *args, **kw_args):
 		super().__init__(*args, **kw_args)
 	
 		self.rotorType = rotorType
