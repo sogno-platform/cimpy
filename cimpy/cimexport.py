@@ -202,7 +202,7 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                 if 'class' in possibleProfileList[klass['name']].keys():
                     possibleProfileList[klass['name']]['class'].sort()
                     for klass_profile in possibleProfileList[klass['name']]['class']:
-                        if Profile(klass_profile).name in activeProfileList:
+                        if Profile(klass_profile) in activeProfileList:
                             # active profile for class export found
                             class_serializationProfile = Profile(klass_profile).name
                             break
