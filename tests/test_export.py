@@ -64,9 +64,9 @@ def read_exported_xml(directory):
 
 
 def test_export_with_exported_files(sample_cimdata, tmpdir):
-    activeProfileList = ["DL", "EQ", "SV", "TP"]
+    active_profile_list = ["DL", "EQ", "SV", "TP"]
 
-    cimpy.cim_export(sample_cimdata, tmpdir + "/EXPORTED_Test", "cgmes_v2_4_15", activeProfileList)
+    cimpy.cim_export(sample_cimdata, tmpdir + "/EXPORTED_Test", "cgmes_v2_4_15", active_profile_list)
 
     test_dict = read_ref_xml()
     export_dict = read_exported_xml(tmpdir)
@@ -90,9 +90,9 @@ def test_export_with_exported_files(sample_cimdata, tmpdir):
 
 
 def test_export_with_imported_files(sample_cimdata, tmpdir):
-    activeProfileList = ["DL", "EQ", "SSH", "SV", "TP"]
+    active_profile_list = ["DL", "EQ", "SSH", "SV", "TP"]
 
-    cimpy.cim_export(sample_cimdata, tmpdir + "/EXPORTED_Test", "cgmes_v2_4_15", activeProfileList)
+    cimpy.cim_export(sample_cimdata, tmpdir + "/EXPORTED_Test", "cgmes_v2_4_15", active_profile_list)
 
     test_dict = read_ref_xml()
     export_dict = read_exported_xml(tmpdir)
@@ -108,61 +108,61 @@ def test_export_with_imported_files(sample_cimdata, tmpdir):
                 if class_key in current_export_dict.keys():
                     current_export_class = current_export_dict[class_key]
                     current_test_class = current_test_dict[class_key]
-                    test_mRIDs = []
+                    test_mrids = []
                     test_class_dict = {}
                     if isinstance(current_test_class, list):
                         for obj in current_test_class:
                             try:
-                                test_mRIDs.append(obj["$rdf:ID"])
+                                test_mrids.append(obj["$rdf:ID"])
                                 test_class_dict[obj["$rdf:ID"]] = obj
                             except KeyError:
                                 try:
-                                    test_mRIDs.append(obj["$rdf:about"])
+                                    test_mrids.append(obj["$rdf:about"])
                                     test_class_dict[obj["$rdf:about"]] = obj
                                 except KeyError:
                                     check.is_in("$rdf:about", obj.keys())
                                     check.is_in("$rdf:ID", obj.keys())
                     else:
                         try:
-                            test_mRIDs.append(current_test_class["$rdf:ID"])
+                            test_mrids.append(current_test_class["$rdf:ID"])
                             test_class_dict[current_test_class["$rdf:ID"]] = current_test_class
                         except KeyError:
                             try:
-                                test_mRIDs.append(current_test_class["$rdf:about"])
+                                test_mrids.append(current_test_class["$rdf:about"])
                                 test_class_dict[current_test_class["$rdf:about"]] = obj
                             except KeyError:
                                 check.is_in("$rdf:about", current_test_class.keys())
                                 check.is_in("$rdf:ID", current_test_class.keys())
 
-                    export_mRIDs = []
+                    export_mrids = []
                     export_class_dict = {}
                     if isinstance(current_export_class, list):
                         for obj in current_export_class:
                             try:
-                                export_mRIDs.append(obj["$rdf:ID"])
+                                export_mrids.append(obj["$rdf:ID"])
                                 export_class_dict[obj["$rdf:ID"]] = obj
                             except KeyError:
                                 try:
-                                    export_mRIDs.append(obj["$rdf:about"])
+                                    export_mrids.append(obj["$rdf:about"])
                                     export_class_dict[obj["$rdf:about"]] = obj
                                 except KeyError:
                                     check.is_in("$rdf:about", obj.keys())
                                     check.is_in("$rdf:ID", obj.keys())
                     else:
                         try:
-                            export_mRIDs.append(current_export_class["$rdf:ID"])
+                            export_mrids.append(current_export_class["$rdf:ID"])
                             export_class_dict[current_export_class["$rdf:ID"]] = current_export_class
                         except KeyError:
                             try:
-                                export_mRIDs.append(current_export_class["$rdf:about"])
+                                export_mrids.append(current_export_class["$rdf:about"])
                                 export_class_dict[current_export_class["$rdf:about"]] = obj
                             except KeyError:
                                 check.is_in("$rdf:about", current_export_class.keys())
                                 check.is_in("$rdf:ID", current_export_class.keys())
 
-                    for mRID in test_mRIDs:
-                        check.is_in(mRID, export_mRIDs)
-                        if mRID in export_mRIDs:
+                    for mRID in test_mrids:
+                        check.is_in(mRID, export_mrids)
+                        if mRID in export_mrids:
                             test_attr = test_class_dict[mRID].items()
                             export_attr = export_class_dict[mRID].items()
                             for item in test_attr:

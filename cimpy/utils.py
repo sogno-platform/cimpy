@@ -98,14 +98,14 @@ def node_breaker_to_bus_branch(import_result):
 def add_external_network_injection(import_result, version, mRID, voltage_set_point):
     """TODO: Add documentation"""
     res = import_result["topology"]
-    TopologicalNode = ""
+    topological_node = ""
     if mRID in res:
         if "TopologicalNode" in str(type(res[mRID])):
-            TopologicalNode = res[mRID]
+            topological_node = res[mRID]
         elif "ConnectivityNode" in str(type(res[mRID])):
-            TopologicalNode = res[mRID].TopologicalNode.mRID
+            topological_node = res[mRID].TopologicalNode.mRID
 
-    if TopologicalNode != "":
+    if topological_node != "":
         i = 1
         while "Injection " + str(i) in res.keys():
             i += 1
@@ -118,7 +118,7 @@ def add_external_network_injection(import_result, version, mRID, voltage_set_poi
 
         terminal_module = importlib.import_module((module_name + "Terminal"))
         terminal_class = getattr(terminal_module, "Terminal")
-        res[terminal_name] = terminal_class(mRID=terminal_name, name=terminal_name, TopologicalNode=TopologicalNode)
+        res[terminal_name] = terminal_class(mRID=terminal_name, name=terminal_name, TopologicalNode=topological_node)
 
         regulating_control_module = importlib.import_module(module_name + "RegulatingControl")
         regulating_control_class = getattr(regulating_control_module, "RegulatingControl")

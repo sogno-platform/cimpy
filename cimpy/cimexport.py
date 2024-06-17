@@ -57,17 +57,17 @@ def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
                     # The % added before the mRID is used in the lambda _set_attribute_or_reference
                     if not hasattr(elem, "mRID"):
                         # Search for the object in the res dictionary and return the mRID
-                        UUID = "%" + _search_mRID(elem, topology)
-                        if UUID == "%":
+                        uuid = "%" + _search_mRID(elem, topology)
+                        if uuid == "%":
                             logger.warning(
                                 "Object of type %s not found as reference for object with UUID %s.",
                                 elem.__class__.__name__,
                                 mRID,
                             )
                     else:
-                        UUID = "%" + elem.mRID
+                        uuid = "%" + elem.mRID
 
-                    array.append(UUID)
+                    array.append(uuid)
                 else:
                     logger.warning("Reference object not subclass of Base class for object with UUID %s.", mRID)
             if len(array) == 1:
@@ -79,16 +79,16 @@ def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
             if not hasattr(attr_dict[key], "mRID"):
                 # Search for object in res dict and return mRID
                 # The % added before the mRID is used in the lambda _set_attribute_or_reference
-                UUID = "%" + _search_mRID(attr_dict[key], topology)
-                if UUID == "%":
+                uuid = "%" + _search_mRID(attr_dict[key], topology)
+                if uuid == "%":
                     logger.warning(
                         "Object of type %s not found as reference for object with UUID %s.",
                         attr_dict[key].__class__.__name__,
                         mRID,
                     )
             else:
-                UUID = "%" + attr_dict[key].mRID
-            attributes["value"] = UUID
+                uuid = "%" + attr_dict[key].mRID
+            attributes["value"] = uuid
         elif attr_dict[key] == "" or attr_dict[key] is None:
             pass
         else:
@@ -185,45 +185,45 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
         # Store serializationProfile and possibleProfileList
         # serializationProfile class attribute, same for multiple instances
         # of same class, only last origin of variable stored
-        serializationProfile = copy.deepcopy(klass["attributes"][0]["serializationProfile"])
-        possibleProfileList = copy.deepcopy(klass["attributes"][1]["possibleProfileList"])
+        serialization_profile = copy.deepcopy(klass["attributes"][0]["serializationProfile"])
+        possible_profile_list = copy.deepcopy(klass["attributes"][1]["possibleProfileList"])
 
-        class_serializationProfile = ""
+        class_serialization_profile = ""
 
-        if "class" in serializationProfile.keys():
+        if "class" in serialization_profile.keys():
             # Class was imported
-            if Profile[serializationProfile["class"]] in activeProfileList:
+            if Profile[serialization_profile["class"]] in activeProfileList:
                 # Else: class origin profile not active for export, get active profile from possibleProfileList
-                if Profile[serializationProfile["class"]].value in possibleProfileList[klass["name"]]["class"]:
+                if Profile[serialization_profile["class"]].value in possible_profile_list[klass["name"]]["class"]:
                     # Profile active and in possibleProfileList
                     # Else: class should not have been imported from this profile, get allowed profile
                     # from possibleProfileList
-                    class_serializationProfile = serializationProfile["class"]
+                    class_serialization_profile = serialization_profile["class"]
                 else:
                     logger.warning(
                         "Class %s was read from profile %s but this profile is not possible for this class",
                         klass["name"],
-                        serializationProfile["class"],
+                        serialization_profile["class"],
                     )
             else:
                 logger.info(
                     "Class %s was read from profile %s but this profile is not active for the export. "
                     + "Use default profile from possibleProfileList.",
                     klass["name"],
-                    serializationProfile["class"],
+                    serialization_profile["class"],
                 )
 
-        if class_serializationProfile == "":
+        if class_serialization_profile == "":
             # Class was created
-            if klass["name"] in possibleProfileList.keys():
-                if "class" in possibleProfileList[klass["name"]].keys():
-                    possibleProfileList[klass["name"]]["class"].sort()
-                    for klass_profile in possibleProfileList[klass["name"]]["class"]:
+            if klass["name"] in possible_profile_list.keys():
+                if "class" in possible_profile_list[klass["name"]].keys():
+                    possible_profile_list[klass["name"]]["class"].sort()
+                    for klass_profile in possible_profile_list[klass["name"]]["class"]:
                         if Profile(klass_profile).name in activeProfileList:
                             # Active profile for class export found
-                            class_serializationProfile = Profile(klass_profile).name
+                            class_serialization_profile = Profile(klass_profile).name
                             break
-                    if class_serializationProfile == "":
+                    if class_serialization_profile == "":
                         # No profile in possibleProfileList active
                         logger.warning(
                             "All possible export profiles for class %s not active. Skip class for export.",
@@ -245,26 +245,26 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                 if attribute_name == "mRID":
                     continue
 
-                attribute_serializationProfile = ""
+                attribute_serialization_profile = ""
 
-                if attribute_name in serializationProfile.keys():
+                if attribute_name in serialization_profile.keys():
                     # Attribute was imported
-                    if Profile[serializationProfile[attribute_name]] in activeProfileList:
-                        attr_value = Profile[serializationProfile[attribute_name]].value
-                        if attr_value in possibleProfileList[attribute_class][attribute_name]:
-                            attribute_serializationProfile = serializationProfile[attribute_name]
+                    if Profile[serialization_profile[attribute_name]] in activeProfileList:
+                        attr_value = Profile[serialization_profile[attribute_name]].value
+                        if attr_value in possible_profile_list[attribute_class][attribute_name]:
+                            attribute_serialization_profile = serialization_profile[attribute_name]
 
-                if attribute_serializationProfile == "":
+                if attribute_serialization_profile == "":
                     # Attribute was added
-                    if attribute_class in possibleProfileList.keys():
-                        if attribute_name in possibleProfileList[attribute_class].keys():
-                            possibleProfileList[attribute_class][attribute_name].sort()
-                            for attr_profile in possibleProfileList[attribute_class][attribute_name]:
+                    if attribute_class in possible_profile_list.keys():
+                        if attribute_name in possible_profile_list[attribute_class].keys():
+                            possible_profile_list[attribute_class][attribute_name].sort()
+                            for attr_profile in possible_profile_list[attribute_class][attribute_name]:
                                 if Profile(attr_profile) in activeProfileList:
                                     # Active profile for class export found
-                                    attribute_serializationProfile = Profile(attr_profile).name
+                                    attribute_serialization_profile = Profile(attr_profile).name
                                     break
-                            if attribute_serializationProfile == "":
+                            if attribute_serialization_profile == "":
                                 # No profile in possibleProfileList active, skip attribute
                                 logger.warning(
                                     "All possible export profiles for attribute %s.%s of class %s not active. "
@@ -288,25 +288,25 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                             attribute_name,
                         )
 
-                if attribute_serializationProfile == class_serializationProfile:
+                if attribute_serialization_profile == class_serialization_profile:
                     # Class and current attribute belong to same profile
                     same_package_list.append(attribute)
                 else:
                     # Class and current attribute does not belong to same profile -> rdf:about in
                     # attribute origin profile
-                    if attribute_serializationProfile in about_dict.keys():
-                        about_dict[attribute_serializationProfile].append(attribute)
+                    if attribute_serialization_profile in about_dict.keys():
+                        about_dict[attribute_serialization_profile].append(attribute)
                     else:
-                        about_dict[attribute_serializationProfile] = [attribute]
+                        about_dict[attribute_serialization_profile] = [attribute]
 
         # Add class with all attributes in the same profile to the export dict sorted by the profile
-        if class_serializationProfile in export_dict.keys():
+        if class_serialization_profile in export_dict.keys():
             export_class = dict(name=klass["name"], mRID=klass["mRID"], attributes=same_package_list)
-            export_dict[class_serializationProfile]["classes"].append(export_class)
+            export_dict[class_serialization_profile]["classes"].append(export_class)
             del export_class
         else:
             export_class = dict(name=klass["name"], mRID=klass["mRID"], attributes=same_package_list)
-            export_dict[class_serializationProfile] = {"classes": [export_class]}
+            export_dict[class_serialization_profile] = {"classes": [export_class]}
 
         # Add class with all attributes defined in another profile to the about_key sorted by the profile
         for about_key in about_dict.keys():

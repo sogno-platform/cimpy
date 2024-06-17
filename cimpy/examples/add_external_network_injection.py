@@ -22,6 +22,6 @@ import_result = cimpy.cim_import(xml_files, "cgmes_v2_4_15")
 
 import_result = cimpy.utils.add_external_network_injection(import_result, "cgmes_v2_4_15", "N1", 20.0)
 
-activeProfileList = ["DL", "EQ", "SV", "TP"]
+active_profile_list = ["DL", "EQ", "SV", "TP"]
 
-cimpy.cim_export(import_result, "ExternalInjection", "cgmes_v2_4_15", activeProfileList)
+cimpy.cim_export(import_result, "ExternalInjection", "cgmes_v2_4_15", active_profile_list)
