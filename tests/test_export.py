@@ -3,22 +3,17 @@ import cimpy
 from cimpy.cgmes_v2_4_15.Base import short_profile_name
 import xmltodict
 import os
-import glob
 import pytest_check as check
 from pathlib import Path
 import pytest
 
-logging.basicConfig(
-    filename="Test_export_with_exported_files.log", level=logging.INFO, filemode="w"
-)
+logging.basicConfig(filename="Test_export_with_exported_files.log", level=logging.INFO, filemode="w")
 
 
 @pytest.fixture
 def sample_cimdata():
     """Import the sampledata using cimpy"""
-    example_dir = Path(
-        os.path.join(os.path.dirname(__file__), "../cimpy/examples/sampledata/CIGRE_MV")
-    ).resolve()
+    example_dir = Path(os.path.join(os.path.dirname(__file__), "../cimpy/examples/sampledata/CIGRE_MV")).resolve()
     import_files = []
     for file in example_dir.glob("*.xml"):
         import_files.append(str(file.absolute()))
@@ -33,9 +28,7 @@ def read_ref_xml():
 
     for file in test_dir.glob("CIGREMV_reference*.xml"):
         xmlstring = open(file, encoding="utf8").read()
-        parsed_export_file = xmltodict.parse(
-            xmlstring, attr_prefix="$", cdata_key="_", dict_constructor=dict
-        )
+        parsed_export_file = xmltodict.parse(xmlstring, attr_prefix="$", cdata_key="_", dict_constructor=dict)
         test_list.append(parsed_export_file["rdf:RDF"])
 
     test_dict = {}
@@ -54,9 +47,7 @@ def read_exported_xml(directory):
 
     for file in test_dir.glob("*EXPORTED*.xml"):
         xmlstring = open(file, encoding="utf8").read()
-        parsed_export_file = xmltodict.parse(
-            xmlstring, attr_prefix="$", cdata_key="_", dict_constructor=dict
-        )
+        parsed_export_file = xmltodict.parse(xmlstring, attr_prefix="$", cdata_key="_", dict_constructor=dict)
         export_list.append(parsed_export_file["rdf:RDF"])
 
     export_dict = {}
@@ -75,9 +66,7 @@ def read_exported_xml(directory):
 def test_export_with_exported_files(sample_cimdata, tmpdir):
     activeProfileList = ["DL", "EQ", "SV", "TP"]
 
-    cimpy.cim_export(
-        sample_cimdata, tmpdir + "/EXPORTED_Test", "cgmes_v2_4_15", activeProfileList
-    )
+    cimpy.cim_export(sample_cimdata, tmpdir + "/EXPORTED_Test", "cgmes_v2_4_15", activeProfileList)
 
     test_dict = read_ref_xml()
     export_dict = read_exported_xml(tmpdir)
@@ -103,9 +92,7 @@ def test_export_with_exported_files(sample_cimdata, tmpdir):
 def test_export_with_imported_files(sample_cimdata, tmpdir):
     activeProfileList = ["DL", "EQ", "SSH", "SV", "TP"]
 
-    cimpy.cim_export(
-        sample_cimdata, tmpdir + "/EXPORTED_Test", "cgmes_v2_4_15", activeProfileList
-    )
+    cimpy.cim_export(sample_cimdata, tmpdir + "/EXPORTED_Test", "cgmes_v2_4_15", activeProfileList)
 
     test_dict = read_ref_xml()
     export_dict = read_exported_xml(tmpdir)
@@ -138,9 +125,7 @@ def test_export_with_imported_files(sample_cimdata, tmpdir):
                     else:
                         try:
                             test_mRIDs.append(current_test_class["$rdf:ID"])
-                            test_class_dict[
-                                current_test_class["$rdf:ID"]
-                            ] = current_test_class
+                            test_class_dict[current_test_class["$rdf:ID"]] = current_test_class
                         except KeyError:
                             try:
                                 test_mRIDs.append(current_test_class["$rdf:about"])
@@ -166,15 +151,11 @@ def test_export_with_imported_files(sample_cimdata, tmpdir):
                     else:
                         try:
                             export_mRIDs.append(current_export_class["$rdf:ID"])
-                            export_class_dict[
-                                current_export_class["$rdf:ID"]
-                            ] = current_export_class
+                            export_class_dict[current_export_class["$rdf:ID"]] = current_export_class
                         except KeyError:
                             try:
                                 export_mRIDs.append(current_export_class["$rdf:about"])
-                                export_class_dict[
-                                    current_export_class["$rdf:about"]
-                                ] = obj
+                                export_class_dict[current_export_class["$rdf:about"]] = obj
                             except KeyError:
                                 check.is_in("$rdf:about", current_export_class.keys())
                                 check.is_in("$rdf:ID", current_export_class.keys())
@@ -204,14 +185,10 @@ def test_export_with_imported_files(sample_cimdata, tmpdir):
                                     "false",
                                     "None",
                                     "list",
-                                    {
-                                        "$rdf:resource": "#_32d6d32e-c3f0-43d4-8103-079a15594fc6"
-                                    },
+                                    {"$rdf:resource": "#_32d6d32e-c3f0-43d4-8103-079a15594fc6"},
                                 ]:
                                     continue
-                                if isinstance(item[1], dict) or isinstance(
-                                    item[1], list
-                                ):
+                                if isinstance(item[1], dict) or isinstance(item[1], list):
                                     test_item = item
                                 elif len(item[1].split(".")) > 1:
                                     try:

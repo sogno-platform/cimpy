@@ -20,9 +20,7 @@ for file in sample_folder.glob("*.xml"):
 
 import_result = cimpy.cim_import(xml_files, "cgmes_v2_4_15")
 
-import_result = cimpy.utils.add_external_network_injection(
-    import_result, "cgmes_v2_4_15", "N1", 20.0
-)
+import_result = cimpy.utils.add_external_network_injection(import_result, "cgmes_v2_4_15", "N1", 20.0)
 
 activeProfileList = ["DL", "EQ", "SV", "TP"]
 

@@ -22,6 +22,4 @@ import_result = cimpy.cim_import(xml_files, "cgmes_v2_4_15")
 
 activeProfileList = ["DL", "EQ", "SV", "TP"]
 
-cimpy.cim_export(
-    import_result, "CIGREMV_reference_cgmes_v2_4_15", "cgmes_v2_4_15", activeProfileList
-)
+cimpy.cim_export(import_result, "CIGREMV_reference_cgmes_v2_4_15", "cgmes_v2_4_15", activeProfileList)

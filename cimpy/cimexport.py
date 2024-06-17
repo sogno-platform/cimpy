@@ -8,9 +8,10 @@ import logging
 import sys
 from cimpy.cgmes_v2_4_15.Base import Base
 
-cgmesProfile = Base.cgmesProfile
 from pathlib import Path
 import copy
+
+cgmesProfile = Base.cgmesProfile
 
 logger = logging.getLogger(__name__)
 
@@ -28,9 +29,7 @@ def _get_class_attributes_with_references(import_result, version):
         attributes_dict = _get_attributes(topology[key])
         # change attribute references to mRID of the object, res needed because classes like SvPowerFlow does not have
         # mRID as an attribute. Therefore the corresponding class has to be searched in the res dictionary
-        class_dict["attributes"] = _get_reference_uuid(
-            attributes_dict, version, topology, key, urls
-        )
+        class_dict["attributes"] = _get_reference_uuid(attributes_dict, version, topology, key, urls)
         class_attributes_list.append(class_dict)
         del class_dict
 
@@ -70,11 +69,7 @@ def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
 
                     array.append(UUID)
                 else:
-                    logger.warning(
-                        "Reference object not subclass of Base class for object with UUID {}.".format(
-                            mRID
-                        )
-                    )
+                    logger.warning("Reference object not subclass of Base class for object with UUID {}.".format(mRID))
             if len(array) == 1:
                 attributes["value"] = array[0]
             else:
@@ -101,9 +96,7 @@ def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
             if key.split(".")[1] in urls.keys():
                 # value in urls dict? should always be true
                 if attr_dict[key] in urls[key.split(".")[1]].keys():
-                    attributes["value"] = (
-                        "%URL%" + urls[key.split(".")[1]][attr_dict[key]]
-                    )
+                    attributes["value"] = "%URL%" + urls[key.split(".")[1]][attr_dict[key]]
                 else:
                     logger.warning(
                         "URL reference for attribute {} and value {} not found!".format(
@@ -119,9 +112,7 @@ def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
                 for reference_item in attributes["value"]:
                     # ignore default values
                     if reference_item not in ["", None, 0.0, 0]:
-                        reference_list.append(
-                            {"value": reference_item, "attr_name": key}
-                        )
+                        reference_list.append({"value": reference_item, "attr_name": key})
             # ignore default values
             elif attributes["value"] not in ["", None, 0.0, 0, "list"]:
                 reference_list.append(attributes)
@@ -194,13 +185,10 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
         about_dict = {}
 
         # store serializationProfile and possibleProfileList
-        # serializationProfile class attribute, same for multiple instances of same class, only last origin of variable stored
-        serializationProfile = copy.deepcopy(
-            klass["attributes"][0]["serializationProfile"]
-        )
-        possibleProfileList = copy.deepcopy(
-            klass["attributes"][1]["possibleProfileList"]
-        )
+        # serializationProfile class attribute, same for multiple instances
+        # of same class, only last origin of variable stored
+        serializationProfile = copy.deepcopy(klass["attributes"][0]["serializationProfile"])
+        possibleProfileList = copy.deepcopy(klass["attributes"][1]["possibleProfileList"])
 
         class_serializationProfile = ""
 
@@ -208,10 +196,7 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
             # class was imported
             if Profile[serializationProfile["class"]] in activeProfileList:
                 # else: class origin profile not active for export, get active profile from possibleProfileList
-                if (
-                    Profile[serializationProfile["class"]].value
-                    in possibleProfileList[klass["name"]]["class"]
-                ):
+                if Profile[serializationProfile["class"]].value in possibleProfileList[klass["name"]]["class"]:
                     # profile active and in possibleProfileList
                     # else: class should not have been imported from this profile, get allowed profile
                     # from possibleProfileList
@@ -225,9 +210,7 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
             else:
                 logger.info(
                     "Class {} was read from profile {} but this profile is not active for the export. Use"
-                    "default profile from possibleProfileList.".format(
-                        klass["name"], serializationProfile["class"]
-                    )
+                    "default profile from possibleProfileList.".format(klass["name"], serializationProfile["class"])
                 )
 
         if class_serializationProfile == "":
@@ -249,13 +232,9 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                         )
                         continue
                 else:
-                    logger.warning(
-                        "Class {} has no profile to export to.".format(klass["name"])
-                    )
+                    logger.warning("Class {} has no profile to export to.".format(klass["name"]))
             else:
-                logger.warning(
-                    "Class {} has no profile to export to.".format(klass["name"])
-                )
+                logger.warning("Class {} has no profile to export to.".format(klass["name"]))
 
         # iterate over attributes
         for attribute in klass["attributes"]:
@@ -271,35 +250,20 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
 
                 if attribute_name in serializationProfile.keys():
                     # attribute was imported
-                    if (
-                        Profile[serializationProfile[attribute_name]]
-                        in activeProfileList
-                    ):
+                    if Profile[serializationProfile[attribute_name]] in activeProfileList:
                         attr_value = Profile[serializationProfile[attribute_name]].value
-                        if (
-                            attr_value
-                            in possibleProfileList[attribute_class][attribute_name]
-                        ):
-                            attribute_serializationProfile = serializationProfile[
-                                attribute_name
-                            ]
+                        if attr_value in possibleProfileList[attribute_class][attribute_name]:
+                            attribute_serializationProfile = serializationProfile[attribute_name]
 
                 if attribute_serializationProfile == "":
                     # attribute was added
                     if attribute_class in possibleProfileList.keys():
-                        if (
-                            attribute_name
-                            in possibleProfileList[attribute_class].keys()
-                        ):
+                        if attribute_name in possibleProfileList[attribute_class].keys():
                             possibleProfileList[attribute_class][attribute_name].sort()
-                            for attr_profile in possibleProfileList[attribute_class][
-                                attribute_name
-                            ]:
+                            for attr_profile in possibleProfileList[attribute_class][attribute_name]:
                                 if Profile(attr_profile) in activeProfileList:
                                     # active profile for class export found
-                                    attribute_serializationProfile = Profile(
-                                        attr_profile
-                                    ).name
+                                    attribute_serializationProfile = Profile(attr_profile).name
                                     break
                             if attribute_serializationProfile == "":
                                 # no profile in possibleProfileList active, skip attribute
@@ -336,15 +300,11 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
 
         # add class with all attributes in the same profile to the export dict sorted by the profile
         if class_serializationProfile in export_dict.keys():
-            export_class = dict(
-                name=klass["name"], mRID=klass["mRID"], attributes=same_package_list
-            )
+            export_class = dict(name=klass["name"], mRID=klass["mRID"], attributes=same_package_list)
             export_dict[class_serializationProfile]["classes"].append(export_class)
             del export_class
         else:
-            export_class = dict(
-                name=klass["name"], mRID=klass["mRID"], attributes=same_package_list
-            )
+            export_class = dict(name=klass["name"], mRID=klass["mRID"], attributes=same_package_list)
             export_dict[class_serializationProfile] = {"classes": [export_class]}
 
         # add class with all attributes defined in another profile to the about_key sorted by the profile
@@ -376,12 +336,13 @@ def cim_export(import_result, file_name, version, activeProfileList):
     a reference to another class object or not.
 
     :param import_result: a dictionary containing the topology and meta information. The topology can be extracted via \
-    :func:`~cimpy.cimimport.cim_import()`. The topology dictionary contains all objects accessible via their mRID. The meta \
-    information can be extracted via import_result['meta_info']. The meta_info dictionary contains a new dictionary with \
-    the keys: 'author', 'namespaces' and 'urls'. The last two are also dictionaries. 'urls' contains a mapping \
-    between references to URLs and the extracted value of the URL, e.g. 'absoluteValue': \
-    'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue' These mappings are accessible \
-    via the name of the attribute, e.g. import_result['meta_info']['urls'}[attr_name] = {mapping like example above}. \
+    :func:`~cimpy.cimimport.cim_import()`. The topology dictionary contains all objects accessible via their mRID. \
+    The meta information can be extracted via import_result['meta_info']. The meta_info dictionary contains a new \
+    dictionary with the keys: 'author', 'namespaces' and 'urls'. The last two are also dictionaries. \
+    'urls' contains a mapping between references to URLs and the extracted value of the URL, e.g. 'absoluteValue': \
+    'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue' These mappings are \
+    accessible via the name of the attribute, \
+    e.g. import_result['meta_info']['urls'}[attr_name] = {mapping like example above}. \
     'namespaces' is a dictionary containing all RDF namespaces used in the imported xml files.
     :param file_name: a string with the name of the xml files which will be created
     :param version: cgmes version, e.g. version = "cgmes_v2_4_15"
@@ -400,9 +361,7 @@ def cim_export(import_result, file_name, version, activeProfileList):
         full_file_name = file_name + "_" + profile.long_name() + ".xml"
 
         if not os.path.exists(full_file_name):
-            output = generate_xml(
-                import_result, version, file_name, profile, profile_list
-            )
+            output = generate_xml(import_result, version, file_name, profile, profile_list)
 
             with open(full_file_name, "w") as file:
                 logger.info('Write file "%s"', full_file_name)
@@ -428,7 +387,8 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
 
     This function serializes cgmes classes with the template engine chevron and returns them as a string.
 
-    :param cim_data: a dictionary containing the topology and meta information. It can be created via :func:`~cimpy.cimimport.cim_import()`
+    :param cim_data: a dictionary containing the topology and meta information. It can be created via \
+    :func:`~cimpy.cimimport.cim_import()`
     :param version: cgmes version, e.g.  ``version="cgmes_v2_4_15"``
     :param profile: The :class:`~cimpy.cgmes_v2_4_15.Base.Profile` for which the serialization should be generated.
     :param model_name: a string with the name of the model.
@@ -441,9 +401,7 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
     # determine class and attribute export profiles. The export dict contains all classes and their attributes where
     # the class definition and the attribute definitions are in the same profile. Every entry in about_dict generates
     # a rdf:about in another profile
-    export_dict, about_dict = _sort_classes_to_profile(
-        class_attributes_list, available_profiles
-    )
+    export_dict, about_dict = _sort_classes_to_profile(class_attributes_list, available_profiles)
 
     namespaces_list = _create_namespaces_list(cim_data["meta_info"]["namespaces"])
 
@@ -481,9 +439,7 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
             {"attr_name": "profile", "value": profile.long_name()},
         ],
     }
-    template_path = Path(
-        os.path.join(os.path.dirname(__file__), "export_template.mustache")
-    ).resolve()
+    template_path = Path(os.path.join(os.path.dirname(__file__), "export_template.mustache")).resolve()
     with open(template_path) as f:
         output = chevron.render(
             f,
@@ -514,9 +470,7 @@ def _get_attributes(class_object):
         class_type = type(parent)
 
     # dictionary containing all attributes with key: 'Class_Name.Attribute_Name'
-    attributes_dict = dict(
-        serializationProfile=class_object.serializationProfile, possibleProfileList={}
-    )
+    attributes_dict = dict(serializationProfile=class_object.serializationProfile, possibleProfileList={})
 
     # __dict__ of a subclass returns also the attributes of the parent classes
     # to avoid multiple attributes create list with all attributes already processed
@@ -541,8 +495,6 @@ def _get_attributes(class_object):
         # the serializationProfile from parent classes is not needed because entries in the serializationProfile
         # are only generated for the inherited class
         if class_name != "Base":
-            attributes_dict["possibleProfileList"][
-                class_name
-            ] = parent_class.possibleProfileList
+            attributes_dict["possibleProfileList"][class_name] = parent_class.possibleProfileList
 
     return attributes_dict

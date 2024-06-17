@@ -2,8 +2,6 @@ from lxml import etree
 from time import time
 import importlib
 import logging
-import os
-import cimpy
 
 logger = logging.getLogger(__name__)
 
@@ -21,13 +19,14 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
     :param start_dict: a list of classes which indicates which classes will be read
         e.g. elements=["BaseVoltage", "ACLineSegment"]
         * If start_dict=None the complete file will be read
-    :return: import_result: a dictionary containing the topology and meta information. The topology can be extracted via \
-    import_result['topology']. The topology dictionary contains all objects accessible via their mRID. The meta \
-    information can be extracted via import_result['meta_info']. The meta_info dictionary contains a new dictionary with \
-    the keys: 'author', 'namespaces' and 'urls'. The last two are also dictionaries. 'urls' contains a mapping \
+    :return: import_result: a dictionary containing the topology and meta information.The topology can be extracted \
+    via import_result['topology']. The topology dictionary contains all objects accessible via their mRID. The meta \
+    information can be extracted via import_result['meta_info']. The meta_info dictionary contains a new dictionary \
+    with the keys: 'author', 'namespaces' and 'urls'. The last two are also dictionaries. 'urls' contains a mapping \
     between references to URLs and the extracted value of the URL, e.g. 'absoluteValue': \
-    'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue' These mappings are accessible \
-    via the name of the attribute, e.g. import_result['meta_info']['urls'}[attr_name] = {mapping like example above}. \
+    'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue' These mappings are \
+    accessible via the name of the attribute, \
+    e.g. import_result['meta_info']['urls'}[attr_name] = {mapping like example above}. \
     'namespaces' is a dictionary containing all RDF namespaces used in the imported xml files.
     """
 
@@ -41,9 +40,7 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
     logger_grouped = dict(errors={}, info={})
 
     # create a dict which will contain meta information and the topology
-    import_result = (
-        start_dict if start_dict is not None else dict(meta_info={}, topology={})
-    )
+    import_result = start_dict if start_dict is not None else dict(meta_info={}, topology={})
 
     # create sub-dictionaries
     import_result["meta_info"] = dict(namespaces=_get_namespaces(xml_files[0]), urls={})
@@ -61,9 +58,7 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
         logger_grouped,
     )
 
-    import_result, logger_grouped = _set_attributes(
-        import_result, xml_files, namespace_rdf, base, logger_grouped
-    )
+    import_result, logger_grouped = _set_attributes(import_result, xml_files, namespace_rdf, base, logger_grouped)
 
     if logger_grouped["errors"]:
         for error, count in logger_grouped["errors"].items():
@@ -79,17 +74,9 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
             print(logging_message)
 
     elapsed_time = time() - t0
-    logger.info(
-        "Created totally {} CIM objects in {}s\n\n".format(
-            len(import_result["topology"]), elapsed_time
-        )
-    )
+    logger.info("Created totally {} CIM objects in {}s\n\n".format(len(import_result["topology"]), elapsed_time))
     # print info of how many classes in total were instantiated to terminal
-    print(
-        "Created totally {} CIM objects in {}s".format(
-            len(import_result["topology"]), elapsed_time
-        )
-    )
+    print("Created totally {} CIM objects in {}s".format(len(import_result["topology"]), elapsed_time))
 
     return import_result
 
@@ -99,9 +86,7 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
 # are set in the _set_attributes function because some attributes might be stored in one package and the class in
 # another. Since after this function all classes are instantiated, there should be no problem in setting the attributes.
 # Also the information from which package file a class was read is stored in the serializationProfile dictionary.
-def _instantiate_classes(
-    import_result, xml_files, cgmes_version_path, namespace_rdf, base, logger_grouped
-):
+def _instantiate_classes(import_result, xml_files, cgmes_version_path, namespace_rdf, base, logger_grouped):
 
     # extract topology from import_result
     topology = import_result["topology"]
@@ -158,9 +143,7 @@ def _instantiate_classes(
                     # Instantiate the class and map it to the uuid.
                     # res[uuid] = klass(UUID=uuid)
                     topology[uuid] = klass()
-                    info_msg = "CIM object {} created".format(
-                        module_name.split(".")[-1]
-                    )
+                    info_msg = "CIM object {} created".format(module_name.split(".")[-1])
                     try:
                         logger_grouped["info"][info_msg] += 1
                     except KeyError:
@@ -172,13 +155,9 @@ def _instantiate_classes(
                         topology[uuid].mRID = uuid
 
                     if package != "":
-                        topology[uuid].serializationProfile[
-                            "class"
-                        ] = short_package_name[package]
+                        topology[uuid].serializationProfile["class"] = short_package_name[package]
                     else:
-                        error_msg = "Package information not found for class {}".format(
-                            klass.__class__.__name__
-                        )
+                        error_msg = "Package information not found for class {}".format(klass.__class__.__name__)
                         try:
                             logger_grouped["errors"][error_msg] += 1
                         except KeyError:
@@ -245,9 +224,7 @@ def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_groupe
                     try:
                         obj = topology[uuid]
                     except KeyError:
-                        error_msg = "Missing {} object with uuid: {}".format(
-                            elem.tag[m:], uuid
-                        )
+                        error_msg = "Missing {} object with uuid: {}".format(elem.tag[m:], uuid)
                         try:
                             logger_grouped["errors"][error_msg] += 1
                         except KeyError:
@@ -285,9 +262,7 @@ def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_groupe
                                     # Convert value type using the default value.
                                     try:
                                         typ = type(getattr(obj, attr))
-                                        if isinstance(
-                                            getattr(obj, attr), bool
-                                        ):  # if typ==<class 'bool'>
+                                        if isinstance(getattr(obj, attr), bool):  # if typ==<class 'bool'>
                                             # The function bool("false") returns True,
                                             # because it is called upon non-empty string!
                                             # This means that it wrongly reads "false" value as boolean True.
@@ -308,9 +283,7 @@ def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_groupe
                                     # Use the '#' prefix to distinguish between references and enumerations.
                                     if uuid2[0] == "#":  # reference
                                         try:
-                                            val = topology[
-                                                uuid2[1:]
-                                            ]  # remove '#' prefix
+                                            val = topology[uuid2[1:]]  # remove '#' prefix
                                         except KeyError:
                                             error_msg = "Referenced {} [{}] object missing.".format(
                                                 obj.__class__.__name__, uuid2[1:]
@@ -338,8 +311,11 @@ def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_groupe
                                             pass
                                         else:
                                             # note here
-                                            error_msg = "Multiplicity Error for class {} [{}], attribute {}. Multiplicity should be 1..1 or 0..1".format(
-                                                obj.__class__.__name__, uuid, attr
+                                            error_msg = (
+                                                "Multiplicity Error for class {} [{}], attribute {}. ".format(
+                                                    obj.__class__.__name__, uuid, attr
+                                                )
+                                                + "Multiplicity should be 1..1 or 0..1"
                                             )
                                             try:
                                                 logger_grouped["errors"][error_msg] += 1
@@ -347,21 +323,13 @@ def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_groupe
                                                 logger_grouped["errors"][error_msg] = 1
 
                                         if hasattr(val, obj.__class__.__name__):
-                                            default1 = getattr(
-                                                val, obj.__class__.__name__
-                                            )
+                                            default1 = getattr(val, obj.__class__.__name__)
                                             if default1 is None:
-                                                setattr(
-                                                    val, obj.__class__.__name__, obj
-                                                )
+                                                setattr(val, obj.__class__.__name__, obj)
                                             elif default1 == "list":  # many
-                                                setattr(
-                                                    val, obj.__class__.__name__, [obj]
-                                                )
+                                                setattr(val, obj.__class__.__name__, [obj])
                                             elif isinstance(default1, list):  # many
-                                                attribute2 = getattr(
-                                                    val, obj.__class__.__name__
-                                                )
+                                                attribute2 = getattr(val, obj.__class__.__name__)
                                                 if obj not in attribute2:
                                                     attribute2.append(obj)
                                                     setattr(
@@ -372,44 +340,34 @@ def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_groupe
                                             elif default1 == obj:
                                                 pass
                                             else:
-                                                error_msg = "Multiplicity Error for class {} [{}], attribute {}. Multiplicity should be 1..1 or 0..1".format(
-                                                    val.__class__.__name__,
-                                                    uuid2[1:],
-                                                    obj.__class__.__name__,
+                                                error_msg = (
+                                                    "Multiplicity Error for class {} [{}], attribute {}. ".format(
+                                                        val.__class__.__name__,
+                                                        uuid2[1:],
+                                                        obj.__class__.__name__,
+                                                    )
+                                                    + "Multiplicity should be 1..1 or 0..1"
                                                 )
                                                 try:
-                                                    logger_grouped["errors"][
-                                                        error_msg
-                                                    ] += 1
+                                                    logger_grouped["errors"][error_msg] += 1
                                                 except KeyError:
-                                                    logger_grouped["errors"][
-                                                        error_msg
-                                                    ] = 1
+                                                    logger_grouped["errors"][error_msg] = 1
 
                                     else:  # enum
                                         # if http in uuid2 reference to URL, create mapping
                                         if "http" in uuid2:
                                             if attr in urls.keys():
-                                                if (
-                                                    uuid2.rsplit(".", 1)[1]
-                                                    not in urls[attr].keys()
-                                                ):
-                                                    urls[attr][
-                                                        uuid2.rsplit(".", 1)[1]
-                                                    ] = uuid2
+                                                if uuid2.rsplit(".", 1)[1] not in urls[attr].keys():
+                                                    urls[attr][uuid2.rsplit(".", 1)[1]] = uuid2
                                             else:
-                                                urls[attr] = {
-                                                    uuid2.rsplit(".", 1)[1]: uuid2
-                                                }
+                                                urls[attr] = {uuid2.rsplit(".", 1)[1]: uuid2}
 
                                             # url_reference_dict[uuid2.rsplit(".", 1)[1]] = uuid2
                                         val = uuid2.rsplit(".", 1)[1]
                                         setattr(obj, attr, val)
 
                                 if package != "":
-                                    obj.serializationProfile[attr] = short_package_name[
-                                        package
-                                    ]
+                                    obj.serializationProfile[attr] = short_package_name[package]
                                 else:
                                     error_msg = "Package information not found for class {}, attribute {}".format(
                                         obj.__class__.__name__, attr

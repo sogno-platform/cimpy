@@ -63,12 +63,8 @@ def node_breaker_to_bus_branch(import_result):
             continue
         if "ConnectivityNode" in str(type(res[diagram_object].IdentifiedObject)):
             if res[diagram_object].IdentifiedObject.TopologicalNode is not None:
-                keep_diagram.append(
-                    res[diagram_object].IdentifiedObject.TopologicalNode
-                )
-        elif res[diagram_object].IdentifiedObject.mRID in (
-            open_breakers + del_terminals_list
-        ):
+                keep_diagram.append(res[diagram_object].IdentifiedObject.TopologicalNode)
+        elif res[diagram_object].IdentifiedObject.mRID in (open_breakers + del_terminals_list):
             del_diagram_object.append(diagram_object)
 
     del_diagram_object_points = []
@@ -119,16 +115,10 @@ def add_external_network_injection(import_result, version, mRID, voltage_set_poi
 
         terminal_module = importlib.import_module((module_name + "Terminal"))
         terminal_class = getattr(terminal_module, "Terminal")
-        res[terminal_name] = terminal_class(
-            mRID=terminal_name, name=terminal_name, TopologicalNode=TopologicalNode
-        )
+        res[terminal_name] = terminal_class(mRID=terminal_name, name=terminal_name, TopologicalNode=TopologicalNode)
 
-        regulating_control_module = importlib.import_module(
-            module_name + "RegulatingControl"
-        )
-        regulating_control_class = getattr(
-            regulating_control_module, "RegulatingControl"
-        )
+        regulating_control_module = importlib.import_module(module_name + "RegulatingControl")
+        regulating_control_class = getattr(regulating_control_module, "RegulatingControl")
         res[reg_name] = regulating_control_class(
             mRID=reg_name,
             name=reg_name,
@@ -136,12 +126,8 @@ def add_external_network_injection(import_result, version, mRID, voltage_set_poi
             Terminal=res[terminal_name],
         )
 
-        network_injection_module = importlib.import_module(
-            module_name + "ExternalNetworkInjection"
-        )
-        network_injection_class = getattr(
-            network_injection_module, "ExternalNetworkInjection"
-        )
+        network_injection_module = importlib.import_module(module_name + "ExternalNetworkInjection")
+        network_injection_class = getattr(network_injection_module, "ExternalNetworkInjection")
         res[inj_name] = network_injection_class(
             mRID=inj_name,
             name=inj_name,

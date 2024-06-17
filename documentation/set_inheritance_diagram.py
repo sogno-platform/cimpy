@@ -1,7 +1,7 @@
 from os import remove
 import os
 from tempfile import mkstemp
-from shutil import move, copy
+from shutil import move
 
 directory = os.path.abspath(os.path.join("..", "documentation"))
 
