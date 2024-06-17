@@ -62,14 +62,14 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
 
     if logger_grouped["errors"]:
         for error, count in logger_grouped["errors"].items():
-            logger.warning("{} : {} times".format(error, count))
+            logger.warning("%s: %d times", error, count)
 
     if logger_grouped["info"]:
         for info, count in logger_grouped["info"].items():
-            logger.info("{} : {} times".format(info, count))
+            logger.info("%s: %d times", info, count)
 
     elapsed_time = time() - t0
-    logger.info("Created totally {} CIM objects in {}s\n\n".format(len(import_result["topology"]), elapsed_time))
+    logger.info("Created totally %s CIM objects in %.2f s\n\n", len(import_result["topology"]), elapsed_time)
 
     return import_result
 
@@ -383,7 +383,7 @@ def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_groupe
             # Clear children of the root element to minimise memory usage.
             root.clear()
 
-        logger.info('END of parsing file "{}"'.format(xml_file))
+        logger.info('END of parsing file "{}"', xml_file)
     return import_result, logger_grouped
 
 
@@ -411,7 +411,7 @@ def _get_rdf_namespace(namespaces):
         namespace = namespaces["rdf"]
     except KeyError:
         ns = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-        logger.warning("No rdf namespace found. Using %s" % ns)
+        logger.warning("No rdf namespace found. Using %s", ns)
 
     return namespace
 

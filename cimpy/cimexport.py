@@ -60,16 +60,16 @@ def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
                         UUID = "%" + _search_mRID(elem, topology)
                         if UUID == "%":
                             logger.warning(
-                                "Object of type {} not found as reference for object with UUID {}.".format(
-                                    elem.__class__.__name__, mRID
-                                )
+                                "Object of type %s not found as reference for object with UUID %s.",
+                                elem.__class__.__name__,
+                                mRID,
                             )
                     else:
                         UUID = "%" + elem.mRID
 
                     array.append(UUID)
                 else:
-                    logger.warning("Reference object not subclass of Base class for object with UUID {}.".format(mRID))
+                    logger.warning("Reference object not subclass of Base class for object with UUID %s.", mRID)
             if len(array) == 1:
                 attributes["value"] = array[0]
             else:
@@ -82,9 +82,9 @@ def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
                 UUID = "%" + _search_mRID(attr_dict[key], topology)
                 if UUID == "%":
                     logger.warning(
-                        "Object of type {} not found as reference for object with UUID {}.".format(
-                            attr_dict[key].__class__.__name__, mRID
-                        )
+                        "Object of type %s not found as reference for object with UUID %s.",
+                        attr_dict[key].__class__.__name__,
+                        mRID,
                     )
             else:
                 UUID = "%" + attr_dict[key].mRID
@@ -99,9 +99,7 @@ def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
                     attributes["value"] = "%URL%" + urls[key.split(".")[1]][attr_dict[key]]
                 else:
                     logger.warning(
-                        "URL reference for attribute {} and value {} not found!".format(
-                            key.split(".")[1], attr_dict[key]
-                        )
+                        "URL reference for attribute %s and value %s not found!", key.split(".")[1], attr_dict[key]
                     )
             else:
                 attributes["value"] = attr_dict[key]
@@ -203,14 +201,16 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                     class_serializationProfile = serializationProfile["class"]
                 else:
                     logger.warning(
-                        "Class {} was read from profile {} but this profile is not possible for this class".format(
-                            klass["name"], serializationProfile["class"]
-                        )
+                        "Class %s was read from profile %s but this profile is not possible for this class",
+                        klass["name"],
+                        serializationProfile["class"],
                     )
             else:
                 logger.info(
-                    "Class {} was read from profile {} but this profile is not active for the export. Use"
-                    "default profile from possibleProfileList.".format(klass["name"], serializationProfile["class"])
+                    "Class %s was read from profile %s but this profile is not active for the export. "
+                    + "Use default profile from possibleProfileList.",
+                    klass["name"],
+                    serializationProfile["class"],
                 )
 
         if class_serializationProfile == "":
@@ -226,15 +226,14 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                     if class_serializationProfile == "":
                         # no profile in possibleProfileList active
                         logger.warning(
-                            "All possible export profiles for class {} not active. Skip class for export.".format(
-                                klass["name"]
-                            )
+                            "All possible export profiles for class %s not active. Skip class for export.",
+                            klass["name"],
                         )
                         continue
                 else:
-                    logger.warning("Class {} has no profile to export to.".format(klass["name"]))
+                    logger.warning("Class %s has no profile to export to.", klass["name"])
             else:
-                logger.warning("Class {} has no profile to export to.".format(klass["name"]))
+                logger.warning("Class %s has no profile to export to.", klass["name"])
 
         # iterate over attributes
         for attribute in klass["attributes"]:
@@ -268,23 +267,25 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                             if attribute_serializationProfile == "":
                                 # no profile in possibleProfileList active, skip attribute
                                 logger.warning(
-                                    "All possible export profiles for attribute {}.{} of class {} "
-                                    "not active. Skip attribute for export.".format(
-                                        attribute_class, attribute_name, klass["name"]
-                                    )
+                                    "All possible export profiles for attribute %s.%s of class %s not active. "
+                                    + "Skip attribute for export.",
+                                    attribute_class,
+                                    attribute_name,
+                                    klass["name"],
                                 )
                                 continue
                         else:
                             logger.warning(
-                                "Attribute {}.{} of class {} has no profile to export to.".format(
-                                    attribute_class, attribute_name, klass["name"]
-                                )
+                                "Attribute %s.%s of class %s has no profile to export to.",
+                                attribute_class,
+                                attribute_name,
+                                klass["name"],
                             )
                     else:
                         logger.warning(
-                            "The class {} for attribute {} is not in the possibleProfileList".format(
-                                attribute_class, attribute_name
-                            )
+                            "The class %s for attribute %s is not in the possibleProfileList",
+                            attribute_class,
+                            attribute_name,
                         )
 
                 if attribute_serializationProfile == class_serializationProfile:
@@ -369,12 +370,11 @@ def cim_export(import_result, file_name, version, activeProfileList):
                 file.write(output)
         else:
             logger.error(
-                "File {} already exists. Delete file or change file name to serialize CGMES "
-                "classes.".format(full_file_name)
+                "File %s already exists. Delete file or change file name to serialize CGMES classes.", full_file_name
             )
             exit(-1)
 
-    logger.info("End export procedure. Elapsed time: {}".format(time() - t0))
+    logger.info("End export procedure. Elapsed time: %s", time() - t0)
 
 
 def generate_xml(cim_data, version, model_name, profile, available_profiles):
