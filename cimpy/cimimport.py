@@ -62,21 +62,14 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
 
     if logger_grouped["errors"]:
         for error, count in logger_grouped["errors"].items():
-            logging_message = "{} : {} times".format(error, count)
-            logger.warning(logging_message)
+            logger.warning("{} : {} times".format(error, count))
 
     if logger_grouped["info"]:
         for info, count in logger_grouped["info"].items():
-            logging_message = "{} : {} times".format(info, count)
-            logger.info(logging_message)
-
-            # print info which classes and how many were instantiated
-            print(logging_message)
+            logger.info("{} : {} times".format(info, count))
 
     elapsed_time = time() - t0
     logger.info("Created totally {} CIM objects in {}s\n\n".format(len(import_result["topology"]), elapsed_time))
-    # print info of how many classes in total were instantiated to terminal
-    print("Created totally {} CIM objects in {}s".format(len(import_result["topology"]), elapsed_time))
 
     return import_result
 

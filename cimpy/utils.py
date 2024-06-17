@@ -1,4 +1,7 @@
+import logging
 import importlib
+
+logger = logging.getLogger(__name__)
 
 
 def node_breaker_to_bus_branch(import_result):
@@ -139,7 +142,7 @@ def add_external_network_injection(import_result, version, mRID, voltage_set_poi
         res[terminal_name].ConductingEquipment = res[inj_name]
         res[terminal_name].RegulatingControl = res[reg_name]
     else:
-        print("No Terminal with mRID ", mRID, " found in object list!")
+        logger.warning("No Terminal with mRID %s found in object list!", mRID)
 
     import_result["topology"] = res
 

@@ -1,15 +1,15 @@
-import os
-import importlib
-import chevron
 from datetime import datetime
+from pathlib import Path
 from time import time
-from cimpy.cgmes_v2_4_15.Base import Profile
+import chevron
+import copy
+import importlib
 import logging
-import sys
+import os
+
+from cimpy.cgmes_v2_4_15.Base import Profile
 from cimpy.cgmes_v2_4_15.Base import Base
 
-from pathlib import Path
-import copy
 
 cgmesProfile = Base.cgmesProfile
 
@@ -371,11 +371,6 @@ def cim_export(import_result, file_name, version, activeProfileList):
             logger.error(
                 "File {} already exists. Delete file or change file name to serialize CGMES "
                 "classes.".format(full_file_name)
-            )
-            print(
-                "[ERROR:] File {} already exists. Delete file or change file name to serialize CGMES "
-                "classes.".format(full_file_name),
-                file=sys.stderr,
             )
             exit(-1)
 
