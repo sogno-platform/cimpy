@@ -36,13 +36,13 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
     # Start the clock.
     t0 = time()
 
-    # map used to group errors and infos
+    # Map used to group errors and infos
     logger_grouped = dict(errors={}, info={})
 
-    # create a dict which will contain meta information and the topology
+    # Create a dict which will contain meta information and the topology
     import_result = start_dict if start_dict is not None else dict(meta_info={}, topology={})
 
-    # create sub-dictionaries
+    # Create sub-dictionaries
     import_result["meta_info"] = dict(namespaces=_get_namespaces(xml_files[0]), urls={})
     namespace_rdf = _get_rdf_namespace(import_result["meta_info"]["namespaces"])
 
@@ -81,12 +81,13 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
 # Also the information from which package file a class was read is stored in the serializationProfile dictionary.
 def _instantiate_classes(import_result, xml_files, cgmes_version_path, namespace_rdf, base, logger_grouped):
 
-    # extract topology from import_result
+    # Extract topology from import_result
     topology = import_result["topology"]
 
-    # length of element tag base
+    # Length of element tag base
     m = len(base)
-    # first step: create the dict res{uuid}=instance_of_the_cim_class
+
+    # First step: create the dict res{uuid}=instance_of_the_cim_class
     for xml_file in xml_files:
 
         logger.info('START of parsing file "%s"', xml_file)
@@ -95,7 +96,7 @@ def _instantiate_classes(import_result, xml_files, cgmes_version_path, namespace
         if hasattr(xml_file, "seek"):
             xml_file.seek(0)
 
-        # get an iterable
+        # Get an iterable
         context = etree.iterparse(xml_file, ("start", "end"))
 
         # Turn it into an iterator (required for cElementTree).
@@ -111,9 +112,9 @@ def _instantiate_classes(import_result, xml_files, cgmes_version_path, namespace
             # Process 'end' elements in the CGMES namespace.
             if event == "end" and elem.tag[:m] == base:
 
-                # check if the element has the attribute "rdf:ID" --> CGMES class located
+                # Check if the element has the attribute "rdf:ID" --> CGMES class located
                 uuid = elem.get("{%s}ID" % namespace_rdf)
-                if uuid is not None:  # cim class
+                if uuid is not None:  # CIM class
                     # Element tag without namespace (e.g. VoltageLevel).
                     tag = elem.tag[m:]
                     try:
@@ -142,7 +143,7 @@ def _instantiate_classes(import_result, xml_files, cgmes_version_path, namespace
                     except KeyError:
                         logger_grouped["info"][info_msg] = 1
 
-                    # check if the class has the attribute mRID and set the mRID to the read in UUID. If the class
+                    # Check if the class has the attribute mRID and set the mRID to the read in UUID. If the class
                     # does not has this attribute, the UUID is only stored in the res dictionary.
                     if hasattr(topology[uuid], "mRID"):
                         topology[uuid].mRID = uuid
@@ -163,10 +164,12 @@ def _instantiate_classes(import_result, xml_files, cgmes_version_path, namespace
                         if package_key in elem.text:
                             package = package_key
                             break
-                # the author of all imported files should be the same, avoid multiple entries
+
+                # The author of all imported files should be the same, avoid multiple entries
                 elif "author" in import_result["meta_info"].keys():
                     pass
-                # extract author
+
+                # Extract author
                 elif "Model.createdBy" in elem.tag:
                     import_result["meta_info"]["author"] = elem.text
                 elif "Model.modelingAuthoritySet" in elem.tag:
@@ -191,7 +194,7 @@ def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_groupe
     # Second step pass sets attributes and references.
     for xml_file in xml_files:
 
-        # get an iterable and turn it into an iterator (required for cElementTree).
+        # Get an iterable and turn it into an iterator (required for cElementTree).
         context = iter(etree.iterparse(xml_file, ("start", "end")))
 
         # Reset stream
@@ -292,18 +295,18 @@ def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_groupe
                                         if default is None:  # 1..1 or 0..1
                                             # Rely on properties to set any bi-directional references.
                                             setattr(obj, attr, val)
-                                        elif default == "list":  # many
+                                        elif default == "list":  # Many
                                             setattr(obj, attr, [val])
-                                        elif isinstance(default, list):  # many
+                                        elif isinstance(default, list):  # Many
                                             attribute = getattr(obj, attr)
                                             if val not in attribute:
                                                 attribute.append(val)
                                                 setattr(obj, attr, attribute)
                                         elif default == val:
-                                            # attribute reference already resolved
+                                            # Attribute reference already resolved
                                             pass
                                         else:
-                                            # note here
+                                            # Note here
                                             error_msg = (
                                                 "Multiplicity Error for class {} [{}], attribute {}. ".format(
                                                     obj.__class__.__name__, uuid, attr
@@ -319,9 +322,9 @@ def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_groupe
                                             default1 = getattr(val, obj.__class__.__name__)
                                             if default1 is None:
                                                 setattr(val, obj.__class__.__name__, obj)
-                                            elif default1 == "list":  # many
+                                            elif default1 == "list":  # Many
                                                 setattr(val, obj.__class__.__name__, [obj])
-                                            elif isinstance(default1, list):  # many
+                                            elif isinstance(default1, list):  # Many
                                                 attribute2 = getattr(val, obj.__class__.__name__)
                                                 if obj not in attribute2:
                                                     attribute2.append(obj)
@@ -346,7 +349,7 @@ def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_groupe
                                                 except KeyError:
                                                     logger_grouped["errors"][error_msg] = 1
 
-                                    else:  # enum
+                                    else:  # Enum
                                         # if http in uuid2 reference to URL, create mapping
                                         if "http" in uuid2:
                                             if attr in urls.keys():

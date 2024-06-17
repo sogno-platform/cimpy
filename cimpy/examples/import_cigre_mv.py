@@ -6,7 +6,7 @@ logging.basicConfig(filename="importCIGREMV.log", level=logging.INFO, filemode="
 
 example = Path(__file__).resolve().parent
 
-# called as cimpy.examples.import_example() or file run from quickstart directory?
+# Called as cimpy.examples.import_example() or file run from quickstart directory?
 if "cimexamples.py" in str(__file__):
     sample_folder = example / "examples" / "sampledata" / "CIGRE_MV"
 else:

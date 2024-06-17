@@ -6,7 +6,7 @@ logging.basicConfig(filename="Convert_to_Bus_Branch.log", level=logging.INFO, fi
 
 example = Path(__file__).resolve().parent
 
-# called as cimpy.examples.convertBusBranch() or file run from quickstart directory?
+# Called as cimpy.examples.convertBusBranch() or file run from quickstart directory?
 if "cimexamples.py" in str(__file__):
     sample_folder = example / "examples" / "sampledata" / "Sample_Grid_Switches" / "Node-Breaker"
 else:

@@ -19,15 +19,15 @@ logger = logging.getLogger(__name__)
 # This function gets all attributes of an object and resolves references to other objects
 def _get_class_attributes_with_references(import_result, version):
     class_attributes_list = []
-    # extract topology and urls
+    # Extract topology and urls
     topology = import_result["topology"]
     urls = import_result["meta_info"]["urls"]
     for key in topology.keys():
         class_dict = dict(name=topology[key].__class__.__name__)
         class_dict["mRID"] = key
-        # array containing all attributes, attribute references to objects
+        # Array containing all attributes, attribute references to objects
         attributes_dict = _get_attributes(topology[key])
-        # change attribute references to mRID of the object, res needed because classes like SvPowerFlow does not have
+        # Change attribute references to mRID of the object, res needed because classes like SvPowerFlow does not have
         # mRID as an attribute. Therefore the corresponding class has to be searched in the res dictionary
         class_dict["attributes"] = _get_reference_uuid(attributes_dict, version, topology, key, urls)
         class_attributes_list.append(class_dict)
@@ -48,15 +48,15 @@ def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
             continue
 
         attributes = {}
-        if isinstance(attr_dict[key], list):  # many
+        if isinstance(attr_dict[key], list):  # Many
             array = []
             for elem in attr_dict[key]:
                 if issubclass(type(elem), base_class):
-                    # classes like SvVoltage does not have an attribute called mRID, the mRID is only stored as a key
+                    # Classes like SvVoltage does not have an attribute called mRID, the mRID is only stored as a key
                     # for this object in the res dictionary
                     # The % added before the mRID is used in the lambda _set_attribute_or_reference
                     if not hasattr(elem, "mRID"):
-                        # search for the object in the res dictionary and return the mRID
+                        # Search for the object in the res dictionary and return the mRID
                         UUID = "%" + _search_mRID(elem, topology)
                         if UUID == "%":
                             logger.warning(
@@ -77,7 +77,7 @@ def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
         elif issubclass(type(attr_dict[key]), base_class):  # 0..1, 1..1
             # resource = key + ' rdf:resource='
             if not hasattr(attr_dict[key], "mRID"):
-                # search for object in res dict and return mRID
+                # Search for object in res dict and return mRID
                 # The % added before the mRID is used in the lambda _set_attribute_or_reference
                 UUID = "%" + _search_mRID(attr_dict[key], topology)
                 if UUID == "%":
@@ -92,9 +92,9 @@ def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
         elif attr_dict[key] == "" or attr_dict[key] is None:
             pass
         else:
-            # attribute in urls dict?
+            # Attribute in urls dict?
             if key.split(".")[1] in urls.keys():
-                # value in urls dict? should always be true
+                # Value in urls dict? should always be true
                 if attr_dict[key] in urls[key.split(".")[1]].keys():
                     attributes["value"] = "%URL%" + urls[key.split(".")[1]][attr_dict[key]]
                 else:
@@ -108,10 +108,10 @@ def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
         if "value" in attributes.keys():
             if isinstance(attributes["value"], list):
                 for reference_item in attributes["value"]:
-                    # ignore default values
+                    # Ignore default values
                     if reference_item not in ["", None, 0.0, 0]:
                         reference_list.append({"value": reference_item, "attr_name": key})
-            # ignore default values
+            # Ignore default values
             elif attributes["value"] not in ["", None, 0.0, 0, "list"]:
                 reference_list.append(attributes)
 
@@ -177,12 +177,12 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
     export_dict = {}
     export_about_dict = {}
 
-    # iterate over classes
+    # Iterate over classes
     for klass in class_attributes_list:
         same_package_list = []
         about_dict = {}
 
-        # store serializationProfile and possibleProfileList
+        # Store serializationProfile and possibleProfileList
         # serializationProfile class attribute, same for multiple instances
         # of same class, only last origin of variable stored
         serializationProfile = copy.deepcopy(klass["attributes"][0]["serializationProfile"])
@@ -191,12 +191,12 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
         class_serializationProfile = ""
 
         if "class" in serializationProfile.keys():
-            # class was imported
+            # Class was imported
             if Profile[serializationProfile["class"]] in activeProfileList:
-                # else: class origin profile not active for export, get active profile from possibleProfileList
+                # Else: class origin profile not active for export, get active profile from possibleProfileList
                 if Profile[serializationProfile["class"]].value in possibleProfileList[klass["name"]]["class"]:
-                    # profile active and in possibleProfileList
-                    # else: class should not have been imported from this profile, get allowed profile
+                    # Profile active and in possibleProfileList
+                    # Else: class should not have been imported from this profile, get allowed profile
                     # from possibleProfileList
                     class_serializationProfile = serializationProfile["class"]
                 else:
@@ -214,17 +214,17 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                 )
 
         if class_serializationProfile == "":
-            # class was created
+            # Class was created
             if klass["name"] in possibleProfileList.keys():
                 if "class" in possibleProfileList[klass["name"]].keys():
                     possibleProfileList[klass["name"]]["class"].sort()
                     for klass_profile in possibleProfileList[klass["name"]]["class"]:
                         if Profile(klass_profile).name in activeProfileList:
-                            # active profile for class export found
+                            # Active profile for class export found
                             class_serializationProfile = Profile(klass_profile).name
                             break
                     if class_serializationProfile == "":
-                        # no profile in possibleProfileList active
+                        # No profile in possibleProfileList active
                         logger.warning(
                             "All possible export profiles for class %s not active. Skip class for export.",
                             klass["name"],
@@ -235,7 +235,7 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
             else:
                 logger.warning("Class %s has no profile to export to.", klass["name"])
 
-        # iterate over attributes
+        # Iterate over attributes
         for attribute in klass["attributes"]:
             if "attr_name" in attribute.keys():
                 attribute_class = attribute["attr_name"].split(".")[0]
@@ -248,24 +248,24 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                 attribute_serializationProfile = ""
 
                 if attribute_name in serializationProfile.keys():
-                    # attribute was imported
+                    # Attribute was imported
                     if Profile[serializationProfile[attribute_name]] in activeProfileList:
                         attr_value = Profile[serializationProfile[attribute_name]].value
                         if attr_value in possibleProfileList[attribute_class][attribute_name]:
                             attribute_serializationProfile = serializationProfile[attribute_name]
 
                 if attribute_serializationProfile == "":
-                    # attribute was added
+                    # Attribute was added
                     if attribute_class in possibleProfileList.keys():
                         if attribute_name in possibleProfileList[attribute_class].keys():
                             possibleProfileList[attribute_class][attribute_name].sort()
                             for attr_profile in possibleProfileList[attribute_class][attribute_name]:
                                 if Profile(attr_profile) in activeProfileList:
-                                    # active profile for class export found
+                                    # Active profile for class export found
                                     attribute_serializationProfile = Profile(attr_profile).name
                                     break
                             if attribute_serializationProfile == "":
-                                # no profile in possibleProfileList active, skip attribute
+                                # No profile in possibleProfileList active, skip attribute
                                 logger.warning(
                                     "All possible export profiles for attribute %s.%s of class %s not active. "
                                     + "Skip attribute for export.",
@@ -289,17 +289,17 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                         )
 
                 if attribute_serializationProfile == class_serializationProfile:
-                    # class and current attribute belong to same profile
+                    # Class and current attribute belong to same profile
                     same_package_list.append(attribute)
                 else:
-                    # class and current attribute does not belong to same profile -> rdf:about in
+                    # Class and current attribute does not belong to same profile -> rdf:about in
                     # attribute origin profile
                     if attribute_serializationProfile in about_dict.keys():
                         about_dict[attribute_serializationProfile].append(attribute)
                     else:
                         about_dict[attribute_serializationProfile] = [attribute]
 
-        # add class with all attributes in the same profile to the export dict sorted by the profile
+        # Add class with all attributes in the same profile to the export dict sorted by the profile
         if class_serializationProfile in export_dict.keys():
             export_class = dict(name=klass["name"], mRID=klass["mRID"], attributes=same_package_list)
             export_dict[class_serializationProfile]["classes"].append(export_class)
@@ -308,7 +308,7 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
             export_class = dict(name=klass["name"], mRID=klass["mRID"], attributes=same_package_list)
             export_dict[class_serializationProfile] = {"classes": [export_class]}
 
-        # add class with all attributes defined in another profile to the about_key sorted by the profile
+        # Add class with all attributes defined in another profile to the about_key sorted by the profile
         for about_key in about_dict.keys():
             if about_key in export_about_dict.keys():
                 export_about_class = dict(
@@ -355,7 +355,7 @@ def cim_export(import_result, file_name, version, activeProfileList):
 
     profile_list = list(map(lambda a: Profile[a], activeProfileList))
 
-    # iterate over all profiles
+    # Iterate over all profiles
     for profile in profile_list:
 
         # File name
@@ -390,10 +390,10 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
     :param available_profiles: a list of all :class:`~cimpy.cgmes_v2_4_15.Base.Profile`s in `cim_data`
     """
 
-    # returns all classes with their attributes and resolved references
+    # Returns all classes with their attributes and resolved references
     class_attributes_list = _get_class_attributes_with_references(cim_data, version)
 
-    # determine class and attribute export profiles. The export dict contains all classes and their attributes where
+    # Determine class and attribute export profiles. The export dict contains all classes and their attributes where
     # the class definition and the attribute definitions are in the same profile. Every entry in about_dict generates
     # a rdf:about in another profile
     export_dict, about_dict = _sort_classes_to_profile(class_attributes_list, available_profiles)
@@ -411,7 +411,7 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
             + "."
         )
 
-    # extract class lists from export_dict and about_dict
+    # Extract class lists from export_dict and about_dict
     if profile.name in export_dict.keys():
         classes = export_dict[profile.name]["classes"]
     else:
@@ -457,27 +457,27 @@ def _get_attributes(class_object):
     class_type = type(class_object)
     parent = class_object
 
-    # get parent classes
+    # Get parent classes
     while "Base.Base" not in str(class_type):
         parent = parent.__class__.__bases__[0]()
-        # insert parent class at beginning of list, classes inherit from top to bottom
+        # Insert parent class at beginning of list, classes inherit from top to bottom
         inheritance_list.insert(0, parent)
         class_type = type(parent)
 
-    # dictionary containing all attributes with key: 'Class_Name.Attribute_Name'
+    # Dictionary containing all attributes with key: 'Class_Name.Attribute_Name'
     attributes_dict = dict(serializationProfile=class_object.serializationProfile, possibleProfileList={})
 
     # __dict__ of a subclass returns also the attributes of the parent classes
     # to avoid multiple attributes create list with all attributes already processed
     attributes_list = []
 
-    # iterate over parent classes from top to bottom
+    # Iterate over parent classes from top to bottom
     for parent_class in inheritance_list:
-        # get all attributes of the current parent class
+        # Get all attributes of the current parent class
         parent_attributes_dict = parent_class.__dict__
         class_name = parent_class.__class__.__name__
 
-        # check if new attribute or old attribute
+        # Check if new attribute or old attribute
         for key in parent_attributes_dict.keys():
             if key not in attributes_list:
                 attributes_list.append(key)
@@ -486,7 +486,7 @@ def _get_attributes(class_object):
             else:
                 continue
 
-        # get all possibleProfileLists from all parent classes except the Base class (no attributes)
+        # Get all possibleProfileLists from all parent classes except the Base class (no attributes)
         # the serializationProfile from parent classes is not needed because entries in the serializationProfile
         # are only generated for the inherited class
         if class_name != "Base":

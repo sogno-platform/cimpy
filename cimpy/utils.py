@@ -31,14 +31,14 @@ def node_breaker_to_bus_branch(import_result):
         elif class_name == "ConnectivityNode":
             connect_nodes.append(mRID)
 
-    # search for open breakers
+    # Search for open breakers
     open_breakers = []
     for breaker in breaker_list:
         if res[breaker].open:
             if not res[breaker].retained:
                 open_breakers.append(breaker)
 
-    # check terminals for reference to open breakers and delete references to Connectivity Nodes
+    # Check terminals for reference to open breakers and delete references to Connectivity Nodes
     del_terminals_list = []
     for terminal in terminals_list:
         cond_eq = res[terminal].ConductingEquipment
@@ -47,7 +47,7 @@ def node_breaker_to_bus_branch(import_result):
         else:
             res[terminal].ConnectivityNode = None
 
-    # check for OperationalLimitSet with references to deleted Terminals
+    # Check for OperationalLimitSet with references to deleted Terminals
     del_operationallimitset = []
     for operational_limit in operational_limit_set_list:
         if res[operational_limit].Terminal.mRID in del_terminals_list:
