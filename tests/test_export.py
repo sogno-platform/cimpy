@@ -160,11 +160,11 @@ def test_export_with_imported_files(sample_cimdata, tmpdir):
                                 check.is_in("$rdf:about", current_export_class.keys())
                                 check.is_in("$rdf:ID", current_export_class.keys())
 
-                    for mRID in test_mrids:
-                        check.is_in(mRID, export_mrids)
-                        if mRID in export_mrids:
-                            test_attr = test_class_dict[mRID].items()
-                            export_attr = export_class_dict[mRID].items()
+                    for id in test_mrids:
+                        check.is_in(id, export_mrids)
+                        if id in export_mrids:
+                            test_attr = test_class_dict[id].items()
+                            export_attr = export_class_dict[id].items()
                             for item in test_attr:
                                 if item[0] in [
                                     "cim:NameType",

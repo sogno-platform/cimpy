@@ -14,22 +14,22 @@ def node_breaker_to_bus_branch(import_result):
     diagram_objects_list = []
     diagram_object_points_list = []
     connect_nodes = []
-    for mRID in res.keys():
-        class_name = res[mRID].__class__.__name__
+    for id in res.keys():
+        class_name = res[id].__class__.__name__
         if class_name == "Breaker":
-            breaker_list.append(mRID)
+            breaker_list.append(id)
         elif class_name == "OperationalLimitSet":
-            operational_limit_set_list.append(mRID)
+            operational_limit_set_list.append(id)
         elif class_name == "Terminal":
-            terminals_list.append(mRID)
+            terminals_list.append(id)
         elif class_name == "VoltageLimit":
-            voltage_limit_list.append(mRID)
+            voltage_limit_list.append(id)
         elif class_name == "DiagramObject":
-            diagram_objects_list.append(mRID)
+            diagram_objects_list.append(id)
         elif class_name == "DiagramObjectPoint":
-            diagram_object_points_list.append(mRID)
+            diagram_object_points_list.append(id)
         elif class_name == "ConnectivityNode":
-            connect_nodes.append(mRID)
+            connect_nodes.append(id)
 
     # Search for open breakers
     open_breakers = []

@@ -121,9 +121,9 @@ def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
 # This function searches a class_object in the res dictionary and returns the corresponding key (the mRID). Necessary
 # for classes without mRID as attribute like SvVoltage
 def _search_mRID(class_object, topology):
-    for mRID, class_obj in topology.items():
+    for id, class_obj in topology.items():
         if class_object == class_obj:
-            return mRID
+            return id
     return ""
 
 

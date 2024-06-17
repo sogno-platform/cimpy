@@ -386,7 +386,7 @@ def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_groupe
             # Clear children of the root element to minimise memory usage.
             root.clear()
 
-        logger.info('END of parsing file "{}"', xml_file)
+        logger.info('END of parsing file "%s"', xml_file)
     return import_result, logger_grouped
 
 
