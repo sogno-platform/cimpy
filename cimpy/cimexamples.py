@@ -4,26 +4,26 @@ from pathlib import Path
 def import_example():
     """TODO: Add documentation"""
     base = Path(__file__).resolve().parent
-    example = base / "examples" / "importCIGREMV.py"
+    example = base / "examples" / "import_cigre_mv.py"
     exec(open(example).read())
 
 
 def export_example():
     """TODO: Add documentation"""
     base = Path(__file__).resolve().parent
-    example = base / "examples" / "exportCIGREMV.py"
+    example = base / "examples" / "export_cigre_mv.py"
     exec(open(example).read())
 
 
-def convertToBusBranch_example():
+def convert_to_bus_branch_example():
     """TODO: Add documentation"""
     base = Path(__file__).resolve().parent
-    example = base / "examples" / "convertToBusBranch.py"
+    example = base / "examples" / "convert_to_bus_branch.py"
     exec(open(example).read())
 
 
-def addExternalNetworkInjection_example():
+def add_external_network_injection_example():
     """TODO: Add documentation"""
     base = Path(__file__).resolve().parent
-    example = base / "examples" / "addExternalNetworkInjection.py"
+    example = base / "examples" / "add_external_network_injection.py"
     exec(open(example).read())
