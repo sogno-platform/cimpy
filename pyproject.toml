@@ -1,2 +1,52 @@
+[project]
+name = "cimpy"
+version = "1.0.2"
+description = "Python package for import, modification and export of CIM grid data"
+authors = [
+    {name="Institute for Automation of Complex Power Systems"},
+    {name="OPAL-RT Technologies"}
+]
+readme = "README.md"
+keywords = ["cim", "cgmes"]
+
+dependencies = [
+    "lxml",
+    "xmltodict",
+    "chevron",
+]
+
+requires-python = ">=3.8"
+
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+
+  "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11"
+]
+
+[project.urls]
+Homepage = "https://sogno.energy/cimpy/"
+Documentation = "https://sogno.energy/cimpy/"
+Repository = "https://github.com/sogno-platform/cimpy"
+Issues = "https://github.com/sogno-platform/cimpy/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-check"
+]
+
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+
 [tool.black]
 line-length = 120
