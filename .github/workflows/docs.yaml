@@ -1,0 +1,61 @@
+name: Documentation
+
+on:
+  pull_request:
+
+  push:
+    branches:
+      - master
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.8
+
+      - name: Install Graphviz
+        shell: bash
+        run: |
+          sudo apt-get -y install graphviz
+
+      - name: Install Python dependencies
+        run: |
+          pip install .[doc]
+
+      - name: Build documentation
+        working-directory: documentation
+        run: |
+          sphinx-apidoc \
+            --full \
+            --doc-project "cimpy" \
+            --separate \
+            --output-dir "." \
+            "../"
+
+          python3 set_inheritance_diagram.py
+
+          make html
+
+          touch _build/html/.nojekyll
+
+          ls -l _build/html
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: documentation/_build/html
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/master'
+        uses: actions/deploy-pages@v4

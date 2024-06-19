@@ -9,13 +9,13 @@ User Installation
 
    $ git clone https://github.com/sogno-platform/cimpy.git
    $ cd cimpy
-   $ python setup.py install
+   $ python3 -m pip install .
 
 or
 
 .. code-block:: bash
 
-   $ pip install cimpy
+   $ python3 -m pip install cimpy
 
 Developer Installation
 ----------------------
@@ -24,10 +24,19 @@ Developer Installation
 
    $ git clone https://github.com/sogno-platform/cimpy.git
    $ cd cimpy
-   $ python setup.py develop
+   $ python3 -m pip install -e .[dev]
 
 or
 
 .. code-block:: bash
 
-   $ pip install --pre cimpy
+   $ python3 -m pip install --pre cimpy
+
+
+Building a distributable package
+--------------------------------
+
+.. code-block:: bash
+
+   $ python3 -m pip install --upgrade build
+   $ python3 -m build
