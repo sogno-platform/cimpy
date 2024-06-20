@@ -19,8 +19,8 @@ sys.path.insert(0, os.path.abspath("../"))
 # -- Project information -----------------------------------------------------
 
 project = "cimpy"
-copyright = "2019, ACS RWTH Aachen University"
-author = "Author"
+copyright = "2019-2024, ACS RWTH Aachen University"
+author = "The CIMpy authors"
 
 
 # -- General configuration ---------------------------------------------------
