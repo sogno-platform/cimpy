@@ -13,7 +13,7 @@ The documentation provides instructions on CIMpy's installation, getting started
 
 ## License
 
-This project is released under the terms of the [Mozilla Public License Version 2.0](./LICENSE).
+This project is released under the terms of the [Apache License 2.0](./LICENSE).
 
 ## Publication
 
