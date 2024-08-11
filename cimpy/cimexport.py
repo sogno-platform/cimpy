@@ -7,6 +7,7 @@ import importlib
 import logging
 import os
 from cimpy.cgmes_v2_4_15.CGMESProfile import Profile
+from cimpy.cgmes_v2_4_15.CGMESProfile import profile_uris
 
 
 logger = logging.getLogger(__name__)
@@ -427,9 +428,11 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
                 "value": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
             },
             {"attr_name": "modelingAuthoritySet", "value": "www.sogno.energy"},
-            {"attr_name": "profile", "value": profile.long_name()},
         ],
     }
+    for uri in profile_uris[profile.name]:
+        model_description["description"].append({"attr_name": "profile", "value": uri})
+
     template_path = Path(os.path.join(os.path.dirname(__file__), "export_template.mustache")).resolve()
     with open(template_path) as f:
         output = chevron.render(
