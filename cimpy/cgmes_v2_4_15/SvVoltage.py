@@ -1,36 +1,35 @@
 from .Base import Base
+from .CGMESProfile import Profile
 
 
 class SvVoltage(Base):
-	'''
-	State variable for voltage.
+    """
+    State variable for voltage.
 
-	:angle: The voltage angle of the topological node complex voltage with respect to system reference. Default: 0.0
-	:v: The voltage magnitude of the topological node. Default: 0.0
-	:TopologicalNode: The state voltage associated with the topological node. Default: None
-		'''
+    :TopologicalNode: The state voltage associated with the topological node. Default: None
+    :angle: The voltage angle of the topological node complex voltage with respect to system reference. Default: 0.0
+    :v: The voltage magnitude of the topological node. Default: 0.0
+    """
 
-	cgmesProfile = Base.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.SV.value, ],
+        "TopologicalNode": [Profile.SV.value, ],
+        "angle": [Profile.SV.value, ],
+        "v": [Profile.SV.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.SV.value, ],
-						'angle': [cgmesProfile.SV.value, ],
-						'v': [cgmesProfile.SV.value, ],
-						'TopologicalNode': [cgmesProfile.SV.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
 
-	
+    def __init__(self, TopologicalNode = None, angle = 0.0, v = 0.0):
 
-	def __init__(self, angle = 0.0, v = 0.0, TopologicalNode = None,  ):
-	
-		self.angle = angle
-		self.v = v
-		self.TopologicalNode = TopologicalNode
-		
-	def __str__(self):
-		str = 'class=SvVoltage\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+        self.TopologicalNode = TopologicalNode
+        self.angle = angle
+        self.v = v
+
+    def __str__(self):
+        str = "class=SvVoltage\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str

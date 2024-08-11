@@ -1,29 +1,29 @@
 from .EnergyConsumer import EnergyConsumer
+from .CGMESProfile import Profile
 
 
 class StationSupply(EnergyConsumer):
-	'''
-	Station supply with load derived from the station output.
+    """
+    Station supply with load derived from the station output.
 
-		'''
+    """
 
-	cgmesProfile = EnergyConsumer.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.EQ.value, Profile.SSH.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.SSH.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
+    __doc__ += "\nDocumentation of parent class EnergyConsumer:\n" + EnergyConsumer.__doc__
 
-	__doc__ += '\n Documentation of parent class EnergyConsumer: \n' + EnergyConsumer.__doc__ 
+    def __init__(self, *args, **kw_args):
+        super().__init__(*args, **kw_args)
 
-	def __init__(self,  *args, **kw_args):
-		super().__init__(*args, **kw_args)
-	
-		pass
-	
-	def __str__(self):
-		str = 'class=StationSupply\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+        pass
+
+    def __str__(self):
+        str = "class=StationSupply\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str

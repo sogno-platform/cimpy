@@ -1,28 +1,27 @@
 from .Base import Base
+from .CGMESProfile import Profile
 
 
 class ExcREXSFeedbackSignalKind(Base):
-	'''
-	Type of rate feedback signals.
+    """
+    Type of rate feedback signals.
 
-		'''
+    """
 
-	cgmesProfile = Base.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.DY.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
 
-	
+    def __init__(self):
 
-	def __init__(self,  ):
-	
-		pass
-	
-	def __str__(self):
-		str = 'class=ExcREXSFeedbackSignalKind\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+        pass
+
+    def __str__(self):
+        str = "class=ExcREXSFeedbackSignalKind\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str

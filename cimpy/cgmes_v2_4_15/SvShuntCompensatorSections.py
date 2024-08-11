@@ -1,33 +1,32 @@
 from .Base import Base
+from .CGMESProfile import Profile
 
 
 class SvShuntCompensatorSections(Base):
-	'''
-	State variable for the number of sections in service for a shunt compensator.
+    """
+    State variable for the number of sections in service for a shunt compensator.
 
-	:sections: The number of sections in service as a continous variable. To get integer value scale with ShuntCompensator.bPerSection. Default: 0.0
-	:ShuntCompensator: The shunt compensator for which the state applies. Default: None
-		'''
+    :ShuntCompensator: The shunt compensator for which the state applies. Default: None
+    :sections: The number of sections in service as a continous variable. To get integer value scale with ShuntCompensator.bPerSection. Default: 0.0
+    """
 
-	cgmesProfile = Base.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.SV.value, ],
+        "ShuntCompensator": [Profile.SV.value, ],
+        "sections": [Profile.SV.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.SV.value, ],
-						'sections': [cgmesProfile.SV.value, ],
-						'ShuntCompensator': [cgmesProfile.SV.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
 
-	
+    def __init__(self, ShuntCompensator = None, sections = 0.0):
 
-	def __init__(self, sections = 0.0, ShuntCompensator = None,  ):
-	
-		self.sections = sections
-		self.ShuntCompensator = ShuntCompensator
-		
-	def __str__(self):
-		str = 'class=SvShuntCompensatorSections\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+        self.ShuntCompensator = ShuntCompensator
+        self.sections = sections
+
+    def __str__(self):
+        str = "class=SvShuntCompensatorSections\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str

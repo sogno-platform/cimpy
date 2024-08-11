@@ -1,31 +1,31 @@
 from .DynamicsFunctionBlock import DynamicsFunctionBlock
+from .CGMESProfile import Profile
 
 
 class PFVArControllerType2Dynamics(DynamicsFunctionBlock):
-	'''
-	Power Factor or VAr controller Type II function block whose behaviour is described by reference to a standard model
+    """
+    Power Factor or VAr controller Type II function block whose behaviour is described by reference to a standard model
 
-	:ExcitationSystemDynamics: Excitation system model with which this Power Factor or VAr controller Type II is associated. Default: None
-		'''
+    :ExcitationSystemDynamics: Excitation system model with which this Power Factor or VAr controller Type II is associated. Default: None
+    """
 
-	cgmesProfile = DynamicsFunctionBlock.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.DY.value, ],
+        "ExcitationSystemDynamics": [Profile.DY.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.DY.value, ],
-						'ExcitationSystemDynamics': [cgmesProfile.DY.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
+    __doc__ += "\nDocumentation of parent class DynamicsFunctionBlock:\n" + DynamicsFunctionBlock.__doc__
 
-	__doc__ += '\n Documentation of parent class DynamicsFunctionBlock: \n' + DynamicsFunctionBlock.__doc__ 
+    def __init__(self, ExcitationSystemDynamics = None, *args, **kw_args):
+        super().__init__(*args, **kw_args)
 
-	def __init__(self, ExcitationSystemDynamics = None,  *args, **kw_args):
-		super().__init__(*args, **kw_args)
-	
-		self.ExcitationSystemDynamics = ExcitationSystemDynamics
-		
-	def __str__(self):
-		str = 'class=PFVArControllerType2Dynamics\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+        self.ExcitationSystemDynamics = ExcitationSystemDynamics
+
+    def __str__(self):
+        str = "class=PFVArControllerType2Dynamics\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str

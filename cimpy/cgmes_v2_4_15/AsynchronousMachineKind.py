@@ -1,28 +1,27 @@
 from .Base import Base
+from .CGMESProfile import Profile
 
 
 class AsynchronousMachineKind(Base):
-	'''
-	Kind of Asynchronous Machine.
+    """
+    Kind of Asynchronous Machine.
 
-		'''
+    """
 
-	cgmesProfile = Base.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.SSH.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.SSH.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
 
-	
+    def __init__(self):
 
-	def __init__(self,  ):
-	
-		pass
-	
-	def __str__(self):
-		str = 'class=AsynchronousMachineKind\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+        pass
+
+    def __str__(self):
+        str = "class=AsynchronousMachineKind\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str

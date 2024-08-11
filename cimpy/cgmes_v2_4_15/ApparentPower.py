@@ -1,36 +1,35 @@
 from .Base import Base
+from .CGMESProfile import Profile
 
 
 class ApparentPower(Base):
-	'''
-	Product of the RMS value of the voltage and the RMS value of the current.
+    """
+    Product of the RMS value of the voltage and the RMS value of the current.
 
-	:value:  Default: 0.0
-	:unit:  Default: None
-	:multiplier:  Default: None
-		'''
+    :multiplier:  Default: None
+    :unit:  Default: None
+    :value:  Default: 0.0
+    """
 
-	cgmesProfile = Base.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.DY.value, Profile.EQ.value, ],
+        "multiplier": [Profile.DY.value, Profile.EQ.value, ],
+        "unit": [Profile.DY.value, Profile.EQ.value, ],
+        "value": [Profile.DY.value, Profile.EQ.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.DY.value, ],
-						'value': [cgmesProfile.EQ.value, cgmesProfile.DY.value, ],
-						'unit': [cgmesProfile.EQ.value, cgmesProfile.DY.value, ],
-						'multiplier': [cgmesProfile.EQ.value, cgmesProfile.DY.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
 
-	
+    def __init__(self, multiplier = None, unit = None, value = 0.0):
 
-	def __init__(self, value = 0.0, unit = None, multiplier = None,  ):
-	
-		self.value = value
-		self.unit = unit
-		self.multiplier = multiplier
-		
-	def __str__(self):
-		str = 'class=ApparentPower\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+        self.multiplier = multiplier
+        self.unit = unit
+        self.value = value
+
+    def __str__(self):
+        str = "class=ApparentPower\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str
