@@ -1,6 +1,6 @@
 import logging
 import cimpy
-from cimpy.cgmes_v2_4_15.Base import short_profile_name
+from cimpy.cgmes_v2_4_15.CGMESProfile import short_profile_name
 import xmltodict
 import os
 import pytest_check as check

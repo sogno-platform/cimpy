@@ -6,12 +6,8 @@ import copy
 import importlib
 import logging
 import os
+from cimpy.cgmes_v2_4_15.CGMESProfile import Profile
 
-from cimpy.cgmes_v2_4_15.Base import Profile
-from cimpy.cgmes_v2_4_15.Base import Base
-
-
-cgmesProfile = Base.cgmesProfile
 
 logger = logging.getLogger(__name__)
 
