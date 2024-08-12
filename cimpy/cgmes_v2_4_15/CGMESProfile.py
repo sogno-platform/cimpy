@@ -24,36 +24,36 @@ long_profile_name = {
     "TP": "Topology",
     "TP_BD": "TopologyBoundary",
 }
-profile_uris = {
+profile_uris = {  # Those are strings, not real addresses, hence the NOSONAR.
     "EQ": [
-        "http://entsoe.eu/CIM/EquipmentCore/3/1",
-        "http://entsoe.eu/CIM/EquipmentOperation/3/1",
-        "http://entsoe.eu/CIM/EquipmentShortCircuit/3/1",
+        "http://entsoe.eu/CIM/EquipmentCore/3/1",  # NOSONAR
+        "http://entsoe.eu/CIM/EquipmentOperation/3/1",  # NOSONAR
+        "http://entsoe.eu/CIM/EquipmentShortCircuit/3/1",  # NOSONAR
     ],
     "DL": [
-        "http://entsoe.eu/CIM/DiagramLayout/3/1",
+        "http://entsoe.eu/CIM/DiagramLayout/3/1",  # NOSONAR
     ],
     "DY": [
-        "http://entsoe.eu/CIM/Dynamics/3/1",
+        "http://entsoe.eu/CIM/Dynamics/3/1",  # NOSONAR
     ],
     "EQ_BD": [
-        "http://entsoe.eu/CIM/EquipmentBoundary/3/1",
-        "http://entsoe.eu/CIM/EquipmentBoundaryOperation/3/1",
+        "http://entsoe.eu/CIM/EquipmentBoundary/3/1",  # NOSONAR
+        "http://entsoe.eu/CIM/EquipmentBoundaryOperation/3/1",  # NOSONAR
     ],
     "GL": [
-        "http://entsoe.eu/CIM/GeographicalLocation/2/1",
+        "http://entsoe.eu/CIM/GeographicalLocation/2/1",  # NOSONAR
     ],
     "SSH": [
-        "http://entsoe.eu/CIM/SteadyStateHypothesis/1/1",
+        "http://entsoe.eu/CIM/SteadyStateHypothesis/1/1",  # NOSONAR
     ],
     "SV": [
-        "http://entsoe.eu/CIM/StateVariables/4/1",
+        "http://entsoe.eu/CIM/StateVariables/4/1",  # NOSONAR
     ],
     "TP": [
-        "http://entsoe.eu/CIM/Topology/4/1",
+        "http://entsoe.eu/CIM/Topology/4/1",  # NOSONAR
     ],
     "TP_BD": [
-        "http://entsoe.eu/CIM/TopologyBoundary/3/1",
+        "http://entsoe.eu/CIM/TopologyBoundary/3/1",  # NOSONAR
     ],
 }
 
@@ -74,9 +74,12 @@ class Profile(Enum):
     def long_name(self):
         return long_profile_name[self.name]
 
+    def uris(self):
+        return profile_uris[self.name]
+
     @classmethod
     def from_long_name(cls, long_name):
         return cls[short_profile_name[long_name]]
 
 
-cim_namespace = "http://iec.ch/TC57/2013/CIM-schema-cim16#"
+cim_namespace = "http://iec.ch/TC57/2013/CIM-schema-cim16#"  # NOSONAR
