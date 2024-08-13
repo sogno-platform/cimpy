@@ -2,6 +2,7 @@
 
 from cimpy.cimexport import cim_export
 from cimpy.cimimport import cim_import
+from cimpy.cimexport import cim_export_to_string_array
 import cimpy.utils
 from cimpy.cimexamples import import_example
 from cimpy.cimexamples import export_example

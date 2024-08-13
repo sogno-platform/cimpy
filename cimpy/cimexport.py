@@ -324,6 +324,16 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
     return export_dict, export_about_dict
 
 
+def cim_export_to_string_array(import_result, model_name, version, activeProfileList=()):
+    result = []
+    profile_list = list(map(lambda a: Profile[a], activeProfileList))
+    for profile in profile_list or [p for p in Profile]:
+        output = generate_xml(import_result, version, model_name, profile, profile_list)
+        if output:
+            result.append(output)
+    return result
+
+
 def cim_export(import_result, file_name, version, activeProfileList=()):
     """Function for serialization of cgmes classes
 
