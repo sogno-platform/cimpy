@@ -324,7 +324,7 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
     return export_dict, export_about_dict
 
 
-def cim_export(import_result, file_name, version, activeProfileList):
+def cim_export(import_result, file_name, version, activeProfileList=()):
     """Function for serialization of cgmes classes
 
     This function serializes cgmes classes with the template engine chevron. The classes are separated by their profile
@@ -343,7 +343,8 @@ def cim_export(import_result, file_name, version, activeProfileList):
     'namespaces' is a dictionary containing all RDF namespaces used in the imported xml files.
     :param file_name: a string with the name of the xml files which will be created
     :param version: cgmes version, e.g. version = "cgmes_v2_4_15"
-    :param activeProfileList: a list containing the strings of all short names of the profiles used for serialization
+    :param activeProfileList (optional): a list containing the strings of all short names of the profiles \
+    used for serialization, no activeProfileList means output to all profile files with data
     """
 
     t0 = time()
@@ -352,18 +353,17 @@ def cim_export(import_result, file_name, version, activeProfileList):
     profile_list = list(map(lambda a: Profile[a], activeProfileList))
 
     # Iterate over all profiles
-    for profile in profile_list:
+    for profile in profile_list or [p for p in Profile]:
 
         # File name
         full_file_name = file_name + "_" + profile.long_name() + ".xml"
 
         if not os.path.exists(full_file_name):
             output = generate_xml(import_result, version, file_name, profile, profile_list)
-
-            with open(full_file_name, "w") as file:
-                logger.info('Write file "%s"', full_file_name)
-
-                file.write(output)
+            if output:
+                with open(full_file_name, "w") as file:
+                    logger.info('Write file "%s"', full_file_name)
+                    file.write(output)
         else:
             logger.error(
                 "File %s already exists. Delete file or change file name to serialize CGMES classes.", full_file_name
@@ -392,20 +392,25 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
     # Determine class and attribute export profiles. The export dict contains all classes and their attributes where
     # the class definition and the attribute definitions are in the same profile. Every entry in about_dict generates
     # a rdf:about in another profile
-    export_dict, about_dict = _sort_classes_to_profile(class_attributes_list, available_profiles)
+    export_dict, about_dict = _sort_classes_to_profile(
+        class_attributes_list, available_profiles or [p for p in Profile]
+    )
 
     namespaces_list = _create_namespaces_list(cim_data["meta_info"]["namespaces"])
 
     if profile.name not in export_dict.keys() and profile.name not in about_dict.keys():
-        raise RuntimeError(
-            "Profile "
-            + profile.name
-            + " not available for export, export_dict="
-            + str(export_dict.keys())
-            + " and about_dict="
-            + str(about_dict.keys())
-            + "."
-        )
+        if available_profiles:
+            raise RuntimeError(
+                "Profile "
+                + profile.name
+                + " not available for export, export_dict="
+                + str(export_dict.keys())
+                + " and about_dict="
+                + str(about_dict.keys())
+                + "."
+            )
+        else:
+            return ""
 
     # Extract class lists from export_dict and about_dict
     if profile.name in export_dict.keys():
