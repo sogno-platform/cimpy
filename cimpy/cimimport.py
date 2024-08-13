@@ -2,6 +2,7 @@ from lxml import etree
 from time import time
 import importlib
 import logging
+from cimpy.cgmes_v2_4_15.CGMESProfile import short_profile_name
 
 logger = logging.getLogger(__name__)
 
@@ -118,7 +119,6 @@ def _instantiate_classes(import_result, xml_files, cgmes_version_path, namespace
                     # Element tag without namespace (e.g. VoltageLevel).
                     tag = elem.tag[m:]
                     try:
-                        # module_name = package_map[package][tag]
                         # Import the module for the CGMES object.
                         module_name = cgmes_version_path + "." + tag
                         module = importlib.import_module(module_name)
@@ -135,7 +135,6 @@ def _instantiate_classes(import_result, xml_files, cgmes_version_path, namespace
                     # Get the CGMES class from the module.
                     klass = getattr(module, tag)
                     # Instantiate the class and map it to the uuid.
-                    # res[uuid] = klass(UUID=uuid)
                     topology[uuid] = klass()
                     info_msg = "CIM object {} created".format(module_name.split(".")[-1])
                     try:
@@ -149,7 +148,7 @@ def _instantiate_classes(import_result, xml_files, cgmes_version_path, namespace
                         topology[uuid].mRID = uuid
 
                     if package != "":
-                        topology[uuid].serializationProfile["class"] = short_package_name[package]
+                        topology[uuid].serializationProfile["class"] = short_profile_name[package]
                     else:
                         error_msg = "Package information not found for class {}".format(klass.__class__.__name__)
                         try:
@@ -160,7 +159,7 @@ def _instantiate_classes(import_result, xml_files, cgmes_version_path, namespace
             # Check which package is read
             elif event == "end":
                 if "Model.profile" in elem.tag:
-                    for package_key in short_package_name.keys():
+                    for package_key in short_profile_name.keys():
                         if package_key in elem.text:
                             package = package_key
                             break
@@ -363,7 +362,7 @@ def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_groupe
                                         setattr(obj, attr, val)
 
                                 if package != "":
-                                    obj.serializationProfile[attr] = short_package_name[package]
+                                    obj.serializationProfile[attr] = short_profile_name[package]
                                 else:
                                     error_msg = "Package information not found for class {}, attribute {}".format(
                                         obj.__class__.__name__, attr
@@ -378,7 +377,7 @@ def _set_attributes(import_result, xml_files, namespace_rdf, base, logger_groupe
 
             # Check which package is read
             elif event == "end" and "Model.profile" in elem.tag:
-                for package_key in short_package_name.keys():
+                for package_key in short_profile_name.keys():
                     if package_key in elem.text:
                         package = package_key
                         break
@@ -417,16 +416,3 @@ def _get_rdf_namespace(namespaces):
         logger.warning("No rdf namespace found. Using %s", ns)
 
     return namespace
-
-
-# TODO: use cimpy.cgmes.Profile instead
-# used to map the profile name to their abbreviations according to the CGMES standard
-short_package_name = {
-    "DiagramLayout": "DL",
-    "Dynamics": "DY",
-    "Equipment": "EQ",
-    "GeographicalLocation": "GL",
-    "StateVariables": "SV",
-    "SteadyStateHypothesis": "SSH",
-    "Topology": "TP",
-}
