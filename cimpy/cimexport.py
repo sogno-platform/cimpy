@@ -435,7 +435,7 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
 
     # Model header
     model_description = {
-        "mRID": model_name,
+        "mRID": model_name + "_" + profile.long_name(),
         "description": [
             {
                 "attr_name": "created",
