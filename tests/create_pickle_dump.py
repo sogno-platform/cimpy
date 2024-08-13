@@ -1,9 +1,9 @@
+import os
 import pickle
 from pathlib import Path
 import cimpy
 
-tests = Path(".").resolve().parent
-example_path = tests / "examples" / "sampledata" / "CIGRE_MV"
+example_path = Path(os.path.join(os.path.dirname(__file__), "../cimpy/examples/sampledata/CIGRE_MV")).resolve()
 
 
 def create_pickle():

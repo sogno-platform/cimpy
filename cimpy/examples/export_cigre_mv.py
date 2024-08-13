@@ -20,6 +20,6 @@ for file in sample_folder.glob("*.xml"):
 
 import_result = cimpy.cim_import(xml_files, "cgmes_v2_4_15")
 
-active_profile_list = ["DL", "EQ", "SV", "TP"]
+active_profile_list = ["DL", "EQ", "SSH", "SV", "TP"]
 
 cimpy.cim_export(import_result, "CIGREMV_reference_cgmes_v2_4_15", "cgmes_v2_4_15", active_profile_list)

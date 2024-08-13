@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cim="http://iec.ch/TC57/2012/CIM-schema-cim16#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:entsoe="http://entsoe.eu/Secretariat/ProfileExtension/2#" xmlns:neplan="http://www.neplan.ch#" >
 <md:FullModel rdf:about="CIGREMV_reference_cgmes_v2_4_15">
-    <md:Model.created>29/01/2020 15:09:48</md:Model.created>
-    <md:Model.modelingAuthoritySet>www.acs.eonerc.rwth-aachen.de</md:Model.modelingAuthoritySet>
-    <md:Model.profile>Equipment</md:Model.profile>
+    <md:Model.created>12/08/2024 16:34:44</md:Model.created>
+    <md:Model.modelingAuthoritySet>www.sogno.energy</md:Model.modelingAuthoritySet>
+    <md:Model.profile>http://entsoe.eu/CIM/EquipmentCore/3/1</md:Model.profile>
+    <md:Model.profile>http://entsoe.eu/CIM/EquipmentOperation/3/1</md:Model.profile>
+    <md:Model.profile>http://entsoe.eu/CIM/EquipmentShortCircuit/3/1</md:Model.profile>
 </md:FullModel>
 <cim:BaseVoltage rdf:ID="_a5b4e1c5-b844-4a1a-870c-1ee07662d7b4">
-    <cim:BaseVoltage.nominalVoltage>20.0</cim:BaseVoltage.nominalVoltage>
     <cim:BaseVoltage.VoltageLevel rdf:resource="#_6bd6b703-519b-46a8-a1f8-632f7e9d05f1"/>
     <cim:BaseVoltage.VoltageLevel rdf:resource="#_60deeb94-c9f8-4ea3-b52f-1940ea528164"/>
     <cim:BaseVoltage.VoltageLevel rdf:resource="#_16f5db35-83c6-418e-ae9e-69f05e77147b"/>
@@ -21,10 +22,11 @@
     <cim:BaseVoltage.VoltageLevel rdf:resource="#_cd602f02-649d-4738-bb64-3e3b3d575704"/>
     <cim:BaseVoltage.VoltageLevel rdf:resource="#_d0b232c3-0a56-4916-9471-66f49036ddc8"/>
     <cim:BaseVoltage.VoltageLevel rdf:resource="#_6077adb4-c337-4b45-9304-d71dd9ae5697"/>
+    <cim:BaseVoltage.nominalVoltage>20.0</cim:BaseVoltage.nominalVoltage>
 </cim:BaseVoltage>
 <cim:BaseVoltage rdf:ID="_a55f97f1-c485-414c-a845-678fe1eb19cf">
-    <cim:BaseVoltage.nominalVoltage>110.0</cim:BaseVoltage.nominalVoltage>
     <cim:BaseVoltage.VoltageLevel rdf:resource="#_2a7c745b-de30-4863-88ba-dcbe73f806df"/>
+    <cim:BaseVoltage.nominalVoltage>110.0</cim:BaseVoltage.nominalVoltage>
 </cim:BaseVoltage>
 <cim:VoltageLevel rdf:ID="_6bd6b703-519b-46a8-a1f8-632f7e9d05f1">
     <cim:IdentifiedObject.name>189</cim:IdentifiedObject.name>
@@ -170,12 +172,12 @@
 </cim:SubGeographicalRegion>
 <cim:OperationalLimitType rdf:ID="_d50aa23d-94a0-4462-a895-6bec6f7b89af">
     <cim:IdentifiedObject.name>PATL</cim:IdentifiedObject.name>
-    <cim:OperationalLimitType.acceptableDuration>45000</cim:OperationalLimitType.acceptableDuration>
+    <cim:OperationalLimitType.acceptableDuration>45000.0</cim:OperationalLimitType.acceptableDuration>
     <cim:OperationalLimitType.direction rdf:resource="http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue"/>
 </cim:OperationalLimitType>
 <cim:OperationalLimitType rdf:ID="_182e44b2-641d-4502-b36d-1949f49a90ea">
     <cim:IdentifiedObject.name>TATL</cim:IdentifiedObject.name>
-    <cim:OperationalLimitType.acceptableDuration>60</cim:OperationalLimitType.acceptableDuration>
+    <cim:OperationalLimitType.acceptableDuration>60.0</cim:OperationalLimitType.acceptableDuration>
     <cim:OperationalLimitType.direction rdf:resource="http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue"/>
 </cim:OperationalLimitType>
 <cim:EnergyConsumer rdf:ID="Load7-I">
@@ -356,18 +358,18 @@
     <cim:Equipment.OperationalLimitSet rdf:resource="#_E67B-E-301"/>
     <cim:ConductingEquipment.BaseVoltage rdf:resource="#_a5b4e1c5-b844-4a1a-870c-1ee07662d7b4"/>
     <cim:Conductor.length>4.89</cim:Conductor.length>
+    <cim:ACLineSegment.b0ch>0.0003902047</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.bch>0.000250221</cim:ACLineSegment.bch>
     <cim:ACLineSegment.r>1.64793</cim:ACLineSegment.r>
-    <cim:ACLineSegment.x>1.75062</cim:ACLineSegment.x>
-    <cim:ACLineSegment.b0ch>0.0003902047</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.r0>4.89</cim:ACLineSegment.r0>
     <cim:ACLineSegment.shortCircuitEndTemperature>250.0</cim:ACLineSegment.shortCircuitEndTemperature>
+    <cim:ACLineSegment.x>1.75062</cim:ACLineSegment.x>
     <cim:ACLineSegment.x0>4.89</cim:ACLineSegment.x0>
 </cim:ACLineSegment>
 <cim:Terminal rdf:ID="E-301">
     <cim:IdentifiedObject.name>L12-13_0</cim:IdentifiedObject.name>
-    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:ACDCTerminal.OperationalLimitSet rdf:resource="#_E67B-E-301"/>
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:Terminal.ConductingEquipment rdf:resource="#L12-13"/>
 </cim:Terminal>
 <cim:Terminal rdf:ID="E-302">
@@ -377,8 +379,8 @@
 </cim:Terminal>
 <cim:OperationalLimitSet rdf:ID="_E67B-E-301">
     <cim:IdentifiedObject.name>Ratings</cim:IdentifiedObject.name>
-    <cim:OperationalLimitSet.Terminal rdf:resource="#E-301"/>
     <cim:OperationalLimitSet.Equipment rdf:resource="#L12-13"/>
+    <cim:OperationalLimitSet.Terminal rdf:resource="#E-301"/>
 </cim:OperationalLimitSet>
 <cim:CurrentLimit rdf:ID="_E67C-E-301_1">
     <cim:IdentifiedObject.name>Normal</cim:IdentifiedObject.name>
@@ -401,18 +403,18 @@
     <cim:Equipment.OperationalLimitSet rdf:resource="#_E67B-E-309"/>
     <cim:ConductingEquipment.BaseVoltage rdf:resource="#_a5b4e1c5-b844-4a1a-870c-1ee07662d7b4"/>
     <cim:Conductor.length>2.99</cim:Conductor.length>
+    <cim:ACLineSegment.b0ch>0.0002385914</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.bch>0.0004493794</cim:ACLineSegment.bch>
     <cim:ACLineSegment.r>0.60398</cim:ACLineSegment.r>
-    <cim:ACLineSegment.x>0.36478</cim:ACLineSegment.x>
-    <cim:ACLineSegment.b0ch>0.0002385914</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.r0>2.99</cim:ACLineSegment.r0>
     <cim:ACLineSegment.shortCircuitEndTemperature>250.0</cim:ACLineSegment.shortCircuitEndTemperature>
+    <cim:ACLineSegment.x>0.36478</cim:ACLineSegment.x>
     <cim:ACLineSegment.x0>2.99</cim:ACLineSegment.x0>
 </cim:ACLineSegment>
 <cim:Terminal rdf:ID="E-309">
     <cim:IdentifiedObject.name>L13-14_0</cim:IdentifiedObject.name>
-    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:ACDCTerminal.OperationalLimitSet rdf:resource="#_E67B-E-309"/>
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:Terminal.ConductingEquipment rdf:resource="#L13-14"/>
 </cim:Terminal>
 <cim:Terminal rdf:ID="E-310">
@@ -422,8 +424,8 @@
 </cim:Terminal>
 <cim:OperationalLimitSet rdf:ID="_E67B-E-309">
     <cim:IdentifiedObject.name>Ratings</cim:IdentifiedObject.name>
-    <cim:OperationalLimitSet.Terminal rdf:resource="#E-309"/>
     <cim:OperationalLimitSet.Equipment rdf:resource="#L13-14"/>
+    <cim:OperationalLimitSet.Terminal rdf:resource="#E-309"/>
 </cim:OperationalLimitSet>
 <cim:CurrentLimit rdf:ID="_E67C-E-309_1">
     <cim:IdentifiedObject.name>Normal</cim:IdentifiedObject.name>
@@ -446,18 +448,18 @@
     <cim:Equipment.OperationalLimitSet rdf:resource="#_E67B-E-116"/>
     <cim:ConductingEquipment.BaseVoltage rdf:resource="#_a5b4e1c5-b844-4a1a-870c-1ee07662d7b4"/>
     <cim:Conductor.length>2.82</cim:Conductor.length>
+    <cim:ACLineSegment.b0ch>0.000225026</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.bch>0.0001407573</cim:ACLineSegment.bch>
     <cim:ACLineSegment.r>1.63278</cim:ACLineSegment.r>
-    <cim:ACLineSegment.x>1.03494</cim:ACLineSegment.x>
-    <cim:ACLineSegment.b0ch>0.000225026</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.r0>2.82</cim:ACLineSegment.r0>
     <cim:ACLineSegment.shortCircuitEndTemperature>250.0</cim:ACLineSegment.shortCircuitEndTemperature>
+    <cim:ACLineSegment.x>1.03494</cim:ACLineSegment.x>
     <cim:ACLineSegment.x0>2.82</cim:ACLineSegment.x0>
 </cim:ACLineSegment>
 <cim:Terminal rdf:ID="E-116">
     <cim:IdentifiedObject.name>L1-2_0</cim:IdentifiedObject.name>
-    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:ACDCTerminal.OperationalLimitSet rdf:resource="#_E67B-E-116"/>
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:Terminal.ConductingEquipment rdf:resource="#L1-2"/>
 </cim:Terminal>
 <cim:Terminal rdf:ID="E-117">
@@ -467,8 +469,8 @@
 </cim:Terminal>
 <cim:OperationalLimitSet rdf:ID="_E67B-E-116">
     <cim:IdentifiedObject.name>Ratings</cim:IdentifiedObject.name>
-    <cim:OperationalLimitSet.Terminal rdf:resource="#E-116"/>
     <cim:OperationalLimitSet.Equipment rdf:resource="#L1-2"/>
+    <cim:OperationalLimitSet.Terminal rdf:resource="#E-116"/>
 </cim:OperationalLimitSet>
 <cim:CurrentLimit rdf:ID="_E67C-E-116_1">
     <cim:IdentifiedObject.name>Normal</cim:IdentifiedObject.name>
@@ -491,18 +493,18 @@
     <cim:Equipment.OperationalLimitSet rdf:resource="#_E67B-E-124"/>
     <cim:ConductingEquipment.BaseVoltage rdf:resource="#_a5b4e1c5-b844-4a1a-870c-1ee07662d7b4"/>
     <cim:Conductor.length>4.42</cim:Conductor.length>
+    <cim:ACLineSegment.b0ch>0.0003249286</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.bch>0.0009175791</cim:ACLineSegment.bch>
     <cim:ACLineSegment.r>0.72488</cim:ACLineSegment.r>
-    <cim:ACLineSegment.x>0.49946</cim:ACLineSegment.x>
-    <cim:ACLineSegment.b0ch>0.0003249286</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.r0>4.42</cim:ACLineSegment.r0>
     <cim:ACLineSegment.shortCircuitEndTemperature>250.0</cim:ACLineSegment.shortCircuitEndTemperature>
+    <cim:ACLineSegment.x>0.49946</cim:ACLineSegment.x>
     <cim:ACLineSegment.x0>4.42</cim:ACLineSegment.x0>
 </cim:ACLineSegment>
 <cim:Terminal rdf:ID="E-124">
     <cim:IdentifiedObject.name>L2-3_0</cim:IdentifiedObject.name>
-    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:ACDCTerminal.OperationalLimitSet rdf:resource="#_E67B-E-124"/>
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:Terminal.ConductingEquipment rdf:resource="#L2-3"/>
 </cim:Terminal>
 <cim:Terminal rdf:ID="E-125">
@@ -512,8 +514,8 @@
 </cim:Terminal>
 <cim:OperationalLimitSet rdf:ID="_E67B-E-124">
     <cim:IdentifiedObject.name>Ratings</cim:IdentifiedObject.name>
-    <cim:OperationalLimitSet.Terminal rdf:resource="#E-124"/>
     <cim:OperationalLimitSet.Equipment rdf:resource="#L2-3"/>
+    <cim:OperationalLimitSet.Terminal rdf:resource="#E-124"/>
 </cim:OperationalLimitSet>
 <cim:CurrentLimit rdf:ID="_E67C-E-124_1">
     <cim:IdentifiedObject.name>Normal</cim:IdentifiedObject.name>
@@ -536,18 +538,18 @@
     <cim:Equipment.OperationalLimitSet rdf:resource="#_E67B-E-132"/>
     <cim:ConductingEquipment.BaseVoltage rdf:resource="#_a5b4e1c5-b844-4a1a-870c-1ee07662d7b4"/>
     <cim:Conductor.length>0.61</cim:Conductor.length>
+    <cim:ACLineSegment.b0ch>4.48431e-05</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.bch>0.0001241814</cim:ACLineSegment.bch>
     <cim:ACLineSegment.r>0.15982</cim:ACLineSegment.r>
-    <cim:ACLineSegment.x>0.07381</cim:ACLineSegment.x>
-    <cim:ACLineSegment.b0ch>4.48431e-05</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.r0>0.61</cim:ACLineSegment.r0>
     <cim:ACLineSegment.shortCircuitEndTemperature>250.0</cim:ACLineSegment.shortCircuitEndTemperature>
+    <cim:ACLineSegment.x>0.07381</cim:ACLineSegment.x>
     <cim:ACLineSegment.x0>0.61</cim:ACLineSegment.x0>
 </cim:ACLineSegment>
 <cim:Terminal rdf:ID="E-132">
     <cim:IdentifiedObject.name>L3-4_0</cim:IdentifiedObject.name>
-    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:ACDCTerminal.OperationalLimitSet rdf:resource="#_E67B-E-132"/>
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:Terminal.ConductingEquipment rdf:resource="#L3-4"/>
 </cim:Terminal>
 <cim:Terminal rdf:ID="E-133">
@@ -557,8 +559,8 @@
 </cim:Terminal>
 <cim:OperationalLimitSet rdf:ID="_E67B-E-132">
     <cim:IdentifiedObject.name>Ratings</cim:IdentifiedObject.name>
-    <cim:OperationalLimitSet.Terminal rdf:resource="#E-132"/>
     <cim:OperationalLimitSet.Equipment rdf:resource="#L3-4"/>
+    <cim:OperationalLimitSet.Terminal rdf:resource="#E-132"/>
 </cim:OperationalLimitSet>
 <cim:CurrentLimit rdf:ID="_E67C-E-132_1">
     <cim:IdentifiedObject.name>Normal</cim:IdentifiedObject.name>
@@ -581,18 +583,18 @@
     <cim:Equipment.OperationalLimitSet rdf:resource="#_E67B-E-149"/>
     <cim:ConductingEquipment.BaseVoltage rdf:resource="#_a5b4e1c5-b844-4a1a-870c-1ee07662d7b4"/>
     <cim:Conductor.length>0.56</cim:Conductor.length>
+    <cim:ACLineSegment.b0ch>4.11674e-05</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.bch>8.02239e-05</cim:ACLineSegment.bch>
     <cim:ACLineSegment.r>0.19824</cim:ACLineSegment.r>
-    <cim:ACLineSegment.x>0.07224</cim:ACLineSegment.x>
-    <cim:ACLineSegment.b0ch>4.11674e-05</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.r0>0.56</cim:ACLineSegment.r0>
     <cim:ACLineSegment.shortCircuitEndTemperature>250.0</cim:ACLineSegment.shortCircuitEndTemperature>
+    <cim:ACLineSegment.x>0.07224</cim:ACLineSegment.x>
     <cim:ACLineSegment.x0>0.56</cim:ACLineSegment.x0>
 </cim:ACLineSegment>
 <cim:Terminal rdf:ID="E-149">
     <cim:IdentifiedObject.name>L4-5_0</cim:IdentifiedObject.name>
-    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:ACDCTerminal.OperationalLimitSet rdf:resource="#_E67B-E-149"/>
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:Terminal.ConductingEquipment rdf:resource="#L4-5"/>
 </cim:Terminal>
 <cim:Terminal rdf:ID="E-150">
@@ -602,8 +604,8 @@
 </cim:Terminal>
 <cim:OperationalLimitSet rdf:ID="_E67B-E-149">
     <cim:IdentifiedObject.name>Ratings</cim:IdentifiedObject.name>
-    <cim:OperationalLimitSet.Terminal rdf:resource="#E-149"/>
     <cim:OperationalLimitSet.Equipment rdf:resource="#L4-5"/>
+    <cim:OperationalLimitSet.Terminal rdf:resource="#E-149"/>
 </cim:OperationalLimitSet>
 <cim:CurrentLimit rdf:ID="_E67C-E-149_1">
     <cim:IdentifiedObject.name>Normal</cim:IdentifiedObject.name>
@@ -626,18 +628,18 @@
     <cim:Equipment.OperationalLimitSet rdf:resource="#_E67B-E-165"/>
     <cim:ConductingEquipment.BaseVoltage rdf:resource="#_a5b4e1c5-b844-4a1a-870c-1ee07662d7b4"/>
     <cim:Conductor.length>1.54</cim:Conductor.length>
+    <cim:ACLineSegment.b0ch>0.0001132104</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.bch>0.0002655128</cim:ACLineSegment.bch>
     <cim:ACLineSegment.r>0.51744</cim:ACLineSegment.r>
-    <cim:ACLineSegment.x>0.19404</cim:ACLineSegment.x>
-    <cim:ACLineSegment.b0ch>0.0001132104</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.r0>1.54</cim:ACLineSegment.r0>
     <cim:ACLineSegment.shortCircuitEndTemperature>250.0</cim:ACLineSegment.shortCircuitEndTemperature>
+    <cim:ACLineSegment.x>0.19404</cim:ACLineSegment.x>
     <cim:ACLineSegment.x0>1.54</cim:ACLineSegment.x0>
 </cim:ACLineSegment>
 <cim:Terminal rdf:ID="E-165">
     <cim:IdentifiedObject.name>L5-6_0</cim:IdentifiedObject.name>
-    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:ACDCTerminal.OperationalLimitSet rdf:resource="#_E67B-E-165"/>
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:Terminal.ConductingEquipment rdf:resource="#L5-6"/>
 </cim:Terminal>
 <cim:Terminal rdf:ID="E-166">
@@ -647,8 +649,8 @@
 </cim:Terminal>
 <cim:OperationalLimitSet rdf:ID="_E67B-E-165">
     <cim:IdentifiedObject.name>Ratings</cim:IdentifiedObject.name>
-    <cim:OperationalLimitSet.Terminal rdf:resource="#E-165"/>
     <cim:OperationalLimitSet.Equipment rdf:resource="#L5-6"/>
+    <cim:OperationalLimitSet.Terminal rdf:resource="#E-165"/>
 </cim:OperationalLimitSet>
 <cim:CurrentLimit rdf:ID="_E67C-E-165_1">
     <cim:IdentifiedObject.name>Normal</cim:IdentifiedObject.name>
@@ -671,18 +673,18 @@
     <cim:Equipment.OperationalLimitSet rdf:resource="#_E67B-E-180"/>
     <cim:ConductingEquipment.BaseVoltage rdf:resource="#_a5b4e1c5-b844-4a1a-870c-1ee07662d7b4"/>
     <cim:Conductor.length>1.3</cim:Conductor.length>
+    <cim:ACLineSegment.b0ch>9.55672e-05</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.bch>0.0002685697</cim:ACLineSegment.bch>
     <cim:ACLineSegment.r>0.2236</cim:ACLineSegment.r>
-    <cim:ACLineSegment.x>0.1495</cim:ACLineSegment.x>
-    <cim:ACLineSegment.b0ch>9.55672e-05</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.r0>1.3</cim:ACLineSegment.r0>
     <cim:ACLineSegment.shortCircuitEndTemperature>250.0</cim:ACLineSegment.shortCircuitEndTemperature>
+    <cim:ACLineSegment.x>0.1495</cim:ACLineSegment.x>
     <cim:ACLineSegment.x0>1.3</cim:ACLineSegment.x0>
 </cim:ACLineSegment>
 <cim:Terminal rdf:ID="E-180">
     <cim:IdentifiedObject.name>L3-8_0</cim:IdentifiedObject.name>
-    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:ACDCTerminal.OperationalLimitSet rdf:resource="#_E67B-E-180"/>
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:Terminal.ConductingEquipment rdf:resource="#L3-8"/>
 </cim:Terminal>
 <cim:Terminal rdf:ID="E-181">
@@ -692,8 +694,8 @@
 </cim:Terminal>
 <cim:OperationalLimitSet rdf:ID="_E67B-E-180">
     <cim:IdentifiedObject.name>Ratings</cim:IdentifiedObject.name>
-    <cim:OperationalLimitSet.Terminal rdf:resource="#E-180"/>
     <cim:OperationalLimitSet.Equipment rdf:resource="#L3-8"/>
+    <cim:OperationalLimitSet.Terminal rdf:resource="#E-180"/>
 </cim:OperationalLimitSet>
 <cim:CurrentLimit rdf:ID="_E67C-E-180_1">
     <cim:IdentifiedObject.name>Normal</cim:IdentifiedObject.name>
@@ -716,18 +718,18 @@
     <cim:Equipment.OperationalLimitSet rdf:resource="#_E67B-E-185"/>
     <cim:ConductingEquipment.BaseVoltage rdf:resource="#_a5b4e1c5-b844-4a1a-870c-1ee07662d7b4"/>
     <cim:Conductor.length>0.33</cim:Conductor.length>
+    <cim:ACLineSegment.b0ch>2.42594e-05</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.bch>4.72748e-05</cim:ACLineSegment.bch>
     <cim:ACLineSegment.r>0.12111</cim:ACLineSegment.r>
-    <cim:ACLineSegment.x>0.04389</cim:ACLineSegment.x>
-    <cim:ACLineSegment.b0ch>2.42594e-05</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.r0>0.33</cim:ACLineSegment.r0>
     <cim:ACLineSegment.shortCircuitEndTemperature>250.0</cim:ACLineSegment.shortCircuitEndTemperature>
+    <cim:ACLineSegment.x>0.04389</cim:ACLineSegment.x>
     <cim:ACLineSegment.x0>0.33</cim:ACLineSegment.x0>
 </cim:ACLineSegment>
 <cim:Terminal rdf:ID="E-185">
     <cim:IdentifiedObject.name>L10-11_0</cim:IdentifiedObject.name>
-    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:ACDCTerminal.OperationalLimitSet rdf:resource="#_E67B-E-185"/>
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:Terminal.ConductingEquipment rdf:resource="#L10-11"/>
 </cim:Terminal>
 <cim:Terminal rdf:ID="E-186">
@@ -737,8 +739,8 @@
 </cim:Terminal>
 <cim:OperationalLimitSet rdf:ID="_E67B-E-185">
     <cim:IdentifiedObject.name>Ratings</cim:IdentifiedObject.name>
-    <cim:OperationalLimitSet.Terminal rdf:resource="#E-185"/>
     <cim:OperationalLimitSet.Equipment rdf:resource="#L10-11"/>
+    <cim:OperationalLimitSet.Terminal rdf:resource="#E-185"/>
 </cim:OperationalLimitSet>
 <cim:CurrentLimit rdf:ID="_E67C-E-185_1">
     <cim:IdentifiedObject.name>Normal</cim:IdentifiedObject.name>
@@ -761,18 +763,18 @@
     <cim:Equipment.OperationalLimitSet rdf:resource="#_E67B-E-193"/>
     <cim:ConductingEquipment.BaseVoltage rdf:resource="#_a5b4e1c5-b844-4a1a-870c-1ee07662d7b4"/>
     <cim:Conductor.length>0.77</cim:Conductor.length>
+    <cim:ACLineSegment.b0ch>5.66052e-05</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.bch>0.0001168876</cim:ACLineSegment.bch>
     <cim:ACLineSegment.r>0.30723</cim:ACLineSegment.r>
-    <cim:ACLineSegment.x>0.10241</cim:ACLineSegment.x>
-    <cim:ACLineSegment.b0ch>5.66052e-05</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.r0>0.77</cim:ACLineSegment.r0>
     <cim:ACLineSegment.shortCircuitEndTemperature>250.0</cim:ACLineSegment.shortCircuitEndTemperature>
+    <cim:ACLineSegment.x>0.10241</cim:ACLineSegment.x>
     <cim:ACLineSegment.x0>0.77</cim:ACLineSegment.x0>
 </cim:ACLineSegment>
 <cim:Terminal rdf:ID="E-193">
     <cim:IdentifiedObject.name>L9-10_0</cim:IdentifiedObject.name>
-    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:ACDCTerminal.OperationalLimitSet rdf:resource="#_E67B-E-193"/>
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:Terminal.ConductingEquipment rdf:resource="#L9-10"/>
 </cim:Terminal>
 <cim:Terminal rdf:ID="E-194">
@@ -782,8 +784,8 @@
 </cim:Terminal>
 <cim:OperationalLimitSet rdf:ID="_E67B-E-193">
     <cim:IdentifiedObject.name>Ratings</cim:IdentifiedObject.name>
-    <cim:OperationalLimitSet.Terminal rdf:resource="#E-193"/>
     <cim:OperationalLimitSet.Equipment rdf:resource="#L9-10"/>
+    <cim:OperationalLimitSet.Terminal rdf:resource="#E-193"/>
 </cim:OperationalLimitSet>
 <cim:CurrentLimit rdf:ID="_E67C-E-193_1">
     <cim:IdentifiedObject.name>Normal</cim:IdentifiedObject.name>
@@ -806,18 +808,18 @@
     <cim:Equipment.OperationalLimitSet rdf:resource="#_E67B-E-198"/>
     <cim:ConductingEquipment.BaseVoltage rdf:resource="#_a5b4e1c5-b844-4a1a-870c-1ee07662d7b4"/>
     <cim:Conductor.length>0.32</cim:Conductor.length>
+    <cim:ACLineSegment.b0ch>2.35242e-05</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.bch>4.3912e-05</cim:ACLineSegment.bch>
     <cim:ACLineSegment.r>0.10848</cim:ACLineSegment.r>
-    <cim:ACLineSegment.x>0.0416</cim:ACLineSegment.x>
-    <cim:ACLineSegment.b0ch>2.35242e-05</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.r0>0.32</cim:ACLineSegment.r0>
     <cim:ACLineSegment.shortCircuitEndTemperature>250.0</cim:ACLineSegment.shortCircuitEndTemperature>
+    <cim:ACLineSegment.x>0.0416</cim:ACLineSegment.x>
     <cim:ACLineSegment.x0>0.32</cim:ACLineSegment.x0>
 </cim:ACLineSegment>
 <cim:Terminal rdf:ID="E-198">
     <cim:IdentifiedObject.name>L8-9_0</cim:IdentifiedObject.name>
-    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:ACDCTerminal.OperationalLimitSet rdf:resource="#_E67B-E-198"/>
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:Terminal.ConductingEquipment rdf:resource="#L8-9"/>
 </cim:Terminal>
 <cim:Terminal rdf:ID="E-199">
@@ -827,8 +829,8 @@
 </cim:Terminal>
 <cim:OperationalLimitSet rdf:ID="_E67B-E-198">
     <cim:IdentifiedObject.name>Ratings</cim:IdentifiedObject.name>
-    <cim:OperationalLimitSet.Terminal rdf:resource="#E-198"/>
     <cim:OperationalLimitSet.Equipment rdf:resource="#L8-9"/>
+    <cim:OperationalLimitSet.Terminal rdf:resource="#E-198"/>
 </cim:OperationalLimitSet>
 <cim:CurrentLimit rdf:ID="_E67C-E-198_1">
     <cim:IdentifiedObject.name>Normal</cim:IdentifiedObject.name>
@@ -851,18 +853,18 @@
     <cim:Equipment.OperationalLimitSet rdf:resource="#_E67B-E-203"/>
     <cim:ConductingEquipment.BaseVoltage rdf:resource="#_a5b4e1c5-b844-4a1a-870c-1ee07662d7b4"/>
     <cim:Conductor.length>1.67</cim:Conductor.length>
+    <cim:ACLineSegment.b0ch>0.0001227672</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.bch>0.0002938033</cim:ACLineSegment.bch>
     <cim:ACLineSegment.r>0.49098</cim:ACLineSegment.r>
-    <cim:ACLineSegment.x>0.20541</cim:ACLineSegment.x>
-    <cim:ACLineSegment.b0ch>0.0001227672</cim:ACLineSegment.b0ch>
     <cim:ACLineSegment.r0>1.67</cim:ACLineSegment.r0>
     <cim:ACLineSegment.shortCircuitEndTemperature>250.0</cim:ACLineSegment.shortCircuitEndTemperature>
+    <cim:ACLineSegment.x>0.20541</cim:ACLineSegment.x>
     <cim:ACLineSegment.x0>1.67</cim:ACLineSegment.x0>
 </cim:ACLineSegment>
 <cim:Terminal rdf:ID="E-203">
     <cim:IdentifiedObject.name>L7-8_0</cim:IdentifiedObject.name>
-    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:ACDCTerminal.OperationalLimitSet rdf:resource="#_E67B-E-203"/>
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:Terminal.ConductingEquipment rdf:resource="#L7-8"/>
 </cim:Terminal>
 <cim:Terminal rdf:ID="E-204">
@@ -872,8 +874,8 @@
 </cim:Terminal>
 <cim:OperationalLimitSet rdf:ID="_E67B-E-203">
     <cim:IdentifiedObject.name>Ratings</cim:IdentifiedObject.name>
-    <cim:OperationalLimitSet.Terminal rdf:resource="#E-203"/>
     <cim:OperationalLimitSet.Equipment rdf:resource="#L7-8"/>
+    <cim:OperationalLimitSet.Terminal rdf:resource="#E-203"/>
 </cim:OperationalLimitSet>
 <cim:CurrentLimit rdf:ID="_E67C-E-203_1">
     <cim:IdentifiedObject.name>Normal</cim:IdentifiedObject.name>
@@ -901,8 +903,8 @@
 </cim:PowerTransformer>
 <cim:Terminal rdf:ID="E-70">
     <cim:IdentifiedObject.name>TR1_0</cim:IdentifiedObject.name>
-    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:ACDCTerminal.OperationalLimitSet rdf:resource="#_E67B-E-70"/>
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:Terminal.ConductingEquipment rdf:resource="#TR1"/>
 </cim:Terminal>
 <cim:PowerTransformerEnd rdf:ID="_c59c2fea-3ad9-4cdf-bbc9-aad9e88d1b8a">
@@ -914,17 +916,17 @@
     <cim:PowerTransformerEnd.PowerTransformer rdf:resource="#TR1"/>
     <cim:PowerTransformerEnd.b>-1.9835e-06</cim:PowerTransformerEnd.b>
     <cim:PowerTransformerEnd.connectionKind rdf:resource="http://iec.ch/TC57/2012/CIM-schema-cim16#WindingConnection.Y"/>
+    <cim:PowerTransformerEnd.r>1.90575</cim:PowerTransformerEnd.r>
+    <cim:PowerTransformerEnd.r0>1.90575</cim:PowerTransformerEnd.r0>
     <cim:PowerTransformerEnd.ratedS>40.0</cim:PowerTransformerEnd.ratedS>
     <cim:PowerTransformerEnd.ratedU>110.0</cim:PowerTransformerEnd.ratedU>
-    <cim:PowerTransformerEnd.r>1.90575</cim:PowerTransformerEnd.r>
     <cim:PowerTransformerEnd.x>36.371106</cim:PowerTransformerEnd.x>
-    <cim:PowerTransformerEnd.r0>1.90575</cim:PowerTransformerEnd.r0>
     <cim:PowerTransformerEnd.x0>34.432301</cim:PowerTransformerEnd.x0>
 </cim:PowerTransformerEnd>
 <cim:OperationalLimitSet rdf:ID="_E67B-E-70">
     <cim:IdentifiedObject.name>Ratings</cim:IdentifiedObject.name>
-    <cim:OperationalLimitSet.Terminal rdf:resource="#E-70"/>
     <cim:OperationalLimitSet.Equipment rdf:resource="#TR1"/>
+    <cim:OperationalLimitSet.Terminal rdf:resource="#E-70"/>
 </cim:OperationalLimitSet>
 <cim:CurrentLimit rdf:ID="_E67C-E-70_1">
     <cim:IdentifiedObject.name>Normal</cim:IdentifiedObject.name>
@@ -942,8 +944,8 @@
 </cim:CurrentLimit>
 <cim:Terminal rdf:ID="E-86">
     <cim:IdentifiedObject.name>TR1_1</cim:IdentifiedObject.name>
-    <cim:ACDCTerminal.sequenceNumber>2</cim:ACDCTerminal.sequenceNumber>
     <cim:ACDCTerminal.OperationalLimitSet rdf:resource="#_E67B-E-86"/>
+    <cim:ACDCTerminal.sequenceNumber>2</cim:ACDCTerminal.sequenceNumber>
     <cim:Terminal.ConductingEquipment rdf:resource="#TR1"/>
 </cim:Terminal>
 <cim:PowerTransformerEnd rdf:ID="_29f4f107-eb3c-4091-9c49-257e85c3a717">
@@ -954,14 +956,14 @@
     <cim:TransformerEnd.grounded>True</cim:TransformerEnd.grounded>
     <cim:PowerTransformerEnd.PowerTransformer rdf:resource="#TR1"/>
     <cim:PowerTransformerEnd.connectionKind rdf:resource="http://iec.ch/TC57/2012/CIM-schema-cim16#WindingConnection.D"/>
+    <cim:PowerTransformerEnd.phaseAngleClock>5</cim:PowerTransformerEnd.phaseAngleClock>
     <cim:PowerTransformerEnd.ratedS>40.0</cim:PowerTransformerEnd.ratedS>
     <cim:PowerTransformerEnd.ratedU>20.0</cim:PowerTransformerEnd.ratedU>
-    <cim:PowerTransformerEnd.phaseAngleClock>5</cim:PowerTransformerEnd.phaseAngleClock>
 </cim:PowerTransformerEnd>
 <cim:OperationalLimitSet rdf:ID="_E67B-E-86">
     <cim:IdentifiedObject.name>Ratings</cim:IdentifiedObject.name>
-    <cim:OperationalLimitSet.Terminal rdf:resource="#E-86"/>
     <cim:OperationalLimitSet.Equipment rdf:resource="#TR1"/>
+    <cim:OperationalLimitSet.Terminal rdf:resource="#E-86"/>
 </cim:OperationalLimitSet>
 <cim:CurrentLimit rdf:ID="_E67C-E-86_1">
     <cim:IdentifiedObject.name>Normal</cim:IdentifiedObject.name>
@@ -987,8 +989,8 @@
 </cim:PowerTransformer>
 <cim:Terminal rdf:ID="E-80">
     <cim:IdentifiedObject.name>TR2_0</cim:IdentifiedObject.name>
-    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:ACDCTerminal.OperationalLimitSet rdf:resource="#_E67B-E-80"/>
+    <cim:ACDCTerminal.sequenceNumber>1</cim:ACDCTerminal.sequenceNumber>
     <cim:Terminal.ConductingEquipment rdf:resource="#TR2"/>
 </cim:Terminal>
 <cim:PowerTransformerEnd rdf:ID="_c4fab7e2-7c77-4cf6-b80c-8fed641cd71b">
@@ -1000,17 +1002,17 @@
     <cim:PowerTransformerEnd.PowerTransformer rdf:resource="#TR2"/>
     <cim:PowerTransformerEnd.b>-1.9835e-06</cim:PowerTransformerEnd.b>
     <cim:PowerTransformerEnd.connectionKind rdf:resource="http://iec.ch/TC57/2012/CIM-schema-cim16#WindingConnection.Y"/>
+    <cim:PowerTransformerEnd.r>1.90575</cim:PowerTransformerEnd.r>
+    <cim:PowerTransformerEnd.r0>1.90575</cim:PowerTransformerEnd.r0>
     <cim:PowerTransformerEnd.ratedS>40.0</cim:PowerTransformerEnd.ratedS>
     <cim:PowerTransformerEnd.ratedU>110.0</cim:PowerTransformerEnd.ratedU>
-    <cim:PowerTransformerEnd.r>1.90575</cim:PowerTransformerEnd.r>
     <cim:PowerTransformerEnd.x>36.371106</cim:PowerTransformerEnd.x>
-    <cim:PowerTransformerEnd.r0>1.90575</cim:PowerTransformerEnd.r0>
     <cim:PowerTransformerEnd.x0>34.432301</cim:PowerTransformerEnd.x0>
 </cim:PowerTransformerEnd>
 <cim:OperationalLimitSet rdf:ID="_E67B-E-80">
     <cim:IdentifiedObject.name>Ratings</cim:IdentifiedObject.name>
-    <cim:OperationalLimitSet.Terminal rdf:resource="#E-80"/>
     <cim:OperationalLimitSet.Equipment rdf:resource="#TR2"/>
+    <cim:OperationalLimitSet.Terminal rdf:resource="#E-80"/>
 </cim:OperationalLimitSet>
 <cim:CurrentLimit rdf:ID="_E67C-E-80_1">
     <cim:IdentifiedObject.name>Normal</cim:IdentifiedObject.name>
@@ -1028,8 +1030,8 @@
 </cim:CurrentLimit>
 <cim:Terminal rdf:ID="E-294">
     <cim:IdentifiedObject.name>TR2_1</cim:IdentifiedObject.name>
-    <cim:ACDCTerminal.sequenceNumber>2</cim:ACDCTerminal.sequenceNumber>
     <cim:ACDCTerminal.OperationalLimitSet rdf:resource="#_E67B-E-294"/>
+    <cim:ACDCTerminal.sequenceNumber>2</cim:ACDCTerminal.sequenceNumber>
     <cim:Terminal.ConductingEquipment rdf:resource="#TR2"/>
 </cim:Terminal>
 <cim:PowerTransformerEnd rdf:ID="_d38af474-0fdf-4404-a812-79b12152adef">
@@ -1040,14 +1042,14 @@
     <cim:TransformerEnd.grounded>True</cim:TransformerEnd.grounded>
     <cim:PowerTransformerEnd.PowerTransformer rdf:resource="#TR2"/>
     <cim:PowerTransformerEnd.connectionKind rdf:resource="http://iec.ch/TC57/2012/CIM-schema-cim16#WindingConnection.D"/>
+    <cim:PowerTransformerEnd.phaseAngleClock>5</cim:PowerTransformerEnd.phaseAngleClock>
     <cim:PowerTransformerEnd.ratedS>40.0</cim:PowerTransformerEnd.ratedS>
     <cim:PowerTransformerEnd.ratedU>20.0</cim:PowerTransformerEnd.ratedU>
-    <cim:PowerTransformerEnd.phaseAngleClock>5</cim:PowerTransformerEnd.phaseAngleClock>
 </cim:PowerTransformerEnd>
 <cim:OperationalLimitSet rdf:ID="_E67B-E-294">
     <cim:IdentifiedObject.name>Ratings</cim:IdentifiedObject.name>
-    <cim:OperationalLimitSet.Terminal rdf:resource="#E-294"/>
     <cim:OperationalLimitSet.Equipment rdf:resource="#TR2"/>
+    <cim:OperationalLimitSet.Terminal rdf:resource="#E-294"/>
 </cim:OperationalLimitSet>
 <cim:CurrentLimit rdf:ID="_E67C-E-294_1">
     <cim:IdentifiedObject.name>Normal</cim:IdentifiedObject.name>

@@ -34,9 +34,14 @@ def read_ref_xml():
     test_dict = {}
     for elem in test_list:
         profile = elem["md:FullModel"]["md:Model.profile"]
+        if type(profile) is list:
+            profile = profile[0]
         for key in short_profile_name.keys():
             if key in profile:
                 test_dict[key] = elem
+                break
+        else:
+            pytest.fail("Profile '%s' not found" % profile)
     return test_dict
 
 
@@ -53,9 +58,14 @@ def read_exported_xml(directory):
     export_dict = {}
     for export_file in export_list:
         profile = export_file["md:FullModel"]["md:Model.profile"]
+        if type(profile) is list:
+            profile = profile[0]
         for key in short_profile_name.keys():
             if key in profile:
                 export_dict[key] = export_file
+                break
+        else:
+            pytest.fail("Profile '%s' not found" % profile)
     return export_dict
 
 
@@ -64,7 +74,7 @@ def read_exported_xml(directory):
 
 
 def test_export_with_exported_files(sample_cimdata, tmpdir):
-    active_profile_list = ["DL", "EQ", "SV", "TP"]
+    active_profile_list = ["DL", "EQ", "SSH", "SV", "TP"]
 
     cimpy.cim_export(sample_cimdata, tmpdir + "/EXPORTED_Test", "cgmes_v2_4_15", active_profile_list)
 

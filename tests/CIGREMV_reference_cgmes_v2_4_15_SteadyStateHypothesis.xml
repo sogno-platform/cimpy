@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cim="http://iec.ch/TC57/2012/CIM-schema-cim16#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:entsoe="http://entsoe.eu/Secretariat/ProfileExtension/2#" xmlns:neplan="http://www.neplan.ch#" >
+<md:FullModel rdf:about="CIGREMV_reference_cgmes_v2_4_15">
+    <md:Model.created>12/08/2024 16:34:44</md:Model.created>
+    <md:Model.modelingAuthoritySet>www.sogno.energy</md:Model.modelingAuthoritySet>
+    <md:Model.profile>http://entsoe.eu/CIM/SteadyStateHypothesis/1/1</md:Model.profile>
+</md:FullModel>
+<cim:Terminal rdf:about="#E-288">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-328">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-337">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-346">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-354">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-366">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-374">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-382">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-109">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-398">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-395">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-1229789158">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-213">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-222">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-231">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-252">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-261">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-270">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:ExternalNetworkInjection rdf:about="#HV-Netz">
+    <cim:ExternalNetworkInjection.referencePriority>1</cim:ExternalNetworkInjection.referencePriority>
+</cim:ExternalNetworkInjection>
+<cim:Terminal rdf:about="#E-67">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-301">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-302">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-309">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-310">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-116">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-117">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-124">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-125">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-132">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-133">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-149">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-150">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-165">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-166">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-180">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-181">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-185">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-186">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-193">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-194">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-198">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-199">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-203">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-204">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-70">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-86">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-80">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+<cim:Terminal rdf:about="#E-294">
+    <cim:ACDCTerminal.connected>True</cim:ACDCTerminal.connected>
+</cim:Terminal>
+</rdf:RDF>

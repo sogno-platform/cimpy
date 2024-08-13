@@ -1,83 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cim="http://iec.ch/TC57/2012/CIM-schema-cim16#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:entsoe="http://entsoe.eu/Secretariat/ProfileExtension/2#" xmlns:neplan="http://www.neplan.ch#" >
 <md:FullModel rdf:about="CIGREMV_reference_cgmes_v2_4_15">
-    <md:Model.created>29/01/2020 15:09:48</md:Model.created>
-    <md:Model.modelingAuthoritySet>www.acs.eonerc.rwth-aachen.de</md:Model.modelingAuthoritySet>
-    <md:Model.profile>StateVariables</md:Model.profile>
+    <md:Model.created>12/08/2024 16:34:44</md:Model.created>
+    <md:Model.modelingAuthoritySet>www.sogno.energy</md:Model.modelingAuthoritySet>
+    <md:Model.profile>http://entsoe.eu/CIM/StateVariables/4/1</md:Model.profile>
 </md:FullModel>
 <cim:SvVoltage rdf:ID="N12_5B20">
+    <cim:SvVoltage.TopologicalNode rdf:resource="#N12"/>
     <cim:SvVoltage.angle>-3.57295</cim:SvVoltage.angle>
     <cim:SvVoltage.v>19.605385</cim:SvVoltage.v>
-    <cim:SvVoltage.TopologicalNode rdf:resource="#N12"/>
 </cim:SvVoltage>
 <cim:SvVoltage rdf:ID="N13_5B20">
+    <cim:SvVoltage.TopologicalNode rdf:resource="#N13"/>
     <cim:SvVoltage.angle>-3.70772</cim:SvVoltage.angle>
     <cim:SvVoltage.v>19.55215</cim:SvVoltage.v>
-    <cim:SvVoltage.TopologicalNode rdf:resource="#N13"/>
 </cim:SvVoltage>
 <cim:SvVoltage rdf:ID="N14_5B20">
+    <cim:SvVoltage.TopologicalNode rdf:resource="#N14"/>
     <cim:SvVoltage.angle>-3.72158</cim:SvVoltage.angle>
     <cim:SvVoltage.v>19.532346</cim:SvVoltage.v>
-    <cim:SvVoltage.TopologicalNode rdf:resource="#N14"/>
 </cim:SvVoltage>
 <cim:SvVoltage rdf:ID="N0_5B20">
-    <cim:SvVoltage.v>110.0</cim:SvVoltage.v>
     <cim:SvVoltage.TopologicalNode rdf:resource="#N0"/>
+    <cim:SvVoltage.v>110.0</cim:SvVoltage.v>
 </cim:SvVoltage>
 <cim:SvVoltage rdf:ID="N1_5B20">
+    <cim:SvVoltage.TopologicalNode rdf:resource="#N1"/>
     <cim:SvVoltage.angle>-4.26829</cim:SvVoltage.angle>
     <cim:SvVoltage.v>19.531205</cim:SvVoltage.v>
-    <cim:SvVoltage.TopologicalNode rdf:resource="#N1"/>
 </cim:SvVoltage>
 <cim:SvVoltage rdf:ID="N2_5B20">
+    <cim:SvVoltage.TopologicalNode rdf:resource="#N2"/>
     <cim:SvVoltage.angle>-4.64028</cim:SvVoltage.angle>
     <cim:SvVoltage.v>19.086952</cim:SvVoltage.v>
-    <cim:SvVoltage.TopologicalNode rdf:resource="#N2"/>
 </cim:SvVoltage>
 <cim:SvVoltage rdf:ID="N3_5B20">
+    <cim:SvVoltage.TopologicalNode rdf:resource="#N3"/>
     <cim:SvVoltage.angle>-4.81668</cim:SvVoltage.angle>
     <cim:SvVoltage.v>18.882252</cim:SvVoltage.v>
-    <cim:SvVoltage.TopologicalNode rdf:resource="#N3"/>
 </cim:SvVoltage>
 <cim:SvVoltage rdf:ID="N4_5B20">
+    <cim:SvVoltage.TopologicalNode rdf:resource="#N4"/>
     <cim:SvVoltage.angle>-4.82967</cim:SvVoltage.angle>
     <cim:SvVoltage.v>18.86667</cim:SvVoltage.v>
-    <cim:SvVoltage.TopologicalNode rdf:resource="#N4"/>
 </cim:SvVoltage>
 <cim:SvVoltage rdf:ID="N5_5B20">
+    <cim:SvVoltage.TopologicalNode rdf:resource="#N5"/>
     <cim:SvVoltage.angle>-4.83776</cim:SvVoltage.angle>
     <cim:SvVoltage.v>18.852447</cim:SvVoltage.v>
-    <cim:SvVoltage.TopologicalNode rdf:resource="#N5"/>
 </cim:SvVoltage>
 <cim:SvVoltage rdf:ID="N11_5B20">
+    <cim:SvVoltage.TopologicalNode rdf:resource="#N11"/>
     <cim:SvVoltage.angle>-4.85252</cim:SvVoltage.angle>
     <cim:SvVoltage.v>18.825361</cim:SvVoltage.v>
-    <cim:SvVoltage.TopologicalNode rdf:resource="#N11"/>
 </cim:SvVoltage>
 <cim:SvVoltage rdf:ID="N10_5B20">
+    <cim:SvVoltage.TopologicalNode rdf:resource="#N10"/>
     <cim:SvVoltage.angle>-4.85164</cim:SvVoltage.angle>
     <cim:SvVoltage.v>18.827665</cim:SvVoltage.v>
-    <cim:SvVoltage.TopologicalNode rdf:resource="#N10"/>
 </cim:SvVoltage>
 <cim:SvVoltage rdf:ID="N8_5B20">
+    <cim:SvVoltage.TopologicalNode rdf:resource="#N8"/>
     <cim:SvVoltage.angle>-4.84708</cim:SvVoltage.angle>
     <cim:SvVoltage.v>18.852622</cim:SvVoltage.v>
-    <cim:SvVoltage.TopologicalNode rdf:resource="#N8"/>
 </cim:SvVoltage>
 <cim:SvVoltage rdf:ID="N7_5B20">
+    <cim:SvVoltage.TopologicalNode rdf:resource="#N7"/>
     <cim:SvVoltage.angle>-4.84996</cim:SvVoltage.angle>
     <cim:SvVoltage.v>18.850663</cim:SvVoltage.v>
-    <cim:SvVoltage.TopologicalNode rdf:resource="#N7"/>
 </cim:SvVoltage>
 <cim:SvVoltage rdf:ID="N6_5B20">
+    <cim:SvVoltage.TopologicalNode rdf:resource="#N6"/>
     <cim:SvVoltage.angle>-4.84739</cim:SvVoltage.angle>
     <cim:SvVoltage.v>18.836402</cim:SvVoltage.v>
-    <cim:SvVoltage.TopologicalNode rdf:resource="#N6"/>
 </cim:SvVoltage>
 <cim:SvVoltage rdf:ID="N9_5B20">
+    <cim:SvVoltage.TopologicalNode rdf:resource="#N9"/>
     <cim:SvVoltage.angle>-4.84744</cim:SvVoltage.angle>
     <cim:SvVoltage.v>18.843089</cim:SvVoltage.v>
-    <cim:SvVoltage.TopologicalNode rdf:resource="#N9"/>
 </cim:SvVoltage>
 <cim:SvPowerFlow rdf:ID="Load7-I-sv">
     <cim:SvPowerFlow.Terminal rdf:resource="#E-288"/>
