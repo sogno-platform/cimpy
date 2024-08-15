@@ -42,6 +42,8 @@ class WindPlantReactiveControlIEC(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, WindPlantIEC = None, kiwpx = 0.0, kpwpx = 0.0, kwpqu = 0.0, mwppf = False, mwpu = False, twppfilt = 0.0, twpqfilt = 0.0, twpufilt = 0.0, txft = 0.0, txfv = 0.0, uwpqdip = 0.0, xrefmax = 0.0, xrefmin = 0.0, *args, **kw_args):

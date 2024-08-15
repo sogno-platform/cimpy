@@ -24,6 +24,8 @@ class SynchronousMachineDynamics(RotatingMachineDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class RotatingMachineDynamics:\n" + RotatingMachineDynamics.__doc__
 
     def __init__(self, ExcitationSystemDynamics = None, GenICompensationForGenJ = "list", MechanicalLoadDynamics = None, SynchronousMachine = None, TurbineGovernorDynamics = "list", *args, **kw_args):

@@ -76,6 +76,8 @@ class Pss2B(PowerSystemStabilizerDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class PowerSystemStabilizerDynamics:\n" + PowerSystemStabilizerDynamics.__doc__
 
     def __init__(self, a = 0.0, inputSignal1Type = None, inputSignal2Type = None, ks1 = 0.0, ks2 = 0.0, ks3 = 0.0, ks4 = 0.0, m = 0, n = 0, t1 = 0.0, t10 = 0.0, t11 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, t6 = 0.0, t7 = 0.0, t8 = 0.0, t9 = 0.0, ta = 0.0, tb = 0.0, tw1 = 0.0, tw2 = 0.0, tw3 = 0.0, tw4 = 0.0, vsi1max = 0.0, vsi1min = 0.0, vsi2max = 0.0, vsi2min = 0.0, vstmax = 0.0, vstmin = 0.0, *args, **kw_args):

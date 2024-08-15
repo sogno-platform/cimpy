@@ -42,6 +42,8 @@ class EquipmentVersion(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
 
     def __init__(self, baseUML = '', baseURIcore = '', baseURIoperation = '', baseURIshortCircuit = '', date = '', differenceModelURI = '', entsoeUML = '', entsoeURIcore = '', entsoeURIoperation = '', entsoeURIshortCircuit = '', modelDescriptionURI = '', namespaceRDF = '', namespaceUML = '', shortName = ''):
 

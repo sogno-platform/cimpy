@@ -22,6 +22,8 @@ class RegularTimePoint(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
 
     def __init__(self, IntervalSchedule = None, sequenceNumber = 0, value1 = 0.0, value2 = 0.0):
 

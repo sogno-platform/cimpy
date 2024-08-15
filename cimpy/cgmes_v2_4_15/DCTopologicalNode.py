@@ -22,6 +22,8 @@ class DCTopologicalNode(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.TP.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, DCEquipmentContainer = None, DCNodes = "list", DCTerminals = "list", DCTopologicalIsland = None, *args, **kw_args):

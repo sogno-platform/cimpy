@@ -16,6 +16,8 @@ class LoadDynamics(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, EnergyConsumer = "list", *args, **kw_args):

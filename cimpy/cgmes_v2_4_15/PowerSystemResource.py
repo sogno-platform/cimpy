@@ -20,6 +20,8 @@ class PowerSystemResource(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, Controls = "list", Location = None, Measurements = "list", *args, **kw_args):

@@ -40,6 +40,8 @@ class PowerTransformerEnd(TransformerEnd):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class TransformerEnd:\n" + TransformerEnd.__doc__
 
     def __init__(self, PowerTransformer = None, b = 0.0, b0 = 0.0, connectionKind = None, g = 0.0, g0 = 0.0, phaseAngleClock = 0, r = 0.0, r0 = 0.0, ratedS = 0.0, ratedU = 0.0, x = 0.0, x0 = 0.0, *args, **kw_args):

@@ -36,6 +36,8 @@ class EquipmentBoundaryVersion(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ_BD.value
+
 
     def __init__(self, baseUML = '', baseURI = '', date = '', differenceModelURI = '', entsoeUML = '', entsoeURIcore = '', entsoeURIoperation = '', modelDescriptionURI = '', namespaceRDF = '', namespaceUML = '', shortName = ''):
 

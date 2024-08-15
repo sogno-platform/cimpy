@@ -16,6 +16,8 @@ class RaiseLowerCommand(AnalogControl):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class AnalogControl:\n" + AnalogControl.__doc__
 
     def __init__(self, ValueAliasSet = None, *args, **kw_args):

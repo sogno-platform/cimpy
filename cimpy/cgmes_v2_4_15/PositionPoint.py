@@ -24,6 +24,8 @@ class PositionPoint(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.GL.value
+
 
     def __init__(self, Location = None, sequenceNumber = 0, xPosition = '', yPosition = '', zPosition = ''):
 

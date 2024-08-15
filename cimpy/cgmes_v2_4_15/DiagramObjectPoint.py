@@ -26,6 +26,8 @@ class DiagramObjectPoint(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DL.value
+
 
     def __init__(self, DiagramObject = None, DiagramObjectGluePoint = None, sequenceNumber = 0, xPosition = 0.0, yPosition = 0.0, zPosition = 0.0):
 

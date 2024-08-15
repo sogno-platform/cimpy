@@ -26,6 +26,8 @@ class Control(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, PowerSystemResource = None, controlType = '', operationInProgress = False, timeStamp = '', unitMultiplier = None, unitSymbol = None, *args, **kw_args):

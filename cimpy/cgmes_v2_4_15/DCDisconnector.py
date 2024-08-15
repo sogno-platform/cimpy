@@ -14,6 +14,8 @@ class DCDisconnector(DCSwitch):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class DCSwitch:\n" + DCSwitch.__doc__
 
     def __init__(self, *args, **kw_args):

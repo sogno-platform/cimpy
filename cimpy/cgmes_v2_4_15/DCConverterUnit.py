@@ -18,6 +18,8 @@ class DCConverterUnit(DCEquipmentContainer):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class DCEquipmentContainer:\n" + DCEquipmentContainer.__doc__
 
     def __init__(self, Substation = None, operationMode = None, *args, **kw_args):

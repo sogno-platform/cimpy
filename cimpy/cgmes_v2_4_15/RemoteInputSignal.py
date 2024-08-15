@@ -34,6 +34,8 @@ class RemoteInputSignal(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, DiscontinuousExcitationControlDynamics = None, PFVArControllerType1Dynamics = None, PowerSystemStabilizerDynamics = None, Terminal = None, UnderexcitationLimiterDynamics = None, VoltageCompensatorDynamics = None, WindPlantDynamics = None, WindTurbineType1or2Dynamics = None, WindTurbineType3or4Dynamics = None, remoteSignalType = None, *args, **kw_args):

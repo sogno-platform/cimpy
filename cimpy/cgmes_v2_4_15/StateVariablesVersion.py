@@ -34,6 +34,8 @@ class StateVariablesVersion(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.SV.value
+
 
     def __init__(self, baseUML = '', baseURI = '', date = '', differenceModelURI = '', entsoeUML = '', entsoeURI = '', modelDescriptionURI = '', namespaceRDF = '', namespaceUML = '', shortName = ''):
 

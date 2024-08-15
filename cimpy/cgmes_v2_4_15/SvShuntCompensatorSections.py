@@ -18,6 +18,8 @@ class SvShuntCompensatorSections(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.SV.value
+
 
     def __init__(self, ShuntCompensator = None, sections = 0.0):
 

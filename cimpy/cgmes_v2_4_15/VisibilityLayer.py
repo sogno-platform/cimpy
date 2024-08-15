@@ -18,6 +18,8 @@ class VisibilityLayer(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DL.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, VisibleObjects = "list", drawingOrder = 0, *args, **kw_args):

@@ -24,6 +24,8 @@ class VolumeFlowRate(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
 
     def __init__(self, denominatorMultiplier = None, denominatorUnit = None, multiplier = None, unit = None, value = 0.0):
 

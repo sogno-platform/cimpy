@@ -18,6 +18,8 @@ class PhaseTapChangerTablePoint(TapChangerTablePoint):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class TapChangerTablePoint:\n" + TapChangerTablePoint.__doc__
 
     def __init__(self, PhaseTapChangerTable = None, angle = 0.0, *args, **kw_args):

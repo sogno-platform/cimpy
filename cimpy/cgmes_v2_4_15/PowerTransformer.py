@@ -28,6 +28,8 @@ class PowerTransformer(ConductingEquipment):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class ConductingEquipment:\n" + ConductingEquipment.__doc__
 
     def __init__(self, PowerTransformerEnd = "list", beforeShCircuitHighestOperatingCurrent = 0.0, beforeShCircuitHighestOperatingVoltage = 0.0, beforeShortCircuitAnglePf = 0.0, highSideMinOperatingU = 0.0, isPartOfGeneratorUnit = False, operationalValuesConsidered = False, *args, **kw_args):

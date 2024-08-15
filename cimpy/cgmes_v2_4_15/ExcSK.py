@@ -78,6 +78,8 @@ class ExcSK(ExcitationSystemDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class ExcitationSystemDynamics:\n" + ExcitationSystemDynamics.__doc__
 
     def __init__(self, efdmax = 0.0, efdmin = 0.0, emax = 0.0, emin = 0.0, k = 0.0, k1 = 0.0, k2 = 0.0, kc = 0.0, kce = 0.0, kd = 0.0, kgob = 0.0, kp = 0.0, kqi = 0.0, kqob = 0.0, kqp = 0.0, nq = 0.0, qconoff = False, qz = 0.0, remote = False, sbase = 0.0, tc = 0.0, te = 0.0, ti = 0.0, tp = 0.0, tr = 0.0, uimax = 0.0, uimin = 0.0, urmax = 0.0, urmin = 0.0, vtmax = 0.0, vtmin = 0.0, yp = 0.0, *args, **kw_args):

@@ -28,6 +28,8 @@ class PetersenCoil(EarthFaultCompensator):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class EarthFaultCompensator:\n" + EarthFaultCompensator.__doc__
 
     def __init__(self, mode = None, nominalU = 0.0, offsetCurrent = 0.0, positionCurrent = 0.0, xGroundMax = 0.0, xGroundMin = 0.0, xGroundNominal = 0.0, *args, **kw_args):

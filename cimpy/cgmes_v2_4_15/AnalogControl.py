@@ -20,6 +20,8 @@ class AnalogControl(Control):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class Control:\n" + Control.__doc__
 
     def __init__(self, AnalogValue = None, maxValue = 0.0, minValue = 0.0, *args, **kw_args):

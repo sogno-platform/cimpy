@@ -26,6 +26,8 @@ class TapChangerTablePoint(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
 
     def __init__(self, b = 0.0, g = 0.0, r = 0.0, ratio = 0.0, step = 0, x = 0.0):
 

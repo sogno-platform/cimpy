@@ -22,6 +22,8 @@ class RatioTapChanger(TapChanger):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class TapChanger:\n" + TapChanger.__doc__
 
     def __init__(self, RatioTapChangerTable = None, TransformerEnd = None, stepVoltageIncrement = 0.0, tculControlMode = None, *args, **kw_args):

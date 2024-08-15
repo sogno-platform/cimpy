@@ -22,6 +22,8 @@ class CurveData(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
 
     def __init__(self, Curve = None, xvalue = 0.0, y1value = 0.0, y2value = 0.0):
 

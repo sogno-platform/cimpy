@@ -16,6 +16,8 @@ class DCConductingEquipment(Equipment):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class Equipment:\n" + Equipment.__doc__
 
     def __init__(self, DCTerminals = "list", *args, **kw_args):

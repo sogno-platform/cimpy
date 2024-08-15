@@ -36,6 +36,8 @@ class SynchronousMachineEquivalentCircuit(SynchronousMachineDetailed):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class SynchronousMachineDetailed:\n" + SynchronousMachineDetailed.__doc__
 
     def __init__(self, r1d = 0.0, r1q = 0.0, r2q = 0.0, rfd = 0.0, x1d = 0.0, x1q = 0.0, x2q = 0.0, xad = 0.0, xaq = 0.0, xf1d = 0.0, xfd = 0.0, *args, **kw_args):

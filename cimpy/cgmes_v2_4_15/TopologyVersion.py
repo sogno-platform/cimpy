@@ -34,6 +34,8 @@ class TopologyVersion(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.TP.value
+
 
     def __init__(self, baseUML = '', baseURI = '', date = '', differenceModelURI = '', entsoeUML = '', entsoeURI = '', modelDescriptionURI = '', namespaceRDF = '', namespaceUML = '', shortName = ''):
 

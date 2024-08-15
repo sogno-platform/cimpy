@@ -18,6 +18,8 @@ class SvStatus(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.SV.value
+
 
     def __init__(self, ConductingEquipment = None, inService = False):
 

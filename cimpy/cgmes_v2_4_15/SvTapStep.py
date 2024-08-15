@@ -18,6 +18,8 @@ class SvTapStep(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.SV.value
+
 
     def __init__(self, TapChanger = None, position = 0.0):
 

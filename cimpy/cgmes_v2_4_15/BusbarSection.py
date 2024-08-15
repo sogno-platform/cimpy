@@ -16,6 +16,8 @@ class BusbarSection(Connector):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class Connector:\n" + Connector.__doc__
 
     def __init__(self, ipMax = 0.0, *args, **kw_args):

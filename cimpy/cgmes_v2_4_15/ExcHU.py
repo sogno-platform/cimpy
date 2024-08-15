@@ -38,6 +38,8 @@ class ExcHU(ExcitationSystemDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class ExcitationSystemDynamics:\n" + ExcitationSystemDynamics.__doc__
 
     def __init__(self, ae = 0.0, ai = 0.0, atr = 0.0, emax = 0.0, emin = 0.0, imax = 0.0, imin = 0.0, ke = 0.0, ki = 0.0, te = 0.0, ti = 0.0, tr = 0.0, *args, **kw_args):

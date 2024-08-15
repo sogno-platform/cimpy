@@ -18,6 +18,8 @@ class ConformLoadGroup(LoadGroup):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class LoadGroup:\n" + LoadGroup.__doc__
 
     def __init__(self, ConformLoadSchedules = "list", EnergyConsumers = "list", *args, **kw_args):

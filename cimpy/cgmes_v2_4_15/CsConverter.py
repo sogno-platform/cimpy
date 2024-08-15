@@ -42,6 +42,8 @@ class CsConverter(ACDCConverter):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class ACDCConverter:\n" + ACDCConverter.__doc__
 
     def __init__(self, alpha = 0.0, gamma = 0.0, maxAlpha = 0.0, maxGamma = 0.0, maxIdc = 0.0, minAlpha = 0.0, minGamma = 0.0, minIdc = 0.0, operatingMode = None, pPccControl = None, ratedIdc = 0.0, targetAlpha = 0.0, targetGamma = 0.0, targetIdc = 0.0, *args, **kw_args):

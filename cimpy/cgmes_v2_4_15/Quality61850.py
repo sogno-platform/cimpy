@@ -38,6 +38,8 @@ class Quality61850(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
 
     def __init__(self, badReference = False, estimatorReplaced = False, failure = False, oldData = False, operatorBlocked = False, oscillatory = False, outOfRange = False, overFlow = False, source = None, suspect = False, test = False, validity = None):
 

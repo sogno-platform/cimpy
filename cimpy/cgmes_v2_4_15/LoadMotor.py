@@ -42,6 +42,8 @@ class LoadMotor(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, LoadAggregate = None, d = 0.0, h = 0.0, lfac = 0.0, lp = 0.0, lpp = 0.0, ls = 0.0, pfrac = 0.0, ra = 0.0, tbkr = 0.0, tpo = 0.0, tppo = 0.0, tv = 0.0, vt = 0.0, *args, **kw_args):

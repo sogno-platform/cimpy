@@ -38,6 +38,8 @@ class LoadResponseCharacteristic(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, EnergyConsumer = "list", exponentModel = False, pConstantCurrent = 0.0, pConstantImpedance = 0.0, pConstantPower = 0.0, pFrequencyExponent = 0.0, pVoltageExponent = 0.0, qConstantCurrent = 0.0, qConstantImpedance = 0.0, qConstantPower = 0.0, qFrequencyExponent = 0.0, qVoltageExponent = 0.0, *args, **kw_args):

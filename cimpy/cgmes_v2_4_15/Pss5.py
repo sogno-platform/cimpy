@@ -48,6 +48,8 @@ class Pss5(PowerSystemStabilizerDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class PowerSystemStabilizerDynamics:\n" + PowerSystemStabilizerDynamics.__doc__
 
     def __init__(self, ctw2 = False, deadband = 0.0, isfreq = False, kf = 0.0, kpe = 0.0, kpss = 0.0, pmm = 0.0, tl1 = 0.0, tl2 = 0.0, tl3 = 0.0, tl4 = 0.0, tpe = 0.0, tw1 = 0.0, tw2 = 0.0, vadat = False, vsmn = 0.0, vsmx = 0.0, *args, **kw_args):

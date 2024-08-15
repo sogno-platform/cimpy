@@ -18,6 +18,8 @@ class StringMeasurementValue(MeasurementValue):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class MeasurementValue:\n" + MeasurementValue.__doc__
 
     def __init__(self, StringMeasurement = None, value = '', *args, **kw_args):

@@ -14,6 +14,8 @@ class PhaseTapChangerSymmetrical(PhaseTapChangerNonLinear):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class PhaseTapChangerNonLinear:\n" + PhaseTapChangerNonLinear.__doc__
 
     def __init__(self, *args, **kw_args):

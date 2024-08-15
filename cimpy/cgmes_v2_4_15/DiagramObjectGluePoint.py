@@ -16,6 +16,8 @@ class DiagramObjectGluePoint(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DL.value
+
 
     def __init__(self, DiagramObjectPoints = "list"):
 

@@ -34,6 +34,8 @@ class SteadyStateHypothesisVersion(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.SSH.value
+
 
     def __init__(self, baseUML = '', baseURI = '', date = '', differenceModelURI = '', entsoeUML = '', entsoeURI = '', modelDescriptionURI = '', namespaceRDF = '', namespaceUML = '', shortName = ''):
 

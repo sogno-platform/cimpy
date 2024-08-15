@@ -16,6 +16,8 @@ class NonConformLoadSchedule(SeasonDayTypeSchedule):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class SeasonDayTypeSchedule:\n" + SeasonDayTypeSchedule.__doc__
 
     def __init__(self, NonConformLoadGroup = None, *args, **kw_args):

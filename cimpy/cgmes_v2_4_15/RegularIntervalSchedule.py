@@ -20,6 +20,8 @@ class RegularIntervalSchedule(BasicIntervalSchedule):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class BasicIntervalSchedule:\n" + BasicIntervalSchedule.__doc__
 
     def __init__(self, TimePoints = "list", endTime = '', timeStep = 0.0, *args, **kw_args):

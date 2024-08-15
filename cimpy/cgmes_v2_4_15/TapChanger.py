@@ -36,6 +36,8 @@ class TapChanger(PowerSystemResource):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class PowerSystemResource:\n" + PowerSystemResource.__doc__
 
     def __init__(self, SvTapStep = None, TapChangerControl = None, TapSchedules = "list", controlEnabled = False, highStep = 0, lowStep = 0, ltcFlag = False, neutralStep = 0, neutralU = 0.0, normalStep = 0, step = 0.0, *args, **kw_args):

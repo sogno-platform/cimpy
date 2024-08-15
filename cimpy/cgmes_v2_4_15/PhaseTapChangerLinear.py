@@ -20,6 +20,8 @@ class PhaseTapChangerLinear(PhaseTapChanger):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class PhaseTapChanger:\n" + PhaseTapChanger.__doc__
 
     def __init__(self, stepPhaseShiftIncrement = 0.0, xMax = 0.0, xMin = 0.0, *args, **kw_args):

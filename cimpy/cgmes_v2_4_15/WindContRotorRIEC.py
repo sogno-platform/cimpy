@@ -34,6 +34,8 @@ class WindContRotorRIEC(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, WindDynamicsLookupTable = "list", WindGenTurbineType2IEC = None, kirr = 0.0, komegafilt = 0.0, kpfilt = 0.0, kprr = 0.0, rmax = 0.0, rmin = 0.0, tomegafilt = 0.0, tpfilt = 0.0, *args, **kw_args):

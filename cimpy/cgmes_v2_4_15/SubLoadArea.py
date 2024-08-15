@@ -18,6 +18,8 @@ class SubLoadArea(EnergyArea):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class EnergyArea:\n" + EnergyArea.__doc__
 
     def __init__(self, LoadArea = None, LoadGroups = "list", *args, **kw_args):

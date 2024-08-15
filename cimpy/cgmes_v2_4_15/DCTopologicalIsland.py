@@ -16,6 +16,8 @@ class DCTopologicalIsland(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.SV.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, DCTopologicalNodes = "list", *args, **kw_args):

@@ -68,6 +68,8 @@ class WindContQIEC(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, WindTurbineType3or4IEC = None, iqh1 = 0.0, iqmax = 0.0, iqmin = 0.0, iqpost = 0.0, kiq = 0.0, kiu = 0.0, kpq = 0.0, kpu = 0.0, kqv = 0.0, qmax = 0.0, qmin = 0.0, rdroop = 0.0, tiq = 0.0, tpfilt = 0.0, tpost = 0.0, tqord = 0.0, tufilt = 0.0, udb1 = 0.0, udb2 = 0.0, umax = 0.0, umin = 0.0, uqdip = 0.0, uref0 = 0.0, windLVRTQcontrolModesType = None, windQcontrolModesType = None, xdroop = 0.0, *args, **kw_args):

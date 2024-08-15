@@ -22,6 +22,8 @@ class AsynchronousMachineDynamics(RotatingMachineDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class RotatingMachineDynamics:\n" + RotatingMachineDynamics.__doc__
 
     def __init__(self, AsynchronousMachine = None, MechanicalLoadDynamics = None, TurbineGovernorDynamics = None, WindTurbineType1or2Dynamics = None, *args, **kw_args):

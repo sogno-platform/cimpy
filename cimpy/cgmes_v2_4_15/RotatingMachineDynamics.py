@@ -26,6 +26,8 @@ class RotatingMachineDynamics(DynamicsFunctionBlock):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class DynamicsFunctionBlock:\n" + DynamicsFunctionBlock.__doc__
 
     def __init__(self, damping = 0.0, inertia = 0.0, saturationFactor = 0.0, saturationFactor120 = 0.0, statorLeakageReactance = 0.0, statorResistance = 0.0, *args, **kw_args):

@@ -80,6 +80,8 @@ class GovGASTWD(TurbineGovernorDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class TurbineGovernorDynamics:\n" + TurbineGovernorDynamics.__doc__
 
     def __init__(self, a = 0.0, af1 = 0.0, af2 = 0.0, b = 0.0, bf1 = 0.0, bf2 = 0.0, c = 0.0, cf2 = 0.0, ecr = 0.0, etd = 0.0, k3 = 0.0, k4 = 0.0, k5 = 0.0, k6 = 0.0, kd = 0.0, kdroop = 0.0, kf = 0.0, ki = 0.0, kp = 0.0, mwbase = 0.0, t = 0.0, t3 = 0.0, t4 = 0.0, t5 = 0.0, tc = 0.0, tcd = 0.0, td = 0.0, tf = 0.0, tmax = 0.0, tmin = 0.0, tr = 0.0, trate = 0.0, tt = 0.0, *args, **kw_args):

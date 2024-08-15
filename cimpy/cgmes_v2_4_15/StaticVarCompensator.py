@@ -26,6 +26,8 @@ class StaticVarCompensator(RegulatingCondEq):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class RegulatingCondEq:\n" + RegulatingCondEq.__doc__
 
     def __init__(self, capacitiveRating = 0.0, inductiveRating = 0.0, q = 0.0, sVCControlMode = None, slope = 0.0, voltageSetPoint = 0.0, *args, **kw_args):

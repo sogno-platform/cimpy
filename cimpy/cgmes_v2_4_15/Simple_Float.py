@@ -16,6 +16,8 @@ class Simple_Float(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
 
     def __init__(self, value = 0.0):
 

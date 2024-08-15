@@ -20,6 +20,8 @@ class SvInjection(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.SV.value
+
 
     def __init__(self, TopologicalNode = None, pInjection = 0.0, qInjection = 0.0):
 

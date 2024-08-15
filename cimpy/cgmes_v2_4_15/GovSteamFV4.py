@@ -116,6 +116,8 @@ class GovSteamFV4(TurbineGovernorDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class TurbineGovernorDynamics:\n" + TurbineGovernorDynamics.__doc__
 
     def __init__(self, cpsmn = 0.0, cpsmx = 0.0, crmn = 0.0, crmx = 0.0, kdc = 0.0, kf1 = 0.0, kf3 = 0.0, khp = 0.0, kic = 0.0, kip = 0.0, kit = 0.0, kmp1 = 0.0, kmp2 = 0.0, kpc = 0.0, kpp = 0.0, kpt = 0.0, krc = 0.0, ksh = 0.0, lpi = 0.0, lps = 0.0, mnef = 0.0, mxef = 0.0, pr1 = 0.0, pr2 = 0.0, psmn = 0.0, rsmimn = 0.0, rsmimx = 0.0, rvgmn = 0.0, rvgmx = 0.0, srmn = 0.0, srmx = 0.0, srsmp = 0.0, svmn = 0.0, svmx = 0.0, ta = 0.0, tam = 0.0, tc = 0.0, tcm = 0.0, tdc = 0.0, tf1 = 0.0, tf2 = 0.0, thp = 0.0, tmp = 0.0, trh = 0.0, tv = 0.0, ty = 0.0, y = 0.0, yhpmn = 0.0, yhpmx = 0.0, ympmn = 0.0, ympmx = 0.0, *args, **kw_args):

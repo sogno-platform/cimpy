@@ -18,6 +18,8 @@ class Accumulator(Measurement):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class Measurement:\n" + Measurement.__doc__
 
     def __init__(self, AccumulatorValues = "list", LimitSets = "list", *args, **kw_args):

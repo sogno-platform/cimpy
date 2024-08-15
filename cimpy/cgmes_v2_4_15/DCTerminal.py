@@ -16,6 +16,8 @@ class DCTerminal(DCBaseTerminal):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class DCBaseTerminal:\n" + DCBaseTerminal.__doc__
 
     def __init__(self, DCConductingEquipment = None, *args, **kw_args):

@@ -14,6 +14,8 @@ class StationSupply(EnergyConsumer):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class EnergyConsumer:\n" + EnergyConsumer.__doc__
 
     def __init__(self, *args, **kw_args):

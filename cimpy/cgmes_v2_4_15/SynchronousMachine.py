@@ -60,6 +60,8 @@ class SynchronousMachine(RotatingMachine):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class RotatingMachine:\n" + RotatingMachine.__doc__
 
     def __init__(self, InitialReactiveCapabilityCurve = None, SynchronousMachineDynamics = None, earthing = False, earthingStarPointR = 0.0, earthingStarPointX = 0.0, ikk = 0.0, maxQ = 0.0, minQ = 0.0, mu = 0.0, operatingMode = None, qPercent = 0.0, r = 0.0, r0 = 0.0, r2 = 0.0, referencePriority = 0, satDirectSubtransX = 0.0, satDirectSyncX = 0.0, satDirectTransX = 0.0, shortCircuitRotorType = None, type = None, voltageRegulationRange = 0.0, x0 = 0.0, x2 = 0.0, *args, **kw_args):

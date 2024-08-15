@@ -18,6 +18,8 @@ class DCGround(DCConductingEquipment):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class DCConductingEquipment:\n" + DCConductingEquipment.__doc__
 
     def __init__(self, inductance = 0.0, r = 0.0, *args, **kw_args):

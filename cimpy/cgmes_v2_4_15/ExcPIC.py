@@ -60,6 +60,8 @@ class ExcPIC(ExcitationSystemDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class ExcitationSystemDynamics:\n" + ExcitationSystemDynamics.__doc__
 
     def __init__(self, e1 = 0.0, e2 = 0.0, efdmax = 0.0, efdmin = 0.0, ka = 0.0, kc = 0.0, ke = 0.0, kf = 0.0, ki = 0.0, kp = 0.0, se1 = 0.0, se2 = 0.0, ta1 = 0.0, ta2 = 0.0, ta3 = 0.0, ta4 = 0.0, te = 0.0, tf1 = 0.0, tf2 = 0.0, vr1 = 0.0, vr2 = 0.0, vrmax = 0.0, vrmin = 0.0, *args, **kw_args):

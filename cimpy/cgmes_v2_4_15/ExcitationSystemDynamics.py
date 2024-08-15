@@ -30,6 +30,8 @@ class ExcitationSystemDynamics(DynamicsFunctionBlock):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class DynamicsFunctionBlock:\n" + DynamicsFunctionBlock.__doc__
 
     def __init__(self, DiscontinuousExcitationControlDynamics = None, OverexcitationLimiterDynamics = None, PFVArControllerType1Dynamics = None, PFVArControllerType2Dynamics = None, PowerSystemStabilizerDynamics = None, SynchronousMachineDynamics = None, UnderexcitationLimiterDynamics = None, VoltageCompensatorDynamics = None, *args, **kw_args):

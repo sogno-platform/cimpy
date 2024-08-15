@@ -38,6 +38,8 @@ class WindPlantFreqPcontrolIEC(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, WindDynamicsLookupTable = "list", WindPlantIEC = None, dprefmax = 0.0, dprefmin = 0.0, kiwpp = 0.0, kpwpp = 0.0, prefmax = 0.0, prefmin = 0.0, tpft = 0.0, tpfv = 0.0, twpffilt = 0.0, twppfilt = 0.0, *args, **kw_args):

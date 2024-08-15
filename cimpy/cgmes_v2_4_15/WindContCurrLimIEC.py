@@ -28,6 +28,8 @@ class WindContCurrLimIEC(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, WindDynamicsLookupTable = "list", WindTurbineType3or4IEC = None, imax = 0.0, imaxdip = 0.0, mdfslim = False, mqpri = False, tufilt = 0.0, *args, **kw_args):

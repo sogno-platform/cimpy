@@ -52,6 +52,8 @@ class GeneratingUnit(Equipment):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class Equipment:\n" + Equipment.__doc__
 
     def __init__(self, ControlAreaGeneratingUnit = "list", GrossToNetActivePowerCurves = "list", RotatingMachine = "list", genControlSource = None, governorSCD = 0.0, initialP = 0.0, longPF = 0.0, maxOperatingP = 0.0, maximumAllowableSpinningReserve = 0.0, minOperatingP = 0.0, nominalP = 0.0, normalPF = 0.0, ratedGrossMaxP = 0.0, ratedGrossMinP = 0.0, ratedNetMaxP = 0.0, shortPF = 0.0, startupCost = 0.0, totalEfficiency = 0.0, variableCost = 0.0, *args, **kw_args):

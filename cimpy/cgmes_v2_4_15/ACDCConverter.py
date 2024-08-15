@@ -52,6 +52,8 @@ class ACDCConverter(ConductingEquipment):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class ConductingEquipment:\n" + ConductingEquipment.__doc__
 
     def __init__(self, DCTerminals = "list", PccTerminal = None, baseS = 0.0, idc = 0.0, idleLoss = 0.0, maxUdc = 0.0, minUdc = 0.0, numberOfValves = 0, p = 0.0, poleLossP = 0.0, q = 0.0, ratedUdc = 0.0, resistiveLoss = 0.0, switchingLoss = 0.0, targetPpcc = 0.0, targetUdc = 0.0, uc = 0.0, udc = 0.0, valveU0 = 0.0, *args, **kw_args):

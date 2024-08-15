@@ -18,6 +18,8 @@ class WindTurbineType1or2IEC(WindTurbineType1or2Dynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class WindTurbineType1or2Dynamics:\n" + WindTurbineType1or2Dynamics.__doc__
 
     def __init__(self, WindMechIEC = None, WindProtectionIEC = None, *args, **kw_args):

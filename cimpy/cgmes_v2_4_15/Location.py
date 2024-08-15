@@ -20,6 +20,8 @@ class Location(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.GL.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, CoordinateSystem = None, PositionPoints = "list", PowerSystemResources = None, *args, **kw_args):

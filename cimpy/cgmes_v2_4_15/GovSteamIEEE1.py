@@ -56,6 +56,8 @@ class GovSteamIEEE1(TurbineGovernorDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class TurbineGovernorDynamics:\n" + TurbineGovernorDynamics.__doc__
 
     def __init__(self, k = 0.0, k1 = 0.0, k2 = 0.0, k3 = 0.0, k4 = 0.0, k5 = 0.0, k6 = 0.0, k7 = 0.0, k8 = 0.0, mwbase = 0.0, pmax = 0.0, pmin = 0.0, t1 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, t5 = 0.0, t6 = 0.0, t7 = 0.0, uc = 0.0, uo = 0.0, *args, **kw_args):

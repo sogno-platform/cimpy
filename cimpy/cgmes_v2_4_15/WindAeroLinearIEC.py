@@ -26,6 +26,8 @@ class WindAeroLinearIEC(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, WindGenTurbineType3IEC = None, dpomega = 0.0, dptheta = 0.0, omegazero = 0.0, pavail = 0.0, thetazero = 0.0, *args, **kw_args):

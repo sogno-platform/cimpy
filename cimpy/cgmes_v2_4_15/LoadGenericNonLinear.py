@@ -32,6 +32,8 @@ class LoadGenericNonLinear(LoadDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class LoadDynamics:\n" + LoadDynamics.__doc__
 
     def __init__(self, bs = 0.0, bt = 0.0, genericNonLinearLoadModelType = None, ls = 0.0, lt = 0.0, pt = 0.0, qt = 0.0, tp = 0.0, tq = 0.0, *args, **kw_args):

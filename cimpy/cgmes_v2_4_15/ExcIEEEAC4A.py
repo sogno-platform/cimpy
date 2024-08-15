@@ -32,6 +32,8 @@ class ExcIEEEAC4A(ExcitationSystemDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class ExcitationSystemDynamics:\n" + ExcitationSystemDynamics.__doc__
 
     def __init__(self, ka = 0.0, kc = 0.0, ta = 0.0, tb = 0.0, tc = 0.0, vimax = 0.0, vimin = 0.0, vrmax = 0.0, vrmin = 0.0, *args, **kw_args):

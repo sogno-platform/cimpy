@@ -18,6 +18,8 @@ class PFVArControllerType1UserDefined(PFVArControllerType1Dynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class PFVArControllerType1Dynamics:\n" + PFVArControllerType1Dynamics.__doc__
 
     def __init__(self, ProprietaryParameterDynamics = "list", proprietary = False, *args, **kw_args):

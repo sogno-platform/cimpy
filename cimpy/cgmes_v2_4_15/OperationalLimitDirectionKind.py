@@ -14,6 +14,8 @@ class OperationalLimitDirectionKind(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
 
     def __init__(self):
 

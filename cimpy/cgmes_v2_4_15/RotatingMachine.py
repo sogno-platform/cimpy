@@ -28,6 +28,8 @@ class RotatingMachine(RegulatingCondEq):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class RegulatingCondEq:\n" + RegulatingCondEq.__doc__
 
     def __init__(self, GeneratingUnit = None, HydroPump = None, p = 0.0, q = 0.0, ratedPowerFactor = 0.0, ratedS = 0.0, ratedU = 0.0, *args, **kw_args):

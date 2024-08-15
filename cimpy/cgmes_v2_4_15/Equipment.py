@@ -20,6 +20,8 @@ class Equipment(PowerSystemResource):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class PowerSystemResource:\n" + PowerSystemResource.__doc__
 
     def __init__(self, EquipmentContainer = None, OperationalLimitSet = "list", aggregate = False, *args, **kw_args):

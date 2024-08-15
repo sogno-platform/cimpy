@@ -22,6 +22,8 @@ class ValueAliasSet(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, Commands = "list", Discretes = "list", RaiseLowerCommands = "list", Values = "list", *args, **kw_args):

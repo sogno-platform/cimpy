@@ -46,6 +46,8 @@ class EquivalentInjection(EquivalentEquipment):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class EquivalentEquipment:\n" + EquivalentEquipment.__doc__
 
     def __init__(self, ReactiveCapabilityCurve = None, maxP = 0.0, maxQ = 0.0, minP = 0.0, minQ = 0.0, p = 0.0, q = 0.0, r = 0.0, r0 = 0.0, r2 = 0.0, regulationCapability = False, regulationStatus = False, regulationTarget = 0.0, x = 0.0, x0 = 0.0, x2 = 0.0, *args, **kw_args):

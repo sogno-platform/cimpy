@@ -38,6 +38,8 @@ class ExcAVR1(ExcitationSystemDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class ExcitationSystemDynamics:\n" + ExcitationSystemDynamics.__doc__
 
     def __init__(self, e1 = 0.0, e2 = 0.0, ka = 0.0, kf = 0.0, se1 = 0.0, se2 = 0.0, ta = 0.0, tb = 0.0, te = 0.0, tf = 0.0, vrmn = 0.0, vrmx = 0.0, *args, **kw_args):

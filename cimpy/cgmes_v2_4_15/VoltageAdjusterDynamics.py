@@ -16,6 +16,8 @@ class VoltageAdjusterDynamics(DynamicsFunctionBlock):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class DynamicsFunctionBlock:\n" + DynamicsFunctionBlock.__doc__
 
     def __init__(self, PFVArControllerType1Dynamics = None, *args, **kw_args):

@@ -44,6 +44,8 @@ class UnderexcLimIEEE1(UnderexcitationLimiterDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class UnderexcitationLimiterDynamics:\n" + UnderexcitationLimiterDynamics.__doc__
 
     def __init__(self, kuc = 0.0, kuf = 0.0, kui = 0.0, kul = 0.0, kur = 0.0, tu1 = 0.0, tu2 = 0.0, tu3 = 0.0, tu4 = 0.0, vucmax = 0.0, vuimax = 0.0, vuimin = 0.0, vulmax = 0.0, vulmin = 0.0, vurmax = 0.0, *args, **kw_args):

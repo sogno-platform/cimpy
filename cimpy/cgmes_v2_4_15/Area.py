@@ -20,6 +20,8 @@ class Area(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
 
     def __init__(self, multiplier = None, unit = None, value = 0.0):
 

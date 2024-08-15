@@ -30,6 +30,8 @@ class WindDynamicsLookupTable(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, WindContCurrLimIEC = None, WindContPType3IEC = None, WindContRotorRIEC = None, WindPlantFreqPcontrolIEC = None, input = 0.0, lookupTableFunctionType = None, output = 0.0, sequence = 0, *args, **kw_args):

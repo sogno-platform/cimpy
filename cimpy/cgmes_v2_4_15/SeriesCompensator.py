@@ -28,6 +28,8 @@ class SeriesCompensator(ConductingEquipment):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class ConductingEquipment:\n" + ConductingEquipment.__doc__
 
     def __init__(self, r = 0.0, r0 = 0.0, varistorPresent = False, varistorRatedCurrent = 0.0, varistorVoltageThreshold = 0.0, x = 0.0, x0 = 0.0, *args, **kw_args):

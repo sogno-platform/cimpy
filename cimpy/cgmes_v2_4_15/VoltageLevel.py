@@ -24,6 +24,8 @@ class VoltageLevel(EquipmentContainer):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class EquipmentContainer:\n" + EquipmentContainer.__doc__
 
     def __init__(self, BaseVoltage = None, Bays = "list", Substation = None, highVoltageLimit = 0.0, lowVoltageLimit = 0.0, *args, **kw_args):

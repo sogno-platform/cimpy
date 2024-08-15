@@ -16,6 +16,8 @@ class GroundingImpedance(EarthFaultCompensator):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class EarthFaultCompensator:\n" + EarthFaultCompensator.__doc__
 
     def __init__(self, x = 0.0, *args, **kw_args):

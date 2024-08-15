@@ -18,6 +18,8 @@ class DCBaseTerminal(ACDCTerminal):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class ACDCTerminal:\n" + ACDCTerminal.__doc__
 
     def __init__(self, DCNode = None, DCTopologicalNode = None, *args, **kw_args):

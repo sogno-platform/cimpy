@@ -34,6 +34,8 @@ class DiagramObject(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DL.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, Diagram = None, DiagramObjectPoints = "list", DiagramObjectStyle = None, IdentifiedObject = None, VisibilityLayers = "list", drawingOrder = 0, isPolygon = False, offsetX = 0.0, offsetY = 0.0, rotation = 0.0, *args, **kw_args):

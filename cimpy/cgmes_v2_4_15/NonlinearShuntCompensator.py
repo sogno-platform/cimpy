@@ -16,6 +16,8 @@ class NonlinearShuntCompensator(ShuntCompensator):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class ShuntCompensator:\n" + ShuntCompensator.__doc__
 
     def __init__(self, NonlinearShuntCompensatorPoints = "list", *args, **kw_args):

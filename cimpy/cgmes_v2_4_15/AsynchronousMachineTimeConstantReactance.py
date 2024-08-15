@@ -24,6 +24,8 @@ class AsynchronousMachineTimeConstantReactance(AsynchronousMachineDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class AsynchronousMachineDynamics:\n" + AsynchronousMachineDynamics.__doc__
 
     def __init__(self, tpo = 0.0, tppo = 0.0, xp = 0.0, xpp = 0.0, xs = 0.0, *args, **kw_args):

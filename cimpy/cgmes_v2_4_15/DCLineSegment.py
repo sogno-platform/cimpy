@@ -24,6 +24,8 @@ class DCLineSegment(DCConductingEquipment):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class DCConductingEquipment:\n" + DCConductingEquipment.__doc__
 
     def __init__(self, PerLengthParameter = None, capacitance = 0.0, inductance = 0.0, length = 0.0, resistance = 0.0, *args, **kw_args):

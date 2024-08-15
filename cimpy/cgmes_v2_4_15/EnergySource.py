@@ -40,6 +40,8 @@ class EnergySource(ConductingEquipment):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class ConductingEquipment:\n" + ConductingEquipment.__doc__
 
     def __init__(self, EnergySchedulingType = None, WindTurbineType3or4Dynamics = None, activePower = 0.0, nominalVoltage = 0.0, r = 0.0, r0 = 0.0, reactivePower = 0.0, rn = 0.0, voltageAngle = 0.0, voltageMagnitude = 0.0, x = 0.0, x0 = 0.0, xn = 0.0, *args, **kw_args):

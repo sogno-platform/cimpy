@@ -18,6 +18,8 @@ class ConnectivityNodeContainer(PowerSystemResource):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class PowerSystemResource:\n" + PowerSystemResource.__doc__
 
     def __init__(self, ConnectivityNodes = "list", TopologicalNode = "list", *args, **kw_args):

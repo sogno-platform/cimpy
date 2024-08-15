@@ -20,6 +20,8 @@ class VCompIEEEType1(VoltageCompensatorDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class VoltageCompensatorDynamics:\n" + VoltageCompensatorDynamics.__doc__
 
     def __init__(self, rc = 0.0, tr = 0.0, xc = 0.0, *args, **kw_args):

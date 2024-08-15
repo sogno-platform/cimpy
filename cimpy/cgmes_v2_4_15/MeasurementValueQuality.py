@@ -16,6 +16,8 @@ class MeasurementValueQuality(Quality61850):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class Quality61850:\n" + Quality61850.__doc__
 
     def __init__(self, MeasurementValue = None, *args, **kw_args):

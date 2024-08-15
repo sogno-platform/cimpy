@@ -24,6 +24,8 @@ class AsynchronousMachineEquivalentCircuit(AsynchronousMachineDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class AsynchronousMachineDynamics:\n" + AsynchronousMachineDynamics.__doc__
 
     def __init__(self, rr1 = 0.0, rr2 = 0.0, xlr1 = 0.0, xlr2 = 0.0, xm = 0.0, *args, **kw_args):

@@ -20,6 +20,8 @@ class TieFlow(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
 
     def __init__(self, ControlArea = None, Terminal = None, positiveFlowIn = False):
 

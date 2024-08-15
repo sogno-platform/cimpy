@@ -26,6 +26,8 @@ class PFVArType1IEEEVArController(PFVArControllerType1Dynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class PFVArControllerType1Dynamics:\n" + PFVArControllerType1Dynamics.__doc__
 
     def __init__(self, tvarc = 0.0, vvar = 0.0, vvarcbw = 0.0, vvarref = 0.0, vvtmax = 0.0, vvtmin = 0.0, *args, **kw_args):

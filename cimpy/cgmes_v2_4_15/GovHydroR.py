@@ -98,6 +98,8 @@ class GovHydroR(TurbineGovernorDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class TurbineGovernorDynamics:\n" + TurbineGovernorDynamics.__doc__
 
     def __init__(self, at = 0.0, db1 = 0.0, db2 = 0.0, dturb = 0.0, eps = 0.0, gmax = 0.0, gmin = 0.0, gv1 = 0.0, gv2 = 0.0, gv3 = 0.0, gv4 = 0.0, gv5 = 0.0, gv6 = 0.0, h0 = 0.0, inputSignal = False, kg = 0.0, ki = 0.0, mwbase = 0.0, pgv1 = 0.0, pgv2 = 0.0, pgv3 = 0.0, pgv4 = 0.0, pgv5 = 0.0, pgv6 = 0.0, pmax = 0.0, pmin = 0.0, qnl = 0.0, r = 0.0, t1 = 0.0, t2 = 0.0, t3 = 0.0, t4 = 0.0, t5 = 0.0, t6 = 0.0, t7 = 0.0, t8 = 0.0, td = 0.0, tp = 0.0, tt = 0.0, tw = 0.0, velcl = 0.0, velop = 0.0, *args, **kw_args):

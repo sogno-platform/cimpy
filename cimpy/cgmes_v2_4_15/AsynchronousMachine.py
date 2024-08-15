@@ -36,6 +36,8 @@ class AsynchronousMachine(RotatingMachine):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class RotatingMachine:\n" + RotatingMachine.__doc__
 
     def __init__(self, AsynchronousMachineDynamics = None, asynchronousMachineType = None, converterFedDrive = False, efficiency = 0.0, iaIrRatio = 0.0, nominalFrequency = 0.0, nominalSpeed = 0.0, polePairNumber = 0, ratedMechanicalPower = 0.0, reversible = False, rxLockedRotorRatio = 0.0, *args, **kw_args):

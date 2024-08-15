@@ -58,6 +58,8 @@ class ProprietaryParameterDynamics(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
 
     def __init__(self, AsynchronousMachineUserDefined = None, DiscontinuousExcitationControlUserDefined = None, ExcitationSystemUserDefined = None, LoadUserDefined = None, MechanicalLoadUserDefined = None, OverexcitationLimiterUserDefined = None, PFVArControllerType1UserDefined = None, PFVArControllerType2UserDefined = None, PowerSystemStabilizerUserDefined = None, SynchronousMachineUserDefined = None, TurbineGovernorUserDefined = None, TurbineLoadControllerUserDefined = None, UnderexcitationLimiterUserDefined = None, VoltageAdjusterUserDefined = None, VoltageCompensatorUserDefined = None, WindPlantUserDefined = None, WindType1or2UserDefined = None, WindType3or4UserDefined = None, booleanParameterValue = False, floatParameterValue = 0.0, integerParameterValue = 0, parameterNumber = 0):
 

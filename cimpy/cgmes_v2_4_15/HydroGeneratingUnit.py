@@ -18,6 +18,8 @@ class HydroGeneratingUnit(GeneratingUnit):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class GeneratingUnit:\n" + GeneratingUnit.__doc__
 
     def __init__(self, HydroPowerPlant = None, energyConversionCapability = None, *args, **kw_args):

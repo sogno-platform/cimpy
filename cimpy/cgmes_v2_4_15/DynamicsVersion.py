@@ -34,6 +34,8 @@ class DynamicsVersion(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
 
     def __init__(self, baseUML = '', baseURI = '', date = '', differenceModelURI = '', entsoeUML = '', entsoeURI = '', modelDescriptionURI = '', namespaceRDF = '', namespaceUML = '', shortName = ''):
 

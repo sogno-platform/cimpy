@@ -14,6 +14,8 @@ class DCChopper(DCConductingEquipment):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class DCConductingEquipment:\n" + DCConductingEquipment.__doc__
 
     def __init__(self, *args, **kw_args):

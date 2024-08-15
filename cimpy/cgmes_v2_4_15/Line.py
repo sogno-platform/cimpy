@@ -16,6 +16,8 @@ class Line(EquipmentContainer):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class EquipmentContainer:\n" + EquipmentContainer.__doc__
 
     def __init__(self, Region = None, *args, **kw_args):

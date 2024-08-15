@@ -22,6 +22,8 @@ class SubGeographicalRegion(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, DCLines = "list", Lines = "list", Region = None, Substations = "list", *args, **kw_args):

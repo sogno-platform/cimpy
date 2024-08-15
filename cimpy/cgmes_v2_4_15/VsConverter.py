@@ -38,6 +38,8 @@ class VsConverter(ACDCConverter):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class ACDCConverter:\n" + ACDCConverter.__doc__
 
     def __init__(self, CapabilityCurve = None, delta = 0.0, droop = 0.0, droopCompensation = 0.0, maxModulationIndex = 0.0, maxValveCurrent = 0.0, pPccControl = None, qPccControl = None, qShare = 0.0, targetQpcc = 0.0, targetUpcc = 0.0, uf = 0.0, *args, **kw_args):

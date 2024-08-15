@@ -18,6 +18,8 @@ class UnderexcitationLimiterUserDefined(UnderexcitationLimiterDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class UnderexcitationLimiterDynamics:\n" + UnderexcitationLimiterDynamics.__doc__
 
     def __init__(self, ProprietaryParameterDynamics = "list", proprietary = False, *args, **kw_args):

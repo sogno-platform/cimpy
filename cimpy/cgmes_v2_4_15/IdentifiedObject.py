@@ -26,6 +26,8 @@ class IdentifiedObject(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
 
     def __init__(self, DiagramObjects = "list", description = '', energyIdentCodeEic = '', mRID = '', name = '', shortName = ''):
 

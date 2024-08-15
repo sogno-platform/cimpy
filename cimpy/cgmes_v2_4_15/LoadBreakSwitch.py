@@ -14,6 +14,8 @@ class LoadBreakSwitch(ProtectedSwitch):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class ProtectedSwitch:\n" + ProtectedSwitch.__doc__
 
     def __init__(self, *args, **kw_args):

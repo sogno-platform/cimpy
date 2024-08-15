@@ -24,6 +24,8 @@ class SynchronousMachineDetailed(SynchronousMachineDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class SynchronousMachineDynamics:\n" + SynchronousMachineDynamics.__doc__
 
     def __init__(self, efdBaseRatio = 0.0, ifdBaseType = None, ifdBaseValue = 0.0, saturationFactor120QAxis = 0.0, saturationFactorQAxis = 0.0, *args, **kw_args):

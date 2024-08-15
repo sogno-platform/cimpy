@@ -24,6 +24,8 @@ class PFVArType2Common1(PFVArControllerType2Dynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class PFVArControllerType2Dynamics:\n" + PFVArControllerType2Dynamics.__doc__
 
     def __init__(self, j = False, ki = 0.0, kp = 0.0, max = 0.0, ref = 0.0, *args, **kw_args):

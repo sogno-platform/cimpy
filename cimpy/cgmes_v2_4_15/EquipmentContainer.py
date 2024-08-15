@@ -16,6 +16,8 @@ class EquipmentContainer(ConnectivityNodeContainer):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class ConnectivityNodeContainer:\n" + ConnectivityNodeContainer.__doc__
 
     def __init__(self, Equipments = "list", *args, **kw_args):

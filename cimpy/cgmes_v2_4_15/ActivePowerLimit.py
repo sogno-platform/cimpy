@@ -16,6 +16,8 @@ class ActivePowerLimit(OperationalLimit):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class OperationalLimit:\n" + OperationalLimit.__doc__
 
     def __init__(self, value = 0.0, *args, **kw_args):

@@ -42,6 +42,8 @@ class SynchronousMachineTimeConstantReactance(SynchronousMachineDetailed):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class SynchronousMachineDetailed:\n" + SynchronousMachineDetailed.__doc__
 
     def __init__(self, ks = 0.0, modelType = None, rotorType = None, tc = 0.0, tpdo = 0.0, tppdo = 0.0, tppqo = 0.0, tpqo = 0.0, xDirectSubtrans = 0.0, xDirectSync = 0.0, xDirectTrans = 0.0, xQuadSubtrans = 0.0, xQuadSync = 0.0, xQuadTrans = 0.0, *args, **kw_args):

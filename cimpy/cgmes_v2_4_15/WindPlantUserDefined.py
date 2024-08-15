@@ -18,6 +18,8 @@ class WindPlantUserDefined(WindPlantDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class WindPlantDynamics:\n" + WindPlantDynamics.__doc__
 
     def __init__(self, ProprietaryParameterDynamics = "list", proprietary = False, *args, **kw_args):

@@ -16,6 +16,8 @@ class PhaseTapChanger(TapChanger):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class TapChanger:\n" + TapChanger.__doc__
 
     def __init__(self, TransformerEnd = None, *args, **kw_args):

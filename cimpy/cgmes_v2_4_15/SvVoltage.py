@@ -20,6 +20,8 @@ class SvVoltage(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.SV.value
+
 
     def __init__(self, TopologicalNode = None, angle = 0.0, v = 0.0):
 

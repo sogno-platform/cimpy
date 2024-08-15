@@ -50,6 +50,8 @@ class LoadStatic(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, LoadAggregate = None, ep1 = 0.0, ep2 = 0.0, ep3 = 0.0, eq1 = 0.0, eq2 = 0.0, eq3 = 0.0, kp1 = 0.0, kp2 = 0.0, kp3 = 0.0, kp4 = 0.0, kpf = 0.0, kq1 = 0.0, kq2 = 0.0, kq3 = 0.0, kq4 = 0.0, kqf = 0.0, staticLoadModelType = None, *args, **kw_args):

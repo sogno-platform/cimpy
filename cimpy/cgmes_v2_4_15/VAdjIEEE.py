@@ -26,6 +26,8 @@ class VAdjIEEE(VoltageAdjusterDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class VoltageAdjusterDynamics:\n" + VoltageAdjusterDynamics.__doc__
 
     def __init__(self, adjslew = 0.0, taoff = 0.0, taon = 0.0, vadjf = 0.0, vadjmax = 0.0, vadjmin = 0.0, *args, **kw_args):

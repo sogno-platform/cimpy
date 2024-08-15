@@ -22,6 +22,8 @@ class OperationalLimitType(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, OperationalLimit = "list", acceptableDuration = 0.0, direction = None, limitType = None, *args, **kw_args):

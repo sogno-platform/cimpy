@@ -36,6 +36,8 @@ class WindPitchContEmulIEC(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, WindGenTurbineType2IEC = None, kdroop = 0.0, kipce = 0.0, komegaaero = 0.0, kppce = 0.0, omegaref = 0.0, pimax = 0.0, pimin = 0.0, t1 = 0.0, t2 = 0.0, tpe = 0.0, *args, **kw_args):

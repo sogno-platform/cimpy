@@ -14,6 +14,8 @@ class CsOperatingModeKind(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.SSH.value
+
 
     def __init__(self):
 

@@ -50,6 +50,8 @@ class DiscExcContIEEEDEC1A(DiscontinuousExcitationControlDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class DiscontinuousExcitationControlDynamics:\n" + DiscontinuousExcitationControlDynamics.__doc__
 
     def __init__(self, esc = 0.0, kan = 0.0, ketl = 0.0, tan = 0.0, td = 0.0, tl1 = 0.0, tl2 = 0.0, tw5 = 0.0, val = 0.0, vanmax = 0.0, vomax = 0.0, vomin = 0.0, vsmax = 0.0, vsmin = 0.0, vtc = 0.0, vtlmt = 0.0, vtm = 0.0, vtn = 0.0, *args, **kw_args):

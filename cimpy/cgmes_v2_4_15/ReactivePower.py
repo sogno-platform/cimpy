@@ -20,6 +20,8 @@ class ReactivePower(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
 
     def __init__(self, multiplier = None, unit = None, value = 0.0):
 

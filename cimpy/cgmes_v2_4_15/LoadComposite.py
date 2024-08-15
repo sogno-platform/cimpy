@@ -36,6 +36,8 @@ class LoadComposite(LoadDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class LoadDynamics:\n" + LoadDynamics.__doc__
 
     def __init__(self, epfd = 0.0, epfs = 0.0, epvd = 0.0, epvs = 0.0, eqfd = 0.0, eqfs = 0.0, eqvd = 0.0, eqvs = 0.0, h = 0.0, lfrac = 0.0, pfrac = 0.0, *args, **kw_args):

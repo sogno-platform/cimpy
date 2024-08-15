@@ -46,6 +46,8 @@ class ExcDC3A(ExcitationSystemDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class ExcitationSystemDynamics:\n" + ExcitationSystemDynamics.__doc__
 
     def __init__(self, edfmax = 0.0, efd1 = 0.0, efd2 = 0.0, efdlim = False, efdmin = 0.0, exclim = False, ke = 0.0, kr = 0.0, ks = 0.0, kv = 0.0, seefd1 = 0.0, seefd2 = 0.0, te = 0.0, trh = 0.0, vrmax = 0.0, vrmin = 0.0, *args, **kw_args):

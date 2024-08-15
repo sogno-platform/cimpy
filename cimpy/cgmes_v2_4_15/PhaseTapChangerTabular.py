@@ -16,6 +16,8 @@ class PhaseTapChangerTabular(PhaseTapChanger):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class PhaseTapChanger:\n" + PhaseTapChanger.__doc__
 
     def __init__(self, PhaseTapChangerTable = None, *args, **kw_args):

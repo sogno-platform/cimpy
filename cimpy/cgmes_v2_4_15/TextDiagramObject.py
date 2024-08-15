@@ -16,6 +16,8 @@ class TextDiagramObject(DiagramObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DL.value
+
     __doc__ += "\nDocumentation of parent class DiagramObject:\n" + DiagramObject.__doc__
 
     def __init__(self, text = '', *args, **kw_args):

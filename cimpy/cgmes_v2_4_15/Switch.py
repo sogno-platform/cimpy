@@ -24,6 +24,8 @@ class Switch(ConductingEquipment):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class ConductingEquipment:\n" + ConductingEquipment.__doc__
 
     def __init__(self, SwitchSchedules = "list", normalOpen = False, open = False, ratedCurrent = 0.0, retained = False, *args, **kw_args):

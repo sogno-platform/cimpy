@@ -34,6 +34,8 @@ class MutualCoupling(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, First_Terminal = None, Second_Terminal = None, b0ch = 0.0, distance11 = 0.0, distance12 = 0.0, distance21 = 0.0, distance22 = 0.0, g0ch = 0.0, r0 = 0.0, x0 = 0.0, *args, **kw_args):

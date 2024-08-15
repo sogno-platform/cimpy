@@ -16,6 +16,8 @@ class AccumulatorReset(Control):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class Control:\n" + Control.__doc__
 
     def __init__(self, AccumulatorValue = None, *args, **kw_args):

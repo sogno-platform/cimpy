@@ -22,6 +22,8 @@ class MechLoad1(MechanicalLoadDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class MechanicalLoadDynamics:\n" + MechanicalLoadDynamics.__doc__
 
     def __init__(self, a = 0.0, b = 0.0, d = 0.0, e = 0.0, *args, **kw_args):

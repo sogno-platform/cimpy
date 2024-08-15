@@ -20,6 +20,8 @@ class Substation(EquipmentContainer):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class EquipmentContainer:\n" + EquipmentContainer.__doc__
 
     def __init__(self, DCConverterUnit = "list", Region = None, VoltageLevels = "list", *args, **kw_args):

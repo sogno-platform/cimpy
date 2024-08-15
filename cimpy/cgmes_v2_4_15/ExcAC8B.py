@@ -68,6 +68,8 @@ class ExcAC8B(ExcitationSystemDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class ExcitationSystemDynamics:\n" + ExcitationSystemDynamics.__doc__
 
     def __init__(self, inlim = False, ka = 0.0, kc = 0.0, kd = 0.0, kdr = 0.0, ke = 0.0, kir = 0.0, kpr = 0.0, ks = 0.0, pidlim = False, seve1 = 0.0, seve2 = 0.0, ta = 0.0, tdr = 0.0, te = 0.0, telim = False, ve1 = 0.0, ve2 = 0.0, vemin = 0.0, vfemax = 0.0, vimax = 0.0, vimin = 0.0, vpidmax = 0.0, vpidmin = 0.0, vrmax = 0.0, vrmin = 0.0, vtmult = False, *args, **kw_args):

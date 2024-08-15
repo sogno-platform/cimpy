@@ -28,6 +28,8 @@ class WindMechIEC(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, WindGenTurbineType3IEC = None, WindTurbineType1or2IEC = None, WindTurbineType4bIEC = None, cdrt = 0.0, hgen = 0.0, hwtr = 0.0, kdrt = 0.0, *args, **kw_args):

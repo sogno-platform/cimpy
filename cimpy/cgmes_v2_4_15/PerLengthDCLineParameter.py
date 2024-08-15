@@ -22,6 +22,8 @@ class PerLengthDCLineParameter(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
 
     def __init__(self, DCLineSegments = "list", capacitance = 0.0, inductance = 0.0, resistance = 0.0):
 

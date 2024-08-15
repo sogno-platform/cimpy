@@ -34,6 +34,8 @@ class ShuntCompensator(RegulatingCondEq):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class RegulatingCondEq:\n" + RegulatingCondEq.__doc__
 
     def __init__(self, SvShuntCompensatorSections = None, aVRDelay = 0.0, grounded = False, maximumSections = 0, nomU = 0.0, normalSections = 0, sections = 0.0, switchOnCount = 0, switchOnDate = '', voltageSensitivity = 0.0, *args, **kw_args):

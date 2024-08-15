@@ -18,6 +18,8 @@ class ReactiveCapabilityCurve(Curve):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class Curve:\n" + Curve.__doc__
 
     def __init__(self, EquivalentInjection = "list", InitiallyUsedBySynchronousMachines = "list", *args, **kw_args):

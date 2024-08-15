@@ -22,6 +22,8 @@ class LinearShuntCompensator(ShuntCompensator):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class ShuntCompensator:\n" + ShuntCompensator.__doc__
 
     def __init__(self, b0PerSection = 0.0, bPerSection = 0.0, g0PerSection = 0.0, gPerSection = 0.0, *args, **kw_args):

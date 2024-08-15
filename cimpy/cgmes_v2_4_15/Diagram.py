@@ -28,6 +28,8 @@ class Diagram(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DL.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, DiagramElements = "list", DiagramStyle = None, orientation = None, x1InitialView = 0.0, x2InitialView = 0.0, y1InitialView = 0.0, y2InitialView = 0.0, *args, **kw_args):

@@ -42,6 +42,8 @@ class ExcANS(ExcitationSystemDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class ExcitationSystemDynamics:\n" + ExcitationSystemDynamics.__doc__
 
     def __init__(self, blint = 0, ifmn = 0.0, ifmx = 0.0, k2 = 0.0, k3 = 0.0, kce = 0.0, krvecc = 0, kvfif = 0, t1 = 0.0, t2 = 0.0, t3 = 0.0, tb = 0.0, vrmn = 0.0, vrmx = 0.0, *args, **kw_args):

@@ -32,6 +32,8 @@ class ACLineSegment(Conductor):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class Conductor:\n" + Conductor.__doc__
 
     def __init__(self, b0ch = 0.0, bch = 0.0, g0ch = 0.0, gch = 0.0, r = 0.0, r0 = 0.0, shortCircuitEndTemperature = 0.0, x = 0.0, x0 = 0.0, *args, **kw_args):

@@ -18,6 +18,8 @@ class LoadAggregate(LoadDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class LoadDynamics:\n" + LoadDynamics.__doc__
 
     def __init__(self, LoadMotor = None, LoadStatic = None, *args, **kw_args):

@@ -14,6 +14,8 @@ class ExcST6BOELselectorKind(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
 
     def __init__(self):
 

@@ -16,6 +16,8 @@ class VsCapabilityCurve(Curve):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class Curve:\n" + Curve.__doc__
 
     def __init__(self, VsConverterDCSides = "list", *args, **kw_args):

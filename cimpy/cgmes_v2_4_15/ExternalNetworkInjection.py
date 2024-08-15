@@ -50,6 +50,8 @@ class ExternalNetworkInjection(RegulatingCondEq):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class RegulatingCondEq:\n" + RegulatingCondEq.__doc__
 
     def __init__(self, governorSCD = 0.0, ikSecond = False, maxInitialSymShCCurrent = 0.0, maxP = 0.0, maxQ = 0.0, maxR0ToX0Ratio = 0.0, maxR1ToX1Ratio = 0.0, maxZ0ToZ1Ratio = 0.0, minInitialSymShCCurrent = 0.0, minP = 0.0, minQ = 0.0, minR0ToX0Ratio = 0.0, minR1ToX1Ratio = 0.0, minZ0ToZ1Ratio = 0.0, p = 0.0, q = 0.0, referencePriority = 0, voltageFactor = 0.0, *args, **kw_args):

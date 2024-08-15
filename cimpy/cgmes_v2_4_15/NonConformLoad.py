@@ -16,6 +16,8 @@ class NonConformLoad(EnergyConsumer):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class EnergyConsumer:\n" + EnergyConsumer.__doc__
 
     def __init__(self, LoadGroup = None, *args, **kw_args):

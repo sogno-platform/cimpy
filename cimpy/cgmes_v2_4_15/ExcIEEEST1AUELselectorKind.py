@@ -14,6 +14,8 @@ class ExcIEEEST1AUELselectorKind(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
 
     def __init__(self):
 

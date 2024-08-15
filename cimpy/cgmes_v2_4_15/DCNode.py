@@ -20,6 +20,8 @@ class DCNode(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, DCEquipmentContainer = None, DCTerminals = "list", DCTopologicalNode = None, *args, **kw_args):

@@ -22,6 +22,8 @@ class Command(Control):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class Control:\n" + Control.__doc__
 
     def __init__(self, DiscreteValue = None, ValueAliasSet = None, normalValue = 0, value = 0, *args, **kw_args):

@@ -36,6 +36,8 @@ class WindContPitchAngleIEC(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, WindGenTurbineType3IEC = None, dthetamax = 0.0, dthetamin = 0.0, kic = 0.0, kiomega = 0.0, kpc = 0.0, kpomega = 0.0, kpx = 0.0, thetamax = 0.0, thetamin = 0.0, ttheta = 0.0, *args, **kw_args):

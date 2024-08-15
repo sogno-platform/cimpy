@@ -30,6 +30,8 @@ class EnergyConsumer(ConductingEquipment):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class ConductingEquipment:\n" + ConductingEquipment.__doc__
 
     def __init__(self, LoadDynamics = None, LoadResponse = None, p = 0.0, pfixed = 0.0, pfixedPct = 0.0, q = 0.0, qfixed = 0.0, qfixedPct = 0.0, *args, **kw_args):

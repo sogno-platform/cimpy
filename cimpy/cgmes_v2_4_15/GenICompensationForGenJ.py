@@ -22,6 +22,8 @@ class GenICompensationForGenJ(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, SynchronousMachineDynamics = None, VcompIEEEType2 = None, rcij = 0.0, xcij = 0.0, *args, **kw_args):

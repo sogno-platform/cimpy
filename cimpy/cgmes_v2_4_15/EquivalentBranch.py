@@ -46,6 +46,8 @@ class EquivalentBranch(EquivalentEquipment):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class EquivalentEquipment:\n" + EquivalentEquipment.__doc__
 
     def __init__(self, negativeR12 = 0.0, negativeR21 = 0.0, negativeX12 = 0.0, negativeX21 = 0.0, positiveR12 = 0.0, positiveR21 = 0.0, positiveX12 = 0.0, positiveX21 = 0.0, r = 0.0, r21 = 0.0, x = 0.0, x21 = 0.0, zeroR12 = 0.0, zeroR21 = 0.0, zeroX12 = 0.0, zeroX21 = 0.0, *args, **kw_args):

@@ -16,6 +16,8 @@ class GrossToNetActivePowerCurve(Curve):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class Curve:\n" + Curve.__doc__
 
     def __init__(self, GeneratingUnit = None, *args, **kw_args):

@@ -34,6 +34,8 @@ class ExcSEXS(ExcitationSystemDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class ExcitationSystemDynamics:\n" + ExcitationSystemDynamics.__doc__
 
     def __init__(self, efdmax = 0.0, efdmin = 0.0, emax = 0.0, emin = 0.0, k = 0.0, kc = 0.0, tatb = 0.0, tb = 0.0, tc = 0.0, te = 0.0, *args, **kw_args):

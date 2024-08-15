@@ -22,6 +22,8 @@ class MeasurementValue(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, MeasurementValueQuality = None, MeasurementValueSource = None, sensorAccuracy = 0.0, timeStamp = '', *args, **kw_args):

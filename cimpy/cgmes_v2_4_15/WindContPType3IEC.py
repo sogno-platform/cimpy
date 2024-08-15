@@ -60,6 +60,8 @@ class WindContPType3IEC(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, WindDynamicsLookupTable = "list", WindGenTurbineType3IEC = None, dpmax = 0.0, dtrisemaxlvrt = 0.0, kdtd = 0.0, kip = 0.0, kpp = 0.0, mplvrt = False, omegaoffset = 0.0, pdtdmax = 0.0, rramp = 0.0, tdvs = 0.0, temin = 0.0, tomegafilt = 0.0, tpfilt = 0.0, tpord = 0.0, tufilt = 0.0, tuscale = 0.0, twref = 0.0, udvs = 0.0, updip = 0.0, wdtd = 0.0, zeta = 0.0, *args, **kw_args):

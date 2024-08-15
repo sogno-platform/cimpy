@@ -68,6 +68,8 @@ class ExcELIN2(ExcitationSystemDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class ExcitationSystemDynamics:\n" + ExcitationSystemDynamics.__doc__
 
     def __init__(self, efdbas = 0.0, iefmax = 0.0, iefmax2 = 0.0, iefmin = 0.0, k1 = 0.0, k1ec = 0.0, k2 = 0.0, k3 = 0.0, k4 = 0.0, kd1 = 0.0, ke2 = 0.0, ketb = 0.0, pid1max = 0.0, seve1 = 0.0, seve2 = 0.0, tb1 = 0.0, te = 0.0, te2 = 0.0, ti1 = 0.0, ti3 = 0.0, ti4 = 0.0, tr4 = 0.0, upmax = 0.0, upmin = 0.0, ve1 = 0.0, ve2 = 0.0, xp = 0.0, *args, **kw_args):

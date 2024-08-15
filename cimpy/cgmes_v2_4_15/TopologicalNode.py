@@ -46,6 +46,8 @@ class TopologicalNode(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.TP.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, AngleRefTopologicalIsland = None, BaseVoltage = None, ConnectivityNodeContainer = None, ConnectivityNodes = "list", ReportingGroup = None, SvInjection = None, SvVoltage = None, Terminal = "list", TopologicalIsland = None, boundaryPoint = False, fromEndIsoCode = '', fromEndName = '', fromEndNameTso = '', toEndIsoCode = '', toEndName = '', toEndNameTso = '', *args, **kw_args):

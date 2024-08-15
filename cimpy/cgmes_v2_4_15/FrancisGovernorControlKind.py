@@ -14,6 +14,8 @@ class FrancisGovernorControlKind(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
 
     def __init__(self):
 

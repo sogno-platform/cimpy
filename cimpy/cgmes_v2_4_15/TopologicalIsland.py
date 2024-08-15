@@ -18,6 +18,8 @@ class TopologicalIsland(IdentifiedObject):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.SV.value
+
     __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
     def __init__(self, AngleRefTopologicalNode = None, TopologicalNodes = "list", *args, **kw_args):

@@ -14,6 +14,8 @@ class VsQpccControlKind(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.SSH.value
+
 
     def __init__(self):
 

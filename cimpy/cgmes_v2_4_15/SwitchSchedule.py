@@ -16,6 +16,8 @@ class SwitchSchedule(SeasonDayTypeSchedule):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class SeasonDayTypeSchedule:\n" + SeasonDayTypeSchedule.__doc__
 
     def __init__(self, Switch = None, *args, **kw_args):

@@ -56,6 +56,8 @@ class GovGAST3(TurbineGovernorDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class TurbineGovernorDynamics:\n" + TurbineGovernorDynamics.__doc__
 
     def __init__(self, bca = 0.0, bp = 0.0, dtc = 0.0, ka = 0.0, kac = 0.0, kca = 0.0, ksi = 0.0, ky = 0.0, mnef = 0.0, mxef = 0.0, rcmn = 0.0, rcmx = 0.0, tac = 0.0, tc = 0.0, td = 0.0, tfen = 0.0, tg = 0.0, tsi = 0.0, tt = 0.0, ttc = 0.0, ty = 0.0, *args, **kw_args):

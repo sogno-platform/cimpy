@@ -58,6 +58,8 @@ class GovHydroPID2(TurbineGovernorDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class TurbineGovernorDynamics:\n" + TurbineGovernorDynamics.__doc__
 
     def __init__(self, atw = 0.0, d = 0.0, feedbackSignal = False, g0 = 0.0, g1 = 0.0, g2 = 0.0, gmax = 0.0, gmin = 0.0, kd = 0.0, ki = 0.0, kp = 0.0, mwbase = 0.0, p1 = 0.0, p2 = 0.0, p3 = 0.0, rperm = 0.0, ta = 0.0, tb = 0.0, treg = 0.0, tw = 0.0, velmax = 0.0, velmin = 0.0, *args, **kw_args):

@@ -86,6 +86,8 @@ class ExcREXS(ExcitationSystemDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class ExcitationSystemDynamics:\n" + ExcitationSystemDynamics.__doc__
 
     def __init__(self, e1 = 0.0, e2 = 0.0, fbf = None, flimf = 0.0, kc = 0.0, kd = 0.0, ke = 0.0, kefd = 0.0, kf = 0.0, kh = 0.0, kii = 0.0, kip = 0.0, ks = 0.0, kvi = 0.0, kvp = 0.0, kvphz = 0.0, nvphz = 0.0, se1 = 0.0, se2 = 0.0, ta = 0.0, tb1 = 0.0, tb2 = 0.0, tc1 = 0.0, tc2 = 0.0, te = 0.0, tf = 0.0, tf1 = 0.0, tf2 = 0.0, tp = 0.0, vcmax = 0.0, vfmax = 0.0, vfmin = 0.0, vimax = 0.0, vrmax = 0.0, vrmin = 0.0, xc = 0.0, *args, **kw_args):

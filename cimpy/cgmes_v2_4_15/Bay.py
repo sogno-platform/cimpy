@@ -16,6 +16,8 @@ class Bay(EquipmentContainer):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class EquipmentContainer:\n" + EquipmentContainer.__doc__
 
     def __init__(self, VoltageLevel = None, *args, **kw_args):

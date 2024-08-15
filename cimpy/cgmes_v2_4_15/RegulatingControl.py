@@ -32,6 +32,8 @@ class RegulatingControl(PowerSystemResource):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class PowerSystemResource:\n" + PowerSystemResource.__doc__
 
     def __init__(self, RegulatingCondEq = "list", RegulationSchedule = "list", Terminal = None, discrete = False, enabled = False, mode = None, targetDeadband = 0.0, targetValue = 0.0, targetValueUnitMultiplier = None, *args, **kw_args):

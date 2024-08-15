@@ -20,6 +20,8 @@ class TurbineGovernorDynamics(DynamicsFunctionBlock):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class DynamicsFunctionBlock:\n" + DynamicsFunctionBlock.__doc__
 
     def __init__(self, AsynchronousMachineDynamics = None, SynchronousMachineDynamics = "list", TurbineLoadControllerDynamics = None, *args, **kw_args):

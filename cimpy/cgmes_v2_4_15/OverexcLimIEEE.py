@@ -26,6 +26,8 @@ class OverexcLimIEEE(OverexcitationLimiterDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class OverexcitationLimiterDynamics:\n" + OverexcitationLimiterDynamics.__doc__
 
     def __init__(self, hyst = 0.0, ifdlim = 0.0, ifdmax = 0.0, itfpu = 0.0, kcd = 0.0, kramp = 0.0, *args, **kw_args):

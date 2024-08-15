@@ -44,6 +44,8 @@ class Pss1(PowerSystemStabilizerDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class PowerSystemStabilizerDynamics:\n" + PowerSystemStabilizerDynamics.__doc__
 
     def __init__(self, kf = 0.0, kpe = 0.0, ks = 0.0, kw = 0.0, pmin = 0.0, t10 = 0.0, t5 = 0.0, t6 = 0.0, t7 = 0.0, t8 = 0.0, t9 = 0.0, tpe = 0.0, vadat = False, vsmn = 0.0, vsmx = 0.0, *args, **kw_args):

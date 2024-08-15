@@ -14,6 +14,8 @@ class OrientationKind(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DL.value
+
 
     def __init__(self):
 

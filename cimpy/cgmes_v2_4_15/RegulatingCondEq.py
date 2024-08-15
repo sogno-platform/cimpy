@@ -18,6 +18,8 @@ class RegulatingCondEq(ConductingEquipment):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class ConductingEquipment:\n" + ConductingEquipment.__doc__
 
     def __init__(self, RegulatingControl = None, controlEnabled = False, *args, **kw_args):

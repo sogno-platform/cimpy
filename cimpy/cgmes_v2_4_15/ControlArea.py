@@ -26,6 +26,8 @@ class ControlArea(PowerSystemResource):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class PowerSystemResource:\n" + PowerSystemResource.__doc__
 
     def __init__(self, ControlAreaGeneratingUnit = "list", EnergyArea = None, TieFlow = "list", netInterchange = 0.0, pTolerance = 0.0, type = None, *args, **kw_args):

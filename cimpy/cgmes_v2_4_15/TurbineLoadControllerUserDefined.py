@@ -18,6 +18,8 @@ class TurbineLoadControllerUserDefined(TurbineLoadControllerDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class TurbineLoadControllerDynamics:\n" + TurbineLoadControllerDynamics.__doc__
 
     def __init__(self, ProprietaryParameterDynamics = "list", proprietary = False, *args, **kw_args):

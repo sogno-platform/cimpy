@@ -38,6 +38,8 @@ class Terminal(ACDCTerminal):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class ACDCTerminal:\n" + ACDCTerminal.__doc__
 
     def __init__(self, ConductingEquipment = None, ConnectivityNode = None, ConverterDCSides = "list", HasFirstMutualCoupling = "list", HasSecondMutualCoupling = "list", RegulatingControl = None, RemoteInputSignal = "list", SvPowerFlow = None, TieFlow = "list", TopologicalNode = None, TransformerEnd = "list", phases = None, *args, **kw_args):

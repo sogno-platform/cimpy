@@ -18,6 +18,8 @@ class VoltageCompensatorUserDefined(VoltageCompensatorDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class VoltageCompensatorDynamics:\n" + VoltageCompensatorDynamics.__doc__
 
     def __init__(self, ProprietaryParameterDynamics = "list", proprietary = False, *args, **kw_args):

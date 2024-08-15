@@ -38,6 +38,8 @@ class TurbLCFB1(TurbineLoadControllerDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class TurbineLoadControllerDynamics:\n" + TurbineLoadControllerDynamics.__doc__
 
     def __init__(self, db = 0.0, emax = 0.0, fb = 0.0, fbf = False, irmax = 0.0, ki = 0.0, kp = 0.0, mwbase = 0.0, pbf = False, pmwset = 0.0, speedReferenceGovernor = False, tpelec = 0.0, *args, **kw_args):

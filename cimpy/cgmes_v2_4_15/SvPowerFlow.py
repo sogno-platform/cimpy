@@ -20,6 +20,8 @@ class SvPowerFlow(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.SV.value
+
 
     def __init__(self, Terminal = None, p = 0.0, q = 0.0):
 

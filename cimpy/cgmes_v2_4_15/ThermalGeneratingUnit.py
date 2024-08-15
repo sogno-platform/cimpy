@@ -16,6 +16,8 @@ class ThermalGeneratingUnit(GeneratingUnit):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class GeneratingUnit:\n" + GeneratingUnit.__doc__
 
     def __init__(self, FossilFuels = "list", *args, **kw_args):

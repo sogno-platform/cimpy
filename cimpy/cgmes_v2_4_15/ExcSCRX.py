@@ -30,6 +30,8 @@ class ExcSCRX(ExcitationSystemDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class ExcitationSystemDynamics:\n" + ExcitationSystemDynamics.__doc__
 
     def __init__(self, cswitch = False, emax = 0.0, emin = 0.0, k = 0.0, rcrfd = 0.0, tatb = 0.0, tb = 0.0, te = 0.0, *args, **kw_args):

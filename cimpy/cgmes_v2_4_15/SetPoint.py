@@ -18,6 +18,8 @@ class SetPoint(AnalogControl):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class AnalogControl:\n" + AnalogControl.__doc__
 
     def __init__(self, normalValue = 0.0, value = 0.0, *args, **kw_args):

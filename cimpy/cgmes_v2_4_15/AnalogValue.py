@@ -20,6 +20,8 @@ class AnalogValue(MeasurementValue):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class MeasurementValue:\n" + MeasurementValue.__doc__
 
     def __init__(self, Analog = None, AnalogControl = None, value = 0.0, *args, **kw_args):

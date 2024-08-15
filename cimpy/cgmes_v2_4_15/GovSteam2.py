@@ -30,6 +30,8 @@ class GovSteam2(TurbineGovernorDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class TurbineGovernorDynamics:\n" + TurbineGovernorDynamics.__doc__
 
     def __init__(self, dbf = 0.0, k = 0.0, mnef = 0.0, mxef = 0.0, pmax = 0.0, pmin = 0.0, t1 = 0.0, t2 = 0.0, *args, **kw_args):

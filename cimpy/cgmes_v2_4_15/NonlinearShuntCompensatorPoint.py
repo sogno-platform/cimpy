@@ -26,6 +26,8 @@ class NonlinearShuntCompensatorPoint(Base):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
 
     def __init__(self, NonlinearShuntCompensator = None, b = 0.0, b0 = 0.0, g = 0.0, g0 = 0.0, sectionNumber = 0):
 

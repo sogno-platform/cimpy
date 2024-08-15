@@ -18,6 +18,8 @@ class AnalogLimitSet(LimitSet):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.EQ.value
+
     __doc__ += "\nDocumentation of parent class LimitSet:\n" + LimitSet.__doc__
 
     def __init__(self, Limits = "list", Measurements = "list", *args, **kw_args):

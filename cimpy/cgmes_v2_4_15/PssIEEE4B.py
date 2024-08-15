@@ -148,6 +148,8 @@ class PssIEEE4B(PowerSystemStabilizerDynamics):
 
     serializationProfile = {}
 
+    recommendedClassProfile = Profile.DY.value
+
     __doc__ += "\nDocumentation of parent class PowerSystemStabilizerDynamics:\n" + PowerSystemStabilizerDynamics.__doc__
 
     def __init__(self, bwh1 = 0.0, bwh2 = 0.0, bwl1 = 0.0, bwl2 = 0.0, kh = 0.0, kh1 = 0.0, kh11 = 0.0, kh17 = 0.0, kh2 = 0.0, ki = 0.0, ki1 = 0.0, ki11 = 0.0, ki17 = 0.0, ki2 = 0.0, kl = 0.0, kl1 = 0.0, kl11 = 0.0, kl17 = 0.0, kl2 = 0.0, omeganh1 = 0.0, omeganh2 = 0.0, omeganl1 = 0.0, omeganl2 = 0.0, th1 = 0.0, th10 = 0.0, th11 = 0.0, th12 = 0.0, th2 = 0.0, th3 = 0.0, th4 = 0.0, th5 = 0.0, th6 = 0.0, th7 = 0.0, th8 = 0.0, th9 = 0.0, ti1 = 0.0, ti10 = 0.0, ti11 = 0.0, ti12 = 0.0, ti2 = 0.0, ti3 = 0.0, ti4 = 0.0, ti5 = 0.0, ti6 = 0.0, ti7 = 0.0, ti8 = 0.0, ti9 = 0.0, tl1 = 0.0, tl10 = 0.0, tl11 = 0.0, tl12 = 0.0, tl2 = 0.0, tl3 = 0.0, tl4 = 0.0, tl5 = 0.0, tl6 = 0.0, tl7 = 0.0, tl8 = 0.0, tl9 = 0.0, vhmax = 0.0, vhmin = 0.0, vimax = 0.0, vimin = 0.0, vlmax = 0.0, vlmin = 0.0, vstmax = 0.0, vstmin = 0.0, *args, **kw_args):
