@@ -39,7 +39,7 @@ def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
     base_module = importlib.import_module(base_class_name)
     base_class = getattr(base_module, "Base")
     for key in attr_dict:
-        if key in ["serializationProfile", "possibleProfileList"]:
+        if key in ["serializationProfile", "possibleProfileList", "recommendedClassProfile"]:
             reference_list.append({key: attr_dict[key]})
             continue
 
@@ -183,6 +183,7 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
         # of same class, only last origin of variable stored
         serialization_profile = copy.deepcopy(klass["attributes"][0]["serializationProfile"])
         possible_profile_list = copy.deepcopy(klass["attributes"][1]["possibleProfileList"])
+        recommended_class_profile = klass["attributes"][2]["recommendedClassProfile"]
 
         class_serialization_profile = ""
 
@@ -213,8 +214,12 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
             # Class was created
             if klass["name"] in possible_profile_list.keys():
                 if "class" in possible_profile_list[klass["name"]].keys():
-                    possible_profile_list[klass["name"]]["class"].sort()
-                    for klass_profile in possible_profile_list[klass["name"]]["class"]:
+                    # Sort recommended profile to first place
+                    sorted_profiles = sorted(
+                        possible_profile_list[klass["name"]]["class"],
+                        key=lambda x: x == recommended_class_profile and -1 or x,
+                    )
+                    for klass_profile in sorted_profiles:
                         if Profile(klass_profile) in activeProfileList:
                             # Active profile for class export found
                             class_serialization_profile = Profile(klass_profile).name
@@ -254,8 +259,12 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                     # Attribute was added
                     if attribute_class in possible_profile_list.keys():
                         if attribute_name in possible_profile_list[attribute_class].keys():
-                            possible_profile_list[attribute_class][attribute_name].sort()
-                            for attr_profile in possible_profile_list[attribute_class][attribute_name]:
+                            # Sort class profile to first place
+                            sorted_profiles = sorted(
+                                possible_profile_list[attribute_class][attribute_name],
+                                key=lambda x: x == Profile[class_serialization_profile].value and -1 or x,
+                            )
+                            for attr_profile in sorted_profiles:
                                 if Profile(attr_profile) in activeProfileList:
                                     # Active profile for class export found
                                     attribute_serialization_profile = Profile(attr_profile).name
@@ -478,7 +487,11 @@ def _get_attributes(class_object):
         class_type = type(parent)
 
     # Dictionary containing all attributes with key: 'Class_Name.Attribute_Name'
-    attributes_dict = dict(serializationProfile=class_object.serializationProfile, possibleProfileList={})
+    attributes_dict = dict(
+        serializationProfile=class_object.serializationProfile,
+        possibleProfileList={},
+        recommendedClassProfile=class_object.recommendedClassProfile,
+    )
 
     # __dict__ of a subclass returns also the attributes of the parent classes
     # to avoid multiple attributes create list with all attributes already processed
