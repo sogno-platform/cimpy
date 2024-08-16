@@ -166,9 +166,10 @@ def _create_namespaces_list(namespaces_dict):
 # This function sorts the classes and their attributes to the corresponding profiles. Either the classes/attributes are
 # imported or they are set afterwards. In the first case the serializationProfile is used to determine from which
 # profile this class/attribute was read. If an entry exists the class/attribute is added to this profile. In the
-# possibleProfileList dictionary the possible origins of the class/attributes is stored. All profiles have a different
-# priority which is stored in the enum cgmesProfile. As default the smallest entry in the dictionary is used to
-# determine the profile for the class/attributes.
+# possibleProfileList dictionary the possible origins of the class/attributes is stored.
+# If the profile is not found for a class in possibleProfileList the recommended class profile is used.
+# If it is not found for an attribute the class profile is used, but only if this is a possible profile for this
+# attribute. Otherwise, the first entry in the list of possible profiles for this attribute is used.
 def _sort_classes_to_profile(class_attributes_list, activeProfileList):
     export_dict = {}
     export_about_dict = {}
@@ -334,6 +335,18 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
 
 
 def cim_export_to_string_array(import_result, model_name, version, activeProfileList=()):
+    """Function for serialization of cgmes classes to a list of strings
+
+    See :func:`~cimpy.cimexport.cim_export()` for details.
+
+    :param import_result: a dictionary containing the topology and meta information. It can be created via \
+    :func:`~cimpy.cimimport.cim_import()`
+    :param model_name: a string with the name of the model.
+    :param version: cgmes version, e.g. ``version="cgmes_v2_4_15"``
+    :param activeProfileList: a list containing the strings of all short names of the profiles \
+    used for serialization, no activeProfileList means output to all profile files with data
+    :return: a list of strings with the CIM RDF/XML data
+    """
     result = []
     profile_list = list(map(lambda a: Profile[a], activeProfileList))
     for profile in profile_list or [p for p in Profile]:
@@ -356,13 +369,13 @@ def cim_export(import_result, file_name, version, activeProfileList=()):
     The meta information can be extracted via import_result['meta_info']. The meta_info dictionary contains a new \
     dictionary with the keys: 'author', 'namespaces' and 'urls'. The last two are also dictionaries. \
     'urls' contains a mapping between references to URLs and the extracted value of the URL, e.g. 'absoluteValue': \
-    'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue' These mappings are \
+    'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue'. These mappings are \
     accessible via the name of the attribute, \
     e.g. import_result['meta_info']['urls'}[attr_name] = {mapping like example above}. \
     'namespaces' is a dictionary containing all RDF namespaces used in the imported xml files.
     :param file_name: a string with the name of the xml files which will be created
-    :param version: cgmes version, e.g. version = "cgmes_v2_4_15"
-    :param activeProfileList (optional): a list containing the strings of all short names of the profiles \
+    :param version: cgmes version, e.g. ``version="cgmes_v2_4_15"``
+    :param activeProfileList: a list containing the strings of all short names of the profiles \
     used for serialization, no activeProfileList means output to all profile files with data
     """
 
@@ -399,10 +412,12 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
 
     :param cim_data: a dictionary containing the topology and meta information. It can be created via \
     :func:`~cimpy.cimimport.cim_import()`
-    :param version: cgmes version, e.g.  ``version="cgmes_v2_4_15"``
-    :param profile: The :class:`~cimpy.cgmes_v2_4_15.Base.Profile` for which the serialization should be generated.
+    :param version: cgmes version, e.g. ``version="cgmes_v2_4_15"``
+    :param profile: The :class:`~cimpy.cgmes_v2_4_15.CGMESProfile.Profile` for which the serialization \
+    should be generated.
     :param model_name: a string with the name of the model.
-    :param available_profiles: a list of all :class:`~cimpy.cgmes_v2_4_15.Base.Profile`s in `cim_data`
+    :param available_profiles: a list of all :class:`~cimpy.cgmes_v2_4_15.CGMESProfile.Profile` values in `cim_data`
+    :result: a string with the CIM RDF/XML data
     """
 
     # Returns all classes with their attributes and resolved references
