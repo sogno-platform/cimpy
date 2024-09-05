@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with PowerFactory 2022 SP3 (x64) (digcimdb.dll ServicePack 0) -->
+<rdf:RDF xmlns:cim="http://iec.ch/TC57/CIM100#" xmlns:eu="http://iec.ch/TC57/CIM100-European#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <md:FullModel rdf:about="urn:uuid:8f1a281b-368a-4a9e-90e1-239cb30a82d7">
+    <md:Model.DependentOn rdf:resource="urn:uuid:ebb750a0-e235-4bb0-a702-1a6e03635f12" />
+    <md:Model.created>2023-12-08T12:24:45Z</md:Model.created>
+    <md:Model.modelingAuthoritySet>ie3.etit.tu-dortmund.de</md:Model.modelingAuthoritySet>
+    <md:Model.profile>http://iec.ch/TC57/ns/CIM/Dynamics-EU/1.0</md:Model.profile>
+    <md:Model.scenarioTime>2015-12-31T23:00:00Z</md:Model.scenarioTime>
+  </md:FullModel>
+  <cim:EnergyConsumer rdf:about="#_d4e1eed9-2f16-4048-8d85-2cd42b716c5e">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_da7a65db-40ad-dcd1-2425-b6211a5ffb12" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_d8d8c465-4881-4285-a896-7bf9b0c575ca">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_afbbba0c-b7d2-258c-0d46-9a942bf3450c" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_c0320816-2225-4a69-8994-ffbbf4675aba">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_2a6e5f4c-d8fa-908a-f977-b678fac1da38" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_c9db08e8-5e30-4619-bfd2-b507120a0530">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_da7a65db-40ad-dcd1-2425-b6211a5ffb12" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_b980117b-b299-4f8e-ac30-375b54d5ce72">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_74cdc4cb-c5b0-070a-be18-70f2b6bd9fd7" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_d965a614-6cf3-417a-844f-e4d23d41db2a">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_da7a65db-40ad-dcd1-2425-b6211a5ffb12" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_ef306d4d-6b69-463f-9780-e2b538f627a0">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_74cdc4cb-c5b0-070a-be18-70f2b6bd9fd7" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_acd97424-146a-41cf-94c7-2c85404ff460">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_74cdc4cb-c5b0-070a-be18-70f2b6bd9fd7" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_cc8e4e07-0063-40a9-8fbc-2fa053262f05">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_afbbba0c-b7d2-258c-0d46-9a942bf3450c" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_ee5ca52c-f7dc-460a-860e-74cd1919c881">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_434aa34e-db72-02ee-f5e0-8c97957de6b8" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_9a1cc8f1-da23-4d65-ba0d-fb6b8d3378d8">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_f75d82ca-2800-6dfa-346b-f45610eb7bbc" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_d5e74ac1-7609-424d-b3b1-294806a33b91">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_cfa71c40-6f8e-04ae-e4fa-8269da070067" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_bd732fca-98b5-458e-bfa7-6f2b4e5b8a9b">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_afbbba0c-b7d2-258c-0d46-9a942bf3450c" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_1bcec746-2845-4b8b-9d1e-7eadcd576ea8">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_f75d82ca-2800-6dfa-346b-f45610eb7bbc" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_717b3a1b-1bec-478a-b2f7-fb5ce55c72e7">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_da7a65db-40ad-dcd1-2425-b6211a5ffb12" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_8640d52e-c4b1-4e25-a358-c6ffe3605196">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_5c0dc8ea-94b4-80c7-a3c9-d8354193c077" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_86f3ef1b-6f8c-4319-9cc0-049feb03bcd3">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_da7a65db-40ad-dcd1-2425-b6211a5ffb12" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_1f8c2995-036b-4ea4-afe9-25ea47472ab8">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_6412f756-1258-9fc0-701e-9c71568b31be" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_33e1c937-da6f-4918-abfd-6c35516bda81">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_309621a1-54c0-9b75-e2eb-34e617a0da35" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_cfcc222a-879f-4cb5-a4c8-9611016e5faa">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_e6e1ad07-7eb5-1f69-177e-e5661e462238" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_4b99956e-1f01-4f47-82fb-385e29db912c">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_74cdc4cb-c5b0-070a-be18-70f2b6bd9fd7" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_4e25bd50-50bc-4b75-b4bf-eee6e1274f88">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_74cdc4cb-c5b0-070a-be18-70f2b6bd9fd7" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_63309068-5ff3-40f5-b68c-3e2d763f959a">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_afbbba0c-b7d2-258c-0d46-9a942bf3450c" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_3c0af105-05f9-48c3-a9db-6285bf71d5cc">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_309621a1-54c0-9b75-e2eb-34e617a0da35" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_8062ccee-ea7f-4cc8-b1be-dbb25c0ddf06">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_afbbba0c-b7d2-258c-0d46-9a942bf3450c" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_68532dbf-bbb9-4663-ae1f-a64b46d12293">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_cfa71c40-6f8e-04ae-e4fa-8269da070067" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_69694007-f9b5-475c-9f76-b39a31b26d5c">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_94a74768-59c7-1faa-55b4-2f556bb982ec" />
+  </cim:EnergyConsumer>
+  <cim:EnergyConsumer rdf:about="#_84e69160-a70e-4711-9372-33fb914b760c">
+    <cim:EnergyConsumer.LoadDynamics rdf:resource="#_182e3c74-853c-2ad9-db5b-9c9801b80201" />
+  </cim:EnergyConsumer>
+  <cim:LoadAggregate rdf:ID="_6412f756-1258-9fc0-701e-9c71568b31be">
+    <cim:IdentifiedObject.mRID>6412f756-1258-9fc0-701e-9c71568b31be</cim:IdentifiedObject.mRID>
+  </cim:LoadAggregate>
+  <cim:LoadAggregate rdf:ID="_cfa71c40-6f8e-04ae-e4fa-8269da070067">
+    <cim:IdentifiedObject.mRID>cfa71c40-6f8e-04ae-e4fa-8269da070067</cim:IdentifiedObject.mRID>
+  </cim:LoadAggregate>
+  <cim:LoadAggregate rdf:ID="_5c0dc8ea-94b4-80c7-a3c9-d8354193c077">
+    <cim:IdentifiedObject.mRID>5c0dc8ea-94b4-80c7-a3c9-d8354193c077</cim:IdentifiedObject.mRID>
+  </cim:LoadAggregate>
+  <cim:LoadAggregate rdf:ID="_94a74768-59c7-1faa-55b4-2f556bb982ec">
+    <cim:IdentifiedObject.mRID>94a74768-59c7-1faa-55b4-2f556bb982ec</cim:IdentifiedObject.mRID>
+  </cim:LoadAggregate>
+  <cim:LoadAggregate rdf:ID="_afbbba0c-b7d2-258c-0d46-9a942bf3450c">
+    <cim:IdentifiedObject.mRID>afbbba0c-b7d2-258c-0d46-9a942bf3450c</cim:IdentifiedObject.mRID>
+  </cim:LoadAggregate>
+  <cim:LoadAggregate rdf:ID="_434aa34e-db72-02ee-f5e0-8c97957de6b8">
+    <cim:IdentifiedObject.mRID>434aa34e-db72-02ee-f5e0-8c97957de6b8</cim:IdentifiedObject.mRID>
+  </cim:LoadAggregate>
+  <cim:LoadAggregate rdf:ID="_f75d82ca-2800-6dfa-346b-f45610eb7bbc">
+    <cim:IdentifiedObject.mRID>f75d82ca-2800-6dfa-346b-f45610eb7bbc</cim:IdentifiedObject.mRID>
+  </cim:LoadAggregate>
+  <cim:LoadAggregate rdf:ID="_2a6e5f4c-d8fa-908a-f977-b678fac1da38">
+    <cim:IdentifiedObject.mRID>2a6e5f4c-d8fa-908a-f977-b678fac1da38</cim:IdentifiedObject.mRID>
+  </cim:LoadAggregate>
+  <cim:LoadAggregate rdf:ID="_309621a1-54c0-9b75-e2eb-34e617a0da35">
+    <cim:IdentifiedObject.mRID>309621a1-54c0-9b75-e2eb-34e617a0da35</cim:IdentifiedObject.mRID>
+  </cim:LoadAggregate>
+  <cim:LoadAggregate rdf:ID="_e6e1ad07-7eb5-1f69-177e-e5661e462238">
+    <cim:IdentifiedObject.mRID>e6e1ad07-7eb5-1f69-177e-e5661e462238</cim:IdentifiedObject.mRID>
+  </cim:LoadAggregate>
+  <cim:LoadAggregate rdf:ID="_da7a65db-40ad-dcd1-2425-b6211a5ffb12">
+    <cim:IdentifiedObject.mRID>da7a65db-40ad-dcd1-2425-b6211a5ffb12</cim:IdentifiedObject.mRID>
+  </cim:LoadAggregate>
+  <cim:LoadAggregate rdf:ID="_182e3c74-853c-2ad9-db5b-9c9801b80201">
+    <cim:IdentifiedObject.mRID>182e3c74-853c-2ad9-db5b-9c9801b80201</cim:IdentifiedObject.mRID>
+  </cim:LoadAggregate>
+  <cim:LoadAggregate rdf:ID="_74cdc4cb-c5b0-070a-be18-70f2b6bd9fd7">
+    <cim:IdentifiedObject.mRID>74cdc4cb-c5b0-070a-be18-70f2b6bd9fd7</cim:IdentifiedObject.mRID>
+  </cim:LoadAggregate>
+  <cim:LoadStatic rdf:ID="_4133e761-02b5-4cf5-a327-167943462377">
+    <cim:IdentifiedObject.mRID>4133e761-02b5-4cf5-a327-167943462377</cim:IdentifiedObject.mRID>
+    <cim:LoadStatic.LoadAggregate rdf:resource="#_f75d82ca-2800-6dfa-346b-f45610eb7bbc" />
+    <cim:LoadStatic.staticLoadModelType rdf:resource="http://iec.ch/TC57/CIM100#StaticLoadModelKind.constantZ" />
+  </cim:LoadStatic>
+  <cim:LoadStatic rdf:ID="_acf8d745-1059-b62b-f258-917eef00b021">
+    <cim:IdentifiedObject.mRID>acf8d745-1059-b62b-f258-917eef00b021</cim:IdentifiedObject.mRID>
+    <cim:LoadStatic.LoadAggregate rdf:resource="#_182e3c74-853c-2ad9-db5b-9c9801b80201" />
+    <cim:LoadStatic.staticLoadModelType rdf:resource="http://iec.ch/TC57/CIM100#StaticLoadModelKind.constantZ" />
+  </cim:LoadStatic>
+  <cim:LoadStatic rdf:ID="_609ce1f5-54f1-9f17-94a1-b31d488cb6e5">
+    <cim:IdentifiedObject.mRID>609ce1f5-54f1-9f17-94a1-b31d488cb6e5</cim:IdentifiedObject.mRID>
+    <cim:LoadStatic.LoadAggregate rdf:resource="#_309621a1-54c0-9b75-e2eb-34e617a0da35" />
+    <cim:LoadStatic.staticLoadModelType rdf:resource="http://iec.ch/TC57/CIM100#StaticLoadModelKind.constantZ" />
+  </cim:LoadStatic>
+  <cim:LoadStatic rdf:ID="_a5aaafe6-2923-535d-de6d-e3304c962f00">
+    <cim:IdentifiedObject.mRID>a5aaafe6-2923-535d-de6d-e3304c962f00</cim:IdentifiedObject.mRID>
+    <cim:LoadStatic.LoadAggregate rdf:resource="#_da7a65db-40ad-dcd1-2425-b6211a5ffb12" />
+    <cim:LoadStatic.staticLoadModelType rdf:resource="http://iec.ch/TC57/CIM100#StaticLoadModelKind.constantZ" />
+  </cim:LoadStatic>
+  <cim:LoadStatic rdf:ID="_b0e713b7-3d95-308f-1660-1f8ab92b22fb">
+    <cim:IdentifiedObject.mRID>b0e713b7-3d95-308f-1660-1f8ab92b22fb</cim:IdentifiedObject.mRID>
+    <cim:LoadStatic.LoadAggregate rdf:resource="#_434aa34e-db72-02ee-f5e0-8c97957de6b8" />
+    <cim:LoadStatic.staticLoadModelType rdf:resource="http://iec.ch/TC57/CIM100#StaticLoadModelKind.constantZ" />
+  </cim:LoadStatic>
+  <cim:LoadStatic rdf:ID="_dd7234db-f1a8-5ec0-c927-312c7c5ff59a">
+    <cim:IdentifiedObject.mRID>dd7234db-f1a8-5ec0-c927-312c7c5ff59a</cim:IdentifiedObject.mRID>
+    <cim:LoadStatic.LoadAggregate rdf:resource="#_cfa71c40-6f8e-04ae-e4fa-8269da070067" />
+    <cim:LoadStatic.staticLoadModelType rdf:resource="http://iec.ch/TC57/CIM100#StaticLoadModelKind.constantZ" />
+  </cim:LoadStatic>
+  <cim:LoadStatic rdf:ID="_79af6d33-b425-2420-d568-b2de81042e0f">
+    <cim:IdentifiedObject.mRID>79af6d33-b425-2420-d568-b2de81042e0f</cim:IdentifiedObject.mRID>
+    <cim:LoadStatic.LoadAggregate rdf:resource="#_5c0dc8ea-94b4-80c7-a3c9-d8354193c077" />
+    <cim:LoadStatic.staticLoadModelType rdf:resource="http://iec.ch/TC57/CIM100#StaticLoadModelKind.constantZ" />
+  </cim:LoadStatic>
+  <cim:LoadStatic rdf:ID="_814b2227-90ed-051c-ee95-4017731d9366">
+    <cim:IdentifiedObject.mRID>814b2227-90ed-051c-ee95-4017731d9366</cim:IdentifiedObject.mRID>
+    <cim:LoadStatic.LoadAggregate rdf:resource="#_e6e1ad07-7eb5-1f69-177e-e5661e462238" />
+    <cim:LoadStatic.staticLoadModelType rdf:resource="http://iec.ch/TC57/CIM100#StaticLoadModelKind.constantZ" />
+  </cim:LoadStatic>
+  <cim:LoadStatic rdf:ID="_ff0e5cb7-c290-dbbb-4be2-4380bff1594e">
+    <cim:IdentifiedObject.mRID>ff0e5cb7-c290-dbbb-4be2-4380bff1594e</cim:IdentifiedObject.mRID>
+    <cim:LoadStatic.LoadAggregate rdf:resource="#_6412f756-1258-9fc0-701e-9c71568b31be" />
+    <cim:LoadStatic.staticLoadModelType rdf:resource="http://iec.ch/TC57/CIM100#StaticLoadModelKind.constantZ" />
+  </cim:LoadStatic>
+  <cim:LoadStatic rdf:ID="_e86ee3ce-db82-25eb-e47c-781858bf9b1a">
+    <cim:IdentifiedObject.mRID>e86ee3ce-db82-25eb-e47c-781858bf9b1a</cim:IdentifiedObject.mRID>
+    <cim:LoadStatic.LoadAggregate rdf:resource="#_94a74768-59c7-1faa-55b4-2f556bb982ec" />
+    <cim:LoadStatic.staticLoadModelType rdf:resource="http://iec.ch/TC57/CIM100#StaticLoadModelKind.constantZ" />
+  </cim:LoadStatic>
+  <cim:LoadStatic rdf:ID="_4f6d032c-95d0-e66f-1470-a0dffafad576">
+    <cim:IdentifiedObject.mRID>4f6d032c-95d0-e66f-1470-a0dffafad576</cim:IdentifiedObject.mRID>
+    <cim:LoadStatic.LoadAggregate rdf:resource="#_afbbba0c-b7d2-258c-0d46-9a942bf3450c" />
+    <cim:LoadStatic.staticLoadModelType rdf:resource="http://iec.ch/TC57/CIM100#StaticLoadModelKind.constantZ" />
+  </cim:LoadStatic>
+  <cim:LoadStatic rdf:ID="_3ec43e56-2f66-478f-90ea-3d85a620050d">
+    <cim:IdentifiedObject.mRID>3ec43e56-2f66-478f-90ea-3d85a620050d</cim:IdentifiedObject.mRID>
+    <cim:LoadStatic.LoadAggregate rdf:resource="#_74cdc4cb-c5b0-070a-be18-70f2b6bd9fd7" />
+    <cim:LoadStatic.staticLoadModelType rdf:resource="http://iec.ch/TC57/CIM100#StaticLoadModelKind.constantZ" />
+  </cim:LoadStatic>
+  <cim:LoadStatic rdf:ID="_47317d53-14e7-a8ec-a590-bf05917f35a4">
+    <cim:IdentifiedObject.mRID>47317d53-14e7-a8ec-a590-bf05917f35a4</cim:IdentifiedObject.mRID>
+    <cim:LoadStatic.LoadAggregate rdf:resource="#_2a6e5f4c-d8fa-908a-f977-b678fac1da38" />
+    <cim:LoadStatic.staticLoadModelType rdf:resource="http://iec.ch/TC57/CIM100#StaticLoadModelKind.constantZ" />
+  </cim:LoadStatic>
+</rdf:RDF>

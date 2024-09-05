@@ -1,0 +1,2 @@
+recursive-include cimpy/examples *.xml *.py
+recursive-include cimpy *.mustache
