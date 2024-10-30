@@ -1,40 +1,42 @@
 from .IdentifiedObject import IdentifiedObject
+from .CGMESProfile import Profile
 
 
 class DCTopologicalNode(IdentifiedObject):
-	'''
-	DC bus.
+    """
+    DC bus.
 
-	:DCTopologicalIsland:  Default: None
-	:DCTerminals: See association end Terminal.TopologicalNode. Default: "list"
-	:DCEquipmentContainer:  Default: None
-	:DCNodes: See association end ConnectivityNode.TopologicalNode. Default: "list"
-		'''
+    :DCEquipmentContainer:  Default: None
+    :DCNodes: See association end ConnectivityNode.TopologicalNode. Default: "list"
+    :DCTerminals: See association end Terminal.TopologicalNode. Default: "list"
+    :DCTopologicalIsland:  Default: None
+    """
 
-	cgmesProfile = IdentifiedObject.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.SV.value, Profile.TP.value, ],
+        "DCEquipmentContainer": [Profile.TP.value, ],
+        "DCNodes": [Profile.TP.value, ],
+        "DCTerminals": [Profile.TP.value, ],
+        "DCTopologicalIsland": [Profile.SV.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.SV.value, cgmesProfile.TP.value, ],
-						'DCTopologicalIsland': [cgmesProfile.SV.value, ],
-						'DCTerminals': [cgmesProfile.TP.value, ],
-						'DCEquipmentContainer': [cgmesProfile.TP.value, ],
-						'DCNodes': [cgmesProfile.TP.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
+    recommendedClassProfile = Profile.TP.value
 
-	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
+    __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
-	def __init__(self, DCTopologicalIsland = None, DCTerminals = "list", DCEquipmentContainer = None, DCNodes = "list",  *args, **kw_args):
-		super().__init__(*args, **kw_args)
-	
-		self.DCTopologicalIsland = DCTopologicalIsland
-		self.DCTerminals = DCTerminals
-		self.DCEquipmentContainer = DCEquipmentContainer
-		self.DCNodes = DCNodes
-		
-	def __str__(self):
-		str = 'class=DCTopologicalNode\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+    def __init__(self, DCEquipmentContainer = None, DCNodes = "list", DCTerminals = "list", DCTopologicalIsland = None, *args, **kw_args):
+        super().__init__(*args, **kw_args)
+
+        self.DCEquipmentContainer = DCEquipmentContainer
+        self.DCNodes = DCNodes
+        self.DCTerminals = DCTerminals
+        self.DCTopologicalIsland = DCTopologicalIsland
+
+    def __str__(self):
+        str = "class=DCTopologicalNode\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str

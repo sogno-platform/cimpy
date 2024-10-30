@@ -1,31 +1,33 @@
 from .SeasonDayTypeSchedule import SeasonDayTypeSchedule
+from .CGMESProfile import Profile
 
 
 class RegulationSchedule(SeasonDayTypeSchedule):
-	'''
-	A pre-established pattern over time for a controlled variable, e.g., busbar voltage.
+    """
+    A pre-established pattern over time for a controlled variable, e.g., busbar voltage.
 
-	:RegulatingControl: Regulating controls that have this Schedule. Default: None
-		'''
+    :RegulatingControl: Regulating controls that have this Schedule. Default: None
+    """
 
-	cgmesProfile = SeasonDayTypeSchedule.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.EQ.value, ],
+        "RegulatingControl": [Profile.EQ.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'RegulatingControl': [cgmesProfile.EQ.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
+    recommendedClassProfile = Profile.EQ.value
 
-	__doc__ += '\n Documentation of parent class SeasonDayTypeSchedule: \n' + SeasonDayTypeSchedule.__doc__ 
+    __doc__ += "\nDocumentation of parent class SeasonDayTypeSchedule:\n" + SeasonDayTypeSchedule.__doc__
 
-	def __init__(self, RegulatingControl = None,  *args, **kw_args):
-		super().__init__(*args, **kw_args)
-	
-		self.RegulatingControl = RegulatingControl
-		
-	def __str__(self):
-		str = 'class=RegulationSchedule\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+    def __init__(self, RegulatingControl = None, *args, **kw_args):
+        super().__init__(*args, **kw_args)
+
+        self.RegulatingControl = RegulatingControl
+
+    def __str__(self):
+        str = "class=RegulationSchedule\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str

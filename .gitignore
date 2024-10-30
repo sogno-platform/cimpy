@@ -3,12 +3,12 @@
 __pycache__
 .idea
 .venv
-./cimpy/__pycache__
 *.egg
 build/
 dist/
-
 *.log
+/.pytest_cache
+/report.xml
 
 # VSCode
 .vscode/*

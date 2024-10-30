@@ -1,34 +1,36 @@
 from .Limit import Limit
+from .CGMESProfile import Profile
 
 
 class AccumulatorLimit(Limit):
-	'''
-	Limit values for Accumulator measurements.
+    """
+    Limit values for Accumulator measurements.
 
-	:value: The value to supervise against. The value is positive. Default: 0
-	:LimitSet: The limit values used for supervision of Measurements. Default: None
-		'''
+    :LimitSet: The limit values used for supervision of Measurements. Default: None
+    :value: The value to supervise against. The value is positive. Default: 0
+    """
 
-	cgmesProfile = Limit.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.EQ.value, ],
+        "LimitSet": [Profile.EQ.value, ],
+        "value": [Profile.EQ.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'value': [cgmesProfile.EQ.value, ],
-						'LimitSet': [cgmesProfile.EQ.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
+    recommendedClassProfile = Profile.EQ.value
 
-	__doc__ += '\n Documentation of parent class Limit: \n' + Limit.__doc__ 
+    __doc__ += "\nDocumentation of parent class Limit:\n" + Limit.__doc__
 
-	def __init__(self, value = 0, LimitSet = None,  *args, **kw_args):
-		super().__init__(*args, **kw_args)
-	
-		self.value = value
-		self.LimitSet = LimitSet
-		
-	def __str__(self):
-		str = 'class=AccumulatorLimit\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+    def __init__(self, LimitSet = None, value = 0, *args, **kw_args):
+        super().__init__(*args, **kw_args)
+
+        self.LimitSet = LimitSet
+        self.value = value
+
+    def __str__(self):
+        str = "class=AccumulatorLimit\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str

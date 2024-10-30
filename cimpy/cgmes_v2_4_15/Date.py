@@ -1,28 +1,29 @@
 from .Base import Base
+from .CGMESProfile import Profile
 
 
 class Date(Base):
-	'''
-	Date as "yyyy-mm-dd", which conforms with ISO 8601. UTC time zone is specified as "yyyy-mm-ddZ". A local timezone relative UTC is specified as "yyyy-mm-dd(+/-)hh:mm".
+    """
+    Date as "yyyy-mm-dd", which conforms with ISO 8601. UTC time zone is specified as "yyyy-mm-ddZ". A local timezone relative UTC is specified as "yyyy-mm-dd(+/-)hh:mm".
 
-		'''
+    """
 
-	cgmesProfile = Base.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.DL.value, Profile.DY.value, Profile.EQ_BD.value, Profile.EQ.value, Profile.GL.value, Profile.SV.value, Profile.SSH.value, Profile.TP_BD.value, Profile.TP.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.DL.value, cgmesProfile.EQ.value, cgmesProfile.SSH.value, cgmesProfile.SV.value, cgmesProfile.GL.value, cgmesProfile.DY.value, cgmesProfile.TP.value, cgmesProfile.TP_BD.value, cgmesProfile.EQ_BD.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
+    recommendedClassProfile = Profile.EQ.value
 
-	
 
-	def __init__(self,  ):
-	
-		pass
-	
-	def __str__(self):
-		str = 'class=Date\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+    def __init__(self):
+
+        pass
+
+    def __str__(self):
+        str = "class=Date\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str

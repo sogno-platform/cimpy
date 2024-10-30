@@ -1,42 +1,43 @@
 from .Base import Base
+from .CGMESProfile import Profile
 
 
 class VoltagePerReactivePower(Base):
-	'''
-	Voltage variation with reactive power.
+    """
+    Voltage variation with reactive power.
 
-	:value:  Default: 0.0
-	:unit:  Default: None
-	:denominatorMultiplier:  Default: None
-	:multiplier:  Default: None
-	:denominatorUnit:  Default: None
-		'''
+    :denominatorMultiplier:  Default: None
+    :denominatorUnit:  Default: None
+    :multiplier:  Default: None
+    :unit:  Default: None
+    :value:  Default: 0.0
+    """
 
-	cgmesProfile = Base.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.EQ.value, ],
+        "denominatorMultiplier": [Profile.EQ.value, ],
+        "denominatorUnit": [Profile.EQ.value, ],
+        "multiplier": [Profile.EQ.value, ],
+        "unit": [Profile.EQ.value, ],
+        "value": [Profile.EQ.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'value': [cgmesProfile.EQ.value, ],
-						'unit': [cgmesProfile.EQ.value, ],
-						'denominatorMultiplier': [cgmesProfile.EQ.value, ],
-						'multiplier': [cgmesProfile.EQ.value, ],
-						'denominatorUnit': [cgmesProfile.EQ.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
+    recommendedClassProfile = Profile.EQ.value
 
-	
 
-	def __init__(self, value = 0.0, unit = None, denominatorMultiplier = None, multiplier = None, denominatorUnit = None,  ):
-	
-		self.value = value
-		self.unit = unit
-		self.denominatorMultiplier = denominatorMultiplier
-		self.multiplier = multiplier
-		self.denominatorUnit = denominatorUnit
-		
-	def __str__(self):
-		str = 'class=VoltagePerReactivePower\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+    def __init__(self, denominatorMultiplier = None, denominatorUnit = None, multiplier = None, unit = None, value = 0.0):
+
+        self.denominatorMultiplier = denominatorMultiplier
+        self.denominatorUnit = denominatorUnit
+        self.multiplier = multiplier
+        self.unit = unit
+        self.value = value
+
+    def __str__(self):
+        str = "class=VoltagePerReactivePower\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str

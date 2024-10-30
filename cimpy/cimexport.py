@@ -6,12 +6,8 @@ import copy
 import importlib
 import logging
 import os
+from cimpy.cgmes_v2_4_15.CGMESProfile import Profile
 
-from cimpy.cgmes_v2_4_15.Base import Profile
-from cimpy.cgmes_v2_4_15.Base import Base
-
-
-cgmesProfile = Base.cgmesProfile
 
 logger = logging.getLogger(__name__)
 
@@ -43,7 +39,7 @@ def _get_reference_uuid(attr_dict, version, topology, mRID, urls):
     base_module = importlib.import_module(base_class_name)
     base_class = getattr(base_module, "Base")
     for key in attr_dict:
-        if key in ["serializationProfile", "possibleProfileList"]:
+        if key in ["serializationProfile", "possibleProfileList", "recommendedClassProfile"]:
             reference_list.append({key: attr_dict[key]})
             continue
 
@@ -170,9 +166,10 @@ def _create_namespaces_list(namespaces_dict):
 # This function sorts the classes and their attributes to the corresponding profiles. Either the classes/attributes are
 # imported or they are set afterwards. In the first case the serializationProfile is used to determine from which
 # profile this class/attribute was read. If an entry exists the class/attribute is added to this profile. In the
-# possibleProfileList dictionary the possible origins of the class/attributes is stored. All profiles have a different
-# priority which is stored in the enum cgmesProfile. As default the smallest entry in the dictionary is used to
-# determine the profile for the class/attributes.
+# possibleProfileList dictionary the possible origins of the class/attributes is stored.
+# If the profile is not found for a class in possibleProfileList the recommended class profile is used.
+# If it is not found for an attribute the class profile is used, but only if this is a possible profile for this
+# attribute. Otherwise, the first entry in the list of possible profiles for this attribute is used.
 def _sort_classes_to_profile(class_attributes_list, activeProfileList):
     export_dict = {}
     export_about_dict = {}
@@ -187,6 +184,7 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
         # of same class, only last origin of variable stored
         serialization_profile = copy.deepcopy(klass["attributes"][0]["serializationProfile"])
         possible_profile_list = copy.deepcopy(klass["attributes"][1]["possibleProfileList"])
+        recommended_class_profile = klass["attributes"][2]["recommendedClassProfile"]
 
         class_serialization_profile = ""
 
@@ -217,9 +215,13 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
             # Class was created
             if klass["name"] in possible_profile_list.keys():
                 if "class" in possible_profile_list[klass["name"]].keys():
-                    possible_profile_list[klass["name"]]["class"].sort()
-                    for klass_profile in possible_profile_list[klass["name"]]["class"]:
-                        if Profile(klass_profile).name in activeProfileList:
+                    # Sort recommended profile to first place
+                    sorted_profiles = sorted(
+                        possible_profile_list[klass["name"]]["class"],
+                        key=lambda x: x == recommended_class_profile and -1 or x,
+                    )
+                    for klass_profile in sorted_profiles:
+                        if Profile(klass_profile) in activeProfileList:
                             # Active profile for class export found
                             class_serialization_profile = Profile(klass_profile).name
                             break
@@ -258,8 +260,12 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
                     # Attribute was added
                     if attribute_class in possible_profile_list.keys():
                         if attribute_name in possible_profile_list[attribute_class].keys():
-                            possible_profile_list[attribute_class][attribute_name].sort()
-                            for attr_profile in possible_profile_list[attribute_class][attribute_name]:
+                            # Sort class profile to first place
+                            sorted_profiles = sorted(
+                                possible_profile_list[attribute_class][attribute_name],
+                                key=lambda x: x == Profile[class_serialization_profile].value and -1 or x,
+                            )
+                            for attr_profile in sorted_profiles:
                                 if Profile(attr_profile) in activeProfileList:
                                     # Active profile for class export found
                                     attribute_serialization_profile = Profile(attr_profile).name
@@ -328,7 +334,29 @@ def _sort_classes_to_profile(class_attributes_list, activeProfileList):
     return export_dict, export_about_dict
 
 
-def cim_export(import_result, file_name, version, activeProfileList):
+def cim_export_to_string_array(import_result, model_name, version, activeProfileList=()):
+    """Function for serialization of cgmes classes to a list of strings
+
+    See :func:`~cimpy.cimexport.cim_export()` for details.
+
+    :param import_result: a dictionary containing the topology and meta information. It can be created via \
+    :func:`~cimpy.cimimport.cim_import()`
+    :param model_name: a string with the name of the model.
+    :param version: cgmes version, e.g. ``version="cgmes_v2_4_15"``
+    :param activeProfileList: a list containing the strings of all short names of the profiles \
+    used for serialization, no activeProfileList means output to all profile files with data
+    :return: a list of strings with the CIM RDF/XML data
+    """
+    result = []
+    profile_list = list(map(lambda a: Profile[a], activeProfileList))
+    for profile in profile_list or [p for p in Profile]:
+        output = generate_xml(import_result, version, model_name, profile, profile_list)
+        if output:
+            result.append(output)
+    return result
+
+
+def cim_export(import_result, file_name, version, activeProfileList=()):
     """Function for serialization of cgmes classes
 
     This function serializes cgmes classes with the template engine chevron. The classes are separated by their profile
@@ -341,13 +369,14 @@ def cim_export(import_result, file_name, version, activeProfileList):
     The meta information can be extracted via import_result['meta_info']. The meta_info dictionary contains a new \
     dictionary with the keys: 'author', 'namespaces' and 'urls'. The last two are also dictionaries. \
     'urls' contains a mapping between references to URLs and the extracted value of the URL, e.g. 'absoluteValue': \
-    'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue' These mappings are \
+    'http://iec.ch/TC57/2012/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue'. These mappings are \
     accessible via the name of the attribute, \
     e.g. import_result['meta_info']['urls'}[attr_name] = {mapping like example above}. \
     'namespaces' is a dictionary containing all RDF namespaces used in the imported xml files.
     :param file_name: a string with the name of the xml files which will be created
-    :param version: cgmes version, e.g. version = "cgmes_v2_4_15"
-    :param activeProfileList: a list containing the strings of all short names of the profiles used for serialization
+    :param version: cgmes version, e.g. ``version="cgmes_v2_4_15"``
+    :param activeProfileList: a list containing the strings of all short names of the profiles \
+    used for serialization, no activeProfileList means output to all profile files with data
     """
 
     t0 = time()
@@ -356,18 +385,17 @@ def cim_export(import_result, file_name, version, activeProfileList):
     profile_list = list(map(lambda a: Profile[a], activeProfileList))
 
     # Iterate over all profiles
-    for profile in profile_list:
+    for profile in profile_list or [p for p in Profile]:
 
         # File name
         full_file_name = file_name + "_" + profile.long_name() + ".xml"
 
         if not os.path.exists(full_file_name):
             output = generate_xml(import_result, version, file_name, profile, profile_list)
-
-            with open(full_file_name, "w") as file:
-                logger.info('Write file "%s"', full_file_name)
-
-                file.write(output)
+            if output:
+                with open(full_file_name, "w") as file:
+                    logger.info('Write file "%s"', full_file_name)
+                    file.write(output)
         else:
             logger.error(
                 "File %s already exists. Delete file or change file name to serialize CGMES classes.", full_file_name
@@ -384,10 +412,12 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
 
     :param cim_data: a dictionary containing the topology and meta information. It can be created via \
     :func:`~cimpy.cimimport.cim_import()`
-    :param version: cgmes version, e.g.  ``version="cgmes_v2_4_15"``
-    :param profile: The :class:`~cimpy.cgmes_v2_4_15.Base.Profile` for which the serialization should be generated.
+    :param version: cgmes version, e.g. ``version="cgmes_v2_4_15"``
+    :param profile: The :class:`~cimpy.cgmes_v2_4_15.CGMESProfile.Profile` for which the serialization \
+    should be generated.
     :param model_name: a string with the name of the model.
-    :param available_profiles: a list of all :class:`~cimpy.cgmes_v2_4_15.Base.Profile`s in `cim_data`
+    :param available_profiles: a list of all :class:`~cimpy.cgmes_v2_4_15.CGMESProfile.Profile` values in `cim_data`
+    :result: a string with the CIM RDF/XML data
     """
 
     # Returns all classes with their attributes and resolved references
@@ -396,20 +426,25 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
     # Determine class and attribute export profiles. The export dict contains all classes and their attributes where
     # the class definition and the attribute definitions are in the same profile. Every entry in about_dict generates
     # a rdf:about in another profile
-    export_dict, about_dict = _sort_classes_to_profile(class_attributes_list, available_profiles)
+    export_dict, about_dict = _sort_classes_to_profile(
+        class_attributes_list, available_profiles or [p for p in Profile]
+    )
 
     namespaces_list = _create_namespaces_list(cim_data["meta_info"]["namespaces"])
 
     if profile.name not in export_dict.keys() and profile.name not in about_dict.keys():
-        raise RuntimeError(
-            "Profile "
-            + profile.name
-            + " not available for export, export_dict="
-            + str(export_dict.keys())
-            + " and about_dict="
-            + str(about_dict.keys())
-            + "."
-        )
+        if available_profiles:
+            raise RuntimeError(
+                "Profile "
+                + profile.name
+                + " not available for export, export_dict="
+                + str(export_dict.keys())
+                + " and about_dict="
+                + str(about_dict.keys())
+                + "."
+            )
+        else:
+            return ""
 
     # Extract class lists from export_dict and about_dict
     if profile.name in export_dict.keys():
@@ -424,16 +459,18 @@ def generate_xml(cim_data, version, model_name, profile, available_profiles):
 
     # Model header
     model_description = {
-        "mRID": model_name,
+        "mRID": model_name + "_" + profile.long_name(),
         "description": [
             {
                 "attr_name": "created",
                 "value": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
             },
             {"attr_name": "modelingAuthoritySet", "value": "www.sogno.energy"},
-            {"attr_name": "profile", "value": profile.long_name()},
         ],
     }
+    for uri in profile.uris():
+        model_description["description"].append({"attr_name": "profile", "value": uri})
+
     template_path = Path(os.path.join(os.path.dirname(__file__), "export_template.mustache")).resolve()
     with open(template_path) as f:
         output = chevron.render(
@@ -465,7 +502,11 @@ def _get_attributes(class_object):
         class_type = type(parent)
 
     # Dictionary containing all attributes with key: 'Class_Name.Attribute_Name'
-    attributes_dict = dict(serializationProfile=class_object.serializationProfile, possibleProfileList={})
+    attributes_dict = dict(
+        serializationProfile=class_object.serializationProfile,
+        possibleProfileList={},
+        recommendedClassProfile=class_object.recommendedClassProfile,
+    )
 
     # __dict__ of a subclass returns also the attributes of the parent classes
     # to avoid multiple attributes create list with all attributes already processed

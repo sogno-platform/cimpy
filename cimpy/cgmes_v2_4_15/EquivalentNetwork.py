@@ -1,31 +1,33 @@
 from .ConnectivityNodeContainer import ConnectivityNodeContainer
+from .CGMESProfile import Profile
 
 
 class EquivalentNetwork(ConnectivityNodeContainer):
-	'''
-	A class that represents an external meshed network that has been reduced to an electrically equivalent model. The ConnectivityNodes contained in the equivalent are intended to reflect internal nodes of the equivalent. The boundary Connectivity nodes where the equivalent connects outside itself are NOT contained by the equivalent.
+    """
+    A class that represents an external meshed network that has been reduced to an electrically equivalent model. The ConnectivityNodes contained in the equivalent are intended to reflect internal nodes of the equivalent. The boundary Connectivity nodes where the equivalent connects outside itself are NOT contained by the equivalent.
 
-	:EquivalentEquipments: The equivalent where the reduced model belongs. Default: "list"
-		'''
+    :EquivalentEquipments: The equivalent where the reduced model belongs. Default: "list"
+    """
 
-	cgmesProfile = ConnectivityNodeContainer.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.EQ.value, ],
+        "EquivalentEquipments": [Profile.EQ.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'EquivalentEquipments': [cgmesProfile.EQ.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
+    recommendedClassProfile = Profile.EQ.value
 
-	__doc__ += '\n Documentation of parent class ConnectivityNodeContainer: \n' + ConnectivityNodeContainer.__doc__ 
+    __doc__ += "\nDocumentation of parent class ConnectivityNodeContainer:\n" + ConnectivityNodeContainer.__doc__
 
-	def __init__(self, EquivalentEquipments = "list",  *args, **kw_args):
-		super().__init__(*args, **kw_args)
-	
-		self.EquivalentEquipments = EquivalentEquipments
-		
-	def __str__(self):
-		str = 'class=EquivalentNetwork\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+    def __init__(self, EquivalentEquipments = "list", *args, **kw_args):
+        super().__init__(*args, **kw_args)
+
+        self.EquivalentEquipments = EquivalentEquipments
+
+    def __str__(self):
+        str = "class=EquivalentNetwork\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str

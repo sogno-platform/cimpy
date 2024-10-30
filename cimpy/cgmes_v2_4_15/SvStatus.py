@@ -1,33 +1,34 @@
 from .Base import Base
+from .CGMESProfile import Profile
 
 
 class SvStatus(Base):
-	'''
-	State variable for status.
+    """
+    State variable for status.
 
-	:ConductingEquipment: The conducting equipment associated with the status state variable. Default: None
-	:inService: The in service status as a result of topology processing. Default: False
-		'''
+    :ConductingEquipment: The conducting equipment associated with the status state variable. Default: None
+    :inService: The in service status as a result of topology processing. Default: False
+    """
 
-	cgmesProfile = Base.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.SV.value, ],
+        "ConductingEquipment": [Profile.SV.value, ],
+        "inService": [Profile.SV.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.SV.value, ],
-						'ConductingEquipment': [cgmesProfile.SV.value, ],
-						'inService': [cgmesProfile.SV.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
+    recommendedClassProfile = Profile.SV.value
 
-	
 
-	def __init__(self, ConductingEquipment = None, inService = False,  ):
-	
-		self.ConductingEquipment = ConductingEquipment
-		self.inService = inService
-		
-	def __str__(self):
-		str = 'class=SvStatus\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+    def __init__(self, ConductingEquipment = None, inService = False):
+
+        self.ConductingEquipment = ConductingEquipment
+        self.inService = inService
+
+    def __str__(self):
+        str = "class=SvStatus\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str

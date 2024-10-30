@@ -14,15 +14,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: 3.8
-
-      - name: Install Graphviz
-        shell: bash
-        run: |
-          sudo apt-get -y install graphviz
 
       - name: Install Python dependencies
         run: |
@@ -37,4 +32,4 @@ jobs:
         if: ${{ always() }}
         with:
           name: pytest-results
-          path: cimpy/report.xml
+          path: report.xml

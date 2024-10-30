@@ -1,37 +1,39 @@
 from .Measurement import Measurement
+from .CGMESProfile import Profile
 
 
 class Analog(Measurement):
-	'''
-	Analog represents an analog Measurement.
+    """
+    Analog represents an analog Measurement.
 
-	:positiveFlowIn: If true then this measurement is an active power, reactive power or current with the convention that a positive value measured at the Terminal means power is flowing into the related PowerSystemResource. Default: False
-	:AnalogValues: Measurement to which this value is connected. Default: "list"
-	:LimitSets: The Measurements using the LimitSet. Default: "list"
-		'''
+    :AnalogValues: Measurement to which this value is connected. Default: "list"
+    :LimitSets: The Measurements using the LimitSet. Default: "list"
+    :positiveFlowIn: If true then this measurement is an active power, reactive power or current with the convention that a positive value measured at the Terminal means power is flowing into the related PowerSystemResource. Default: False
+    """
 
-	cgmesProfile = Measurement.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.EQ.value, ],
+        "AnalogValues": [Profile.EQ.value, ],
+        "LimitSets": [Profile.EQ.value, ],
+        "positiveFlowIn": [Profile.EQ.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'positiveFlowIn': [cgmesProfile.EQ.value, ],
-						'AnalogValues': [cgmesProfile.EQ.value, ],
-						'LimitSets': [cgmesProfile.EQ.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
+    recommendedClassProfile = Profile.EQ.value
 
-	__doc__ += '\n Documentation of parent class Measurement: \n' + Measurement.__doc__ 
+    __doc__ += "\nDocumentation of parent class Measurement:\n" + Measurement.__doc__
 
-	def __init__(self, positiveFlowIn = False, AnalogValues = "list", LimitSets = "list",  *args, **kw_args):
-		super().__init__(*args, **kw_args)
-	
-		self.positiveFlowIn = positiveFlowIn
-		self.AnalogValues = AnalogValues
-		self.LimitSets = LimitSets
-		
-	def __str__(self):
-		str = 'class=Analog\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+    def __init__(self, AnalogValues = "list", LimitSets = "list", positiveFlowIn = False, *args, **kw_args):
+        super().__init__(*args, **kw_args)
+
+        self.AnalogValues = AnalogValues
+        self.LimitSets = LimitSets
+        self.positiveFlowIn = positiveFlowIn
+
+    def __str__(self):
+        str = "class=Analog\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str

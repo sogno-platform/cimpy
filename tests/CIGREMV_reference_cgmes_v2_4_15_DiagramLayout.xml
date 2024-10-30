@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cim="http://iec.ch/TC57/2012/CIM-schema-cim16#" xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#" xmlns:entsoe="http://entsoe.eu/Secretariat/ProfileExtension/2#" xmlns:neplan="http://www.neplan.ch#" >
 <md:FullModel rdf:about="CIGREMV_reference_cgmes_v2_4_15">
-    <md:Model.created>29/01/2020 15:09:48</md:Model.created>
-    <md:Model.modelingAuthoritySet>www.acs.eonerc.rwth-aachen.de</md:Model.modelingAuthoritySet>
-    <md:Model.profile>DiagramLayout</md:Model.profile>
+    <md:Model.created>12/08/2024 16:34:44</md:Model.created>
+    <md:Model.modelingAuthoritySet>www.sogno.energy</md:Model.modelingAuthoritySet>
+    <md:Model.profile>http://entsoe.eu/CIM/DiagramLayout/3/1</md:Model.profile>
 </md:FullModel>
 <cim:Diagram rdf:ID="_3b336fc7-5b11-41a1-83e8-5509bbd4eda8">
     <cim:IdentifiedObject.name>Load6</cim:IdentifiedObject.name>
@@ -861,8 +861,8 @@
 </cim:DiagramObjectPoint>
 <cim:DiagramObject rdf:ID="_d6642a6d-78ae-4f1e-8951-34779cb029fc">
     <cim:DiagramObject.Diagram rdf:resource="#_3b336fc7-5b11-41a1-83e8-5509bbd4eda8"/>
-    <cim:DiagramObject.rotation>-90.0</cim:DiagramObject.rotation>
     <cim:DiagramObject.IdentifiedObject rdf:resource="#HV-Netz"/>
+    <cim:DiagramObject.rotation>-90.0</cim:DiagramObject.rotation>
 </cim:DiagramObject>
 <cim:DiagramObjectPoint rdf:ID="_6001d8f7-5861-45b2-ade6-71c2acbe4fd9">
     <cim:DiagramObjectPoint.DiagramObject rdf:resource="#_d6642a6d-78ae-4f1e-8951-34779cb029fc"/>

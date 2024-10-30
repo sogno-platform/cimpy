@@ -1,31 +1,33 @@
 from .TapChangerTablePoint import TapChangerTablePoint
+from .CGMESProfile import Profile
 
 
 class RatioTapChangerTablePoint(TapChangerTablePoint):
-	'''
-	Describes each tap step in the ratio tap changer tabular curve.
+    """
+    Describes each tap step in the ratio tap changer tabular curve.
 
-	:RatioTapChangerTable: Points of this table. Default: None
-		'''
+    :RatioTapChangerTable: Points of this table. Default: None
+    """
 
-	cgmesProfile = TapChangerTablePoint.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.EQ.value, ],
+        "RatioTapChangerTable": [Profile.EQ.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'RatioTapChangerTable': [cgmesProfile.EQ.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
+    recommendedClassProfile = Profile.EQ.value
 
-	__doc__ += '\n Documentation of parent class TapChangerTablePoint: \n' + TapChangerTablePoint.__doc__ 
+    __doc__ += "\nDocumentation of parent class TapChangerTablePoint:\n" + TapChangerTablePoint.__doc__
 
-	def __init__(self, RatioTapChangerTable = None,  *args, **kw_args):
-		super().__init__(*args, **kw_args)
-	
-		self.RatioTapChangerTable = RatioTapChangerTable
-		
-	def __str__(self):
-		str = 'class=RatioTapChangerTablePoint\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+    def __init__(self, RatioTapChangerTable = None, *args, **kw_args):
+        super().__init__(*args, **kw_args)
+
+        self.RatioTapChangerTable = RatioTapChangerTable
+
+    def __str__(self):
+        str = "class=RatioTapChangerTablePoint\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str

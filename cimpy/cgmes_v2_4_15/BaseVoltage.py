@@ -1,43 +1,45 @@
 from .IdentifiedObject import IdentifiedObject
+from .CGMESProfile import Profile
 
 
 class BaseVoltage(IdentifiedObject):
-	'''
-	Defines a system base voltage which is referenced.
+    """
+    Defines a system base voltage which is referenced.
 
-	:nominalVoltage: The power system resource`s base voltage. Default: 0.0
-	:ConductingEquipment: Base voltage of this conducting equipment.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers. Default: "list"
-	:VoltageLevel: The voltage levels having this base voltage. Default: "list"
-	:TransformerEnds: Transformer ends at the base voltage.  This is essential for PU calculation. Default: "list"
-	:TopologicalNode: The topological nodes at the base voltage. Default: "list"
-		'''
+    :ConductingEquipment: Base voltage of this conducting equipment.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers. Default: "list"
+    :TopologicalNode: The topological nodes at the base voltage. Default: "list"
+    :TransformerEnds: Transformer ends at the base voltage.  This is essential for PU calculation. Default: "list"
+    :VoltageLevel: The voltage levels having this base voltage. Default: "list"
+    :nominalVoltage: The power system resource`s base voltage. Default: 0.0
+    """
 
-	cgmesProfile = IdentifiedObject.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.EQ_BD.value, Profile.EQ.value, Profile.TP_BD.value, Profile.TP.value, ],
+        "ConductingEquipment": [Profile.EQ.value, ],
+        "TopologicalNode": [Profile.TP_BD.value, Profile.TP.value, ],
+        "TransformerEnds": [Profile.EQ.value, ],
+        "VoltageLevel": [Profile.EQ.value, ],
+        "nominalVoltage": [Profile.EQ_BD.value, Profile.EQ.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, cgmesProfile.TP.value, cgmesProfile.TP_BD.value, cgmesProfile.EQ_BD.value, ],
-						'nominalVoltage': [cgmesProfile.EQ.value, cgmesProfile.EQ_BD.value, ],
-						'ConductingEquipment': [cgmesProfile.EQ.value, ],
-						'VoltageLevel': [cgmesProfile.EQ.value, ],
-						'TransformerEnds': [cgmesProfile.EQ.value, ],
-						'TopologicalNode': [cgmesProfile.TP.value, cgmesProfile.TP_BD.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
+    recommendedClassProfile = Profile.EQ.value
 
-	__doc__ += '\n Documentation of parent class IdentifiedObject: \n' + IdentifiedObject.__doc__ 
+    __doc__ += "\nDocumentation of parent class IdentifiedObject:\n" + IdentifiedObject.__doc__
 
-	def __init__(self, nominalVoltage = 0.0, ConductingEquipment = "list", VoltageLevel = "list", TransformerEnds = "list", TopologicalNode = "list",  *args, **kw_args):
-		super().__init__(*args, **kw_args)
-	
-		self.nominalVoltage = nominalVoltage
-		self.ConductingEquipment = ConductingEquipment
-		self.VoltageLevel = VoltageLevel
-		self.TransformerEnds = TransformerEnds
-		self.TopologicalNode = TopologicalNode
-		
-	def __str__(self):
-		str = 'class=BaseVoltage\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+    def __init__(self, ConductingEquipment = "list", TopologicalNode = "list", TransformerEnds = "list", VoltageLevel = "list", nominalVoltage = 0.0, *args, **kw_args):
+        super().__init__(*args, **kw_args)
+
+        self.ConductingEquipment = ConductingEquipment
+        self.TopologicalNode = TopologicalNode
+        self.TransformerEnds = TransformerEnds
+        self.VoltageLevel = VoltageLevel
+        self.nominalVoltage = nominalVoltage
+
+    def __str__(self):
+        str = "class=BaseVoltage\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str

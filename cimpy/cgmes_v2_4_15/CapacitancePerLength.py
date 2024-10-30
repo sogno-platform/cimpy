@@ -1,42 +1,43 @@
 from .Base import Base
+from .CGMESProfile import Profile
 
 
 class CapacitancePerLength(Base):
-	'''
-	Capacitance per unit of length.
+    """
+    Capacitance per unit of length.
 
-	:value:  Default: 0.0
-	:unit:  Default: None
-	:multiplier:  Default: None
-	:denominatorUnit:  Default: None
-	:denominatorMultiplier:  Default: None
-		'''
+    :denominatorMultiplier:  Default: None
+    :denominatorUnit:  Default: None
+    :multiplier:  Default: None
+    :unit:  Default: None
+    :value:  Default: 0.0
+    """
 
-	cgmesProfile = Base.cgmesProfile
+    possibleProfileList = {
+        "class": [Profile.EQ.value, ],
+        "denominatorMultiplier": [Profile.EQ.value, ],
+        "denominatorUnit": [Profile.EQ.value, ],
+        "multiplier": [Profile.EQ.value, ],
+        "unit": [Profile.EQ.value, ],
+        "value": [Profile.EQ.value, ],
+    }
 
-	possibleProfileList = {'class': [cgmesProfile.EQ.value, ],
-						'value': [cgmesProfile.EQ.value, ],
-						'unit': [cgmesProfile.EQ.value, ],
-						'multiplier': [cgmesProfile.EQ.value, ],
-						'denominatorUnit': [cgmesProfile.EQ.value, ],
-						'denominatorMultiplier': [cgmesProfile.EQ.value, ],
-						 }
+    serializationProfile = {}
 
-	serializationProfile = {}
+    recommendedClassProfile = Profile.EQ.value
 
-	
 
-	def __init__(self, value = 0.0, unit = None, multiplier = None, denominatorUnit = None, denominatorMultiplier = None,  ):
-	
-		self.value = value
-		self.unit = unit
-		self.multiplier = multiplier
-		self.denominatorUnit = denominatorUnit
-		self.denominatorMultiplier = denominatorMultiplier
-		
-	def __str__(self):
-		str = 'class=CapacitancePerLength\n'
-		attributes = self.__dict__
-		for key in attributes.keys():
-			str = str + key + '={}\n'.format(attributes[key])
-		return str
+    def __init__(self, denominatorMultiplier = None, denominatorUnit = None, multiplier = None, unit = None, value = 0.0):
+
+        self.denominatorMultiplier = denominatorMultiplier
+        self.denominatorUnit = denominatorUnit
+        self.multiplier = multiplier
+        self.unit = unit
+        self.value = value
+
+    def __str__(self):
+        str = "class=CapacitancePerLength\n"
+        attributes = self.__dict__
+        for key in attributes.keys():
+            str = str + key + "={}\n".format(attributes[key])
+        return str
