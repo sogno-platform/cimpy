@@ -1,8 +1,6 @@
 name: Documentation
 
 on:
-  pull_request:
-
   push:
     branches:
       - master
@@ -60,6 +58,7 @@ jobs:
           ls -l _build/html
 
       - name: Upload Artifact
+        if: github.ref == 'refs/heads/master'
         uses: actions/upload-pages-artifact@v3
         with:
           path: documentation/_build/html
