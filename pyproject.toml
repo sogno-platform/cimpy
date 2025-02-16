@@ -1,6 +1,6 @@
 [project]
 name = "cimpy"
-version = "1.1.0"
+version = "1.2.0"
 description = "Python package for import, modification and export of CIM grid data"
 authors = [
     {name="Institute for Automation of Complex Power Systems"},
@@ -36,6 +36,9 @@ Issues = "https://github.com/sogno-platform/cimpy/issues"
 
 [project.optional-dependencies]
 dev = [
+    "black",
+    "flake8",
+    "pre_commit",
     "pytest",
     "pytest-check"
 ]
