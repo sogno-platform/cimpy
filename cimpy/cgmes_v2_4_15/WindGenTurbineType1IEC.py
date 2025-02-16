@@ -29,5 +29,5 @@ class WindGenTurbineType1IEC(WindTurbineType1or2IEC):
         str = "class=WindGenTurbineType1IEC\n"
         attributes = self.__dict__
         for key in attributes.keys():
-            str = str + key + "={}\n".format(attributes[key])
+            str = str + key + "={}\n".format(repr(attributes[key]))
         return str

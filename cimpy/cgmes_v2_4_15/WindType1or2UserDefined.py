@@ -32,5 +32,5 @@ class WindType1or2UserDefined(WindTurbineType1or2Dynamics):
         str = "class=WindType1or2UserDefined\n"
         attributes = self.__dict__
         for key in attributes.keys():
-            str = str + key + "={}\n".format(attributes[key])
+            str = str + key + "={}\n".format(repr(attributes[key]))
         return str
