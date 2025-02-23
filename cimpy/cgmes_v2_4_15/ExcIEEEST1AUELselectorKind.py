@@ -25,5 +25,5 @@ class ExcIEEEST1AUELselectorKind(Base):
         str = "class=ExcIEEEST1AUELselectorKind\n"
         attributes = self.__dict__
         for key in attributes.keys():
-            str = str + key + "={}\n".format(attributes[key])
+            str = str + key + "={}\n".format(repr(attributes[key]))
         return str

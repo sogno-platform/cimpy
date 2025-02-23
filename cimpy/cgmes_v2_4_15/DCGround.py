@@ -32,5 +32,5 @@ class DCGround(DCConductingEquipment):
         str = "class=DCGround\n"
         attributes = self.__dict__
         for key in attributes.keys():
-            str = str + key + "={}\n".format(attributes[key])
+            str = str + key + "={}\n".format(repr(attributes[key]))
         return str

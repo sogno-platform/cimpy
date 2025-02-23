@@ -68,5 +68,5 @@ class SynchronousMachineTimeConstantReactance(SynchronousMachineDetailed):
         str = "class=SynchronousMachineTimeConstantReactance\n"
         attributes = self.__dict__
         for key in attributes.keys():
-            str = str + key + "={}\n".format(attributes[key])
+            str = str + key + "={}\n".format(repr(attributes[key]))
         return str

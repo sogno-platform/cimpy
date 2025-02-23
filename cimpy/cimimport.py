@@ -50,7 +50,7 @@ def cim_import(xml_files, cgmes_version, start_dict=None):
     # CIM element tag base (e.g. {http://iec.ch/TC57/2012/CIM-schema-cim16#} )
     base = "{" + import_result["meta_info"]["namespaces"]["cim"] + "}"
 
-    (import_result, logger_grouped,) = _instantiate_classes(
+    import_result, logger_grouped = _instantiate_classes(
         import_result,
         xml_files,
         cgmes_version_path,
